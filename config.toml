@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "shrysr.github.io"
 languageCode = "en-us"
 title = "Shreyas Ragavan"
 theme = "future-imperfect"
@@ -101,7 +101,7 @@ canonifyURLs = true
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
     imperfect = true
-    width     = "-1"
+    width     = ""
     alt       = "Shreyas Ragavan"
 
 [params.postAmount]
