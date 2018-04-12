@@ -2,31 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Shreyas Ragavan</title>
-    <link>/project/</link>
+    <link>shrysr.github.io/project/</link>
     <description>Recent content in Projects on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="shrysr.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>shrysr.github.io/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>shrysr.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Simulation job scheduler</title>
-      <link>/project/cfd-simulation-scheduler/</link>
+      <title>CFD Post Processing automation</title>
+      <link>shrysr.github.io/project/cfd-post-automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/project/cfd-simulation-scheduler/</guid>
+      <guid>shrysr.github.io/project/cfd-post-automation/</guid>
+      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
+This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
+    </item>
+    
+    <item>
+      <title>Contributions to the CFD-Online Wiki</title>
+      <link>shrysr.github.io/project/cfd-online-wiki/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>shrysr.github.io/project/cfd-online-wiki/</guid>
+      <description>View : CFD-Online Wiki page.
+Motivation During my initial foray into open source CFD and especially getting started with Linux - there was a lot of information that I had to collate from different sources in order to figure out each step. In addition, there were perspectives on performance that could be gained only through experience. Therefore, I plugged back the knowledge gained to the CFD-Online wiki with the idea that it would help any newbie get started a little quicker.</description>
+    </item>
+    
+    <item>
+      <title>Simulation job scheduler</title>
+      <link>shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>shrysr.github.io/project/cfd-simulation-scheduler/</guid>
       <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
 This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
  In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>

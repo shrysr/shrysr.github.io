@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shreyas Ragavan on Shreyas Ragavan</title>
-    <link>/</link>
+    <link>shrysr.github.io/</link>
     <description>Recent content in Shreyas Ragavan on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <atom:link href="shrysr.github.io/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Code School - free weekend - Fly with python</title>
-      <link>/post/ef377257-29f5-41bf-a7f8-e195243967fa/</link>
+      <link>shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/ef377257-29f5-41bf-a7f8-e195243967fa/</guid>
+      <guid>shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</guid>
       <description>
 
 &lt;ul&gt;
@@ -500,10 +500,10 @@ weather_main = weather_json[&#39;main&#39;]
     
     <item>
       <title>To record or not to record</title>
-      <link>/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
+      <link>shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
+      <guid>shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
       <description>
 
 &lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
@@ -592,29 +592,29 @@ weather_main = weather_json[&#39;main&#39;]
     
     <item>
       <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
+      <link>shrysr.github.io/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>/talk/example-talk/</guid>
+      <guid>shrysr.github.io/talk/example-talk/</guid>
       <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>shrysr.github.io/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>shrysr.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
+      <link>shrysr.github.io/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/post/getting-started/</guid>
+      <guid>shrysr.github.io/post/getting-started/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
@@ -799,36 +799,188 @@ git submodule update --init --recursive
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
+      <link>shrysr.github.io/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/publication/person-re-identification/</guid>
+      <guid>shrysr.github.io/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
+      <link>shrysr.github.io/publication/clothing-search/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
+      <guid>shrysr.github.io/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Simulation job scheduler</title>
-      <link>/project/cfd-simulation-scheduler/</link>
+      <title>CFD Post Processing automation</title>
+      <link>shrysr.github.io/project/cfd-post-automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/project/cfd-simulation-scheduler/</guid>
+      <guid>shrysr.github.io/project/cfd-post-automation/</guid>
+      <description>
+
+&lt;p&gt;It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.&lt;/p&gt;
+
+&lt;p&gt;This python script that enables the user to set the location of:
+- the session file (.cse)
+- the CFD result files (.res)
+- create a BAT script with sequential lines, each calling ANSYS CFD Post with the necessary arguments
+- run the session script on all the result files available in a particular location.
+- gracefully exit, removing all the temporary script files.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/cfdpost_auto&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;how-it-helps&#34;&gt;How it helps&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;While these operations could be done directly in python, it is
+easier and simpler to control ANSYS CFD post using a BASH
+script. Therefore the python program creates a BASH script.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;python-script&#34;&gt;Python script&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;
+Created on Thu Dec 18 16:10:49 2014
+@author: shrysr
+&amp;quot;&amp;quot;&amp;quot;
+
+# Description: 
+# This is a simple program that is designed to apply am ANSYS CFD post macro on all the results available at a particular location, one after the other. There are 3 strings required to be set as input by the user.
+# 1. The location of the ANSYS CFD Post executable
+# 2. THe path to the macro file (.cst/.cse)
+# 3. The folder location where the result files are located.
+
+# Note : the &amp;gt;quit command can be written in the post macro to optionally execute the post macro on one file after the other automatically. Otherwise CFD Post has to be quit manually by the user after the macro is applied on each file.
+
+###---------- USER INPUT -------------###
+# Setting the paths to various locations.
+
+CFDPost_loc=r&#39;&amp;quot;C:\Program Files\ANSYS Inc\v145\CFD-Post\bin\cfdpost&amp;quot;&#39; #Setting the path to the ANSYS CFD Post executable.
+
+Post_template_loc=r&#39;&amp;quot;C:\\example_location\post_macro.cse&amp;quot;&#39; #Path to the .cse/.cst post macro to be applied.
+
+Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive\Shreyas&amp;quot; #Folder location of the result file path
+
+###---x---x--x-- USER INPUT -x---x---x---x--###
+
+#importing required libraries
+import os
+import glob
+import subprocess as sp
+
+#Creating BAT script for extracting the list of res files in the current working folder - sorted Date wise
+def res_list_syn(Res_loc):
+    &amp;quot;&amp;quot;&amp;quot;
+    Grabs all the CFX res files in the chosen location  (Res_loc) and stores them in the variable (array) A1.
+    The variableA1 is passed onto another function which uses the array contents
+    Example:
+    &amp;gt;&amp;gt;&amp;gt; Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive&amp;quot;
+    &amp;gt;&amp;gt;&amp;gt; post_syn(Res_loc)
+    &amp;gt;&amp;gt;&amp;gt; return variableA1
+    &amp;quot;&amp;quot;&amp;quot;
+    print &amp;quot;&amp;quot;
+    print &amp;quot;Grabbing all res files from chosen location.&amp;quot;
+    os.chdir(Res_loc)
+    reslist=glob.glob(&#39;*.res&#39;)
+    print &amp;quot;Passing the list of res files to the Post_Syn function&amp;quot;
+    post_syn(reslist)
+
+def post_syn(variable):
+    print &amp;quot; &amp;quot;    
+    print &amp;quot;Listing grabbed res files and creating Post BAT file in chosen location...&amp;quot; 
+    print &amp;quot;&amp;quot;
+    post_batname=&#39;Post_bat_runner.BAT&#39;   
+    post_bat_loc=os.path.join(Res_loc,post_batname)
+    PC=open(post_bat_loc,&#39;w&#39;)
+    PC.write(&#39;cd /d &amp;quot;%s&amp;quot;\n&#39;%Res_loc)
+    i=0
+    while i&amp;lt;len(variable):
+        print &amp;quot;%d --%s&amp;quot; %(i,variable[i])
+        PC.write(&#39;%s -s %s %s\n&#39; %(CFDPost_loc,Post_template_loc,variable[i]))
+        i+=1
+    PC.close()
+    print &amp;quot;Running post macro on all the listed Res Files....&amp;quot;
+    print &#39;&#39;
+    sp.call(post_bat_loc)
+    t.sleep(5)
+    print &#39;Killing temp files...&#39;
+    t.sleep(5)
+    File_killer(Res_loc,&#39;BAT&#39;)
+
+
+#Function for deleting temp Files. Prevents Clutter.
+def File_killer(folder_location, type_of_extension):
+    for variable in glob.glob(&#39;%s/*.%s&#39;%(folder_location,type_of_extension)):
+        if os.path.isfile(variable):
+            os.remove(variable)
+
+#Starting Program. Geting current working directory
+print &amp;quot;Hello. Program Launch...--&amp;gt;&amp;quot;
+print &amp;quot;&amp;quot;
+print &amp;quot;The chosen result location to be scanned is: %s&amp;quot;%Res_loc
+print &amp;quot;&amp;quot;
+print &amp;quot;Starting scan&amp;quot;
+res_list_syn(Res_loc)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contributions to the CFD-Online Wiki</title>
+      <link>shrysr.github.io/project/cfd-online-wiki/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>shrysr.github.io/project/cfd-online-wiki/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;View : &lt;a href=&#34;http://www.cfd-online.com/Wiki/What_is_Open_Source%3F&#34; target=&#34;_blank&#34;&gt;CFD-Online Wiki page&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;During my initial foray into open source CFD and especially getting
+started with Linux - there was a lot of information that I had to
+collate from different sources in order to figure out each step. In
+addition, there were perspectives on performance that could be gained
+only through experience. Therefore, I plugged back the knowledge
+gained to the CFD-Online wiki with the idea that it would help any
+newbie get started a little quicker.&lt;/p&gt;
+
+&lt;p&gt;In the last few years, the number of courses and the material
+available on-line on CFD, Linux and applying Numerical techniques has
+increased substantially. This is somewhat supported by the increasing
+trend of page views &lt;a href=&#34;https://www.cfd-online.com/About/&#34; target=&#34;_blank&#34;&gt;shown on the CFD-Online
+Wiki&lt;/a&gt;. Nevertheless, this document
+still serves as a useful overview and getting started guide.&lt;/p&gt;
+
+&lt;p&gt;The documentation explores the idea of Open Source software, and the
+basic techniques to get started with the exploration. Eg: the
+different options of running Linux on your current machine as well as
+the pros and cons of each approach, and the software options
+available, as well as links to useful and high quality information and
+tutorials.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simulation job scheduler</title>
+      <link>shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>shrysr.github.io/project/cfd-simulation-scheduler/</guid>
       <description>
 
 
 &lt;figure&gt;
     
-        &lt;img src=&#34;/img/scheduler-algo.png&#34; /&gt;
+        &lt;img src=&#34;shrysr.github.io/img/scheduler-algo.png&#34; /&gt;
     
     
     &lt;figcaption&gt;
