@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shreyas Ragavan on Shreyas Ragavan</title>
-    <link>shrysr.github.io/</link>
+    <link>https://shrysr.github.io/</link>
     <description>Recent content in Shreyas Ragavan on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
-    <atom:link href="shrysr.github.io/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Code School - free weekend - Fly with python</title>
-      <link>shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</link>
+      <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</guid>
+      <guid>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</guid>
       <description>
 
 &lt;ul&gt;
@@ -500,10 +500,10 @@ weather_main = weather_json[&#39;main&#39;]
     
     <item>
       <title>To record or not to record</title>
-      <link>shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
+      <link>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
+      <guid>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
       <description>
 
 &lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
@@ -592,29 +592,29 @@ weather_main = weather_json[&#39;main&#39;]
     
     <item>
       <title>Example Talk</title>
-      <link>shrysr.github.io/talk/example-talk/</link>
+      <link>https://shrysr.github.io/talk/example-talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
       
-      <guid>shrysr.github.io/talk/example-talk/</guid>
+      <guid>https://shrysr.github.io/talk/example-talk/</guid>
       <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>External Project</title>
-      <link>shrysr.github.io/project/example-external-project/</link>
+      <link>https://shrysr.github.io/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/project/example-external-project/</guid>
+      <guid>https://shrysr.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Academic: the website designer for Hugo</title>
-      <link>shrysr.github.io/post/getting-started/</link>
+      <link>https://shrysr.github.io/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>shrysr.github.io/post/getting-started/</guid>
+      <guid>https://shrysr.github.io/post/getting-started/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
@@ -799,30 +799,30 @@ git submodule update --init --recursive
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>shrysr.github.io/publication/person-re-identification/</link>
+      <link>https://shrysr.github.io/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/publication/person-re-identification/</guid>
+      <guid>https://shrysr.github.io/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Mobile visual clothing search</title>
-      <link>shrysr.github.io/publication/clothing-search/</link>
+      <link>https://shrysr.github.io/publication/clothing-search/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/publication/clothing-search/</guid>
+      <guid>https://shrysr.github.io/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>CFD Post Processing automation</title>
-      <link>shrysr.github.io/project/cfd-post-automation/</link>
+      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/project/cfd-post-automation/</guid>
+      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
       <description>
 
 &lt;p&gt;It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.&lt;/p&gt;
@@ -935,10 +935,10 @@ res_list_syn(Res_loc)
     
     <item>
       <title>Contributions to the CFD-Online Wiki</title>
-      <link>shrysr.github.io/project/cfd-online-wiki/</link>
+      <link>https://shrysr.github.io/project/cfd-online-wiki/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/project/cfd-online-wiki/</guid>
+      <guid>https://shrysr.github.io/project/cfd-online-wiki/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;View : &lt;a href=&#34;http://www.cfd-online.com/Wiki/What_is_Open_Source%3F&#34; target=&#34;_blank&#34;&gt;CFD-Online Wiki page&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
@@ -971,16 +971,16 @@ tutorials.&lt;/p&gt;
     
     <item>
       <title>Simulation job scheduler</title>
-      <link>shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/project/cfd-simulation-scheduler/</guid>
+      <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
       <description>
 
 
 &lt;figure&gt;
     
-        &lt;img src=&#34;shrysr.github.io/img/scheduler-algo.png&#34; /&gt;
+        &lt;img src=&#34;https://shrysr.github.io/img/scheduler-algo.png&#34; /&gt;
     
     
     &lt;figcaption&gt;

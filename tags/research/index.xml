@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Research on Shreyas Ragavan</title>
-    <link>shrysr.github.io/tags/research/</link>
+    <link>https://shrysr.github.io/tags/research/</link>
     <description>Recent content in Research on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Mon, 27 May 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="shrysr.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shrysr.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CFD Post Processing automation</title>
-      <link>shrysr.github.io/project/cfd-post-automation/</link>
+      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/project/cfd-post-automation/</guid>
+      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
       <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
 This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
     </item>

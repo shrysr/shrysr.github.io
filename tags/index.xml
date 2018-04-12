@@ -2,139 +2,139 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Shreyas Ragavan</title>
-    <link>shrysr.github.io/tags/</link>
+    <link>https://shrysr.github.io/tags/</link>
     <description>Recent content in Tags on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="shrysr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shrysr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>shrysr.github.io/tags/academic/</link>
+      <link>https://shrysr.github.io/tags/academic/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/academic/</guid>
+      <guid>https://shrysr.github.io/tags/academic/</guid>
       <description>Here is a list of all the content that has been tagged as academic.</description>
     </item>
     
     <item>
       <title>Automation</title>
-      <link>shrysr.github.io/tags/automation/</link>
+      <link>https://shrysr.github.io/tags/automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/automation/</guid>
+      <guid>https://shrysr.github.io/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CFD</title>
-      <link>shrysr.github.io/tags/cfd/</link>
+      <link>https://shrysr.github.io/tags/cfd/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/cfd/</guid>
+      <guid>https://shrysr.github.io/tags/cfd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Code</title>
-      <link>shrysr.github.io/tags/code/</link>
+      <link>https://shrysr.github.io/tags/code/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/code/</guid>
+      <guid>https://shrysr.github.io/tags/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Demo</title>
-      <link>shrysr.github.io/tags/demo/</link>
+      <link>https://shrysr.github.io/tags/demo/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/demo/</guid>
+      <guid>https://shrysr.github.io/tags/demo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Documentation</title>
-      <link>shrysr.github.io/tags/documentation/</link>
+      <link>https://shrysr.github.io/tags/documentation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/documentation/</guid>
+      <guid>https://shrysr.github.io/tags/documentation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Emacs</title>
-      <link>shrysr.github.io/tags/emacs/</link>
+      <link>https://shrysr.github.io/tags/emacs/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/emacs/</guid>
+      <guid>https://shrysr.github.io/tags/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>shrysr.github.io/tags/linux/</link>
+      <link>https://shrysr.github.io/tags/linux/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/linux/</guid>
+      <guid>https://shrysr.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Note-taking</title>
-      <link>shrysr.github.io/tags/note-taking/</link>
+      <link>https://shrysr.github.io/tags/note-taking/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/note-taking/</guid>
+      <guid>https://shrysr.github.io/tags/note-taking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Open-source</title>
-      <link>shrysr.github.io/tags/open-source/</link>
+      <link>https://shrysr.github.io/tags/open-source/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/open-source/</guid>
+      <guid>https://shrysr.github.io/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>shrysr.github.io/tags/programming/</link>
+      <link>https://shrysr.github.io/tags/programming/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/programming/</guid>
+      <guid>https://shrysr.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>shrysr.github.io/tags/python/</link>
+      <link>https://shrysr.github.io/tags/python/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/python/</guid>
+      <guid>https://shrysr.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Research</title>
-      <link>shrysr.github.io/tags/research/</link>
+      <link>https://shrysr.github.io/tags/research/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/research/</guid>
+      <guid>https://shrysr.github.io/tags/research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>shrysr.github.io/tags/writing/</link>
+      <link>https://shrysr.github.io/tags/writing/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/tags/writing/</guid>
+      <guid>https://shrysr.github.io/tags/writing/</guid>
       <description></description>
     </item>
     
