@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/r/</link>
+    <description>Recent content in R on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Section 1: R Basics, Functions, Data types</title>
+      <link>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</guid>
+      <description>Table of Contents  R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java. R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms. R Console: for interactive commands, similar to the python interpreter. Installing R on Arch Linux : sudo pacman -Sy r Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,8 +17,8 @@
       
     
   
-  <meta name="description" content="Note taken on [2017-08-20 Sun 15:48] 
-Completed this course today.  Level 1 - Lists and Dictionaries &lt;2017-08-19 Sat&gt; hello Dictionaries : basically used to lookup values using a key instead of an index. It maps keys to values. These are separated by a colon. Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc. Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].">
+  <meta name="description" content="Completed this course today.
+Level 1 - Lists and Dictionaries &lt;2017-08-19 Sat&gt;  Dictionaries : basically used to lookup values using a key instead of an index. It maps keys to values. These are separated by a colon. Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc. Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].">
 
   
   <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/">
@@ -80,8 +80,8 @@ Completed this course today.  Level 1 - Lists and Dictionaries &lt;2017-08-19 Sa
   <meta property="og:site_name" content="Shreyas Ragavan">
   <meta property="og:url" content="https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/">
   <meta property="og:title" content="Code School - free weekend - Fly with python | Shreyas Ragavan">
-  <meta property="og:description" content="Note taken on [2017-08-20 Sun 15:48] 
-Completed this course today.  Level 1 - Lists and Dictionaries &lt;2017-08-19 Sat&gt; hello Dictionaries : basically used to lookup values using a key instead of an index. It maps keys to values. These are separated by a colon. Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc. Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].">
+  <meta property="og:description" content="Completed this course today.
+Level 1 - Lists and Dictionaries &lt;2017-08-19 Sat&gt;  Dictionaries : basically used to lookup values using a key instead of an index. It maps keys to values. These are separated by a colon. Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc. Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2018-04-07T00:00:00&#43;00:00">
@@ -328,66 +328,57 @@ Completed this course today.  Level 1 - Lists and Dictionaries &lt;2017-08-19 Sa
     <div class="article-style" itemprop="articleBody">
       
 
-<ul>
-<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2017-08-20 Sun 15:48] </span></span><br />
-Completed this course today.</li>
-</ul>
+<p>Completed this course today.</p>
 
 <h1 id="level-1-lists-and-dictionaries-span-class-timestamp-wrapper-span-class-timestamp-lt-2017-08-19-sat-gt-span-span">Level 1 - Lists and Dictionaries <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-19 Sat&gt;</span></span></h1>
 
-<ul class="task-list">
-<li>hello</li>
+<ul>
 <li>Dictionaries : basically used to lookup values using a key instead
 of an index. It maps keys to values. These are separated by a colon.</li>
 <li>Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc.</li>
 <li>Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].</li>
 <li>To check whether a word is in the dictionary, use the get()</li>
 <li>There is no append function for the dictionary. THis works only on lists, or pehaps lists within dictionaries !</li>
-
-<li><p>Test program for key:value pair demonstration</p>
-
-<ul class="task-list">
-<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2017-08-19 Sat 20:13] </span></span></li>
-<li>&lsquo;None&rsquo; - is a special type which basically represents the absence of
-any value. &lsquo;True&rsquo; is returned if the key exists.</li>
-<li><label><input type="checkbox" disabled class="task-list-item"> using get() is best practise because it will not crash the program. Need to understand this statement better</label></li>
 </ul>
 
-<p>slang = {&lsquo;testing&rsquo;:&lsquo;gre&rsquo;, &lsquo;champagne&rsquo;:&lsquo;sparkler&rsquo;, &lsquo;ontario&rsquo;:&lsquo;canada&rsquo;}
-print(slang.get(&lsquo;toronto&rsquo;))
-print(slang.get(&lsquo;canada&rsquo;)) #note that this is none. Shows that the dictionary only searches for the first term or the key. The second terms is called value.
-print(slang.get(&lsquo;ontario&rsquo;))</p>
+<h2 id="test-program-for-key-value-pair-demonstration">Test program for key:value pair demonstration</h2>
 
-<p>None
+<p>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2017-08-19 Sat 20:13] </span></span> \\ &lsquo;None&rsquo; - is a special type which basically represents the absence of any value. &lsquo;True&rsquo; is returned if the key exists. [ ] using get() is best practise because it will not crash the program. Need to understand this statement better</p>
+
+<pre><code>slang = {'testing':'gre', 'champagne':'sparkler', 'ontario':'canada'}
+print(slang.get('toronto'))
+print(slang.get('canada')) #note that this is none. Shows that the dictionary only searches for the first term or the key. The second terms is called value.
+print(slang.get('ontario'))
+
 None
-canada</p></li>
+None
+canada
+</code></pre>
 
-<li><p>Test program for updating dictionary items</p>
+<h2 id="test-program-for-updating-dictionary-items">Test program for updating dictionary items</h2>
+
+<p>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2017-08-19 Sat 20:30] </span></span> \\The square brackets are used to represent each key value inside the dictionary.</p>
+
+<pre><code>performances = {'Ventriloquism':'9:00am', 
+                'Snake Charmer': '12:00pm', 
+                'Amazing Acrobatics': '2:00pm', 
+                'Enchanted Elephants':'5:00pm'}
+print (performances)
+
+#changing a key's value
+performances['Enchanted Elephants']='6:00pm'
+print (performances)
+
+#Deleteing an item
+del performances['Enchanted Elephants']
+print (performances)
+
+{'Ventriloquism': '9:00am', 'Snake Charmer': '12:00pm', 'Amazing Acrobatics': '2:00pm', 'Enchanted Elephants': '5:00pm'}
+{'Ventriloquism': '9:00am', 'Snake Charmer': '12:00pm', 'Amazing Acrobatics': '2:00pm', 'Enchanted Elephants': '6:00pm'}
+{'Ventriloquism': '9:00am', 'Snake Charmer': '12:00pm', 'Amazing Acrobatics': '2:00pm'}
+</code></pre>
 
 <ul>
-<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2017-08-19 Sat 20:30] </span></span><br />
-The square brackets are used to represent each key value inside the
-dictionary.</li>
-</ul>
-
-<p>performances = {&lsquo;Ventriloquism&rsquo;:&lsquo;9:00am&rsquo;,
-                &lsquo;Snake Charmer&rsquo;: &lsquo;12:00pm&rsquo;,
-                &lsquo;Amazing Acrobatics&rsquo;: &lsquo;2:00pm&rsquo;,
-                &lsquo;Enchanted Elephants&rsquo;:&lsquo;5:00pm&rsquo;}
-print (performances)</p>
-
-<p>#changing a key&rsquo;s value
-performances[&lsquo;Enchanted Elephants&rsquo;]=&lsquo;6:00pm&rsquo;
-print (performances)</p>
-
-<p>#Deleteing an item
-del performances[&lsquo;Enchanted Elephants&rsquo;]
-print (performances)</p>
-
-<p>{&lsquo;Ventriloquism&rsquo;: &lsquo;9:00am&rsquo;, &lsquo;Snake Charmer&rsquo;: &lsquo;12:00pm&rsquo;, &lsquo;Amazing Acrobatics&rsquo;: &lsquo;2:00pm&rsquo;, &lsquo;Enchanted Elephants&rsquo;: &lsquo;5:00pm&rsquo;}
-{&lsquo;Ventriloquism&rsquo;: &lsquo;9:00am&rsquo;, &lsquo;Snake Charmer&rsquo;: &lsquo;12:00pm&rsquo;, &lsquo;Amazing Acrobatics&rsquo;: &lsquo;2:00pm&rsquo;, &lsquo;Enchanted Elephants&rsquo;: &lsquo;6:00pm&rsquo;}
-{&lsquo;Ventriloquism&rsquo;: &lsquo;9:00am&rsquo;, &lsquo;Snake Charmer&rsquo;: &lsquo;12:00pm&rsquo;, &lsquo;Amazing Acrobatics&rsquo;: &lsquo;2:00pm&rsquo;}</p></li>
-
 <li><p>Comparing lists : They need to have the same values in the same order. Even if the values are the same, but the order is different, the list is deemed different.</p>
 
 <p>list_a = [&lsquo;python&rsquo;, &lsquo;bison&rsquo;, &lsquo;lion&rsquo;]
@@ -478,7 +469,7 @@ the average is 3.1125
 
 <h3 id="random-random-picks-a-random-number-between-0-0-1-0">random.random() : picks a random number between 0.0 - 1.0</h3>
 
-<h3 id="random-choice-1-2-3-picks-a-random-number-from-the-provided-list-this-could-also-be-used-on-multiple-lists-by-just-referencing-the-variable-where-the-multiple-lists-are-stored-refer-test-program-printing-random-choice-from-a-list-of-strings-org0fe143e">random.choice([1,2,3]): picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer <a href="#org0fe143e">Test program - printing random choice from a list of strings</a></h3>
+<h3 id="random-choice-1-2-3-picks-a-random-number-from-the-provided-list-this-could-also-be-used-on-multiple-lists-by-just-referencing-the-variable-where-the-multiple-lists-are-stored-refer-test-program-printing-random-choice-from-a-list-of-strings-org6011707">random.choice([1,2,3]): picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer <a href="#org6011707">Test program - printing random choice from a list of strings</a></h3>
 
 <h3 id="random-randint-a-b-provides-a-random-integer-between-a-and-b">random.randint(a,b): provides a random integer between a and b.</h3>
 
@@ -598,7 +589,7 @@ e
 ! 
 </code></pre>
 
-<p><a id="org0fe143e"></a></p>
+<p><a id="org6011707"></a></p>
 
 <h2 id="test-program-printing-random-choice-from-a-list-of-strings">Test program - printing random choice from a list of strings</h2>
 
@@ -815,7 +806,9 @@ weather_main = weather_json['main']
   
   <a class="btn btn-primary btn-outline" href="/tags/python">python</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/programming">programming</a>
+  <a class="btn btn-primary btn-outline" href="/tags/coding-notes">coding notes</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/code-school">code school</a>
   
 </div>
 
@@ -829,9 +822,9 @@ weather_main = weather_json['main']
       <h3>Related</h3>
       <ul>
         
-        <li><a href="/project/cfd-post-automation/">CFD Post Processing automation</a></li>
-        
         <li><a href="/project/cfd-simulation-scheduler/">Simulation job scheduler</a></li>
+        
+        <li><a href="/project/cfd-post-automation/">CFD Post Processing automation</a></li>
         
       </ul>
     </div>

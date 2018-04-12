@@ -12,144 +12,139 @@
     
     <item>
       <title>Code School - free weekend - Fly with python</title>
-      <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</link>
+      <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f8-e195243967fa/</guid>
+      <guid>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</guid>
       <description>
 
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Code School is kind enough to occasionally offer a &lt;em&gt;free weekend&lt;/em&gt; with full access to their normally paid courses. I was able to capitalize on &lt;em&gt;two&lt;/em&gt; such occasions to complete several courses. Below are the notes that were captured, directly into org-mode in emacs. The code builds on examples and lessons available on the Code School courses.&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 15:48] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Completed this course today.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code School:&lt;/strong&gt; I&amp;rsquo;ve completed courses on Python, Git, Regular Expressions and SQL. See my &lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Report card&lt;/a&gt;. These courses are certainly useful to get on with the basics and to gain some level of fluency with python.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;level-1-lists-and-dictionaries-span-class-timestamp-wrapper-span-class-timestamp-lt-2017-08-19-sat-gt-span-span&#34;&gt;Level 1 - Lists and Dictionaries &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2017-08-19 Sat&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;level-1-lists-and-dictionaries&#34;&gt;Level 1 - Lists and Dictionaries&lt;/h1&gt;
 
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;hello&lt;/li&gt;
+&lt;ul&gt;
 &lt;li&gt;Dictionaries : basically used to lookup values using a key instead
 of an index. It maps keys to values. These are separated by a colon.&lt;/li&gt;
 &lt;li&gt;Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc.&lt;/li&gt;
 &lt;li&gt;Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].&lt;/li&gt;
 &lt;li&gt;To check whether a word is in the dictionary, use the get()&lt;/li&gt;
 &lt;li&gt;There is no append function for the dictionary. THis works only on lists, or pehaps lists within dictionaries !&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Test program for key:value pair demonstration&lt;/p&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:13] &lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&amp;lsquo;None&amp;rsquo; - is a special type which basically represents the absence of
-any value. &amp;lsquo;True&amp;rsquo; is returned if the key exists.&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; using get() is best practise because it will not crash the program. Need to understand this statement better&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;slang = {&amp;lsquo;testing&amp;rsquo;:&amp;lsquo;gre&amp;rsquo;, &amp;lsquo;champagne&amp;rsquo;:&amp;lsquo;sparkler&amp;rsquo;, &amp;lsquo;ontario&amp;rsquo;:&amp;lsquo;canada&amp;rsquo;}
-print(slang.get(&amp;lsquo;toronto&amp;rsquo;))
-print(slang.get(&amp;lsquo;canada&amp;rsquo;)) #note that this is none. Shows that the dictionary only searches for the first term or the key. The second terms is called value.
-print(slang.get(&amp;lsquo;ontario&amp;rsquo;))&lt;/p&gt;
+&lt;h2 id=&#34;test-program-for-key-value-pair-demonstration&#34;&gt;Test program for key:value pair demonstration&lt;/h2&gt;
 
-&lt;p&gt;None
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:13] &lt;/span&gt;&lt;/span&gt; \\ &amp;lsquo;None&amp;rsquo; - is a special type which basically represents the absence of any value. &amp;lsquo;True&amp;rsquo; is returned if the key exists. using &lt;code&gt;get()&lt;/code&gt; is best practise because it will not crash the program. Need to understand this statement better&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slang = {&#39;testing&#39;:&#39;gre&#39;, &#39;champagne&#39;:&#39;sparkler&#39;, &#39;ontario&#39;:&#39;canada&#39;}
+print(slang.get(&#39;toronto&#39;))
+print(slang.get(&#39;canada&#39;)) #note that this is none. Shows that the dictionary only searches for the first term or the key. The second terms is called value.
+print(slang.get(&#39;ontario&#39;))
+
 None
-canada&lt;/p&gt;&lt;/li&gt;
+None
+canada
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;Test program for updating dictionary items&lt;/p&gt;
+&lt;p&gt;Test program for updating dictionary items
+Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:30] &lt;/span&gt;&lt;/span&gt; \\ The square brackets are used to represent each key value inside the dictionary.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:30] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The square brackets are used to represent each key value inside the
-dictionary.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;performances = {&#39;Ventriloquism&#39;:&#39;9:00am&#39;, 
+                &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, 
+                &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, 
+                &#39;Enchanted Elephants&#39;:&#39;5:00pm&#39;}
+print (performances)
 
-&lt;p&gt;performances = {&amp;lsquo;Ventriloquism&amp;rsquo;:&amp;lsquo;9:00am&amp;rsquo;,
-                &amp;lsquo;Snake Charmer&amp;rsquo;: &amp;lsquo;12:00pm&amp;rsquo;,
-                &amp;lsquo;Amazing Acrobatics&amp;rsquo;: &amp;lsquo;2:00pm&amp;rsquo;,
-                &amp;lsquo;Enchanted Elephants&amp;rsquo;:&amp;lsquo;5:00pm&amp;rsquo;}
-print (performances)&lt;/p&gt;
+#changing a key&#39;s value
+performances[&#39;Enchanted Elephants&#39;]=&#39;6:00pm&#39;
+print (performances)
 
-&lt;p&gt;#changing a key&amp;rsquo;s value
-performances[&amp;lsquo;Enchanted Elephants&amp;rsquo;]=&amp;lsquo;6:00pm&amp;rsquo;
-print (performances)&lt;/p&gt;
+#Deleteing an item
+del performances[&#39;Enchanted Elephants&#39;]
+print (performances)
 
-&lt;p&gt;#Deleteing an item
-del performances[&amp;lsquo;Enchanted Elephants&amp;rsquo;]
-print (performances)&lt;/p&gt;
+{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, &#39;Enchanted Elephants&#39;: &#39;5:00pm&#39;}
+{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, &#39;Enchanted Elephants&#39;: &#39;6:00pm&#39;}
+{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;{&amp;lsquo;Ventriloquism&amp;rsquo;: &amp;lsquo;9:00am&amp;rsquo;, &amp;lsquo;Snake Charmer&amp;rsquo;: &amp;lsquo;12:00pm&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;: &amp;lsquo;2:00pm&amp;rsquo;, &amp;lsquo;Enchanted Elephants&amp;rsquo;: &amp;lsquo;5:00pm&amp;rsquo;}
-{&amp;lsquo;Ventriloquism&amp;rsquo;: &amp;lsquo;9:00am&amp;rsquo;, &amp;lsquo;Snake Charmer&amp;rsquo;: &amp;lsquo;12:00pm&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;: &amp;lsquo;2:00pm&amp;rsquo;, &amp;lsquo;Enchanted Elephants&amp;rsquo;: &amp;lsquo;6:00pm&amp;rsquo;}
-{&amp;lsquo;Ventriloquism&amp;rsquo;: &amp;lsquo;9:00am&amp;rsquo;, &amp;lsquo;Snake Charmer&amp;rsquo;: &amp;lsquo;12:00pm&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;: &amp;lsquo;2:00pm&amp;rsquo;}&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Comparing lists : They need to have the same values in the same order. Even if the values are the same, but the order is different, the list is deemed different.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Comparing lists : They need to have the same values in the same order. Even if the values are the same, but the order is different, the list is deemed different.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list_a = [&#39;python&#39;, &#39;bison&#39;, &#39;lion&#39;]
+list_b = [&#39;python&#39;, &#39;lion&#39;, &#39;bison&#39;]
 
-&lt;p&gt;list_a = [&amp;lsquo;python&amp;rsquo;, &amp;lsquo;bison&amp;rsquo;, &amp;lsquo;lion&amp;rsquo;]
-list_b = [&amp;lsquo;python&amp;rsquo;, &amp;lsquo;lion&amp;rsquo;, &amp;lsquo;bison&amp;rsquo;]&lt;/p&gt;
+print(list_a == list_b)
 
-&lt;p&gt;print(list_a == list_b)&lt;/p&gt;
+False
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;False&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Works a little different for dictionaries: Dictionaries are not ordered lists. They are just key:value pairs. Therefore in a comparison, only the key value pairs need to be equal.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Works a little different for dictionaries: Dictionaries are not ordered lists. They are just key:value pairs. Therefore in a comparison, only the key value pairs need to be equal.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;List of lists:it is possible to have a list of multiple lists. Sometimes called 2D lists&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;List of lists:it is possible to have a list of multiple lists. Sometimes called 2D lists.&lt;/p&gt;
-
-&lt;p&gt;breakfast = [&amp;lsquo;omelette&amp;rsquo;, &amp;lsquo;noodles&amp;rsquo;, &amp;lsquo;soy milk&amp;rsquo;]
-lunch= [&amp;lsquo;upma&amp;rsquo;, &amp;lsquo;rice&amp;rsquo;, &amp;lsquo;roti and sabji&amp;rsquo;, &amp;lsquo;curd&amp;rsquo;]
-dinner= [&amp;lsquo;curd rice&amp;rsquo;, &amp;lsquo;bakhri and sabji&amp;rsquo;, &amp;lsquo;adai&amp;rsquo;]
+&lt;pre&gt;&lt;code&gt;breakfast = [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
+lunch= [&#39;upma&#39;, &#39;rice&#39;, &#39;roti and sabji&#39;, &#39;curd&#39;]
+dinner= [&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
 food_items = [breakfast, lunch, dinner]
 print (food_items[0])
 print (food_items[2])
 #also possible to get a specific item within this list, by using the 2D list concept. The 2nd list ordering also starts from 0.
-print (food_items[0][2])&lt;/p&gt;
+print (food_items[0][2])
 
-&lt;p&gt;[&amp;lsquo;omelette&amp;rsquo;, &amp;lsquo;noodles&amp;rsquo;, &amp;lsquo;soy milk&amp;rsquo;]
-[&amp;lsquo;curd rice&amp;rsquo;, &amp;lsquo;bakhri and sabji&amp;rsquo;, &amp;lsquo;adai&amp;rsquo;]
-soy milk&lt;/p&gt;&lt;/li&gt;
+[&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
+[&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
+soy milk
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;&lt;p&gt;Dictionary of lists - makes it easier to define&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Dictionary of lists - makes it easier to define.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Test program 1 : example for defining multiple lists and a dictionary of lists&lt;/p&gt;
+&lt;p&gt;Test program 1 : example for defining multiple lists and a dictionary of lists.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;breakfast = [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
 lunch= [&#39;upma&#39;, &#39;rice&#39;, &#39;roti and sabji&#39;, &#39;curd&#39;]
 dinner= [&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
 food_items = {&#39;bf&#39;:breakfast,&#39;dins&#39;: dinner}
 print (&#39;Breakfast is \n\t&#39;,food_items[&#39;bf&#39;])
+
+Breakfast is 
+     [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;s
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Breakfast is
-     [&amp;lsquo;omelette&amp;rsquo;, &amp;lsquo;noodles&amp;rsquo;, &amp;lsquo;soy milk&amp;rsquo;s&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Test program 2 - extracting a particular value from dictionaries / nested lists&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Test program 2 - extracting a particular value from dictionaries / nested lists&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# So instead of having separate lists ...
+weekdays = [&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;]
+saturday = [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;]
+sunday   = [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]
 
-&lt;h1 id=&#34;so-instead-of-having-separate-lists&#34;&gt;So instead of having separate lists &amp;hellip;&lt;/h1&gt;
+# We could have one big list ...
+performances = [[&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;],
+                [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;],
+                [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]]
 
-&lt;p&gt;weekdays = [&amp;lsquo;Bearded Lady&amp;rsquo;, &amp;lsquo;Tiniest Man&amp;rsquo;, &amp;lsquo;Ventriloquist Vinnie&amp;rsquo;]
-saturday = [&amp;lsquo;Amazing Acrobatics&amp;rsquo;, &amp;lsquo;Enchanted Elephants&amp;rsquo;]
-sunday   = [&amp;lsquo;Snake Charmer&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;]&lt;/p&gt;
+#to get one particular value, ventriloquist,  the code would be :
+print (performances[0][2])
 
-&lt;h1 id=&#34;we-could-have-one-big-list&#34;&gt;We could have one big list &amp;hellip;&lt;/h1&gt;
+Ventriloquist Vinnie
 
-&lt;p&gt;performances = [[&amp;lsquo;Bearded Lady&amp;rsquo;, &amp;lsquo;Tiniest Man&amp;rsquo;, &amp;lsquo;Ventriloquist Vinnie&amp;rsquo;],
-                [&amp;lsquo;Amazing Acrobatics&amp;rsquo;, &amp;lsquo;Enchanted Elephants&amp;rsquo;],
-                [&amp;lsquo;Snake Charmer&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;]]&lt;/p&gt;
+performances = {&#39;weekdays&#39;: [&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;],
+                &#39;saturday&#39;: [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;],
+                &#39;sunday&#39;:   [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]}
 
-&lt;p&gt;#to get one particular value, ventriloquist,  the code would be :
-print (performances[0][2])&lt;/p&gt;
+#to get Ventriloquist Vinnie performance
+print (performances[&#39;weekdays&#39;][2])
 
-&lt;p&gt;Ventriloquist Vinnie&lt;/p&gt;
+Ventriloquist Vinnie
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;performances = {&amp;lsquo;weekdays&amp;rsquo;: [&amp;lsquo;Bearded Lady&amp;rsquo;, &amp;lsquo;Tiniest Man&amp;rsquo;, &amp;lsquo;Ventriloquist Vinnie&amp;rsquo;],
-                &amp;lsquo;saturday&amp;rsquo;: [&amp;lsquo;Amazing Acrobatics&amp;rsquo;, &amp;lsquo;Enchanted Elephants&amp;rsquo;],
-                &amp;lsquo;sunday&amp;rsquo;:   [&amp;lsquo;Snake Charmer&amp;rsquo;, &amp;lsquo;Amazing Acrobatics&amp;rsquo;]}&lt;/p&gt;
+&lt;h1 id=&#34;level-2-loops&#34;&gt;Level 2 - Loops&lt;/h1&gt;
 
-&lt;p&gt;#to get Ventriloquist Vinnie performance
-print (performances[&amp;lsquo;weekdays&amp;rsquo;][2])&lt;/p&gt;
-
-&lt;p&gt;Ventriloquist Vinnie&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;level-2-loops-span-class-timestamp-wrapper-span-class-timestamp-lt-2017-08-20-sun-gt-span-span&#34;&gt;Level 2 - Loops  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2017-08-20 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;
-
-&lt;h2 id=&#34;for-loop-can-be-used-to-sum-up-the-numbers-within-a-list-len-can-be-used-to-compute-the-average&#34;&gt;For loop can be used to sum up the numbers within a list. len() can be used to compute the average.&lt;/h2&gt;
+&lt;h2 id=&#34;for-loop-can-be-used-to-sum-up-the-numbers-within-a-list-len-can-be-used-to-compute-the-average&#34;&gt;For loop can be used to sum up the numbers within a list. &lt;code&gt;len()&lt;/code&gt; can be used to compute the average.&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;lista= [1,4,5,2.45]  #list of numbers
 sum = 0 #initialising the variable
@@ -166,11 +161,11 @@ the average is 3.1125
 
 &lt;h2 id=&#34;generating-a-random-number&#34;&gt;Generating a random number !&lt;/h2&gt;
 
-&lt;h3 id=&#34;random-random-picks-a-random-number-between-0-0-1-0&#34;&gt;random.random() : picks a random number between 0.0 - 1.0&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;random.random()&lt;/code&gt; : picks a random number between 0.0 - 1.0&lt;/p&gt;
 
-&lt;h3 id=&#34;random-choice-1-2-3-picks-a-random-number-from-the-provided-list-this-could-also-be-used-on-multiple-lists-by-just-referencing-the-variable-where-the-multiple-lists-are-stored-refer-test-program-printing-random-choice-from-a-list-of-strings-org0fe143e&#34;&gt;random.choice([1,2,3]): picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer &lt;a href=&#34;#org0fe143e&#34;&gt;Test program - printing random choice from a list of strings&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;random.choice([1,2,3])&lt;/code&gt;: picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer &lt;a href=&#34;#org80f0395&#34;&gt;Test program - printing random choice from a list of strings&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;random-randint-a-b-provides-a-random-integer-between-a-and-b&#34;&gt;random.randint(a,b): provides a random integer between a and b.&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;random.randint(a,b)&lt;/code&gt;: provides a random integer between a and b.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import random
 
@@ -187,50 +182,49 @@ print (r4)
 16
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;for-fixing-the-number-of-iterations-when-there-is-no-list-or-reference-we-use-the-function-range&#34;&gt;For fixing the number of iterations, when there is no list or reference, we use the function range().&lt;/h2&gt;
+&lt;h2 id=&#34;for-fixing-the-number-of-iterations-when-there-is-no-list-or-reference-we-use-the-function-range&#34;&gt;For fixing the number of iterations, when there is no list or reference, we use the function &lt;code&gt;range()&lt;/code&gt;.&lt;/h2&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 07:39] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-notice how the range values are from 0-9. When we use range(10), an
-internal list for a count is taken by python. However, the total count is 10 times.&lt;/p&gt;
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 07:39] &lt;/span&gt;&lt;/span&gt; \\ notice how the range values are from 0-9. When we use range(10), an internal list for a count is taken by python. However, the total count is 10 times.&lt;/p&gt;
 
-&lt;p&gt;import random
-for i in range(10):  #notice how the range taken is from 0-9.
-    print (i,&amp;rsquo;\t&amp;rsquo;)
-    print (&amp;lsquo;The number is &amp;lsquo;,random.randint(1,500),&amp;rsquo;\n&amp;rsquo;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import random
+for i in range(10):  #notice how the range taken is from 0-9. 
+    print (i,&#39;\t&#39;)
+    print (&#39;The number is &#39;,random.randint(1,500),&#39;\n&#39;)
 
-&lt;p&gt;0&lt;br /&gt;
-The number is  28&lt;/p&gt;
+0   
+The number is  28 
 
-&lt;p&gt;1&lt;br /&gt;
-The number is  78&lt;/p&gt;
+1   
+The number is  78 
 
-&lt;p&gt;2&lt;br /&gt;
-The number is  88&lt;/p&gt;
+2   
+The number is  88 
 
-&lt;p&gt;3&lt;br /&gt;
-The number is  35&lt;/p&gt;
+3   
+The number is  35 
 
-&lt;p&gt;4&lt;br /&gt;
-The number is  183&lt;/p&gt;
+4   
+The number is  183 
 
-&lt;p&gt;5&lt;br /&gt;
-The number is  161&lt;/p&gt;
+5   
+The number is  161 
 
-&lt;p&gt;6&lt;br /&gt;
-The number is  131&lt;/p&gt;
+6   
+The number is  131 
 
-&lt;p&gt;7&lt;br /&gt;
-The number is  256&lt;/p&gt;
+7   
+The number is  256 
 
-&lt;p&gt;8&lt;br /&gt;
-The number is  113&lt;/p&gt;
+8   
+The number is  113 
 
-&lt;p&gt;9&lt;br /&gt;
-The number is  255&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+9   
+The number is  255 
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;range-can-have-an-alternative-format-wherein-range-start-stop-step-in-this-way-we-control-the-values-of-i-itself-including-control-the-number-of-times-it-is-repeated-and-the-values-that-will-be-taken-at-each-repeat&#34;&gt;range() can have an alternative format wherein range(start,stop,step). In this way, we control the values of i itself, including control the number of times it is repeated and the values that will be taken at each repeat.&lt;/h2&gt;
+&lt;h2 id=&#34;range&#34;&gt;&lt;code&gt;range()&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Can have an alternative format wherein range(start,stop,step). In this way, we control the values of i itself, including control the number of times it is repeated and the values that will be taken at each repeat.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;for i in range(200,250,5): #notice how start value is included in the output, but the stop value is excluded.
     print (i)
@@ -288,7 +282,7 @@ e
 ! 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a id=&#34;org0fe143e&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;org80f0395&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;test-program-printing-random-choice-from-a-list-of-strings&#34;&gt;Test program - printing random choice from a list of strings&lt;/h2&gt;
 
@@ -315,24 +309,22 @@ print (menu)
 [&#39;idly- spam&#39;, &#39;vada- spam&#39;, &#39;sambhar- spam&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;to-get-the-list-of-keys-in-a-dictionary-dict-name-keys-and-for-the-values-dict-name-values&#34;&gt;To get the list of keys in a dictionary : dict_name.keys() and for the values dict_name.values()&lt;/h2&gt;
+&lt;p&gt;To get the list of keys in a dictionary : dict_name.keys() and for the values dict_name.values()&lt;/p&gt;
 
-&lt;h2 id=&#34;removing-the-space-separation-while-using-print-command-with-multiple-values&#34;&gt;removing the space separation while using print command with multiple values&lt;/h2&gt;
+&lt;p&gt;Removing the space separation while using print command with multiple values&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;print (&#39;name is&#39;,&#39;donkey&#39;,&#39;kang&#39;,sep=&#39;-&#39;) #sep has to be placed after the variables which are to be separated.
 
 name is-donkey-kang
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;possible-to-format-output-on-the-fly-within-the-print-command&#34;&gt;Possible to format output on the fly within the print command.&lt;/h2&gt;
+&lt;p&gt;Possible to format output on the fly within the print command. Example &lt;code&gt;format(price,&#39;.2f&#39;)&lt;/code&gt; - price formated to 2 decimal places, as a float.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;example format(price,&amp;lsquo;.2f&amp;rsquo;) - price formated to 2 decimal places, as a float.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;For loops loop for a certain number of times, while loops work till a condition is fulfilled.&lt;/p&gt;
 
-&lt;h2 id=&#34;for-loops-loop-for-a-certain-number-of-times-while-loops-work-till-a-condition-is-fulfilled&#34;&gt;for loops loop for a certain number of times, while loops work till a condition is fulfilled.&lt;/h2&gt;
+&lt;p&gt;Possible to run a while loop forever, and include a conditional break condition inside.&lt;/p&gt;
 
-&lt;h2 id=&#34;possible-to-run-a-while-loop-forever-and-include-a-conditional-break-condition-inside&#34;&gt;Possible to run a while loop forever, and include a conditional break condition inside.&lt;/h2&gt;
+&lt;p&gt;Continue statement within the while loop : breaks the loop but then goes back to loop beginning.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;menu= [&#39;idly&#39;, &#39;vada&#39;, &#39;sambhar&#39;]
 order=[]
@@ -345,9 +337,7 @@ while order !=&#39;q&#39;:
     order = input (&#39;Anything else? (q to quit)&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;continue-statement-within-the-while-loop-breaks-the-loop-but-then-goes-back-to-loop-starting&#34;&gt;Continue statement within the while loop : breaks the loop but then goes back to loop starting.&lt;/h2&gt;
-
-&lt;h1 id=&#34;level-3-functions-span-class-timestamp-wrapper-span-class-timestamp-lt-2017-08-20-sun-gt-span-span&#34;&gt;Level 3 Functions &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2017-08-20 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;level-3-functions&#34;&gt;Level 3 Functions&lt;/h1&gt;
 
 &lt;h2 id=&#34;function-name-input-data-to-the-function-and-output-data-to-the-function&#34;&gt;Function name, input data to the function and output data to the function&lt;/h2&gt;
 
@@ -400,15 +390,15 @@ main()
 1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;level-4-reading-and-writing-from-files-span-class-timestamp-wrapper-span-class-timestamp-lt-2017-08-20-sun-gt-span-span&#34;&gt;Level 4 - Reading and writing from files &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2017-08-20 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;level-4-reading-and-writing-from-files&#34;&gt;Level 4 - Reading and writing from files&lt;/h1&gt;
 
 &lt;h2 id=&#34;open-a-file-needs-the-open-function-file-name-and-the-mode&#34;&gt;open a file needs the open function, file name and the mode&lt;/h2&gt;
 
-&lt;h2 id=&#34;r-read-w-write-a-append&#34;&gt;&amp;lsquo;r&amp;rsquo; - read, &amp;lsquo;w&amp;rsquo; - write, &amp;lsquo;a&amp;rsquo; - append.&lt;/h2&gt;
+&lt;h2 id=&#34;r-read-w-write-a-append&#34;&gt;&lt;code&gt;&#39;r&#39;&lt;/code&gt; - read, &lt;code&gt;&#39;w&#39;&lt;/code&gt; - write, &lt;code&gt;&#39;a&#39;&lt;/code&gt; - append.&lt;/h2&gt;
 
 &lt;h2 id=&#34;write-mode-will-always-over-write-the-existing-contents-of-the-file&#34;&gt;write mode will always over-write the existing contents of the file.&lt;/h2&gt;
 
-&lt;h2 id=&#34;need-to-use-a-for-loop-to-store-the-lines-inside-a-file-after-reading-it-the-strip-can-be-used-for-stripping-leading-and-trailing-whitespaces&#34;&gt;need to use a for loop to store the lines inside a file after reading it. The strip() can be used for stripping leading and trailing whitespaces.&lt;/h2&gt;
+&lt;h2 id=&#34;need-to-use-a-for-loop-to-store-the-lines-inside-a-file-after-reading-it-the-strip-can-be-used-for-stripping-leading-and-trailing-whitespaces&#34;&gt;need to use a for loop to store the lines inside a file after reading it. The &lt;code&gt;strip()&lt;/code&gt; can be used for stripping leading and trailing whitespaces.&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;fn = open(&#39;/home/shrysr/temp/schedule.txt&#39;,&#39;r&#39;)
 rl=[]
@@ -422,26 +412,23 @@ fn.close()
 [&#39;Ventriloquism-10:00am&#39;, &#39;Snake Charmer-12:00pm&#39;, &#39;Amazing Acrobatics-2:00pm&#39;, &#39;Enchanted Elephants-5:00pm&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;possible-to-add-parameters-in-the-line-split-to-store-the-split-into-two-variables-at-the-specified-character-like-split&#34;&gt;Possible to add parameters in the line.split() to store the split into two variables at the specified character, like .split(&amp;rsquo; - &amp;lsquo; ).&lt;/h2&gt;
+&lt;h2 id=&#34;possible-to-add-parameters-in-the-line-split&#34;&gt;Possible to add parameters in the &lt;code&gt;line.split()&lt;/code&gt; :&lt;/h2&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 11:20] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that the charac in the .split(charac) parameter has to exactly
-match the string or line being passed, otherwise this will return an error.&lt;/p&gt;
+&lt;p&gt;to store the split into two variables at the specified character, like &lt;code&gt;.split(&#39; - &#39; )&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;l1 = &amp;lsquo;this is a nut-case in point is&amp;rsquo;
-(s1,s2)=l1.split( &amp;lsquo;-&amp;rsquo;)
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 11:20] &lt;/span&gt;&lt;/span&gt; \\ Note that the charac in the &lt;code&gt;.split(charac)&lt;/code&gt; parameter has to exactly match the string or line being passed, otherwise this will return an error.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;l1 = &#39;this is a nut-case in point is&#39;
+(s1,s2)=l1.split( &#39;-&#39;)
 print (s1)
-print (s2)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+print (s2)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;python-has-over-60-types-of-exceptions&#34;&gt;Python has over 60+ types of exceptions.&lt;/h2&gt;
 
 &lt;h2 id=&#34;using-try-and-except&#34;&gt;Using try and except&lt;/h2&gt;
 
-&lt;h3 id=&#34;it-is-possible-to-try-out-a-set-of-instructions-and-then-store-the-exceptions-that-crop-up&#34;&gt;it is possible to try out a set of instructions and then store the exceptions that crop up.&lt;/h3&gt;
-
-&lt;h3 id=&#34;the-exceptions-that-are-stored-in-python-also-have-specific-names-it-is-possible-to-use-an-exception-to-check-for-that-particular-name-and-store-it-in-a-variable&#34;&gt;The exceptions that are stored in python also have specific names. It is possible to use an exception to check for that particular name and store it in a variable.&lt;/h3&gt;
+&lt;p&gt;It is possible to try out a set of instructions and then store the exceptions that crop up. The exceptions that are stored in python also have specific names. It is possible to use an exception to check for that particular name and store it in a variable.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;try:
     schedule_file = open(&#39;schedule.txt&#39;, &#39;r&#39;)
@@ -459,15 +446,15 @@ except FileNotFoundError as err:
 
 &lt;h1 id=&#34;level-5-modules&#34;&gt;Level 5- Modules&lt;/h1&gt;
 
-&lt;h2 id=&#34;modules-are-code-libraries-that-contain-functions-that-can-be-called-to-be-used-in-our-code&#34;&gt;Modules are code libraries that contain functions, that can be called to be used in our code.&lt;/h2&gt;
-
-&lt;h2 id=&#34;pip-is-a-package-manager-to-install-modules&#34;&gt;pip is a package manager to install modules.&lt;/h2&gt;
-
-&lt;h2 id=&#34;json-format-looks-very-similar-to-a-list-of-dictionaries&#34;&gt;JSON format looks very similar to a list of dictionaries !&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Modules are code libraries that contain functions, that can be called to be used in our code.&lt;/li&gt;
+&lt;li&gt;pip is a package manager to install modules.&lt;/li&gt;
+&lt;li&gt;JSON format looks very similar to a list of dictionaries !
 
 &lt;ul&gt;
 &lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 11:41] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
 basically like dictionary items contained within a list.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;test-program-importing-from-code-school-as-json&#34;&gt;test program importing from code school as JSON&lt;/h2&gt;
@@ -481,20 +468,450 @@ print (ml)
 [{&#39;price&#39;: &#39;3.00&#39;, &#39;name&#39;: &#39;Omelet&#39;, &#39;desc&#39;: &#39;Yummy&#39;}, {&#39;price&#39;: &#39;5.75&#39;, &#39;name&#39;: &#39;Burrito&#39;, &#39;desc&#39;: &#39;Breakfast Burrito&#39;}, {&#39;price&#39;: &#39;4.50&#39;, &#39;name&#39;: &#39;Waffles&#39;, &#39;desc&#39;: &#39;Belgian waffles with syrup&#39;}]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;test-program-1&#34;&gt;Test program&lt;/h2&gt;
+&lt;h2 id=&#34;test-program-using-an-api-to-get-weather-data&#34;&gt;Test program - using an API to get weather data&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;import requests
 
-url = &amp;quot;http://api.openweathermap.org/data/2.5/weather?q=Orlando,fl&amp;amp;units=imperial&amp;amp;appid=2de143494c0b295cca9337e1e96b00e0&amp;quot;
+#may have to generate new or your own API Keys. See  http://openweathermap.org/faq#error401
+
+#url = &amp;quot;http://api.openweathermap.org/data/2.5/weather?q=Orlando,fl&amp;amp;units=imperial&amp;amp;appid=f179d81ad38bc474d4686f12425d1741&amp;quot;
+url = &amp;quot;http://api.openweathermap.org/data/2.5/weather?q=London,uk&amp;amp;APPID=f179d81ad38bc474d4686f12425d1741&amp;quot;
 request = requests.get(url)
 
 weather_json = request.json()
 
 print (weather_json)
-weather_main = weather_json[&#39;main&#39;]
+#weather_main = weather_json[&#39;main&#39;]
+
+{&#39;coord&#39;: {&#39;lon&#39;: -0.13, &#39;lat&#39;: 51.51}, &#39;weather&#39;: [{&#39;id&#39;: 721, &#39;main&#39;: &#39;Haze&#39;, &#39;description&#39;: &#39;haze&#39;, &#39;icon&#39;: &#39;50n&#39;}, {&#39;id&#39;: 701, &#39;main&#39;: &#39;Mist&#39;, &#39;description&#39;: &#39;mist&#39;, &#39;icon&#39;: &#39;50n&#39;}, {&#39;id&#39;: 300, &#39;main&#39;: &#39;Drizzle&#39;, &#39;description&#39;: &#39;light intensity drizzle&#39;, &#39;icon&#39;: &#39;09n&#39;}], &#39;base&#39;: &#39;stations&#39;, &#39;main&#39;: {&#39;temp&#39;: 280.15, &#39;pressure&#39;: 1003, &#39;humidity&#39;: 87, &#39;temp_min&#39;: 279.15, &#39;temp_max&#39;: 281.15}, &#39;visibility&#39;: 8000, &#39;wind&#39;: {&#39;speed&#39;: 2.1, &#39;deg&#39;: 330}, &#39;clouds&#39;: {&#39;all&#39;: 90}, &#39;dt&#39;: 1523568000, &#39;sys&#39;: {&#39;type&#39;: 1, &#39;id&#39;: 5091, &#39;message&#39;: 0.0046, &#39;country&#39;: &#39;GB&#39;, &#39;sunrise&#39;: 1523509780, &#39;sunset&#39;: 1523559214}, &#39;id&#39;: 2643743, &#39;name&#39;: &#39;London&#39;, &#39;cod&#39;: 200}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;a-script-containing-definitions-is-a-module-and-can-be-imported-by-other-scripts-or-modules&#34;&gt;A script containing definitions is a module and can be imported by other scripts or modules.&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Section 1: R Basics, Functions, Data types</title>
+      <link>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</guid>
+      <description>
+
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#orgcbc7570&#34;&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgb647ace&#34;&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orga642401&#34;&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orga1a5574&#34;&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org4d2a99d&#34;&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgfb78d9a&#34;&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgf139a8a&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org4c69dcf&#34;&gt;R Studio Desktop link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org70315c7&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgf99f1f9&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;. We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#org287fc79&#34;&gt;Check out how to print a statement and then a value.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org878df90&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org49eead3&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;. Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgc4a28a4&#34;&gt;Using the help() function. This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#orgd80807e&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orga9e5239&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#orgb8677fc&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgee5c2f3&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#orgf8693ec&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org3ce396d&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org3ce9656&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgcc6cfaa&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#org619da5f&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org43692f3&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org96d73e4&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orgc02d312&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org774a301&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#orga9b3c1f&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#org25228ed&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org3af6444&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org165a9d3&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/a&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#org34acb05&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[Also possible to use [&lt;a href=&#34;#orgff6d0f4&#34;&gt; square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org98cfc1e&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#org1d95a90&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgcbc7570&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;r-was-developed-by-statisticians-and-data-analysts-as-an-interactive-environment-for-data-analysis-it-is-not-like-c-or-java&#34;&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgb647ace&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;r-is-free-and-open-source-runs-on-all-major-platforms-data-objects-and-scripts-can-be-shared-seamlessly-across-these-platforms&#34;&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga642401&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;r-console-for-interactive-commands-similar-to-the-python-interpreter&#34;&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga1a5574&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;installing-r-on-arch-linux-sudo-pacman-sy-r&#34;&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;org4d2a99d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;once-r-is-installed-i-was-able-to-seamlesly-use-it-in-org-babel-using-the-source-r-see-code-datascience-md&#34;&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgfb78d9a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;extra-functionality-can-be-installed-in-r-as-add-on-packages-made-by-other-developers-these-are-available-on-cran-github-and-so-on&#34;&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+CRAN : Comprehensive R Archive Network.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgf139a8a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;dslabs-packages-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;install.packages (&amp;ldquo;dslabs&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org4c69dcf&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;done-r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;DONE R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org70315c7&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;once-the-packages-are-installed-the-libraries-can-be-loaded-in-the-r-session-using&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgf99f1f9&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;assignment-symbol-in-r-we-assign-values-to-objects-objects-can-be-simple-like-variables-or-complex-things-like-functions-in-the-code-below-a-b-c-are-objects-the-print-function-can-also-be-used-to-explicitly-display-the-value-of-an-object-it-is-possible-to-perform-operations-within-the-arguments-passed-to-the-print-function&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;. We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+c #this is used to print a value
+print (b)
+print (b-a)
+print (b*c)
+print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
+print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org287fc79&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;todo-check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;TODO Check out how to print a statement and then a value.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org878df90&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-objects-being-defined-are-changing-the-workspace-all-the-variables-in-the-workspace-can-be-displayed-by-using-ls-it-is-important-to-access-an-object-or-variable-that-is-in-the-current-workspace-otherwise-an-error-will-pop-up&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ls()
+a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+ls()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org49eead3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;functions-need-to-be-called-using-parenthesis-most-functions-take-atleast-one-argument-it-is-possible-to-nest-functions-such-that-a-function-can-be-called-to-get-the-argument-of-another-function-the-inverse-functions-of-exp-and-log-are-shown-below-functions-are-therefore-evaluated-inside-out-with-respect-to-order&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;. Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;exp(1)
+log(exp(1))
+a &amp;lt;- 1
+log(exp(a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgc4a28a4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;using-the-help-function-this-can-be-done-using-help-function-name-or-sometimes-function-name&#34;&gt;Using the help() function. This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
+
+&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgd80807e&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;todo-check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;TODO Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga9e5239&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-args-can-be-used-to-have-concise-information-on-the-number-of-arguments-taken-by-a-function&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;args(log)
+args(sqrt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgb8677fc&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;todo-do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;TODO Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgee5c2f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;there-are-in-built-data-sets-in-r-for-users-to-practise-and-test-functions-this-can-be-found-using-data&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;data()
+
+CO2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgf8693ec&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;done-need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;DONE Need to find out more about these to make it easier to learn new functions.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org3ce396d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;variable-nomenclature-variables-in-r-need-to-begin-with-a-letter-and-cannot-have-spaces-in-them&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;org3ce9656&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;math-relational-operators-are-also-functions-and-are-the-only-ones-which-do-not-require-a-parenthesis-for-deployment-as-shown-in-code-above&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgcc6cfaa&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-seq-function-is-used-to-generate-a-series-of-numbers-which-can-be-broken-into-specified-intervals-the-sum-can-be-used-to-sum-up-this-sequence-a-sequence-of-numbers-can-also-be-generated-as-simply-as-1-5-as-shown-below-the-sequence-is-ultimately-a-vector&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;org619da5f&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-2nd-argument-in-the-seq-is-actually-just-a-maximum-value-it-can-be-used-to-make-sure-a-sequence-does-not-exceed-a-certain-value-as-well&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&#34;org43692f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;there-is-a-length-out-argument-that-can-be-used-with-the-seq-this-basically-creates-equally-spaced-divisions-within-the-limits-specified-for-example-seq-1-100-length-out-10-will-basically-create-10-equally-spaced-divisions-between-1-and-100-including-1-and-100-note-the-class-created-is-numeric-see-code-below&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
+number &amp;lt;- 1000
+separation &amp;lt;- 1
+mySeq &amp;lt;- seq(1,number, separation)
+sum(mySeq)
+1:50
+
+#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
+a &amp;lt;- seq(1,100,length.out=10)
+class(a)
+b &amp;lt;- seq(1,2.5, length.out= 5)
+b
+class(b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org96d73e4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;class-helps-us-determine-the-type-of-the-object-in-particular-we-need-to-be-able-to-distinguish-between-different-types-of-objects-like-numbers-lists-strings-and-so-on&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
+b &amp;lt;- &amp;quot;this is a string&amp;quot;
+#c &amp;lt;- [1,2,3]
+class(a)
+class(b)
+#class(c)
+class(ls)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgc02d312&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;data-frames-useful-for-storing-table-like-data-and-different-data-frames-can-be-combined-for-analysis-it-is-inconvenient-to-store-data-in-a-single-variable&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;org774a301&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;loading-a-dataset-is-done-using-the-function-data-the-murders-dataset-is-a-part-of-dslabs-loading-this-now&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(&amp;quot;murders&amp;quot;)
+class(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga9b3c1f&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-str-shows-us-the-structure-of-an-object-the-names-shows-the-different-column-names-in-the-dataframe&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+class(murders)
+str(murders)
+names(murders)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org25228ed&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;done-find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;DONE Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;#org165a9d3&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;org3af6444&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;head-shows-us-the-first-6-lines-of-the-data-frame&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+head(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org165a9d3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;to-access-the-column-information-the-is-used-which-is-called-the-accessor-this-is-combined-with-the-name-of-the-column-which-can-be-obtained-from-the-names-or-str-the-length-can-be-used-to-find-the-length-of-the-object&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+names(murders)
+murders$population #this is a vector
+length(murders$population) #numeric vector
+class(murders$population) #character vector
+class(murders$state)
+a &amp;lt;- &amp;ldquo;hello string&amp;rdquo;
+b &amp;lt;- 1234
+length (a)
+length (b)&lt;/p&gt;
+
+&lt;h1 id=&#34;example-of-a-logical-datatype-basically-stores-only-true-or-false-answers&#34;&gt;example of a logical datatype. (basically stores only True or False answers.)&lt;/h1&gt;
+
+&lt;p&gt;a &amp;lt;- 3 == 2
+a
+class(a)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org34acb05&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;factors-useful-for-storing-categorical-data-levels-used-to-find-the-different-categories-within-the-factor&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+names(murders)
+str(murders$region)
+levels(murders$region)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgff6d0f4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;also-possible-to-use-square-brackets-to-extract-data-rather-than-using-the-identical-can-be-used-to-compare-different-objects-to-determine-whether-they-are-identical&#34;&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)&lt;/p&gt;
+
+&lt;p&gt;a &amp;lt;- murders[&amp;ldquo;population&amp;rdquo;]       #note the double quotes. Doesn&amp;rsquo;t work without the double quotes.
+b &amp;lt;- murders[[&amp;ldquo;population&amp;rdquo;]]
+c &amp;lt;- murders$population&lt;/p&gt;
+
+&lt;p&gt;#checking if a is the same as b
+a == b&lt;/p&gt;
+
+&lt;p&gt;#Using the identical()
+identical(a,b)
+identical(b,c)
+identical (a,c)&lt;/p&gt;
+
+&lt;p&gt;#checking the class differences.
+class(murders[&amp;ldquo;population&amp;rdquo;])
+class(murders[[&amp;ldquo;population&amp;rdquo;]])&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org98cfc1e&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;code-example-the-length-can-be-combined-with-levels-to-find-the-number-of-unique-factors&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+length(levels(murders$region))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org1d95a90&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;todo-table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;TODO table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+#str(murders)
+table(murders$state,murders$region)
+table(murders$region)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -586,6 +1003,33 @@ weather_main = weather_json[&#39;main&#39;]
 &lt;li&gt;&lt;p&gt;People swear by the different systems that worked for them. There are several Task management, Outlining and Life/Habit management tools out there, like &lt;a href=&#34;https://todoist.com/&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; | &lt;a href=&#34;https://asana.com/&#34; target=&#34;_blank&#34;&gt;Asana&lt;/a&gt; | &lt;a href=&#34;https://workflowy.com/&#34; target=&#34;_blank&#34;&gt;WorkFlowy&lt;/a&gt;. I&amp;rsquo;ve tried almost all of them. That stuff is for a another upcoming blog post&amp;#x2026;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Org mode was created with an understanding of needs as described above and allows you create customised approaches to resolve them. If you don&amp;rsquo;t have a database of project information - you are then obviously looking through individual files for a particular information that you need. THis is extremely inefficient if there&amp;rsquo;s frequent look-ups to be done. Orgmode can help create a text based database that can be searched very, very quickly.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Notes from the movie Whiplash</title>
+      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
+      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
+      <description>&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie rivetting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post&amp;#x2026;&lt;/p&gt;
+
+&lt;p&gt;Whiplash is basically an insight into the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
+
+&lt;p&gt;Some interesting points of note from this movie, infused with my own thoughts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via multiple, unexpected and  stressful proddings.&lt;/li&gt;
+&lt;li&gt;the mental conditioning required to weather and beat intense, sharp, depressing criticism along with verbal and physical abuse from a mentor or teacher and use the same as a motive force for self improvement and eventually superlative performance. At an age, where there is a growing attitude of the upcoming generation thinking that they are automatically entitled to several things, things that the older generation earned through hard work - such an approach would not be tolerated by most people today. Beyond the movie, I know real stories of people working under such mentors, striving to learn and gain their approval and eventually winning the same. These efforts paid off by resulting in skills, thinking patterns and a mental conditioning  simply superior to most other peers. Finding such a mentor at the formative stage is probably the best thing to happen to anybody. The suffering will eventually be worth it. However, with such mentors - it is important to be able to judge that the mentor has the knowledge or skill that is worth all the trouble being taken.&lt;/li&gt;
+&lt;li&gt;Getting back up after a fall: Everybody breaks. Just as the promising student in Whiplash breaks. But the champions among us rally,  to stage a comeback and performance that makes history remember them. This characteristic is portrayed by several characters who turned out to be popular among the audience, like Rocky Balboa.&lt;/li&gt;
+&lt;li&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/li&gt;
+&lt;li&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be Great, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best and that entails never being satisfied and ruthless rooting out of mistakes.&lt;/li&gt;
+&lt;li&gt;Great performance is about that perfect balance between the body, mind and consciousness. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability. This is logically followed by the student lashing out at the teacher. At the same time, the obsessive pursual of excellence and preparation resulted in the student being able to take advantage of an opportunity to become a part of the core music group (at an earlier point)  when the opportunity presented itself. Nevertheless, the ability to take advantage of that opportunity was also a result of backbreaking hard work.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, quite unexpected and drove me to truly enjoy the movie and appreciate that despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of crazy thrown in, to make it what it is.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable Creatives podcast provides an insight, in line with the points seen above, into what constitute outliers and performers. The interesting concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan via an example. It is surmised that progress and maximum learning to become better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the moment, and the unknown skills that beckon. That point sems to be an amalgamation of several things, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary. There are several facts thrown out in that podcast, and I&amp;rsquo;d recommend that too.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
