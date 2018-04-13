@@ -2,23 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productivity on Shreyas Ragavan</title>
-    <link>shrysr.github.io/tags/productivity/</link>
+    <link>https://shrysr.github.io/tags/productivity/</link>
     <description>Recent content in Productivity on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 10 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="shrysr.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shrysr.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How Org-mode has significantly uplifted my life</title>
-      <link>shrysr.github.io/blog/c5b6d731-2722-4988-83e6-b55b84aaa405/</link>
-      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      <title>The benefit in &#39;Archaic&#39; Email interfaces</title>
+      <link>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>shrysr.github.io/blog/c5b6d731-2722-4988-83e6-b55b84aaa405/</guid>
-      <description>Table of Contents  Introduction Needs versus software&amp;rsquo;s development Everybody&amp;rsquo;s needs are unique Concluding points  
-Introduction There are several videos, articles, complex manuals, customisable code snippets, all borne on a long, rich history behind emacs, and Orgmode. I doubt I can add much to those articles, except to share my viewpoint on why I think org mode should be learnt and utilised by more people. It will probably also cover why it won&amp;rsquo;t be utilised by those people.</description>
+      <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
+      <description>I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.
+It&amp;rsquo;s been a couple of years that I&amp;rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&amp;rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.</description>
     </item>
     
   </channel>

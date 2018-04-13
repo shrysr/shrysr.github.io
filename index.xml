@@ -491,449 +491,12 @@ print (weather_json)
     </item>
     
     <item>
-      <title>Section 1: R Basics, Functions, Data types</title>
-      <link>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</link>
-      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</guid>
-      <description>
-
-&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#orgcbc7570&#34;&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgb647ace&#34;&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orga642401&#34;&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orga1a5574&#34;&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org4d2a99d&#34;&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgfb78d9a&#34;&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgf139a8a&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org4c69dcf&#34;&gt;R Studio Desktop link&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org70315c7&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgf99f1f9&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;. We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#org287fc79&#34;&gt;Check out how to print a statement and then a value.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org878df90&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org49eead3&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;. Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgc4a28a4&#34;&gt;Using the help() function. This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#orgd80807e&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orga9e5239&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#orgb8677fc&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgee5c2f3&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#orgf8693ec&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org3ce396d&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org3ce9656&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgcc6cfaa&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#org619da5f&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org43692f3&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org96d73e4&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgc02d312&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org774a301&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orga9b3c1f&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#org25228ed&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org3af6444&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org165a9d3&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/a&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#org34acb05&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[Also possible to use [&lt;a href=&#34;#orgff6d0f4&#34;&gt; square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org98cfc1e&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org1d95a90&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgcbc7570&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;r-was-developed-by-statisticians-and-data-analysts-as-an-interactive-environment-for-data-analysis-it-is-not-like-c-or-java&#34;&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgb647ace&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;r-is-free-and-open-source-runs-on-all-major-platforms-data-objects-and-scripts-can-be-shared-seamlessly-across-these-platforms&#34;&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;orga642401&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;r-console-for-interactive-commands-similar-to-the-python-interpreter&#34;&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;orga1a5574&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;installing-r-on-arch-linux-sudo-pacman-sy-r&#34;&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;org4d2a99d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;once-r-is-installed-i-was-able-to-seamlesly-use-it-in-org-babel-using-the-source-r-see-code-datascience-md&#34;&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgfb78d9a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;extra-functionality-can-be-installed-in-r-as-add-on-packages-made-by-other-developers-these-are-available-on-cran-github-and-so-on&#34;&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-CRAN : Comprehensive R Archive Network.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgf139a8a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;dslabs-packages-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;install.packages (&amp;ldquo;dslabs&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org4c69dcf&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;done-r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;DONE R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org70315c7&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;once-the-packages-are-installed-the-libraries-can-be-loaded-in-the-r-session-using&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgf99f1f9&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;assignment-symbol-in-r-we-assign-values-to-objects-objects-can-be-simple-like-variables-or-complex-things-like-functions-in-the-code-below-a-b-c-are-objects-the-print-function-can-also-be-used-to-explicitly-display-the-value-of-an-object-it-is-possible-to-perform-operations-within-the-arguments-passed-to-the-print-function&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;. We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-c #this is used to print a value
-print (b)
-print (b-a)
-print (b*c)
-print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
-print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org287fc79&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;todo-check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;TODO Check out how to print a statement and then a value.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org878df90&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;the-objects-being-defined-are-changing-the-workspace-all-the-variables-in-the-workspace-can-be-displayed-by-using-ls-it-is-important-to-access-an-object-or-variable-that-is-in-the-current-workspace-otherwise-an-error-will-pop-up&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;ls()
-a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-ls()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org49eead3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;functions-need-to-be-called-using-parenthesis-most-functions-take-atleast-one-argument-it-is-possible-to-nest-functions-such-that-a-function-can-be-called-to-get-the-argument-of-another-function-the-inverse-functions-of-exp-and-log-are-shown-below-functions-are-therefore-evaluated-inside-out-with-respect-to-order&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;. Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;exp(1)
-log(exp(1))
-a &amp;lt;- 1
-log(exp(a))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgc4a28a4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;using-the-help-function-this-can-be-done-using-help-function-name-or-sometimes-function-name&#34;&gt;Using the help() function. This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
-
-&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgd80807e&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;todo-check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;TODO Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;orga9e5239&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;the-args-can-be-used-to-have-concise-information-on-the-number-of-arguments-taken-by-a-function&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;args(log)
-args(sqrt)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgb8677fc&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;todo-do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;TODO Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h2&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgee5c2f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;there-are-in-built-data-sets-in-r-for-users-to-practise-and-test-functions-this-can-be-found-using-data&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;data()
-
-CO2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgf8693ec&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;done-need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;DONE Need to find out more about these to make it easier to learn new functions.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org3ce396d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;variable-nomenclature-variables-in-r-need-to-begin-with-a-letter-and-cannot-have-spaces-in-them&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;org3ce9656&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;math-relational-operators-are-also-functions-and-are-the-only-ones-which-do-not-require-a-parenthesis-for-deployment-as-shown-in-code-above&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgcc6cfaa&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;the-seq-function-is-used-to-generate-a-series-of-numbers-which-can-be-broken-into-specified-intervals-the-sum-can-be-used-to-sum-up-this-sequence-a-sequence-of-numbers-can-also-be-generated-as-simply-as-1-5-as-shown-below-the-sequence-is-ultimately-a-vector&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;org619da5f&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-2nd-argument-in-the-seq-is-actually-just-a-maximum-value-it-can-be-used-to-make-sure-a-sequence-does-not-exceed-a-certain-value-as-well&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/h2&gt;
-
-&lt;p&gt;&lt;a id=&#34;org43692f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;there-is-a-length-out-argument-that-can-be-used-with-the-seq-this-basically-creates-equally-spaced-divisions-within-the-limits-specified-for-example-seq-1-100-length-out-10-will-basically-create-10-equally-spaced-divisions-between-1-and-100-including-1-and-100-note-the-class-created-is-numeric-see-code-below&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
-number &amp;lt;- 1000
-separation &amp;lt;- 1
-mySeq &amp;lt;- seq(1,number, separation)
-sum(mySeq)
-1:50
-
-#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
-a &amp;lt;- seq(1,100,length.out=10)
-class(a)
-b &amp;lt;- seq(1,2.5, length.out= 5)
-b
-class(b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org96d73e4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;class-helps-us-determine-the-type-of-the-object-in-particular-we-need-to-be-able-to-distinguish-between-different-types-of-objects-like-numbers-lists-strings-and-so-on&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
-b &amp;lt;- &amp;quot;this is a string&amp;quot;
-#c &amp;lt;- [1,2,3]
-class(a)
-class(b)
-#class(c)
-class(ls)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgc02d312&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;data-frames-useful-for-storing-table-like-data-and-different-data-frames-can-be-combined-for-analysis-it-is-inconvenient-to-store-data-in-a-single-variable&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/h1&gt;
-
-&lt;p&gt;&lt;a id=&#34;org774a301&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;loading-a-dataset-is-done-using-the-function-data-the-murders-dataset-is-a-part-of-dslabs-loading-this-now&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(&amp;quot;murders&amp;quot;)
-class(murders)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;orga9b3c1f&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;the-str-shows-us-the-structure-of-an-object-the-names-shows-the-different-column-names-in-the-dataframe&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-class(murders)
-str(murders)
-names(murders)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org25228ed&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;done-find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;DONE Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;#org165a9d3&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a id=&#34;org3af6444&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;head-shows-us-the-first-6-lines-of-the-data-frame&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-head(murders)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org165a9d3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;to-access-the-column-information-the-is-used-which-is-called-the-accessor-this-is-combined-with-the-name-of-the-column-which-can-be-obtained-from-the-names-or-str-the-length-can-be-used-to-find-the-length-of-the-object&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-names(murders)
-murders$population #this is a vector
-length(murders$population) #numeric vector
-class(murders$population) #character vector
-class(murders$state)
-a &amp;lt;- &amp;ldquo;hello string&amp;rdquo;
-b &amp;lt;- 1234
-length (a)
-length (b)&lt;/p&gt;
-
-&lt;h1 id=&#34;example-of-a-logical-datatype-basically-stores-only-true-or-false-answers&#34;&gt;example of a logical datatype. (basically stores only True or False answers.)&lt;/h1&gt;
-
-&lt;p&gt;a &amp;lt;- 3 == 2
-a
-class(a)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org34acb05&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;factors-useful-for-storing-categorical-data-levels-used-to-find-the-different-categories-within-the-factor&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-names(murders)
-str(murders$region)
-levels(murders$region)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgff6d0f4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;also-possible-to-use-square-brackets-to-extract-data-rather-than-using-the-identical-can-be-used-to-compare-different-objects-to-determine-whether-they-are-identical&#34;&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)&lt;/p&gt;
-
-&lt;p&gt;a &amp;lt;- murders[&amp;ldquo;population&amp;rdquo;]       #note the double quotes. Doesn&amp;rsquo;t work without the double quotes.
-b &amp;lt;- murders[[&amp;ldquo;population&amp;rdquo;]]
-c &amp;lt;- murders$population&lt;/p&gt;
-
-&lt;p&gt;#checking if a is the same as b
-a == b&lt;/p&gt;
-
-&lt;p&gt;#Using the identical()
-identical(a,b)
-identical(b,c)
-identical (a,c)&lt;/p&gt;
-
-&lt;p&gt;#checking the class differences.
-class(murders[&amp;ldquo;population&amp;rdquo;])
-class(murders[[&amp;ldquo;population&amp;rdquo;]])&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org98cfc1e&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;code-example-the-length-can-be-combined-with-levels-to-find-the-number-of-unique-factors&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-length(levels(murders$region))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org1d95a90&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;todo-table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;TODO table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-#str(murders)
-table(murders$state,murders$region)
-table(murders$region)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>To record or not to record</title>
       <link>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
       <description>
-
-&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#orgcfabd61&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgb1e0e02&#34;&gt;The direct benefits of recording as much as you can&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org418b48f&#34;&gt;The indirect benefits of recording as much as you can&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#orgd510f3c&#34;&gt;Some musings on handwritten notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#org27d0210&#34;&gt;Concluding points&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgcfabd61&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 
@@ -942,8 +505,6 @@ table(murders$region)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;I recall that a lot of kids used to take notes in school. Subsequently, I saw a lesser percentage of note-taking activities in college, mostly restricted to the high scoring sincere guys in the first few rows. However, I&amp;rsquo;ve hardly seen people take any notes in my 4+ years in the industry. Maybe a stronger ability to remember the major points is developed as you grow more experienced&amp;#x2026; or one could think that the major points will anyway recurr in the discussions until a solution is found. However, I&amp;rsquo;m disinclined to believe such ideas. There are simply too many things happening in today&amp;rsquo;s fast paced world and it&amp;rsquo;s not easy to remember absolutely all that you can, and more importantly, &lt;em&gt;at the time you need it the most&lt;/em&gt;. It would be fantastic to have a way to remember a particular aspect &lt;em&gt;accurately&lt;/em&gt;, which was discussed several months ago.&lt;/p&gt;
 
 &lt;p&gt;There is also an increasing focus on a data driven approach to self-improvement, which seems to makes a lot of sense. Our perception of the statistics of our own actions, idiosyncracies and behavior is rather vague and inaccurate without a concerted effort to observe and record our actions. I believe an accurate measure of our own statistics would not only suprise us, but also pave the way to erudition and improvement.&lt;/p&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgb1e0e02&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;the-direct-benefits-of-recording-as-much-as-you-can&#34;&gt;The direct benefits of recording as much as you can&lt;/h1&gt;
 
@@ -956,8 +517,6 @@ table(murders$region)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;Minutes of Meetings(MOM) are extremely common, but not always done comprehensively. It&amp;rsquo;s hard to be concise without practise. A well designed &lt;a href=&#34;http://orgmode.org/&#34; target=&#34;_blank&#34;&gt;Org mode for Emacs&lt;/a&gt; template can do wonders in very quick and efficient creations of MOM&amp;rsquo;s especially with the multiple export possibilities. Granted, complex tables are much easier to create in excel. But at any rate depending on the need - such templates should be kept accessible with a click or two.&lt;/li&gt;
 &lt;li&gt;Whether in an interview, or a meeting with somebody, it&amp;rsquo;s likely that you would be talking about relevant work that you&amp;rsquo;ve done in the past. A comprehensive, searchable record like one created with orgmode can help in remembering all those 100&amp;rsquo;s of little details that will definitely elude you after several years of the project&amp;rsquo;s completion.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org418b48f&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;the-indirect-benefits-of-recording-as-much-as-you-can&#34;&gt;The indirect benefits of recording as much as you can&lt;/h1&gt;
 
@@ -982,8 +541,6 @@ table(murders$region)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;A sense of achievement and confidence is born, when I look back at detailed project progress waypoints, the little snippets of information and knowledge, critical points to remember in subsequent actions and more&amp;#x2026; stuff that I&amp;rsquo;ve gathered over each project. Self motivation is the best kind of motivation, and detailed notes help in this direction as well.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a id=&#34;orgd510f3c&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;h1 id=&#34;some-musings-on-handwritten-notes&#34;&gt;Some musings on handwritten notes&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -992,8 +549,6 @@ table(murders$region)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://evernote.com/?var=4&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt; has the capability to search through handwritten notes, as long as the handwriting is not too illegible. While it does work in many cases, it is not utterly reliable, and would still require tagging or adding in decriptions to the handwritten notes within Evernote, to be reliable. Scanning several pages of such handwritten notes is also a pain. Sometimes a single meeting has created almost 10-20 pages of notes for me, and I would hate scanning them one or two pages at a time.&lt;/li&gt;
 &lt;li&gt;While emacs and orgmode do have ways where you can focus on the content being written - nothing can beat handwritten notes in speed, for stuff like a quick sketch or annotating an existing engineering drawing. What does help, is taking the effort to recapture these handwritten notes in emacs, which serves as a filtering system. It could be a lot more efficient to scan such handwritten notes in Evernote, and create a reference or description in orgmode. THis means that orgmode can be searchced for that reference, and that reference will direct you to the particular handwritten note within Evernote.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;org27d0210&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;concluding-points&#34;&gt;Concluding points&lt;/h1&gt;
 
@@ -1031,6 +586,332 @@ table(murders$region)&lt;/p&gt;&lt;/li&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable Creatives podcast provides an insight, in line with the points seen above, into what constitute outliers and performers. The interesting concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan via an example. It is surmised that progress and maximum learning to become better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the moment, and the unknown skills that beckon. That point sems to be an amalgamation of several things, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary. There are several facts thrown out in that podcast, and I&amp;rsquo;d recommend that too.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EdX Course - Data Science with R</title>
+      <link>https://shrysr.github.io/post/edx-course-on-r/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/edx-course-on-r/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;blog-book.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+CRAN : Comprehensive R Archive Network.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;dslabs-packages-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;install.packages (&amp;ldquo;dslabs&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;once-the-packages-are-installed-the-libraries-can-be-loaded-in-the-r-session-using&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(&amp;quot;dslabs&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;assignment-symbol-in-r&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;.&lt;/h1&gt;
+
+&lt;p&gt;We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+c #this is used to print a value
+print (b)
+print (b-a)
+print (b*c)
+print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
+print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;Check out how to print a statement and then a value.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;the-objects-being-defined-are-changing-the-workspace-all-the-variables-in-the-workspace-can-be-displayed-by-using-ls-it-is-important-to-access-an-object-or-variable-that-is-in-the-current-workspace-otherwise-an-error-will-pop-up&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ls()
+a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+ls()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;functions-need-to-be-called-using-parenthesis&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;.&lt;/h1&gt;
+
+&lt;p&gt;Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;exp(1)
+log(exp(1))
+a &amp;lt;- 1
+log(exp(a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;using-the-help-function&#34;&gt;Using the help() function.&lt;/h1&gt;
+
+&lt;p&gt;This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
+
+&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;the-args-can-be-used-to-have-concise-information-on-the-number-of-arguments-taken-by-a-function&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;args(log)
+args(sqrt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h2&gt;
+
+&lt;h1 id=&#34;there-are-in-built-data-sets-in-r-for-users-to-practise-and-test-functions-this-can-be-found-using-data&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;data()
+
+CO2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;variable-nomenclature-variables-in-r-need-to-begin-with-a-letter-and-cannot-have-spaces-in-them&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/h1&gt;
+
+&lt;h1 id=&#34;math-relational-operators-are-also-functions-and-are-the-only-ones-which-do-not-require-a-parenthesis-for-deployment-as-shown-in-code-above&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/h1&gt;
+
+&lt;h1 id=&#34;the-seq-function-is-used-to-generate-a-series-of-numbers-which-can-be-broken-into-specified-intervals-the-sum-can-be-used-to-sum-up-this-sequence-a-sequence-of-numbers-can-also-be-generated-as-simply-as-1-5-as-shown-below-the-sequence-is-ultimately-a-vector&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/h1&gt;
+
+&lt;h2 id=&#34;the-2nd-argument-in-the-seq-is-actually-just-a-maximum-value-it-can-be-used-to-make-sure-a-sequence-does-not-exceed-a-certain-value-as-well&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/h2&gt;
+
+&lt;h2 id=&#34;there-is-a-length-out-argument-that-can-be-used-with-the-seq-this-basically-creates-equally-spaced-divisions-within-the-limits-specified-for-example-seq-1-100-length-out-10-will-basically-create-10-equally-spaced-divisions-between-1-and-100-including-1-and-100-note-the-class-created-is-numeric-see-code-below&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
+number &amp;lt;- 1000
+separation &amp;lt;- 1
+mySeq &amp;lt;- seq(1,number, separation)
+sum(mySeq)
+1:50
+
+#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
+a &amp;lt;- seq(1,100,length.out=10)
+class(a)
+b &amp;lt;- seq(1,2.5, length.out= 5)
+b
+class(b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;class-helps-us-determine-the-type-of-the-object-in-particular-we-need-to-be-able-to-distinguish-between-different-types-of-objects-like-numbers-lists-strings-and-so-on&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
+b &amp;lt;- &amp;quot;this is a string&amp;quot;
+#c &amp;lt;- [1,2,3]
+class(a)
+class(b)
+#class(c)
+class(ls)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;data-frames-useful-for-storing-table-like-data-and-different-data-frames-can-be-combined-for-analysis-it-is-inconvenient-to-store-data-in-a-single-variable&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/h1&gt;
+
+&lt;h1 id=&#34;loading-a-dataset-is-done-using-the-function-data-the-murders-dataset-is-a-part-of-dslabs-loading-this-now&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(&amp;quot;murders&amp;quot;)
+class(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;the-str-shows-us-the-structure-of-an-object-the-names-shows-the-different-column-names-in-the-dataframe&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+class(murders)
+str(murders)
+names(murders)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;#org40196f3&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;head-shows-us-the-first-6-lines-of-the-data-frame&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+head(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org40196f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;to-access-the-column-information-the-is-used-which-is-called-the-accessor-this-is-combined-with-the-name-of-the-column-which-can-be-obtained-from-the-names-or-str-the-length-can-be-used-to-find-the-length-of-the-object&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+names(murders)
+murders$population #this is a vector
+length(murders$population) #numeric vector
+class(murders$population) #character vector
+class(murders$state)
+a &amp;lt;- &amp;ldquo;hello string&amp;rdquo;
+b &amp;lt;- 1234
+length (a)
+length (b)&lt;/p&gt;
+
+&lt;h1 id=&#34;example-of-a-logical-datatype-basically-stores-only-true-or-false-answers&#34;&gt;example of a logical datatype. (basically stores only True or False answers.)&lt;/h1&gt;
+
+&lt;p&gt;a &amp;lt;- 3 == 2
+a
+class(a)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;factors-useful-for-storing-categorical-data-levels-used-to-find-the-different-categories-within-the-factor&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+names(murders)
+str(murders$region)
+levels(murders$region)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;also-possible-to-use-square-brackets-to-extract-data-rather-than-using-the-identical-can-be-used-to-compare-different-objects-to-determine-whether-they-are-identical&#34;&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)&lt;/p&gt;
+
+&lt;p&gt;a &amp;lt;- murders[&amp;ldquo;population&amp;rdquo;]       #note the double quotes. Doesn&amp;rsquo;t work without the double quotes.
+b &amp;lt;- murders[[&amp;ldquo;population&amp;rdquo;]]
+c &amp;lt;- murders$population&lt;/p&gt;
+
+&lt;p&gt;#checking if a is the same as b
+a == b&lt;/p&gt;
+
+&lt;p&gt;#Using the identical()
+identical(a,b)
+identical(b,c)
+identical (a,c)&lt;/p&gt;
+
+&lt;p&gt;#checking the class differences.
+class(murders[&amp;ldquo;population&amp;rdquo;])
+class(murders[[&amp;ldquo;population&amp;rdquo;]])&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;code-example-the-length-can-be-combined-with-levels-to-find-the-number-of-unique-factors&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+length(levels(murders$region))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+#str(murders)
+table(murders$state,murders$region)
+table(murders$region)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The benefit in &#39;Archaic&#39; Email interfaces</title>
+      <link>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
+      <description>&lt;p&gt;I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s been a couple of years that I&amp;rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&amp;rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a wide variety of ways in which people prefer to access their email. There&amp;rsquo;s a lot of focus on interface design nowadays and the experience on each modality is unique in the possibilities of both focussed and lateral workflows, speed.&lt;/p&gt;
+
+&lt;p&gt;Web mail is probably the most predominant way in which people access their emails.&lt;/p&gt;
+
+&lt;p&gt;Being an emacs fan, and heavily relying on org-mode for my tasks&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve typically been overwhelmed by email. I&amp;rsquo;ve often had the feeling of not utilising the potential of email, because the volume of unread email can build up so quickly. At the same time, there&amp;rsquo;s also a lot of interesting information out that could be useful. It&amp;rsquo;s all well to create clever filters in gmail and have emails plop into the &amp;lsquo;right folder&amp;rsquo;. However, atleast in my case - a few weeks of intense activity not related to emails, and I forget the so called arrangement I had set up. An arrangement that is easily forgotten is probably not a great arrangement.&lt;/p&gt;
+
+&lt;p&gt;A couple of years ago, the above problem was acerbated by the fact that good, reliable internet availability in India was rather scarce. However, as of today, there are myriad solutions&lt;/p&gt;
+
+&lt;p&gt;Other than writing for correspondence and applications, theThis led to me the popular options out there that work with&lt;/p&gt;
 </description>
     </item>
     
@@ -1507,6 +1388,15 @@ productivity.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>A Report on Current Trends of Emission Reduction Technology in Vehicular Diesel Engines</title>
+      <link>https://shrysr.github.io/publication/emission-study/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/publication/emission-study/</guid>
+      <description></description>
     </item>
     
   </channel>

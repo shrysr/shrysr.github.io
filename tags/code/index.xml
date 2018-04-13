@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 27 May 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>EdX Course - Data Science with R</title>
+      <link>https://shrysr.github.io/post/edx-course-on-r/</link>
+      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/edx-course-on-r/</guid>
+      <description>R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.
+ R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.
+ R Console: for interactive commands, similar to the python interpreter.
+ Installing R on Arch Linux : sudo pacman -Sy r
+ Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;.</description>
+    </item>
     
     <item>
       <title>CFD Post Processing automation</title>

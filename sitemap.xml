@@ -14,15 +14,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</loc>
-      <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</loc>
       <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     </url>
@@ -34,6 +25,24 @@
     
       <loc>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</loc>
       <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/edx-course-on-r/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -149,8 +158,27 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/publication/emission-study/</loc>
+      <lastmod>2011-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/publication_types/2/</loc>
       <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/publication_types/4/</loc>
+      <lastmod>2011-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -199,7 +227,17 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/code/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/code-school/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -210,16 +248,6 @@
     
       <loc>https://shrysr.github.io/tags/code-school---python101/</loc>
       <lastmod>2018-04-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/coding/</loc>
-      <lastmod>2018-02-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -258,16 +286,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/edx/</loc>
-      <lastmod>2018-02-08T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>https://shrysr.github.io/tags/emacs/</loc>
       <lastmod>2017-10-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -280,6 +298,16 @@
     
       <loc>https://shrysr.github.io/tags/excellence/</loc>
       <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/life-management/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -328,6 +356,26 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/org-mode/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/productivity/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/project/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -359,7 +407,17 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/r/</loc>
-      <lastmod>2018-02-08T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/r-101/</loc>
+      <lastmod>2017-08-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
