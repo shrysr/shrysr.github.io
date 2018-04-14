@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>CAD</title>
+      <link>https://shrysr.github.io/tags/cad/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/cad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CFD</title>
       <link>https://shrysr.github.io/tags/cfd/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
@@ -40,9 +49,27 @@
     </item>
     
     <item>
+      <title>Certificate</title>
+      <link>https://shrysr.github.io/tags/certificate/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/certificate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Code</title>
       <link>https://shrysr.github.io/tags/code/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://shrysr.github.io/tags/code/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/code/</guid>
       <description></description>
@@ -76,11 +103,29 @@
     </item>
     
     <item>
-      <title>Demo</title>
-      <link>https://shrysr.github.io/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Combustion</title>
+      <link>https://shrysr.github.io/tags/combustion/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/tags/demo/</guid>
+      <guid>https://shrysr.github.io/tags/combustion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Course</title>
+      <link>https://shrysr.github.io/tags/course/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/course/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://shrysr.github.io/tags/design/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/design/</guid>
       <description></description>
     </item>
     
@@ -103,6 +148,15 @@
     </item>
     
     <item>
+      <title>Emission</title>
+      <link>https://shrysr.github.io/tags/emission/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/emission/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Excellence</title>
       <link>https://shrysr.github.io/tags/excellence/</link>
       <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
@@ -112,11 +166,11 @@
     </item>
     
     <item>
-      <title>Life management</title>
-      <link>https://shrysr.github.io/tags/life-management/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      <title>IC Engines</title>
+      <link>https://shrysr.github.io/tags/ic-engines/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/tags/life-management/</guid>
+      <guid>https://shrysr.github.io/tags/ic-engines/</guid>
       <description></description>
     </item>
     
@@ -126,6 +180,15 @@
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>https://shrysr.github.io/tags/matlab/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/matlab/</guid>
       <description></description>
     </item>
     
@@ -157,29 +220,20 @@
     </item>
     
     <item>
-      <title>Org-mode</title>
-      <link>https://shrysr.github.io/tags/org-mode/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/tags/org-mode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Productivity</title>
-      <link>https://shrysr.github.io/tags/productivity/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/tags/productivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Python</title>
       <link>https://shrysr.github.io/tags/python/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python-101</title>
+      <link>https://shrysr.github.io/tags/python-101/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/python-101/</guid>
       <description></description>
     </item>
     
@@ -198,6 +252,33 @@
       <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/r-101/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>https://shrysr.github.io/tags/research/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SIMULINK</title>
+      <link>https://shrysr.github.io/tags/simulink/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/simulink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solidworks</title>
+      <link>https://shrysr.github.io/tags/solidworks/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/solidworks/</guid>
       <description></description>
     </item>
     

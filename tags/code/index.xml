@@ -7,43 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 10 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Feb 2011 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>EdX Course - Data Science with R</title>
-      <link>https://shrysr.github.io/post/edx-course-on-r/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      <title>On-line Certificate Course:   EdX HarvardX PH125.1x: Data Science: R Basics</title>
+      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/edx-course-on-r/</guid>
-      <description>R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.
- R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.
- R Console: for interactive commands, similar to the python interpreter.
- Installing R on Arch Linux : sudo pacman -Sy r
- Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;.</description>
+      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
+      <description> Verified Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+ Course Notes and code
+  </description>
     </item>
     
     <item>
-      <title>CFD Post Processing automation</title>
-      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
-      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      <title>On-line Courses:   Code School</title>
+      <link>https://shrysr.github.io/project/course-code-school/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
-      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
-This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
-    </item>
-    
-    <item>
-      <title>Simulation job scheduler</title>
-      <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
-      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
-      <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
-This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
- In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
+      <guid>https://shrysr.github.io/project/course-code-school/</guid>
+      <description> Code School Report Card  Completed several courses covering python, git, SQL,regular expressions.
+ Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
+  Course Notes and code  Fly with Python  </description>
     </item>
     
   </channel>

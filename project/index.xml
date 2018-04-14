@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>External Project</title>
-      <link>https://shrysr.github.io/project/example-external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/example-external-project/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>CFD Post Processing automation</title>
@@ -42,6 +33,15 @@ Motivation During my initial foray into open source CFD and especially getting s
     </item>
     
     <item>
+      <title>Design of an Electro-mechanical prosthetic finger, and a PID controller for the wrist.</title>
+      <link>https://shrysr.github.io/project/kinematic-design-finger/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/kinematic-design-finger/</guid>
+      <description>This project utilized MATLAB, Solidworks to research and design a human finger and calculate the range of it&amp;rsquo;s motion. SIMULINK is also utilised to design a PID controller for the wrist.</description>
+    </item>
+    
+    <item>
       <title>Simulation job scheduler</title>
       <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
@@ -50,6 +50,37 @@ Motivation During my initial foray into open source CFD and especially getting s
       <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
 This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
  In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
+    </item>
+    
+    <item>
+      <title>Current Trends of Emission Reduction Technology in Vehicular Diesel Engines.</title>
+      <link>https://shrysr.github.io/project/emission-technology/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/emission-technology/</guid>
+      <description>This project undertakes a technology study and survey covering the methods to controlling harmful emission from Diesel engines in particular and the efficacy different technologies. It explores current emission norms and the contradicting formation conditions of NOx and CO.</description>
+    </item>
+    
+    <item>
+      <title>On-line Certificate Course:   EdX HarvardX PH125.1x: Data Science: R Basics</title>
+      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
+      <description> Verified Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+ Course Notes and code
+  </description>
+    </item>
+    
+    <item>
+      <title>On-line Courses:   Code School</title>
+      <link>https://shrysr.github.io/project/course-code-school/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-code-school/</guid>
+      <description> Code School Report Card  Completed several courses covering python, git, SQL,regular expressions.
+ Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
+  Course Notes and code  Fly with Python  </description>
     </item>
     
   </channel>

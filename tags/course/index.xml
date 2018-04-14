@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/course/</link>
+    <description>Recent content in Course on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Tue, 15 Feb 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>On-line Certificate Course:   EdX HarvardX PH125.1x: Data Science: R Basics</title>
+      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
+      <description> Verified Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+ Course Notes and code
+  </description>
+    </item>
+    
+    <item>
+      <title>On-line Courses:   Code School</title>
+      <link>https://shrysr.github.io/project/course-code-school/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-code-school/</guid>
+      <description> Code School Report Card  Completed several courses covering python, git, SQL,regular expressions.
+ Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
+  Course Notes and code  Fly with Python  </description>
+    </item>
+    
+  </channel>
+</rss>
