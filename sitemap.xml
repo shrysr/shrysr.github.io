@@ -140,6 +140,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/project/course-dataquest-datascience/</loc>
+      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/project/course-code-school/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
     </url>
@@ -296,6 +305,16 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/data-science/</loc>
+      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/design/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -338,6 +357,16 @@
     
       <loc>https://shrysr.github.io/tags/excellence/</loc>
       <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/git/</loc>
+      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

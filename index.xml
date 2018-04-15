@@ -163,7 +163,7 @@ the average is 3.1125
 
 &lt;p&gt;&lt;code&gt;random.random()&lt;/code&gt; : picks a random number between 0.0 - 1.0&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;random.choice([1,2,3])&lt;/code&gt;: picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer &lt;a href=&#34;#org80f0395&#34;&gt;Test program - printing random choice from a list of strings&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;random.choice([1,2,3])&lt;/code&gt;: picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer &lt;a href=&#34;#org8e7abfb&#34;&gt;Test program - printing random choice from a list of strings&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;random.randint(a,b)&lt;/code&gt;: provides a random integer between a and b.&lt;/p&gt;
 
@@ -282,7 +282,7 @@ e
 ! 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a id=&#34;org80f0395&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;org8e7abfb&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;test-program-printing-random-choice-from-a-list-of-strings&#34;&gt;Test program - printing random choice from a list of strings&lt;/h2&gt;
 
@@ -1183,6 +1183,22 @@ productivity.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The course covered an introduction to using &lt;code&gt;R&lt;/code&gt; to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Course Notes and code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On-line Courses on Dataquest</title>
+      <link>https://shrysr.github.io/project/course-dataquest-datascience/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-dataquest-datascience/</guid>
+      <description>&lt;p&gt;Links to certificates of courses completed on &lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Dataquest&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Data Analyst Path in &lt;code&gt;R&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/Q7WM9PIQA7JRJFMMAZUD/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Git&lt;/code&gt; &amp;amp; Version control&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
