@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>@Moderndive - An Introduction to Statistical and Data Sciences via R</title>
-      <link>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</link>
-      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</guid>
-      <description>Link to the book: http://moderndive.com glimpse() from dplyr seems to the be the same as str() Exploring data sets install.packages(&amp;quot;nycflights13&amp;quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights)  using glimpse() and dplyr install.packages(&amp;quot;nycflights13&amp;quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) glimpse(flights)  using kable() with knitr install.packages(&amp;quot;nycflights13&amp;quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) kable(flights)  3 Data viz using ggplot2 The Grammar of Graphics ggplo2 The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments: The data frame where the variables exist: the data argument The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved</description>
-    </item>
     
     <item>
       <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>

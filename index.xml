@@ -11,144 +11,6 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>@Moderndive - An Introduction to Statistical and Data Sciences via R</title>
-      <link>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</link>
-      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</guid>
-      <description>
-
-&lt;h1 id=&#34;link-to-the-book-http-moderndive-com&#34;&gt;Link to the book: &lt;a href=&#34;http://moderndive.com&#34; target=&#34;_blank&#34;&gt;http://moderndive.com&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h1 id=&#34;glimpse-from-dplyr-seems-to-the-be-the-same-as-str&#34;&gt;glimpse() from dplyr seems to the be the same as str()&lt;/h1&gt;
-
-&lt;h1 id=&#34;exploring-data-sets&#34;&gt;Exploring data sets&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
-library(nycflights13)
-library(dplyr)
-library(knitr)
-library(ggplot2)
-data(flights)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;using-glimpse-and-dplyr&#34;&gt;using glimpse() and dplyr&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
-library(nycflights13)
-library(dplyr)
-library(knitr)
-library(ggplot2)
-data(flights)
-
-glimpse(flights)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;using-kable-with-knitr&#34;&gt;using kable() with knitr&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
-library(nycflights13)
-library(dplyr)
-library(knitr)
-library(ggplot2)
-data(flights)
-
-kable(flights)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;3-data-viz-using-ggplot2&#34;&gt;3 Data viz using ggplot2&lt;/h1&gt;
-
-&lt;h2 id=&#34;the-grammar-of-graphics-ggplo2&#34;&gt;The Grammar of Graphics ggplo2&lt;/h2&gt;
-
-&lt;h2 id=&#34;the-various-components-of-the-grammar-of-graphics-are-specified-in-the-ggplot-function-which-expects-at-a-bare-minimum-as-arguments&#34;&gt;The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments:&lt;/h2&gt;
-
-&lt;p&gt;The data frame where the variables exist: the data argument
-The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
-library(nycflights13)
-library(dplyr)
-library(knitr)
-library(ggplot2)
-data(flights)
-
-all_alaska_flights &amp;lt;- flights %&amp;gt;% 
-  filter(carrier == &amp;quot;AS&amp;quot;)
-glimpse(all_alaska_flights)
-print(&amp;quot;================================================&amp;quot;)
-glimpse(flights)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Observations: 714
-Variables: 19
-$ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&amp;#x2026;
-$ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
-$ day            &lt;int&gt; 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9&amp;#x2026;
-$ dep_time       &lt;int&gt; 724, 1808, 722, 1818, 724, 1817, 725, 1808, 725, 180&amp;#x2026;
-$ sched_dep_time &lt;int&gt; 725, 1815, 725, 1815, 725, 1815, 725, 1815, 725, 181&amp;#x2026;
-$ dep_delay      &lt;dbl&gt; -1, -7, -3, 3, -1, 2, 0, -7, 0, -12, -3, 2, 2, 11, -&amp;#x2026;
-$ arr_time       &lt;int&gt; 1020, 2111, 949, 2131, 1012, 2121, 1031, 2101, 1011,&amp;#x2026;
-$ sched_arr_time &lt;int&gt; 1030, 2130, 1030, 2130, 1030, 2130, 1030, 2130, 1030&amp;#x2026;
-$ arr_delay      &lt;dbl&gt; -10, -19, -41, 1, -18, -9, 1, -29, -19, -12, -6, 16,&amp;#x2026;
-$ carrier        &lt;chr&gt; &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;&amp;#x2026;
-$ flight         &lt;int&gt; 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11,&amp;#x2026;
-$ tailnum        &lt;chr&gt; &amp;ldquo;N594AS&amp;rdquo;, &amp;ldquo;N553AS&amp;rdquo;, &amp;ldquo;N592AS&amp;rdquo;, &amp;ldquo;N552AS&amp;rdquo;, &amp;ldquo;N533AS&amp;rdquo;, &amp;ldquo;N&amp;#x2026;
-$ origin         &lt;chr&gt; &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EW&amp;#x2026;
-$ dest           &lt;chr&gt; &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SE&amp;#x2026;
-$ air_time       &lt;dbl&gt; 338, 336, 314, 332, 325, 327, 345, 338, 330, 343, 34&amp;#x2026;
-$ distance       &lt;dbl&gt; 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402&amp;#x2026;
-$ hour           &lt;dbl&gt; 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, &amp;#x2026;
-$ minute         &lt;dbl&gt; 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, &amp;#x2026;
-$ time_hour      &lt;dttm&gt; 2013-01-01 07:00:00, 2013-01-01 18:00:00, 2013-01-0&amp;#x2026;
-[1] &amp;ldquo;&lt;code&gt;==============================================&lt;/code&gt;&amp;ldquo;
-Observations: 336,776
-Variables: 19
-$ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&amp;#x2026;
-$ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
-$ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
-$ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 55&amp;#x2026;
-$ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 60&amp;#x2026;
-$ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2,&amp;#x2026;
-$ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 8&amp;#x2026;
-$ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 8&amp;#x2026;
-$ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7,&amp;#x2026;
-$ carrier        &lt;chr&gt; &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;AA&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;, &amp;ldquo;DL&amp;rdquo;, &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;, &amp;ldquo;EV&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;&amp;#x2026;
-$ flight         &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301&amp;#x2026;
-$ tailnum        &lt;chr&gt; &amp;ldquo;N14228&amp;rdquo;, &amp;ldquo;N24211&amp;rdquo;, &amp;ldquo;N619AA&amp;rdquo;, &amp;ldquo;N804JB&amp;rdquo;, &amp;ldquo;N668DN&amp;rdquo;, &amp;ldquo;N&amp;#x2026;
-$ origin         &lt;chr&gt; &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;LGA&amp;rdquo;, &amp;ldquo;JFK&amp;rdquo;, &amp;ldquo;JFK&amp;rdquo;, &amp;ldquo;LGA&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;LG&amp;#x2026;
-$ dest           &lt;chr&gt; &amp;ldquo;IAH&amp;rdquo;, &amp;ldquo;IAH&amp;rdquo;, &amp;ldquo;MIA&amp;rdquo;, &amp;ldquo;BQN&amp;rdquo;, &amp;ldquo;ATL&amp;rdquo;, &amp;ldquo;ORD&amp;rdquo;, &amp;ldquo;FLL&amp;rdquo;, &amp;ldquo;IA&amp;#x2026;
-$ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149&amp;#x2026;
-$ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 73&amp;#x2026;
-$ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6&amp;#x2026;
-$ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59&amp;#x2026;
-$ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-0&amp;#x2026;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
-library(nycflights13)
-library(dplyr)
-library(knitr)
-library(ggplot2)
-data(flights)
-
-
-all_alaska_flights &amp;lt;- flights %&amp;gt;% 
-  filter(carrier == &amp;quot;AS&amp;quot;)
-
-ggplot(data = all_alaska_flights, mapping = aes(x = dep_delay, y = arr_delay)) + 
-  geom_point()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;overplotting&#34;&gt;Overplotting&lt;/h2&gt;
-
-&lt;p&gt;Causes confusion and lack of clarity in the data being presented, i.e. too many data points being clustered around an area&lt;/p&gt;
-
-&lt;p&gt;Can be addressed by:
-    By adjusting the transparency of the points via the alpha argument. alpha lies between 0 and 1. Default is 1.
-    By jittering the points via geom_jitter(). Jitter the points a bit: In other words, we are going to add just a bit of random noise to the points to better see them and remove some of the overplotting. A width and height argument is to specified which corresponds to how hard the jitter is to be.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>
       <link>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</link>
       <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
@@ -2277,6 +2139,30 @@ productivity.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Data Analyst Path in &lt;code&gt;R&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/Q7WM9PIQA7JRJFMMAZUD/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Git&lt;/code&gt; &amp;amp; Version control&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On-line Courses:   Code School</title>
+      <link>https://shrysr.github.io/project/course-code-school/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-code-school/</guid>
+      <description>
+
+&lt;h2 id=&#34;code-school-report-card-https-www-codeschool-com-users-shrysr&#34;&gt;&lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Code School Report Card&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Completed several courses covering &lt;code&gt;python&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;,&lt;code&gt;regular expressions&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Most of these courses were completed during the occasional &lt;em&gt;Free Weekend&lt;/em&gt; opportunities from &lt;a href=&#34;https://www.codeschool.com/&#34; target=&#34;_blank&#34;&gt;Code School&lt;/a&gt;, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;course-notes-and-code&#34;&gt;Course Notes and code&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Fly with Python&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
