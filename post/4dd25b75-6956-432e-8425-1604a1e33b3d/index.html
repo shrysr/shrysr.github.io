@@ -17,8 +17,8 @@
       
     
   
-  <meta name="description" content="I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.
-It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.">
+  <meta name="description" content="This post outlines my current email setup and penchant for using mu4e, an email client available for Emacs. mu4e is a text based email interface.
+Beyond mu4e, there are other options available like notmuch and mutt. I have briefly experimented with mutt, which is breath-takingly fast in email search, but mutt has to be coupled with another front end to be used within Emacs. The philosophy and system behind notmuch (leveraging the Gmail tag based approach) differ from mu4e.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/">
@@ -60,6 +60,19 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
   
 
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
 
   
   <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
@@ -80,8 +93,8 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
   <meta property="og:site_name" content="Shreyas Ragavan">
   <meta property="og:url" content="https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/">
   <meta property="og:title" content="The benefit in &#39;Archaic&#39; Email interfaces | Shreyas Ragavan">
-  <meta property="og:description" content="I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.
-It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.">
+  <meta property="og:description" content="This post outlines my current email setup and penchant for using mu4e, an email client available for Emacs. mu4e is a text based email interface.
+Beyond mu4e, there are other options available like notmuch and mutt. I have briefly experimented with mutt, which is breath-takingly fast in email search, but mutt has to be coupled with another front end to be used within Emacs. The philosophy and system behind notmuch (leveraging the Gmail tag based approach) differ from mu4e.">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2017-08-10T00:00:00&#43;00:00">
@@ -149,6 +162,25 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
         
 
         <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a href="/#publications">
             
             <span>Reports</span>
@@ -170,26 +202,7 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
         <li class="nav-item">
           <a href="/#posts">
             
-            <span>Posts</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#projects">
-            
-            <span>Projects</span>
+            <span>Blog</span>
             
           </a>
         </li>
@@ -269,7 +282,7 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    6 min read
   </span>
   
 
@@ -326,21 +339,184 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
 
 
     <div class="article-style" itemprop="articleBody">
-      <p>I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.</p>
+      
 
-<p>It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.</p>
+<p>This post outlines my current email setup and penchant for using mu4e,
+an email client available for Emacs. mu4e is a text based email
+interface.</p>
 
-<p>There&rsquo;s a wide variety of ways in which people prefer to access their email. There&rsquo;s a lot of focus on interface design nowadays and the experience on each modality is unique in the possibilities of both focussed and lateral workflows, speed.</p>
+<p>Beyond mu4e, there are other options available like <a href="https://notmuchmail.org/" target="_blank">notmuch</a> and
+<a href="http://www.mutt.org/" target="_blank">mutt</a>. I have briefly experimented with mutt, which is breath-takingly
+fast in email search, but mutt has to be coupled with another front
+end to be used within Emacs. The philosophy and system behind notmuch
+(leveraging the Gmail tag based approach) differ from mu4e.</p>
 
-<p>Web mail is probably the most predominant way in which people access their emails.</p>
+<p>The <a href="#orgb32aa87">Links and References</a> section at the end provide several articles
+and resources with information, especially on setting up with mu4e.</p>
 
-<p>Being an emacs fan, and heavily relying on org-mode for my tasks</p>
+<h1 id="what-is-mu4e">What is <code>Mu4e</code></h1>
 
-<p>I&rsquo;ve typically been overwhelmed by email. I&rsquo;ve often had the feeling of not utilising the potential of email, because the volume of unread email can build up so quickly. At the same time, there&rsquo;s also a lot of interesting information out that could be useful. It&rsquo;s all well to create clever filters in gmail and have emails plop into the &lsquo;right folder&rsquo;. However, atleast in my case - a few weeks of intense activity not related to emails, and I forget the so called arrangement I had set up. An arrangement that is easily forgotten is probably not a great arrangement.</p>
+<p><a href="https://www.djcbsoftware.nl/code/mu/mu4e.html" target="_blank">Mu4e</a> is an Emacs based email client, which uses the indexer mu as it&rsquo;s
+backend.</p>
 
-<p>A couple of years ago, the above problem was acerbated by the fact that good, reliable internet availability in India was rather scarce. However, as of today, there are myriad solutions</p>
+<h1 id="why-fastmail">Why Fastmail?</h1>
 
-<p>Other than writing for correspondence and applications, theThis led to me the popular options out there that work with</p>
+<p>I wanted a reliable email service for which I was willing to pay [a
+reasonable amount:)]. In particular, Fastmail allows for a variety of
+interesting features like aliases, easy email transfer (from a
+different email provider like Gmail or MSN), reasonably responsive
+technical support. Ultimately I was able to forward all my emails to a
+single account and thus deal only with a single account. In essence,
+my Fastmail account caters to 3 email addresses, and simplifies my
+setup.</p>
+
+<p>While there are many advantages in Gmail and many swear by it&rsquo;s search
+capabilities - it is worth noting that Fastmail just feels a lot
+quicker than Gmail, and I can find my way around the settings better
+than I used to with Gmail. The search capabilities are offset by using
+<code>mu4e</code>, and in particular on a SSD drive.</p>
+
+<ul>
+<li>Among the important factors of using Fastmail is that it is
+implemented in the conventional IMAP fashion, which make it easier
+to deal with mu4e, and folder based filtering at the <a href="http://isync.sourceforge.net/" target="_blank">mbsync</a>
+settings level.</li>
+</ul>
+
+<h1 id="conventional-web-and-desktop-clients-are-not-conducive-to-streamlined-workflow">Conventional web and desktop clients are not conducive to streamlined workflow.</h1>
+
+<p>I&rsquo;ve typically been overwhelmed by email. I&rsquo;ve often had the feeling
+of not utilising the potential of email, because the volume of unread
+email can build up so quickly, and I was unable quickly find something
+I wanted to look up.</p>
+
+<p>There&rsquo;s also a lot of interesting information in these inboxes that
+could be useful. For example email digests related to Data Science
+contain a wealth of links and articles and information. Or perhaps
+email digests of product and technology news that are useful to retain
+as an archive of reference.</p>
+
+<ul>
+<li>It would be nice to be able to process these links in a systematic
+manner, and have them available with a fast search system that is
+also linked to task management.</li>
+</ul>
+
+<p>It can be said that Web mail [viewed on a browser] is probably the
+most predominant way in which people access their emails, other than
+using desktop clients like Microsoft Outlook.</p>
+
+<ul>
+<li><p><a href="https://www.mozilla.org/en-US/thunderbird/" target="_blank">Thunderbird</a> is an option that I&rsquo;ve found to be acceptable, with a
+bunch of plugins that can aid workflow.</p></li>
+
+<li><p>However, anybody who has used MS Outlook for searching emails will
+have felt the limitations and potential frustrations that one can
+face in finding emails and organising them, especially when you
+consider years of emails.</p></li>
+
+<li><p>While the option of formulating categories and folders with some
+level of automation is certainly available - it did not truly enable
+me to gain a complete mastery of my email, or feel confident of
+having captured all the necessary information from an email chain.</p></li>
+</ul>
+
+<h1 id="adopting-different-levels-of-organisation">Adopting different levels of organisation</h1>
+
+<p>I believe the workflow of an email organisation and processing them
+into tasks is a process that needs room and a suitable framework to
+grow organically, especially as our tasks, priorities and outlook
+change in both quality and quantity with time.</p>
+
+<p>Using mu4e over the past few years has enabled me to master my email,
+like no other tool that I&rsquo;ve ever used. Though on occasion - I do need
+to rely on the web based interface, or the mobile app.</p>
+
+<p>Therefore, over time I have adopted different levels of
+organisation. When I <em>do</em> access my email on the web, I would prefer a
+basic level of organization available. This means a set of higher
+level filters are implemented at the Fastmail interface to facilitate
+a reasonably clutter free inbox.</p>
+
+<p>The Fastmail folders are synced locally to my Macbook using <a href="http://isync.sourceforge.net/" target="_blank">mbsync</a>,
+and finally bookmarks or saved searches are created within mu4e for
+easy access to any number of pre-set search patterns that I need for
+my workflow. The pre-set search patterns are called <a href="https://www.djcbsoftware.nl/code/mu/mu4e/MV-Bookmarks.html" target="_blank">Bookmarks in mu4e</a>,
+and can be accessed with a few key strokes.</p>
+
+<h1 id="why-mu4e-rocks-for-me">Why Mu4e rocks [for me]</h1>
+
+<p>Complete keyboard based control, and using it with Emacs means the
+ability to compose email from anywhere and any workflow.</p>
+
+<ul>
+<li><p>I just hit Control+x and m (<code>C-x m</code>) in Emacs parlance, and I have a
+compose window open.</p></li>
+
+<li><p>There are built-in workflows and functions in distributions like
+<a href="https://github.com/jkitchin/scimax" target="_blank">Scimax</a>, which enable you to email an org-heading or buffer directly
+into an email, with the formatting (largely) preserved, and as
+intended.</p></li>
+</ul>
+
+<p>While Mu4e may be a programmatic solution with no pleasing GUI - it
+allows one to search a large number of emails with glorious ease. This
+is particularly more effective on a SSD drive, rather than the
+conventional Hard disk.</p>
+
+<p>One has to experience the speed to know the dramatic impact it makes
+to be closer in speed to your thoughts using a customisable system
+that is as functional as it gets, and can be intimately connected to a
+task management system readily available in Emacs, <a href="https://orgmode.org/" target="_blank">org-mode</a>.</p>
+
+<p>Using the above, I&rsquo;ve devised a &lsquo;sane inbox&rsquo; which is bereft of the
+noise, like annoying digests, social media updates and so on. I can
+dedicate focused blocks to rapidly process email, all within Emacs.</p>
+
+<h1 id="quirks">Quirks</h1>
+
+<p>mu4e is a text based email interface. It can be set such that the
+rendered <code>HTML</code> is displayed in the mu4e-view buffer for each email,
+which enables graphics and pictures (if any). However, the render is
+not perfect at times. Heavy <code>HTML</code> emails may not render correctly.</p>
+
+<ul>
+<li>Such emails can be viewed in the browser of your choice with merely
+2 key presses. This could be Firefox, or <a href="http://w3m.sourceforge.net/" target="_blank">w3m</a> or any other browser of
+your choice.</li>
+<li>I use w3m, and believe me when I say that you would be surprised to
+see the ease in browsing websites on a text only mode. Besides the
+added advantage of being within Emacs - a surprising number of
+websites can be viewed functionally on w3m. It is very useful
+for quick searches on Google [also possible with a few key strokes
+within emacs].</li>
+</ul>
+
+<p><a id="orgb32aa87"></a></p>
+
+<h1 id="links-and-references">Links and References</h1>
+
+<h2 id="a-complete-guide-to-email-in-emacs-using-mu-and-mu4e-http-cachestocaches-com-2017-3-complete-guide-email-emacs-using-mu-and-span-class-timestamp-wrapper-span-class-timestamp-lt-08-03-17-wed-10-04-gt-span-span"><a href="http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/" target="_blank">A Complete Guide to Email in Emacs using Mu and Mu4e</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;08/03/17 Wed 10:04&gt;</span></span></h2>
+
+<h2 id="reading-imap-mail-in-emacs-on-osx-adolfo-villafiorita-http-www-ict4g-net-adolfo-notes-2014-12-27-emacsimap-html-span-class-timestamp-wrapper-span-class-timestamp-lt-27-11-16-sun-08-17-gt-span-span"><a href="http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html" target="_blank">Reading IMAP Mail in Emacs on OSX | Adolfo Villafiorita</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;27/11/16 Sun 08:17&gt;</span></span></h2>
+
+<h2 id="excellent-link-talking-about-mu4e-and-notifications-handling-email-with-emacs-malb-blog-https-martinralbrecht-wordpress-com-2016-05-30-handling-email-with-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-01-08-16-mon-18-37-gt-span-span">Excellent link talking about mu4e and notifications <a href="https://martinralbrecht.wordpress.com/2016/05/30/handling-email-with-emacs/" target="_blank">Handling Email with Emacs – malb::blog</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;01/08/16 Mon 18:37&gt;</span></span></h2>
+
+<h2 id="which-email-client-mu4e-mutt-notmuch-gnus-do-you-use-inside-emacs-and-why-emacs-https-www-reddit-com-r-emacs-comments-3s5fas-which-email-client-mu4e-mutt-notmuch-gnus-do-you-span-class-timestamp-wrapper-span-class-timestamp-lt-31-05-16-tue-07-32-gt-span-span"><a href="https://www.reddit.com/r/emacs/comments/3s5fas/which_email_client_mu4e_mutt_notmuch_gnus_do_you/" target="_blank">Which email client (mu4e, Mutt, notmuch, Gnus) do you use inside Emacs, and why? : emacs</a>  <span class="timestamp-wrapper"><span class="timestamp">&lt;31/05/16 Tue 07:32&gt;</span></span></h2>
+
+<h2 id="emacs-fu-introducing-mu4e-an-e-mail-client-for-emacs-http-emacs-fu-blogspot-in-2012-08-introducing-mu4e-for-email-html-emacs-and-mu4e-stuff-span-class-timestamp-wrapper-span-class-timestamp-lt-20-04-16-wed-13-02-gt-span-span"><a href="http://emacs-fu.blogspot.in/2012/08/introducing-mu4e-for-email.html" target="_blank">emacs-fu: introducing mu4e, an e-mail client for emacs</a> - Emacs and mu4e stuff  <span class="timestamp-wrapper"><span class="timestamp">&lt;20/04/16 Wed 13:02&gt;</span></span></h2>
+
+<h2 id="emacs-as-email-client-with-offlineimap-and-mu4e-on-os-x-kg-hacks-thoughts-writings-http-www-kirang-in-2014-11-13-emacs-as-email-client-with-offlineimap-and-mu4e-on-osx-nice-blog-related-to-emacs-and-linux-span-class-timestamp-wrapper-span-class-timestamp-lt-21-04-16-thu-22-44-gt-span-span"><a href="http://www.kirang.in/2014/11/13/emacs-as-email-client-with-offlineimap-and-mu4e-on-osx/" target="_blank">Emacs as email client with offlineimap and mu4e on OS X <em>/ KG /</em> Hacks. Thoughts. Writings.</a> - nice blog related to Emacs and linux  <span class="timestamp-wrapper"><span class="timestamp">&lt;21/04/16 Thu 22:44&gt;</span></span></h2>
+
+<h2 id="eos-mail-email-module-http-writequit-org-eos-eos-mail-html-explaining-multiple-email-setup-in-mu4e-span-class-timestamp-wrapper-span-class-timestamp-lt-27-04-16-wed-07-56-gt-span-span"><a href="http://writequit.org/eos/eos-mail.html" target="_blank">EOS: Mail (Email) Module</a> - explaining multiple email setup in mu4e  <span class="timestamp-wrapper"><span class="timestamp">&lt;27/04/16 Wed 07:56&gt;</span></span></h2>
+
+<h2 id="the-ultimate-emailing-agent-with-mu4e-and-emacs-emacs-arduino-raspberry-pi-linux-and-programming-etc-http-tech-memoryimprintstudio-com-the-ultimate-emailing-agent-with-mu4e-and-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-17-08-16-wed-13-19-gt-span-span"><a href="http://tech.memoryimprintstudio.com/the-ultimate-emailing-agent-with-mu4e-and-emacs/" target="_blank">The Ultimate Emailing Agent with Mu4e and Emacs – Emacs, Arduino, Raspberry Pi, Linux and Programming etc</a>, <span class="timestamp-wrapper"><span class="timestamp">&lt;17/08/16 Wed 13:19&gt;</span></span></h2>
+
+<h2 id="varun-b-patil-eom-a-k-a-end-of-mail-a-k-a-emacs-offlineimap-mu4e-http-varunbpatil-github-io-2013-08-19-eom-vxxttm7hxcs-multiple-accounts-span-class-timestamp-wrapper-span-class-timestamp-lt-19-04-16-tue-12-19-gt-span-span"><a href="http://varunbpatil.github.io/2013/08/19/eom/#.VxXTtM7hXCs" target="_blank">Varun B Patil | EOM a.k.a End of Mail a.k.a Emacs + offlineimap + mu4e</a> - multiple accounts  <span class="timestamp-wrapper"><span class="timestamp">&lt;19/04/16 Tue 12:19&gt;</span></span></h2>
+
+<h2 id="master-your-inbox-with-mu4e-and-org-mode-pragmatic-emacs-http-pragmaticemacs-com-emacs-master-your-inbox-with-mu4e-and-org-mode-span-class-timestamp-wrapper-span-class-timestamp-lt-26-03-16-sat-14-56-gt-span-span"><a href="http://pragmaticemacs.com/emacs/master-your-inbox-with-mu4e-and-org-mode/" target="_blank">Master your inbox with mu4e and org-mode | Pragmatic Emacs</a>  <span class="timestamp-wrapper"><span class="timestamp">&lt;26/03/16 Sat 14:56&gt;</span></span></h2>
+
+<h2 id="a-year-with-notmuch-mail-lwn-net-https-lwn-net-articles-705856-span-class-timestamp-wrapper-span-class-timestamp-lt-17-04-18-tue-01-21-gt-span-span"><a href="https://lwn.net/Articles/705856/" target="_blank">A year with Notmuch mail {LWN.net}</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;17/04/18 Tue 01:21&gt;</span></span></h2>
 
     </div>
 
@@ -349,7 +525,7 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
 
 <div class="article-tags">
   
-  <a class="btn btn-primary btn-outline" href="/tags/emacs">emacs</a>
+  <a class="btn btn-primary btn-outline" href="/tags/emacs">Emacs</a>
   
   <a class="btn btn-primary btn-outline" href="/tags/org-mode">org-mode</a>
   
@@ -371,14 +547,9 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="https://shrysr.github.io/post/edx-course-on-r/" rel="next">EdX Course - Data Science with R</a>
+    <a href="https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/" rel="next">Notes from the movie Whiplash</a>
   </div>
   
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Previous</div>
-    <a href="https://shrysr.github.io/post/getting-started/" rel="prev">Academic: the website designer for Hugo</a>
-  </div>
   
 </div>
 
@@ -469,13 +640,6 @@ It&rsquo;s been a couple of years that I&rsquo;ve been using mu4e as my primary 
       <script>hljs.initHighlightingOnLoad();</script>
     
 
-    
-    
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
     
     
 

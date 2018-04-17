@@ -11,6 +11,1173 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>@Moderndive - An Introduction to Statistical and Data Sciences via R</title>
+      <link>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/</guid>
+      <description>
+
+&lt;h1 id=&#34;link-to-the-book-http-moderndive-com&#34;&gt;Link to the book: &lt;a href=&#34;http://moderndive.com&#34; target=&#34;_blank&#34;&gt;http://moderndive.com&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&#34;glimpse-from-dplyr-seems-to-the-be-the-same-as-str&#34;&gt;glimpse() from dplyr seems to the be the same as str()&lt;/h1&gt;
+
+&lt;h1 id=&#34;exploring-data-sets&#34;&gt;Exploring data sets&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-glimpse-and-dplyr&#34;&gt;using glimpse() and dplyr&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+glimpse(flights)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-kable-with-knitr&#34;&gt;using kable() with knitr&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+kable(flights)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;3-data-viz-using-ggplot2&#34;&gt;3 Data viz using ggplot2&lt;/h1&gt;
+
+&lt;h2 id=&#34;the-grammar-of-graphics-ggplo2&#34;&gt;The Grammar of Graphics ggplo2&lt;/h2&gt;
+
+&lt;h2 id=&#34;the-various-components-of-the-grammar-of-graphics-are-specified-in-the-ggplot-function-which-expects-at-a-bare-minimum-as-arguments&#34;&gt;The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments:&lt;/h2&gt;
+
+&lt;p&gt;The data frame where the variables exist: the data argument
+The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+all_alaska_flights &amp;lt;- flights %&amp;gt;% 
+  filter(carrier == &amp;quot;AS&amp;quot;)
+glimpse(all_alaska_flights)
+print(&amp;quot;================================================&amp;quot;)
+glimpse(flights)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Observations: 714
+Variables: 19
+$ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&amp;#x2026;
+$ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
+$ day            &lt;int&gt; 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9&amp;#x2026;
+$ dep_time       &lt;int&gt; 724, 1808, 722, 1818, 724, 1817, 725, 1808, 725, 180&amp;#x2026;
+$ sched_dep_time &lt;int&gt; 725, 1815, 725, 1815, 725, 1815, 725, 1815, 725, 181&amp;#x2026;
+$ dep_delay      &lt;dbl&gt; -1, -7, -3, 3, -1, 2, 0, -7, 0, -12, -3, 2, 2, 11, -&amp;#x2026;
+$ arr_time       &lt;int&gt; 1020, 2111, 949, 2131, 1012, 2121, 1031, 2101, 1011,&amp;#x2026;
+$ sched_arr_time &lt;int&gt; 1030, 2130, 1030, 2130, 1030, 2130, 1030, 2130, 1030&amp;#x2026;
+$ arr_delay      &lt;dbl&gt; -10, -19, -41, 1, -18, -9, 1, -29, -19, -12, -6, 16,&amp;#x2026;
+$ carrier        &lt;chr&gt; &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;, &amp;ldquo;AS&amp;rdquo;&amp;#x2026;
+$ flight         &lt;int&gt; 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11,&amp;#x2026;
+$ tailnum        &lt;chr&gt; &amp;ldquo;N594AS&amp;rdquo;, &amp;ldquo;N553AS&amp;rdquo;, &amp;ldquo;N592AS&amp;rdquo;, &amp;ldquo;N552AS&amp;rdquo;, &amp;ldquo;N533AS&amp;rdquo;, &amp;ldquo;N&amp;#x2026;
+$ origin         &lt;chr&gt; &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EW&amp;#x2026;
+$ dest           &lt;chr&gt; &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SEA&amp;rdquo;, &amp;ldquo;SE&amp;#x2026;
+$ air_time       &lt;dbl&gt; 338, 336, 314, 332, 325, 327, 345, 338, 330, 343, 34&amp;#x2026;
+$ distance       &lt;dbl&gt; 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402&amp;#x2026;
+$ hour           &lt;dbl&gt; 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, &amp;#x2026;
+$ minute         &lt;dbl&gt; 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, &amp;#x2026;
+$ time_hour      &lt;dttm&gt; 2013-01-01 07:00:00, 2013-01-01 18:00:00, 2013-01-0&amp;#x2026;
+[1] &amp;ldquo;&lt;code&gt;==============================================&lt;/code&gt;&amp;ldquo;
+Observations: 336,776
+Variables: 19
+$ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&amp;#x2026;
+$ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
+$ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&amp;#x2026;
+$ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 55&amp;#x2026;
+$ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 60&amp;#x2026;
+$ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2,&amp;#x2026;
+$ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 8&amp;#x2026;
+$ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 8&amp;#x2026;
+$ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7,&amp;#x2026;
+$ carrier        &lt;chr&gt; &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;AA&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;, &amp;ldquo;DL&amp;rdquo;, &amp;ldquo;UA&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;, &amp;ldquo;EV&amp;rdquo;, &amp;ldquo;B6&amp;rdquo;&amp;#x2026;
+$ flight         &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301&amp;#x2026;
+$ tailnum        &lt;chr&gt; &amp;ldquo;N14228&amp;rdquo;, &amp;ldquo;N24211&amp;rdquo;, &amp;ldquo;N619AA&amp;rdquo;, &amp;ldquo;N804JB&amp;rdquo;, &amp;ldquo;N668DN&amp;rdquo;, &amp;ldquo;N&amp;#x2026;
+$ origin         &lt;chr&gt; &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;LGA&amp;rdquo;, &amp;ldquo;JFK&amp;rdquo;, &amp;ldquo;JFK&amp;rdquo;, &amp;ldquo;LGA&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;EWR&amp;rdquo;, &amp;ldquo;LG&amp;#x2026;
+$ dest           &lt;chr&gt; &amp;ldquo;IAH&amp;rdquo;, &amp;ldquo;IAH&amp;rdquo;, &amp;ldquo;MIA&amp;rdquo;, &amp;ldquo;BQN&amp;rdquo;, &amp;ldquo;ATL&amp;rdquo;, &amp;ldquo;ORD&amp;rdquo;, &amp;ldquo;FLL&amp;rdquo;, &amp;ldquo;IA&amp;#x2026;
+$ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149&amp;#x2026;
+$ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 73&amp;#x2026;
+$ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6&amp;#x2026;
+$ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59&amp;#x2026;
+$ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-0&amp;#x2026;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages(&amp;quot;nycflights13&amp;quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+
+all_alaska_flights &amp;lt;- flights %&amp;gt;% 
+  filter(carrier == &amp;quot;AS&amp;quot;)
+
+ggplot(data = all_alaska_flights, mapping = aes(x = dep_delay, y = arr_delay)) + 
+  geom_point()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;overplotting&#34;&gt;Overplotting&lt;/h2&gt;
+
+&lt;p&gt;Causes confusion and lack of clarity in the data being presented, i.e. too many data points being clustered around an area&lt;/p&gt;
+
+&lt;p&gt;Can be addressed by:
+    By adjusting the transparency of the points via the alpha argument. alpha lies between 0 and 1. Default is 1.
+    By jittering the points via geom_jitter(). Jitter the points a bit: In other words, we are going to add just a bit of random noise to the points to better see them and remove some of the overplotting. A width and height argument is to specified which corresponds to how hard the jitter is to be.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>
+      <link>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</guid>
+      <description>
+
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+
+&lt;h2 id=&#34;most-of-the-instructor-s-course-contents-from-different-courses-is-available-in-the-book-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;Most of the instructor&amp;rsquo;s course contents from different courses is available in the book :  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;data-scientist-toolbox-link-http-jtleek-com-modules-01-datascientisttoolbox-02-09-installingrpackages-1-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;Data scientist Toolbox : &lt;a href=&#34;http://jtleek.com/modules/01_DataScientistToolbox/02_09_installingRPackages/#1&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;r-bloggers-link-https-www-r-bloggers-com-permanently-setting-the-cran-repository-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;R-Bloggers &lt;a href=&#34;https://www.r-bloggers.com/permanently-setting-the-cran-repository/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+
+&lt;h1 id=&#34;section-1-r-basics-functions-data-types&#34;&gt;Section 1: R Basics, Functions, Data types&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+CRAN : Comprehensive R Archive Network.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;dslabs-packages-are-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages are specifically made for this course. This has to be installed  as shown :&lt;/h2&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt; \\package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt; \\ In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;install.packages (&amp;quot;dslabs&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;loading-libraries&#34;&gt;Loading Libraries&lt;/h2&gt;
+
+&lt;p&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(&amp;quot;dslabs&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;assignment-symbol-in-r&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;.&lt;/h2&gt;
+
+&lt;p&gt;We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+c #this is used to print a value
+print (b)
+print (b-a)
+print (b*c)
+print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
+print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;Check out how to print a statement and then a value.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;workspace-and-objects&#34;&gt;Workspace and Objects&lt;/h2&gt;
+
+&lt;p&gt;The objects being defined are changing the workspace. Inside the console, all the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ls()
+a &amp;lt;- 21
+b &amp;lt;- 22
+c &amp;lt;- -10
+ls()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;functions-need-to-be-called-using-parenthesis&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;.&lt;/h2&gt;
+
+&lt;p&gt;Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of &lt;code&gt;exp()&lt;/code&gt; and &lt;code&gt;log()&lt;/code&gt; are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;exp(1)
+log(exp(1))
+a &amp;lt;- 1
+log(exp(a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-the-help-function&#34;&gt;Using the &lt;code&gt;help()&lt;/code&gt; function.&lt;/h2&gt;
+
+&lt;p&gt;This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
+
+&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;using-args&#34;&gt;Using &lt;code&gt;args()&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;args()&lt;/code&gt; can be used to have concise information on the number of arguments taken by a function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;args(log)
+args(sqrt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h3&gt;
+
+&lt;h2 id=&#34;built-in-data-sets&#34;&gt;Built-in Data sets&lt;/h2&gt;
+
+&lt;p&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data()
+
+CO2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;variable-nomenclature&#34;&gt;Variable Nomenclature:&lt;/h2&gt;
+
+&lt;p&gt;Variables in R need to begin with a letter and cannot have spaces in them.&lt;/p&gt;
+
+&lt;h2 id=&#34;math-relational-operators-are-also-functions&#34;&gt;Math /Relational operators are also functions,&lt;/h2&gt;
+
+&lt;p&gt;These are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-seq-function&#34;&gt;The &lt;code&gt;seq()&lt;/code&gt; function&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;seq()&lt;/code&gt; is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/p&gt;
+
+&lt;p&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;code&gt;length.out&lt;/code&gt; argument that can be used with the &lt;code&gt;seq()&lt;/code&gt;. This basically creates equally spaced divisions within the limits specified. For example &lt;code&gt;seq(1,100,length.out=10)&lt;/code&gt;, will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
+number &amp;lt;- 1000
+separation &amp;lt;- 1
+mySeq &amp;lt;- seq(1,number, separation)
+sum(mySeq)
+1:50
+
+#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
+a &amp;lt;- seq(1,100,length.out=10)
+class(a)
+b &amp;lt;- seq(1,2.5, length.out= 5)
+b
+class(b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;class-of-an-object&#34;&gt;&lt;code&gt;class()&lt;/code&gt; of an object&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;class()&lt;/code&gt; helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
+b &amp;lt;- &amp;quot;this is a string&amp;quot;
+#c &amp;lt;- [1,2,3]
+class(a)
+class(b)
+#class(c)
+class(ls)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;data-frames&#34;&gt;Data frames :&lt;/h2&gt;
+
+&lt;p&gt;useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/p&gt;
+
+&lt;h2 id=&#34;loading-a-dataset-is-done-using-the-function-data&#34;&gt;Loading a dataset is done using the function data().&lt;/h2&gt;
+
+&lt;p&gt;The murders dataset is a part of dslabs. Loading this now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(&amp;quot;murders&amp;quot;)
+class(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;str&#34;&gt;str()&lt;/h2&gt;
+
+&lt;p&gt;shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+class(murders)
+str(murders)
+names(murders)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;#org61a2bd7&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;head&#34;&gt;head()&lt;/h2&gt;
+
+&lt;p&gt;shows us the first 6 lines of the data frame.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+head(murders)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org61a2bd7&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;accessing-column-information&#34;&gt;Accessing column information &amp;lsquo;$&amp;rsquo;&lt;/h2&gt;
+
+&lt;p&gt;Accessing the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt; \\ murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt; \\ The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+names(murders)
+murders$population #this is a vector
+length(murders$population) #numeric vector
+class(murders$population) #character vector
+class(murders$state)
+a &amp;lt;- &amp;quot;hello string&amp;quot;
+b &amp;lt;- 1234
+length (a)
+length (b)
+
+# example of a logical datatype. (basically stores only True or False answers.)
+a &amp;lt;- 3 == 2
+a
+class(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;factors&#34;&gt;Factors&lt;/h3&gt;
+
+&lt;p&gt;Factors are useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt; \\ Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+names(murders)
+str(murders$region)
+levels(murders$region)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;further-data-extraction&#34;&gt;Further data extraction&lt;/h3&gt;
+
+&lt;p&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt; \\ The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+a &amp;lt;- murders[&amp;quot;population&amp;quot;]       #note the double quotes. Doesn&#39;t work without the double quotes. 
+b &amp;lt;- murders[[&amp;quot;population&amp;quot;]]
+c &amp;lt;- murders$population
+
+#checking if a is the same as b
+a == b
+
+#Using the identical()
+identical(a,b)
+identical(b,c)
+identical (a,c)
+
+#checking the class differences.
+class(murders[&amp;quot;population&amp;quot;])
+class(murders[[&amp;quot;population&amp;quot;]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;code-example&#34;&gt;Code example :&lt;/h2&gt;
+
+&lt;p&gt;The length() can be combined with levels() to find the number of unique factors.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+length(levels(murders$region))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)
+#str(murders)
+table(murders$state,murders$region)
+table(murders$region)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;section-2-vectors-sorting&#34;&gt;SECTION 2: Vectors, Sorting&lt;/h1&gt;
+
+&lt;h2 id=&#34;vectors&#34;&gt;Vectors :&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;most basic unit to store data. Complex units can be broken down to vectors typically.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;function-c-concatenate-can-be-used-to-create-vectors&#34;&gt;function &lt;code&gt;c()&lt;/code&gt; - concatenate can be used to create vectors.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+#using similar example as in the lesson to check out c()
+codes &amp;lt;- c(italy=440, zambia=880, morocco=980)
+codes
+class(codes)
+
+codes2 = c(840,440,330)
+countries = c(&amp;quot;Canada&amp;quot;, &amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)
+names(codes2) &amp;lt;- countries  
+#Basically, each element in the vector countries is being assigned in order to each name or element in vector codes2.
+codes2
+class(codes2)
+
+seq(1,30,5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;subsetting&#34;&gt;Subsetting :&lt;/h2&gt;
+
+&lt;p&gt;Subsetting lets us access specific parts of a vector. This is basically using the square brackets or the $ accessor. There are multiple ways to do so. For example : using the entity names, multiple entity names, order number (index?). It is even possible to concatenate using the &lt;code&gt;names()&lt;/code&gt;. Refer code below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;codes2 = c(840,440,330)
+countries = c(&amp;quot;Canada&amp;quot;, &amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)
+names(codes2) &amp;lt;- countries   #Note this concatenation process using names()
+codes2
+codes2[2]
+codes2[[2]]
+# codes2[1 3] #This will cause a syntax error. Therefore to use more than one argument, another vector has to be created using c(), or a continuous series has to be used. 
+codes2[c(1,3)]
+codes2[2:3]
+
+# it is also possible to use element names to access the entries. Note that this is case sensitive. Use c() for multiple names.
+codes2[&amp;quot;Canada&amp;quot;]
+codes2[c(&amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;vector-coercion&#34;&gt;vector coercion :&lt;/h2&gt;
+
+&lt;p&gt;attempt to be flexible with data types. Vectors must be all of the same type. &lt;code&gt;R&lt;/code&gt; basically converts the data into a sensible format for it to work. It is defined as &amp;lsquo;R coerced the data&amp;rsquo;. Demonstration below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(840,&amp;quot;my string&amp;quot;,330)
+a
+class(a)
+#here the numbers 840 and 330 have been converted to characters. Therefore R coerced the data from numbers to a character format. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;forced-coercion&#34;&gt;Forced coercion&lt;/h3&gt;
+
+&lt;p&gt;is also possible with &lt;code&gt;R&lt;/code&gt; via functions. Example: &lt;code&gt;as.character()&lt;/code&gt;, to convert an existing class into a character. Similarly, &lt;code&gt;as.numeric()&lt;/code&gt; for numeric conversion.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,660,220)
+a
+class(a)
+b &amp;lt;- as.character(a)
+b
+class(b)
+a &amp;lt;- as.character(a) #just for fun. Checking if the original vector can be coerced. Yes it can be. 
+class(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A lot of public datasets include numbers in a form that make them appear to be characters. Missing data is also quite common in practise.&lt;/p&gt;
+
+&lt;h3 id=&#34;na&#34;&gt;NA&lt;/h3&gt;
+
+&lt;p&gt;is the special value for missing data. NA&amp;rsquo;s can also be caused by Coercion. As demonstrated below. The NA is caused by &amp;lsquo;b&amp;rsquo;, which is a character that cannot be converted to a numeric. In the general R console, an error may pop up that NA&amp;rsquo;s are caused by said function or operation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,&amp;quot;b&amp;quot;,220)
+a
+class(a)
+as.numeric(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;integer-class&#34;&gt;Integer class&lt;/h2&gt;
+
+&lt;p&gt;This can be created by adding the letter L after a whole number. However, it appears that once a mathematical operation is done on the integer, it becomes a numeric. Also note that the class changes depending on the type of information being stored in the vector, like the &lt;code&gt;seq()&lt;/code&gt; below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class (seq(1:10)) #note that the type of info being stored changes the class
+class(4L)
+b &amp;lt;- 4L-2.1  #Note that the class is still numeric even after adding L after 2.1
+b
+class(b)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sort&#34;&gt;&lt;code&gt;sort()&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;can be used to sort data based on a particular column heading. For example, using murders is shown in the code below. Using the sort() does not provide any information regarding the states. the table function could be used to depict a 1 or true value when the total is matched.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+sort(murders$total)
+table(murders$state, murders$total)   # this table basically lists all the values in the total and then puts a 1 wherever the state is matched.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;find-out-more-about-getting-the-right-data-from-tables&#34;&gt;find out more about getting the right data from tables&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 20:50] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+The formulation of the data has to be mastered via tables. The data is being extracted now, but is difficult to read.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;order&#34;&gt;order().&lt;/h2&gt;
+
+&lt;p&gt;Returns the indices that sort the vector parameter. This is demonstrated using a vector of 5 numbers in the edx lecture. &lt;code&gt;rank()&lt;/code&gt; returns the rank of each item in order.&lt;/p&gt;
+
+&lt;p&gt;In the code below the result of 3 1 2 for the order(a) function basically shows me that the 3rd entry 220, is the smallest in the vector. The 1st postition 540 is the next largest number, and index 2, 660, is the largest number.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,660,220)
+class(a)
+order(a)
+rank(a)
+
+library(dslabs)
+data(murders)
+class(murders$total)
+index &amp;lt;- order(murders$total) #refer explanation below regarding the index.
+index
+class(index)
+murders$abb[index]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Basically, if I am able to store the index of a vector, by using the order(), then I can match other variables to this index, and thus obtain, say an ascending order or descending order of states, which are matched with the index. That is executed in the code above.&lt;/p&gt;
+
+&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 21:01] &lt;/span&gt;&lt;/span&gt; \\ This concept is rather beautiful when it comes through and you see that you are basically using a rubik&amp;rsquo;s cube method to arrange the data and ensure integrity in the relation between variables.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+myIndex &amp;lt;- order(murders$total)
+names(murders$state[myIndex]) &amp;lt;- murders$abb  #I am basically trying to format the data by printing the state,abbreviation. However this is not working.
+print(murders$state[myIndex])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-do-i-format-the-data-and-make-it-strings-for-example-the-state-abbreviation-printed-out-in-the-order-using-the-index-it-should-be-possible-need-to-find-the-appropriate-syntax&#34;&gt;How do I format the data and make it strings, for example, the state, abbreviation - printed out in the order. Using the index, it should be possible. Need to find the appropriate syntax.&lt;/h3&gt;
+
+&lt;h2 id=&#34;max&#34;&gt;max()&lt;/h2&gt;
+
+&lt;p&gt;can be used to find the largest value in the dataset directly. the min()is the opposite, as shown below. which.max() can be used to extract the exact index value in the column.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+murders$state[which.max(murders$total)]
+murders$state[which.min(murders$total)]
+a &amp;lt;- median(murders$total)
+a
+class(a)
+#murders$region[a]
+rank(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;need-to-understand-why-order-cannot-be-used-to-find-the-max-or-min-of-a-dataset&#34;&gt;Need to understand why order() cannot be used to find the max or min of a dataset.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:33] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+It can be. It basically returns a vector of indexes, which if used to index the origial vector - would result in a sorted vector.&lt;/p&gt;
+
+&lt;p&gt;a &amp;lt;- c(1,13,45,30,25)
+index &amp;lt;- order(a)
+a[index]&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ordering-the-murders-by-state&#34;&gt;Ordering the murders by state,&lt;/h2&gt;
+
+&lt;p&gt;and also checking that the ordered values are correct.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+#print(murders)
+
+my_index &amp;lt;- order(murders$total)
+
+#murders$state[my_index]
+#length(my_index)
+
+#verifying the ordering. The comparison operator should output the BOOLEAN - TRUE if the answer matches.
+
+max_val_ind &amp;lt;- which.max(murders$total)
+min_val_ind &amp;lt;- which.min(murders$total)
+
+murders$state[my_index[1]] == murders$state[min_val_ind]
+murders$state[my_index[length(my_index)]] == murders$state[max_val_ind]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;rank&#34;&gt;&lt;code&gt;rank()&lt;/code&gt;:&lt;/h2&gt;
+
+&lt;p&gt;this is the ranking of each ITEM in the vector, if it were sorted. The &lt;code&gt;order()&lt;/code&gt; deals with manipulating index of the given vector, whereas &lt;code&gt;rank()&lt;/code&gt; ranks the items in the vector themselves.&lt;/p&gt;
+
+&lt;h2 id=&#34;data-frame&#34;&gt;data frame&lt;/h2&gt;
+
+&lt;p&gt;can be created using the &lt;code&gt;data.frame(col1, col2)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;is-na-to-create-a-logical-vector&#34;&gt;is.na() to create a logical vector,&lt;/h2&gt;
+
+&lt;p&gt;which tells us which values are NA. Taking a sum of the resultant vector gives us the number of NA&amp;rsquo;s.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#loading the NA example in dslabs
+
+library(dslabs)
+data(na_example)
+
+# Using the is.na()
+a &amp;lt;- is.na(na_example)
+#print(a)
+sum(a)
+
+#Assuming that TRUE means 1 and FALSE means 0 - the sum should give us the number of TRUE&#39;s, and therefore the number NA&#39;s.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The function mean(), returns NA, if there is even a single NA in the vector being assessed. It is possible to use the &amp;lsquo;!&amp;rsquo; function to get the reverse of the function intended. i.e applying the mean to all the entries that are not NA.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(na_example)
+
+na_ind &amp;lt;- is.na(na_example)  #storing a BOOLEAN of all the values which are NA&#39;s.
+
+mean(na_example[!na_ind]) #calculating the mean of the values in  the entity, which are not NA&#39;s.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;vector-arithmetic&#34;&gt;vector arithmetic:&lt;/h2&gt;
+
+&lt;p&gt;arithmetic operations occur element wise. The &lt;code&gt;sum()&lt;/code&gt; can be used to count the logical vectors. Each TRUE value is 1.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Ordering murder states by the murder rate 
+library(dslabs)
+data(murders)
+
+murder_rate &amp;lt;- murders$total / murders$population * 100000
+
+murders$state[order(murder_rate, decreasing = TRUE)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;section-3-indexing-data-wrangling-plots&#34;&gt;SECTION 3: Indexing, Data Wrangling, Plots&lt;/h1&gt;
+
+&lt;h2 id=&#34;indexing-using-logical-operators-to-index-vectors&#34;&gt;Indexing: using logical operators to index vectors.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;compare a vector to a single number, the operation is performed for each entry.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the sum() can be used to calculate the total number of TRUE entries in the logical vector. The logical vector can also be used as an index to extract other data or columns, using the index as a reference.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+data(murders)&lt;/p&gt;
+
+&lt;p&gt;murder_rate &amp;lt;- murders$total / murders$population *100000
+index &amp;lt;- murder_rate &amp;lt; 0.8
+murders$state[index] # these are the states where the murder_rate per capita of 100,000 is less that 0.8&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-logical-vector-actually-gets-coerced-into-a-numeric-and-therefore-true-is-1-and-false-is-0&#34;&gt;The logical vector actually gets coerced into a numeric, and therefore TRUE is 1 and FALSE is 0.&lt;/h2&gt;
+
+&lt;h2 id=&#34;create-a-function-in-org-babel-that-can-import-the-dslabs-library-and-the-specified-dataset-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-03-17-sat-gt-span-span&#34;&gt;create a function in org babel that can import the dslabs library and the specified dataset. &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-03-17 Sat&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-21 Wed 22:26] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+function is not required, it can be done via org babel source code block import.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;using-the-and-operator&#34;&gt;using the &amp;lsquo;&amp;amp;&amp;rsquo; AND operator&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#importing libraries and data set
+library(dslabs)
+data(murders)
+
+#This example demonstrates the use of the AND operator in R. 2 conditions are considered, example the region being West and the murder rate being less than 1. 
+
+#defining terms
+murder_rate &amp;lt;- murders$total / murders$population *100000
+
+safe &amp;lt;- murder_rate &amp;lt;= 1 
+region_choice &amp;lt;- murders$region == &amp;quot;West&amp;quot;
+
+index &amp;lt;- safe &amp;amp; region_choice  #using the AND operator to assign both 
+
+#Reference before output
+str(murders)
+murders$state[index]
+
+#Interesing to note that the logical operator converted to the numeric operator also becomes an INDEX selection vector.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;testing-code-from-datacamp&#34;&gt;Testing code from datacamp&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+# Store the murder rate per 100,000 for each state, in `murder_rate`
+murder_rate &amp;lt;- murders$total/murders$population*100000
+
+# Store the `murder_rate &amp;lt; 1` in `low` 
+low &amp;lt;- murder_rate &amp;lt; 1
+
+# Create a vector ind for states in the Northeast and with murder rates lower than 1. 
+region_sel &amp;lt;- murders$region == &amp;quot;Northeast&amp;quot; 
+
+ind &amp;lt;- region_sel &amp;amp; low
+
+# Names of states in `ind` 
+murders$state[ind]
+
+#computing mean of murder rate
+avg &amp;lt;- mean(murder_rate)
+
+#number of states below of the average murder rate. 
+sum(murders$state[murder_rate] &amp;lt; avg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;which-match-and-in-useful-functions-related-to-logical-operators&#34;&gt;which, match and %in% - useful functions related to logical operators.&lt;/h2&gt;
+
+&lt;h3 id=&#34;which-entries-of-a-logical-vector-which-are-true-this-is-useful-when-the-list-of-logical-vectors-is-very-long-and-it-is-worth-having-only-the-indices&#34;&gt;which - entries of a logical vector which are TRUE. This is useful when the list of logical vectors is very long, and it is worth having only the indices.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+using which and ! NOT operator. example: which(!vector1 %in% vector2)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;match-which-of-the-indices-of-the-2nd-vector-match-each-of-the-entities-in-the-first-vector&#34;&gt;match() - which of the indices of the 2nd vector, match each of the entities in the first vector.&lt;/h3&gt;
+
+&lt;h3 id=&#34;in-basically-used-to-find-out-whether-an-element-exists-in-a-vector-or-not-without-using-the-for-loop&#34;&gt;%in% - basically used to find out whether an element exists in a vector or not, without using the for loop.&lt;/h3&gt;
+
+&lt;h3 id=&#34;find-out-exactly-why-storing-the-indices-is-more-efficient&#34;&gt;find out exactly why storing the indices is more efficient.&lt;/h3&gt;
+
+&lt;h3 id=&#34;code-exploration&#34;&gt;Code exploration:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#importing libraries and data set
+library(dslabs)
+data(murders)
+
+# This example looks at which, match and %in%
+
+
+# murders$state - for reference
+
+#defining terms
+murder_rate &amp;lt;- murders$total / murders$population *100000
+
+my_state_index &amp;lt;- which(murders$state == &amp;quot;Colorado&amp;quot;)
+murder_rate[my_state_index]
+
+#using which and a logical vector - is just more efficient. 
+
+# the match()
+# finding the murder rate for several states
+
+new_index &amp;lt;- match(c(&amp;quot;Arizona&amp;quot;, &amp;quot;Arkansas&amp;quot;, &amp;quot;Texas&amp;quot;), murders$state)
+
+#checking that the states have been matched
+murders$state[new_index]
+
+murder_rate[new_index]
+
+#using %in%
+check &amp;lt;- c(&amp;quot;Boston&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Toronto&amp;quot;)
+check %in% murders$state
+
+murders$abb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;basic-data-wrangling-dplyr-library-tools-to-work-with-tables-as-the-analyses-advance-subsetting-and-indexing-will-not-be-sufficient&#34;&gt;Basic Data Wrangling : dplyr library - tools to work with tables. As the analyses advance, subsetting and indexing will not be sufficient.&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-18 Sun 06:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+Note that the install of the dplyr package took place only with the command install.packages(dplyr). The installation done via Rstudio actually took a while.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;mutate-is-used-to-change-the-existing-column-or-add-another-column&#34;&gt;mutate() is used to change the existing column or add another column&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mutate(name, value of the variable)&lt;/li&gt;
+&lt;li&gt;i.e adding murders_rate to the murders dataframe can be done by using&lt;/li&gt;
+&lt;li&gt;Possible to include rank as an additional column. Note that if rank(x) gives you the ranks of x from lowest to highest, rank(-x) gives you the ranks from highest to lowest.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;filter-filter-the-data-by-subsetting-rows&#34;&gt;filter() - filter the data by subsetting rows.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;filter(name, conditional statement to allow filter)&lt;/li&gt;
+&lt;li&gt;the name is the dataframe&amp;rsquo;s name. Therefore, similar to mutate, there is no need to use the $ to specify the dataframe, as it is understood.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;select-subset-the-data-using-specific-columns&#34;&gt;select() - subset the data using specific columns.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;used to select particular columns from a table. useful for a focused analysis involving a subset of columns from an existing table.&lt;/li&gt;
+&lt;li&gt;the first argument is an object, or the dataframe to be considered. The remaining arguments are variables from the dataframe.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;code-exploration-for-mutate-filter-and-select&#34;&gt;Code exploration for mutate, filter and select&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dplyr)
+library(dslabs)
+data(murders)
+
+#using Mutate
+
+murders &amp;lt;- mutate(murders, rate = total / population *100000)  
+head(murders)  #note that the additional column is available.
+
+
+#Using filter
+filtered_murder &amp;lt;- filter(murders, rate &amp;lt; 0.65)
+filtered_murder
+
+#using select
+# excess_murder &amp;lt;- select(murders, state, region, abb, (filter(murders, rate&amp;lt;0.7)))  - it seems a direct filter does not work with select.
+excess_murders &amp;lt;- select(murders, state, rate)
+filter(excess_murders, rate &amp;gt; 0.7)
+
+
+#In mutate - rate is defining the new column. 
+#the first argumen specifies which dataframe is being mutated or the name.
+#note that total and population are being called as normal variables without $. The reason is that mutate/filter/select knows to look for these variables within the dataframe specified in names. These are not local workspace variables.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;pipe-operator-sending-the-results-of-one-function-to-another-function&#34;&gt;pipe operator - sending the results of one function to another function.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;using the %&amp;gt;% operator for pipe.&lt;/p&gt;
+
+&lt;p&gt;library(dslabs)
+library(dplyr)
+data(murders)&lt;/p&gt;
+
+&lt;p&gt;murders %&amp;gt;% mutate(rate =  total /population *100000) %&amp;gt;% select(state, region, rate) %&amp;gt;% filter(rate &amp;lt;= 0.71)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;creating-dataframes-data-frames-colname-c-colname2-c-x2026-colname3-c-x2026&#34;&gt;creating dataframes : data.frames(&lt;colname&gt;=c(&amp;ldquo;&amp;rdquo;..), &lt;colname2&gt;=c(&amp;ldquo;&amp;rdquo;&amp;#x2026;),&lt;colname3&gt;=c(&amp;ldquo;&amp;rdquo;&amp;#x2026;))&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;basically write the column name, and then define the column. This creates a dataframe.&lt;/li&gt;
+&lt;li&gt;By default, the characters are turned in to factors.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;to avoid this, there must be an additional special argument in the end of the data.frames command. stringsAsFactors = FALSE&lt;/p&gt;
+
+&lt;p&gt;library(dplyr)
+library(dslabs)
+data(murders)&lt;/p&gt;
+
+&lt;p&gt;hello &amp;lt;- data.frame(names=c(&amp;ldquo;John&amp;rdquo;, &amp;ldquo;JayZ&amp;rdquo;, &amp;ldquo;Eminem&amp;rdquo;), music_rating = c(12,10,9), popularity=c(&amp;ldquo;none&amp;rdquo;, &amp;ldquo;high&amp;rdquo;, &amp;ldquo;very high&amp;rdquo;))
+#str(hello)
+#hello
+class(hello$names)&lt;/p&gt;
+
+&lt;p&gt;hellonew &amp;lt;- data.frame(names=c(&amp;ldquo;John&amp;rdquo;, &amp;ldquo;JayZ&amp;rdquo;, &amp;ldquo;Eminem&amp;rdquo;), music_rating = c(12,10,9), popularity=c(&amp;ldquo;none&amp;rdquo;, &amp;ldquo;high&amp;rdquo;, &amp;ldquo;very high&amp;rdquo;), stringsAsFactors = FALSE)
+class(hellonew$names)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;code-exploration-1&#34;&gt;Code exploration&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+library(dplyr)
+
+no_south &amp;lt;- filter(murders, region != &amp;quot;South&amp;quot;)  #filtering such that there are no states in the region south.
+nrow(no_south)
+
+multi_sel &amp;lt;- filter(murders, region == c(&amp;quot;South&amp;quot;, &amp;quot;Northeast&amp;quot;))  #Choosing states only from the South and Northeast. this can also be done with %in% instead of using the == oprator
+multi_sel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Using One line to mutate, filter, select and print results - from datacamp.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-18 Sun 07:57] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
+note how the new dataset mystates, is created by just assigning murders to it. This allows the code to be in a single line using pipes. It is important to be able write these single lines of code. While it may not improve readability, it certainly reduces the efforts involved in quickly deriving results to particular questions. In any case, codes like these will be inserted into a function to enable re-usability.&lt;/p&gt;
+
+&lt;h1 id=&#34;loading-the-libraries&#34;&gt;Loading the libraries&lt;/h1&gt;
+
+&lt;p&gt;library(dslabs)
+library(dplyr)
+data(murders)&lt;/p&gt;
+
+&lt;h1 id=&#34;create-new-data-frame-called-my-states-with-specifications-in-the-instructions&#34;&gt;Create new data frame called my_states (with specifications in the instructions)&lt;/h1&gt;
+
+&lt;p&gt;my_states &amp;lt;- murders %&amp;gt;% mutate(rate = total / population*100000, rank = rank(-rate)) %&amp;gt;% filter(region %in% c(&amp;ldquo;Northeast&amp;rdquo;, &amp;ldquo;West&amp;rdquo;) &amp;amp; rate &lt;1) %&gt;% select(state, rate, rank)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;basic-plots&#34;&gt;Basic Plots :&lt;/h2&gt;
+
+&lt;h3 id=&#34;d3-interactive-data-visualization-programming-language-maybe-more-flexible-and-powerful-than-r-but-takes-much-longer-to-generate-a-plot&#34;&gt;D3 - interactive data visualization programming language - maybe more flexible and powerful than R, but takes much longer to generate a plot&lt;/h3&gt;
+
+&lt;h3 id=&#34;plot&#34;&gt;plot()&lt;/h3&gt;
+
+&lt;h3 id=&#34;hist-histogram-x-x-has-to-be-numeric&#34;&gt;hist() - histogram(x) - x has to be numeric.&lt;/h3&gt;
+
+&lt;h3 id=&#34;boxplot-rate-region-data-murders-here-rate-and-region-are-the-subsets-of-the-df-murders-and-the-x-and-y-axes-respectively&#34;&gt;boxplot (rate~region, data = murders) - here rate and region are the subsets of the df murders and the x and y axes respectively.&lt;/h3&gt;
+
+&lt;h3 id=&#34;code-exploration-2&#34;&gt;Code exploration&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+pop_mill &amp;lt;- murders$population/10^6
+murd_tot &amp;lt;- murders$total
+plot(pop_mill, murd_tot)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;figure-out-inline-images-for-plotting-with-r-and-python-in-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-03-18-sun-gt-span-span&#34;&gt;Figure out inline images for plotting with R and python in emacs &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-03-18 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+
+&lt;h1 id=&#34;section-4-programming-basics&#34;&gt;SECTION 4: Programming Basics&lt;/h1&gt;
+
+&lt;h2 id=&#34;see-dataquest-examples-here-if-else-control-structures-datascience-md&#34;&gt;See Dataquest examples here : &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;If, else - control structures.&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;using-the-if-else-control-in-the-murders-dataset&#34;&gt;Using the if else control in the murders dataset&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+murder_rate &amp;lt;- murders$total/murders$population * 100000
+#print(murder_rate)
+
+ind &amp;lt;- which.min(murder_rate)
+print(ind)
+print(murders$state[ind]) 
+
+if (murder_rate[ind] &amp;lt; 0.6) {
+   print(murders$state[ind])
+   } else {
+   print(&amp;quot;No state is that low&amp;quot;) 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ifelse-takes-3-arguments-a-logical-and-2-possible-answers-if-the-logical-evaluates-to-true-the-first-answer-is-returned-for-false-the-2nd-answer-is-returned&#34;&gt;ifelse : takes 3 arguments. A logical and 2 possible answers. If the logical evaluates to TRUE, the first answer is returned. For FALSE : the 2nd answer is returned.&lt;/h2&gt;
+
+&lt;h3 id=&#34;ifelse-is-particularly-useful-because-it-works-on-vectors&#34;&gt;ifelse is particularly useful because it works on vectors.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+a &amp;lt;- -20
+b &amp;lt;- 34
+a_stmt &amp;lt;- &amp;quot;a is greater&amp;quot;
+b_stmt &amp;lt;- &amp;quot;b is greater&amp;quot; 
+
+ifelse(a&amp;gt;b, a_stmt, b_stmt)
+
+#it is possible to directly insert characters/strings into the arguments. i.e
+ifelse(a&amp;lt;b, &amp;quot;b is greater&amp;quot; ,&amp;quot;a is greater&amp;quot;) 
+
+
+#ifelse also works on vector. The if else operation is performed on each element. The output however looks interesting. 
+c &amp;lt;- c(34,54,6567,88,1,2,3)
+d &amp;lt;- c(33,55, 6600, 85, 3 ,6, 1)
+#print(c(&amp;quot;The str of c is : &amp;quot;,str(c))
+#print(c(&amp;quot;The str of d is : &amp;quot;, str(d))
+
+ifelse(c&amp;gt;d, &amp;quot;c is greater&amp;quot;, &amp;quot;d is greater&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;using-ifelse-to-replace-na-s&#34;&gt;using ifelse to replace NA&amp;rsquo;s&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(na_example)
+
+sum(is.na(na_example))
+class(na_example)  #integer class
+
+no_nas &amp;lt;- ifelse(is.na(na_example),&amp;quot;REPLACED&amp;quot;,na_example)
+#print(no_nas)
+
+#New vector defined has no NA&#39;s, as verified by the updated sum.
+sum(is.na(no_nas))
+sum(no_nas == &amp;quot;REPLACED&amp;quot;)
+class(no_nas)  #note that replacing the NA with a character - makes the variable a character class.
+
+#ifelse(c&amp;gt;d, &amp;quot;c is greater&amp;quot;, &amp;quot;d is greater&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;any-and-all&#34;&gt;any() and all() :&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;any takes a vector of logicals and returns TRUE if any of the entries are true.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;all() : take s a vector of logicals and returns TRUE if ALL of the entries are true.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;any() and all(), can also be used in a sense to evaluate logical vectors, and get the measure of a quantity by making comparisons in a fundamental sense of 1 and 0, either TRUE or FALSE.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;code exploration&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;library(dslabs)
+data(murders)
+
+a &amp;lt;- c(1, 2, 3, 4, 5)
+b &amp;lt;- c(100, 200, 300, 400, 500)
+any(a&amp;gt;b)
+
+if (any(a&amp;gt;b)== TRUE) {
+    print(&amp;quot;a has atleast one element greater than b&amp;quot;) 
+    } else {
+    print(&amp;quot;b&#39;s elements are all greater than a&amp;quot;)
+}
+
+
+if (all(a&amp;gt;b)== TRUE) {
+    print(&amp;quot;a is greater than b&amp;quot;) 
+    } else {
+    print(&amp;quot;b is greater than a&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;functions&#34;&gt;Functions :&lt;/h2&gt;
+
+&lt;h3 id=&#34;example-code-creating-a-function-called-average-and-comparing-the-same-to-the-inbuilt-mean&#34;&gt;example code creating a function called average and comparing the same to the inbuilt mean()&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#defining function avg taking a single argument, and calculating the average of the variable. 
+
+
+avg &amp;lt;- function(a){
+    calc &amp;lt;- sum(a)/length(a)
+    return(calc)
+}
+
+#declaring the vector for average calculation
+a &amp;lt;- c(25,30,45,50,100)
+
+avg(a)
+
+mean(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;function-variables-are-not-saved-in-the-workspace&#34;&gt;function variables are not saved in the workspace.&lt;/h3&gt;
+
+&lt;h3 id=&#34;the-name-of-the-function-is-an-object-functions-are-objects&#34;&gt;the name of the function is an object. Functions are objects.&lt;/h3&gt;
+
+&lt;h2 id=&#34;for-loops&#34;&gt;For Loops&lt;/h2&gt;
+
+&lt;h3 id=&#34;general-form-for-i-in-range-of-values-operations-using-i&#34;&gt;general form :  for(i in range of values) {operations using i }&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;for (i in 1:5){
+    print(i) }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;using-the-vector-to-define-an-empty-vector-of-particular-length&#34;&gt;using the vector() to define an empty vector of particular length :&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;m &amp;lt;- 5
+sum_n &amp;lt;- vector(length = m)
+n &amp;lt;- 1:m
+print(n)
+
+for (i in n){
+    #print(i)
+    print(n[i])
+    sum_n[i] &amp;lt;- sum_n[i] + n[i]
+}
+
+print(sum_n)
+class(sum_n)
+str(sum_n)
+plot(n, sum_n)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;plot-and-lines&#34;&gt;plot() and lines()&lt;/h3&gt;
+
+&lt;h3 id=&#34;for-loops-are-not-often-used-in-r-since-there-are-other-powerful-ways-to-do-the-same-function&#34;&gt;for loops are not often used in R, since there are other powerful ways to do the same function.&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;apply&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;sapply&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;tapply&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mapply&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;also-checkout-the-following-functions&#34;&gt;Also checkout the following functions:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;split&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;cut&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;quantile&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;identical&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unique&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;nchar-tells-you-how-many-characters-a-vector-has&#34;&gt;nchar() tells you how many characters a vector has.&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Code School - free weekend - Fly with python</title>
       <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</link>
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
@@ -590,304 +1757,189 @@ print (weather_json)
     </item>
     
     <item>
-      <title>EdX Course - Data Science with R</title>
-      <link>https://shrysr.github.io/post/edx-course-on-r/</link>
+      <title>The benefit in &#39;Archaic&#39; Email interfaces</title>
+      <link>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</link>
       <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/edx-course-on-r/</guid>
+      <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
       <description>
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;This post outlines my current email setup and penchant for using mu4e,
+an email client available for Emacs. mu4e is a text based email
+interface.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Beyond mu4e, there are other options available like &lt;a href=&#34;https://notmuchmail.org/&#34; target=&#34;_blank&#34;&gt;notmuch&lt;/a&gt; and
+&lt;a href=&#34;http://www.mutt.org/&#34; target=&#34;_blank&#34;&gt;mutt&lt;/a&gt;. I have briefly experimented with mutt, which is breath-takingly
+fast in email search, but mutt has to be coupled with another front
+end to be used within Emacs. The philosophy and system behind notmuch
+(leveraging the Gmail tag based approach) differ from mu4e.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;The &lt;a href=&#34;#orgb32aa87&#34;&gt;Links and References&lt;/a&gt; section at the end provide several articles
+and resources with information, especially on setting up with mu4e.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/p&gt;&lt;/li&gt;
+&lt;h1 id=&#34;what-is-mu4e&#34;&gt;What is &lt;code&gt;Mu4e&lt;/code&gt;&lt;/h1&gt;
 
-&lt;li&gt;&lt;p&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;blog-book.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.djcbsoftware.nl/code/mu/mu4e.html&#34; target=&#34;_blank&#34;&gt;Mu4e&lt;/a&gt; is an Emacs based email client, which uses the indexer mu as it&amp;rsquo;s
+backend.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/p&gt;&lt;/li&gt;
+&lt;h1 id=&#34;why-fastmail&#34;&gt;Why Fastmail?&lt;/h1&gt;
 
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-CRAN : Comprehensive R Archive Network.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;I wanted a reliable email service for which I was willing to pay [a
+reasonable amount:)]. In particular, Fastmail allows for a variety of
+interesting features like aliases, easy email transfer (from a
+different email provider like Gmail or MSN), reasonably responsive
+technical support. Ultimately I was able to forward all my emails to a
+single account and thus deal only with a single account. In essence,
+my Fastmail account caters to 3 email addresses, and simplifies my
+setup.&lt;/p&gt;
 
-&lt;h1 id=&#34;dslabs-packages-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages specifically made for this course. This has to be installed  as shown :&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;install.packages (&amp;ldquo;dslabs&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;once-the-packages-are-installed-the-libraries-can-be-loaded-in-the-r-session-using&#34;&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(&amp;quot;dslabs&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;assignment-symbol-in-r&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;.&lt;/h1&gt;
-
-&lt;p&gt;We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-c #this is used to print a value
-print (b)
-print (b-a)
-print (b*c)
-print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
-print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;Check out how to print a statement and then a value.&lt;/h2&gt;
+&lt;p&gt;While there are many advantages in Gmail and many swear by it&amp;rsquo;s search
+capabilities - it is worth noting that Fastmail just feels a lot
+quicker than Gmail, and I can find my way around the settings better
+than I used to with Gmail. The search capabilities are offset by using
+&lt;code&gt;mu4e&lt;/code&gt;, and in particular on a SSD drive.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
+&lt;li&gt;Among the important factors of using Fastmail is that it is
+implemented in the conventional IMAP fashion, which make it easier
+to deal with mu4e, and folder based filtering at the &lt;a href=&#34;http://isync.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;mbsync&lt;/a&gt;
+settings level.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;the-objects-being-defined-are-changing-the-workspace-all-the-variables-in-the-workspace-can-be-displayed-by-using-ls-it-is-important-to-access-an-object-or-variable-that-is-in-the-current-workspace-otherwise-an-error-will-pop-up&#34;&gt;The objects being defined are changing the workspace. All the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/h1&gt;
+&lt;h1 id=&#34;conventional-web-and-desktop-clients-are-not-conducive-to-streamlined-workflow&#34;&gt;Conventional web and desktop clients are not conducive to streamlined workflow.&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code&gt;ls()
-a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-ls()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&amp;rsquo;ve typically been overwhelmed by email. I&amp;rsquo;ve often had the feeling
+of not utilising the potential of email, because the volume of unread
+email can build up so quickly, and I was unable quickly find something
+I wanted to look up.&lt;/p&gt;
 
-&lt;h1 id=&#34;functions-need-to-be-called-using-parenthesis&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;.&lt;/h1&gt;
-
-&lt;p&gt;Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of exp() and log() are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;exp(1)
-log(exp(1))
-a &amp;lt;- 1
-log(exp(a))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;using-the-help-function&#34;&gt;Using the help() function.&lt;/h1&gt;
-
-&lt;p&gt;This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s also a lot of interesting information in these inboxes that
+could be useful. For example email digests related to Data Science
+contain a wealth of links and articles and information. Or perhaps
+email digests of product and technology news that are useful to retain
+as an archive of reference.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
-
-&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;It would be nice to be able to process these links in a systematic
+manner, and have them available with a fast search system that is
+also linked to task management.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h2&gt;
+&lt;p&gt;It can be said that Web mail [viewed on a browser] is probably the
+most predominant way in which people access their emails, other than
+using desktop clients like Microsoft Outlook.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/en-US/thunderbird/&#34; target=&#34;_blank&#34;&gt;Thunderbird&lt;/a&gt; is an option that I&amp;rsquo;ve found to be acceptable, with a
+bunch of plugins that can aid workflow.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;However, anybody who has used MS Outlook for searching emails will
+have felt the limitations and potential frustrations that one can
+face in finding emails and organising them, especially when you
+consider years of emails.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;While the option of formulating categories and folders with some
+level of automation is certainly available - it did not truly enable
+me to gain a complete mastery of my email, or feel confident of
+having captured all the necessary information from an email chain.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;the-args-can-be-used-to-have-concise-information-on-the-number-of-arguments-taken-by-a-function&#34;&gt;the args() can be used to have concise information on the number of arguments taken by a function.&lt;/h1&gt;
+&lt;h1 id=&#34;adopting-different-levels-of-organisation&#34;&gt;Adopting different levels of organisation&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code&gt;args(log)
-args(sqrt)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I believe the workflow of an email organisation and processing them
+into tasks is a process that needs room and a suitable framework to
+grow organically, especially as our tasks, priorities and outlook
+change in both quality and quantity with time.&lt;/p&gt;
 
-&lt;h2 id=&#34;do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h2&gt;
+&lt;p&gt;Using mu4e over the past few years has enabled me to master my email,
+like no other tool that I&amp;rsquo;ve ever used. Though on occasion - I do need
+to rely on the web based interface, or the mobile app.&lt;/p&gt;
 
-&lt;h1 id=&#34;there-are-in-built-data-sets-in-r-for-users-to-practise-and-test-functions-this-can-be-found-using-data&#34;&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/h1&gt;
+&lt;p&gt;Therefore, over time I have adopted different levels of
+organisation. When I &lt;em&gt;do&lt;/em&gt; access my email on the web, I would prefer a
+basic level of organization available. This means a set of higher
+level filters are implemented at the Fastmail interface to facilitate
+a reasonably clutter free inbox.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;data()
+&lt;p&gt;The Fastmail folders are synced locally to my Macbook using &lt;a href=&#34;http://isync.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;mbsync&lt;/a&gt;,
+and finally bookmarks or saved searches are created within mu4e for
+easy access to any number of pre-set search patterns that I need for
+my workflow. The pre-set search patterns are called &lt;a href=&#34;https://www.djcbsoftware.nl/code/mu/mu4e/MV-Bookmarks.html&#34; target=&#34;_blank&#34;&gt;Bookmarks in mu4e&lt;/a&gt;,
+and can be accessed with a few key strokes.&lt;/p&gt;
 
-CO2
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;why-mu4e-rocks-for-me&#34;&gt;Why Mu4e rocks [for me]&lt;/h1&gt;
 
-&lt;h2 id=&#34;need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/h2&gt;
+&lt;p&gt;Complete keyboard based control, and using it with Emacs means the
+ability to compose email from anywhere and any workflow.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I just hit Control+x and m (&lt;code&gt;C-x m&lt;/code&gt;) in Emacs parlance, and I have a
+compose window open.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There are built-in workflows and functions in distributions like
+&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt;, which enable you to email an org-heading or buffer directly
+into an email, with the formatting (largely) preserved, and as
+intended.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;variable-nomenclature-variables-in-r-need-to-begin-with-a-letter-and-cannot-have-spaces-in-them&#34;&gt;Variable Nomenclature: variables in R need to begin with a letter and cannot have spaces in them.&lt;/h1&gt;
+&lt;p&gt;While Mu4e may be a programmatic solution with no pleasing GUI - it
+allows one to search a large number of emails with glorious ease. This
+is particularly more effective on a SSD drive, rather than the
+conventional Hard disk.&lt;/p&gt;
 
-&lt;h1 id=&#34;math-relational-operators-are-also-functions-and-are-the-only-ones-which-do-not-require-a-parenthesis-for-deployment-as-shown-in-code-above&#34;&gt;Math /Relational operators are also functions, and are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/h1&gt;
+&lt;p&gt;One has to experience the speed to know the dramatic impact it makes
+to be closer in speed to your thoughts using a customisable system
+that is as functional as it gets, and can be intimately connected to a
+task management system readily available in Emacs, &lt;a href=&#34;https://orgmode.org/&#34; target=&#34;_blank&#34;&gt;org-mode&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1 id=&#34;the-seq-function-is-used-to-generate-a-series-of-numbers-which-can-be-broken-into-specified-intervals-the-sum-can-be-used-to-sum-up-this-sequence-a-sequence-of-numbers-can-also-be-generated-as-simply-as-1-5-as-shown-below-the-sequence-is-ultimately-a-vector&#34;&gt;The seq() function is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/h1&gt;
+&lt;p&gt;Using the above, I&amp;rsquo;ve devised a &amp;lsquo;sane inbox&amp;rsquo; which is bereft of the
+noise, like annoying digests, social media updates and so on. I can
+dedicate focused blocks to rapidly process email, all within Emacs.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-2nd-argument-in-the-seq-is-actually-just-a-maximum-value-it-can-be-used-to-make-sure-a-sequence-does-not-exceed-a-certain-value-as-well&#34;&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/h2&gt;
+&lt;h1 id=&#34;quirks&#34;&gt;Quirks&lt;/h1&gt;
 
-&lt;h2 id=&#34;there-is-a-length-out-argument-that-can-be-used-with-the-seq-this-basically-creates-equally-spaced-divisions-within-the-limits-specified-for-example-seq-1-100-length-out-10-will-basically-create-10-equally-spaced-divisions-between-1-and-100-including-1-and-100-note-the-class-created-is-numeric-see-code-below&#34;&gt;there is a length.out argument that can be used with the seq(). This basically creates equally spaced divisions within the limits specified. For example seq(1,100,length.out=10), will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
-number &amp;lt;- 1000
-separation &amp;lt;- 1
-mySeq &amp;lt;- seq(1,number, separation)
-sum(mySeq)
-1:50
-
-#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
-a &amp;lt;- seq(1,100,length.out=10)
-class(a)
-b &amp;lt;- seq(1,2.5, length.out= 5)
-b
-class(b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;class-helps-us-determine-the-type-of-the-object-in-particular-we-need-to-be-able-to-distinguish-between-different-types-of-objects-like-numbers-lists-strings-and-so-on&#34;&gt;class() helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
-b &amp;lt;- &amp;quot;this is a string&amp;quot;
-#c &amp;lt;- [1,2,3]
-class(a)
-class(b)
-#class(c)
-class(ls)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;data-frames-useful-for-storing-table-like-data-and-different-data-frames-can-be-combined-for-analysis-it-is-inconvenient-to-store-data-in-a-single-variable&#34;&gt;Data frames : useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/h1&gt;
-
-&lt;h1 id=&#34;loading-a-dataset-is-done-using-the-function-data-the-murders-dataset-is-a-part-of-dslabs-loading-this-now&#34;&gt;Loading a dataset is done using the function data(). The murders dataset is a part of dslabs. Loading this now:&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(&amp;quot;murders&amp;quot;)
-class(murders)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;the-str-shows-us-the-structure-of-an-object-the-names-shows-the-different-column-names-in-the-dataframe&#34;&gt;the str() shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/h1&gt;
+&lt;p&gt;mu4e is a text based email interface. It can be set such that the
+rendered &lt;code&gt;HTML&lt;/code&gt; is displayed in the mu4e-view buffer for each email,
+which enables graphics and pictures (if any). However, the render is
+not perfect at times. Heavy &lt;code&gt;HTML&lt;/code&gt; emails may not render correctly.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-class(murders)
-str(murders)
-names(murders)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Such emails can be viewed in the browser of your choice with merely
+2 key presses. This could be Firefox, or &lt;a href=&#34;http://w3m.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;w3m&lt;/a&gt; or any other browser of
+your choice.&lt;/li&gt;
+&lt;li&gt;I use w3m, and believe me when I say that you would be surprised to
+see the ease in browsing websites on a text only mode. Besides the
+added advantage of being within Emacs - a surprising number of
+websites can be viewed functionally on w3m. It is very useful
+for quick searches on Google [also possible with a few key strokes
+within emacs].&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&#34;orgb32aa87&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h1 id=&#34;links-and-references&#34;&gt;Links and References&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;#org40196f3&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;a-complete-guide-to-email-in-emacs-using-mu-and-mu4e-http-cachestocaches-com-2017-3-complete-guide-email-emacs-using-mu-and-span-class-timestamp-wrapper-span-class-timestamp-lt-08-03-17-wed-10-04-gt-span-span&#34;&gt;&lt;a href=&#34;http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/&#34; target=&#34;_blank&#34;&gt;A Complete Guide to Email in Emacs using Mu and Mu4e&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;08/03/17 Wed 10:04&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;h1 id=&#34;head-shows-us-the-first-6-lines-of-the-data-frame&#34;&gt;head() shows us the first 6 lines of the data frame.&lt;/h1&gt;
+&lt;h2 id=&#34;reading-imap-mail-in-emacs-on-osx-adolfo-villafiorita-http-www-ict4g-net-adolfo-notes-2014-12-27-emacsimap-html-span-class-timestamp-wrapper-span-class-timestamp-lt-27-11-16-sun-08-17-gt-span-span&#34;&gt;&lt;a href=&#34;http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html&#34; target=&#34;_blank&#34;&gt;Reading IMAP Mail in Emacs on OSX | Adolfo Villafiorita&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;27/11/16 Sun 08:17&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-head(murders)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;excellent-link-talking-about-mu4e-and-notifications-handling-email-with-emacs-malb-blog-https-martinralbrecht-wordpress-com-2016-05-30-handling-email-with-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-01-08-16-mon-18-37-gt-span-span&#34;&gt;Excellent link talking about mu4e and notifications &lt;a href=&#34;https://martinralbrecht.wordpress.com/2016/05/30/handling-email-with-emacs/&#34; target=&#34;_blank&#34;&gt;Handling Email with Emacs – malb::blog&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;01/08/16 Mon 18:37&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;a id=&#34;org40196f3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;which-email-client-mu4e-mutt-notmuch-gnus-do-you-use-inside-emacs-and-why-emacs-https-www-reddit-com-r-emacs-comments-3s5fas-which-email-client-mu4e-mutt-notmuch-gnus-do-you-span-class-timestamp-wrapper-span-class-timestamp-lt-31-05-16-tue-07-32-gt-span-span&#34;&gt;&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/3s5fas/which_email_client_mu4e_mutt_notmuch_gnus_do_you/&#34; target=&#34;_blank&#34;&gt;Which email client (mu4e, Mutt, notmuch, Gnus) do you use inside Emacs, and why? : emacs&lt;/a&gt;  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;31/05/16 Tue 07:32&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;h1 id=&#34;to-access-the-column-information-the-is-used-which-is-called-the-accessor-this-is-combined-with-the-name-of-the-column-which-can-be-obtained-from-the-names-or-str-the-length-can-be-used-to-find-the-length-of-the-object&#34;&gt;To access the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/h1&gt;
+&lt;h2 id=&#34;emacs-fu-introducing-mu4e-an-e-mail-client-for-emacs-http-emacs-fu-blogspot-in-2012-08-introducing-mu4e-for-email-html-emacs-and-mu4e-stuff-span-class-timestamp-wrapper-span-class-timestamp-lt-20-04-16-wed-13-02-gt-span-span&#34;&gt;&lt;a href=&#34;http://emacs-fu.blogspot.in/2012/08/introducing-mu4e-for-email.html&#34; target=&#34;_blank&#34;&gt;emacs-fu: introducing mu4e, an e-mail client for emacs&lt;/a&gt; - Emacs and mu4e stuff  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;20/04/16 Wed 13:02&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;&lt;/li&gt;
+&lt;h2 id=&#34;emacs-as-email-client-with-offlineimap-and-mu4e-on-os-x-kg-hacks-thoughts-writings-http-www-kirang-in-2014-11-13-emacs-as-email-client-with-offlineimap-and-mu4e-on-osx-nice-blog-related-to-emacs-and-linux-span-class-timestamp-wrapper-span-class-timestamp-lt-21-04-16-thu-22-44-gt-span-span&#34;&gt;&lt;a href=&#34;http://www.kirang.in/2014/11/13/emacs-as-email-client-with-offlineimap-and-mu4e-on-osx/&#34; target=&#34;_blank&#34;&gt;Emacs as email client with offlineimap and mu4e on OS X &lt;em&gt;/ KG /&lt;/em&gt; Hacks. Thoughts. Writings.&lt;/a&gt; - nice blog related to Emacs and linux  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;21/04/16 Thu 22:44&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
+&lt;h2 id=&#34;eos-mail-email-module-http-writequit-org-eos-eos-mail-html-explaining-multiple-email-setup-in-mu4e-span-class-timestamp-wrapper-span-class-timestamp-lt-27-04-16-wed-07-56-gt-span-span&#34;&gt;&lt;a href=&#34;http://writequit.org/eos/eos-mail.html&#34; target=&#34;_blank&#34;&gt;EOS: Mail (Email) Module&lt;/a&gt; - explaining multiple email setup in mu4e  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;27/04/16 Wed 07:56&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;p&gt;library(dslabs)
-data(murders)
-names(murders)
-murders$population #this is a vector
-length(murders$population) #numeric vector
-class(murders$population) #character vector
-class(murders$state)
-a &amp;lt;- &amp;ldquo;hello string&amp;rdquo;
-b &amp;lt;- 1234
-length (a)
-length (b)&lt;/p&gt;
+&lt;h2 id=&#34;the-ultimate-emailing-agent-with-mu4e-and-emacs-emacs-arduino-raspberry-pi-linux-and-programming-etc-http-tech-memoryimprintstudio-com-the-ultimate-emailing-agent-with-mu4e-and-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-17-08-16-wed-13-19-gt-span-span&#34;&gt;&lt;a href=&#34;http://tech.memoryimprintstudio.com/the-ultimate-emailing-agent-with-mu4e-and-emacs/&#34; target=&#34;_blank&#34;&gt;The Ultimate Emailing Agent with Mu4e and Emacs – Emacs, Arduino, Raspberry Pi, Linux and Programming etc&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;17/08/16 Wed 13:19&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;h1 id=&#34;example-of-a-logical-datatype-basically-stores-only-true-or-false-answers&#34;&gt;example of a logical datatype. (basically stores only True or False answers.)&lt;/h1&gt;
+&lt;h2 id=&#34;varun-b-patil-eom-a-k-a-end-of-mail-a-k-a-emacs-offlineimap-mu4e-http-varunbpatil-github-io-2013-08-19-eom-vxxttm7hxcs-multiple-accounts-span-class-timestamp-wrapper-span-class-timestamp-lt-19-04-16-tue-12-19-gt-span-span&#34;&gt;&lt;a href=&#34;http://varunbpatil.github.io/2013/08/19/eom/#.VxXTtM7hXCs&#34; target=&#34;_blank&#34;&gt;Varun B Patil | EOM a.k.a End of Mail a.k.a Emacs + offlineimap + mu4e&lt;/a&gt; - multiple accounts  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;19/04/16 Tue 12:19&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;p&gt;a &amp;lt;- 3 == 2
-a
-class(a)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;master-your-inbox-with-mu4e-and-org-mode-pragmatic-emacs-http-pragmaticemacs-com-emacs-master-your-inbox-with-mu4e-and-org-mode-span-class-timestamp-wrapper-span-class-timestamp-lt-26-03-16-sat-14-56-gt-span-span&#34;&gt;&lt;a href=&#34;http://pragmaticemacs.com/emacs/master-your-inbox-with-mu4e-and-org-mode/&#34; target=&#34;_blank&#34;&gt;Master your inbox with mu4e and org-mode | Pragmatic Emacs&lt;/a&gt;  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;26/03/16 Sat 14:56&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;h2 id=&#34;factors-useful-for-storing-categorical-data-levels-used-to-find-the-different-categories-within-the-factor&#34;&gt;Factors - useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-names(murders)
-str(murders$region)
-levels(murders$region)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;also-possible-to-use-square-brackets-to-extract-data-rather-than-using-the-identical-can-be-used-to-compare-different-objects-to-determine-whether-they-are-identical&#34;&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)&lt;/p&gt;
-
-&lt;p&gt;a &amp;lt;- murders[&amp;ldquo;population&amp;rdquo;]       #note the double quotes. Doesn&amp;rsquo;t work without the double quotes.
-b &amp;lt;- murders[[&amp;ldquo;population&amp;rdquo;]]
-c &amp;lt;- murders$population&lt;/p&gt;
-
-&lt;p&gt;#checking if a is the same as b
-a == b&lt;/p&gt;
-
-&lt;p&gt;#Using the identical()
-identical(a,b)
-identical(b,c)
-identical (a,c)&lt;/p&gt;
-
-&lt;p&gt;#checking the class differences.
-class(murders[&amp;ldquo;population&amp;rdquo;])
-class(murders[[&amp;ldquo;population&amp;rdquo;]])&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;code-example-the-length-can-be-combined-with-levels-to-find-the-number-of-unique-factors&#34;&gt;Code example : The length() can be combined with levels() to find the number of unique factors.&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-length(levels(murders$region))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-#str(murders)
-table(murders$state,murders$region)
-table(murders$region)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;a-year-with-notmuch-mail-lwn-net-https-lwn-net-articles-705856-span-class-timestamp-wrapper-span-class-timestamp-lt-17-04-18-tue-01-21-gt-span-span&#34;&gt;&lt;a href=&#34;https://lwn.net/Articles/705856/&#34; target=&#34;_blank&#34;&gt;A year with Notmuch mail {LWN.net}&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;17/04/18 Tue 01:21&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 </description>
     </item>
     
@@ -1177,18 +2229,44 @@ productivity.&lt;/li&gt;
       <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
       <description>
 
-&lt;h2 id=&#34;verified-certificate-of-achievement-https-courses-edx-org-certificates-0d3a83463cdb49c8aca2aa11ab9bd850&#34;&gt;&lt;a href=&#34;https://courses.edx.org/certificates/0d3a83463cdb49c8aca2aa11ab9bd850&#34; target=&#34;_blank&#34;&gt;Verified Certificate of Achievement&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;verified-edx-certificate-of-achievement-https-courses-edx-org-certificates-0d3a83463cdb49c8aca2aa11ab9bd850&#34;&gt;&lt;a href=&#34;https://courses.edx.org/certificates/0d3a83463cdb49c8aca2aa11ab9bd850&#34; target=&#34;_blank&#34;&gt;Verified EdX Certificate of Achievement&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;The course covered an introduction to using &lt;code&gt;R&lt;/code&gt; to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Course Notes and code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Course exercises are linked with a Datacamp course.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-R-basics.pdf&#34;&gt;Data Science &lt;code&gt;R&lt;/code&gt; basics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>On-line Courses on Dataquest</title>
+      <title>On-line Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/course-datacamp-datascience/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-datacamp-datascience/</guid>
+      <description>&lt;p&gt;Links to certificates of courses completed on &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Datacamp&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-intro-to-sql.pdf&#34;&gt;Intro to &lt;code&gt;SQL&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-R-basics.pdf&#34;&gt;Data Science &lt;code&gt;R&lt;/code&gt; basics&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Completed as a part of &lt;a href=&#34;https://shrysr.github.io/project/course-edx-harvard-r&#34;&gt;EdX HarvardX PH125.1x: Data Science: R Basics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On-line Courses @ Dataquest</title>
       <link>https://shrysr.github.io/project/course-dataquest-datascience/</link>
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
@@ -1201,48 +2279,6 @@ productivity.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/Q7WM9PIQA7JRJFMMAZUD/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Git&lt;/code&gt; &amp;amp; Version control&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>On-line Courses:   Code School</title>
-      <link>https://shrysr.github.io/project/course-code-school/</link>
-      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/course-code-school/</guid>
-      <description>
-
-&lt;h2 id=&#34;code-school-report-card-https-www-codeschool-com-users-shrysr&#34;&gt;&lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Code School Report Card&lt;/a&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Completed several courses covering &lt;code&gt;python&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;,&lt;code&gt;regular expressions&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Most of these courses were completed during the occasional &lt;em&gt;Free Weekend&lt;/em&gt; opportunities from &lt;a href=&#34;https://www.codeschool.com/&#34; target=&#34;_blank&#34;&gt;Code School&lt;/a&gt;, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;course-notes-and-code&#34;&gt;Course Notes and code&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Fly with Python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Current Trends of Emission Reduction Technology in Vehicular Diesel Engines</title>
-      <link>https://shrysr.github.io/publication/emission-study/</link>
-      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/publication/emission-study/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design of an Electro-mechanical Anthropometric finger, and a PID controller for the wrist for applications in Prosthetics</title>
-      <link>https://shrysr.github.io/publication/kinematic-design-finger/</link>
-      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/publication/kinematic-design-finger/</guid>
-      <description></description>
     </item>
     
   </channel>

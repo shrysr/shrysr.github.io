@@ -18,13 +18,26 @@
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description> Verified Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+      <description> Verified EdX Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
  Course Notes and code
-  </description>
+ Course exercises are linked with a Datacamp course.
+ Data Science R basics   </description>
     </item>
     
     <item>
-      <title>On-line Courses on Dataquest</title>
+      <title>On-line Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/course-datacamp-datascience/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-datacamp-datascience/</guid>
+      <description>Links to certificates of courses completed on Datacamp
+ Intro to SQL
+ Data Science R basics.
+ Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics   </description>
+    </item>
+    
+    <item>
+      <title>On-line Courses @ Dataquest</title>
       <link>https://shrysr.github.io/project/course-dataquest-datascience/</link>
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       

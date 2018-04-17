@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.38.1" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="Link to the book: http://moderndive.com glimpse() from dplyr seems to the be the same as str() Exploring data sets install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights)  using glimpse() and dplyr install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) glimpse(flights)  using kable() with knitr install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) kable(flights)  3 Data viz using ggplot2 The Grammar of Graphics ggplo2 The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments: The data frame where the variables exist: the data argument The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/post/420b5102-f432-4677-916c-b534fa9b5889/">
+  <meta property="og:title" content="@Moderndive - An Introduction to Statistical and Data Sciences via R | Shreyas Ragavan">
+  <meta property="og:description" content="Link to the book: http://moderndive.com glimpse() from dplyr seems to the be the same as str() Exploring data sets install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights)  using glimpse() and dplyr install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) glimpse(flights)  using kable() with knitr install.packages(&quot;nycflights13&quot;) library(nycflights13) library(dplyr) library(knitr) library(ggplot2) data(flights) kable(flights)  3 Data viz using ggplot2 The Grammar of Graphics ggplo2 The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments: The data frame where the variables exist: the data argument The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-04-15T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-04-15T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>@Moderndive - An Introduction to Statistical and Data Sciences via R | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Reports</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">@Moderndive - An Introduction to Statistical and Data Sciences via R</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-04-15 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Apr 15, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Shreyas Ragavan">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=%40Moderndive%20-%20An%20Introduction%20to%20Statistical%20and%20Data%20Sciences%20via%20R&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2f420b5102-f432-4677-916c-b534fa9b5889%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshrysr.github.io%2fpost%2f420b5102-f432-4677-916c-b534fa9b5889%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2f420b5102-f432-4677-916c-b534fa9b5889%2f&amp;title=%40Moderndive%20-%20An%20Introduction%20to%20Statistical%20and%20Data%20Sciences%20via%20R"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshrysr.github.io%2fpost%2f420b5102-f432-4677-916c-b534fa9b5889%2f&amp;title=%40Moderndive%20-%20An%20Introduction%20to%20Statistical%20and%20Data%20Sciences%20via%20R"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=%40Moderndive%20-%20An%20Introduction%20to%20Statistical%20and%20Data%20Sciences%20via%20R&amp;body=https%3a%2f%2fshrysr.github.io%2fpost%2f420b5102-f432-4677-916c-b534fa9b5889%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="link-to-the-book-http-moderndive-com">Link to the book: <a href="http://moderndive.com" target="_blank">http://moderndive.com</a></h1>
+
+<h1 id="glimpse-from-dplyr-seems-to-the-be-the-same-as-str">glimpse() from dplyr seems to the be the same as str()</h1>
+
+<h1 id="exploring-data-sets">Exploring data sets</h1>
+
+<pre><code>install.packages(&quot;nycflights13&quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+</code></pre>
+
+<h2 id="using-glimpse-and-dplyr">using glimpse() and dplyr</h2>
+
+<pre><code>install.packages(&quot;nycflights13&quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+glimpse(flights)
+</code></pre>
+
+<h2 id="using-kable-with-knitr">using kable() with knitr</h2>
+
+<pre><code>install.packages(&quot;nycflights13&quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+kable(flights)
+</code></pre>
+
+<h1 id="3-data-viz-using-ggplot2">3 Data viz using ggplot2</h1>
+
+<h2 id="the-grammar-of-graphics-ggplo2">The Grammar of Graphics ggplo2</h2>
+
+<h2 id="the-various-components-of-the-grammar-of-graphics-are-specified-in-the-ggplot-function-which-expects-at-a-bare-minimum-as-arguments">The various components of the Grammar of Graphics are specified in the ggplot function, which expects at a bare minimum as arguments:</h2>
+
+<p>The data frame where the variables exist: the data argument
+The mapping of the variables to aesthetic attributes: the mapping argument, which specifies the aesthetic attributes involved</p>
+
+<pre><code>install.packages(&quot;nycflights13&quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+all_alaska_flights &lt;- flights %&gt;% 
+  filter(carrier == &quot;AS&quot;)
+glimpse(all_alaska_flights)
+print(&quot;================================================&quot;)
+glimpse(flights)
+</code></pre>
+
+<p>Observations: 714
+Variables: 19
+$ year           <int> 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&#x2026;
+$ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&#x2026;
+$ day            <int> 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9&#x2026;
+$ dep_time       <int> 724, 1808, 722, 1818, 724, 1817, 725, 1808, 725, 180&#x2026;
+$ sched_dep_time <int> 725, 1815, 725, 1815, 725, 1815, 725, 1815, 725, 181&#x2026;
+$ dep_delay      <dbl> -1, -7, -3, 3, -1, 2, 0, -7, 0, -12, -3, 2, 2, 11, -&#x2026;
+$ arr_time       <int> 1020, 2111, 949, 2131, 1012, 2121, 1031, 2101, 1011,&#x2026;
+$ sched_arr_time <int> 1030, 2130, 1030, 2130, 1030, 2130, 1030, 2130, 1030&#x2026;
+$ arr_delay      <dbl> -10, -19, -41, 1, -18, -9, 1, -29, -19, -12, -6, 16,&#x2026;
+$ carrier        <chr> &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;, &ldquo;AS&rdquo;&#x2026;
+$ flight         <int> 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11, 7, 11,&#x2026;
+$ tailnum        <chr> &ldquo;N594AS&rdquo;, &ldquo;N553AS&rdquo;, &ldquo;N592AS&rdquo;, &ldquo;N552AS&rdquo;, &ldquo;N533AS&rdquo;, &ldquo;N&#x2026;
+$ origin         <chr> &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EW&#x2026;
+$ dest           <chr> &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SEA&rdquo;, &ldquo;SE&#x2026;
+$ air_time       <dbl> 338, 336, 314, 332, 325, 327, 345, 338, 330, 343, 34&#x2026;
+$ distance       <dbl> 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402, 2402&#x2026;
+$ hour           <dbl> 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, 18, 7, &#x2026;
+$ minute         <dbl> 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, 15, 25, &#x2026;
+$ time_hour      <dttm> 2013-01-01 07:00:00, 2013-01-01 18:00:00, 2013-01-0&#x2026;
+[1] &ldquo;<code>==============================================</code>&ldquo;
+Observations: 336,776
+Variables: 19
+$ year           <int> 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013&#x2026;
+$ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&#x2026;
+$ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1&#x2026;
+$ dep_time       <int> 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 55&#x2026;
+$ sched_dep_time <int> 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 60&#x2026;
+$ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2,&#x2026;
+$ arr_time       <int> 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 8&#x2026;
+$ sched_arr_time <int> 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 8&#x2026;
+$ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7,&#x2026;
+$ carrier        <chr> &ldquo;UA&rdquo;, &ldquo;UA&rdquo;, &ldquo;AA&rdquo;, &ldquo;B6&rdquo;, &ldquo;DL&rdquo;, &ldquo;UA&rdquo;, &ldquo;B6&rdquo;, &ldquo;EV&rdquo;, &ldquo;B6&rdquo;&#x2026;
+$ flight         <int> 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301&#x2026;
+$ tailnum        <chr> &ldquo;N14228&rdquo;, &ldquo;N24211&rdquo;, &ldquo;N619AA&rdquo;, &ldquo;N804JB&rdquo;, &ldquo;N668DN&rdquo;, &ldquo;N&#x2026;
+$ origin         <chr> &ldquo;EWR&rdquo;, &ldquo;LGA&rdquo;, &ldquo;JFK&rdquo;, &ldquo;JFK&rdquo;, &ldquo;LGA&rdquo;, &ldquo;EWR&rdquo;, &ldquo;EWR&rdquo;, &ldquo;LG&#x2026;
+$ dest           <chr> &ldquo;IAH&rdquo;, &ldquo;IAH&rdquo;, &ldquo;MIA&rdquo;, &ldquo;BQN&rdquo;, &ldquo;ATL&rdquo;, &ldquo;ORD&rdquo;, &ldquo;FLL&rdquo;, &ldquo;IA&#x2026;
+$ air_time       <dbl> 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149&#x2026;
+$ distance       <dbl> 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 73&#x2026;
+$ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6&#x2026;
+$ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59&#x2026;
+$ time_hour      <dttm> 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-0&#x2026;</p>
+
+<pre><code>install.packages(&quot;nycflights13&quot;)
+library(nycflights13)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+data(flights)
+
+
+all_alaska_flights &lt;- flights %&gt;% 
+  filter(carrier == &quot;AS&quot;)
+
+ggplot(data = all_alaska_flights, mapping = aes(x = dep_delay, y = arr_delay)) + 
+  geom_point()
+</code></pre>
+
+<h2 id="overplotting">Overplotting</h2>
+
+<p>Causes confusion and lack of clarity in the data being presented, i.e. too many data points being clustered around an area</p>
+
+<p>Can be addressed by:
+    By adjusting the transparency of the points via the alpha argument. alpha lies between 0 and 1. Default is 1.
+    By jittering the points via geom_jitter(). Jitter the points a bit: In other words, we are going to add just a bit of random noise to the points to better see them and remove some of the overplotting. A width and height argument is to specified which corresponds to how hard the jitter is to be.</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/r">R</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/data-science">Data Science</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/">Edx -  HarvardX PH125 1x Data Science R Basics</a></li>
+        
+        <li><a href="/project/course-datacamp-datascience/">On-line Courses @ Datacamp</a></li>
+        
+        <li><a href="/project/course-dataquest-datascience/">On-line Courses @ Dataquest</a></li>
+        
+        <li><a href="/project/course-edx-harvard-r/">On-line Certificate Course:   EdX HarvardX PH125.1x: Data Science: R Basics</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    <div class="article-widget">
+      <div class="post-nav">
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/" rel="prev">Edx -  HarvardX PH125 1x Data Science R Basics</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

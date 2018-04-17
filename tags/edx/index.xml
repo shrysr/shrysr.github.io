@@ -7,18 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/edx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Section 1: R Basics, Functions, Data types</title>
-      <link>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</link>
-      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>
+      <link>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/d51b178d-2c07-478c-b4c2-56792b6c9c75/</guid>
-      <description>Table of Contents  R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java. R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms. R Console: for interactive commands, similar to the python interpreter. Installing R on Arch Linux : sudo pacman -Sy r Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;.</description>
+      <guid>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</guid>
+      <description>Resources Most of the instructor&amp;rsquo;s course contents from different courses is available in the book : &amp;lt;2018-02-04 Sun&amp;gt; Data scientist Toolbox : link &amp;lt;2018-02-04 Sun&amp;gt; R-Bloggers link &amp;lt;2018-02-04 Sun&amp;gt; Section 1: R Basics, Functions, Data types  R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.
+ R is free and Open source. Runs on all major platforms.</description>
     </item>
     
   </channel>

@@ -7,19 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 07 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/coding-notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Code School - free weekend - Fly with python</title>
-      <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</link>
-      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>
+      <link>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</link>
+      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</guid>
-      <description>Introduction Code School is kind enough to occasionally offer a free weekend with full access to their normally paid courses. I was able to capitalize on two such occasions to complete several courses. Below are the notes that were captured, directly into org-mode in emacs. The code builds on examples and lessons available on the Code School courses.
- Code School: I&amp;rsquo;ve completed courses on Python, Git, Regular Expressions and SQL.</description>
+      <guid>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</guid>
+      <description>Resources Most of the instructor&amp;rsquo;s course contents from different courses is available in the book : &amp;lt;2018-02-04 Sun&amp;gt; Data scientist Toolbox : link &amp;lt;2018-02-04 Sun&amp;gt; R-Bloggers link &amp;lt;2018-02-04 Sun&amp;gt; Section 1: R Basics, Functions, Data types  R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.
+ R is free and Open source. Runs on all major platforms.</description>
     </item>
     
   </channel>

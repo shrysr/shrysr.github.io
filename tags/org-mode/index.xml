@@ -18,8 +18,8 @@
       <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
-      <description>I started out as a organised person who liked neat handwriting, extensive notes and a systematic approach to doing things.
-It&amp;rsquo;s been a couple of years that I&amp;rsquo;ve been using mu4e as my primary driver for dealing with email. Though I do on occasion rely on the web based interface, using mu4e has enabled me to master my email, like no other tool that I&amp;rsquo;ve ever used. Before using mu4e, and the fastmail setup, I never really had any grip of my email inbox and could never leverage and utilise the wealth of data that lurks in each corner.</description>
+      <description>This post outlines my current email setup and penchant for using mu4e, an email client available for Emacs. mu4e is a text based email interface.
+Beyond mu4e, there are other options available like notmuch and mutt. I have briefly experimented with mutt, which is breath-takingly fast in email search, but mutt has to be coupled with another front end to be used within Emacs. The philosophy and system behind notmuch (leveraging the Gmail tag based approach) differ from mu4e.</description>
     </item>
     
   </channel>
