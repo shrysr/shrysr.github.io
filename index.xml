@@ -11,1583 +11,217 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Edx -  HarvardX PH125 1x Data Science R Basics</title>
-      <link>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</link>
-      <pubDate>Fri, 13 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Searching the awesome-lists on github</title>
+      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/c2fbc9da-46b9-4113-bc18-3e3c7495f47c/</guid>
+      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
       <description>
 
-&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+&lt;p&gt;I came upon the glorious awesome lists today on Github. These
+repositories can be viewed with a &lt;a href=&#34;https://github.com/search?utf8=%25E2%259C%2593&amp;amp;q=awesome+list&amp;amp;type=&#34; target=&#34;_blank&#34;&gt;simple search on github&lt;/a&gt;. They
+contain all kinds of lists on all kinds of topics, and are curated.&lt;/p&gt;
 
-&lt;h2 id=&#34;most-of-the-instructor-s-course-contents-from-different-courses-is-available-in-the-book-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;Most of the instructor&amp;rsquo;s course contents from different courses is available in the book :  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Beware! the number of lists and the number of items being covered are
+quite extensive. There are a lot of common grounds and topics between
+these lists.&lt;/p&gt;
 
-&lt;h2 id=&#34;data-scientist-toolbox-link-http-jtleek-com-modules-01-datascientisttoolbox-02-09-installingrpackages-1-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;Data scientist Toolbox : &lt;a href=&#34;http://jtleek.com/modules/01_DataScientistToolbox/02_09_installingRPackages/#1&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;I wanted to search for a keyword through all these repositories. In
+fact, I have always wanted search for particular keywords or code
+snippets in my Emacs configuration files, or in all the files in a
+particular location. A tool that would help me know in which
+particular file had I entered a code snippet.&lt;/p&gt;
 
-&lt;h2 id=&#34;r-bloggers-link-https-www-r-bloggers-com-permanently-setting-the-cran-repository-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-02-04-sun-gt-span-span&#34;&gt;R-Bloggers &lt;a href=&#34;https://www.r-bloggers.com/permanently-setting-the-cran-repository/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-02-04 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;h1 id=&#34;section-1-r-basics-functions-data-types&#34;&gt;Section 1: R Basics, Functions, Data types&lt;/h1&gt;
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://shrysr.github.io/img/emacs-helm-ag-anim.gif&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Searching for &amp;#39;datascience&amp;#39; with emacs-helm-ag through a bunch of awesome-lists and other local repositories.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;R was developed by statisticians and data analysts as an interactive environment for data analysis. It is not like C or Java.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;R is free and Open source. Runs on all major platforms. Data objects and Scripts can be shared seamlessly across these platforms.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Well - I found my answer by accident in &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/why-emacs.html&#34; target=&#34;_blank&#34;&gt;Howard&amp;rsquo;s cool blog post&lt;/a&gt; on why
+one should learn Emacs - in a footnote (!), in which he&amp;rsquo;s mentioned
+&lt;code&gt;ack&lt;/code&gt; and &lt;code&gt;ag&lt;/code&gt; (&lt;a href=&#34;https://github.com/ggreer/the_silver_searcher&#34; target=&#34;_blank&#34;&gt;the silver searcher&lt;/a&gt;). Sure - I&amp;rsquo;ve read this post before,
+but today it&amp;rsquo;s filled me a warm fuzzy feeling of
+elation&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. It is even possible to edit in line with each search.&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;R Console:  for interactive commands, similar to the python interpreter.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;The silver searcher github page provides clear examples of how it&amp;rsquo;s significantly faster than ack (and similar). Further exploration led me to the &lt;a href=&#34;https://github.com/syohex/emacs-helm-ag&#34; target=&#34;_blank&#34;&gt;emacs-helm-ag&lt;/a&gt; package, which is a helm interface to &lt;a href=&#34;https://github.com/ggreer/the_silver_searcher&#34; target=&#34;_blank&#34;&gt;the silver searcher&lt;/a&gt;. Implementing emacs-helm-ag was as simple as adding it to my list of packages, and adding a basic setup to my helm configuration.&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Installing R on Arch Linux : sudo pacman -Sy r&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Sweet !!&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;Once R is installed, I was able to seamlesly use it in Org-babel, using the source &amp;lsquo;R&amp;rsquo;. See &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Extra functionality can be installed in R as add-on packages made by other developers. These are available on CRAN, github and so on.&lt;/p&gt;&lt;/li&gt;
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://shrysr.github.io/img/helm-ag-emacs.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Notice the search across multiple files. So I&amp;#39;ve called `require org capture` perhaps more times than necessary.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
 
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:04] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-CRAN : Comprehensive R Archive Network.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h2 id=&#34;dslabs-packages-are-specifically-made-for-this-course-this-has-to-be-installed-as-shown&#34;&gt;dslabs packages are specifically made for this course. This has to be installed  as shown :&lt;/h2&gt;
+&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
 
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 11:29] &lt;/span&gt;&lt;/span&gt; \\package installation via org-babel does not seem possible as the additional windows do not pop up. Perhaps some custom settings are required to be setup, in order to seamlessly use R within org-babel or eshell. While the terminal is certainly faster and more intuitive, using emacs for the code, enables me to easily retain a record of the commands / scripts being tried out.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; This is my first animated gif in a blog post! It was tricky! I used the free &lt;a href=&#34;https://itunes.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12&#34; target=&#34;_blank&#34;&gt;GIPHY capture app&lt;/a&gt; on the Mac store.&lt;/p&gt;
 
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-05 Mon 10:29] &lt;/span&gt;&lt;/span&gt; \\ In Antergos, I was getting the errors related to TCL / TK, i.e unable to load shared object tcltk.so. The problem was resolved by installing tcl and tk using pacman. Once this was done, a GUI pops up asking me to select the CRAN mirror. Though I selected a USA mirror, R then automatically scans through all the mirrors and goes with the ones that works best. This enabled me to finally be able to install packages. Checkout this &lt;a href=&#34;http://dreamhunter.me/en/2015/01/06/error-unable-to-load-tcltk/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; As of now, I add packages to &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; using this bit of code that I&amp;rsquo;ve obviously borrowed from the internet, and this case - I&amp;rsquo;m afraid I did not note the source.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;install.packages (&amp;quot;dslabs&amp;quot;)
+&lt;pre&gt;&lt;code&gt;;; Setting up use packages
+;; list the packages you want
+(setq package-list &#39;(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
+
+;;fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
+
+(custom-set-variables
+ &#39;(helm-follow-mode-persistent t))
+
+(require &#39;helm-ag)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;r-studio-desktop-link-https-www-rstudio-com-products-rstudio-download&#34;&gt;R Studio Desktop &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:10] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-rstudio is still useful as an exposure. This has been successfully installed in arch.&lt;/li&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 12:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-This may not be required, if I am able to setup emacs satisfactorily to deal with R, especially via org-babel or eshell.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;loading-libraries&#34;&gt;Loading Libraries&lt;/h2&gt;
-
-&lt;p&gt;Once the packages are installed, the libraries can be loaded in the R session using :&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(&amp;quot;dslabs&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;assignment-symbol-in-r&#34;&gt;Assignment symbol in R : &amp;lsquo;&amp;lt;-&amp;lsquo;.&lt;/h2&gt;
-
-&lt;p&gt;We assign values to objects. Objects can be simple like variables or complex things like functions. In the code below a, b, c are objects. The print function can also be used to explicitly display the value of an object. It is possible to perform operations, within the arguments passed to the print function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-c #this is used to print a value
-print (b)
-print (b-a)
-print (b*c)
-print (&amp;quot;the value of b is: &amp;quot; , (b)) #Need to check how to print multiple values. 
-print (c(&amp;quot;the value of b is: &amp;quot;, b )) #One way is to use the c()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;check-out-how-to-print-a-statement-and-then-a-value&#34;&gt;Check out how to print a statement and then a value.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:14] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-one way of doing is is by creating a vector on the fly, using the c(), thereby reducing the print command to have a single concatenated vector argument. But this leaves the quotation marks in between, which makes for an ugly reading. There should be a more streamlined way to do this.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;workspace-and-objects&#34;&gt;Workspace and Objects&lt;/h2&gt;
-
-&lt;p&gt;The objects being defined are changing the workspace. Inside the console, all the variables in the workspace can be displayed by using ls(). It is important to access an object or variable that is in the current workspace. Otherwise, an error will pop up.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ls()
-a &amp;lt;- 21
-b &amp;lt;- 22
-c &amp;lt;- -10
-ls()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;functions-need-to-be-called-using-parenthesis&#34;&gt;Functions need to be called using parenthesis &amp;lsquo;()&amp;rsquo;.&lt;/h2&gt;
-
-&lt;p&gt;Most functions take atleast one argument. It is possible to nest functions such that a function can be called to get the argument of another function. The inverse functions of &lt;code&gt;exp()&lt;/code&gt; and &lt;code&gt;log()&lt;/code&gt; are shown below. Functions are therefore evaluated inside out with respect to order.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;exp(1)
-log(exp(1))
-a &amp;lt;- 1
-log(exp(a))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;using-the-help-function&#34;&gt;Using the &lt;code&gt;help()&lt;/code&gt; function.&lt;/h2&gt;
-
-&lt;p&gt;This can be done using help(&amp;rdquo;&lt;function name&gt;&amp;rdquo;) or sometimes ?&lt;function name&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-note that some of the org-babel output is distorted with what appears to be unicode insertions. However, the main content of the help() and args() is available.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:16] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that the help files specifies names for the arguments for the functions. For example with the log function, the first argument is called &amp;lsquo;x&amp;rsquo;. However, if the names are not used for the arguments, then R assumes the variables are in the same order as specified in the help() and the args().&lt;/p&gt;
-
-&lt;p&gt;help(&amp;ldquo;sqrt&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;?log&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;check-why-the-unicode-or-other-disruptions-appear-within-org-babel&#34;&gt;Check why the &amp;lsquo;unicode&amp;rsquo; or other disruptions appear within org-babel.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 13:18] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-perhaps worth comparing with the help() output received from other languages like python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;using-args&#34;&gt;Using &lt;code&gt;args()&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;args()&lt;/code&gt; can be used to have concise information on the number of arguments taken by a function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;args(log)
-args(sqrt)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;do-the-function-names-have-to-be-enclosed-wih-quotes-or-double-quotes-or-is-it-unecessary&#34;&gt;Do the function names have to be enclosed wih quotes or double quotes, or is it unecessary?&lt;/h3&gt;
-
-&lt;h2 id=&#34;built-in-data-sets&#34;&gt;Built-in Data sets&lt;/h2&gt;
-
-&lt;p&gt;There are in-built data-sets in R for users to practise and test functions. This can be found using data()&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;data()
-
-CO2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;need-to-find-out-more-about-these-to-make-it-easier-to-learn-new-functions&#34;&gt;Need to find out more about these to make it easier to learn new functions.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 14:19] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-see the code above. The data() can be used to list all the available data sets. Further to this it is possible to call the chosen dataset using it&amp;rsquo;s name. eg CO2. the name has to be precise and character case matched. data(&lt;dataset name&gt;) can be used to call a particular dataset.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;variable-nomenclature&#34;&gt;Variable Nomenclature:&lt;/h2&gt;
-
-&lt;p&gt;Variables in R need to begin with a letter and cannot have spaces in them.&lt;/p&gt;
-
-&lt;h2 id=&#34;math-relational-operators-are-also-functions&#34;&gt;Math /Relational operators are also functions,&lt;/h2&gt;
-
-&lt;p&gt;These are the only ones which do not require a parenthesis for deployment, as shown in code above.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-seq-function&#34;&gt;The &lt;code&gt;seq()&lt;/code&gt; function&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;seq()&lt;/code&gt; is used to generate a series of numbers, which can be broken into specified intervals. The sum() can be used to sum up this sequence. A sequence of numbers can also be generated as simply as 1:5 as shown below. The sequence is ultimately a vector.&lt;/p&gt;
-
-&lt;p&gt;The 2nd argument in the seq is actually just a maximum value. It can be used to make sure a sequence does not exceed a certain value as well.&lt;/p&gt;
-
-&lt;p&gt;There is a &lt;code&gt;length.out&lt;/code&gt; argument that can be used with the &lt;code&gt;seq()&lt;/code&gt;. This basically creates equally spaced divisions within the limits specified. For example &lt;code&gt;seq(1,100,length.out=10)&lt;/code&gt;, will basically create 10 equally spaced divisions between 1 and 100, including 1 and 100. Note the class created is numeric. See code below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#Code for defining a sequence and then a sum for the same
-number &amp;lt;- 1000
-separation &amp;lt;- 1
-mySeq &amp;lt;- seq(1,number, separation)
-sum(mySeq)
-1:50
-
-#Using the length.out=x argument to create equally spaced x divisions between specified limits. 
-a &amp;lt;- seq(1,100,length.out=10)
-class(a)
-b &amp;lt;- seq(1,2.5, length.out= 5)
-b
-class(b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;class-of-an-object&#34;&gt;&lt;code&gt;class()&lt;/code&gt; of an object&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;class()&lt;/code&gt; helps us determine the type of the object. In particular, we need to be able to distinguish between different types of objects, like numbers, lists, strings and so on.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- 1
-b &amp;lt;- &amp;quot;this is a string&amp;quot;
-#c &amp;lt;- [1,2,3]
-class(a)
-class(b)
-#class(c)
-class(ls)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;data-frames&#34;&gt;Data frames :&lt;/h2&gt;
-
-&lt;p&gt;useful for storing table like data, and different data frames can be combined for analysis. It is inconvenient to store data in a single variable.&lt;/p&gt;
-
-&lt;h2 id=&#34;loading-a-dataset-is-done-using-the-function-data&#34;&gt;Loading a dataset is done using the function data().&lt;/h2&gt;
-
-&lt;p&gt;The murders dataset is a part of dslabs. Loading this now:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(&amp;quot;murders&amp;quot;)
-class(murders)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;str&#34;&gt;str()&lt;/h2&gt;
-
-&lt;p&gt;shows us the structure of an object. The names() shows the different column names in the dataframe.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-obs stands for observations. This is common in datascience, where the rows of entries are called observations.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-class(murders)
-str(murders)
-names(murders)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;find-out-more-about-the-regions-output-factor-w-4-levels-x2026&#34;&gt;Find out more about the regions output &amp;lsquo;Factor w/ 4 levels &amp;#x2026;&amp;lsquo;&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:11] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Does this mean that we are combining some basic region to form combinations? Like North + East , Northeast? - No.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;#org61a2bd7&#34;&gt;See the notes here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;head&#34;&gt;head()&lt;/h2&gt;
-
-&lt;p&gt;shows us the first 6 lines of the data frame.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-head(murders)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org61a2bd7&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;accessing-column-information&#34;&gt;Accessing column information &amp;lsquo;$&amp;rsquo;&lt;/h2&gt;
-
-&lt;p&gt;Accessing the column information, the &amp;lsquo;$&amp;rsquo; is used, which is called the Accessor. This is combined with the name of the column, which can be obtained from the names(), or str(). The length() can be used to find the length of the object.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:17] &lt;/span&gt;&lt;/span&gt; \\ murders$population is a vector. Even if there was a single entry, it would still be a vector. The length() enables one to know the number of entries in the vector. Vectors can be character / numeric / logical vectors. There is another data type called &amp;lsquo;factor&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:15] &lt;/span&gt;&lt;/span&gt; \\ The [1], [9], etc, is representative of the actual number of items on each row. The output is in line with the order of   the observations in the murders dataframe.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-names(murders)
-murders$population #this is a vector
-length(murders$population) #numeric vector
-class(murders$population) #character vector
-class(murders$state)
-a &amp;lt;- &amp;quot;hello string&amp;quot;
-b &amp;lt;- 1234
-length (a)
-length (b)
-
-# example of a logical datatype. (basically stores only True or False answers.)
-a &amp;lt;- 3 == 2
-a
-class(a)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;factors&#34;&gt;Factors&lt;/h3&gt;
-
-&lt;p&gt;Factors are useful for storing categorical data. levels() used to find the different categories within the factor.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:31] &lt;/span&gt;&lt;/span&gt; \\ Saving categorical data in this fashion is more memory efficient, because the levels are stored as &amp;lsquo;integers&amp;rsquo; in the background by R. It is generally recommended to avoid factors, as they cause confusions (perhaps in the data representations). However, some categorical type data have to be represented using factors.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-names(murders)
-str(murders$region)
-levels(murders$region)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;further-data-extraction&#34;&gt;Further data extraction&lt;/h3&gt;
-
-&lt;p&gt;Also possible to use [[ square brackets to extract data rather than using $. The identical() can be used to compare different objects to determine whether they are identical.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 17:40] &lt;/span&gt;&lt;/span&gt; \\ The double quotes were necessary, with the square brackets for the name to be recognised.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-a &amp;lt;- murders[&amp;quot;population&amp;quot;]       #note the double quotes. Doesn&#39;t work without the double quotes. 
-b &amp;lt;- murders[[&amp;quot;population&amp;quot;]]
-c &amp;lt;- murders$population
-
-#checking if a is the same as b
-a == b
-
-#Using the identical()
-identical(a,b)
-identical(b,c)
-identical (a,c)
-
-#checking the class differences.
-class(murders[&amp;quot;population&amp;quot;])
-class(murders[[&amp;quot;population&amp;quot;]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;code-example&#34;&gt;Code example :&lt;/h2&gt;
-
-&lt;p&gt;The length() can be combined with levels() to find the number of unique factors.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-length(levels(murders$region))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;table-takes-a-vector-as-input-and-returns-the-frequency-of-each-unique-element-in-the-vector&#34;&gt;table() - takes a vector as input and returns the frequency of each unique element in the vector.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-06 Tue 18:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-need to learn more about controlling tables. For example, how did the command table(murder$region) just work in grouping the regions and the states? Why did it not try the other columns of data?&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)
-#str(murders)
-table(murders$state,murders$region)
-table(murders$region)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;section-2-vectors-sorting&#34;&gt;SECTION 2: Vectors, Sorting&lt;/h1&gt;
-
-&lt;h2 id=&#34;vectors&#34;&gt;Vectors :&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;most basic unit to store data. Complex units can be broken down to vectors typically.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;function-c-concatenate-can-be-used-to-create-vectors&#34;&gt;function &lt;code&gt;c()&lt;/code&gt; - concatenate can be used to create vectors.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-#using similar example as in the lesson to check out c()
-codes &amp;lt;- c(italy=440, zambia=880, morocco=980)
-codes
-class(codes)
-
-codes2 = c(840,440,330)
-countries = c(&amp;quot;Canada&amp;quot;, &amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)
-names(codes2) &amp;lt;- countries  
-#Basically, each element in the vector countries is being assigned in order to each name or element in vector codes2.
-codes2
-class(codes2)
-
-seq(1,30,5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;subsetting&#34;&gt;Subsetting :&lt;/h2&gt;
-
-&lt;p&gt;Subsetting lets us access specific parts of a vector. This is basically using the square brackets or the $ accessor. There are multiple ways to do so. For example : using the entity names, multiple entity names, order number (index?). It is even possible to concatenate using the &lt;code&gt;names()&lt;/code&gt;. Refer code below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;codes2 = c(840,440,330)
-countries = c(&amp;quot;Canada&amp;quot;, &amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)
-names(codes2) &amp;lt;- countries   #Note this concatenation process using names()
-codes2
-codes2[2]
-codes2[[2]]
-# codes2[1 3] #This will cause a syntax error. Therefore to use more than one argument, another vector has to be created using c(), or a continuous series has to be used. 
-codes2[c(1,3)]
-codes2[2:3]
-
-# it is also possible to use element names to access the entries. Note that this is case sensitive. Use c() for multiple names.
-codes2[&amp;quot;Canada&amp;quot;]
-codes2[c(&amp;quot;India&amp;quot;, &amp;quot;Zambia&amp;quot;)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;vector-coercion&#34;&gt;vector coercion :&lt;/h2&gt;
-
-&lt;p&gt;attempt to be flexible with data types. Vectors must be all of the same type. &lt;code&gt;R&lt;/code&gt; basically converts the data into a sensible format for it to work. It is defined as &amp;lsquo;R coerced the data&amp;rsquo;. Demonstration below:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(840,&amp;quot;my string&amp;quot;,330)
-a
-class(a)
-#here the numbers 840 and 330 have been converted to characters. Therefore R coerced the data from numbers to a character format. 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;forced-coercion&#34;&gt;Forced coercion&lt;/h3&gt;
-
-&lt;p&gt;is also possible with &lt;code&gt;R&lt;/code&gt; via functions. Example: &lt;code&gt;as.character()&lt;/code&gt;, to convert an existing class into a character. Similarly, &lt;code&gt;as.numeric()&lt;/code&gt; for numeric conversion.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,660,220)
-a
-class(a)
-b &amp;lt;- as.character(a)
-b
-class(b)
-a &amp;lt;- as.character(a) #just for fun. Checking if the original vector can be coerced. Yes it can be. 
-class(a)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A lot of public datasets include numbers in a form that make them appear to be characters. Missing data is also quite common in practise.&lt;/p&gt;
-
-&lt;h3 id=&#34;na&#34;&gt;NA&lt;/h3&gt;
-
-&lt;p&gt;is the special value for missing data. NA&amp;rsquo;s can also be caused by Coercion. As demonstrated below. The NA is caused by &amp;lsquo;b&amp;rsquo;, which is a character that cannot be converted to a numeric. In the general R console, an error may pop up that NA&amp;rsquo;s are caused by said function or operation.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,&amp;quot;b&amp;quot;,220)
-a
-class(a)
-as.numeric(a)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;integer-class&#34;&gt;Integer class&lt;/h2&gt;
-
-&lt;p&gt;This can be created by adding the letter L after a whole number. However, it appears that once a mathematical operation is done on the integer, it becomes a numeric. Also note that the class changes depending on the type of information being stored in the vector, like the &lt;code&gt;seq()&lt;/code&gt; below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class (seq(1:10)) #note that the type of info being stored changes the class
-class(4L)
-b &amp;lt;- 4L-2.1  #Note that the class is still numeric even after adding L after 2.1
-b
-class(b)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;sort&#34;&gt;&lt;code&gt;sort()&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;can be used to sort data based on a particular column heading. For example, using murders is shown in the code below. Using the sort() does not provide any information regarding the states. the table function could be used to depict a 1 or true value when the total is matched.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-sort(murders$total)
-table(murders$state, murders$total)   # this table basically lists all the values in the total and then puts a 1 wherever the state is matched.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;find-out-more-about-getting-the-right-data-from-tables&#34;&gt;find out more about getting the right data from tables&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 20:50] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-The formulation of the data has to be mastered via tables. The data is being extracted now, but is difficult to read.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;order&#34;&gt;order().&lt;/h2&gt;
-
-&lt;p&gt;Returns the indices that sort the vector parameter. This is demonstrated using a vector of 5 numbers in the edx lecture. &lt;code&gt;rank()&lt;/code&gt; returns the rank of each item in order.&lt;/p&gt;
-
-&lt;p&gt;In the code below the result of 3 1 2 for the order(a) function basically shows me that the 3rd entry 220, is the smallest in the vector. The 1st postition 540 is the next largest number, and index 2, 660, is the largest number.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;a &amp;lt;- c(540,660,220)
-class(a)
-order(a)
-rank(a)
-
-library(dslabs)
-data(murders)
-class(murders$total)
-index &amp;lt;- order(murders$total) #refer explanation below regarding the index.
-index
-class(index)
-murders$abb[index]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Basically, if I am able to store the index of a vector, by using the order(), then I can match other variables to this index, and thus obtain, say an ascending order or descending order of states, which are matched with the index. That is executed in the code above.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-02-07 Wed 21:01] &lt;/span&gt;&lt;/span&gt; \\ This concept is rather beautiful when it comes through and you see that you are basically using a rubik&amp;rsquo;s cube method to arrange the data and ensure integrity in the relation between variables.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-myIndex &amp;lt;- order(murders$total)
-names(murders$state[myIndex]) &amp;lt;- murders$abb  #I am basically trying to format the data by printing the state,abbreviation. However this is not working.
-print(murders$state[myIndex])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;how-do-i-format-the-data-and-make-it-strings-for-example-the-state-abbreviation-printed-out-in-the-order-using-the-index-it-should-be-possible-need-to-find-the-appropriate-syntax&#34;&gt;How do I format the data and make it strings, for example, the state, abbreviation - printed out in the order. Using the index, it should be possible. Need to find the appropriate syntax.&lt;/h3&gt;
-
-&lt;h2 id=&#34;max&#34;&gt;max()&lt;/h2&gt;
-
-&lt;p&gt;can be used to find the largest value in the dataset directly. the min()is the opposite, as shown below. which.max() can be used to extract the exact index value in the column.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-murders$state[which.max(murders$total)]
-murders$state[which.min(murders$total)]
-a &amp;lt;- median(murders$total)
-a
-class(a)
-#murders$region[a]
-rank(a)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;need-to-understand-why-order-cannot-be-used-to-find-the-max-or-min-of-a-dataset&#34;&gt;Need to understand why order() cannot be used to find the max or min of a dataset.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 09:33] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-It can be. It basically returns a vector of indexes, which if used to index the origial vector - would result in a sorted vector.&lt;/p&gt;
-
-&lt;p&gt;a &amp;lt;- c(1,13,45,30,25)
-index &amp;lt;- order(a)
-a[index]&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;ordering-the-murders-by-state&#34;&gt;Ordering the murders by state,&lt;/h2&gt;
-
-&lt;p&gt;and also checking that the ordered values are correct.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-#print(murders)
-
-my_index &amp;lt;- order(murders$total)
-
-#murders$state[my_index]
-#length(my_index)
-
-#verifying the ordering. The comparison operator should output the BOOLEAN - TRUE if the answer matches.
-
-max_val_ind &amp;lt;- which.max(murders$total)
-min_val_ind &amp;lt;- which.min(murders$total)
-
-murders$state[my_index[1]] == murders$state[min_val_ind]
-murders$state[my_index[length(my_index)]] == murders$state[max_val_ind]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;rank&#34;&gt;&lt;code&gt;rank()&lt;/code&gt;:&lt;/h2&gt;
-
-&lt;p&gt;this is the ranking of each ITEM in the vector, if it were sorted. The &lt;code&gt;order()&lt;/code&gt; deals with manipulating index of the given vector, whereas &lt;code&gt;rank()&lt;/code&gt; ranks the items in the vector themselves.&lt;/p&gt;
-
-&lt;h2 id=&#34;data-frame&#34;&gt;data frame&lt;/h2&gt;
-
-&lt;p&gt;can be created using the &lt;code&gt;data.frame(col1, col2)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;is-na-to-create-a-logical-vector&#34;&gt;is.na() to create a logical vector,&lt;/h2&gt;
-
-&lt;p&gt;which tells us which values are NA. Taking a sum of the resultant vector gives us the number of NA&amp;rsquo;s.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#loading the NA example in dslabs
-
-library(dslabs)
-data(na_example)
-
-# Using the is.na()
-a &amp;lt;- is.na(na_example)
-#print(a)
-sum(a)
-
-#Assuming that TRUE means 1 and FALSE means 0 - the sum should give us the number of TRUE&#39;s, and therefore the number NA&#39;s.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The function mean(), returns NA, if there is even a single NA in the vector being assessed. It is possible to use the &amp;lsquo;!&amp;rsquo; function to get the reverse of the function intended. i.e applying the mean to all the entries that are not NA.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(na_example)
-
-na_ind &amp;lt;- is.na(na_example)  #storing a BOOLEAN of all the values which are NA&#39;s.
-
-mean(na_example[!na_ind]) #calculating the mean of the values in  the entity, which are not NA&#39;s.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;vector-arithmetic&#34;&gt;vector arithmetic:&lt;/h2&gt;
-
-&lt;p&gt;arithmetic operations occur element wise. The &lt;code&gt;sum()&lt;/code&gt; can be used to count the logical vectors. Each TRUE value is 1.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#Ordering murder states by the murder rate 
-library(dslabs)
-data(murders)
-
-murder_rate &amp;lt;- murders$total / murders$population * 100000
-
-murders$state[order(murder_rate, decreasing = TRUE)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;section-3-indexing-data-wrangling-plots&#34;&gt;SECTION 3: Indexing, Data Wrangling, Plots&lt;/h1&gt;
-
-&lt;h2 id=&#34;indexing-using-logical-operators-to-index-vectors&#34;&gt;Indexing: using logical operators to index vectors.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;compare a vector to a single number, the operation is performed for each entry.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;the sum() can be used to calculate the total number of TRUE entries in the logical vector. The logical vector can also be used as an index to extract other data or columns, using the index as a reference.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-data(murders)&lt;/p&gt;
-
-&lt;p&gt;murder_rate &amp;lt;- murders$total / murders$population *100000
-index &amp;lt;- murder_rate &amp;lt; 0.8
-murders$state[index] # these are the states where the murder_rate per capita of 100,000 is less that 0.8&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;the-logical-vector-actually-gets-coerced-into-a-numeric-and-therefore-true-is-1-and-false-is-0&#34;&gt;The logical vector actually gets coerced into a numeric, and therefore TRUE is 1 and FALSE is 0.&lt;/h2&gt;
-
-&lt;h2 id=&#34;create-a-function-in-org-babel-that-can-import-the-dslabs-library-and-the-specified-dataset-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-03-17-sat-gt-span-span&#34;&gt;create a function in org babel that can import the dslabs library and the specified dataset. &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-03-17 Sat&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-21 Wed 22:26] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-function is not required, it can be done via org babel source code block import.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;using-the-and-operator&#34;&gt;using the &amp;lsquo;&amp;amp;&amp;rsquo; AND operator&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;#importing libraries and data set
-library(dslabs)
-data(murders)
-
-#This example demonstrates the use of the AND operator in R. 2 conditions are considered, example the region being West and the murder rate being less than 1. 
-
-#defining terms
-murder_rate &amp;lt;- murders$total / murders$population *100000
-
-safe &amp;lt;- murder_rate &amp;lt;= 1 
-region_choice &amp;lt;- murders$region == &amp;quot;West&amp;quot;
-
-index &amp;lt;- safe &amp;amp; region_choice  #using the AND operator to assign both 
-
-#Reference before output
-str(murders)
-murders$state[index]
-
-#Interesing to note that the logical operator converted to the numeric operator also becomes an INDEX selection vector.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;testing-code-from-datacamp&#34;&gt;Testing code from datacamp&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-# Store the murder rate per 100,000 for each state, in `murder_rate`
-murder_rate &amp;lt;- murders$total/murders$population*100000
-
-# Store the `murder_rate &amp;lt; 1` in `low` 
-low &amp;lt;- murder_rate &amp;lt; 1
-
-# Create a vector ind for states in the Northeast and with murder rates lower than 1. 
-region_sel &amp;lt;- murders$region == &amp;quot;Northeast&amp;quot; 
-
-ind &amp;lt;- region_sel &amp;amp; low
-
-# Names of states in `ind` 
-murders$state[ind]
-
-#computing mean of murder rate
-avg &amp;lt;- mean(murder_rate)
-
-#number of states below of the average murder rate. 
-sum(murders$state[murder_rate] &amp;lt; avg)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;which-match-and-in-useful-functions-related-to-logical-operators&#34;&gt;which, match and %in% - useful functions related to logical operators.&lt;/h2&gt;
-
-&lt;h3 id=&#34;which-entries-of-a-logical-vector-which-are-true-this-is-useful-when-the-list-of-logical-vectors-is-very-long-and-it-is-worth-having-only-the-indices&#34;&gt;which - entries of a logical vector which are TRUE. This is useful when the list of logical vectors is very long, and it is worth having only the indices.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-17 Sat 17:09] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-using which and ! NOT operator. example: which(!vector1 %in% vector2)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;match-which-of-the-indices-of-the-2nd-vector-match-each-of-the-entities-in-the-first-vector&#34;&gt;match() - which of the indices of the 2nd vector, match each of the entities in the first vector.&lt;/h3&gt;
-
-&lt;h3 id=&#34;in-basically-used-to-find-out-whether-an-element-exists-in-a-vector-or-not-without-using-the-for-loop&#34;&gt;%in% - basically used to find out whether an element exists in a vector or not, without using the for loop.&lt;/h3&gt;
-
-&lt;h3 id=&#34;find-out-exactly-why-storing-the-indices-is-more-efficient&#34;&gt;find out exactly why storing the indices is more efficient.&lt;/h3&gt;
-
-&lt;h3 id=&#34;code-exploration&#34;&gt;Code exploration:&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#importing libraries and data set
-library(dslabs)
-data(murders)
-
-# This example looks at which, match and %in%
-
-
-# murders$state - for reference
-
-#defining terms
-murder_rate &amp;lt;- murders$total / murders$population *100000
-
-my_state_index &amp;lt;- which(murders$state == &amp;quot;Colorado&amp;quot;)
-murder_rate[my_state_index]
-
-#using which and a logical vector - is just more efficient. 
-
-# the match()
-# finding the murder rate for several states
-
-new_index &amp;lt;- match(c(&amp;quot;Arizona&amp;quot;, &amp;quot;Arkansas&amp;quot;, &amp;quot;Texas&amp;quot;), murders$state)
-
-#checking that the states have been matched
-murders$state[new_index]
-
-murder_rate[new_index]
-
-#using %in%
-check &amp;lt;- c(&amp;quot;Boston&amp;quot;, &amp;quot;New York&amp;quot;, &amp;quot;Toronto&amp;quot;)
-check %in% murders$state
-
-murders$abb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;basic-data-wrangling-dplyr-library-tools-to-work-with-tables-as-the-analyses-advance-subsetting-and-indexing-will-not-be-sufficient&#34;&gt;Basic Data Wrangling : dplyr library - tools to work with tables. As the analyses advance, subsetting and indexing will not be sufficient.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-18 Sun 06:17] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-Note that the install of the dplyr package took place only with the command install.packages(dplyr). The installation done via Rstudio actually took a while.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;mutate-is-used-to-change-the-existing-column-or-add-another-column&#34;&gt;mutate() is used to change the existing column or add another column&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mutate(name, value of the variable)&lt;/li&gt;
-&lt;li&gt;i.e adding murders_rate to the murders dataframe can be done by using&lt;/li&gt;
-&lt;li&gt;Possible to include rank as an additional column. Note that if rank(x) gives you the ranks of x from lowest to highest, rank(-x) gives you the ranks from highest to lowest.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;filter-filter-the-data-by-subsetting-rows&#34;&gt;filter() - filter the data by subsetting rows.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;filter(name, conditional statement to allow filter)&lt;/li&gt;
-&lt;li&gt;the name is the dataframe&amp;rsquo;s name. Therefore, similar to mutate, there is no need to use the $ to specify the dataframe, as it is understood.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;select-subset-the-data-using-specific-columns&#34;&gt;select() - subset the data using specific columns.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;used to select particular columns from a table. useful for a focused analysis involving a subset of columns from an existing table.&lt;/li&gt;
-&lt;li&gt;the first argument is an object, or the dataframe to be considered. The remaining arguments are variables from the dataframe.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;code-exploration-for-mutate-filter-and-select&#34;&gt;Code exploration for mutate, filter and select&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dplyr)
-library(dslabs)
-data(murders)
-
-#using Mutate
-
-murders &amp;lt;- mutate(murders, rate = total / population *100000)  
-head(murders)  #note that the additional column is available.
-
-
-#Using filter
-filtered_murder &amp;lt;- filter(murders, rate &amp;lt; 0.65)
-filtered_murder
-
-#using select
-# excess_murder &amp;lt;- select(murders, state, region, abb, (filter(murders, rate&amp;lt;0.7)))  - it seems a direct filter does not work with select.
-excess_murders &amp;lt;- select(murders, state, rate)
-filter(excess_murders, rate &amp;gt; 0.7)
-
-
-#In mutate - rate is defining the new column. 
-#the first argumen specifies which dataframe is being mutated or the name.
-#note that total and population are being called as normal variables without $. The reason is that mutate/filter/select knows to look for these variables within the dataframe specified in names. These are not local workspace variables.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;pipe-operator-sending-the-results-of-one-function-to-another-function&#34;&gt;pipe operator - sending the results of one function to another function.&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;using the %&amp;gt;% operator for pipe.&lt;/p&gt;
-
-&lt;p&gt;library(dslabs)
-library(dplyr)
-data(murders)&lt;/p&gt;
-
-&lt;p&gt;murders %&amp;gt;% mutate(rate =  total /population *100000) %&amp;gt;% select(state, region, rate) %&amp;gt;% filter(rate &amp;lt;= 0.71)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;creating-dataframes-data-frames-colname-c-colname2-c-x2026-colname3-c-x2026&#34;&gt;creating dataframes : data.frames(&lt;colname&gt;=c(&amp;ldquo;&amp;rdquo;..), &lt;colname2&gt;=c(&amp;ldquo;&amp;rdquo;&amp;#x2026;),&lt;colname3&gt;=c(&amp;ldquo;&amp;rdquo;&amp;#x2026;))&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;basically write the column name, and then define the column. This creates a dataframe.&lt;/li&gt;
-&lt;li&gt;By default, the characters are turned in to factors.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;to avoid this, there must be an additional special argument in the end of the data.frames command. stringsAsFactors = FALSE&lt;/p&gt;
-
-&lt;p&gt;library(dplyr)
-library(dslabs)
-data(murders)&lt;/p&gt;
-
-&lt;p&gt;hello &amp;lt;- data.frame(names=c(&amp;ldquo;John&amp;rdquo;, &amp;ldquo;JayZ&amp;rdquo;, &amp;ldquo;Eminem&amp;rdquo;), music_rating = c(12,10,9), popularity=c(&amp;ldquo;none&amp;rdquo;, &amp;ldquo;high&amp;rdquo;, &amp;ldquo;very high&amp;rdquo;))
-#str(hello)
-#hello
-class(hello$names)&lt;/p&gt;
-
-&lt;p&gt;hellonew &amp;lt;- data.frame(names=c(&amp;ldquo;John&amp;rdquo;, &amp;ldquo;JayZ&amp;rdquo;, &amp;ldquo;Eminem&amp;rdquo;), music_rating = c(12,10,9), popularity=c(&amp;ldquo;none&amp;rdquo;, &amp;ldquo;high&amp;rdquo;, &amp;ldquo;very high&amp;rdquo;), stringsAsFactors = FALSE)
-class(hellonew$names)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;code-exploration-1&#34;&gt;Code exploration&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-library(dplyr)
-
-no_south &amp;lt;- filter(murders, region != &amp;quot;South&amp;quot;)  #filtering such that there are no states in the region south.
-nrow(no_south)
-
-multi_sel &amp;lt;- filter(murders, region == c(&amp;quot;South&amp;quot;, &amp;quot;Northeast&amp;quot;))  #Choosing states only from the South and Northeast. this can also be done with %in% instead of using the == oprator
-multi_sel
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Using One line to mutate, filter, select and print results - from datacamp.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2018-03-18 Sun 07:57] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-note how the new dataset mystates, is created by just assigning murders to it. This allows the code to be in a single line using pipes. It is important to be able write these single lines of code. While it may not improve readability, it certainly reduces the efforts involved in quickly deriving results to particular questions. In any case, codes like these will be inserted into a function to enable re-usability.&lt;/p&gt;
-
-&lt;h1 id=&#34;loading-the-libraries&#34;&gt;Loading the libraries&lt;/h1&gt;
-
-&lt;p&gt;library(dslabs)
-library(dplyr)
-data(murders)&lt;/p&gt;
-
-&lt;h1 id=&#34;create-new-data-frame-called-my-states-with-specifications-in-the-instructions&#34;&gt;Create new data frame called my_states (with specifications in the instructions)&lt;/h1&gt;
-
-&lt;p&gt;my_states &amp;lt;- murders %&amp;gt;% mutate(rate = total / population*100000, rank = rank(-rate)) %&amp;gt;% filter(region %in% c(&amp;ldquo;Northeast&amp;rdquo;, &amp;ldquo;West&amp;rdquo;) &amp;amp; rate &lt;1) %&gt;% select(state, rate, rank)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;basic-plots&#34;&gt;Basic Plots :&lt;/h2&gt;
-
-&lt;h3 id=&#34;d3-interactive-data-visualization-programming-language-maybe-more-flexible-and-powerful-than-r-but-takes-much-longer-to-generate-a-plot&#34;&gt;D3 - interactive data visualization programming language - maybe more flexible and powerful than R, but takes much longer to generate a plot&lt;/h3&gt;
-
-&lt;h3 id=&#34;plot&#34;&gt;plot()&lt;/h3&gt;
-
-&lt;h3 id=&#34;hist-histogram-x-x-has-to-be-numeric&#34;&gt;hist() - histogram(x) - x has to be numeric.&lt;/h3&gt;
-
-&lt;h3 id=&#34;boxplot-rate-region-data-murders-here-rate-and-region-are-the-subsets-of-the-df-murders-and-the-x-and-y-axes-respectively&#34;&gt;boxplot (rate~region, data = murders) - here rate and region are the subsets of the df murders and the x and y axes respectively.&lt;/h3&gt;
-
-&lt;h3 id=&#34;code-exploration-2&#34;&gt;Code exploration&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-pop_mill &amp;lt;- murders$population/10^6
-murd_tot &amp;lt;- murders$total
-plot(pop_mill, murd_tot)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;figure-out-inline-images-for-plotting-with-r-and-python-in-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-2018-03-18-sun-gt-span-span&#34;&gt;Figure out inline images for plotting with R and python in emacs &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;2018-03-18 Sun&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
-
-&lt;h1 id=&#34;section-4-programming-basics&#34;&gt;SECTION 4: Programming Basics&lt;/h1&gt;
-
-&lt;h2 id=&#34;see-dataquest-examples-here-if-else-control-structures-datascience-md&#34;&gt;See Dataquest examples here : &lt;a href=&#34;datascience.md&#34; target=&#34;_blank&#34;&gt;If, else - control structures.&lt;/a&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;using-the-if-else-control-in-the-murders-dataset&#34;&gt;Using the if else control in the murders dataset&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-murder_rate &amp;lt;- murders$total/murders$population * 100000
-#print(murder_rate)
-
-ind &amp;lt;- which.min(murder_rate)
-print(ind)
-print(murders$state[ind]) 
-
-if (murder_rate[ind] &amp;lt; 0.6) {
-   print(murders$state[ind])
-   } else {
-   print(&amp;quot;No state is that low&amp;quot;) 
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;ifelse-takes-3-arguments-a-logical-and-2-possible-answers-if-the-logical-evaluates-to-true-the-first-answer-is-returned-for-false-the-2nd-answer-is-returned&#34;&gt;ifelse : takes 3 arguments. A logical and 2 possible answers. If the logical evaluates to TRUE, the first answer is returned. For FALSE : the 2nd answer is returned.&lt;/h2&gt;
-
-&lt;h3 id=&#34;ifelse-is-particularly-useful-because-it-works-on-vectors&#34;&gt;ifelse is particularly useful because it works on vectors.&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-a &amp;lt;- -20
-b &amp;lt;- 34
-a_stmt &amp;lt;- &amp;quot;a is greater&amp;quot;
-b_stmt &amp;lt;- &amp;quot;b is greater&amp;quot; 
-
-ifelse(a&amp;gt;b, a_stmt, b_stmt)
-
-#it is possible to directly insert characters/strings into the arguments. i.e
-ifelse(a&amp;lt;b, &amp;quot;b is greater&amp;quot; ,&amp;quot;a is greater&amp;quot;) 
-
-
-#ifelse also works on vector. The if else operation is performed on each element. The output however looks interesting. 
-c &amp;lt;- c(34,54,6567,88,1,2,3)
-d &amp;lt;- c(33,55, 6600, 85, 3 ,6, 1)
-#print(c(&amp;quot;The str of c is : &amp;quot;,str(c))
-#print(c(&amp;quot;The str of d is : &amp;quot;, str(d))
-
-ifelse(c&amp;gt;d, &amp;quot;c is greater&amp;quot;, &amp;quot;d is greater&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;using-ifelse-to-replace-na-s&#34;&gt;using ifelse to replace NA&amp;rsquo;s&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(na_example)
-
-sum(is.na(na_example))
-class(na_example)  #integer class
-
-no_nas &amp;lt;- ifelse(is.na(na_example),&amp;quot;REPLACED&amp;quot;,na_example)
-#print(no_nas)
-
-#New vector defined has no NA&#39;s, as verified by the updated sum.
-sum(is.na(no_nas))
-sum(no_nas == &amp;quot;REPLACED&amp;quot;)
-class(no_nas)  #note that replacing the NA with a character - makes the variable a character class.
-
-#ifelse(c&amp;gt;d, &amp;quot;c is greater&amp;quot;, &amp;quot;d is greater&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;any-and-all&#34;&gt;any() and all() :&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;any takes a vector of logicals and returns TRUE if any of the entries are true.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;all() : take s a vector of logicals and returns TRUE if ALL of the entries are true.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;any() and all(), can also be used in a sense to evaluate logical vectors, and get the measure of a quantity by making comparisons in a fundamental sense of 1 and 0, either TRUE or FALSE.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;code exploration&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(dslabs)
-data(murders)
-
-a &amp;lt;- c(1, 2, 3, 4, 5)
-b &amp;lt;- c(100, 200, 300, 400, 500)
-any(a&amp;gt;b)
-
-if (any(a&amp;gt;b)== TRUE) {
-    print(&amp;quot;a has atleast one element greater than b&amp;quot;) 
-    } else {
-    print(&amp;quot;b&#39;s elements are all greater than a&amp;quot;)
-}
-
-
-if (all(a&amp;gt;b)== TRUE) {
-    print(&amp;quot;a is greater than b&amp;quot;) 
-    } else {
-    print(&amp;quot;b is greater than a&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;functions&#34;&gt;Functions :&lt;/h2&gt;
-
-&lt;h3 id=&#34;example-code-creating-a-function-called-average-and-comparing-the-same-to-the-inbuilt-mean&#34;&gt;example code creating a function called average and comparing the same to the inbuilt mean()&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;#defining function avg taking a single argument, and calculating the average of the variable. 
-
-
-avg &amp;lt;- function(a){
-    calc &amp;lt;- sum(a)/length(a)
-    return(calc)
-}
-
-#declaring the vector for average calculation
-a &amp;lt;- c(25,30,45,50,100)
-
-avg(a)
-
-mean(a)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;function-variables-are-not-saved-in-the-workspace&#34;&gt;function variables are not saved in the workspace.&lt;/h3&gt;
-
-&lt;h3 id=&#34;the-name-of-the-function-is-an-object-functions-are-objects&#34;&gt;the name of the function is an object. Functions are objects.&lt;/h3&gt;
-
-&lt;h2 id=&#34;for-loops&#34;&gt;For Loops&lt;/h2&gt;
-
-&lt;h3 id=&#34;general-form-for-i-in-range-of-values-operations-using-i&#34;&gt;general form :  for(i in range of values) {operations using i }&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;for (i in 1:5){
-    print(i) }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;using-the-vector-to-define-an-empty-vector-of-particular-length&#34;&gt;using the vector() to define an empty vector of particular length :&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;m &amp;lt;- 5
-sum_n &amp;lt;- vector(length = m)
-n &amp;lt;- 1:m
-print(n)
-
-for (i in n){
-    #print(i)
-    print(n[i])
-    sum_n[i] &amp;lt;- sum_n[i] + n[i]
-}
-
-print(sum_n)
-class(sum_n)
-str(sum_n)
-plot(n, sum_n)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;plot-and-lines&#34;&gt;plot() and lines()&lt;/h3&gt;
-
-&lt;h3 id=&#34;for-loops-are-not-often-used-in-r-since-there-are-other-powerful-ways-to-do-the-same-function&#34;&gt;for loops are not often used in R, since there are other powerful ways to do the same function.&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;apply&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;sapply&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;tapply&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;mapply&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;also-checkout-the-following-functions&#34;&gt;Also checkout the following functions:&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;split&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;cut&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;quantile&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;identical&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;unique&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;nchar-tells-you-how-many-characters-a-vector-has&#34;&gt;nchar() tells you how many characters a vector has.&lt;/h3&gt;
 </description>
     </item>
     
     <item>
-      <title>Code School - free weekend - Fly with python</title>
-      <link>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</link>
-      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Iosevka - one font closer to zen writing</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/</guid>
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;Code School is kind enough to occasionally offer a &lt;em&gt;free weekend&lt;/em&gt; with full access to their normally paid courses. I was able to capitalize on &lt;em&gt;two&lt;/em&gt; such occasions to complete several courses. Below are the notes that were captured, directly into org-mode in emacs. The code builds on examples and lessons available on the Code School courses.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Code School:&lt;/strong&gt; I&amp;rsquo;ve completed courses on Python, Git, Regular Expressions and SQL. See my &lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Report card&lt;/a&gt;. These courses are certainly useful to get on with the basics and to gain some level of fluency with python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;level-1-lists-and-dictionaries&#34;&gt;Level 1 - Lists and Dictionaries&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dictionaries : basically used to lookup values using a key instead
-of an index. It maps keys to values. These are separated by a colon.&lt;/li&gt;
-&lt;li&gt;Dictionaries can hold anything in terms of the value type, eg strings to string, strings to numbers and etc etc.&lt;/li&gt;
-&lt;li&gt;Dictionaries are enclosed within Curly {} brackets, and lists are enclosed within square brackets [].&lt;/li&gt;
-&lt;li&gt;To check whether a word is in the dictionary, use the get()&lt;/li&gt;
-&lt;li&gt;There is no append function for the dictionary. THis works only on lists, or pehaps lists within dictionaries !&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;test-program-for-key-value-pair-demonstration&#34;&gt;Test program for key:value pair demonstration&lt;/h2&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:13] &lt;/span&gt;&lt;/span&gt; \\ &amp;lsquo;None&amp;rsquo; - is a special type which basically represents the absence of any value. &amp;lsquo;True&amp;rsquo; is returned if the key exists. using &lt;code&gt;get()&lt;/code&gt; is best practise because it will not crash the program. Need to understand this statement better&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;slang = {&#39;testing&#39;:&#39;gre&#39;, &#39;champagne&#39;:&#39;sparkler&#39;, &#39;ontario&#39;:&#39;canada&#39;}
-print(slang.get(&#39;toronto&#39;))
-print(slang.get(&#39;canada&#39;)) #note that this is none. Shows that the dictionary only searches for the first term or the key. The second terms is called value.
-print(slang.get(&#39;ontario&#39;))
-
-None
-None
-canada
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test program for updating dictionary items
-Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-19 Sat 20:30] &lt;/span&gt;&lt;/span&gt; \\ The square brackets are used to represent each key value inside the dictionary.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;performances = {&#39;Ventriloquism&#39;:&#39;9:00am&#39;, 
-                &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, 
-                &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, 
-                &#39;Enchanted Elephants&#39;:&#39;5:00pm&#39;}
-print (performances)
-
-#changing a key&#39;s value
-performances[&#39;Enchanted Elephants&#39;]=&#39;6:00pm&#39;
-print (performances)
-
-#Deleteing an item
-del performances[&#39;Enchanted Elephants&#39;]
-print (performances)
-
-{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, &#39;Enchanted Elephants&#39;: &#39;5:00pm&#39;}
-{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;, &#39;Enchanted Elephants&#39;: &#39;6:00pm&#39;}
-{&#39;Ventriloquism&#39;: &#39;9:00am&#39;, &#39;Snake Charmer&#39;: &#39;12:00pm&#39;, &#39;Amazing Acrobatics&#39;: &#39;2:00pm&#39;}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Comparing lists : They need to have the same values in the same order. Even if the values are the same, but the order is different, the list is deemed different.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_a = [&#39;python&#39;, &#39;bison&#39;, &#39;lion&#39;]
-list_b = [&#39;python&#39;, &#39;lion&#39;, &#39;bison&#39;]
-
-print(list_a == list_b)
-
-False
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Works a little different for dictionaries: Dictionaries are not ordered lists. They are just key:value pairs. Therefore in a comparison, only the key value pairs need to be equal.&lt;/p&gt;
-
-&lt;p&gt;List of lists:it is possible to have a list of multiple lists. Sometimes called 2D lists&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;breakfast = [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
-lunch= [&#39;upma&#39;, &#39;rice&#39;, &#39;roti and sabji&#39;, &#39;curd&#39;]
-dinner= [&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
-food_items = [breakfast, lunch, dinner]
-print (food_items[0])
-print (food_items[2])
-#also possible to get a specific item within this list, by using the 2D list concept. The 2nd list ordering also starts from 0.
-print (food_items[0][2])
-
-[&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
-[&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
-soy milk
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dictionary of lists - makes it easier to define.&lt;/p&gt;
-
-&lt;p&gt;Test program 1 : example for defining multiple lists and a dictionary of lists.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;breakfast = [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;]
-lunch= [&#39;upma&#39;, &#39;rice&#39;, &#39;roti and sabji&#39;, &#39;curd&#39;]
-dinner= [&#39;curd rice&#39;, &#39;bakhri and sabji&#39;, &#39;adai&#39;]
-food_items = {&#39;bf&#39;:breakfast,&#39;dins&#39;: dinner}
-print (&#39;Breakfast is \n\t&#39;,food_items[&#39;bf&#39;])
-
-Breakfast is 
-     [&#39;omelette&#39;, &#39;noodles&#39;, &#39;soy milk&#39;s
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Test program 2 - extracting a particular value from dictionaries / nested lists&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# So instead of having separate lists ...
-weekdays = [&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;]
-saturday = [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;]
-sunday   = [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]
-
-# We could have one big list ...
-performances = [[&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;],
-                [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;],
-                [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]]
-
-#to get one particular value, ventriloquist,  the code would be :
-print (performances[0][2])
-
-Ventriloquist Vinnie
-
-performances = {&#39;weekdays&#39;: [&#39;Bearded Lady&#39;, &#39;Tiniest Man&#39;, &#39;Ventriloquist Vinnie&#39;],
-                &#39;saturday&#39;: [&#39;Amazing Acrobatics&#39;, &#39;Enchanted Elephants&#39;],
-                &#39;sunday&#39;:   [&#39;Snake Charmer&#39;, &#39;Amazing Acrobatics&#39;]}
-
-#to get Ventriloquist Vinnie performance
-print (performances[&#39;weekdays&#39;][2])
-
-Ventriloquist Vinnie
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;level-2-loops&#34;&gt;Level 2 - Loops&lt;/h1&gt;
-
-&lt;h2 id=&#34;for-loop-can-be-used-to-sum-up-the-numbers-within-a-list-len-can-be-used-to-compute-the-average&#34;&gt;For loop can be used to sum up the numbers within a list. &lt;code&gt;len()&lt;/code&gt; can be used to compute the average.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;lista= [1,4,5,2.45]  #list of numbers
-sum = 0 #initialising the variable
-for x in lista:   #x is a temporary arbitrary variable, just to represent the items while looping.
-    sum = sum + x
-
-print (&#39;the sum is&#39;,sum)
-average = sum/len(lista)
-print (&#39;the average is&#39;,average)    
-
-the sum is 12.45
-the average is 3.1125
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;generating-a-random-number&#34;&gt;Generating a random number !&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;random.random()&lt;/code&gt; : picks a random number between 0.0 - 1.0&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;random.choice([1,2,3])&lt;/code&gt;: picks a random number from the provided list. This could also be used on multiple lists, by just referencing the variable where the multiple lists are stored. Refer &lt;a href=&#34;#org8e7abfb&#34;&gt;Test program - printing random choice from a list of strings&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;random.randint(a,b)&lt;/code&gt;: provides a random integer between a and b.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import random
-
-r1 = random.random()
-print (r1)
-r2 = random.choice ([1,4,5,67])
-print (r2)
-
-r4= random.randint (1,56)
-print (r4)
-
-0.8639718856206364
-1
-16
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;for-fixing-the-number-of-iterations-when-there-is-no-list-or-reference-we-use-the-function-range&#34;&gt;For fixing the number of iterations, when there is no list or reference, we use the function &lt;code&gt;range()&lt;/code&gt;.&lt;/h2&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 07:39] &lt;/span&gt;&lt;/span&gt; \\ notice how the range values are from 0-9. When we use range(10), an internal list for a count is taken by python. However, the total count is 10 times.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import random
-for i in range(10):  #notice how the range taken is from 0-9. 
-    print (i,&#39;\t&#39;)
-    print (&#39;The number is &#39;,random.randint(1,500),&#39;\n&#39;)
-
-0   
-The number is  28 
-
-1   
-The number is  78 
-
-2   
-The number is  88 
-
-3   
-The number is  35 
-
-4   
-The number is  183 
-
-5   
-The number is  161 
-
-6   
-The number is  131 
-
-7   
-The number is  256 
-
-8   
-The number is  113 
-
-9   
-The number is  255 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;range&#34;&gt;&lt;code&gt;range()&lt;/code&gt;&lt;/h2&gt;
-
-&lt;p&gt;Can have an alternative format wherein range(start,stop,step). In this way, we control the values of i itself, including control the number of times it is repeated and the values that will be taken at each repeat.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;for i in range(200,250,5): #notice how start value is included in the output, but the stop value is excluded.
-    print (i)
-
-200
-205
-210
-215
-220
-225
-230
-235
-240
-245
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;test-program-printing-letters-of-a-word&#34;&gt;Test program - printing letters of a word&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;word = &#39;Welcome!&#39;
-for i in range(len(word)):
-    print (word[i],&#39;\n&#39;)
-for i in word: #shorter and cleaner method than above.
-    print (i,&#39;\n&#39;)
-
-W 
-
-e 
-
-l 
-
-c 
-
-o 
-
-m 
-
-e 
-
-! 
-
-W 
-
-e 
-
-l 
-
-c 
-
-o 
-
-m 
-
-e 
-
-! 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a id=&#34;org8e7abfb&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;test-program-printing-random-choice-from-a-list-of-strings&#34;&gt;Test program - printing random choice from a list of strings&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;import random
-fortunes = [&#39;You will have very good luck today.&#39;,
-            &#39;A secret admirer will soon show how they feel.&#39;,
-            &amp;quot;The more you give, the more you&#39;ll have.&amp;quot;,
-            &#39;Hard work pays off.&#39;,
-            &amp;quot;Don&#39;t give up.&amp;quot;]
-fortune=random.choice(fortunes)
-print (fortune)
-
-Hard work pays off.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;test-program-looping-within-a-list-and-appending-to-each-item-and-creating-a-new-list&#34;&gt;Test program, looping within a list and appending to each item and creating a new list&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;l1 = [&#39;idly&#39;, &#39;vada&#39;, &#39;sambhar&#39;]
-menu=[]
-for i in l1:
-    menu.append(i + &#39;- spam&#39;)
-print (menu)
-
-[&#39;idly- spam&#39;, &#39;vada- spam&#39;, &#39;sambhar- spam&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To get the list of keys in a dictionary : dict_name.keys() and for the values dict_name.values()&lt;/p&gt;
-
-&lt;p&gt;Removing the space separation while using print command with multiple values&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;print (&#39;name is&#39;,&#39;donkey&#39;,&#39;kang&#39;,sep=&#39;-&#39;) #sep has to be placed after the variables which are to be separated.
-
-name is-donkey-kang
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Possible to format output on the fly within the print command. Example &lt;code&gt;format(price,&#39;.2f&#39;)&lt;/code&gt; - price formated to 2 decimal places, as a float.&lt;/p&gt;
-
-&lt;p&gt;For loops loop for a certain number of times, while loops work till a condition is fulfilled.&lt;/p&gt;
-
-&lt;p&gt;Possible to run a while loop forever, and include a conditional break condition inside.&lt;/p&gt;
-
-&lt;p&gt;Continue statement within the while loop : breaks the loop but then goes back to loop beginning.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;menu= [&#39;idly&#39;, &#39;vada&#39;, &#39;sambhar&#39;]
-order=[]
-while order !=&#39;q&#39;:
-    order = input(&#39;State your order from the items (q to quit)&#39;)
-    if menu.get(order)==&#39;none&#39;:
-        print (&#39;Item does not exist&#39;)
-    else:
-        print (&amp;quot;Order on it&#39;s way&amp;quot;)
-    order = input (&#39;Anything else? (q to quit)&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;level-3-functions&#34;&gt;Level 3 Functions&lt;/h1&gt;
-
-&lt;h2 id=&#34;function-name-input-data-to-the-function-and-output-data-to-the-function&#34;&gt;Function name, input data to the function and output data to the function&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;def lotto_number():
-    print (&#39;nutcase&#39;)
-lotto_number()
-
-nutcase
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;test-program&#34;&gt;Test program -&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;import random
-
-def lotto_numbers():
-    # code in the function goes here
-    lotto_nums=[]
-    for i in range(5):
-        lotto_nums.append(random.randint(1, 53))
-    print(lotto_nums)
-
-lotto_numbers()
-
-[40, 49, 48, 23, 52]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-concept-of-main-best-practise&#34;&gt;The concept of &amp;lsquo;main&amp;rsquo; - best practise.&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;once the function is defined, it is called using a set of variables which the function needs to perform and get the answers.&lt;/li&gt;
-&lt;li&gt;Therefore, these initial set of values or statements are called &amp;lsquo;main&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;therefore, often these initial set is included in a function called main()&lt;/li&gt;
-&lt;li&gt;Then only main() is called and it is not necessary to call all the variables.&lt;/li&gt;
-&lt;li&gt;This is a best practise in python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;a-variable-defined-within-the-function-is-accessible-only-inside-the-function-variables-outside-the-function-are-global-and-can-be-accessed-anywhere-functions-have-global-scope&#34;&gt;A variable defined within the function is accessible only inside the function. Variables outside the function are global and can be accessed anywhere. Functions have global scope.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;def five():
-    num = 5
-    num = num + 1
-
-def main():
-    num = 1
-    five()
-    print(num)
-
-main()
-
-1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;level-4-reading-and-writing-from-files&#34;&gt;Level 4 - Reading and writing from files&lt;/h1&gt;
-
-&lt;h2 id=&#34;open-a-file-needs-the-open-function-file-name-and-the-mode&#34;&gt;open a file needs the open function, file name and the mode&lt;/h2&gt;
-
-&lt;h2 id=&#34;r-read-w-write-a-append&#34;&gt;&lt;code&gt;&#39;r&#39;&lt;/code&gt; - read, &lt;code&gt;&#39;w&#39;&lt;/code&gt; - write, &lt;code&gt;&#39;a&#39;&lt;/code&gt; - append.&lt;/h2&gt;
-
-&lt;h2 id=&#34;write-mode-will-always-over-write-the-existing-contents-of-the-file&#34;&gt;write mode will always over-write the existing contents of the file.&lt;/h2&gt;
-
-&lt;h2 id=&#34;need-to-use-a-for-loop-to-store-the-lines-inside-a-file-after-reading-it-the-strip-can-be-used-for-stripping-leading-and-trailing-whitespaces&#34;&gt;need to use a for loop to store the lines inside a file after reading it. The &lt;code&gt;strip()&lt;/code&gt; can be used for stripping leading and trailing whitespaces.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;fn = open(&#39;/home/shrysr/temp/schedule.txt&#39;,&#39;r&#39;)
-rl=[]
-for lines in fn:
-    line=lines.strip()
-    rl.append(line)
-print (rl)
-
-fn.close()
-
-[&#39;Ventriloquism-10:00am&#39;, &#39;Snake Charmer-12:00pm&#39;, &#39;Amazing Acrobatics-2:00pm&#39;, &#39;Enchanted Elephants-5:00pm&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;possible-to-add-parameters-in-the-line-split&#34;&gt;Possible to add parameters in the &lt;code&gt;line.split()&lt;/code&gt; :&lt;/h2&gt;
-
-&lt;p&gt;to store the split into two variables at the specified character, like &lt;code&gt;.split(&#39; - &#39; )&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 11:20] &lt;/span&gt;&lt;/span&gt; \\ Note that the charac in the &lt;code&gt;.split(charac)&lt;/code&gt; parameter has to exactly match the string or line being passed, otherwise this will return an error.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;l1 = &#39;this is a nut-case in point is&#39;
-(s1,s2)=l1.split( &#39;-&#39;)
-print (s1)
-print (s2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;python-has-over-60-types-of-exceptions&#34;&gt;Python has over 60+ types of exceptions.&lt;/h2&gt;
-
-&lt;h2 id=&#34;using-try-and-except&#34;&gt;Using try and except&lt;/h2&gt;
-
-&lt;p&gt;It is possible to try out a set of instructions and then store the exceptions that crop up. The exceptions that are stored in python also have specific names. It is possible to use an exception to check for that particular name and store it in a variable.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;try:
-    schedule_file = open(&#39;schedule.txt&#39;, &#39;r&#39;)
-
-except FileNotFoundError as err:
-    print (err)
-
-[Errno 2] No such file or directory: &#39;schedule.txt&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;guess = int(input(&#39;Guess a number between 1 and 10:&#39;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;level-5-modules&#34;&gt;Level 5- Modules&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Modules are code libraries that contain functions, that can be called to be used in our code.&lt;/li&gt;
-&lt;li&gt;pip is a package manager to install modules.&lt;/li&gt;
-&lt;li&gt;JSON format looks very similar to a list of dictionaries !
-
-&lt;ul&gt;
-&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2017-08-20 Sun 11:41] &lt;/span&gt;&lt;/span&gt;&lt;br /&gt;
-basically like dictionary items contained within a list.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;test-program-importing-from-code-school-as-json&#34;&gt;test program importing from code school as JSON&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;import requests as rq
-
-mrq=rq.get(&#39;http://go.codeschool.com/spamvanmenu&#39;)
-ml=mrq.json()
-print (ml)
-
-[{&#39;price&#39;: &#39;3.00&#39;, &#39;name&#39;: &#39;Omelet&#39;, &#39;desc&#39;: &#39;Yummy&#39;}, {&#39;price&#39;: &#39;5.75&#39;, &#39;name&#39;: &#39;Burrito&#39;, &#39;desc&#39;: &#39;Breakfast Burrito&#39;}, {&#39;price&#39;: &#39;4.50&#39;, &#39;name&#39;: &#39;Waffles&#39;, &#39;desc&#39;: &#39;Belgian waffles with syrup&#39;}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;test-program-using-an-api-to-get-weather-data&#34;&gt;Test program - using an API to get weather data&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;import requests
-
-#may have to generate new or your own API Keys. See  http://openweathermap.org/faq#error401
-
-#url = &amp;quot;http://api.openweathermap.org/data/2.5/weather?q=Orlando,fl&amp;amp;units=imperial&amp;amp;appid=f179d81ad38bc474d4686f12425d1741&amp;quot;
-url = &amp;quot;http://api.openweathermap.org/data/2.5/weather?q=London,uk&amp;amp;APPID=f179d81ad38bc474d4686f12425d1741&amp;quot;
-request = requests.get(url)
-
-weather_json = request.json()
-
-print (weather_json)
-#weather_main = weather_json[&#39;main&#39;]
-
-{&#39;coord&#39;: {&#39;lon&#39;: -0.13, &#39;lat&#39;: 51.51}, &#39;weather&#39;: [{&#39;id&#39;: 721, &#39;main&#39;: &#39;Haze&#39;, &#39;description&#39;: &#39;haze&#39;, &#39;icon&#39;: &#39;50n&#39;}, {&#39;id&#39;: 701, &#39;main&#39;: &#39;Mist&#39;, &#39;description&#39;: &#39;mist&#39;, &#39;icon&#39;: &#39;50n&#39;}, {&#39;id&#39;: 300, &#39;main&#39;: &#39;Drizzle&#39;, &#39;description&#39;: &#39;light intensity drizzle&#39;, &#39;icon&#39;: &#39;09n&#39;}], &#39;base&#39;: &#39;stations&#39;, &#39;main&#39;: {&#39;temp&#39;: 280.15, &#39;pressure&#39;: 1003, &#39;humidity&#39;: 87, &#39;temp_min&#39;: 279.15, &#39;temp_max&#39;: 281.15}, &#39;visibility&#39;: 8000, &#39;wind&#39;: {&#39;speed&#39;: 2.1, &#39;deg&#39;: 330}, &#39;clouds&#39;: {&#39;all&#39;: 90}, &#39;dt&#39;: 1523568000, &#39;sys&#39;: {&#39;type&#39;: 1, &#39;id&#39;: 5091, &#39;message&#39;: 0.0046, &#39;country&#39;: &#39;GB&#39;, &#39;sunrise&#39;: 1523509780, &#39;sunset&#39;: 1523559214}, &#39;id&#39;: 2643743, &#39;name&#39;: &#39;London&#39;, &#39;cod&#39;: 200}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;a-script-containing-definitions-is-a-module-and-can-be-imported-by-other-scripts-or-modules&#34;&gt;A script containing definitions is a module and can be imported by other scripts or modules.&lt;/h2&gt;
-</description>
-    </item>
+&lt;p&gt;I have recently returned to my MacBook Pro as the primary driver for daily
+work. While I do enjoy using Antergos / Arch Linux - at this time the
+primary reason is that my macbook has an SSD, which makes things
+significantly faster in all respects.&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Before my foray into Emacs, I purchased applications like &lt;a href=&#34;https://ia.net/writer&#34; target=&#34;_blank&#34;&gt;IAWriter&lt;/a&gt;
+(classic), &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows) and also tried
+several other free apps for longer form writing. I am a fan of zen
+writing apps, and in particular the font and environment provided by
+IAWriter are quite conducive to focused writing.&lt;/p&gt;
+
+&lt;p&gt;Texts has some nifty features (besides being cross platform), but the
+font and appearance is not as beautiful as IAWriter. Neither IAWriter
+(classic) nor Texts can be customised to the extent possible in
+Emacs. See the comparison below:&lt;/p&gt;
+
+
+&lt;figure&gt;
     
-    <item>
-      <title>To record or not to record</title>
-      <link>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</link>
-      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/86236ce8-db7d-4c5c-ab87-c5d6a5837ab0/</guid>
-      <description>
+        &lt;img src=&#34;https://shrysr.github.io/img/emacs-texts.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Emacs (writeroom-mode &amp;#43; Iosevka font) || Texts (Sepia theme)&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
 
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 
-&lt;p&gt;This is an outline of my thoughts on the benefits of maintaining a comprehensive record in your work life. While I&amp;rsquo;ve split my points into direct and indirect benefits of maintaining such a record - the distinguishment is much more an indication of the possibilities, rather than a strong demarcation.&lt;/p&gt;
 
-&lt;p&gt;I recall that a lot of kids used to take notes in school. Subsequently, I saw a lesser percentage of note-taking activities in college, mostly restricted to the high scoring sincere guys in the first few rows. However, I&amp;rsquo;ve hardly seen people take any notes in my 4+ years in the industry. Maybe a stronger ability to remember the major points is developed as you grow more experienced&amp;#x2026; or one could think that the major points will anyway recurr in the discussions until a solution is found. However, I&amp;rsquo;m disinclined to believe such ideas. There are simply too many things happening in today&amp;rsquo;s fast paced world and it&amp;rsquo;s not easy to remember absolutely all that you can, and more importantly, &lt;em&gt;at the time you need it the most&lt;/em&gt;. It would be fantastic to have a way to remember a particular aspect &lt;em&gt;accurately&lt;/em&gt;, which was discussed several months ago.&lt;/p&gt;
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://shrysr.github.io/img/emacs-iawriter.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Emacs (writeroom-mode, Iosevka font) || IAWriter(Classic)&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
 
-&lt;p&gt;There is also an increasing focus on a data driven approach to self-improvement, which seems to makes a lot of sense. Our perception of the statistics of our own actions, idiosyncracies and behavior is rather vague and inaccurate without a concerted effort to observe and record our actions. I believe an accurate measure of our own statistics would not only suprise us, but also pave the way to erudition and improvement.&lt;/p&gt;
 
-&lt;h1 id=&#34;the-direct-benefits-of-recording-as-much-as-you-can&#34;&gt;The direct benefits of recording as much as you can&lt;/h1&gt;
+&lt;p&gt;While everybody&amp;rsquo;s style and approach vary, there are many authors who
+swear by archaic text editors and tools, even today. I use Emacs for
+everything I can today, and it&amp;rsquo;s powerful interface could be termed
+&amp;lsquo;archaic&amp;rsquo;.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;In business meetings, there are often several aspects being discussed / disputed, all at once and at a great pace. If there is a problem being resolved, then there may be an exponential increase in the number of interesting points that bubble out. This exponential increase is further amplified when you have veterans of solid skills and experience participating in the discussion. An excellent note taking system is imperative to capture as much as you can.&lt;/li&gt;
-&lt;li&gt;Time has progressed to such an extent that there are several fields within which there are competitors who are more or less comparable in technology. In such cases, response speeed is one criteria (among many) which can serve as a differentiator. This is certainly facilitated by a streamlined system of records related to the project/client which can be called up at need.&lt;/li&gt;
-&lt;li&gt;One will often come across a lack of comprehension or listening ability in the industry, which serves to complicate matters by introducing new errors and subsequent delays in the process. An efficient method of comprehensive recording using a system that is ideally searchable, would create an excellent method to refer back to events or decisions made in the past. Such a well designed system will certainly improve cognitive and comprehension abilities in the long run. Additionally, imagine being able to answer any question related to the project you are working on, or the details discussed with a simple search&amp;#x2026; :)&lt;/li&gt;
-&lt;li&gt;It also happens that meetings with people are a way of forming relationships. In business, there is usually a symbiotic flow of information/knowledge that is of value. Such nuances are better recorded so that an advantage can be taken at an appropriate time in the future. Well, besides taking advantage, it&amp;rsquo;s always nice to know more about the person and remember specific details about him/her that emerge from a casual conversation. Remembering and referring to such details would certainly impress. Recording eliminates the risk of not being able to remember.&lt;/li&gt;
-&lt;li&gt;Other than the actual meetings and business being discussed, there are in parallel, several points raised which tend to be excellent nuggets of wisdom. In addition, discussions should ideally give rise to more questions. It would be great to be able to quickly note down these nuggets as well as questions, with special contexts, and be able to find the answers at an appropriate time. It goes without saying that being able to quickly refer back to the same in invaluable.&lt;/li&gt;
-&lt;li&gt;Minutes of Meetings(MOM) are extremely common, but not always done comprehensively. It&amp;rsquo;s hard to be concise without practise. A well designed &lt;a href=&#34;http://orgmode.org/&#34; target=&#34;_blank&#34;&gt;Org mode for Emacs&lt;/a&gt; template can do wonders in very quick and efficient creations of MOM&amp;rsquo;s especially with the multiple export possibilities. Granted, complex tables are much easier to create in excel. But at any rate depending on the need - such templates should be kept accessible with a click or two.&lt;/li&gt;
-&lt;li&gt;Whether in an interview, or a meeting with somebody, it&amp;rsquo;s likely that you would be talking about relevant work that you&amp;rsquo;ve done in the past. A comprehensive, searchable record like one created with orgmode can help in remembering all those 100&amp;rsquo;s of little details that will definitely elude you after several years of the project&amp;rsquo;s completion.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;My return to the MacBook Probook sent me down the rabbit hole of
+reviewing my apps and workflows (again). After the initial struggle,
+feeling the onset of being drowned in apps and reviews - I realised
+that it was ridiculous to search for writing app, when Emacs could be
+customised to what I needed it to be. I had forgotten the fundamental
+tenet of Emacs.&lt;/p&gt;
 
-&lt;h1 id=&#34;the-indirect-benefits-of-recording-as-much-as-you-can&#34;&gt;The indirect benefits of recording as much as you can&lt;/h1&gt;
+&lt;p&gt;Zen writing apps are called so because they have a unique combination
+of fonts, background color, including line spacing and overall
+text-width - all of which enable a streamlined and focused flow of
+words onto the screen.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;The more I&amp;rsquo;ve written down and searched backwards for references and notes : the more I&amp;rsquo;ve actually taken efforts to be efficient in my note taking, right at the onset.
+&lt;p&gt;The next best thing to a retina display on a MacBook Pro, is a beautiful
+font face to take you through the day, enhancing the viewing pleasure
+and thus the motivation to work longer.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;It&amp;rsquo;s never easy to note down stuff when you are in a particular flow. However, not noting down things only makes it all the more harder when the work is completed and you need to look up something related to that job in a couple of days when you&amp;rsquo;ve forgotten the details. The more immersed I am in the flow, the less I remember the stuff that I actually did to fix a problem, or the pending points and status at which the project was put on hold as I moved on to another task.
+&lt;p&gt;I have started using the &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; &lt;sup&gt;&lt;a id=&#34;fnr.4&#34; class=&#34;footref&#34; href=&#34;#fn.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and customising Emacs
+to mimic IAWriter for all my focused writing / programming work. I
+have become attached to the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt; . There&amp;rsquo;s still a lot of
+tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;, but this is certainly a
+workable result.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;I&amp;rsquo;ve found that one remedy is to simply filter out the most important points and gradually build a habit of
+&lt;p&gt;I found &lt;code&gt;Iosevka&lt;/code&gt; through a comment on an &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which_font_do_you_use/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; discussion,
+which is worth visiting, simply to see a number of fonts that you&amp;rsquo;ve
+probably never heard of. Regarding Iosevka, one post said &lt;em&gt;&amp;ldquo;it&lt;/em&gt;
+&lt;em&gt;doesn&amp;rsquo;t look like much, but after a few hours it will be difficult to&lt;/em&gt;
+&lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly what happened to me.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;noting down stuff, step by step, as I go, or&lt;/li&gt;
-&lt;li&gt;starting work only after I&amp;rsquo;ve noted down and outline of all I have to do (in orgmode), with as many details as available. I would then quickly add points to specific headings.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;It&amp;rsquo;s also inevitable that you miss out points during this note taking. After all the effort taken - these will haunt you when search backwards for specific information, only to find that you never noted down that particular point. Once my fingers were burnt, I&amp;rsquo;ve started taking even more efforts to systematically streamline both my note taking and the ability to search these notes. This has helped me ask more relevant questions on the spot, rather than later.&lt;/li&gt;
-&lt;li&gt;I&amp;rsquo;ve found that regularly practising the above over time, has improved my speed of thinking, absorption rate, and enhanced my ability to analyse issues or compose documents or respond to email faster.. with more lucidity. Being able to remember or organise information is about being able to formulate a logical structure into which available information is fit into. Writing down stuff is like practising the organisation of thoughts in our head, real time.&lt;/li&gt;
-&lt;li&gt;It is said that a better memory is developed by repeated revision, at intervals that are specific. By using a single system to store all my notes and tasks and religiously using it to search through it to the exact detail I need - I am in fact getting faster and more efficient at what I do. Since the information I need is available at a moment&amp;rsquo;s notice - there is more likelihood that I actually search and go through the material as well.&lt;/li&gt;
-&lt;li&gt;A sense of achievement and confidence is born, when I look back at detailed project progress waypoints, the little snippets of information and knowledge, critical points to remember in subsequent actions and more&amp;#x2026; stuff that I&amp;rsquo;ve gathered over each project. Self motivation is the best kind of motivation, and detailed notes help in this direction as well.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
 
-&lt;h1 id=&#34;some-musings-on-handwritten-notes&#34;&gt;Some musings on handwritten notes&lt;/h1&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; In particular, &lt;code&gt;mu4e&lt;/code&gt; responds much more quickly and there is
+significantly less lag in accessing emails and &lt;code&gt;HTML&lt;/code&gt;
+rendering. Overall, no matter how lightweight the OS is - the SSD
+makes a rather magnificent difference to operational speed, breathing
+life into old notebooks. Did I mention my MacBook Probook pro is a 8
+years old?&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;There are definitely several occassions when handwritten notes are absolutely the best or even the only recourse to noting things down or hashing out the details. The bullet journal is one excellent technique to organise your handwritten notes such that you know what you are doing. The only way to be able to find information in handwritten notes, without any scanning software, is to have a superlative organisation that is absolutely customised to your workflow and needs. Even with scanning software, organisation is key to being able to find the notes you need.&lt;/li&gt;
-&lt;li&gt;Handwritten notes and sketches like &lt;a href=&#34;http://sachachua.com/blog/&#34; target=&#34;_blank&#34;&gt;sacha chua&amp;rsquo;s&lt;/a&gt; are also shown to improve cognitive abilities.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://evernote.com/?var=4&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt; has the capability to search through handwritten notes, as long as the handwriting is not too illegible. While it does work in many cases, it is not utterly reliable, and would still require tagging or adding in decriptions to the handwritten notes within Evernote, to be reliable. Scanning several pages of such handwritten notes is also a pain. Sometimes a single meeting has created almost 10-20 pages of notes for me, and I would hate scanning them one or two pages at a time.&lt;/li&gt;
-&lt;li&gt;While emacs and orgmode do have ways where you can focus on the content being written - nothing can beat handwritten notes in speed, for stuff like a quick sketch or annotating an existing engineering drawing. What does help, is taking the effort to recapture these handwritten notes in emacs, which serves as a filtering system. It could be a lot more efficient to scan such handwritten notes in Evernote, and create a reference or description in orgmode. THis means that orgmode can be searchced for that reference, and that reference will direct you to the particular handwritten note within Evernote.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Of course, the other advantages is that installation and setup
+instructions are typically available out the box for the MacBook
+Pro. I have access to dedicated apps including Evernote, Dash,
+Spotify, Whatsap, Slack, not to mention the retina display, which
+makes a massive difference to viewing pleasure.&lt;/p&gt;
 
-&lt;h1 id=&#34;concluding-points&#34;&gt;Concluding points&lt;/h1&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; I do love Arch Linux and Antergos. However, a little bit of
+elegance in the user interface and hardware does ease up the mind. On
+the MBP, out of the box - it is easy to move around virtual desktops
+and use the magic track pad to rapidly switch between applications as
+well. Perhaps, all of this may be setup with diligence and due time on
+Linux through open source solutions of varying levels of
+quality. However, as of today, I would have struggled, and quite
+possibly ended up making compromises. This would be after hours of
+searching for a alternate (and acceptable) solution for software
+packages that are not yet ported to Linux. Typically, the compromises
+would mean using Electron or Web based versions of apps, which are
+often not as powerful as the desktop app.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The aspects mentioned above are anything but comprehensive. They are derived from my own humble observations in trying to integrate orgmode completely into my life. The effort involved in creating a progressive system that adapts and evolves is certainly daunting. There are &lt;a href=&#34;https://www.quora.com/How-accurate-do-you-think-these-text-editor-learning-curves-are&#34; target=&#34;_blank&#34;&gt;popular illustrations&lt;/a&gt; of the difficulties encounteres in using emacs, where it is common to spend a lifetime in customisation. Orgmode and emacs may thus not be a solution for everybody. Personally, I believe in taking the effort to create a customised system, tuned to your workflow, enabling you to save minutes that can accumulate to a lot over the years -  and therefore emacs works for me.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.4&#34; href=&#34;#fnr.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; My nascent configuration for writeroom-mode in emacs is as follows. It&amp;rsquo;s remarkable how much was achieved with a few line of code!&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;People swear by the different systems that worked for them. There are several Task management, Outlining and Life/Habit management tools out there, like &lt;a href=&#34;https://todoist.com/&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; | &lt;a href=&#34;https://asana.com/&#34; target=&#34;_blank&#34;&gt;Asana&lt;/a&gt; | &lt;a href=&#34;https://workflowy.com/&#34; target=&#34;_blank&#34;&gt;WorkFlowy&lt;/a&gt;. I&amp;rsquo;ve tried almost all of them. That stuff is for a another upcoming blog post&amp;#x2026;&lt;/p&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;(with-eval-after-load &#39;writeroom-mode
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-.&amp;quot;) #&#39;writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-=&amp;quot;) #&#39;writeroom-adjust-width))
 
-&lt;li&gt;&lt;p&gt;Org mode was created with an understanding of needs as described above and allows you create customised approaches to resolve them. If you don&amp;rsquo;t have a database of project information - you are then obviously looking through individual files for a particular information that you need. THis is extremely inefficient if there&amp;rsquo;s frequent look-ups to be done. Orgmode can help create a text based database that can be searched very, very quickly.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+(advice-add &#39;text-scale-adjust :after
+        #&#39;visual-fill-column-adjust)
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -1597,211 +231,77 @@ print (weather_json)
       <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
-      <description>&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie rivetting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post&amp;#x2026;&lt;/p&gt;
-
-&lt;p&gt;Whiplash is basically an insight into the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
-
-&lt;p&gt;Some interesting points of note from this movie, infused with my own thoughts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via multiple, unexpected and  stressful proddings.&lt;/li&gt;
-&lt;li&gt;the mental conditioning required to weather and beat intense, sharp, depressing criticism along with verbal and physical abuse from a mentor or teacher and use the same as a motive force for self improvement and eventually superlative performance. At an age, where there is a growing attitude of the upcoming generation thinking that they are automatically entitled to several things, things that the older generation earned through hard work - such an approach would not be tolerated by most people today. Beyond the movie, I know real stories of people working under such mentors, striving to learn and gain their approval and eventually winning the same. These efforts paid off by resulting in skills, thinking patterns and a mental conditioning  simply superior to most other peers. Finding such a mentor at the formative stage is probably the best thing to happen to anybody. The suffering will eventually be worth it. However, with such mentors - it is important to be able to judge that the mentor has the knowledge or skill that is worth all the trouble being taken.&lt;/li&gt;
-&lt;li&gt;Getting back up after a fall: Everybody breaks. Just as the promising student in Whiplash breaks. But the champions among us rally,  to stage a comeback and performance that makes history remember them. This characteristic is portrayed by several characters who turned out to be popular among the audience, like Rocky Balboa.&lt;/li&gt;
-&lt;li&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/li&gt;
-&lt;li&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be Great, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best and that entails never being satisfied and ruthless rooting out of mistakes.&lt;/li&gt;
-&lt;li&gt;Great performance is about that perfect balance between the body, mind and consciousness. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability. This is logically followed by the student lashing out at the teacher. At the same time, the obsessive pursual of excellence and preparation resulted in the student being able to take advantage of an opportunity to become a part of the core music group (at an earlier point)  when the opportunity presented itself. Nevertheless, the ability to take advantage of that opportunity was also a result of backbreaking hard work.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, quite unexpected and drove me to truly enjoy the movie and appreciate that despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of crazy thrown in, to make it what it is.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable Creatives podcast provides an insight, in line with the points seen above, into what constitute outliers and performers. The interesting concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan via an example. It is surmised that progress and maximum learning to become better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the moment, and the unknown skills that beckon. That point sems to be an amalgamation of several things, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary. There are several facts thrown out in that podcast, and I&amp;rsquo;d recommend that too.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The benefit in &#39;Archaic&#39; Email interfaces</title>
-      <link>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
       <description>
 
-&lt;p&gt;This post outlines my current email setup and penchant for using mu4e,
-an email client available for Emacs. mu4e is a text based email
-interface.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Whiplash_%25282014_film%2529&#34; target=&#34;_blank&#34;&gt;Whiplash: Wikipedia&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Beyond mu4e, there are other options available like &lt;a href=&#34;https://notmuchmail.org/&#34; target=&#34;_blank&#34;&gt;notmuch&lt;/a&gt; and
-&lt;a href=&#34;http://www.mutt.org/&#34; target=&#34;_blank&#34;&gt;mutt&lt;/a&gt;. I have briefly experimented with mutt, which is breath-takingly
-fast in email search, but mutt has to be coupled with another front
-end to be used within Emacs. The philosophy and system behind notmuch
-(leveraging the Gmail tag based approach) differ from mu4e.&lt;/p&gt;
+&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post&amp;#x2026;&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href=&#34;#orgb32aa87&#34;&gt;Links and References&lt;/a&gt; section at the end provide several articles
-and resources with information, especially on setting up with mu4e.&lt;/p&gt;
+&lt;p&gt;The story revolves around the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
 
-&lt;h1 id=&#34;what-is-mu4e&#34;&gt;What is &lt;code&gt;Mu4e&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;I could relate to the following pointers from the movie:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.djcbsoftware.nl/code/mu/mu4e.html&#34; target=&#34;_blank&#34;&gt;Mu4e&lt;/a&gt; is an Emacs based email client, which uses the indexer mu as it&amp;rsquo;s
-backend.&lt;/p&gt;
+&lt;h1 id=&#34;leverage-stress-to-achieve-new-levels-of-insight-and-performance&#34;&gt;Leverage stress to achieve new levels of insight and performance&lt;/h1&gt;
 
-&lt;h1 id=&#34;why-fastmail&#34;&gt;Why Fastmail?&lt;/h1&gt;
+&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have been taken forward to habits that changed my life.&lt;/p&gt;
 
-&lt;p&gt;I wanted a reliable email service for which I was willing to pay [a
-reasonable amount:)]. In particular, Fastmail allows for a variety of
-interesting features like aliases, easy email transfer (from a
-different email provider like Gmail or MSN), reasonably responsive
-technical support. Ultimately I was able to forward all my emails to a
-single account and thus deal only with a single account. In essence,
-my Fastmail account caters to 3 email addresses, and simplifies my
-setup.&lt;/p&gt;
+&lt;h1 id=&#34;weathering-criticism&#34;&gt;Weathering criticism&lt;/h1&gt;
 
-&lt;p&gt;While there are many advantages in Gmail and many swear by it&amp;rsquo;s search
-capabilities - it is worth noting that Fastmail just feels a lot
-quicker than Gmail, and I can find my way around the settings better
-than I used to with Gmail. The search capabilities are offset by using
-&lt;code&gt;mu4e&lt;/code&gt;, and in particular on a SSD drive.&lt;/p&gt;
+&lt;p&gt;The mental conditioning required to weather and beat intense, sharp,
+depressing criticism along with verbal and physical abuse from a
+mentor or teacher and use the same as a motive force for
+self-improvement and eventually superlative performance. Though there
+are examples of extreme abrasiveness in leaders like Steve Jobs - such
+an approach would not be tolerated by most people today.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Among the important factors of using Fastmail is that it is
-implemented in the conventional IMAP fashion, which make it easier
-to deal with mu4e, and folder based filtering at the &lt;a href=&#34;http://isync.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;mbsync&lt;/a&gt;
-settings level.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I know other stories of people working under such mentors,
+striving to learn and gain their approval and eventually winning
+the same. These efforts paid off by resulting in skills, thinking
+patterns and a superior mental conditioning. Finding such a mentor
+at the formative stage is probably the best thing to happen to
+anybody.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An effective strategy to find mentors is to shadow people on Linked in and learn from their profiles and activity. Some of them may be willing to connect and invest time in mentoring.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Another possibility to find like minded people and mentors would be to join the communities of on-line courses, like Datacamp and Dataquest, who have lively channels in Slack for paid members.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&#34;conventional-web-and-desktop-clients-are-not-conducive-to-streamlined-workflow&#34;&gt;Conventional web and desktop clients are not conducive to streamlined workflow.&lt;/h1&gt;
+&lt;h1 id=&#34;getting-back-up-after-a-fall&#34;&gt;Getting back up after a fall&lt;/h1&gt;
 
-&lt;p&gt;I&amp;rsquo;ve typically been overwhelmed by email. I&amp;rsquo;ve often had the feeling
-of not utilising the potential of email, because the volume of unread
-email can build up so quickly, and I was unable quickly find something
-I wanted to look up.&lt;/p&gt;
+&lt;p&gt;Everybody breaks. Just as the promising student in Whiplash
+breaks. But the champions among us rally, to stage a comeback and
+performance that make history.&lt;/p&gt;
 
-&lt;p&gt;There&amp;rsquo;s also a lot of interesting information in these inboxes that
-could be useful. For example email digests related to Data Science
-contain a wealth of links and articles and information. Or perhaps
-email digests of product and technology news that are useful to retain
-as an archive of reference.&lt;/p&gt;
+&lt;p&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/p&gt;
+
+&lt;h1 id=&#34;be-great-not-good&#34;&gt;Be Great, not Good&lt;/h1&gt;
+
+&lt;p&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be &lt;em&gt;Great&lt;/em&gt;, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best, and that entails never being satisfied and to be ruthless in rooting out flaws.&lt;/p&gt;
+
+&lt;h1 id=&#34;achieving-balance-mind-body-surroundings&#34;&gt;Achieving Balance : mind + body + surroundings&lt;/h1&gt;
+
+&lt;p&gt;Great performance is about that perfect balance between the body, mind and environment to leverage the best result possible. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability.&lt;/p&gt;
+
+&lt;h1 id=&#34;go-off-the-beaten-track-and-lose-yourself&#34;&gt;Go off the beaten track and Lose yourself&lt;/h1&gt;
+
+&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, quite unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
+
+&lt;h1 id=&#34;learning-velocity-and-flow&#34;&gt;Learning velocity and Flow&lt;/h1&gt;
+
+&lt;p&gt;There are several bodies of research work available today that can be studied to get closer to consciously stimulating a great performance. One such example is:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;It would be nice to be able to process these links in a systematic
-manner, and have them available with a fast search system that is
-also linked to task management.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable
+Creatives podcast provides an insight in line with the points seen
+above, into what constitute outliers and performers. The interesting
+concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan with a lucid
+example. It is surmised that progress and maximum learning to become
+better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the
+moment, and the unknown skills that beckon.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;It can be said that Web mail [viewed on a browser] is probably the
-most predominant way in which people access their emails, other than
-using desktop clients like Microsoft Outlook.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.mozilla.org/en-US/thunderbird/&#34; target=&#34;_blank&#34;&gt;Thunderbird&lt;/a&gt; is an option that I&amp;rsquo;ve found to be acceptable, with a
-bunch of plugins that can aid workflow.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;However, anybody who has used MS Outlook for searching emails will
-have felt the limitations and potential frustrations that one can
-face in finding emails and organising them, especially when you
-consider years of emails.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;While the option of formulating categories and folders with some
-level of automation is certainly available - it did not truly enable
-me to gain a complete mastery of my email, or feel confident of
-having captured all the necessary information from an email chain.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;adopting-different-levels-of-organisation&#34;&gt;Adopting different levels of organisation&lt;/h1&gt;
-
-&lt;p&gt;I believe the workflow of an email organisation and processing them
-into tasks is a process that needs room and a suitable framework to
-grow organically, especially as our tasks, priorities and outlook
-change in both quality and quantity with time.&lt;/p&gt;
-
-&lt;p&gt;Using mu4e over the past few years has enabled me to master my email,
-like no other tool that I&amp;rsquo;ve ever used. Though on occasion - I do need
-to rely on the web based interface, or the mobile app.&lt;/p&gt;
-
-&lt;p&gt;Therefore, over time I have adopted different levels of
-organisation. When I &lt;em&gt;do&lt;/em&gt; access my email on the web, I would prefer a
-basic level of organization available. This means a set of higher
-level filters are implemented at the Fastmail interface to facilitate
-a reasonably clutter free inbox.&lt;/p&gt;
-
-&lt;p&gt;The Fastmail folders are synced locally to my Macbook using &lt;a href=&#34;http://isync.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;mbsync&lt;/a&gt;,
-and finally bookmarks or saved searches are created within mu4e for
-easy access to any number of pre-set search patterns that I need for
-my workflow. The pre-set search patterns are called &lt;a href=&#34;https://www.djcbsoftware.nl/code/mu/mu4e/MV-Bookmarks.html&#34; target=&#34;_blank&#34;&gt;Bookmarks in mu4e&lt;/a&gt;,
-and can be accessed with a few key strokes.&lt;/p&gt;
-
-&lt;h1 id=&#34;why-mu4e-rocks-for-me&#34;&gt;Why Mu4e rocks [for me]&lt;/h1&gt;
-
-&lt;p&gt;Complete keyboard based control, and using it with Emacs means the
-ability to compose email from anywhere and any workflow.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;I just hit Control+x and m (&lt;code&gt;C-x m&lt;/code&gt;) in Emacs parlance, and I have a
-compose window open.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;There are built-in workflows and functions in distributions like
-&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt;, which enable you to email an org-heading or buffer directly
-into an email, with the formatting (largely) preserved, and as
-intended.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;While Mu4e may be a programmatic solution with no pleasing GUI - it
-allows one to search a large number of emails with glorious ease. This
-is particularly more effective on a SSD drive, rather than the
-conventional Hard disk.&lt;/p&gt;
-
-&lt;p&gt;One has to experience the speed to know the dramatic impact it makes
-to be closer in speed to your thoughts using a customisable system
-that is as functional as it gets, and can be intimately connected to a
-task management system readily available in Emacs, &lt;a href=&#34;https://orgmode.org/&#34; target=&#34;_blank&#34;&gt;org-mode&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Using the above, I&amp;rsquo;ve devised a &amp;lsquo;sane inbox&amp;rsquo; which is bereft of the
-noise, like annoying digests, social media updates and so on. I can
-dedicate focused blocks to rapidly process email, all within Emacs.&lt;/p&gt;
-
-&lt;h1 id=&#34;quirks&#34;&gt;Quirks&lt;/h1&gt;
-
-&lt;p&gt;mu4e is a text based email interface. It can be set such that the
-rendered &lt;code&gt;HTML&lt;/code&gt; is displayed in the mu4e-view buffer for each email,
-which enables graphics and pictures (if any). However, the render is
-not perfect at times. Heavy &lt;code&gt;HTML&lt;/code&gt; emails may not render correctly.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Such emails can be viewed in the browser of your choice with merely
-2 key presses. This could be Firefox, or &lt;a href=&#34;http://w3m.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;w3m&lt;/a&gt; or any other browser of
-your choice.&lt;/li&gt;
-&lt;li&gt;I use w3m, and believe me when I say that you would be surprised to
-see the ease in browsing websites on a text only mode. Besides the
-added advantage of being within Emacs - a surprising number of
-websites can be viewed functionally on w3m. It is very useful
-for quick searches on Google [also possible with a few key strokes
-within emacs].&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a id=&#34;orgb32aa87&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;links-and-references&#34;&gt;Links and References&lt;/h1&gt;
-
-&lt;h2 id=&#34;a-complete-guide-to-email-in-emacs-using-mu-and-mu4e-http-cachestocaches-com-2017-3-complete-guide-email-emacs-using-mu-and-span-class-timestamp-wrapper-span-class-timestamp-lt-08-03-17-wed-10-04-gt-span-span&#34;&gt;&lt;a href=&#34;http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/&#34; target=&#34;_blank&#34;&gt;A Complete Guide to Email in Emacs using Mu and Mu4e&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;08/03/17 Wed 10:04&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;reading-imap-mail-in-emacs-on-osx-adolfo-villafiorita-http-www-ict4g-net-adolfo-notes-2014-12-27-emacsimap-html-span-class-timestamp-wrapper-span-class-timestamp-lt-27-11-16-sun-08-17-gt-span-span&#34;&gt;&lt;a href=&#34;http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html&#34; target=&#34;_blank&#34;&gt;Reading IMAP Mail in Emacs on OSX | Adolfo Villafiorita&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;27/11/16 Sun 08:17&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;excellent-link-talking-about-mu4e-and-notifications-handling-email-with-emacs-malb-blog-https-martinralbrecht-wordpress-com-2016-05-30-handling-email-with-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-01-08-16-mon-18-37-gt-span-span&#34;&gt;Excellent link talking about mu4e and notifications &lt;a href=&#34;https://martinralbrecht.wordpress.com/2016/05/30/handling-email-with-emacs/&#34; target=&#34;_blank&#34;&gt;Handling Email with Emacs – malb::blog&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;01/08/16 Mon 18:37&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;which-email-client-mu4e-mutt-notmuch-gnus-do-you-use-inside-emacs-and-why-emacs-https-www-reddit-com-r-emacs-comments-3s5fas-which-email-client-mu4e-mutt-notmuch-gnus-do-you-span-class-timestamp-wrapper-span-class-timestamp-lt-31-05-16-tue-07-32-gt-span-span&#34;&gt;&lt;a href=&#34;https://www.reddit.com/r/emacs/comments/3s5fas/which_email_client_mu4e_mutt_notmuch_gnus_do_you/&#34; target=&#34;_blank&#34;&gt;Which email client (mu4e, Mutt, notmuch, Gnus) do you use inside Emacs, and why? : emacs&lt;/a&gt;  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;31/05/16 Tue 07:32&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;emacs-fu-introducing-mu4e-an-e-mail-client-for-emacs-http-emacs-fu-blogspot-in-2012-08-introducing-mu4e-for-email-html-emacs-and-mu4e-stuff-span-class-timestamp-wrapper-span-class-timestamp-lt-20-04-16-wed-13-02-gt-span-span&#34;&gt;&lt;a href=&#34;http://emacs-fu.blogspot.in/2012/08/introducing-mu4e-for-email.html&#34; target=&#34;_blank&#34;&gt;emacs-fu: introducing mu4e, an e-mail client for emacs&lt;/a&gt; - Emacs and mu4e stuff  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;20/04/16 Wed 13:02&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;emacs-as-email-client-with-offlineimap-and-mu4e-on-os-x-kg-hacks-thoughts-writings-http-www-kirang-in-2014-11-13-emacs-as-email-client-with-offlineimap-and-mu4e-on-osx-nice-blog-related-to-emacs-and-linux-span-class-timestamp-wrapper-span-class-timestamp-lt-21-04-16-thu-22-44-gt-span-span&#34;&gt;&lt;a href=&#34;http://www.kirang.in/2014/11/13/emacs-as-email-client-with-offlineimap-and-mu4e-on-osx/&#34; target=&#34;_blank&#34;&gt;Emacs as email client with offlineimap and mu4e on OS X &lt;em&gt;/ KG /&lt;/em&gt; Hacks. Thoughts. Writings.&lt;/a&gt; - nice blog related to Emacs and linux  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;21/04/16 Thu 22:44&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;eos-mail-email-module-http-writequit-org-eos-eos-mail-html-explaining-multiple-email-setup-in-mu4e-span-class-timestamp-wrapper-span-class-timestamp-lt-27-04-16-wed-07-56-gt-span-span&#34;&gt;&lt;a href=&#34;http://writequit.org/eos/eos-mail.html&#34; target=&#34;_blank&#34;&gt;EOS: Mail (Email) Module&lt;/a&gt; - explaining multiple email setup in mu4e  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;27/04/16 Wed 07:56&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;the-ultimate-emailing-agent-with-mu4e-and-emacs-emacs-arduino-raspberry-pi-linux-and-programming-etc-http-tech-memoryimprintstudio-com-the-ultimate-emailing-agent-with-mu4e-and-emacs-span-class-timestamp-wrapper-span-class-timestamp-lt-17-08-16-wed-13-19-gt-span-span&#34;&gt;&lt;a href=&#34;http://tech.memoryimprintstudio.com/the-ultimate-emailing-agent-with-mu4e-and-emacs/&#34; target=&#34;_blank&#34;&gt;The Ultimate Emailing Agent with Mu4e and Emacs – Emacs, Arduino, Raspberry Pi, Linux and Programming etc&lt;/a&gt;, &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;17/08/16 Wed 13:19&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;varun-b-patil-eom-a-k-a-end-of-mail-a-k-a-emacs-offlineimap-mu4e-http-varunbpatil-github-io-2013-08-19-eom-vxxttm7hxcs-multiple-accounts-span-class-timestamp-wrapper-span-class-timestamp-lt-19-04-16-tue-12-19-gt-span-span&#34;&gt;&lt;a href=&#34;http://varunbpatil.github.io/2013/08/19/eom/#.VxXTtM7hXCs&#34; target=&#34;_blank&#34;&gt;Varun B Patil | EOM a.k.a End of Mail a.k.a Emacs + offlineimap + mu4e&lt;/a&gt; - multiple accounts  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;19/04/16 Tue 12:19&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;master-your-inbox-with-mu4e-and-org-mode-pragmatic-emacs-http-pragmaticemacs-com-emacs-master-your-inbox-with-mu4e-and-org-mode-span-class-timestamp-wrapper-span-class-timestamp-lt-26-03-16-sat-14-56-gt-span-span&#34;&gt;&lt;a href=&#34;http://pragmaticemacs.com/emacs/master-your-inbox-with-mu4e-and-org-mode/&#34; target=&#34;_blank&#34;&gt;Master your inbox with mu4e and org-mode | Pragmatic Emacs&lt;/a&gt;  &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;26/03/16 Sat 14:56&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
-
-&lt;h2 id=&#34;a-year-with-notmuch-mail-lwn-net-https-lwn-net-articles-705856-span-class-timestamp-wrapper-span-class-timestamp-lt-17-04-18-tue-01-21-gt-span-span&#34;&gt;&lt;a href=&#34;https://lwn.net/Articles/705856/&#34; target=&#34;_blank&#34;&gt;A year with Notmuch mail {LWN.net}&lt;/a&gt; &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;&amp;lt;17/04/18 Tue 01:21&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;That point sems to be an amalgamation of several factors, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary.&lt;/p&gt;
 </description>
     </item>
     
@@ -2091,19 +591,21 @@ productivity.&lt;/li&gt;
       <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
       <description>
 
+&lt;p&gt;The course covered an introduction to using &lt;code&gt;R&lt;/code&gt; to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.&lt;/p&gt;
+
 &lt;h2 id=&#34;verified-edx-certificate-of-achievement-https-courses-edx-org-certificates-0d3a83463cdb49c8aca2aa11ab9bd850&#34;&gt;&lt;a href=&#34;https://courses.edx.org/certificates/0d3a83463cdb49c8aca2aa11ab9bd850&#34; target=&#34;_blank&#34;&gt;Verified EdX Certificate of Achievement&lt;/a&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The course covered an introduction to using &lt;code&gt;R&lt;/code&gt; to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Course Notes and code&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Course exercises are linked with a Datacamp course.&lt;/p&gt;
+&lt;li&gt;Course exercises are linked with a Datacamp course.
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-R-basics.pdf&#34;&gt;Data Science &lt;code&gt;R&lt;/code&gt; basics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;course-notes-and-code-https-nbviewer-jupyter-org-github-shrysr-ipython-notebooks-blob-master-r-fundamentals-fundamentals-ipynb&#34;&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/shrysr/ipython-notebooks/blob/master/R-fundamentals/fundamentals.ipynb&#34; target=&#34;_blank&#34;&gt;Course Notes and code&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.&lt;/p&gt;
 </description>
     </item>
     
@@ -2139,6 +641,8 @@ productivity.&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Data Analyst Path in &lt;code&gt;R&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/Q7WM9PIQA7JRJFMMAZUD/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Git&lt;/code&gt; &amp;amp; Version control&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/M6S5ITVA6FC6BDR650WG/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SQL&lt;/code&gt; Fundamentals&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -2151,20 +655,28 @@ productivity.&lt;/li&gt;
       <guid>https://shrysr.github.io/project/course-code-school/</guid>
       <description>
 
-&lt;h2 id=&#34;code-school-report-card-https-www-codeschool-com-users-shrysr&#34;&gt;&lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Code School Report Card&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Completed several courses covering &lt;code&gt;python&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;,&lt;code&gt;regular expressions&lt;/code&gt;. Most of these courses were completed during the occasional &lt;em&gt;Free Weekend&lt;/em&gt; opportunities from &lt;a href=&#34;https://www.codeschool.com/&#34; target=&#34;_blank&#34;&gt;Code School&lt;/a&gt;, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Completed several courses covering &lt;code&gt;python&lt;/code&gt;, &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;SQL&lt;/code&gt;,&lt;code&gt;regular expressions&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Most of these courses were completed during the occasional &lt;em&gt;Free Weekend&lt;/em&gt; opportunities from &lt;a href=&#34;https://www.codeschool.com/&#34; target=&#34;_blank&#34;&gt;Code School&lt;/a&gt;, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;course-notes-and-code&#34;&gt;Course Notes and code&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://shrysr.github.io/post/ef377257-29f5-41bf-a7f83967fa/&#34;&gt;Fly with Python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;view-my-code-school-report-https-www-codeschool-com-users-shrysr&#34;&gt;View my &lt;a href=&#34;https://www.codeschool.com/users/shrysr&#34; target=&#34;_blank&#34;&gt;Code School Report &lt;/a&gt;&lt;/h2&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Current Trends of Emission Reduction Technology in Vehicular Diesel Engines</title>
+      <link>https://shrysr.github.io/publication/emission-study/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/publication/emission-study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design of an Electro-mechanical Anthropometric finger, and a PID controller for the wrist for applications in Prosthetics</title>
+      <link>https://shrysr.github.io/publication/kinematic-design-finger/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/publication/kinematic-design-finger/</guid>
+      <description></description>
     </item>
     
   </channel>

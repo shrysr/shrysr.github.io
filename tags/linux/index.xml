@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 27 May 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Iosevka - one font closer to zen writing</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
+      <description>I have recently returned to my MacBook Pro as the primary driver for daily work. While I do enjoy using Antergos / Arch Linux - at this time the primary reason is that my macbook has an SSD, which makes things significantly faster in all respects.1 , 2 , 3
+Before my foray into Emacs, I purchased applications like IAWriter (classic), Marked2, Texts (cross platform Mac/Windows) and also tried several other free apps for longer form writing.</description>
+    </item>
     
     <item>
       <title>Contributions to the CFD-Online Wiki</title>

@@ -18,10 +18,8 @@
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description> Verified EdX Certificate of Achievement  The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
- Course Notes and code
- Course exercises are linked with a Datacamp course.
- Data Science R basics   </description>
+      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
     </item>
     
     <item>
@@ -45,6 +43,7 @@
       <description>Links to certificates of courses completed on Dataquest
  Data Analyst Path in R
  Git &amp;amp; Version control
+ SQL Fundamentals
   </description>
     </item>
     
@@ -54,9 +53,8 @@
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/project/course-code-school/</guid>
-      <description> Code School Report Card  Completed several courses covering python, git, SQL,regular expressions.
- Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
-  Course Notes and code  Fly with Python  </description>
+      <description> Completed several courses covering python, git, SQL,regular expressions. Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
+View my Code School Report  </description>
     </item>
     
   </channel>
