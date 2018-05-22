@@ -100,28 +100,30 @@ elation&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn
     </item>
     
     <item>
-      <title>Iosevka - one font closer to zen writing</title>
+      <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>
 
-&lt;p&gt;I have recently returned to my MacBook Pro as the primary driver for daily
-work. While I do enjoy using Antergos / Arch Linux - at this time the
-primary reason is that my macbook has an SSD, which makes things
-significantly faster in all respects.&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s well known that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old. &lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;, &lt;/sup&gt;&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Before my foray into Emacs, I purchased applications like &lt;a href=&#34;https://ia.net/writer&#34; target=&#34;_blank&#34;&gt;IAWriter&lt;/a&gt;
-(classic), &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows) and also tried
-several other free apps for longer form writing. I am a fan of zen
-writing apps, and in particular the font and environment provided by
+(classic)&lt;sup&gt;&lt;a id=&#34;fnr.4&#34; class=&#34;footref&#34; href=&#34;#fn.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows) and also tried
+all the recommended apps for longer form writing. I am a fan of zen
+writing apps. In particular the font and environment provided by
 IAWriter are quite conducive to focused writing.&lt;/p&gt;
 
+&lt;p&gt;Zen writing apps are called so because they have a unique combination
+of fonts, background color, including line spacing and overall
+text-width - all of which enable a streamlined and focused flow of
+words onto the screen. Any customisation required towards this end is
+possible in Emacs.&lt;/p&gt;
+
 &lt;p&gt;Texts has some nifty features (besides being cross platform), but the
-font and appearance is not as beautiful as IAWriter. Neither IAWriter
-(classic) nor Texts can be customised to the extent possible in
-Emacs. See the comparison below:&lt;/p&gt;
+font and appearance is not as beautiful as IAWriter. Both IAWriter
+(classic) and Texts have minimal settings for further customisation. See the comparison below:&lt;/p&gt;
 
 
 &lt;figure&gt;
@@ -152,37 +154,20 @@ Emacs. See the comparison below:&lt;/p&gt;
 
 
 &lt;p&gt;While everybody&amp;rsquo;s style and approach vary, there are many authors who
-swear by archaic text editors and tools, even today. I use Emacs for
-everything I can today, and it&amp;rsquo;s powerful interface could be termed
-&amp;lsquo;archaic&amp;rsquo;.&lt;/p&gt;
+swear by archaic text editors and tools that enable distraction free
+writing. One example is &lt;a href=&#34;http://tonyballantyne.com/how-to-write/writing-tools/&#34; target=&#34;_blank&#34;&gt;Tony Ballantyne&amp;rsquo;s post on writing tools&lt;/a&gt;, and
+his website also provides links to other authors and Emacs
+configurations, not to mention programming tutorials!&lt;/p&gt;
 
-&lt;p&gt;My return to the MacBook Probook sent me down the rabbit hole of
-reviewing my apps and workflows (again). After the initial struggle,
-feeling the onset of being drowned in apps and reviews - I realised
-that it was ridiculous to search for writing app, when Emacs could be
-customised to what I needed it to be. I had forgotten the fundamental
-tenet of Emacs.&lt;/p&gt;
+&lt;p&gt;The next best thing to a clear retina display on a MacBook Pro, is a
+beautiful font face to take you through the day, enhancing the viewing
+pleasure and thus the motivation to work longer.&lt;/p&gt;
 
-&lt;p&gt;Zen writing apps are called so because they have a unique combination
-of fonts, background color, including line spacing and overall
-text-width - all of which enable a streamlined and focused flow of
-words onto the screen.&lt;/p&gt;
-
-&lt;p&gt;The next best thing to a retina display on a MacBook Pro, is a beautiful
-font face to take you through the day, enhancing the viewing pleasure
-and thus the motivation to work longer.&lt;/p&gt;
-
-&lt;p&gt;I have started using the &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; &lt;sup&gt;&lt;a id=&#34;fnr.4&#34; class=&#34;footref&#34; href=&#34;#fn.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and customising Emacs
-to mimic IAWriter for all my focused writing / programming work. I
-have become attached to the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt; . There&amp;rsquo;s still a lot of
-tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;, but this is certainly a
-workable result.&lt;/p&gt;
-
-&lt;p&gt;I found &lt;code&gt;Iosevka&lt;/code&gt; through a comment on an &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which_font_do_you_use/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; discussion,
-which is worth visiting, simply to see a number of fonts that you&amp;rsquo;ve
-probably never heard of. Regarding Iosevka, one post said &lt;em&gt;&amp;ldquo;it&lt;/em&gt;
-&lt;em&gt;doesn&amp;rsquo;t look like much, but after a few hours it will be difficult to&lt;/em&gt;
-&lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly what happened to me.&lt;/p&gt;
+&lt;p&gt;In Emacs, the &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; &lt;sup&gt;&lt;a id=&#34;fnr.5&#34; class=&#34;footref&#34; href=&#34;#fn.5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; can be used and Emacs can be
+customised to mimic IAWriter. In this regard, the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt;, is a great font to try. This &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which_font_do_you_use/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; has many more suggestions. One post
+described Iosevka as  &lt;em&gt;&amp;ldquo;it&lt;/em&gt; &lt;em&gt;doesn&amp;rsquo;t look like much, but after a few
+hours it will be difficult to&lt;/em&gt; &lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly
+what happened to me.&lt;/p&gt;
 
 &lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
 
@@ -190,8 +175,8 @@ probably never heard of. Regarding Iosevka, one post said &lt;em&gt;&amp;ldquo;i
 significantly less lag in accessing emails and &lt;code&gt;HTML&lt;/code&gt;
 rendering. Overall, no matter how lightweight the OS is - the SSD
 makes a rather magnificent difference to operational speed, breathing
-life into old notebooks. Did I mention my MacBook Probook pro is a 8
-years old?&lt;/p&gt;
+life into old notebooks. Did I mention my MacBook Pro is a mid
+2010 version that&amp;rsquo;s 8+ years old?&lt;/p&gt;
 
 &lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Of course, the other advantages is that installation and setup
 instructions are typically available out the box for the MacBook
@@ -200,19 +185,28 @@ Spotify, Whatsap, Slack, not to mention the retina display, which
 makes a massive difference to viewing pleasure.&lt;/p&gt;
 
 &lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; I do love Arch Linux and Antergos. However, a little bit of
-elegance in the user interface and hardware does ease up the mind. On
-the MBP, out of the box - it is easy to move around virtual desktops
-and use the magic track pad to rapidly switch between applications as
-well. Perhaps, all of this may be setup with diligence and due time on
-Linux through open source solutions of varying levels of
-quality. However, as of today, I would have struggled, and quite
-possibly ended up making compromises. This would be after hours of
-searching for a alternate (and acceptable) solution for software
-packages that are not yet ported to Linux. Typically, the compromises
-would mean using Electron or Web based versions of apps, which are
-often not as powerful as the desktop app.&lt;/p&gt;
+elegance in the user interface and hardware does ease up the mind. In
+the MacBook, out of the box - it is easy to move around virtual
+desktops and use the magic track pad to rapidly switch between
+applications as well. I&amp;rsquo;m sure many of these &amp;lsquo;gimmicks&amp;rsquo; may be setup
+with diligence and due time on Linux through open source solutions of
+varying levels of quality. However, as of today, I would have
+struggled, and quite possibly ended up making compromises. This would
+take place after hours of searching for an alternate (and acceptable)
+solution for software packages that are not yet ported to
+Linux. Typically, the compromises would mean using Electron or Web
+based versions of apps, which are often not as powerful as the desktop
+app, not to mention inconvenient. A prime example would be Evernote.&lt;/p&gt;
 
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.4&#34; href=&#34;#fnr.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; My nascent configuration for writeroom-mode in emacs is as follows. It&amp;rsquo;s remarkable how much was achieved with a few line of code!&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.4&#34; href=&#34;#fnr.4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; The latest version of IAWriter has a truck load of features and
+advantages over over the Classic version. I did consider purchasing
+it, but Emacs won the day. Nevertheless, as a plain vanilla writing
+app - IAWriter offers much right out of the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.5&#34; href=&#34;#fnr.5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; There&amp;rsquo;s still a lot of tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;,
+but this is certainly a workable result. My nascent configuration for
+writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s remarkable how much was
+achieved with a few lines of code!&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;(with-eval-after-load &#39;writeroom-mode
   (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
@@ -625,6 +619,8 @@ productivity.&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;Completed as a part of &lt;a href=&#34;https://shrysr.github.io/project/course-edx-harvard-r&#34;&gt;EdX HarvardX PH125.1x: Data Science: R Basics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-tidyverse-introduction.pdf&#34;&gt;Introduction to Tidyverse`&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
