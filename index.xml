@@ -328,7 +328,7 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/cfdpost_auto&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;how-it-helps&#34;&gt;How it helps&lt;/h1&gt;
+&lt;h1 id=&#34;how-it-helped&#34;&gt;How it helped&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;While these operations could be done directly in python, it is
@@ -497,6 +497,10 @@ tutorials.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://shrysr.github.io/jobscheduler/index.html&#34; target=&#34;_blank&#34;&gt;Presentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler/wiki&#34; target=&#34;_blank&#34;&gt;Wiki on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
 &lt;p&gt;This is a Python script for a portable, scalable job scheduler with
 multiple priorities - for ANSYS CFX simulations. The script was
 designed to be called every minute by an external scheduler
@@ -558,11 +562,8 @@ productivity.&lt;/li&gt;
 &lt;h1 id=&#34;tools-used-and-links&#34;&gt;Tools used and links&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;See the &lt;a href=&#34;https://github.com/shrysr/jobscheduler/wiki/&#34; target=&#34;_blank&#34;&gt;Github Wiki&lt;/a&gt; for the project goals, algorithm and other details.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splinterware.com/products/scheduler.html&#34; target=&#34;_blank&#34;&gt;System Scheduler&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

@@ -48,6 +48,8 @@ Motivation During my initial foray into open source CFD and especially getting s
       
       <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
       <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
+Presentation
+Wiki on Github
 This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
  In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
     </item>
