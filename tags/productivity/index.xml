@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 26 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Back to RSS</title>
+      <link>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
+      <description>Why use RSS? Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with mu4e make this easy.
+However, even with all these filters, it is quite difficult to keep on top of news from different sources. At times it is inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.</description>
+    </item>
     
     <item>
       <title>Searching the awesome-lists on github</title>
@@ -18,9 +28,9 @@
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
-      <description>I came upon the glorious awesome lists today on Github. These repositories can be viewed with a simple search on github. They contain all kinds of lists on all kinds of topics, and are curated.
-Beware! the number of lists and the number of items being covered are quite extensive. There are a lot of common grounds and topics between these lists.
-I wanted to search for a keyword through all these repositories.</description>
+      <description>Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
+As one might expect, there is a lot of common ground between these lists, including topics and links.
+How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.</description>
     </item>
     
     <item>
@@ -29,8 +39,8 @@ I wanted to search for a keyword through all these repositories.</description>
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>It&amp;rsquo;s well known that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old. 1 , 2 , 3
-Before my foray into Emacs, I purchased applications like IAWriter (classic)4, Marked2, Texts (cross platform Mac/Windows) and also tried all the recommended apps for longer form writing. I am a fan of zen writing apps.</description>
+      <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old. 1 , 2 , 3. really pretty obvious.
+Before my foray into Emacs, I purchased applications like IAWriter (classic)4, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing.</description>
     </item>
     
   </channel>
