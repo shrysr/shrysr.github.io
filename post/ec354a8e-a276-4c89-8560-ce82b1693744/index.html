@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.38.1" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="I&rsquo;ve used Evernote since 2014, with over 3k notes of all kinds stored in it. Though I did try to capture everything of interest - the procedure was never fast or streamlined enough for me. The Evernote app runs ridiculously slower on older phones. In particular, being used to the speed of Emacs and Org-mode - I was mostly displeased with the Evernote Mac / Windows apps as well. I ended up using the drafts app for writing on iOS devices.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair&#43;Display:400,700%7cFauna&#43;One">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/">
+  <meta property="og:title" content="Switching from Evernote to DEVONtechnologies products | Shreyas Ragavan">
+  <meta property="og:description" content="I&rsquo;ve used Evernote since 2014, with over 3k notes of all kinds stored in it. Though I did try to capture everything of interest - the procedure was never fast or streamlined enough for me. The Evernote app runs ridiculously slower on older phones. In particular, being used to the speed of Emacs and Org-mode - I was mostly displeased with the Evernote Mac / Windows apps as well. I ended up using the drafts app for writing on iOS devices.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-07-10T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-07-10T00:00:00&#43;00:00">
+  
+
+  
+
+  <title>Switching from Evernote to DEVONtechnologies products | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Reports</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Switching from Evernote to DEVONtechnologies products</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-07-10 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Jul 10, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Shreyas Ragavan">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Switching%20from%20Evernote%20to%20DEVONtechnologies%20products&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2fec354a8e-a276-4c89-8560-ce82b1693744%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshrysr.github.io%2fpost%2fec354a8e-a276-4c89-8560-ce82b1693744%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2fec354a8e-a276-4c89-8560-ce82b1693744%2f&amp;title=Switching%20from%20Evernote%20to%20DEVONtechnologies%20products"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshrysr.github.io%2fpost%2fec354a8e-a276-4c89-8560-ce82b1693744%2f&amp;title=Switching%20from%20Evernote%20to%20DEVONtechnologies%20products"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Switching%20from%20Evernote%20to%20DEVONtechnologies%20products&amp;body=https%3a%2f%2fshrysr.github.io%2fpost%2fec354a8e-a276-4c89-8560-ce82b1693744%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>I&rsquo;ve used <a href="https://evernote.com/" target="_blank">Evernote</a> since 2014, with over 3k notes of all kinds stored
+in it. Though I did try to capture everything of interest - the
+procedure was never fast or streamlined enough for me. The Evernote
+app runs ridiculously slower on older phones. In particular, being
+used to the speed of Emacs and Org-mode - I was mostly displeased with
+the Evernote Mac / Windows apps as well. I ended up using the drafts
+app for writing on iOS devices.</p>
+
+<p>However, using Evernote was still worth due to the availability of an
+excellent catch-all bucket for multiple kinds of information, that can
+be searched on demand. I could literally whip up important receipts or
+scanned copies of a document and it felt wonderful to have that kind
+of control over your information. This foray was also fueled by the
+deficiencies of Emacs in mobile apps and the ability to store and
+refer to rich content and several file types.</p>
+
+<h1 id="switching-to-devonthink-pro-dtp">Switching to DEVONthink Pro (DTP)</h1>
+
+<p>I&rsquo;ve recently converted to <a href="https://www.devontechnologies.com/products/devonthink/overview.html" target="_blank">DEVONthink Pro</a> (DTP). Though DTP is Mac /
+iOS only, I would personally prefer DTP over Evernote. Some advantages
+of DTP:</p>
+
+<ul>
+<li>blazing fast application response + search on both iOS and Mac.</li>
+<li>leverages AI to provide interesting connections between notes and
+ideas. Users have leveraged these connections to help generate new
+ideas from unforeseen connections. There&rsquo;s more information <a href="https://www.devontechnologies.com/technology.html" target="_blank">here</a>.
+
+<ul>
+<li>so far, my experience is that the notes have to be in a particular
+format,I.e one article or principal idea per note to enable a
+sensible matching with other relevant articles. There are several
+incorrect connections also made.</li>
+</ul></li>
+<li>Better control over content organisation.
+
+<ul>
+<li>Project and folder creation, including separate databases for
+different kinds of work.</li>
+</ul></li>
+<li>One time payment for a major version of the software, along with
+discounted upgrades.</li>
+<li>Ability to index local folders.</li>
+<li>using multiple &lsquo;databases&rsquo; customised to any workflow, along with
+the provision of password protection and syncing to multiple sources.</li>
+<li>ability to confidently store private information based on the
+encryption and custom syncing options available.</li>
+<li>Ability to store web archives of Linked in posts (or any
+content). This was not always possible with Evernote. The iOS share
+option of clipping to the DEVONthink to go app as a web archive
+works rather well most of the time.</li>
+<li>The Evernote plug-in for Chrome/ Firefox works relatively slower.</li>
+<li>connection with DEVONAgent Pro (a fascinating tool dedicated to
+customised and deep web search. More on this on another blog post)</li>
+<li>Deploy scripts on databases / notes and thus allowing custom
+workflows with particular note categories.</li>
+<li>DTP can import all your Evernote notes and tags as they are. This
+worked for me in a single attempt.</li>
+</ul>
+
+<p>It&rsquo;s actually hard to quantify the benefits of using DTP. There are a
+myriad of features within, including the ability to index locations
+and script automated workflows.</p>
+
+<p>For most of the part, I found the speed and response of Evernote to be
+frustrating. It hindered a streamlined workflow. There are also
+additional irritations with respect to the .enex format and being able
+to encrypt information.</p>
+
+<p>No doubt, the ubiquity of Evernote in almost all the platforms (except
+Linux<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>) works in its favor. However, the search response with DTP
+is incredibly rapid and the note viewing experience of DTP is
+extremely smooth. This is on an ancient mid 2010 macbook pro!</p>
+
+<p>It&rsquo;s also worth noting that unlike Evernote - I was actually intrigued
+enough to correspond with the technical support team of DTP to
+understand features like indexing a folder, and their responses have
+been prompt and helpful.</p>
+
+<p>The best place to find up to date information is on the
+<a href="https://forum.devontechnologies.com/" target="_blank">DEVONtechnologies forum</a>. Even a deep search on the internet does not
+lead to many articles about the DEVONthink technologies products.</p>
+
+<h1 id="some-caveats-of-dtp">Some caveats of DTP</h1>
+
+<ul>
+<li>DTP does offer all the flexibility above. However the quality of the
+Evernote webclipper&rsquo;s output is better in several cases. The
+uncluttered text grab is not automated well enough. I&rsquo;m yet to
+discover the best pattern.</li>
+<li>Several apps offer Evernote integration as a premium feature.</li>
+<li>Evernote offers a more &lsquo;polished&rsquo; and simpler interface and is
+mainstream and available on multiple platforms. The note taking
+editors and capture mechanism is more user friendly.</li>
+</ul>
+
+<h1 id="devonagent-pro-dap">DEVONagent Pro (DAP)</h1>
+
+<p>DAP is an intriguing bit of software that facilitates deep searches of
+the web and developing automated workflows including report
+development. Their algorithm filters searches from any number of
+databases / engines / websites to provide the best matches.</p>
+
+<p>One could use this to monitor the website of a competitor for news
+announcements. Or crawl Hackernews for the keyword Datascience. It
+appears to be a tool that can provide exactly the information that we
+seek by processing the information out there in the web.</p>
+
+<p>This includes generation of mind-map esque graphs connecting keywords
+in all the search results. I&rsquo;m yet to explore more, but it is very
+interesting so far, especially to gain an overview of the subject.</p>
+
+<h1 id="some-conclusions">Some Conclusions</h1>
+
+<p>Exploring DTP in conjunction with DEVONagent Pro is absolutely a
+worthwhile exercise for those relying a lot on information from the
+internet for their jobs and work, and those working in an apple
+eco-system. It has a steep(er) learning curve, but will transform your
+information management. DAP is also a worthy option to explore to deep
+search the web on focused topics.</p>
+
+<p>Yes, it is mac only software. I have not been able to find any
+equivalent apps on windows. Another reason to stick to the
+Apple-verse.</p>
+
+<p>The system is addictive and once a good workflow has been built up, it
+would be difficult to use anything else.</p>
+
+<h1 id="archiving-interesting-linked-in-posts">Archiving interesting Linked in posts:</h1>
+
+<p>One of the most killer features of using the DEVON 2 GO app is the
+ability to capture Linked in posts as web archives. Though not
+optimal, in terms of the format - it is still extremely useful to
+rapidly build up a reference database of web resources.</p>
+
+<h1 id="footnotes">Footnotes</h1>
+
+<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> Nixnote is one solution. I&rsquo;ve seen it in action and it is
+useful, and probably even closer to DEVONthink. However, I could never
+get it working in Arch Linux reliably.</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/evernote">Evernote</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/note-taking">note-taking</a>
+  
+  <a class="btn btn-primary btn-outline" href="/tags/productivity">productivity</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/01252410-853f-4570-858f-f3d609f5def5/">An SSD can breathe life into old computers</a></li>
+        
+        <li><a href="/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/">Back to RSS</a></li>
+        
+        <li><a href="/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/">Searching the awesome-lists on github</a></li>
+        
+        <li><a href="/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">Iosevka - an awesome font for Emacs</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    <div class="article-widget">
+      <div class="post-nav">
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/" rel="next">An SSD can breathe life into old computers</a>
+  </div>
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/" rel="prev">Back to RSS</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

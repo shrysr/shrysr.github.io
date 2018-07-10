@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>An SSD can breathe life into old computers</title>
+      <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</guid>
+      <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old.
+In particular, within Emacs - mu4e responds much more quickly and there is significantly less lag in searching / accessing emails and HTML rendering.
+The other advantage of using a Mac over Linux is that installation and setup instructions are more often available out the box for the Mac OS (though this is changing).</description>
+    </item>
     
     <item>
       <title>Back to RSS</title>
@@ -28,8 +39,8 @@ However, even with all these filters, it is quite difficult to keep on top of ne
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old. 1 , 2 , 3. really pretty obvious.
-Before my foray into Emacs, I purchased applications like IAWriter (classic)4, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing.</description>
+      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
+Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
     </item>
     
   </channel>
