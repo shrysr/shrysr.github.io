@@ -59,6 +59,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</loc>
+      <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/talk/example-talk/</loc>
       <lastmod>2017-01-01T00:00:00-05:00</lastmod>
     </url>
@@ -464,6 +473,16 @@
     
       <loc>https://shrysr.github.io/tags/open-source/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/org-mode/</loc>
+      <lastmod>2017-04-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -7,19 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 10 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The benefit in &#39;Archaic&#39; Email interfaces</title>
-      <link>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</link>
-      <pubDate>Thu, 10 Aug 2017 00:00:00 +0000</pubDate>
+      <title>Getting productive - an exploration into holistic task management</title>
+      <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/4dd25b75-6956-432e-8425-1604a1e33b3d/</guid>
-      <description>This post outlines my current email setup and penchant for using mu4e, an email client available for Emacs. mu4e is a text based email interface.
-Beyond mu4e, there are other options available like notmuch and mutt. I have briefly experimented with mutt, which is breath-takingly fast in email search, but mutt has to be coupled with another front end to be used within Emacs. The philosophy and system behind notmuch (leveraging the Gmail tag based approach) differ from mu4e.</description>
+      <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
+      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org-mode and Emacs help you do just that.
+After trying out several tools, IMHO : Todoist offers the best bang for your buck, especially with it&amp;rsquo;s natural language parsing ability, smooth and reliable sync as well as its multi-platform availability. Many describe Omnifocus to be the king of task management tools, with dedicated apps for different purposes and probably well integrated.</description>
     </item>
     
   </channel>
