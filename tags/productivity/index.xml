@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
+      <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
+      <description>I&amp;rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.</description>
+    </item>
     
     <item>
       <title>An SSD can breathe life into old computers</title>

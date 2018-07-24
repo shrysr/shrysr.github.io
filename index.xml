@@ -11,6 +11,26 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
+      <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m an admirer of &lt;a href=&#34;https://www.linkedin.com/in/howardeabrams/&#34; target=&#34;_blank&#34;&gt;Howard Abrams&lt;/a&gt;, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.&lt;/p&gt;
+
+&lt;p&gt;Howard&amp;rsquo;s tutorial on &lt;a href=&#34;//www.howardism.org/Technical/Emacs/literate-programming-tutorial.html&#34; target=&#34;_blank&#34;&gt;Literate Programming&lt;/a&gt;, combined with his &lt;a href=&#34;https://www.youtube.com/watch?v=dljNabciEGg&#34; target=&#34;_blank&#34;&gt;Literate Devops with Emacs video&lt;/a&gt; are among the best ways to get started with understanding the power of using Org-Mode and Org-Babel to create complex, inter-connected, multi-language programs / documents / research that are of course well documented (this being one basic tenet of literate programming). Essentially, Org-Mode and Org-Babel enable a high quality programming environment in a single org-mode buffer or document. The said environment is significantly more feature rich compared to Jupyter notebooks, especially being supported by it&amp;rsquo;s foundation in Emacs.&lt;/p&gt;
+
+&lt;p&gt;Though I&amp;rsquo;ve been using Org files for a while now for all my programming explorations, I&amp;rsquo;ve been bothered about my sub-par workflows. I could not easily reference other code blocks and snippets and recipes for a new document or project. It was inefficient and time consuming to locate the necessary snippet and re-write or re-paste the code in the new source blocks. I was not making much progress plodding through the vast documentation of org-babel.&lt;/p&gt;
+
+&lt;p&gt;Therefore, I was thrilled to discover the &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/library-of-babel.html&#34; target=&#34;_blank&#34;&gt;Library of Babel&lt;/a&gt; through Howard&amp;rsquo;s tutorial, which can be used to add files to a global library that is accessible from anywhere! Did I mention that it involves hitting barely 3 keys, and any number of arguments can be passed to these source blocks? I&amp;rsquo;m not sure such a feature is available with any other IDE.&lt;/p&gt;
+
+&lt;p&gt;In addition, the above tutorial clearly elucidates how different languages can be combined together, and the video elucidates typical Devops procedures, which are easily taken care of with appropriate arguments and headers to the source code blocks. For example, all the source code blocks could be tangled into appropriately named and located script files using a single argument. These tutorials tied up bits and pieces of info in my head from various sources and was invaluable in enhancing my understanding of using Emacs and Org-Babel&lt;/p&gt;
+
+&lt;p&gt;The Library of Babel can be made persistent across sessions by loading a specified org-file from which the named source code blocks are automatically read in. It is surprising that the internet does not seem to contain more references and examples using the Library of Babel. Perhaps there are some caveats that I am yet to encounter. One question that arises is whether the Library of Babel is automatically updated when the source code block is updated.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>An SSD can breathe life into old computers</title>
       <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
@@ -1078,28 +1098,6 @@ productivity.&lt;/li&gt;
 &lt;h2 id=&#34;course-notes-and-code-https-nbviewer-jupyter-org-github-shrysr-ipython-notebooks-blob-master-r-fundamentals-fundamentals-ipynb&#34;&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/shrysr/ipython-notebooks/blob/master/R-fundamentals/fundamentals.ipynb&#34; target=&#34;_blank&#34;&gt;Course Notes and code&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>On-line Courses @ Datacamp</title>
-      <link>https://shrysr.github.io/project/course-datacamp-datascience/</link>
-      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/course-datacamp-datascience/</guid>
-      <description>&lt;p&gt;Links to certificates of courses completed on &lt;a href=&#34;https://www.datacamp.com/&#34; target=&#34;_blank&#34;&gt;Datacamp&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-intro-to-sql.pdf&#34;&gt;Intro to &lt;code&gt;SQL&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-R-basics.pdf&#34;&gt;Data Science &lt;code&gt;R&lt;/code&gt; basics&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Completed as a part of &lt;a href=&#34;https://shrysr.github.io/project/course-edx-harvard-r&#34;&gt;EdX HarvardX PH125.1x: Data Science: R Basics&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://shrysr.github.io/files/Certificate-datacamp-tidyverse-introduction.pdf&#34;&gt;Introduction to Tidyverse`&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
