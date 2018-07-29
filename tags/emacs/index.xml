@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 24 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
+      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
+      <description>I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (C-x 3)
+For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
+(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
+    </item>
     
     <item>
       <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>

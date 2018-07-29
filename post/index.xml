@@ -13,12 +13,25 @@
     
     
     <item>
+      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
+      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
+      <description>I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (C-x 3)
+For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
+(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
+    </item>
+    
+    <item>
       <title>Technical notes : Research paper on learning/teaching data science</title>
       <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
       <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
-      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice Author: Yehia Elkhatib Download link
+      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice
+Author: Yehia Elkhatib
+Download link
 This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.
  The importance of being able to work in a team is highlighted.</description>
     </item>
