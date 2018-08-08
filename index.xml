@@ -18,7 +18,7 @@
       <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
       <description>
 
-&lt;p&gt;I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
 
@@ -53,16 +53,16 @@
 &lt;/figure&gt;
 
 
-&lt;p&gt;I can also continue to highlight specific lines of paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up with all the items in the kill-ring.&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append or prepend the item. All available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
+&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
 
 &lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
 
-&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by being able pop items out of the kill ring in the selection process above, or a custom command to clear the kill ring completely. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
+&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
 
 &lt;p&gt;Additional possibilities:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;To view pdf files side by side and capture notes is to use the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -75,7 +75,15 @@
 
 &lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
 
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; The browse-kill-ring package can be installed via MELPA&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setq split-width-threshold 75)
+(setq split-height-threshold nil)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)&lt;/p&gt;
 </description>
     </item>
     
@@ -173,7 +181,7 @@
       <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m an admirer of &lt;a href=&#34;https://www.linkedin.com/in/howardeabrams/&#34; target=&#34;_blank&#34;&gt;Howard Abrams&lt;/a&gt;, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.&lt;/p&gt;
 
-&lt;p&gt;Howard&amp;rsquo;s tutorial on &lt;a href=&#34;//www.howardism.org/Technical/Emacs/literate-programming-tutorial.html&#34; target=&#34;_blank&#34;&gt;Literate Programming&lt;/a&gt;, combined with his &lt;a href=&#34;https://www.youtube.com/watch?v=dljNabciEGg&#34; target=&#34;_blank&#34;&gt;Literate Devops with Emacs video&lt;/a&gt; are among the best ways to get started with understanding the power of using Org-Mode and Org-Babel to create complex, inter-connected, multi-language programs / documents / research that are of course well documented (this being one basic tenet of literate programming). Essentially, Org-Mode and Org-Babel enable a high quality programming environment in a single org-mode buffer or document. The said environment is significantly more feature rich compared to Jupyter notebooks, especially being supported by it&amp;rsquo;s foundation in Emacs.&lt;/p&gt;
+&lt;p&gt;Howard&amp;rsquo;s tutorial on &lt;a href=&#34;//www.howardism.org/Technical/Emacs/literate-programming-tutorial.html&#34; target=&#34;_blank&#34;&gt;Literate Programming&lt;/a&gt;, combined with his &lt;a href=&#34;https://www.youtube.com/watch?v=dljNabciEGg&#34; target=&#34;_blank&#34;&gt;Literate Devops with Emacs video&lt;/a&gt; are among the best ways to get started with understanding the power of using Org Mode and Org-Babel to create complex, inter-connected, multi-language programs / documents / research that are of course well documented (this being one basic tenet of literate programming). Essentially, Org Mode and Org-Babel enable a high quality programming environment in a single Org mode buffer or document. The said environment is significantly more feature rich compared to Jupyter notebooks, especially being supported by it&amp;rsquo;s foundation in Emacs.&lt;/p&gt;
 
 &lt;p&gt;Though I&amp;rsquo;ve been using Org files for a while now for all my programming explorations, I&amp;rsquo;ve been bothered about my sub-par workflows. I could not easily reference other code blocks and snippets and recipes for a new document or project. It was inefficient and time consuming to locate the necessary snippet and re-write or re-paste the code in the new source blocks. I was not making much progress plodding through the vast documentation of org-babel.&lt;/p&gt;
 
@@ -245,7 +253,7 @@ Linux distros can be run on &lt;a href=&#34;https://www.virtualbox.org/&#34; tar
 in it. Though I did try to capture everything of interest - the
 procedure was never fast or streamlined enough for me. The Evernote
 app runs ridiculously slower on older phones. In particular, being
-used to the speed of Emacs and Org-mode - I was mostly displeased with
+used to the speed of Emacs and Org mode - I was mostly displeased with
 the Evernote Mac / Windows apps as well. I ended up using the drafts
 app for writing on iOS devices.&lt;/p&gt;
 
@@ -467,7 +475,7 @@ get it working in Arch Linux reliably.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Searching the awesome-lists on github</title>
+      <title>Searching the awesome-lists on Github</title>
       <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -743,7 +751,7 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 
 &lt;p&gt;To integrate tasks, reminders, notes, coding workflow into a single
-framework is no easy challenge. Org-mode and Emacs help you do just
+framework is no easy challenge. Org mode and Emacs help you do just
 that.&lt;/p&gt;
 
 &lt;p&gt;After trying out several tools, IMHO : &lt;a href=&#34;https://todoist.com&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; offers the best bang
@@ -781,7 +789,7 @@ hand, using a simple text file with lists of work or notes is too
 simplistic to address a complex problem.&lt;/p&gt;
 
 &lt;p&gt;However, the issue could be resolved when the simple and ubiquitous
-Text file is parsed by a system like Org-mode with in built and novel
+Text file is parsed by a system like Org mode with in built and novel
 routines to filter and present the data in the text file in a very
 useful. Ultimately the key factor is that the workflow and output can
 be completely customised as required.&lt;/p&gt;
@@ -839,7 +847,7 @@ be able to store the task/note/idea in a place that I can easily look
 up for further processing.&lt;/p&gt;
 
 &lt;p&gt;Such an activity is not at all streamlined with Todoist, and
-definitely not so with Evernote. With Org-mode its just a &lt;code&gt;C-c c&lt;/code&gt;, or
+definitely not so with Evernote. With Org mode its just a &lt;code&gt;C-c c&lt;/code&gt;, or
 Control + c and hit c again. Optionally, a &lt;code&gt;C-cw&lt;/code&gt; for refiling the note
 on the spot if desired. When I hit refile - I can search through my
 org headings or projects and place the newly captured item exactly
@@ -867,7 +875,7 @@ summaries of travel/visits to the customer, telephonic discussions,
 indications of future projects as well as generic or specific
 problems.&lt;/p&gt;
 
-&lt;p&gt;Using Org-mode, it is possible create customised workflows and
+&lt;p&gt;Using Org mode, it is possible create customised workflows and
 templates to manage all the above aspects, more than any other note
 taking system, including only handwritten notes. An excellent,
 comprehensive overview can be found in &lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bert Hansen&amp;rsquo;s article&lt;/a&gt;.&lt;/p&gt;
@@ -895,7 +903,7 @@ souped up text editor like Emacs that can evolve to cover a lot of
 needs efficiently. It&amp;rsquo;s not going to work well for people who need a
 reminder to pop up on their phones, with a fancy GUI and those who
 expect a software to work extremely well right out of the
-box. However, this &lt;em&gt;is&lt;/em&gt; Org-mode and Emacs&amp;#x2026;. there are ways to sync
+box. However, this &lt;em&gt;is&lt;/em&gt; Org mode and Emacs&amp;#x2026;. there are ways to sync
 your iOS / outlook calendar with orgmode&amp;rsquo;s calendar, or with
 wunderlist or Toodledo. Anything is possible, but it just won&amp;rsquo;t be via
 some classy GUI..&lt;/p&gt;
@@ -922,7 +930,7 @@ reach a certain point that results in a marked improvement in
 productivity and workflow. Beyond this, leisure time can always be
 spent in fine-tuning the basic setup and understanding the code better.&lt;/p&gt;
 
-&lt;p&gt;The customisation options with Emacs and Org-mode are literally
+&lt;p&gt;The customisation options with Emacs and Org mode are literally
 endless and constrained only by programming skills, or Googling skills
 to find the code snippet that can get your work done, not to mention
 social skills in getting help via online communities. This is actually
@@ -933,11 +941,11 @@ efficient workflow.&lt;/p&gt;
 
 &lt;p&gt;Deliberate practise towards improvement is certainly boosted when one
 is able to work consistently in a environment customised to needs and
-workflows. Using Org-mode and Emacs is a firm step in this direction.&lt;/p&gt;
+workflows. Using Org mode and Emacs is a firm step in this direction.&lt;/p&gt;
 
 &lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
 
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; While Org-mode is optimised for text, it is possible to attach
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; While Org mode is optimised for text, it is possible to attach
 any kind of file to a &amp;lsquo;heading&amp;rsquo;, and use interleave and other
 techniques to browse and annotate PDF&amp;rsquo;s. The possibilities are too
 numerous to be covered in a blog post or a single google search.&lt;/p&gt;

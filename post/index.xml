@@ -18,7 +18,7 @@
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
-      <description>I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (C-x 3)
+      <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
 (setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
     </item>
@@ -62,7 +62,7 @@ The other advantage of using a Mac over Linux is that installation and setup ins
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/</guid>
-      <description>I&amp;rsquo;ve used Evernote since 2014, with over 3k notes of all kinds stored in it. Though I did try to capture everything of interest - the procedure was never fast or streamlined enough for me. The Evernote app runs ridiculously slower on older phones. In particular, being used to the speed of Emacs and Org-mode - I was mostly displeased with the Evernote Mac / Windows apps as well. I ended up using the drafts app for writing on iOS devices.</description>
+      <description>I&amp;rsquo;ve used Evernote since 2014, with over 3k notes of all kinds stored in it. Though I did try to capture everything of interest - the procedure was never fast or streamlined enough for me. The Evernote app runs ridiculously slower on older phones. In particular, being used to the speed of Emacs and Org mode - I was mostly displeased with the Evernote Mac / Windows apps as well.</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ However, even with all these filters, it is quite difficult to keep on top of ne
     </item>
     
     <item>
-      <title>Searching the awesome-lists on github</title>
+      <title>Searching the awesome-lists on Github</title>
       <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -112,7 +112,7 @@ Whiplash is a fascinating movie on many levels regarding a topic that interests 
       <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
-      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org-mode and Emacs help you do just that.
+      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org mode and Emacs help you do just that.
 After trying out several tools, IMHO : Todoist offers the best bang for your buck, especially with it&amp;rsquo;s natural language parsing ability, smooth and reliable sync as well as its multi-platform availability. Many describe Omnifocus to be the king of task management tools, with dedicated apps for different purposes and probably well integrated.</description>
     </item>
     

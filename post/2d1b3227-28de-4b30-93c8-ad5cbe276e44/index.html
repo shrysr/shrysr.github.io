@@ -17,7 +17,7 @@
       
     
   
-  <meta name="description" content="I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (C-x 3)
+  <meta name="description" content="I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
 (setq org-capture-templates &#39;((&quot;l&quot; &quot;Link &#43; notes&quot; entry (file&#43;headline &quot;~/my_org/link_database.">
 
@@ -94,7 +94,7 @@ For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a
   <meta property="og:site_name" content="Shreyas Ragavan">
   <meta property="og:url" content="https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/">
   <meta property="og:title" content="Emacs notes: Select paragraph and browse-kill-ring for effective content capture | Shreyas Ragavan">
-  <meta property="og:description" content="I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (C-x 3)
+  <meta property="og:description" content="I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
 (setq org-capture-templates &#39;((&quot;l&quot; &quot;Link &#43; notes&quot; entry (file&#43;headline &quot;~/my_org/link_database.">
   <meta property="og:locale" content="en-us">
@@ -343,7 +343,7 @@ For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a
     <div class="article-style" itemprop="articleBody">
       
 
-<p>I like to have any reading material and my notes side by side. This is easily done with Emacs by splitting the buffer vertically (<code>C-x 3</code>)</p>
+<p>I like to have any reading material and my notes side by side<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. This is easily done with Emacs by splitting the buffer vertically (<code>C-x 3</code>)<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
 
 <p>For example: Once a link has been opened via w3m, I hit org-capture (<code>C-c</code>) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.</p>
 
@@ -378,16 +378,16 @@ For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a
 </figure>
 
 
-<p>I can also continue to highlight specific lines of paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit <code>M-x</code> browse-kill-ring, which brings up a pop-up with all the items in the kill-ring.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> Once called, I can hit n to move to the next item, and hit &lsquo;i&rsquo; to insert the current item at the cursor location. It is also possible to append or prepend the item. All available shortcuts can be found using &lsquo;?&rsquo;, while in the browse-kill-ring buffer.</p>
+<p>It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit <code>M-x</code> browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>. Once called, I can hit n to move to the next item, and hit &lsquo;i&rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &lsquo;?&rsquo;, while in the browse-kill-ring buffer.</p>
 
 <p>The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.</p>
 
-<p>One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by being able pop items out of the kill ring in the selection process above, or a custom command to clear the kill ring completely. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.</p>
+<p>One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &lsquo;x&rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.</p>
 
 <p>Additional possibilities:</p>
 
 <ul>
-<li>To view pdf files side by side and capture notes is to use the <a href="https://github.com/rudolfochrist/interleave" target="_blank">Interleave package</a>.</li>
+<li>To view pdf files side by side and capture notes is via the <a href="https://github.com/rudolfochrist/interleave" target="_blank">Interleave package</a>.</li>
 <li>The org-web-clipper concept outlined <a href="http://www.bobnewell.net/publish/35years/webclipper.html" target="_blank">here</a> is also very convenient to rapidly capture entire webpages being browsed in w3m.</li>
 </ul>
 
@@ -400,7 +400,15 @@ For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a
 
 <h1 id="footnotes">Footnotes</h1>
 
-<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> The browse-kill-ring package can be installed via MELPA</p>
+<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> Sometimes, this procedure has to be set specifically. Some good discussions on SO : <a href="https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal" target="_blank">link1</a>, <a href="https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction" target="_blank">link2</a>. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting.</p>
+
+<pre><code>(setq split-width-threshold 75)
+(setq split-height-threshold nil)
+</code></pre>
+
+<p><sup><a id="fn.2" href="#fnr.2">2</a></sup> <code>C-x</code> essentially means Control + x. <code>M-x</code> or Meta-x is Alt + x</p>
+
+<p><sup><a id="fn.3" href="#fnr.3">3</a></sup> The browse-kill-ring package can be installed via MELPA. (<code>M-x</code> install package)</p>
 
     </div>
 

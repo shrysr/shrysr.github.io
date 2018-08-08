@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Org-mode on Shreyas Ragavan</title>
+    <title>Org mode on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/org-mode/</link>
-    <description>Recent content in Org-mode on Shreyas Ragavan</description>
+    <description>Recent content in Org mode on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
-      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org-mode and Emacs help you do just that.
+      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org mode and Emacs help you do just that.
 After trying out several tools, IMHO : Todoist offers the best bang for your buck, especially with it&amp;rsquo;s natural language parsing ability, smooth and reliable sync as well as its multi-platform availability. Many describe Omnifocus to be the king of task management tools, with dedicated apps for different purposes and probably well integrated.</description>
     </item>
     
