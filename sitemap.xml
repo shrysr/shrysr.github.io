@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</loc>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</loc>
       <lastmod>2018-07-29T00:00:00+00:00</lastmod>
     </url>
@@ -96,7 +105,7 @@
     <url>
     
       <loc>https://shrysr.github.io/talk/example-talk/</loc>
-      <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+      <lastmod>2017-01-01T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -105,7 +114,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00-05:00</lastmod>
+      <lastmod>2017-01-01T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -369,7 +378,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -379,7 +388,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -440,6 +449,16 @@
     
       <loc>https://shrysr.github.io/tags/ic-engines/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/jupyter/</loc>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -509,7 +528,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/org-mode/</loc>
-      <lastmod>2017-04-02T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -529,7 +548,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/programming/</loc>
-      <lastmod>2018-07-24T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -568,6 +587,16 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/python/</loc>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/python-101/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -579,7 +608,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/r/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -639,7 +668,7 @@
     <url>
     
       <loc>https://shrysr.github.io/</loc>
-      <lastmod>2017-10-15T00:00:00-04:00</lastmod>
+      <lastmod>2017-10-15T00:00:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
