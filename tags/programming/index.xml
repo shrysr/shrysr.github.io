@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nteract : An interactive computing environment</title>
+      <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
+      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
+      <description>A slide deck from Netflix, mentions using Nteract as their programming notebook, and prompted a mini exploration.
+This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces Nteract as an open source, desktop-based, interactive computing application that was designed to overcome a bunch of limitations in Jupyter Notebook&amp;rsquo;s design philosophy. One key difference (among many others) is the ability to execute code in a variety of languages within a single notebook, and it also appears that that the electron based desktop app should make it easier for beginners to start coding.</description>
+    </item>
     
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
