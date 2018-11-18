@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Incremental improvements can lead to significant gains</title>
+      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
+My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+    </item>
+    
+    <item>
       <title>Nteract : An interactive computing environment</title>
       <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
@@ -109,7 +119,7 @@ How could one search for a keyword through all these repositories? I have always
     <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
@@ -123,13 +133,13 @@ Zen writing apps are called so because they have a unique combination of fonts, 
       
       <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
       <description>Whiplash: Wikipedia
-Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax was immensely interesting, inspiring and supported by great acting. At any rate, the movie induced a blog post&amp;#x2026;</description>
+Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax was immensely interesting, inspiring and supported by great acting. At any rate, the movie induced a blog post !</description>
     </item>
     
     <item>
       <title>Getting productive - an exploration into holistic task management</title>
       <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
-      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
       <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org mode and Emacs help you do just that.

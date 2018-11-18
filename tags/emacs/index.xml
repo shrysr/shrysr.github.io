@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 12 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Incremental improvements can lead to significant gains</title>
+      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
+My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+    </item>
     
     <item>
       <title>Nteract : An interactive computing environment</title>
@@ -76,7 +86,7 @@ However, even with all these filters, it is quite difficult to keep on top of ne
     <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
@@ -86,7 +96,7 @@ Zen writing apps are called so because they have a unique combination of fonts, 
     <item>
       <title>Getting productive - an exploration into holistic task management</title>
       <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
-      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
       <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org mode and Emacs help you do just that.

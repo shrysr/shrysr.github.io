@@ -11,6 +11,27 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Incremental improvements can lead to significant gains</title>
+      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>&lt;p&gt;While reading the book &lt;a href=&#34;https://jamesclear.com/atomic-habits&#34; target=&#34;_blank&#34;&gt;Atomic Habits by James Clear&lt;/a&gt;, I was reflecting that my choice of embracing &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34; target=&#34;_blank&#34;&gt;Emacs&lt;/a&gt; and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.&lt;/p&gt;
+
+&lt;p&gt;My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks. As mentioned in an &lt;a href=&#34;../2b0b2c79-3f6e-4079-a07d-9e382fda8954&#34;&gt;earlier blog post&lt;/a&gt;
+, I tried several approaches before settling on Emacs. The idea was to find or create a single system to track everything of importance in my life (with ease and efficiency). This was instead of a fragmented approach of using multiple tools and techniques, for example, Sublime Text / Atom as a text editor and &lt;a href=&#34;https://todoist.com/?lang=en&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; as a task management tool.&lt;/p&gt;
+
+&lt;p&gt;I started with a vanilla configuration of Emacs and painstakingly borrowed (and eventually) modified lisp snippets to implement desired &amp;lsquo;features&amp;rsquo; or behaviors. It was a just a couple of features every week, initially focused on Org mode&amp;rsquo;s behavior alone. That was nearly 3 years ago. As of now, I am able to manage my blog [hugo], view my email [mu4e], browse the web [w3m], seamlessly capture notes / ideas / tasks from (almost) anywhere [Org mode], chat on IRC, build multi-language code notebooks with ease [Org babel]. All the above provide me significant advantages in speed and efficiency which still have plenty of potential to improve.&lt;/p&gt;
+
+&lt;p&gt;Sure, I certainly appear closer to my goal today.. however, I did not know if it was a pipe dream when I started out. It was often extremely frustrating, right from memorizing the &amp;lsquo;crazy&amp;rsquo; keybindings in Emacs, to struggling with getting a lisp snippet to work as expected.&lt;/p&gt;
+
+&lt;p&gt;Choosing Emacs had unexpected rewards as well. For example, the need of synchronizing my notes and Emacs configuration with multiple machines led me to Git. &lt;a href=&#34;https://magit.vc/&#34; target=&#34;_blank&#34;&gt;Magit&amp;rsquo;s&lt;/a&gt; easily accessible commands and relatively visual interface has been a massive help in getting things done with Git, despite not having any deep technical knowledge of how Git works.&lt;/p&gt;
+
+&lt;p&gt;My journey with Emacs is testament that an incremental, compounding improvement over time can ultimately result in significant gains. It is also important to acknowledge that I am standing on the shoulder of giants and the awesome &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; is a cornerstone in my toolkit.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Nteract : An interactive computing environment</title>
       <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
       <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
@@ -657,7 +678,7 @@ configuration.&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&
     <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>
@@ -758,7 +779,7 @@ achieved with a few lines of code!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Whiplash_%25282014_film%2529&#34; target=&#34;_blank&#34;&gt;Whiplash: Wikipedia&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post&amp;#x2026;&lt;/p&gt;
+&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post !&lt;/p&gt;
 
 &lt;p&gt;The story revolves around the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
 
@@ -766,7 +787,7 @@ achieved with a few lines of code!&lt;/p&gt;
 
 &lt;h1 id=&#34;leverage-stress-to-achieve-new-levels-of-insight-and-performance&#34;&gt;Leverage stress to achieve new levels of insight and performance&lt;/h1&gt;
 
-&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have been taken forward to habits that changed my life.&lt;/p&gt;
+&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have were taken forward to habits that changed my life.&lt;/p&gt;
 
 &lt;h1 id=&#34;weathering-criticism&#34;&gt;Weathering criticism&lt;/h1&gt;
 
@@ -808,7 +829,7 @@ performance that make history.&lt;/p&gt;
 
 &lt;h1 id=&#34;go-off-the-beaten-track-and-lose-yourself&#34;&gt;Go off the beaten track and Lose yourself&lt;/h1&gt;
 
-&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, quite unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
+&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
 
 &lt;h1 id=&#34;learning-velocity-and-flow&#34;&gt;Learning velocity and Flow&lt;/h1&gt;
 
@@ -831,7 +852,7 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
     <item>
       <title>Getting productive - an exploration into holistic task management</title>
       <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
-      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
       <description>
@@ -1170,42 +1191,6 @@ print &amp;quot;&amp;quot;
 print &amp;quot;Starting scan&amp;quot;
 res_list_syn(Res_loc)
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Contributions to the CFD-Online Wiki</title>
-      <link>https://shrysr.github.io/project/cfd-online-wiki/</link>
-      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/cfd-online-wiki/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;View : &lt;a href=&#34;http://www.cfd-online.com/Wiki/What_is_Open_Source%3F&#34; target=&#34;_blank&#34;&gt;CFD-Online Wiki page&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
-
-&lt;p&gt;During my initial foray into open source CFD and especially getting
-started with Linux - there was a lot of information that I had to
-collate from different sources in order to figure out each step. In
-addition, there were perspectives on performance that could be gained
-only through experience. Therefore, I plugged back the knowledge
-gained to the CFD-Online wiki with the idea that it would help any
-newbie get started a little quicker.&lt;/p&gt;
-
-&lt;p&gt;In the last few years, the number of courses and the material
-available on-line on CFD, Linux and applying Numerical techniques has
-increased substantially. This is somewhat supported by the increasing
-trend of page views &lt;a href=&#34;https://www.cfd-online.com/About/&#34; target=&#34;_blank&#34;&gt;shown on the CFD-Online
-Wiki&lt;/a&gt;. Nevertheless, this document
-still serves as a useful overview and getting started guide.&lt;/p&gt;
-
-&lt;p&gt;The documentation explores the idea of Open Source software, and the
-basic techniques to get started with the exploration. Eg: the
-different options of running Linux on your current machine as well as
-the pros and cons of each approach, and the software options
-available, as well as links to useful and high quality information and
-tutorials.&lt;/p&gt;
 </description>
     </item>
     
