@@ -7,19 +7,69 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
+      <title>CFD Post Processing automation</title>
+      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
-Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
+      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
+      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
+This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
+    </item>
+    
+    <item>
+      <title>Simulation job scheduler</title>
+      <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
+      <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
+Presentation
+Wiki on Github
+This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
+ In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
+    </item>
+    
+    <item>
+      <title>Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/course-datacamp-datascience/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-datacamp-datascience/</guid>
+      <description>Links to certificates of courses completed on Datacamp
+ Intro to SQL
+ Data Science R basics.
+ Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+ Introduction to R for Finance
+  </description>
+    </item>
+    
+    <item>
+      <title>Courses @ Dataquest</title>
+      <link>https://shrysr.github.io/project/course-dataquest-datascience/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-dataquest-datascience/</guid>
+      <description>Links to certificates of courses completed on Dataquest
+ Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
+  </description>
+    </item>
+    
+    <item>
+      <title>On-line Courses:   Code School</title>
+      <link>https://shrysr.github.io/project/course-code-school/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-code-school/</guid>
+      <description>Completed several courses covering python, git, SQL,regular expressions. Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
+ My Code School Report  is no longer available, since Pluralsight seem to be revamping these courses. However, these were great introductory courses.  </description>
     </item>
     
   </channel>
