@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</loc>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</loc>
       <lastmod>2018-11-18T00:00:00+00:00</lastmod>
     </url>
@@ -203,24 +212,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/project/emission-technology/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/project/course-edx-harvard-r/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>https://shrysr.github.io/project/course-datacamp-datascience/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
     </url>
@@ -231,6 +222,24 @@
     <url>
     
       <loc>https://shrysr.github.io/project/course-dataquest-datascience/</loc>
+      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/project/emission-technology/</loc>
+      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/project/course-edx-harvard-r/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -406,7 +415,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -416,7 +425,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -566,7 +575,17 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/org-mode/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/org-projectile/</loc>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -576,7 +595,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/productivity/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -616,7 +635,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/python/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -626,7 +645,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/python/</loc>
-      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -687,6 +706,16 @@
     
       <loc>https://shrysr.github.io/tags/sql/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/scimax/</loc>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

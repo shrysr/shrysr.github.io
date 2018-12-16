@@ -13,17 +13,7 @@
     
     
     <item>
-      <title>On-line Certificate Course:   EdX HarvardX PH125.1x: Data Science: R Basics</title>
-      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
-      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
-Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
-    </item>
-    
-    <item>
-      <title>On-line Courses @ Datacamp</title>
+      <title>Courses @ Datacamp</title>
       <link>https://shrysr.github.io/project/course-datacamp-datascience/</link>
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
@@ -37,7 +27,7 @@ Verified EdX Certificate of Achievement  Course exercises are linked with a Data
     </item>
     
     <item>
-      <title>On-line Courses @ Dataquest</title>
+      <title>Courses @ Dataquest</title>
       <link>https://shrysr.github.io/project/course-dataquest-datascience/</link>
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
@@ -47,6 +37,16 @@ Verified EdX Certificate of Achievement  Course exercises are linked with a Data
  Git &amp;amp; Version control
  SQL Fundamentals
   </description>
+    </item>
+    
+    <item>
+      <title>EdX HarvardX PH125.1x: Data Science: R Basics</title>
+      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
+      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
+      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
+Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
     </item>
     
     <item>

@@ -132,7 +132,7 @@
     <item>
       <title>Emacs</title>
       <link>https://shrysr.github.io/tags/emacs/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/emacs/</guid>
       <description></description>
@@ -141,7 +141,7 @@
     <item>
       <title>Emacs</title>
       <link>https://shrysr.github.io/tags/emacs/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/emacs/</guid>
       <description></description>
@@ -276,16 +276,25 @@
     <item>
       <title>Org mode</title>
       <link>https://shrysr.github.io/tags/org-mode/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/org-mode/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Org-projectile</title>
+      <link>https://shrysr.github.io/tags/org-projectile/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/org-projectile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Productivity</title>
       <link>https://shrysr.github.io/tags/productivity/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/productivity/</guid>
       <description></description>
@@ -303,7 +312,7 @@
     <item>
       <title>Python</title>
       <link>https://shrysr.github.io/tags/python/</link>
-      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/python/</guid>
       <description></description>
@@ -312,7 +321,7 @@
     <item>
       <title>Python</title>
       <link>https://shrysr.github.io/tags/python/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/python/</guid>
       <description></description>
@@ -369,6 +378,15 @@
       <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scimax</title>
+      <link>https://shrysr.github.io/tags/scimax/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/scimax/</guid>
       <description></description>
     </item>
     

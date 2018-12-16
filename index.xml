@@ -11,6 +11,51 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Juggling multiple projects and leveraging org-projectile</title>
+      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
+
+&lt;p&gt;These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit. Therefore individual folders and git repos are automatically created for each project in the specified project directory. This enables the convenient possibility of keeping the data, folder structures, tasks, notes and scripts of each project separate.&lt;/p&gt;
+
+&lt;p&gt;Different projects can be switched to using &lt;code&gt;M-x nb-open&lt;/code&gt; and typing in a few words that denote the title of the project. Choosing a project automatically provides the option to open the Readme.org files created earlier. Therefore it would be convenient to include relevant links to different locations / scripts and etc in the Readme file.&lt;/p&gt;
+
+&lt;p&gt;Using the above technique resulted in me creating a huge number of projects over a period of time. Especially while working on multiple computers, it is worth inculcating the discipline of adding a remote on github/bitbucket and regularly pushing to the remote.&lt;/p&gt;
+
+&lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
+
+&lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;;; Setting up org-projectile
+(require &#39;org-projectile)
+(setq org-projectile-projects-file
+      &amp;quot;~/my_org/project-tasks.org&amp;quot;)
+(push (org-projectile-project-todo-entry) org-capture-templates)
+(setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+(global-set-key (kbd &amp;quot;C-c n p&amp;quot;) &#39;org-projectile-project-todo-completing-read)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
+
+
+&lt;figure&gt;
+    
+        &lt;img src=&#34;https://shrysr.github.io/img/org-projectile-screenshot.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;org-projectile task capture&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
       <title>Incremental improvements can lead to significant gains</title>
       <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
@@ -1075,122 +1120,6 @@ handy internet available.&lt;/p&gt;
       
       <guid>https://shrysr.github.io/talk/example-talk/</guid>
       <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CFD Post Processing automation</title>
-      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
-      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
-      <description>
-
-&lt;p&gt;It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.&lt;/p&gt;
-
-&lt;p&gt;This python script that enables the user to set the location of:
-- the session file (.cse)
-- the CFD result files (.res)
-- create a BAT script with sequential lines, each calling ANSYS CFD Post with the necessary arguments
-- run the session script on all the result files available in a particular location.
-- gracefully exit, removing all the temporary script files.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/cfdpost_auto&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;how-it-helped&#34;&gt;How it helped&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;While these operations could be done directly in python, it is
-easier and simpler to control ANSYS CFD post using a BASH
-script. Therefore the python program creates a BASH script.&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;python-script&#34;&gt;Python script&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;
-Created on Thu Dec 18 16:10:49 2014
-@author: shrysr
-&amp;quot;&amp;quot;&amp;quot;
-
-# Description: 
-# This is a simple program that is designed to apply am ANSYS CFD post macro on all the results available at a particular location, one after the other. There are 3 strings required to be set as input by the user.
-# 1. The location of the ANSYS CFD Post executable
-# 2. THe path to the macro file (.cst/.cse)
-# 3. The folder location where the result files are located.
-
-# Note : the &amp;gt;quit command can be written in the post macro to optionally execute the post macro on one file after the other automatically. Otherwise CFD Post has to be quit manually by the user after the macro is applied on each file.
-
-###---------- USER INPUT -------------###
-# Setting the paths to various locations.
-
-CFDPost_loc=r&#39;&amp;quot;C:\Program Files\ANSYS Inc\v145\CFD-Post\bin\cfdpost&amp;quot;&#39; #Setting the path to the ANSYS CFD Post executable.
-
-Post_template_loc=r&#39;&amp;quot;C:\\example_location\post_macro.cse&amp;quot;&#39; #Path to the .cse/.cst post macro to be applied.
-
-Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive\Shreyas&amp;quot; #Folder location of the result file path
-
-###---x---x--x-- USER INPUT -x---x---x---x--###
-
-#importing required libraries
-import os
-import glob
-import subprocess as sp
-
-#Creating BAT script for extracting the list of res files in the current working folder - sorted Date wise
-def res_list_syn(Res_loc):
-    &amp;quot;&amp;quot;&amp;quot;
-    Grabs all the CFX res files in the chosen location  (Res_loc) and stores them in the variable (array) A1.
-    The variableA1 is passed onto another function which uses the array contents
-    Example:
-    &amp;gt;&amp;gt;&amp;gt; Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive&amp;quot;
-    &amp;gt;&amp;gt;&amp;gt; post_syn(Res_loc)
-    &amp;gt;&amp;gt;&amp;gt; return variableA1
-    &amp;quot;&amp;quot;&amp;quot;
-    print &amp;quot;&amp;quot;
-    print &amp;quot;Grabbing all res files from chosen location.&amp;quot;
-    os.chdir(Res_loc)
-    reslist=glob.glob(&#39;*.res&#39;)
-    print &amp;quot;Passing the list of res files to the Post_Syn function&amp;quot;
-    post_syn(reslist)
-
-def post_syn(variable):
-    print &amp;quot; &amp;quot;    
-    print &amp;quot;Listing grabbed res files and creating Post BAT file in chosen location...&amp;quot; 
-    print &amp;quot;&amp;quot;
-    post_batname=&#39;Post_bat_runner.BAT&#39;   
-    post_bat_loc=os.path.join(Res_loc,post_batname)
-    PC=open(post_bat_loc,&#39;w&#39;)
-    PC.write(&#39;cd /d &amp;quot;%s&amp;quot;\n&#39;%Res_loc)
-    i=0
-    while i&amp;lt;len(variable):
-        print &amp;quot;%d --%s&amp;quot; %(i,variable[i])
-        PC.write(&#39;%s -s %s %s\n&#39; %(CFDPost_loc,Post_template_loc,variable[i]))
-        i+=1
-    PC.close()
-    print &amp;quot;Running post macro on all the listed Res Files....&amp;quot;
-    print &#39;&#39;
-    sp.call(post_bat_loc)
-    t.sleep(5)
-    print &#39;Killing temp files...&#39;
-    t.sleep(5)
-    File_killer(Res_loc,&#39;BAT&#39;)
-
-
-#Function for deleting temp Files. Prevents Clutter.
-def File_killer(folder_location, type_of_extension):
-    for variable in glob.glob(&#39;%s/*.%s&#39;%(folder_location,type_of_extension)):
-        if os.path.isfile(variable):
-            os.remove(variable)
-
-#Starting Program. Geting current working directory
-print &amp;quot;Hello. Program Launch...--&amp;gt;&amp;quot;
-print &amp;quot;&amp;quot;
-print &amp;quot;The chosen result location to be scanned is: %s&amp;quot;%Res_loc
-print &amp;quot;&amp;quot;
-print &amp;quot;Starting scan&amp;quot;
-res_list_syn(Res_loc)
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
