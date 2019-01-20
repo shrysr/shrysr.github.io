@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Productivity on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/categories/productivity/</link>
+    <description>Recent content in Productivity on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 19 Jan 2019 19:33:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Incremental improvements can lead to significant gains</title>
+      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
+My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+    </item>
+    
+    <item>
+      <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
+      <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
+      <pubDate>Sat, 19 Jan 2019 19:25:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
+      <description>I&amp;rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.</description>
+    </item>
+    
+  </channel>
+</rss>

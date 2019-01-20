@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Font on Shreyas Ragavan</title>
+    <title>font on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/font/</link>
-    <description>Recent content in Font on Shreyas Ragavan</description>
+    <description>Recent content in font on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 19:22:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/font/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
       <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.

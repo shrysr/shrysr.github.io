@@ -14,30 +14,30 @@
     
     <item>
       <title>CFD Post Processing automation</title>
-      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
+      <link>https://shrysr.github.io/project/cfd-post-processing-python/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
+      <guid>https://shrysr.github.io/project/cfd-post-processing-python/</guid>
       <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
 This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
     </item>
     
     <item>
       <title>Contributions to the CFD-Online Wiki</title>
-      <link>https://shrysr.github.io/project/cfd-online-wiki/</link>
+      <link>https://shrysr.github.io/project/cfd-on-line-wiki/cfd-online-wiki/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-online-wiki/</guid>
+      <guid>https://shrysr.github.io/project/cfd-on-line-wiki/cfd-online-wiki/</guid>
       <description>View : CFD-Online Wiki page.
 Motivation During my initial foray into open source CFD and especially getting started with Linux - there was a lot of information that I had to collate from different sources in order to figure out each step. In addition, there were perspectives on performance that could be gained only through experience. Therefore, I plugged back the knowledge gained to the CFD-Online wiki with the idea that it would help any newbie get started a little quicker.</description>
     </item>
     
     <item>
       <title>Simulation job scheduler</title>
-      <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <link>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
+      <guid>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</guid>
       <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
 Presentation
 Wiki on Github

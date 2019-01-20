@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datascience on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/datascience/</link>
+    <description>Recent content in datascience on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 19 Jan 2019 19:30:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nteract : An interactive computing environment</title>
+      <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
+      <description>A slide deck from Netflix, mentions using Nteract as their programming notebook, and prompted a mini exploration.
+This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces Nteract as an open source, desktop-based, interactive computing application that was designed to overcome a bunch of limitations in Jupyter Notebook&amp;rsquo;s design philosophy. One key difference (among many others) is the ability to execute code in a variety of languages within a single notebook, and it also appears that that the electron based desktop app should make it easier for beginners to start coding.</description>
+    </item>
+    
+    <item>
+      <title>Technical notes : Research paper on learning/teaching data science</title>
+      <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
+      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice
+Author: Yehia Elkhatib
+Download link
+This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.
+ The importance of being able to work in a team is highlighted.</description>
+    </item>
+    
+  </channel>
+</rss>

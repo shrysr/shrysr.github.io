@@ -11,54 +11,9 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Juggling multiple projects and leveraging org-projectile</title>
-      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
-
-&lt;p&gt;These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit. Therefore individual folders and git repos are automatically created for each project in the specified project directory. This enables the convenient possibility of keeping the data, folder structures, tasks, notes and scripts of each project separate.&lt;/p&gt;
-
-&lt;p&gt;Different projects can be switched to using &lt;code&gt;M-x nb-open&lt;/code&gt; and typing in a few words that denote the title of the project. Choosing a project automatically provides the option to open the Readme.org files created earlier. Therefore it would be convenient to include relevant links to different locations / scripts and etc in the Readme file.&lt;/p&gt;
-
-&lt;p&gt;Using the above technique resulted in me creating a huge number of projects over a period of time. Especially while working on multiple computers, it is worth inculcating the discipline of adding a remote on github/bitbucket and regularly pushing to the remote.&lt;/p&gt;
-
-&lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
-
-&lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;;; Setting up org-projectile
-(require &#39;org-projectile)
-(setq org-projectile-projects-file
-      &amp;quot;~/my_org/project-tasks.org&amp;quot;)
-(push (org-projectile-project-todo-entry) org-capture-templates)
-(setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-(global-set-key (kbd &amp;quot;C-c n p&amp;quot;) &#39;org-projectile-project-todo-completing-read)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/screenshot-org-projectile.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;org-projectile task capture&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-</description>
-    </item>
-    
-    <item>
       <title>Incremental improvements can lead to significant gains</title>
       <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
       <description>&lt;p&gt;While reading the book &lt;a href=&#34;https://jamesclear.com/atomic-habits&#34; target=&#34;_blank&#34;&gt;Atomic Habits by James Clear&lt;/a&gt;, I was reflecting that my choice of embracing &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34; target=&#34;_blank&#34;&gt;Emacs&lt;/a&gt; and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.&lt;/p&gt;
@@ -79,7 +34,7 @@
     <item>
       <title>Nteract : An interactive computing environment</title>
       <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
-      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
       <description>&lt;p&gt;A &lt;a href=&#34;https://slides.com/villetuulos/human-centric-machine-learning-infrastructure-qcon-2018/#/&#34; target=&#34;_blank&#34;&gt;slide deck from Netflix&lt;/a&gt;, mentions using Nteract as their programming notebook, and prompted a mini exploration.&lt;/p&gt;
@@ -88,163 +43,16 @@
 
 &lt;p&gt;Along similar lines, this &lt;a href=&#34;https://blog.nteract.io/nteract-building-on-top-of-jupyter-9cfbccdd4c1d&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; is a nice primer to the evolution of Ipython, Jupyter Notebooks and Nteract, from the plain vanilla Python console, which was the starting point. Beyond the illuminating definition that the Jupyter notebook is an &amp;lsquo;establishment of well-defined protocols and formats&amp;rsquo;, and is not just a console or a programming notebook, the blog post provides a deeper insight into how these protocols are implemented and communicate with interpreters or Jupyter kernels.&lt;/p&gt;
 
-&lt;p&gt;This &lt;a href=&#34;https://www.reddit.com/r/Python/comments/6w1zh3/nteract_vs_jupyter_notebook/&#34; target=&#34;_blank&#34;&gt;reddit discussion&lt;/a&gt; has a few interesting pros and cons regarding using nteract.&lt;/p&gt;
+&lt;p&gt;This &lt;a href=&#34;https://www.reddit.com/r/Python/comments/6w1zh3/nteract%5Fvs%5Fjupyter%5Fnotebook/&#34; target=&#34;_blank&#34;&gt;reddit discussion&lt;/a&gt; has a few interesting pros and cons regarding using nteract.&lt;/p&gt;
 
 &lt;p&gt;While I can see the value of computing notebooks like Jupyter and Nteract, I do think that these do not come close to the functionality and ease that can be achieved with Org mode and Emacs, which have been in existence a lot longer. I was able to intuitively transition to using multiple language code &amp;lsquo;notebooks&amp;rsquo; using Org mode. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>
-
-&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
-
-&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
-
-&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
-
-&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;jupyter nbconvert notebook.ipynb --to markdown
-pandoc notebook.md -o notebook.org
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
-
-&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#+NAME: jupyter-to-org-current
-#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot; 
-#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot; 
-#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
-#+BEGIN_SRC sh :results verbatim
-cwd=$(pwd)
-jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
-pandoc $cwd/$path_md.md -o $cwd/$path_org.org
-cp $path_ipynb.ipynb $cwd
-ls
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
-
-&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
-
-&lt;h1 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h1&gt;
-
-&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
-
-&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace. &lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
-      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
-      <description>
-
-&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
-&#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;** %? %a &amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
-    &#39;((&amp;quot;e&amp;quot; &amp;quot;Snippet + Notes&amp;quot; entry ;; &#39;w&#39; for &#39;org-protocol&#39;
-     (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;*** %a, %T\n %:initial&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/capture-content-emacs.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Emacs content capture and buffer split&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
-
-&lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
-
-&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
-
-&lt;p&gt;Additional possibilities:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further reading:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Howard Abrams has &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/capturing-intro.html&#34; target=&#34;_blank&#34;&gt;some great tips&lt;/a&gt; on customising the org-capture mechanism,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bernt Hansen&amp;rsquo;s comprehensive documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq split-width-threshold 75)
-(setq split-height-threshold nil)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Technical notes : Research paper on learning/teaching data science</title>
       <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
-      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
       <description>&lt;p&gt;Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice&lt;/p&gt;
@@ -328,9 +136,309 @@ ls
     </item>
     
     <item>
+      <title>Juggling multiple projects and leveraging org-projectile</title>
+      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
+      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
+
+&lt;p&gt;These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit. Therefore individual folders and git repos are automatically created for each project in the specified project directory. This enables the convenient possibility of keeping the data, folder structures, tasks, notes and scripts of each project separate.&lt;/p&gt;
+
+&lt;p&gt;Different projects can be switched to using &lt;code&gt;M-x nb-open&lt;/code&gt; and typing in a few words that denote the title of the project. Choosing a project automatically provides the option to open the Readme.org files created earlier. Therefore it would be convenient to include relevant links to different locations / scripts and etc in the Readme file.&lt;/p&gt;
+
+&lt;p&gt;Using the above technique resulted in me creating a huge number of projects over a period of time. Especially while working on multiple computers, it is worth inculcating the discipline of adding a remote on github/bitbucket and regularly pushing to the remote.&lt;/p&gt;
+
+&lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
+
+&lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;;; Setting up org-projectile
+(require &#39;org-projectile)
+(setq org-projectile-projects-file
+      &amp;quot;~/my_org/project-tasks.org&amp;quot;)
+(push (org-projectile-project-todo-entry) org-capture-templates)
+(setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+(global-set-key (kbd &amp;quot;C-c n p&amp;quot;) &#39;org-projectile-project-todo-completing-read)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/screenshot-org-projectile.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;org-projectile task capture&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
+      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
+      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
+      <description>
+
+&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
+
+&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
+
+&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
+
+&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
+
+&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;#+NAME: jupyter-to-org-current
+#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
+#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
+#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
+#+BEGIN_SRC sh :results verbatim
+cwd=$(pwd)
+jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
+pandoc $cwd/$path_md.md -o $cwd/$path_org.org
+cp $path_ipynb.ipynb $cwd
+ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
+
+&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h2&gt;
+
+&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
+
+&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Notes from the movie Whiplash</title>
+      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
+      <pubDate>Sat, 19 Jan 2019 19:37:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Whiplash%5F%25282014%5Ffilm%2529&#34; target=&#34;_blank&#34;&gt;Whiplash: Wikipedia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;hellip; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post !&lt;/p&gt;
+
+&lt;p&gt;The story revolves around the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
+
+&lt;p&gt;I could relate to the following pointers from the movie:&lt;/p&gt;
+
+&lt;h2 id=&#34;leverage-stress-to-achieve-new-levels-of-insight-and-performance&#34;&gt;Leverage stress to achieve new levels of insight and performance&lt;/h2&gt;
+
+&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have were taken forward to habits that changed my life.&lt;/p&gt;
+
+&lt;h2 id=&#34;weathering-criticism&#34;&gt;Weathering criticism&lt;/h2&gt;
+
+&lt;p&gt;The mental conditioning required to weather and beat intense, sharp,
+depressing criticism along with verbal and physical abuse from a
+mentor or teacher and use the same as a motive force for
+self-improvement and eventually superlative performance. Though there
+are examples of extreme abrasiveness in leaders like Steve Jobs - such
+an approach would not be tolerated by most people today.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I know other stories of people working under such mentors,
+striving to learn and gain their approval and eventually winning
+the same. These efforts paid off by resulting in skills, thinking
+patterns and a superior mental conditioning. Finding such a mentor
+at the formative stage is probably the best thing to happen to
+anybody.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An effective strategy to find mentors is to shadow people on Linked in and learn from their profiles and activity. Some of them may be willing to connect and invest time in mentoring.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Another possibility to find like minded people and mentors would be to join the communities of on-line courses, like Datacamp and Dataquest, who have lively channels in Slack for paid members.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;getting-back-up-after-a-fall&#34;&gt;Getting back up after a fall&lt;/h2&gt;
+
+&lt;p&gt;Everybody breaks. Just as the promising student in Whiplash
+breaks. But the champions among us rally, to stage a comeback and
+performance that make history.&lt;/p&gt;
+
+&lt;p&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/p&gt;
+
+&lt;h2 id=&#34;be-great-not-good&#34;&gt;Be Great, not Good&lt;/h2&gt;
+
+&lt;p&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be &lt;em&gt;Great&lt;/em&gt;, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best, and that entails never being satisfied and to be ruthless in rooting out flaws.&lt;/p&gt;
+
+&lt;h2 id=&#34;achieving-balance-mind-body-surroundings&#34;&gt;Achieving Balance : mind + body + surroundings&lt;/h2&gt;
+
+&lt;p&gt;Great performance is about that perfect balance between the body, mind and environment to leverage the best result possible. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability.&lt;/p&gt;
+
+&lt;h2 id=&#34;go-off-the-beaten-track-and-lose-yourself&#34;&gt;Go off the beaten track and Lose yourself&lt;/h2&gt;
+
+&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
+
+&lt;h2 id=&#34;learning-velocity-and-flow&#34;&gt;Learning velocity and Flow&lt;/h2&gt;
+
+&lt;p&gt;There are several bodies of research work available today that can be studied to get closer to consciously stimulating a great performance. One such example is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable
+Creatives podcast provides an insight in line with the points seen
+above, into what constitute outliers and performers. The interesting
+concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan with a lucid
+example. It is surmised that progress and maximum learning to become
+better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the
+moment, and the unknown skills that beckon.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That point sems to be an amalgamation of several factors, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Iosevka - an awesome font for Emacs</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
+      <description>&lt;p&gt;Before my foray into Emacs, I purchased applications like &lt;a href=&#34;https://ia.net/writer&#34; target=&#34;_blank&#34;&gt;IAWriter&lt;/a&gt;
+(classic)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows), and have
+also tried almost all the recommended apps for longer form writing. I
+am a fan of zen writing apps. In particular the font and environment
+provided by IAWriter are conducive to focused writing. There also
+exist apps like Hemingway that also help check the quality of your
+writing.&lt;/p&gt;
+
+&lt;p&gt;Zen writing apps are called so because they have a unique combination
+of fonts, background color, including line spacing and overall
+text-width - all of which enable a streamlined and focused flow of
+words onto the screen. Any customisation required towards this end is
+possible in Emacs.&lt;/p&gt;
+
+&lt;p&gt;The Texts app has some nifty features (besides being cross platform),
+but the font and appearance is not as beautiful as IAWriter. Both
+IAWriter (classic) and Texts have minimal settings for further
+customisation. See the comparison below:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/emacs-texts.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Emacs (writeroom-mode + Iosevka font) || Texts (Sepia theme)&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/emacs-iawriter.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Emacs (writeroom-mode, Iosevka font) || IAWriter(Classic)&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;While everybody&amp;rsquo;s style and approach vary, there are many authors who
+swear by archaic text editors and tools that enable distraction free
+writing. One example is &lt;a href=&#34;http://tonyballantyne.com/how-to-write/writing-tools/&#34; target=&#34;_blank&#34;&gt;Tony Ballantyne&amp;rsquo;s post on writing tools&lt;/a&gt;,
+and several more examples are available in this &lt;a href=&#34;http://irreal.org/blog/?p=4651&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next best thing to a clear retina display on a MacBook Pro, is a
+beautiful font face to take you through the day, enhancing the viewing
+pleasure and thus the motivation to work longer.&lt;/p&gt;
+
+&lt;p&gt;In Emacs, &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; and Emacs can be customised to
+mimic IAWriter. In this regard, the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt;, is a great font to
+try. This &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which%5Ffont%5Fdo%5Fyou%5Fuse/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; has many more suggestions. One post
+described Iosevka as &lt;em&gt;&amp;ldquo;it&lt;/em&gt; &lt;em&gt;doesn&amp;rsquo;t look like much, but after a few hours
+it will be difficult to&lt;/em&gt; &lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly what
+happened to me.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s still a lot of tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;,
+but this is certainly a workable result. My nascent configuration for
+writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s
+remarkable how much was achieved with a few lines of code!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(with-eval-after-load &#39;writeroom-mode
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-.&amp;quot;) #&#39;writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd &amp;quot;C-s-=&amp;quot;) #&#39;writeroom-adjust-width))
+
+(advice-add &#39;text-scale-adjust :after
+        #&#39;visual-fill-column-adjust)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;The latest version of IAWriter has a truck load of features and advantages over over the Classic version. I did consider purchasing it, but Emacs won the day. Nevertheless, as a plain vanilla writing app - IAWriter offers much right out of the box.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
       <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
-      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:25:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m an admirer of &lt;a href=&#34;https://www.linkedin.com/in/howardeabrams/&#34; target=&#34;_blank&#34;&gt;Howard Abrams&lt;/a&gt;, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.&lt;/p&gt;
@@ -344,6 +452,605 @@ ls
 &lt;p&gt;In addition, the above tutorial clearly elucidates how different languages can be combined together, and the video elucidates typical Devops procedures, which are easily taken care of with appropriate arguments and headers to the source code blocks. For example, all the source code blocks could be tangled into appropriately named and located script files using a single argument. These tutorials tied up bits and pieces of info in my head from various sources and was invaluable in enhancing my understanding of using Emacs and Org-Babel&lt;/p&gt;
 
 &lt;p&gt;The Library of Babel can be made persistent across sessions by loading a specified org-file from which the named source code blocks are automatically read in. It is surprising that the internet does not seem to contain more references and examples using the Library of Babel. Perhaps there are some caveats that I am yet to encounter. One question that arises is whether the Library of Babel is automatically updated when the source code block is updated.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page</title>
+      <link>https://shrysr.github.io/docs/course-edx-r-fundamentals/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/course-edx-r-fundamentals/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R - Notes | Examples | Recipes</title>
+      <link>https://shrysr.github.io/docs/r-recipes-notes/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/r-recipes-notes/</guid>
+      <description>
+
+&lt;p&gt;&lt;a id=&#34;org59114ad&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;This project contains notes and recipes in R, especially pertaining to data science. The purpose is to have a handy reference to refresh concepts / syntax via examples and also share the functions that I develop to streamline workflow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;org0dfa1af&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Datacamp courses
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.datacamp.com/tracks/quantitative-analyst-with-r&#34; target=&#34;_blank&#34;&gt;Quantitative Analyst career track in R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tidyverse courses&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://courses.edx.org/courses/course-v1:HarvardX+PH125.1x+3T2017/course/&#34; target=&#34;_blank&#34;&gt;Edx :  HarvardX: PH125.1x Data Science: R Basics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org27361d4&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;notes&#34;&gt;Notes&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgf25e803&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;rprofile-and-user-files&#34;&gt;Rprofile and user files&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;?Startup&lt;/code&gt; in the R interpreter for information on how the R environment is started up.&lt;/li&gt;
+&lt;li&gt;Note that the Rprofile.site and other user files are not setup by default. These have to be created by the user.&lt;/li&gt;
+&lt;li&gt;The default CRAN repo can be set in the &lt;code&gt;Rprofile.site&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To find the installation location of R, use the &lt;code&gt;R.home()&lt;/code&gt; function with component specified as shown below. &lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/base/html/Rhome.html&#34; target=&#34;_blank&#34;&gt;More information&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;R.home(component=&#39;home&#39;)
+R.home(component=&#39;etc&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga9ba3f6&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;importing-data-into-r&#34;&gt;Importing data into R&lt;/h2&gt;
+
+&lt;p&gt;packages : readr, haven,&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;org2187937&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;indexing-in-r&#34;&gt;Indexing in R&lt;/h2&gt;
+
+&lt;p&gt;Indexing in R starts with 1, unlike most other languages.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;org6ace875&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;workspace&#34;&gt;Workspace&lt;/h2&gt;
+
+&lt;p&gt;The workspace contains all the variables that were used in a particular session.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ls()&lt;/code&gt; can be used to list the variables in the workspace.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgf7d9368&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;matrix&#34;&gt;Matrix&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&#34;orge4c2151&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;defining-a-matrix&#34;&gt;Defining a matrix&lt;/h3&gt;
+
+&lt;p&gt;A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.&lt;/p&gt;
+
+&lt;p&gt;A matrix is called two-dimensional, since there are rows and columns. It is constructed using the &lt;code&gt;matrix()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;Arguments:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Elements of the matrix&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;byrow&lt;/code&gt; to have the matrix filled by rows. By default, this is set to false.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;nrow&lt;/code&gt; for number of rows&lt;/p&gt;
+
+&lt;p&gt;matrix(1:10,byrow = TRUE, nrow = 4)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Demonstrating the difference of not using &lt;code&gt;byrow&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;matrix(1:10, ncol = 2, nrow = 5)
+
+matrix(1:10, ncol = 2, nrow= 5 , byrow = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org2723272&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;naming-the-rows-and-the-columns&#34;&gt;Naming the rows and the columns&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;rownames()&lt;/code&gt; and &lt;code&gt;colnames()&lt;/code&gt; can be used.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#Defining the row data
+row_1 &amp;lt;- c(250, 300)
+row_2 &amp;lt;- c(55, 350)
+
+# Defining the matrix
+my_matrix &amp;lt;- matrix(c(row_1, row_2), byrow = TRUE, nrow = 2)
+
+# Defining row and column names
+my_rownames &amp;lt;- c(&amp;quot;test_row1&amp;quot;, &amp;quot;test_row2&amp;quot;)
+my_colnames &amp;lt;- c(&amp;quot;test_col1&amp;quot;, &amp;quot;test_col2&amp;quot;)
+
+# Attaching row and column names to the created matrix
+rownames(my_matrix) &amp;lt;- my_rownames
+colnames(my_matrix) &amp;lt;- my_colnames
+
+my_matrix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;org94a4667&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;sums-rowsums-and-colsums-adding-rows-rbind-and-columns-cbind&#34;&gt;Sums - &lt;code&gt;=rowSums()&lt;/code&gt; and &lt;code&gt;colSums()&lt;/code&gt;, adding rows - &lt;code&gt;rbind()&lt;/code&gt; and columns - &lt;code&gt;cbind()&lt;/code&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;my_rowsums &amp;lt;-  rowSums(my_matrix)
+
+# Adding a new column of the calculated sums
+my_new_matrix &amp;lt;- cbind(my_matrix, my_rowsums)
+my_new_matrix
+
+# Adding a new row and calculating the sums again
+row_3 &amp;lt;- c(200, 100 )
+my_newest_matrix &amp;lt;- rbind(my_matrix, row_3) 
+my_new_rowsums &amp;lt;- rowSums(my_newest_matrix)
+my_newest_matrix &amp;lt;- cbind(my_newest_matrix, my_new_rowsums)
+
+my_newest_matrix
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgb1ebdc1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;correlation-cor&#34;&gt;correlation : &lt;code&gt;cor()&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Correlation is a measure of association between different quantities.&lt;/p&gt;
+
+&lt;p&gt;+1 : perfectly positive linear relationship
+-1 : perfectly negative linear relationship
+0  : No linear relationship&lt;/p&gt;
+
+&lt;p&gt;A matrix can be passed into &lt;code&gt;cor()&lt;/code&gt; to get a correlation matrix. For example, this is most useful with 3 or more stocks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Defining imaginary stock prices
+apple &amp;lt;- c(22.45, 33, 41, 21, 25.67)
+micr &amp;lt;- c(12.4, 56.4, 32.4, 21, 24.45) 
+huawei  &amp;lt;- c(23.5, 44, 12.25, 39, 56)
+
+# Creating a matrix, calculations and plotting the correlation.
+app_micr_cor &amp;lt;- cor(cbind(apple, micr))
+app_micr_huaw_cor &amp;lt;- cor(cbind(apple, micr, huawei))
+app_micr_huaw_cor
+plot(app_micr_huaw_cor)
+plot(app_micr_cor)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TODO Find out more information about manual correlation calculations&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a id=&#34;org95a7297&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;dataframe&#34;&gt;Dataframe&lt;/h2&gt;
+
+&lt;p&gt;Used to store a table of data. Multiple data types can be stored in a single dataframe. A matrix can store only a single data type.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Defined using &lt;code&gt;data.frame()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;colnames()&lt;/code&gt; : to rename the columns in a dataframe&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subset()&lt;/code&gt; : to extract a particular subset of a dataframe. Compared to calling a column name, using this is more informative or robust.
+
+&lt;ul&gt;
+&lt;li&gt;first argument: name of the dataframe&lt;/li&gt;
+&lt;li&gt;2nd argument: the condition or the column name within the dataframe&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A column can be deleted by assigning it NULL&lt;/li&gt;
+&lt;li&gt;There is no need to use a &lt;code&gt;c()&lt;/code&gt; to add multiple objects to the dataframe. Directly add the vectors like &lt;code&gt;data.frame(variable 1, variable 2)&lt;/code&gt; and so on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org3f152aa&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;todo-dataframe-peek-function-in-r&#34;&gt;TODO Dataframe peek function in R&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;head()
+tail()
+str()
+desc()
+glimpse()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga55585a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;factors&#34;&gt;Factors&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;factor()&lt;/code&gt; can be used to store the unique levels of a vector.
+
+&lt;ul&gt;
+&lt;li&gt;The vector to be converted to a factor is passed in as an argument.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;levels()&lt;/code&gt; can be used to access the unique levels of a factor object.
+
+&lt;ul&gt;
+&lt;li&gt;Rename the levels by just passing a vector &lt;code&gt;levels(factor_object)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cut()&lt;/code&gt; can be used to break up a vector into specified buckets or based on specified intervals.
+
+&lt;ul&gt;
+&lt;li&gt;argument &amp;lsquo;breaks&amp;rsquo; to specify the demarcations in which the vector will be cut up.&lt;/li&gt;
+&lt;li&gt;R treats the left side of the bucket as exclusive and the right side of the bucket as inclusive. This is represented by &amp;lsquo;(&amp;rsquo; and &amp;lsquo;]&amp;rsquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;summary()&lt;/code&gt; can be used to provide the counts of items under each factor. This is best used on a factor object.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ordering and sub-setting vectors&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ordered()&lt;/code&gt; : R has an inbuilt system to order the object alphabetically.&lt;/li&gt;
+&lt;li&gt;passing the &lt;code&gt;levels&lt;/code&gt; argument to &lt;code&gt;factor()&lt;/code&gt; along with the argument &lt;code&gt;ordered = T&lt;/code&gt;, with levels containing the desired order (written as least to greatest) will enable a custom ordering of factors.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;drop = T&lt;/code&gt; argument to drop a level completely. Subsetting with [-1] only drops the object at the first position, but retains the level.&lt;/li&gt;
+&lt;li&gt;R&amp;rsquo;s default behavior when creating data frames is to convert all characters into factors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ranking &amp;lt;- c(1:20)
+head(ranking)
+buckets &amp;lt;- c(0, 5, 10, 15, 20)
+ranking_grouped &amp;lt;- cut(ranking, breaks = buckets)
+head(ranking_grouped)
+ranking_grouped&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga0e7b3a&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;lists&#34;&gt;Lists&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the &lt;code&gt;list()&lt;/code&gt; with the chosen data structures as the arguments. The list can contain multiple types of objects or data types.&lt;/li&gt;
+&lt;li&gt;Subsetting: using a &lt;code&gt;[]&lt;/code&gt; returns a subset of the list and using &lt;code&gt;[[]]&lt;/code&gt; returns the data inside the list being referenced.
+
+&lt;ul&gt;
+&lt;li&gt;A subset can be used on a dateframe to extract specific data.&lt;/li&gt;
+&lt;li&gt;Syntax example: &lt;code&gt;subset(dataframe, column1 &amp;gt; condition1 &amp;amp; column2 &amp;lt; condition2)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The elements of the list can be named, by adding the to the arguments while defining the list.&lt;/li&gt;
+&lt;li&gt;adding names to an existing list can be done using the &lt;code&gt;names(list name)&lt;/code&gt; function.&lt;/li&gt;
+&lt;li&gt;With a named list, the &lt;code&gt;$&lt;/code&gt; operator can also be used to access specific list items.&lt;/li&gt;
+&lt;li&gt;items can be added to the list using &lt;code&gt;c()&lt;/code&gt;, which would look like &lt;code&gt;c(list_name, new_item_name = item_name)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removing elements from a list can be done by assigning the item the NULL value.&lt;/li&gt;
+&lt;li&gt;Other list creating functions
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;split()&lt;/code&gt; : &lt;code&gt;split(list-name, item-name)&lt;/code&gt;. This will create 2 lists separated by the item name specified.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unsplit()&lt;/code&gt; : to unsplit a list. &lt;code&gt;unsplit(split-list-name, grouping)&lt;/code&gt; Similar syntax to the above.&lt;/li&gt;
+&lt;li&gt;split-apply-combine class of problems. Example is where a particular factor is to be applied for a portion of the data and another factor for the other portion, and after which the 2 portions are recombined. For eg: offering customer A a discount of 10% and customer B a discount of 20% via splitting and them recombining the split parts into a common dataframe.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;attributes()&lt;/code&gt;: meta data of an object. For example the dim or dimension is an attribute of a matrix, and the names, row.names and class are common attributes of a dataframe.
+
+&lt;ul&gt;
+&lt;li&gt;use &lt;code&gt;attr()&lt;/code&gt; to access a specific attribute. This takes 2 arguments at least. &lt;code&gt;attr(matrix_name, which = &amp;quot;desired attribute&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgcef936d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;dates&#34;&gt;Dates&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The ISO 8601 format is the way R accepts and stores dates. This is basically in the yyyy-mm-dd format. Internally stored by R as the number of days since January 1, 1970.&lt;/li&gt;
+&lt;li&gt;Alternative format year/month/day&lt;/li&gt;
+&lt;li&gt;Dates are internally stored as numerics with some special characteristics over typical numerics.&lt;/li&gt;
+&lt;li&gt;Current time from the system : &lt;code&gt;Sys.time()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Current date from the system : &lt;code&gt;Sys.Date()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Character vectors are most common source of creating dates.&lt;/li&gt;
+&lt;li&gt;class of dates
+
+&lt;ul&gt;
+&lt;li&gt;could be a &lt;code&gt;date&lt;/code&gt; class catering to calendar dates.&lt;/li&gt;
+&lt;li&gt;could also be a POSIX - Portable Operating System Interface class, which is commonly used in the finance world
+
+&lt;ul&gt;
+&lt;li&gt;POSIXlt and POSIXct allow holding a date.&lt;/li&gt;
+&lt;li&gt;POSIXct is a way to represent datetime objects like &amp;ldquo;2015-01-22 08:39:40 EST&amp;rdquo;. This method is important for storing intraday financial data.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Using the simplest date class is generally the best strategy.&lt;/li&gt;
+&lt;li&gt;There are other classes of date as well.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;as.date()&lt;/code&gt; can be used to convert the object to a date class.
+
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;format&lt;/code&gt; argument can facilitate conversion from different formats to the necessary ISO format.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Extractor functions
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;weekdays()&lt;/code&gt; can be used to extract the day of the week from a date object.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;format()&lt;/code&gt; can be used to convert existing date objects to different date formats.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;months()&lt;/code&gt; for extracting the months of the date objects&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;quarters()&lt;/code&gt; to extract the quarter in which the date object falls&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dates can be subtracted, just like numerics.
+
+&lt;ul&gt;
+&lt;li&gt;The object must be in the Date format. Direct subtraction provides the difference in days.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;difftime(date1, date2, units = &amp;quot;secs&amp;quot;)&lt;/code&gt; can be used to find the difference in time, with the argument units specifying the output type
+
+&lt;ul&gt;
+&lt;li&gt;Argument &lt;code&gt;units&lt;/code&gt; should be one of “auto”, “secs”, “mins”, “hours”, “days”, “weeks”&lt;/li&gt;
+&lt;li&gt;The 2nd argument &lt;code&gt;date2&lt;/code&gt;, will be subtracted from the first argument &lt;code&gt;date1&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Formats of representing alternate date formats&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Y: 4-digit year (1982)&lt;/li&gt;
+&lt;li&gt;y: 2-digit year (82)&lt;/li&gt;
+&lt;li&gt;m: 2-digit month (01)&lt;/li&gt;
+&lt;li&gt;d: 2-digit day of the month (13)&lt;/li&gt;
+&lt;li&gt;A: weekday (Wednesday)&lt;/li&gt;
+&lt;li&gt;a: abbreviated weekday (Wed)&lt;/li&gt;
+&lt;li&gt;B: month (January)&lt;/li&gt;
+&lt;li&gt;b: abbreviated month (Jan)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;using-the-system-date-and-time&#34;&gt;Using the system date and time&lt;/h1&gt;
+
+&lt;p&gt;todays_date &amp;lt;- Sys.Date()
+todays_time &amp;lt;- Sys.time()
+todays_date
+todays_time&lt;/p&gt;
+
+&lt;h1 id=&#34;class-of-defined-date-and-time&#34;&gt;Class of defined date and time&lt;/h1&gt;
+
+&lt;p&gt;class(todays_date)
+class(todays_time)&lt;/p&gt;
+
+&lt;h1 id=&#34;reading-alternate-formats-of-dates&#34;&gt;Reading alternate formats of dates&lt;/h1&gt;
+
+&lt;p&gt;test_date_alt_format &amp;lt;- &amp;ldquo;23/02/2019&amp;rdquo;
+as.Date(test_date_alt_format, format = &amp;ldquo;%d/%m/%Y&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;test2_date_alt_format &amp;lt;- &amp;ldquo;Sep 25,2020&amp;rdquo;
+as.Date(test2_date_alt_format, format = &amp;ldquo;%B %d,%Y&amp;rdquo;)&lt;/p&gt;
+
+&lt;h1 id=&#34;extractor-functions&#34;&gt;Extractor functions&lt;/h1&gt;
+
+&lt;p&gt;weekdays(as.Date(test2_date_alt_format, format = &amp;ldquo;%B %d,%Y&amp;rdquo;))&lt;/p&gt;
+
+&lt;h1 id=&#34;subtracting-dates&#34;&gt;Subtracting dates&lt;/h1&gt;
+
+&lt;p&gt;date1 &amp;lt;- as.Date(&amp;ldquo;2030-02-20&amp;rdquo;)
+date2 &amp;lt;- as.Date(&amp;ldquo;2040-03-30&amp;rdquo;)
+date2 - date1
+difftime(date2, date1, units = &amp;lsquo;secs&amp;rsquo;)
+difftime(date1, date2, units = &amp;lsquo;mins&amp;rsquo;)&lt;/p&gt;
+
+&lt;h1 id=&#34;setting-the-weekdays-as-names&#34;&gt;Setting the weekdays as names()&lt;/h1&gt;
+
+&lt;p&gt;dates3 &amp;lt;- c(date1, date2, as.Date(c(&amp;ldquo;2025-03-23&amp;rdquo;, &amp;ldquo;2015-04-25&amp;rdquo;)))
+names(dates3) &amp;lt;- weekdays(dates3)
+dates3&lt;/p&gt;
+
+&lt;h1 id=&#34;syntax-example-of-using-not-relational-operators&#34;&gt;Syntax example of using Not (relational operators)&lt;/h1&gt;
+
+&lt;p&gt;a &amp;lt;- c(100,140,2,240, 300)&lt;/p&gt;
+
+&lt;h1 id=&#34;checking-where-a-is-not-greater-than-200&#34;&gt;checking where a is Not greater than 200&lt;/h1&gt;
+
+&lt;p&gt;!(a &amp;gt; 200)&lt;/p&gt;
+
+&lt;h1 id=&#34;testing-runif&#34;&gt;Testing runif()&lt;/h1&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org3c723da&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;todo-analysing-distributions&#34;&gt;TODO Analysing distributions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;runif()&lt;/code&gt; r-unif, used to generate a random number between specified min, max.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgdd369df&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;glimpse-part-of-dplyr&#34;&gt;&lt;code&gt;glimpse()&lt;/code&gt; - part of dplyr&lt;/h2&gt;
+
+&lt;p&gt;To view all the columns.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;org9db58d3&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary-statistics&#34;&gt;Summary statistics&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;skimr package : also lists missing and unique values&lt;/li&gt;
+&lt;li&gt;skim(object)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgc859058&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;changing-the-class-of-an-object&#34;&gt;Changing the class of an object&lt;/h2&gt;
+
+&lt;p&gt;The class of an object can be changed by simply assigning the desired type of class. The &lt;code&gt;class()&lt;/code&gt; is used.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Example changing the clas of a date object to a numeric
+dateX &amp;lt;- as.Date(&amp;quot;2030-02-20&amp;quot;)
+class(dateX)
+class(dateX) &amp;lt;- &amp;quot;Numeric&amp;quot;
+class(dateX)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;=class(obj) &amp;lt;- &amp;ldquo;Date&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgba8c681&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;relational-operators&#34;&gt;Relational operators&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TRUE coerces to 1 and FALSE to 0&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In case of strings and using the greater / lesser than operator, the first letter is considered, in the alphabetical order&lt;/p&gt;
+
+&lt;p&gt;T == 1
+T == 0
+F == 1
+F == 0
+&amp;ldquo;useR&amp;rdquo; == &amp;ldquo;user&amp;rdquo;
+&amp;ldquo;user&amp;rdquo; == &amp;ldquo;User&amp;rdquo;
+&amp;ldquo;useR&amp;rdquo; &amp;gt; &amp;ldquo;user&amp;rdquo;
+&amp;ldquo;user&amp;rdquo; &amp;gt; &amp;ldquo;User&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orga288f21&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conditional-statements&#34;&gt;Conditional Statements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ifelse()&lt;/code&gt;: conditional function in a single line that can work on entire vectors, compared to the typical &lt;code&gt;if()&lt;/code&gt; operator.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ifelse()&lt;/code&gt; strips the date of its attribute before returning it and therefore the date often becomes a numeric.
+-&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgd15ec97&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;finance-related&#34;&gt;Finance related&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&#34;org8704587&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;present-value&#34;&gt;Present value&lt;/h3&gt;
+
+&lt;p&gt;General formula : present_value &amp;lt;- cash_flow * (1 + interest / 100) ^ -year&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgb25455b&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;bond-credit-ratings-are-a-good-example-of-factors&#34;&gt;Bond Credit ratings are a good example of factors.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bond credit ratings are common in the fixed income side of the finance world as a simple measure of how &amp;ldquo;risky&amp;rdquo; a certain bond might be.&lt;/li&gt;
+&lt;li&gt;riskiness can be defined as the probability of default, which means an inability to pay back your debts.&lt;/li&gt;
+&lt;li&gt;Example of Standard and Poor&amp;rsquo;s credit rating AAA, AA, A, BBB, BB, B, CCC, CC, C, D. (Left to right: Least risky to most risky)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a id=&#34;org614fda6&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dates-in-finance-could-be-at-the-rate-of-years-or-in-micro-seconds&#34;&gt;Dates in Finance could be at the rate of years or in micro seconds.&lt;/h3&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgc5b331d&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;there-will-be-a-likely-need-to-convert-multiple-dates-from-the-character-to-string-format&#34;&gt;There will be a likely need to convert multiple dates from the character to string format.&lt;/h3&gt;
+
+&lt;p&gt;&lt;a id=&#34;orgbf8f732&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;playground&#34;&gt;Playground&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;linkedin &amp;lt;- c(16, 9, 13, 5, 2, 17, 14)
+last &amp;lt;- tail(linkedin, 3) 
+print(last)
+head &amp;lt;- head(linkedin, 3)
+print(head)
+
+x &amp;lt;- 5
+y &amp;lt;- 7
+!(!(x &amp;lt; 4) &amp;amp; !!!(y &amp;gt; 12))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
+      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
+      <description>
+
+&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
+&#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
+     &amp;quot;** %? %a &amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
+    &#39;((&amp;quot;e&amp;quot; &amp;quot;Snippet + Notes&amp;quot; entry ;; &#39;w&#39; for &#39;org-protocol&#39;
+     (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
+     &amp;quot;*** %a, %T\n %:initial&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/capture-content-emacs.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Emacs content capture and buffer split&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
+
+&lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
+
+&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
+
+&lt;p&gt;Additional possibilities:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Further reading:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Howard Abrams has &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/capturing-intro.html&#34; target=&#34;_blank&#34;&gt;some great tips&lt;/a&gt; on customising the org-capture mechanism,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bernt Hansen&amp;rsquo;s comprehensive documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(setq split-width-threshold 75)
+(setq split-height-threshold nil)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)&lt;/p&gt;
 </description>
     </item>
     
@@ -581,18 +1288,20 @@ get it working in Arch Linux reliably.&lt;/p&gt;
 &lt;p&gt;The next consideration was harvesting information of interest from the RSS feeds. If not Emacs, the information has to go to &lt;a href=&#34;https://www.devontechnologies.com/products/devonthink/overview.html&#34; target=&#34;_blank&#34;&gt;DEVONThink Pro&lt;/a&gt; (DTP), which has a handy pull out drawer into which content can be dragged. I was able to just drag and drop the article or text selection into the DTP drawer. This appears as a URL / bookmark in DTP, and can be converted to a formatted note or web archive subsequently. A script could probably accomplish this automatically. That&amp;rsquo;s for a future project.&lt;/p&gt;
 
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/vienna-dtp-drawer.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Screenshot - Vienna &amp;#43; DTP drawer&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
 
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/vienna-dtp-drawer.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Screenshot - Vienna + DTP drawer&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
 
 &lt;p&gt;Granted, an application external to Emacs (especially without a customisable keyboard driven flow) is not the desirable way to do things. Most websites usually have an RSS feed or email subscription possibility.&lt;/p&gt;
 
@@ -609,18 +1318,20 @@ get it working in Arch Linux reliably.&lt;/p&gt;
 &lt;p&gt;I try to deploy DTP as my primary reading app, because of the ability to highlight lines (which are generally available across devices). Besides aiding in skimming the article in the future, it helps me know I&amp;rsquo;ve actually read the article. This is in addition to the core ability to use DTP&amp;rsquo;s AI algorithms in searching through my notes and forming connections between ideas. I also use smart groups that show me the articles captured in the last 1 week, 2 weeks, 3 weeks, which helps me re-visit them in a structured method. The latter works rather well as a memory aid.&lt;/p&gt;
 
 
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/feedly-dtp-screenshot.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Article captured from Feedly into DTP&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
 
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/feedly-dtp-screenshot.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Article captured from Feedly into DTP&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
 
 &lt;h1 id=&#34;future-plans&#34;&gt;Future plans?&lt;/h1&gt;
 
@@ -629,497 +1340,20 @@ get it working in Arch Linux reliably.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Searching the awesome-lists on Github</title>
-      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
-      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Courses @ Dataquest</title>
+      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
-      <description>
-
-&lt;p&gt;Discovered the glorious awesome lists today on Github. They are
-available through a &lt;a href=&#34;https://github.com/search?utf8=%25E2%259C%2593&amp;amp;q=awesome+list&amp;amp;type=&#34; target=&#34;_blank&#34;&gt;simple search on github&lt;/a&gt;, and contain curated
-lists of resources of all kinds on a multitude of topics.&lt;/p&gt;
-
-&lt;p&gt;As one might expect, there is a lot of common ground between these lists,
-including topics and links.&lt;/p&gt;
-
-&lt;p&gt;How could one search for a keyword through all these repositories?  I
-have always wanted search for particular keywords or code snippets in
-my Emacs configuration files, or in other files in a particular
-location. This is especially to verify if a bit of code or note is
-already available, in another location. Something that looks like this ;):&lt;/p&gt;
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/emacs-helm-ag-anim.gif&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Searching for &amp;#39;datascience&amp;#39; with emacs-helm-ag through a bunch of awesome-lists and other local repositories.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;An answer had been available in &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/why-emacs.html&#34; target=&#34;_blank&#34;&gt;Howard&amp;rsquo;s cool blog post&lt;/a&gt; on why one
-should learn Emacs - in a footnote (!), in which he&amp;rsquo;s mentioned &lt;code&gt;ack&lt;/code&gt;
-and &lt;code&gt;ag&lt;/code&gt; (&lt;a href=&#34;https://github.com/ggreer/the_silver_searcher&#34; target=&#34;_blank&#34;&gt;the silver searcher&lt;/a&gt;). &lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. It is even possible to
-edit in line with each search.&lt;/p&gt;
-
-&lt;p&gt;The silver searcher github page provides clear examples of how it&amp;rsquo;s
-significantly faster than ack (and similar). Further exploration led
-me to the &lt;a href=&#34;https://github.com/syohex/emacs-helm-ag&#34; target=&#34;_blank&#34;&gt;emacs-helm-ag&lt;/a&gt; package, which is a helm interface to &lt;a href=&#34;https://github.com/ggreer/the_silver_searcher&#34; target=&#34;_blank&#34;&gt;the
-silver searcher&lt;/a&gt;. Implementing emacs-helm-ag was as simple as adding it
-to my list of packages, and adding a basic setup to my helm
-configuration.&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;Sweet !!&lt;/p&gt;
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/helm-ag-emacs.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Notice the search across multiple files. So I&amp;#39;ve called `require org capture` perhaps more times than necessary.&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; This is my first animated gif in a blog post! It was tricky! I used the free &lt;a href=&#34;https://itunes.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12&#34; target=&#34;_blank&#34;&gt;GIPHY capture app&lt;/a&gt; on the Mac store.&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; As of now, I add packages to &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; using this bit of code that I&amp;rsquo;ve obviously borrowed from the internet, and this case - I&amp;rsquo;m afraid I did not note the source.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;;; Setting up use packages
-;; list the packages you want
-(setq package-list &#39;(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
-
-;;fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
-
-(custom-set-variables
- &#39;(helm-follow-mode-persistent t))
-
-(require &#39;helm-ag)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Iosevka - an awesome font for Emacs</title>
-      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>
-
-&lt;p&gt;Before my foray into Emacs, I purchased applications like &lt;a href=&#34;https://ia.net/writer&#34; target=&#34;_blank&#34;&gt;IAWriter&lt;/a&gt;
-(classic)&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows), and have
-also tried almost all the recommended apps for longer form writing. I
-am a fan of zen writing apps. In particular the font and environment
-provided by IAWriter are conducive to focused writing. There also
-exist apps like Hemingway that also help check the quality of your
-writing.&lt;/p&gt;
-
-&lt;p&gt;Zen writing apps are called so because they have a unique combination
-of fonts, background color, including line spacing and overall
-text-width - all of which enable a streamlined and focused flow of
-words onto the screen. Any customisation required towards this end is
-possible in Emacs.&lt;/p&gt;
-
-&lt;p&gt;The Texts app has some nifty features (besides being cross platform),
-but the font and appearance is not as beautiful as IAWriter. Both
-IAWriter (classic) and Texts have minimal settings for further
-customisation. See the comparison below:&lt;/p&gt;
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/emacs-texts.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Emacs (writeroom-mode &amp;#43; Iosevka font) || Texts (Sepia theme)&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-
-&lt;figure&gt;
-    
-        &lt;img src=&#34;https://shrysr.github.io/img/emacs-iawriter.png&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;Emacs (writeroom-mode, Iosevka font) || IAWriter(Classic)&lt;/h4&gt;
-        
-    &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;While everybody&amp;rsquo;s style and approach vary, there are many authors who
-swear by archaic text editors and tools that enable distraction free
-writing. One example is &lt;a href=&#34;http://tonyballantyne.com/how-to-write/writing-tools/&#34; target=&#34;_blank&#34;&gt;Tony Ballantyne&amp;rsquo;s post on writing tools&lt;/a&gt;,
-and several more examples are available in this &lt;a href=&#34;http://irreal.org/blog/?p=4651&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next best thing to a clear retina display on a MacBook Pro, is a
-beautiful font face to take you through the day, enhancing the viewing
-pleasure and thus the motivation to work longer.&lt;/p&gt;
-
-&lt;p&gt;In Emacs, the &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; &lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; and Emacs can be customised to
-mimic IAWriter. In this regard, the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt;, is a great font to
-try. This &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which_font_do_you_use/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; has many more suggestions. One post
-described Iosevka as &lt;em&gt;&amp;ldquo;it&lt;/em&gt; &lt;em&gt;doesn&amp;rsquo;t look like much, but after a few hours
-it will be difficult to&lt;/em&gt; &lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly what
-happened to me.&lt;/p&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; The latest version of IAWriter has a truck load of features and
-advantages over over the Classic version. I did consider purchasing
-it, but Emacs won the day. Nevertheless, as a plain vanilla writing
-app - IAWriter offers much right out of the box.&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; There&amp;rsquo;s still a lot of tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;,
-but this is certainly a workable result. My nascent configuration for
-writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s remarkable how much was
-achieved with a few lines of code!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(with-eval-after-load &#39;writeroom-mode
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-.&amp;quot;) #&#39;writeroom-increase-width)
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-=&amp;quot;) #&#39;writeroom-adjust-width))
-
-(advice-add &#39;text-scale-adjust :after
-        #&#39;visual-fill-column-adjust)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Notes from the movie Whiplash</title>
-      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
-      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Whiplash_%25282014_film%2529&#34; target=&#34;_blank&#34;&gt;Whiplash: Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post !&lt;/p&gt;
-
-&lt;p&gt;The story revolves around the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
-
-&lt;p&gt;I could relate to the following pointers from the movie:&lt;/p&gt;
-
-&lt;h1 id=&#34;leverage-stress-to-achieve-new-levels-of-insight-and-performance&#34;&gt;Leverage stress to achieve new levels of insight and performance&lt;/h1&gt;
-
-&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have were taken forward to habits that changed my life.&lt;/p&gt;
-
-&lt;h1 id=&#34;weathering-criticism&#34;&gt;Weathering criticism&lt;/h1&gt;
-
-&lt;p&gt;The mental conditioning required to weather and beat intense, sharp,
-depressing criticism along with verbal and physical abuse from a
-mentor or teacher and use the same as a motive force for
-self-improvement and eventually superlative performance. Though there
-are examples of extreme abrasiveness in leaders like Steve Jobs - such
-an approach would not be tolerated by most people today.&lt;/p&gt;
+      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
+      <description>&lt;p&gt;Links to certificates of courses completed on &lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Dataquest&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;I know other stories of people working under such mentors,
-striving to learn and gain their approval and eventually winning
-the same. These efforts paid off by resulting in skills, thinking
-patterns and a superior mental conditioning. Finding such a mentor
-at the formative stage is probably the best thing to happen to
-anybody.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/8GGK4Q8UR961241PKFLI&#34; target=&#34;_blank&#34;&gt;Data Analyst Path in &lt;code&gt;R&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;An effective strategy to find mentors is to shadow people on Linked in and learn from their profiles and activity. Some of them may be willing to connect and invest time in mentoring.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/Q7WM9PIQA7JRJFMMAZUD/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Git&lt;/code&gt; &amp;amp; Version control&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Another possibility to find like minded people and mentors would be to join the communities of on-line courses, like Datacamp and Dataquest, who have lively channels in Slack for paid members.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.dataquest.io/view_cert/M6S5ITVA6FC6BDR650WG/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;SQL&lt;/code&gt; Fundamentals&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&#34;getting-back-up-after-a-fall&#34;&gt;Getting back up after a fall&lt;/h1&gt;
-
-&lt;p&gt;Everybody breaks. Just as the promising student in Whiplash
-breaks. But the champions among us rally, to stage a comeback and
-performance that make history.&lt;/p&gt;
-
-&lt;p&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/p&gt;
-
-&lt;h1 id=&#34;be-great-not-good&#34;&gt;Be Great, not Good&lt;/h1&gt;
-
-&lt;p&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be &lt;em&gt;Great&lt;/em&gt;, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best, and that entails never being satisfied and to be ruthless in rooting out flaws.&lt;/p&gt;
-
-&lt;h1 id=&#34;achieving-balance-mind-body-surroundings&#34;&gt;Achieving Balance : mind + body + surroundings&lt;/h1&gt;
-
-&lt;p&gt;Great performance is about that perfect balance between the body, mind and environment to leverage the best result possible. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability.&lt;/p&gt;
-
-&lt;h1 id=&#34;go-off-the-beaten-track-and-lose-yourself&#34;&gt;Go off the beaten track and Lose yourself&lt;/h1&gt;
-
-&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
-
-&lt;h1 id=&#34;learning-velocity-and-flow&#34;&gt;Learning velocity and Flow&lt;/h1&gt;
-
-&lt;p&gt;There are several bodies of research work available today that can be studied to get closer to consciously stimulating a great performance. One such example is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable
-Creatives podcast provides an insight in line with the points seen
-above, into what constitute outliers and performers. The interesting
-concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan with a lucid
-example. It is surmised that progress and maximum learning to become
-better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the
-moment, and the unknown skills that beckon.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That point sems to be an amalgamation of several factors, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Getting productive - an exploration into holistic task management</title>
-      <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
-      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
-      <description>
-
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;To integrate tasks, reminders, notes, coding workflow into a single
-framework is no easy challenge. Org mode and Emacs help you do just
-that.&lt;/p&gt;
-
-&lt;p&gt;After trying out several tools, IMHO : &lt;a href=&#34;https://todoist.com&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; offers the best bang
-for your buck, especially with it&amp;rsquo;s natural language parsing ability,
-smooth and reliable sync as well as its multi-platform
-availability. Many describe &lt;a href=&#34;https://www.omnigroup.com/omnifocus&#34; target=&#34;_blank&#34;&gt;Omnifocus&lt;/a&gt; to be the king of task
-management tools, with dedicated apps for different purposes and
-probably well integrated.&lt;/p&gt;
-
-&lt;p&gt;My journey veered away from Omnifocus since it is limited to the Apple
-platform and this is obviously a serious handicap for people (like me)
-who are often forced to use multiple operating systems and devices
-distributed between personal and work environments.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;d religiously managed my tasks on Todoist for over a year via the
-Chrome extensions/add-ins, the stand alone apps on Windows and the
-Mac, and on Android as well as iOS.&lt;/p&gt;
-
-&lt;p&gt;However, there was something missing in terms of being able to truly
-capture it all. This led me to &lt;a href=&#34;https://www.gnu.org/s/emacs/&#34; target=&#34;_blank&#34;&gt;Emacs&lt;/a&gt;. My search is summarised in this
-article.&lt;/p&gt;
-
-&lt;h1 id=&#34;needs-versus-the-software-development&#34;&gt;Needs versus the software development&lt;/h1&gt;
-
-&lt;p&gt;The real problem surfaced when my needs evolved at a pace and
-specificity that a general software&amp;rsquo;s development could not cater
-to. The problem is characterized by an endless wait for seemingly
-simple features that could make a phenomenal difference to personal
-workflow and productivity. This feature may range from a small tweak or
-bugfix to a rewiring of the basic behavior of the program itself.&lt;/p&gt;
-
-&lt;p&gt;Additionally, the proprietary format of tasks/notes and entries in
-Todoist or even Evernote is not a comforting aspect. On the other
-hand, using a simple text file with lists of work or notes is too
-simplistic to address a complex problem.&lt;/p&gt;
-
-&lt;p&gt;However, the issue could be resolved when the simple and ubiquitous
-Text file is parsed by a system like Org mode with in built and novel
-routines to filter and present the data in the text file in a very
-useful. Ultimately the key factor is that the workflow and output can
-be completely customised as required.&lt;/p&gt;
-
-&lt;h1 id=&#34;things-i-d-like-from-a-task-management-tool&#34;&gt;Things I&amp;rsquo;d like from a task management tool:&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Rapid and seamless Task/Note taking ability -  could be generic, or specific to a particular project/task.&lt;/li&gt;
-&lt;li&gt;Quick capturing of links and snippets from websites and emails&lt;/li&gt;
-&lt;li&gt;Consistent experience across multiple platforms and very fast sync.&lt;/li&gt;
-&lt;li&gt;Ability to manage personal or work related projects&lt;/li&gt;
-&lt;li&gt;A date management system with atleast reasonably good understanding
-of natural language&lt;/li&gt;
-&lt;li&gt;Refiling tasks/notes very easily across main tasks or categories or
-projects&lt;/li&gt;
-&lt;li&gt;Customisable Views of the task summary along with the deadlines&lt;/li&gt;
-&lt;li&gt;Task and Note search and filtering at every level possible&lt;/li&gt;
-&lt;li&gt;Ability to easily export notes to multiple formats and write in
-some form of markup language so as to take care of formatting on
-the go.&lt;/li&gt;
-&lt;li&gt;Preferably an all-in-one tool for managing notes, all kinds of
-writing, research, tasks, recurring reminders, maintaining an
-activity log/journal, project summaries .. etc.&lt;/li&gt;
-&lt;li&gt;Includes &amp;lsquo;clocking&amp;rsquo; abilities for tasks.&lt;/li&gt;
-&lt;li&gt;Fast keyboard based shortcuts and &amp;lsquo;bookmarks&amp;rsquo; to do all that is required.&lt;/li&gt;
-&lt;li&gt;Recording tasks or notes from the phone, while on the go.&lt;/li&gt;
-&lt;li&gt;Should have the lightest footprint possible in terms of time spent
-on the tool, as well as system resources with no compromise in benefits derived.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;can-it-be-achieved&#34;&gt;Can it be achieved?&lt;/h1&gt;
-
-&lt;p&gt;Short answer: Yes. Through Emacs.&lt;/p&gt;
-
-&lt;p&gt;Sure, several of the above points can be done in Todoist and other tools, in
-one way or via combining different services.&lt;/p&gt;
-
-&lt;p&gt;However, a holistic consideration of the above points indicate a
-system that is a cross between Todoist and Evernote, capable of being
-utilised for a multitude of purposes : a customised GTD workflow plus
-an organiser for notes or writings. Point no 9, could serve to be a
-concise but incomplete statement of Orgmode&amp;rsquo;s capabilities, and is a
-stark reminder of Todoist&amp;rsquo;s specific expertise in only task
-management. Additionally, the above points can be done in orgmode,
-&lt;em&gt;very&lt;/em&gt;, &lt;em&gt;very&lt;/em&gt; quickly. Evernote has a great system, but is not as fast,
-because it indexes a huge variety of content. &lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;examples-of-workflows&#34;&gt;Examples of workflows&lt;/h1&gt;
-
-&lt;p&gt;Lets say that while typing up a project summary, I remember an
-additional task for another project or perhaps need to note down a
-snippet of generic information. To compensate for the lack of a
-photographic memory without breaking my on-going workflow - I need to
-be able to store the task/note/idea in a place that I can easily look
-up for further processing.&lt;/p&gt;
-
-&lt;p&gt;Such an activity is not at all streamlined with Todoist, and
-definitely not so with Evernote. With Org mode its just a &lt;code&gt;C-c c&lt;/code&gt;, or
-Control + c and hit c again. Optionally, a &lt;code&gt;C-cw&lt;/code&gt; for refiling the note
-on the spot if desired. When I hit refile - I can search through my
-org headings or projects and place the newly captured item exactly
-where it should be.&lt;/p&gt;
-
-&lt;p&gt;Once accustomed to the speed of recording stuff with Org-capture, along
-with the myriad possibilities of auto-save, backups, moving the cursor
-to the last location you were at, switching to another
-document/heading at lightning speed and etc - it will be hard to find
-another system that is truly competitive.&lt;/p&gt;
-
-&lt;p&gt;Project management via Emacs using the excellent &lt;a href=&#34;https://github.com/bbatsov/projectile&#34; target=&#34;_blank&#34;&gt;projectile&lt;/a&gt; package
-can enable you to find information at a speed that is very pleasing. I
-have often needed to deal with several customers of different kinds,
-thoroughly understand their requirements, resolve technical and
-commercial ambiguities and be able to refer to earlier jobs where
-something was agreed upon. I&amp;rsquo;ve often worked in projects with a
-bewildering number of aspects to take care of, along with sporadic
-infusions of information which could be clarifications or even new
-information altogether.&lt;/p&gt;
-
-&lt;p&gt;Included in project / productivity /relationship management are
-several subsets of activities like Minutes of Meetings (MOM&amp;rsquo;s),
-summaries of travel/visits to the customer, telephonic discussions,
-indications of future projects as well as generic or specific
-problems.&lt;/p&gt;
-
-&lt;p&gt;Using Org mode, it is possible create customised workflows and
-templates to manage all the above aspects, more than any other note
-taking system, including only handwritten notes. An excellent,
-comprehensive overview can be found in &lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bert Hansen&amp;rsquo;s article&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;everybody-s-needs-are-unique&#34;&gt;Everybody&amp;rsquo;s needs are unique&lt;/h1&gt;
-
-&lt;p&gt;Eventually, I guess we all come to realise the fact that each human
-being is truly unique. Each one of us have our own ways of thinking, being
-and approaching problems.&lt;/p&gt;
-
-&lt;p&gt;While Todoist worked very well for me - I was still bothered by being
-constrained by it&amp;rsquo;s proprietary format and the lack of a lifetime
-membership with a one time payment. Money spent should give me a tool
-that brings supreme value and satisfaction with it. It was also
-tiresome to take detailed notes on tasks and rely on a separate
-Simplenote/Evernote system via Sublime Text for this purpose. You may
-have a different viewpoint. You may want a great GUI design and
-app that works well on your phone in addition to other
-environments. &lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;Orgmode is more aligned to people who prefer to get most of their work
-done on their computers, who are or atleast don&amp;rsquo;t mind being keyboard
-shortcut freaks and those who would like to take the effort to learn a
-souped up text editor like Emacs that can evolve to cover a lot of
-needs efficiently. It&amp;rsquo;s not going to work well for people who need a
-reminder to pop up on their phones, with a fancy GUI and those who
-expect a software to work extremely well right out of the
-box. However, this &lt;em&gt;is&lt;/em&gt; Org mode and Emacs&amp;#x2026;. there are ways to sync
-your iOS / outlook calendar with orgmode&amp;rsquo;s calendar, or with
-wunderlist or Toodledo. Anything is possible, but it just won&amp;rsquo;t be via
-some classy GUI..&lt;/p&gt;
-
-&lt;h1 id=&#34;concluding-points&#34;&gt;Concluding points&lt;/h1&gt;
-
-&lt;p&gt;While it may seem daunting at first - the feeling of being able to
-search through existing notes to know whether you have met this
-particular thought/aspect before, can be extremely valuable and very
-satisfying. There are people like &lt;a href=&#34;http://sachachua.com/blog/&#34; target=&#34;_blank&#34;&gt;Sacha Chua&lt;/a&gt; and &lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bert Hansen&lt;/a&gt;, who&amp;rsquo;ve
-built complex, efficient, and beautiful workflows through which a
-great deal of achievement has been made possible using the resulting
-streamlined tool. As &lt;a href=&#34;http://calnewport.com/&#34; target=&#34;_blank&#34;&gt;Cal Newport&lt;/a&gt; often reiterates in his blog and
-exploration on productivity - it is important to be able to accurately
-quantify the time being spent on different things. The &lt;a href=&#34;https://github.com/emacs-tw/awesome-emacs&#34; target=&#34;_blank&#34;&gt;awesome-emacs&lt;/a&gt;
-list on github offers several worthy resources, along with the
-excellent &lt;a href=&#34;http://planet.emacsen.org/&#34; target=&#34;_blank&#34;&gt;Planet Emacsen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The organiser tool by itself should have the lightest possible
-footprint in terms of the time taken to enter in stuff. Certainly -
-most people spend a lifetime in customising emacs and that may seem
-contrary to the previous point. However, it is possible to quickly
-reach a certain point that results in a marked improvement in
-productivity and workflow. Beyond this, leisure time can always be
-spent in fine-tuning the basic setup and understanding the code better.&lt;/p&gt;
-
-&lt;p&gt;The customisation options with Emacs and Org mode are literally
-endless and constrained only by programming skills, or Googling skills
-to find the code snippet that can get your work done, not to mention
-social skills in getting help via online communities. This is actually
-a lot easier than it sounds. While a bunch of people would call this a
-weakness, there are a large number of people who see the value in a
-customised tool which will evolve to facilitate a very fast and
-efficient workflow.&lt;/p&gt;
-
-&lt;p&gt;Deliberate practise towards improvement is certainly boosted when one
-is able to work consistently in a environment customised to needs and
-workflows. Using Org mode and Emacs is a firm step in this direction.&lt;/p&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; While Org mode is optimised for text, it is possible to attach
-any kind of file to a &amp;lsquo;heading&amp;rsquo;, and use interleave and other
-techniques to browse and annotate PDF&amp;rsquo;s. The possibilities are too
-numerous to be covered in a blog post or a single google search.&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; On iOS - I&amp;rsquo;ve found &lt;a href=&#34;http://agiletortoise.com/drafts/&#34; target=&#34;_blank&#34;&gt;Drafts&lt;/a&gt; is a great app for writing
-fast and appending the notes to an org file, which can be refiled
-later, using emacs. One problem I&amp;rsquo;m yet to resolve is that
-appending to an org file in dropbox, requires a network/internet
-connection. There should be a way to deal with situations without
-handy internet available.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Example Talk</title>
-      <link>https://shrysr.github.io/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/talk/example-talk/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     

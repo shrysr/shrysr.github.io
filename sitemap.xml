@@ -2,42 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
     </url>
     
   
-    
     
     <url>
     
       <loc>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</loc>
-      <lastmod>2018-11-12T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:30:45-07:00</lastmod>
     </url>
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</loc>
+      <lastmod>2019-01-19T19:31:25-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</loc>
+      <lastmod>2019-01-19T19:27:59-07:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
       <loc>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</loc>
-      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:19:40-07:00</lastmod>
     </url>
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</loc>
+      <lastmod>2019-01-19T19:37:57-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</loc>
+      <lastmod>2019-01-19T19:22:15-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</loc>
+      <lastmod>2019-01-19T19:25:57-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/</loc>
+      <lastmod>2018-12-20T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/course-edx-r-fundamentals/</loc>
+      <lastmod>2018-09-09T00:00:00-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/r-recipes-notes/</loc>
+      <lastmod>2018-09-09T00:00:00-06:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
@@ -47,25 +98,6 @@
     
   
     
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</loc>
-      <lastmod>2018-07-25T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</loc>
-      <lastmod>2018-07-24T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</loc>
@@ -73,7 +105,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -83,7 +114,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</loc>
@@ -92,6 +122,13 @@
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</loc>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
@@ -101,24 +138,13 @@
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</loc>
-      <lastmod>2018-04-23T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/project/course-edx-harvard-r/</loc>
+      <lastmod>2018-03-28T00:00:00+00:00</lastmod>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</loc>
-      <lastmod>2017-08-11T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -128,6 +154,13 @@
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</loc>
+      <lastmod>2017-02-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
@@ -137,16 +170,6 @@
     
   
     
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00-07:00</lastmod>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/academic/</loc>
@@ -154,7 +177,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -164,7 +186,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/talk/</loc>
@@ -173,87 +194,45 @@
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/project/cfd-post-automation/</loc>
+      <loc>https://shrysr.github.io/project/cfd-post-processing-python/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/project/cfd-online-wiki/</loc>
+      <loc>https://shrysr.github.io/project/cfd-on-line-wiki/cfd-online-wiki/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/project/kinematic-design-finger/</loc>
+      <loc>https://shrysr.github.io/project/kinematic-finger-design/kinematic-design-finger/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/project/cfd-simulation-scheduler/</loc>
+      <loc>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
     </url>
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/project/course-datacamp-datascience/</loc>
+      <loc>https://shrysr.github.io/project/emission-technology-ic/emission-technology/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/project/course-dataquest-datascience/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/project/emission-technology/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/project/course-edx-harvard-r/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/project/course-code-school/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -263,7 +242,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/publication/kinematic-design-finger/</loc>
@@ -271,7 +249,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -282,17 +259,6 @@
     
   
     
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/automation/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/cad/</loc>
@@ -301,7 +267,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -312,7 +277,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/categories/</loc>
@@ -321,36 +285,23 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/certificate/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
       <loc>https://shrysr.github.io/tags/code/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2018-03-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/code/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -361,36 +312,41 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/course/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
       <loc>https://shrysr.github.io/tags/data-science/</loc>
-      <lastmod>2018-07-25T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/data-science/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/categories/data-science/</loc>
+      <lastmod>2019-01-19T19:30:45-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/datascience/</loc>
+      <lastmod>2019-01-19T19:19:40-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
@@ -401,36 +357,23 @@
     
   
     
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/documentation/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/emacs/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/categories/emacs/</loc>
+      <lastmod>2019-01-19T19:27:59-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
@@ -441,7 +384,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/evernote/</loc>
@@ -451,46 +393,14 @@
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/tags/excellence/</loc>
-      <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/categories/general/</loc>
+      <lastmod>2019-01-19T19:37:57-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/finance/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/font/</loc>
-      <lastmod>2018-04-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/git/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -501,26 +411,23 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/jupyter/</loc>
-      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:19:40-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
       <loc>https://shrysr.github.io/tags/linux/</loc>
-      <lastmod>2018-07-10T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:22:15-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
@@ -531,7 +438,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/mac/</loc>
@@ -541,86 +447,68 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/movie-notes/</loc>
-      <lastmod>2017-08-11T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:37:57-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/note-taking/</loc>
-      <lastmod>2018-07-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/open-source/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
       <loc>https://shrysr.github.io/tags/org-mode/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2017-04-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/org-projectile/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/tags/org-mode/</loc>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/productivity/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/tags/paper-review/</loc>
+      <lastmod>2019-01-19T19:31:25-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/programming/</loc>
-      <lastmod>2018-11-18T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/post/</loc>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/productivity/</loc>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
       <loc>https://shrysr.github.io/project/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
@@ -631,56 +519,23 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/python/</loc>
-      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:19:40-07:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/python/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/python-101/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
       <loc>https://shrysr.github.io/tags/r/</loc>
-      <lastmod>2018-08-07T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/reading/</loc>
-      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -691,7 +546,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/simulink/</loc>
@@ -701,36 +555,14 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/sql/</loc>
-      <lastmod>2011-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/scimax/</loc>
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/tags/search/</loc>
-      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -741,7 +573,6 @@
     
   
     
-    
     <url>
     
       <loc>https://shrysr.github.io/tags/solidworks/</loc>
@@ -750,7 +581,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -761,21 +591,145 @@
     
   
     
-    
     <url>
     
-      <loc>https://shrysr.github.io/tags/technical-notes/</loc>
-      <lastmod>2018-07-25T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/tags/automation/</loc>
+      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/code/</loc>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/datascience/</loc>
+      <lastmod>2019-01-19T19:30:45-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/documentation/</loc>
+      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/emacs/</loc>
+      <lastmod>2019-01-19T19:33:14-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/excellence/</loc>
+      <lastmod>2019-01-19T19:37:57-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/finance/</loc>
+      <lastmod>2017-02-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/font/</loc>
+      <lastmod>2019-01-19T19:22:15-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/git/</loc>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/note-taking/</loc>
+      <lastmod>2018-07-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/open-source/</loc>
+      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/productivity/</loc>
+      <lastmod>2019-01-19T19:27:59-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/python/</loc>
+      <lastmod>2018-06-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/reading/</loc>
+      <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/search/</loc>
+      <lastmod>2018-04-26T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
       <loc>https://shrysr.github.io/tags/writing/</loc>
-      <lastmod>2018-04-23T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-19T19:22:15-07:00</lastmod>
       <priority>0</priority>
     </url>
     

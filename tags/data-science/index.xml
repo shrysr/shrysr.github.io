@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data science on Shreyas Ragavan</title>
+    <title>Data Science on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/data-science/</link>
-    <description>Recent content in Data science on Shreyas Ragavan</description>
+    <description>Recent content in Data Science on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Incremental improvements can lead to significant gains</title>
-      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <title>Courses @ Dataquest</title>
+      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
-      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
-My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
+      <description>Links to certificates of courses completed on Dataquest
+ Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
+  </description>
+    </item>
+    
+    <item>
+      <title>Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
+      <description>Links to certificates of courses completed on Datacamp
+ Intro to SQL
+ Data Science R basics.
+ Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+ Introduction to R for Finance
+  </description>
     </item>
     
   </channel>

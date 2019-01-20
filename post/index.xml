@@ -7,25 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 19:33:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Juggling multiple projects and leveraging org-projectile</title>
-      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
-      <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
-These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit.</description>
-    </item>
-    
-    <item>
       <title>Incremental improvements can lead to significant gains</title>
       <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
-      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
       <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
@@ -35,7 +25,7 @@ My efforts initially started out with a craving for a system to quantify and man
     <item>
       <title>Nteract : An interactive computing environment</title>
       <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
-      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
       <description>A slide deck from Netflix, mentions using Nteract as their programming notebook, and prompted a mini exploration.
@@ -43,13 +33,65 @@ This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces
     </item>
     
     <item>
+      <title>Technical notes : Research paper on learning/teaching data science</title>
+      <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
+      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
+      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice
+Author: Yehia Elkhatib
+Download link
+This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.
+ The importance of being able to work in a team is highlighted.</description>
+    </item>
+    
+    <item>
+      <title>Juggling multiple projects and leveraging org-projectile</title>
+      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
+      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
+      <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
+These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit.</description>
+    </item>
+    
+    <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
       <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
       <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
 Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
+    </item>
+    
+    <item>
+      <title>Notes from the movie Whiplash</title>
+      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
+      <pubDate>Sat, 19 Jan 2019 19:37:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
+      <description>Whiplash: Wikipedia
+Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;hellip; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax was immensely interesting, inspiring and supported by great acting. At any rate, the movie induced a blog post !</description>
+    </item>
+    
+    <item>
+      <title>Iosevka - an awesome font for Emacs</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
+      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
+Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
+    </item>
+    
+    <item>
+      <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
+      <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
+      <pubDate>Sat, 19 Jan 2019 19:25:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
+      <description>I&amp;rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.</description>
     </item>
     
     <item>
@@ -61,28 +103,6 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
       <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
 (setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
-    </item>
-    
-    <item>
-      <title>Technical notes : Research paper on learning/teaching data science</title>
-      <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
-      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
-      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice
-Author: Yehia Elkhatib
-Download link
-This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.
- The importance of being able to work in a team is highlighted.</description>
-    </item>
-    
-    <item>
-      <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
-      <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
-      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
-      <description>I&amp;rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.</description>
     </item>
     
     <item>
@@ -124,26 +144,6 @@ However, even with all these filters, it is quite difficult to keep on top of ne
       <description>Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
 As one might expect, there is a lot of common ground between these lists, including topics and links.
 How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.</description>
-    </item>
-    
-    <item>
-      <title>Iosevka - an awesome font for Emacs</title>
-      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
-Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
-    </item>
-    
-    <item>
-      <title>Notes from the movie Whiplash</title>
-      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
-      <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
-      <description>Whiplash: Wikipedia
-Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;#x2026; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax was immensely interesting, inspiring and supported by great acting. At any rate, the movie induced a blog post !</description>
     </item>
     
     <item>

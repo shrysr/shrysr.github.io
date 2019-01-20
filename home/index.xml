@@ -13,13 +13,12 @@
     
     
     <item>
-      <title>Academic</title>
-      <link>https://shrysr.github.io/home/hero/</link>
+      <title></title>
+      <link>https://shrysr.github.io/home/hero_carousel/</link>
       <pubDate>Sun, 15 Oct 2017 00:00:00 -0600</pubDate>
       
-      <guid>https://shrysr.github.io/home/hero/</guid>
-      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release  
-(function defer() { if (window.jQuery) { jQuery(document).ready(function(){ GetLatestReleaseInfo(); }); } else { setTimeout(function() { defer() }, 50); } })(); function GetLatestReleaseInfo() { $.getJSON(&#39;https://api.github.com/repos/gcushen/hugo-academic/tags&#39;).done(function (json) { let release = json[0]; // let downloadURL = release.zipball_url; $(&#39;#academic-release&#39;).text(&#39;Latest release &#39; + release.name); }); }  </description>
+      <guid>https://shrysr.github.io/home/hero_carousel/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -31,6 +30,43 @@
       <description>About me I&amp;rsquo;m an engineer, dreamer, hacker, data scientist and technophile who enjoys performing in-depth research and analysis, as well as developing end-to-end solutions that drive Business Intelligence and Growth.
 Possess a keen eye to comprehend the big picture along with a penchant towards implementing workflow automation.
 I have a keen interest in the field of Data Science, and enjoy coding. My interest also extends to quantified self improvement and productivity techniques, writing, research and using Emacs for all my workflows.</description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>https://shrysr.github.io/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/home/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>https://shrysr.github.io/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release  
+(function defer() { if (window.jQuery) { jQuery(document).ready(function(){ GetLatestReleaseInfo(); }); } else { setTimeout(function() { defer() }, 50); } })(); function GetLatestReleaseInfo() { $.getJSON(&#39;https://api.github.com/repos/gcushen/hugo-academic/tags&#39;).done(function (json) { let release = json[0]; // let downloadURL = release.zipball_url; $(&#39;#academic-release&#39;).text(&#39;Latest release &#39; + release.name); }); }  </description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://shrysr.github.io/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>https://shrysr.github.io/home/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/home/experience/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -52,6 +88,15 @@ I have a keen interest in the field of Data Science, and enjoy coding. My intere
     </item>
     
     <item>
+      <title>Selected Talks</title>
+      <link>https://shrysr.github.io/home/talks_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/home/talks_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>https://shrysr.github.io/home/talks/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
@@ -66,15 +111,6 @@ I have a keen interest in the field of Data Science, and enjoy coding. My intere
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/home/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://shrysr.github.io/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/home/projects/</guid>
       <description></description>
     </item>
     

@@ -1,35 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code on Shreyas Ragavan</title>
+    <title>code on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/code/</link>
-    <description>Recent content in Code on Shreyas Ragavan</description>
+    <description>Recent content in code on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 15 Feb 2011 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>EdX HarvardX PH125.1x: Data Science: R Basics</title>
-      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
-      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      <title>Courses @ Dataquest</title>
+      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
-Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
+      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
+      <description>Links to certificates of courses completed on Dataquest
+ Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
+  </description>
     </item>
     
     <item>
-      <title>On-line Courses:   Code School</title>
-      <link>https://shrysr.github.io/project/course-code-school/</link>
-      <pubDate>Tue, 15 Feb 2011 00:00:00 +0000</pubDate>
+      <title>Searching the awesome-lists on Github</title>
+      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/course-code-school/</guid>
-      <description>Completed several courses covering python, git, SQL,regular expressions. Most of these courses were completed during the occasional Free Weekend opportunities from Code School, where the paid courses are available to be completed at no cost, for an entire weekend.&amp;rdquo;
- My Code School Report  is no longer available, since Pluralsight seem to be revamping these courses. However, these were great introductory courses.  </description>
+      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
+      <description>Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
+As one might expect, there is a lot of common ground between these lists, including topics and links.
+How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.</description>
+    </item>
+    
+    <item>
+      <title>Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
+      <description>Links to certificates of courses completed on Datacamp
+ Intro to SQL
+ Data Science R basics.
+ Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+ Introduction to R for Finance
+  </description>
+    </item>
+    
+    <item>
+      <title>CFD Post Processing automation</title>
+      <link>https://shrysr.github.io/project/cfd-post-processing-python/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfd-post-processing-python/</guid>
+      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
+This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
+    </item>
+    
+    <item>
+      <title>Design of an Electro-mechanical prosthetic finger, and a PID controller for the wrist.</title>
+      <link>https://shrysr.github.io/project/kinematic-finger-design/kinematic-design-finger/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/kinematic-finger-design/kinematic-design-finger/</guid>
+      <description>This project utilized MATLAB, Solidworks to research and design a human finger and calculate the range of it&amp;rsquo;s motion. SIMULINK is also utilised to design a PID controller for the wrist.</description>
+    </item>
+    
+    <item>
+      <title>Simulation job scheduler</title>
+      <link>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</guid>
+      <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
+Presentation
+Wiki on Github
+This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
+ In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
     </item>
     
   </channel>

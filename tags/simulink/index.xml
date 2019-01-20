@@ -14,10 +14,10 @@
     
     <item>
       <title>Design of an Electro-mechanical prosthetic finger, and a PID controller for the wrist.</title>
-      <link>https://shrysr.github.io/project/kinematic-design-finger/</link>
+      <link>https://shrysr.github.io/project/kinematic-finger-design/kinematic-design-finger/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/kinematic-design-finger/</guid>
+      <guid>https://shrysr.github.io/project/kinematic-finger-design/kinematic-design-finger/</guid>
       <description>This project utilized MATLAB, Solidworks to research and design a human finger and calculate the range of it&amp;rsquo;s motion. SIMULINK is also utilised to design a PID controller for the wrist.</description>
     </item>
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Automation on Shreyas Ragavan</title>
+    <title>automation on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/automation/</link>
-    <description>Recent content in Automation on Shreyas Ragavan</description>
+    <description>Recent content in automation on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
@@ -14,20 +14,20 @@
     
     <item>
       <title>CFD Post Processing automation</title>
-      <link>https://shrysr.github.io/project/cfd-post-automation/</link>
+      <link>https://shrysr.github.io/project/cfd-post-processing-python/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-post-automation/</guid>
+      <guid>https://shrysr.github.io/project/cfd-post-processing-python/</guid>
       <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
 This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
     </item>
     
     <item>
       <title>Simulation job scheduler</title>
-      <link>https://shrysr.github.io/project/cfd-simulation-scheduler/</link>
+      <link>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-simulation-scheduler/</guid>
+      <guid>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</guid>
       <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
 Presentation
 Wiki on Github

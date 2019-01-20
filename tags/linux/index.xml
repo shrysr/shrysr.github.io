@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 19:22:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Iosevka - an awesome font for Emacs</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
+      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
+Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
+    </item>
     
     <item>
       <title>An SSD can breathe life into old computers</title>
@@ -24,21 +34,11 @@ The other advantage of using a Mac over Linux is that installation and setup ins
     </item>
     
     <item>
-      <title>Iosevka - an awesome font for Emacs</title>
-      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
-Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
-    </item>
-    
-    <item>
       <title>Contributions to the CFD-Online Wiki</title>
-      <link>https://shrysr.github.io/project/cfd-online-wiki/</link>
+      <link>https://shrysr.github.io/project/cfd-on-line-wiki/cfd-online-wiki/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/cfd-online-wiki/</guid>
+      <guid>https://shrysr.github.io/project/cfd-on-line-wiki/cfd-online-wiki/</guid>
       <description>View : CFD-Online Wiki page.
 Motivation During my initial foray into open source CFD and especially getting started with Linux - there was a lot of information that I had to collate from different sources in order to figure out each step. In addition, there were perspectives on performance that could be gained only through experience. Therefore, I plugged back the knowledge gained to the CFD-Online wiki with the idea that it would help any newbie get started a little quicker.</description>
     </item>
