@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Org mode on Shreyas Ragavan</title>
+    <title>Org-mode on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/org-mode/</link>
-    <description>Recent content in Org mode on Shreyas Ragavan</description>
+    <description>Recent content in Org-mode on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 03 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 19:33:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Getting productive - an exploration into holistic task management</title>
-      <link>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
-      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Incremental improvements can lead to significant gains</title>
+      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
       
-      <guid>https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
-      <description>Introduction To integrate tasks, reminders, notes, coding workflow into a single framework is no easy challenge. Org mode and Emacs help you do just that.
-After trying out several tools, IMHO : Todoist offers the best bang for your buck, especially with it&amp;rsquo;s natural language parsing ability, smooth and reliable sync as well as its multi-platform availability. Many describe Omnifocus to be the king of task management tools, with dedicated apps for different purposes and probably well integrated.</description>
+      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
+My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+    </item>
+    
+    <item>
+      <title>Juggling multiple projects and leveraging org-projectile</title>
+      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
+      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
+      <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
+These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit.</description>
+    </item>
+    
+    <item>
+      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
+      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
+      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
+      <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
+Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
     </item>
     
   </channel>

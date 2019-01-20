@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 19 Jan 2019 19:27:00 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 20:02:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
+      <link>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
+      <pubDate>Sat, 19 Jan 2019 20:02:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</guid>
+      <description>Matt Dancho&amp;rsquo;s course DSB-101-R is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid level-ups, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.</description>
+    </item>
     
     <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
