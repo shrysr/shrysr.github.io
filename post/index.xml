@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 19 Jan 2019 20:02:00 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 14:59:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why bother with Emacs and workflows?</title>
+      <link>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</link>
+      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</guid>
+      <description>I&amp;rsquo;ve written several posts on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.
+The fact is that knowing Emacs (or Vim), or having a custom configuration is not a wildly marketable skill, nor is it mandatory to achieve spectacular results.</description>
+    </item>
     
     <item>
       <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
@@ -57,7 +67,7 @@ This are my notes on the above paper, which mainly deals with detailing the meth
     <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
       <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
       <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
@@ -67,7 +77,7 @@ These projects are automatically initialised as git repositories, to which it is
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
       <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
       <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
@@ -85,6 +95,17 @@ Whiplash is a fascinating movie on many levels regarding a topic that interests 
     </item>
     
     <item>
+      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
+      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
+      <pubDate>Fri, 25 Jan 2019 14:45:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
+      <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
+For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
+(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
+    </item>
+    
+    <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
       <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
@@ -95,23 +116,23 @@ Zen writing apps are called so because they have a unique combination of fonts, 
     </item>
     
     <item>
+      <title>Searching the awesome-lists on Github</title>
+      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
+      <pubDate>Fri, 25 Jan 2019 14:38:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
+      <description>Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
+As one might expect, there is a lot of common ground between these lists, including topics and links.
+How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.</description>
+    </item>
+    
+    <item>
       <title>Literate Programming - Emacs, Howard Abrams and Library of Babel</title>
       <link>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</link>
       <pubDate>Sat, 19 Jan 2019 19:25:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/</guid>
       <description>I&amp;rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.</description>
-    </item>
-    
-    <item>
-      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
-      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
-      <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
-For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
-(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
     </item>
     
     <item>
@@ -142,17 +163,6 @@ The other advantage of using a Mac over Linux is that installation and setup ins
       <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
       <description>Why use RSS? Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with mu4e make this easy.
 However, even with all these filters, it is quite difficult to keep on top of news from different sources. At times it is inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.</description>
-    </item>
-    
-    <item>
-      <title>Searching the awesome-lists on Github</title>
-      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
-      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
-      <description>Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
-As one might expect, there is a lot of common ground between these lists, including topics and links.
-How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.</description>
     </item>
     
     <item>

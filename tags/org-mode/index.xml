@@ -25,7 +25,7 @@ My efforts initially started out with a craving for a system to quantify and man
     <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
       <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
       <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
@@ -35,7 +35,7 @@ These projects are automatically initialised as git repositories, to which it is
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
       <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
       <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.

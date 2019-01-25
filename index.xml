@@ -11,6 +11,60 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Why bother with Emacs and workflows?</title>
+      <link>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</link>
+      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve written &lt;a href=&#34;http://localhost:1313/categories/emacs/&#34; target=&#34;_blank&#34;&gt;several posts&lt;/a&gt; on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.&lt;/p&gt;
+
+&lt;p&gt;The fact is that knowing Emacs (or Vim), or having a custom configuration is &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/9ghpb4/was%5Fanyone%5Fever%5Fimpressed%5Fby%5Fyour%5Femacs%5Fskills/&#34; target=&#34;_blank&#34;&gt;not a wildly marketable skill&lt;/a&gt;, nor is it mandatory to achieve spectacular results. An Emacs configuration suits personal workflows and style, which may be borderline peculiar to another person. Such a dependence on customised tools would also drastically reduces your speed while using a new IDE or text editor.&lt;/p&gt;
+
+&lt;p&gt;So : why add Emacs to the ever-growing to-do list? The question is more pertinent considering that mastery of a &amp;lsquo;text editor&amp;rsquo; is not something you can freely talk about and frequently expect empathetic responses or even a spark like connection. Emacs would be considered by many to be an esoteric and archaic software with a steep learning curve that is not beginner friendly.&lt;/p&gt;
+
+&lt;p&gt;However &amp;hellip;..&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.fugue.co/2015-11-11-guide-to-emacs.html&#34; target=&#34;_blank&#34;&gt;This article&lt;/a&gt; elucidates many points where Emacs can help PHB&amp;rsquo;s (Pointy Haired Boss). The internet abounds with &lt;a href=&#34;https://news.ycombinator.com/item?id=11386590&#34; target=&#34;_blank&#34;&gt;several&lt;/a&gt; &lt;a href=&#34;https://news.ycombinator.com/item?id=6094610&#34; target=&#34;_blank&#34;&gt;examples&lt;/a&gt; on how org-mode and Emacs have changed lives for the better. Here is another &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/new-window-manager.html&#34; target=&#34;_blank&#34;&gt;cool article by Howard Abrams&lt;/a&gt; on using Emacs as his (only) window manager, in place of a desktop environment.&lt;/p&gt;
+
+&lt;p&gt;Watching an experienced person handle his tools emphasises the potential art form behind it, especially when compared to the bumbling of an amateur. Yes, the amateur may get the job done given enough time, and depending on his capabilities - even match the experienced professional&amp;rsquo;s output (eventually).&lt;/p&gt;
+
+&lt;p&gt;However, as experience is gained, the workflows and steps to achieve an optimal result become more lucid. I&amp;rsquo;ve experienced an exponentially increasing and compelling need to implement specific preferences to achieve the required optimized results faster and with fewer mistakes.&lt;/p&gt;
+
+&lt;p&gt;It is therefore obvious that the workflow and tools used must allow the provision to evolve, customise and automate. This is particularly true with respect to the world of data science and programming. I don&amp;rsquo;t think there is anything better than Emacs with respect to customisation.&lt;/p&gt;
+
+&lt;p&gt;Imagine the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;having a combination of scripts or snippets in different languages to jumpstart a project, which is available with a few keypresses? (Yasnippet)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Maintaining a blog with a single document, with articles updated automatically on a status change.&lt;/li&gt;
+&lt;li&gt;working with multiple R environments in a single document. (Org-babel, ESS)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Different Window configurations and processes for different projects that can be called with a few keypresses (hint : keyboard macros)&lt;/li&gt;
+&lt;li&gt;An integrated git porcelain that can actually help you learn git so much faster (magit)&lt;/li&gt;
+&lt;li&gt;Intimately integrating email with tasks, projects and workflows (mu4e, Org-mode)&lt;/li&gt;
+&lt;li&gt;A customised text editor available right in your terminal (Use Emacsclient launched off a daemon)&lt;/li&gt;
+&lt;li&gt;Not requiring to use the damn mouse for everything!&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now : imagine the consolidated effect of having all the above at your disposal, in a reasonably streamlined state! Now think about the cumulative effect over multiple projects.&lt;/p&gt;
+
+&lt;p&gt;Investing in Emacs, is very likely to spawn exponential results in the long run.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;Articles on using Yasnippet: &amp;mdash; &lt;a href=&#34;http://blog.refu.co/?p=1355&#34; target=&#34;_blank&#34;&gt;Using Emacs Yasnippet against repetitive boileplate code&lt;/a&gt; || &lt;a href=&#34;https://jpace.wordpress.com/2012/10/20/tweaking-emacs-snippets/&#34; target=&#34;_blank&#34;&gt;Tweaking Emacs Yasnippet&lt;/a&gt; || &lt;a href=&#34;https://joaotavora.github.io/yasnippet/snippet-expansion.html&#34; target=&#34;_blank&#34;&gt;Expanding snippets&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;Links to using R with Emacs: &lt;a href=&#34;https://www.r-bloggers.com/using-r-with-emacs-and-ess/&#34; target=&#34;_blank&#34;&gt;Using R with Emacs and ESS&lt;/a&gt; || &lt;a href=&#34;https://lucidmanager.org/using-r-with-emacs/&#34; target=&#34;_blank&#34;&gt;Using R with Emacs&lt;/a&gt; || &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/8gr6jt/looking%5Ffor%5Ftips%5Ffrom%5Fr%5Fcoders%5Fwho%5Fuse%5Fess/&#34; target=&#34;_blank&#34;&gt;Tips from R Coders who use ESS&lt;/a&gt; || &lt;a href=&#34;https://thescientificshrimper.wordpress.com/2018/12/12/soapbox-rant-why-i-use-emacs-for-r-programming/&#34; target=&#34;_blank&#34;&gt;Why I use Emacs for R programming&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;See this &lt;a href=&#34;http://rss.slashdot.org/~r/Slashdot/slashdot/~3/7iykh9HdS5U/i-stopped-using-a-computer-mouse-for-a-week-and-it-was-amazing&#34; target=&#34;_blank&#34;&gt;article of a non-technical user&amp;rsquo;s experiment&lt;/a&gt; with not using the mouse, reporting significant gains in speed and productivity. I&amp;rsquo;ve experienced this myself after gaining basic proficiency in moving around Emacs.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
       <link>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
       <pubDate>Sat, 19 Jan 2019 20:02:00 -0700</pubDate>
@@ -183,7 +237,7 @@
     <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
       <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Sat, 19 Jan 2019 19:27:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
@@ -198,7 +252,7 @@
 
 &lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;;; Setting up org-projectile
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Setting up org-projectile
 (require &#39;org-projectile)
 (setq org-projectile-projects-file
       &amp;quot;~/my_org/project-tasks.org&amp;quot;)
@@ -230,7 +284,7 @@
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
       <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Sat, 19 Jan 2019 19:06:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
       <description>
@@ -253,7 +307,7 @@ pandoc notebook.md -o notebook.org
 
 &lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;#+NAME: jupyter-to-org-current
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+NAME: jupyter-to-org-current
 #+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
 #+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
 #+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
@@ -269,12 +323,12 @@ ls
 
 &lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
@@ -383,6 +437,84 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
     </item>
     
     <item>
+      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
+      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
+      <pubDate>Fri, 25 Jan 2019 14:45:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
+      <description>&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(setq org-capture-templates
+&#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
+     &amp;quot;** %? %a &amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(setq org-capture-templates
+    &#39;((&amp;quot;e&amp;quot; &amp;quot;Snippet + Notes&amp;quot; entry ;; &#39;w&#39; for &#39;org-protocol&#39;
+     (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
+     &amp;quot;*** %a, %T\n %:initial&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/capture-content-emacs.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Emacs content capture and buffer split&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
+
+&lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
+
+&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
+
+&lt;p&gt;Additional possibilities:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Further reading:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Howard Abrams has &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/capturing-intro.html&#34; target=&#34;_blank&#34;&gt;some great tips&lt;/a&gt; on customising the org-capture mechanism,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bernt Hansen&amp;rsquo;s comprehensive documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting. &lt;code&gt;lisp (setq split-width-threshold 75) (setq split-height-threshold nil)&lt;/code&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;&lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
       <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
@@ -460,7 +592,7 @@ but this is certainly a workable result. My nascent configuration for
 writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s
 remarkable how much was achieved with a few lines of code!&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(with-eval-after-load &#39;writeroom-mode
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(with-eval-after-load &#39;writeroom-mode
   (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
   (define-key writeroom-mode-map (kbd &amp;quot;C-s-.&amp;quot;) #&#39;writeroom-increase-width)
   (define-key writeroom-mode-map (kbd &amp;quot;C-s-=&amp;quot;) #&#39;writeroom-adjust-width))
@@ -474,6 +606,108 @@ remarkable how much was achieved with a few lines of code!&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li id=&#34;fn:fn-1&#34;&gt;The latest version of IAWriter has a truck load of features and advantages over over the Classic version. I did consider purchasing it, but Emacs won the day. Nevertheless, as a plain vanilla writing app - IAWriter offers much right out of the box.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Searching the awesome-lists on Github</title>
+      <link>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</link>
+      <pubDate>Fri, 25 Jan 2019 14:38:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/</guid>
+      <description>&lt;p&gt;Discovered the glorious awesome lists today on Github. They are
+available through a &lt;a href=&#34;https://github.com/search?utf8=%25E2%259C%2593&amp;amp;q=awesome+list&amp;amp;type=&#34; target=&#34;_blank&#34;&gt;simple search on github&lt;/a&gt;, and contain curated
+lists of resources of all kinds on a multitude of topics.&lt;/p&gt;
+
+&lt;p&gt;As one might expect, there is a lot of common ground between these lists,
+including topics and links.&lt;/p&gt;
+
+&lt;p&gt;How could one search for a keyword through all these repositories?  I
+have always wanted search for particular keywords or code snippets in
+my Emacs configuration files, or in other files in a particular
+location. This is especially to verify if a bit of code or note is
+already available, in another location. Something that looks like this ;):&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/emacs-helm-ag-anim.gif&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Searching for &amp;lsquo;datascience&amp;rsquo; with emacs-helm-ag through a bunch of awesome-lists and other local repositories.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;An answer had been available in &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/why-emacs.html&#34; target=&#34;_blank&#34;&gt;Howard&amp;rsquo;s cool blog post&lt;/a&gt; on why one
+should learn Emacs - in a footnote (!), in which he&amp;rsquo;s mentioned &lt;code&gt;ack&lt;/code&gt;
+and &lt;code&gt;ag&lt;/code&gt; (&lt;a href=&#34;https://github.com/ggreer/the%5Fsilver%5Fsearcher&#34; target=&#34;_blank&#34;&gt;the silver searcher&lt;/a&gt;).&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. It is even possible to
+edit in line with each search.&lt;/p&gt;
+
+&lt;p&gt;The silver searcher github page provides clear examples of how it&amp;rsquo;s
+significantly faster than ack (and similar tools). Further exploration led
+me to the &lt;a href=&#34;https://github.com/syohex/emacs-helm-ag&#34; target=&#34;_blank&#34;&gt;emacs-helm-ag&lt;/a&gt; package, which is a helm interface to &lt;a href=&#34;https://github.com/ggreer/the%5Fsilver%5Fsearcher&#34; target=&#34;_blank&#34;&gt;the
+silver searcher&lt;/a&gt;. Implementing emacs-helm-ag was as simple as adding it
+to my list of packages, and adding a basic setup to my helm
+configuration.[^fn:2]&lt;/p&gt;
+
+&lt;p&gt;As of now, I add packages to &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; using this bit of code that I&amp;rsquo;ve obviously borrowed from the internet, and this case - I&amp;rsquo;m afraid I did not note the source.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Setting up use packages
+;; list the packages you want
+(setq package-list &#39;(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
+
+;;fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
+
+(custom-set-variables
+ &#39;(helm-follow-mode-persistent t))
+
+(require &#39;helm-ag)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is how it looks in action &amp;gt;&amp;gt; Sweet !!&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/helm-ag-emacs.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Notice the search across multiple files. So I&amp;rsquo;ve called &lt;code&gt;require org capture&lt;/code&gt; perhaps more times than necessary.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;[^fn:2]:&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;This is my first animated gif in a blog post! It was tricky! I used the free &lt;a href=&#34;https://itunes.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12&#34; target=&#34;_blank&#34;&gt;GIPHY capture app&lt;/a&gt; on the Mac store.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -1021,85 +1255,6 @@ y &amp;lt;- 7
     </item>
     
     <item>
-      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
-      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
-      <description>
-
-&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
-&#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;** %? %a &amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq org-capture-templates
-    &#39;((&amp;quot;e&amp;quot; &amp;quot;Snippet + Notes&amp;quot; entry ;; &#39;w&#39; for &#39;org-protocol&#39;
-     (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;*** %a, %T\n %:initial&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/capture-content-emacs.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Emacs content capture and buffer split&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup&gt;&lt;a id=&#34;fnr.3&#34; class=&#34;footref&#34; href=&#34;#fn.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
-
-&lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
-
-&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
-
-&lt;p&gt;Additional possibilities:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further reading:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Howard Abrams has &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/capturing-intro.html&#34; target=&#34;_blank&#34;&gt;some great tips&lt;/a&gt; on customising the org-capture mechanism,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bernt Hansen&amp;rsquo;s comprehensive documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(setq split-width-threshold 75)
-(setq split-height-threshold nil)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x&lt;/p&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.3&#34; href=&#34;#fnr.3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>An SSD can breathe life into old computers</title>
       <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
@@ -1144,243 +1299,6 @@ so on, which are more critical.&lt;/p&gt;
 &lt;p&gt;Ultimately, my preference would be to use a Mac as my daily driver and
 play around with Linux on a back up computer. In any case, multiple
 Linux distros can be run on &lt;a href=&#34;https://www.virtualbox.org/&#34; target=&#34;_blank&#34;&gt;Virtual Box&lt;/a&gt; within the Mac.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Switching from Evernote to DEVONtechnologies products</title>
-      <link>https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/ec354a8e-a276-4c89-8560-ce82b1693744/</guid>
-      <description>
-
-&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;https://evernote.com/&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt; since 2014, with over 3k notes of all kinds stored
-in it. Though I did try to capture everything of interest - the
-procedure was never fast or streamlined enough for me. The Evernote
-app runs ridiculously slower on older phones. In particular, being
-used to the speed of Emacs and Org mode - I was mostly displeased with
-the Evernote Mac / Windows apps as well. I ended up using the drafts
-app for writing on iOS devices.&lt;/p&gt;
-
-&lt;p&gt;However, using Evernote was still worth due to the availability of an
-excellent catch-all bucket for multiple kinds of information, that can
-be searched on demand. I could literally whip up important receipts or
-scanned copies of a document and it felt wonderful to have that kind
-of control over your information. This foray was also fueled by the
-deficiencies of Emacs in mobile apps and the ability to store and
-refer to rich content and several file types.&lt;/p&gt;
-
-&lt;h1 id=&#34;switching-to-devonthink-pro-dtp&#34;&gt;Switching to DEVONthink Pro (DTP)&lt;/h1&gt;
-
-&lt;p&gt;I&amp;rsquo;ve recently converted to &lt;a href=&#34;https://www.devontechnologies.com/products/devonthink/overview.html&#34; target=&#34;_blank&#34;&gt;DEVONthink Pro&lt;/a&gt; (DTP). Though DTP is Mac /
-iOS only, I would personally prefer DTP over Evernote. Some advantages
-of DTP:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;blazing fast application response + search on both iOS and Mac.&lt;/li&gt;
-&lt;li&gt;leverages AI to provide interesting connections between notes and
-ideas. Users have leveraged these connections to help generate new
-ideas from unforeseen connections. There&amp;rsquo;s more information &lt;a href=&#34;https://www.devontechnologies.com/technology.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
-
-&lt;ul&gt;
-&lt;li&gt;so far, my experience is that the notes have to be in a particular
-format,I.e one article or principal idea per note to enable a
-sensible matching with other relevant articles. There are several
-incorrect connections also made.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Better control over content organisation.
-
-&lt;ul&gt;
-&lt;li&gt;Project and folder creation, including separate databases for
-different kinds of work.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;One time payment for a major version of the software, along with
-discounted upgrades.&lt;/li&gt;
-&lt;li&gt;Ability to index local folders.&lt;/li&gt;
-&lt;li&gt;using multiple &amp;lsquo;databases&amp;rsquo; customised to any workflow, along with
-the provision of password protection and syncing to multiple sources.&lt;/li&gt;
-&lt;li&gt;ability to confidently store private information based on the
-encryption and custom syncing options available.&lt;/li&gt;
-&lt;li&gt;Ability to store web archives of Linked in posts (or any
-content). This was not always possible with Evernote. The iOS share
-option of clipping to the DEVONthink to go app as a web archive
-works rather well most of the time.&lt;/li&gt;
-&lt;li&gt;The Evernote plug-in for Chrome/ Firefox works relatively slower.&lt;/li&gt;
-&lt;li&gt;connection with DEVONAgent Pro (a fascinating tool dedicated to
-customised and deep web search. More on this on another blog post)&lt;/li&gt;
-&lt;li&gt;Deploy scripts on databases / notes and thus allowing custom
-workflows with particular note categories.&lt;/li&gt;
-&lt;li&gt;DTP can import all your Evernote notes and tags as they are. This
-worked for me in a single attempt.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It&amp;rsquo;s actually hard to quantify the benefits of using DTP. There are a
-myriad of features within, including the ability to index locations
-and script automated workflows.&lt;/p&gt;
-
-&lt;p&gt;For most of the part, I found the speed and response of Evernote to be
-frustrating. It hindered a streamlined workflow. There are also
-additional irritations with respect to the .enex format and being able
-to encrypt information.&lt;/p&gt;
-
-&lt;p&gt;No doubt, the ubiquity of Evernote in almost all the platforms (except
-Linux&lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;) works in its favor. However, the search response with DTP
-is incredibly rapid and the note viewing experience of DTP is
-extremely smooth. This is on an ancient mid 2010 macbook pro!&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s also worth noting that unlike Evernote - I was actually intrigued
-enough to correspond with the technical support team of DTP to
-understand features like indexing a folder, and their responses have
-been prompt and helpful.&lt;/p&gt;
-
-&lt;p&gt;The best place to find up to date information is on the
-&lt;a href=&#34;https://forum.devontechnologies.com/&#34; target=&#34;_blank&#34;&gt;DEVONtechnologies forum&lt;/a&gt;. Even a deep search on the internet does not
-lead to many articles about the DEVONthink technologies products.&lt;/p&gt;
-
-&lt;h1 id=&#34;some-caveats-of-dtp&#34;&gt;Some caveats of DTP&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;DTP does offer all the flexibility above. However the quality of the
-Evernote webclipper&amp;rsquo;s output is better in several cases. The
-uncluttered text grab is not automated well enough. I&amp;rsquo;m yet to
-discover the best pattern.&lt;/li&gt;
-&lt;li&gt;Several apps offer Evernote integration as a premium feature.&lt;/li&gt;
-&lt;li&gt;Evernote offers a more &amp;lsquo;polished&amp;rsquo; and simpler interface and is
-mainstream and available on multiple platforms. The note taking
-editors and capture mechanism is more user friendly.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;devonagent-pro-dap&#34;&gt;DEVONagent Pro (DAP)&lt;/h1&gt;
-
-&lt;p&gt;DAP is an intriguing bit of software that facilitates deep searches of
-the web and developing automated workflows including report
-development. Their algorithm filters searches from any number of
-databases / engines / websites to provide the best matches.&lt;/p&gt;
-
-&lt;p&gt;One could use this to monitor the website of a competitor for news
-announcements. Or crawl Hackernews for the keyword Datascience. It
-appears to be a tool that can provide exactly the information that we
-seek by processing the information out there in the web.&lt;/p&gt;
-
-&lt;p&gt;This includes generation of mind-map esque graphs connecting keywords
-in all the search results. I&amp;rsquo;m yet to explore more, but it is very
-interesting so far, especially to gain an overview of the subject.&lt;/p&gt;
-
-&lt;h1 id=&#34;some-conclusions&#34;&gt;Some Conclusions&lt;/h1&gt;
-
-&lt;p&gt;Exploring DTP in conjunction with DEVONagent Pro is absolutely a
-worthwhile exercise for those relying a lot on information from the
-internet for their jobs and work, and those working in an apple
-eco-system. It has a steep(er) learning curve, but will transform your
-information management. DAP is also a worthy option to explore to deep
-search the web on focused topics.&lt;/p&gt;
-
-&lt;p&gt;Yes, it is mac only software. I have not been able to find any
-equivalent apps on windows. Another reason to stick to the
-Apple-verse.&lt;/p&gt;
-
-&lt;p&gt;The system is addictive and once a good workflow has been built up, it
-would be difficult to use anything else.&lt;/p&gt;
-
-&lt;h1 id=&#34;archiving-interesting-linked-in-posts&#34;&gt;Archiving interesting Linked in posts:&lt;/h1&gt;
-
-&lt;p&gt;One of the most killer features of using the DEVON 2 GO app is the
-ability to capture Linked in posts as web archives. Though not
-optimal, in terms of the format - it is still extremely useful to
-rapidly build up a reference database of web resources.&lt;/p&gt;
-
-&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
-
-&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Nixnote is one solution. I&amp;rsquo;ve seen it in action and it is
-useful, and probably even closer to DEVONthink. However, I could never
-get it working in Arch Linux reliably.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Back to RSS</title>
-      <link>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
-      <description>
-
-&lt;h1 id=&#34;why-use-rss&#34;&gt;Why use RSS?&lt;/h1&gt;
-
-&lt;p&gt;Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with &lt;a href=&#34;https://www.djcbsoftware.nl/code/mu/mu4e.html&#34; target=&#34;_blank&#34;&gt;mu4e&lt;/a&gt; make this easy.&lt;/p&gt;
-
-&lt;p&gt;However, even with all these filters, it is quite difficult to keep on top of news from different sources. At times it is inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s also a nagging feeling that relevant and &amp;lsquo;up to date&amp;rsquo; information is better searched through Google, with a fresh search each time. However, this approach invites distractions.&lt;/p&gt;
-
-&lt;p&gt;The above made me realise that a dedicated &lt;a href=&#34;https://en.m.wikipedia.org/wiki/RSS&#34; target=&#34;_blank&#34;&gt;RSS&lt;/a&gt; reader could inspire focused reading and aid in retention of information, and could be a better option than flooding my inbox.&lt;/p&gt;
-
-&lt;p&gt;An all-in-one solution for reading RSS feeds with a capable in-built browser to view images/webpages/videos would be excellent, along with the ability to sync with multiple services and facilitate capturing notes.&lt;/p&gt;
-
-&lt;h1 id=&#34;exploration&#34;&gt;Exploration:&lt;/h1&gt;
-
-&lt;p&gt;Within Emacs - &lt;a href=&#34;https://github.com/skeeto/elfeed&#34; target=&#34;_blank&#34;&gt;Elfeed&lt;/a&gt; (along with &lt;a href=&#34;https://github.com/algernon/elfeed-goodies&#34; target=&#34;_blank&#34;&gt;Elfeed-goodies&lt;/a&gt;) is a good option to read feeds and is strongly integrated with Emacs and org-mode. A single keypress can be programmed to store a link as a note. Unfortunately, (perhaps due to my age old machine) activating elfeed makes Emacs lag to the extent of being useless. An alternative was necessary for me.&lt;/p&gt;
-
-&lt;p&gt;Side note: As I set up all the feeds on Planet Emacsen, I felt a profound happiness in being able to selectively glance at and process a lot of information quickly and was also able to implement a few configuration tricks found through the feeds. On the contrary, with email - I&amp;rsquo;ve felt somewhat overwhelmed. This prompted me to explore further.&lt;/p&gt;
-
-&lt;p&gt;Though it does not seem to be a mainstream recommendation on reviews like &lt;a href=&#34;https://thesweetsetup.com/apps/best-rss-reader-os-x/&#34; target=&#34;_blank&#34;&gt;the sweet setup&lt;/a&gt; : &lt;a href=&#34;http://www.vienna-rss.com/&#34; target=&#34;_blank&#34;&gt;Vienna&lt;/a&gt; is a reliable solution (open source!) to consider using to browse RSS feeds on the Mac OS. This comes with a caveat - some tinkering is required to get it to sync with a service.&lt;/p&gt;
-
-&lt;p&gt;Vienna has inbuilt share options to share via Buffer or Twitter. Side note: I would recommend using &lt;a href=&#34;https://buffer.com/&#34; target=&#34;_blank&#34;&gt;Buffer&lt;/a&gt; to manage posts on multiple social media sites in a seamless manner. Buffer&amp;rsquo;s free tier should be sufficient for moderate, personal purposes. I use it to post on Twitter and Linked in simultaneously.&lt;/p&gt;
-
-&lt;h2 id=&#34;harvesting-information&#34;&gt;Harvesting information&lt;/h2&gt;
-
-&lt;p&gt;The next consideration was harvesting information of interest from the RSS feeds. If not Emacs, the information has to go to &lt;a href=&#34;https://www.devontechnologies.com/products/devonthink/overview.html&#34; target=&#34;_blank&#34;&gt;DEVONThink Pro&lt;/a&gt; (DTP), which has a handy pull out drawer into which content can be dragged. I was able to just drag and drop the article or text selection into the DTP drawer. This appears as a URL / bookmark in DTP, and can be converted to a formatted note or web archive subsequently. A script could probably accomplish this automatically. That&amp;rsquo;s for a future project.&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/vienna-dtp-drawer.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Screenshot - Vienna + DTP drawer&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;p&gt;Granted, an application external to Emacs (especially without a customisable keyboard driven flow) is not the desirable way to do things. Most websites usually have an RSS feed or email subscription possibility.&lt;/p&gt;
-
-&lt;h2 id=&#34;opting-for-feedly-as-a-susbcription-service-and-rss-app&#34;&gt;Opting for Feedly as a susbcription service and RSS app&lt;/h2&gt;
-
-&lt;p&gt;In the next step, Vienna had to be abandoned as it felt more sensible to opt for a &lt;a href=&#34;https://feedly.com/&#34; target=&#34;_blank&#34;&gt;Feedly&lt;/a&gt; subscription (in order to get going quickly with syncing across devices). The Feedly app turned out to run surprisingly well on my ancient iPad and I can still drag and drop entire articles into DTP which come out to be formatted RTFD files which could be read and highlighted in leisure. While it may be nice to opt for a standalone app in the Mac for RSS feeds, the Feedly app satisfies my needs and is also available cross-platform. Note: I use the excellent &lt;a href=&#34;https://www.goldenhillsoftware.com/unread/&#34; target=&#34;_blank&#34;&gt;Unread app&lt;/a&gt; to read RSS on my newer iPhone.&lt;/p&gt;
-
-&lt;p&gt;Besides the numerous sync options, &lt;a href=&#34;https://feedly.com/&#34; target=&#34;_blank&#34;&gt;Feedly&lt;/a&gt; provides other interesting features in their pro subscription, like setting up Google keyword searching and organising multiple feeds into &amp;lsquo;boards&amp;rsquo;. This will certainly help in enabling some level of filtering. The method of organising sources and opml imports in the mac app is a little clunky and not that intuitive, but it is usable.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-to-cover-them-all&#34;&gt;How to cover them all?&lt;/h2&gt;
-
-&lt;p&gt;With numerous sources available on most topics - a technique to read is of even more importance. Besides leveraging custom boards, it seems the best way to consume content is to rapidly sweep through the titles and the short descriptions, and in parallel skim through articles of interest. If the article (even slightly) feels worth recording and reading in detail, I select the entire article and drag it into DTP via the drawer for a future session.&lt;/p&gt;
-
-&lt;p&gt;I try to deploy DTP as my primary reading app, because of the ability to highlight lines (which are generally available across devices). Besides aiding in skimming the article in the future, it helps me know I&amp;rsquo;ve actually read the article. This is in addition to the core ability to use DTP&amp;rsquo;s AI algorithms in searching through my notes and forming connections between ideas. I also use smart groups that show me the articles captured in the last 1 week, 2 weeks, 3 weeks, which helps me re-visit them in a structured method. The latter works rather well as a memory aid.&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/feedly-dtp-screenshot.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Article captured from Feedly into DTP&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;h1 id=&#34;future-plans&#34;&gt;Future plans?&lt;/h1&gt;
-
-&lt;p&gt;It would be ideal to setup my own server which will process the RSS feeds. Perhaps a Raspberry Pi or something else could be employed. This would be a cost efficient approach for the long term. The DEVONAgent Pro app could be leveraged for deep searches. Web scraping could be performed regularly from a set of links for deeper insight.&lt;/p&gt;
 </description>
     </item>
     

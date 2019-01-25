@@ -128,9 +128,9 @@ As one might expect, there is a lot of common ground between these lists, includ
 How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-04-26T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2019-01-25T14:38:00-07:00">
   
-  <meta property="article:modified_time" content="2018-04-26T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2019-01-25T14:41:58-07:00">
   
 
   
@@ -352,9 +352,11 @@ How could one search for a keyword through all these repositories? I have always
 
   <span class="article-date">
     
-    <meta content="2018-04-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-    <time datetime="2018-04-26 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Apr 26, 2018
+        Last updated on
+    
+    <meta content="2019-01-25 14:38:00 -0700 MST" itemprop="datePublished">
+    <time datetime="2019-01-25 14:41:58 -0700 MST" itemprop="dateModified">
+      Jan 25, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -374,6 +376,19 @@ How could one search for a keyword through all these repositories? I have always
   <a href="/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/#disqus_thread"></a>
   
 
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/emacs/">Emacs</a>, 
+    
+    <a href="/categories/productivity/">Productivity</a>
+    
+  </span>
+  
   
 
   
@@ -446,9 +461,7 @@ How could one search for a keyword through all these repositories? I have always
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<p>Discovered the glorious awesome lists today on Github. They are
+      <p>Discovered the glorious awesome lists today on Github. They are
 available through a <a href="https://github.com/search?utf8=%25E2%259C%2593&amp;q=awesome+list&amp;type=" target="_blank">simple search on github</a>, and contain curated
 lists of resources of all kinds on a multitude of topics.</p>
 
@@ -479,17 +492,41 @@ already available, in another location. Something that looks like this ;):</p>
 
 <p>An answer had been available in <a href="http://www.howardism.org/Technical/Emacs/why-emacs.html" target="_blank">Howard&rsquo;s cool blog post</a> on why one
 should learn Emacs - in a footnote (!), in which he&rsquo;s mentioned <code>ack</code>
-and <code>ag</code> (<a href="https://github.com/ggreer/the_silver_searcher" target="_blank">the silver searcher</a>). <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. It is even possible to
+and <code>ag</code> (<a href="https://github.com/ggreer/the%5Fsilver%5Fsearcher" target="_blank">the silver searcher</a>).&nbsp;<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup>. It is even possible to
 edit in line with each search.</p>
 
 <p>The silver searcher github page provides clear examples of how it&rsquo;s
-significantly faster than ack (and similar). Further exploration led
-me to the <a href="https://github.com/syohex/emacs-helm-ag" target="_blank">emacs-helm-ag</a> package, which is a helm interface to <a href="https://github.com/ggreer/the_silver_searcher" target="_blank">the
+significantly faster than ack (and similar tools). Further exploration led
+me to the <a href="https://github.com/syohex/emacs-helm-ag" target="_blank">emacs-helm-ag</a> package, which is a helm interface to <a href="https://github.com/ggreer/the%5Fsilver%5Fsearcher" target="_blank">the
 silver searcher</a>. Implementing emacs-helm-ag was as simple as adding it
 to my list of packages, and adding a basic setup to my helm
-configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
+configuration.[^fn:2]</p>
 
-<p>Sweet !!</p>
+<p>As of now, I add packages to <a href="https://github.com/jkitchin/scimax" target="_blank">Scimax</a> using this bit of code that I&rsquo;ve obviously borrowed from the internet, and this case - I&rsquo;m afraid I did not note the source.</p>
+
+<pre><code class="language-lisp">;; Setting up use packages
+;; list the packages you want
+(setq package-list '(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
+
+;;fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
+
+(custom-set-variables
+ '(helm-follow-mode-persistent t))
+
+(require 'helm-ag)
+
+</code></pre>
+
+<p>This is how it looks in action &gt;&gt; Sweet !!</p>
 
 
 
@@ -507,32 +544,16 @@ configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
 
 </figure>
 
-<h1 id="footnotes">Footnotes</h1>
+<p>[^fn:2]:</p>
+<div class="footnotes">
 
-<p><sup><a id="fn.1" href="#fnr.1">1</a></sup> This is my first animated gif in a blog post! It was tricky! I used the free <a href="https://itunes.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12" target="_blank">GIPHY capture app</a> on the Mac store.</p>
+<hr />
 
-<p><sup><a id="fn.2" href="#fnr.2">2</a></sup> As of now, I add packages to <a href="https://github.com/jkitchin/scimax" target="_blank">Scimax</a> using this bit of code that I&rsquo;ve obviously borrowed from the internet, and this case - I&rsquo;m afraid I did not note the source.</p>
-
-<pre><code>;; Setting up use packages
-;; list the packages you want
-(setq package-list '(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
-
-;;fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
-
-(custom-set-variables
- '(helm-follow-mode-persistent t))
-
-(require 'helm-ag)
-</code></pre>
+<ol>
+<li id="fn:fn-1">This is my first animated gif in a blog post! It was tricky! I used the free <a href="https://itunes.apple.com/us/app/giphy-capture-the-gif-maker/id668208984?mt=12" target="_blank">GIPHY capture app</a> on the Mac store.
+ <a class="footnote-return" href="#fnref:fn-1"><sup>^</sup></a></li>
+</ol>
+</div>
 
     </div>
 
@@ -541,106 +562,13 @@ configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/emacs/">emacs</a>
-  
-  <a class="badge badge-light" href="/tags/search/">search</a>
-  
-  <a class="badge badge-light" href="/tags/productivity/">productivity</a>
-  
-  <a class="badge badge-light" href="/tags/code/">code</a>
+  <a class="badge badge-light" href="/tags/emacs/">Emacs</a>
   
 </div>
 
 
 
     
-
-
-
-
-
-
-<div class="media author-card" itemscope itemtype="http://schema.org/Person">
-  
-  <img class="portrait mr-3" src="/img/SR-reduced.jpeg" itemprop="image" alt="Avatar">
-  
-  <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="/">Shreyas Ragavan</a></h5>
-    
-    
-    <ul class="network-icon" aria-hidden="true">
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <a itemprop="sameAs" href="mailto:sr@eml.cc" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//linkedin.com/in/shreyasragavan/" >
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//github.com/shrysr" >
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//twitter.com/ShreyasRagavan" >
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-
 
 
     
@@ -650,15 +578,15 @@ configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
       <h3>Related</h3>
       <ul>
         
-        <li><a href="/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/">Getting productive - an exploration into holistic task management</a></li>
+        <li><a href="/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/">Rapidly accessing cheatsheets to learn data science with Emacs</a></li>
         
-        <li><a href="/project/courses-datacamp/courses-datacamp/">Courses @ Datacamp</a></li>
+        <li><a href="/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/">Incremental improvements can lead to significant gains</a></li>
         
-        <li><a href="/project/cfd-post-processing-python/">CFD Post Processing automation</a></li>
+        <li><a href="/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/">Nteract : An interactive computing environment</a></li>
         
-        <li><a href="/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/">Simulation job scheduler</a></li>
+        <li><a href="/post/6953c104-a8b3-4779-aad3-c33032beb111/">Literate Programming - Emacs, Howard Abrams and Library of Babel</a></li>
         
-        <li><a href="/project/kinematic-finger-design/kinematic-design-finger/">Design of an Electro-mechanical prosthetic finger, and a PID controller for the wrist.</a></li>
+        <li><a href="/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">Iosevka - an awesome font for Emacs</a></li>
         
       </ul>
     </div>
@@ -670,13 +598,13 @@ configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/" rel="next">Back to RSS</a>
+    <a href="https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/" rel="next">Iosevka - an awesome font for Emacs</a>
   </div>
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="https://shrysr.github.io/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/" rel="prev">Getting productive - an exploration into holistic task management</a>
+    <a href="https://shrysr.github.io/post/6953c104-a8b3-4779-aad3-c33032beb111/" rel="prev">Literate Programming - Emacs, Howard Abrams and Library of Babel</a>
   </div>
   
 </div>
@@ -791,7 +719,7 @@ configuration.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/emacs-lisp.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
         
       
 
