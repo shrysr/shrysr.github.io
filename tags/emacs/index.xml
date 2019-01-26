@@ -52,6 +52,16 @@ This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces
     </item>
     
     <item>
+      <title>Back to RSS</title>
+      <link>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</link>
+      <pubDate>Sat, 26 Jan 2019 07:51:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
+      <description>Why use RSS? Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with mu4e make this easy.
+Even with all these filters, it is quite difficult to keep on top of news and information from different sources. It is actually inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.</description>
+    </item>
+    
+    <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
       <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
       <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
@@ -121,16 +131,6 @@ How could one search for a keyword through all these repositories? I have always
       <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old.
 In particular, within Emacs - mu4e responds much more quickly and there is significantly less lag in searching / accessing emails and HTML rendering.
 The other advantage of using a Mac over Linux is that installation and setup instructions are more often available out the box for the Mac OS (though this is changing).</description>
-    </item>
-    
-    <item>
-      <title>Back to RSS</title>
-      <link>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
-      <description>Why use RSS? Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with mu4e make this easy.
-However, even with all these filters, it is quite difficult to keep on top of news from different sources. At times it is inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.</description>
     </item>
     
     <item>

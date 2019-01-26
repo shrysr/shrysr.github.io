@@ -33,6 +33,16 @@ My efforts initially started out with a craving for a system to quantify and man
     </item>
     
     <item>
+      <title>Back to RSS</title>
+      <link>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</link>
+      <pubDate>Sat, 26 Jan 2019 07:51:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</guid>
+      <description>Why use RSS? Off late, I had been relying more on email based content consumption. The phenomenally fast search and filtering capabilities that can be leveraged with mu4e make this easy.
+Even with all these filters, it is quite difficult to keep on top of news and information from different sources. It is actually inconvenient to mix important emails and correspondence with newsletters and the like, which arrive by the dozen(s) everyday.</description>
+    </item>
+    
+    <item>
       <title>Iosevka - an awesome font for Emacs</title>
       <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
       <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
