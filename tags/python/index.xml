@@ -1,25 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Shreyas Ragavan</title>
+    <title>python on Shreyas Ragavan</title>
     <link>https://shrysr.github.io/tags/python/</link>
-    <description>Recent content in Python on Shreyas Ragavan</description>
+    <description>Recent content in python on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 14:44:00 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      <title>Courses @ Dataquest</title>
+      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
-Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
+      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
+      <description>Links to certificates of courses completed on Dataquest
+ Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
+  </description>
+    </item>
+    
+    <item>
+      <title>Courses @ Datacamp</title>
+      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
+      <description>Links to certificates of courses completed on Datacamp
+ Intro to SQL
+ Data Science R basics.
+ Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+ Introduction to R for Finance
+  </description>
+    </item>
+    
+    <item>
+      <title>CFD Post Processing automation</title>
+      <link>https://shrysr.github.io/project/cfd-post-processing-python/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfd-post-processing-python/</guid>
+      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
+This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
+    </item>
+    
+    <item>
+      <title>Simulation job scheduler</title>
+      <link>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</link>
+      <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</guid>
+      <description>Scheduler Psuedo-Algorithm   Introduction Code On Github
+Presentation
+Wiki on Github
+This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
+ In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
     </item>
     
   </channel>
