@@ -36,18 +36,18 @@
 
 &lt;ul&gt;
 &lt;li&gt;having a combination of scripts or snippets in different languages to jumpstart a project, which is available with a few keypresses? (Yasnippet)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;Maintaining a blog with a single document, with articles updated automatically on a status change.&lt;/li&gt;
+&lt;li&gt;Maintaining a blog with a single document, with articles updated automatically on a status change. (ox-hugo)&lt;/li&gt;
 &lt;li&gt;working with multiple R environments in a single document. (Org-babel, ESS)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;Different Window configurations and processes for different projects that can be called with a few keypresses (hint : keyboard macros)&lt;/li&gt;
 &lt;li&gt;An integrated git porcelain that can actually help you learn git so much faster (magit)&lt;/li&gt;
-&lt;li&gt;Intimately integrating email with tasks, projects and workflows (mu4e, Org-mode)&lt;/li&gt;
-&lt;li&gt;A customised text editor available right in your terminal (Use Emacsclient launched off a daemon)&lt;/li&gt;
-&lt;li&gt;Not requiring to use the damn mouse for everything!&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Intimately integrating email with tasks, projects, documentation and workflows (mu4e, Org-mode)&lt;/li&gt;
+&lt;li&gt;A customised text editor available right in your terminal (Use Emacsclient launched off a daemon within a terminal)&lt;/li&gt;
+&lt;li&gt;Not requiring to use the mouse for navigation!&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Now : imagine the consolidated effect of having all the above at your disposal, in a reasonably streamlined state! Now think about the cumulative effect over multiple projects.&lt;/p&gt;
+&lt;p&gt;Now : imagine the consolidated effect of having all the above at your disposal, in a reasonably streamlined state. Then, considering the cumulative effect over multiple projects! The above is just a shallow overview of the possibilities with Emacs.&lt;/p&gt;
 
-&lt;p&gt;Investing in Emacs, is very likely to spawn exponential results in the long run.&lt;/p&gt;
+&lt;p&gt;Investing in learning Emacs, has the serious potential to spawn exponential results in the long run.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
