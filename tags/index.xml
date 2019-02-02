@@ -96,7 +96,7 @@
     <item>
       <title>Emacs</title>
       <link>https://shrysr.github.io/tags/emacs/</link>
-      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      <pubDate>Sat, 02 Feb 2019 10:16:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/emacs/</guid>
       <description></description>
@@ -328,6 +328,15 @@
     </item>
     
     <item>
+      <title>lisp</title>
+      <link>https://shrysr.github.io/tags/lisp/</link>
+      <pubDate>Sat, 02 Feb 2019 10:16:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/lisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>note-taking</title>
       <link>https://shrysr.github.io/tags/note-taking/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
@@ -369,6 +378,15 @@
       <pubDate>Sat, 19 Jan 2019 19:22:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yasnippet</title>
+      <link>https://shrysr.github.io/tags/yasnippet/</link>
+      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/yasnippet/</guid>
       <description></description>
     </item>
     

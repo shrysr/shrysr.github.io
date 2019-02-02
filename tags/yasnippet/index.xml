@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yasnippet on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/yasnippet/</link>
+    <description>Recent content in yasnippet on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 25 Jan 2019 14:59:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/yasnippet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why bother with Emacs and workflows?</title>
+      <link>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</link>
+      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</guid>
+      <description>I&amp;rsquo;ve written several posts on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.
+The fact is that knowing Emacs (or Vim), or having a custom configuration is not a wildly marketable skill, nor is it mandatory to achieve spectacular results.</description>
+    </item>
+    
+  </channel>
+</rss>

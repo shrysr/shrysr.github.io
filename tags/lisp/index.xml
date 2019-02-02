@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lisp on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/lisp/</link>
+    <description>Recent content in lisp on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 02 Feb 2019 10:16:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leverage recorded macros to learn elisp and hack together workflows in Emacs</title>
+      <link>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</link>
+      <pubDate>Sat, 02 Feb 2019 10:16:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</guid>
+      <description>The primary power of Emacs is that you can create customised workflows to suit your needs. However, lisp is probably not a language that many learn as a typical requirement in the academic systems, perhaps even for a software engineer.
+How would one then start customisting Emacs? One way would be to hunt for snippets from forums like reddit and stack overflow, and customise them.
+Another easy way to learn a programming language, especially one that is intrinsic to a software is to record macros and edit these macros.</description>
+    </item>
+    
+  </channel>
+</rss>

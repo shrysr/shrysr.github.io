@@ -7,28 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 25 Jan 2019 14:59:00 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 02 Feb 2019 10:16:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Why bother with Emacs and workflows?</title>
-      <link>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</link>
-      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      <title>Leverage recorded macros to learn elisp and hack together workflows in Emacs</title>
+      <link>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</link>
+      <pubDate>Sat, 02 Feb 2019 10:16:00 -0700</pubDate>
       
-      <guid>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</guid>
-      <description>I&amp;rsquo;ve written several posts on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.
-The fact is that knowing Emacs (or Vim), or having a custom configuration is not a wildly marketable skill, nor is it mandatory to achieve spectacular results.</description>
-    </item>
-    
-    <item>
-      <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
-      <link>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
-      <pubDate>Sat, 19 Jan 2019 20:02:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</guid>
-      <description>Matt Dancho&amp;rsquo;s course DSB-101-R is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid level-ups, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.</description>
+      <guid>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</guid>
+      <description>The primary power of Emacs is that you can create customised workflows to suit your needs. However, lisp is probably not a language that many learn as a typical requirement in the academic systems, perhaps even for a software engineer.
+How would one then start customisting Emacs? One way would be to hunt for snippets from forums like reddit and stack overflow, and customise them.
+Another easy way to learn a programming language, especially one that is intrinsic to a software is to record macros and edit these macros.</description>
     </item>
     
     <item>
@@ -49,6 +41,25 @@ My efforts initially started out with a craving for a system to quantify and man
       <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
       <description>A slide deck from Netflix, mentions using Nteract as their programming notebook, and prompted a mini exploration.
 This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces Nteract as an open source, desktop-based, interactive computing application that was designed to overcome a bunch of limitations in Jupyter Notebook&amp;rsquo;s design philosophy. One key difference (among many others) is the ability to execute code in a variety of languages within a single notebook, and it also appears that that the electron based desktop app should make it easier for beginners to start coding.</description>
+    </item>
+    
+    <item>
+      <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
+      <link>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
+      <pubDate>Sat, 02 Feb 2019 10:24:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</guid>
+      <description>Matt Dancho&amp;rsquo;s course DSB-101-R is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid level-ups, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.</description>
+    </item>
+    
+    <item>
+      <title>Why bother with Emacs and workflows?</title>
+      <link>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</link>
+      <pubDate>Fri, 25 Jan 2019 14:59:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</guid>
+      <description>I&amp;rsquo;ve written several posts on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.
+The fact is that knowing Emacs (or Vim), or having a custom configuration is not a wildly marketable skill, nor is it mandatory to achieve spectacular results.</description>
     </item>
     
     <item>
