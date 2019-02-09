@@ -59,11 +59,6 @@ How could one search for a keyword through all these repositories? I have always
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -240,6 +235,25 @@ How could one search for a keyword through all these repositories? I have always
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -281,25 +295,6 @@ How could one search for a keyword through all these repositories? I have always
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -522,29 +517,25 @@ to my list of packages, and adding a basic setup to my helm
 configuration.[^fn:2]</p>
 
 <p>As of now, I add packages to <a href="https://github.com/jkitchin/scimax" target="_blank">Scimax</a> using this bit of code that I&rsquo;ve obviously borrowed from the internet, and this case - I&rsquo;m afraid I did not note the source.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Setting up use packages</span>
+<span style="color:#75715e">;; list the packages you want</span>
+(setq package-list <span style="color:#f92672">&#39;</span>(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
 
-<pre><code class="language-lisp">;; Setting up use packages
-;; list the packages you want
-(setq package-list '(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
-
-;;fetch the list of packages available
+<span style="color:#75715e">;;fetch the list of packages available</span>
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install the missing packages
+<span style="color:#75715e">;; install the missing packages</span>
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
-;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
+<span style="color:#75715e">;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.</span>
 
 (custom-set-variables
- '(helm-follow-mode-persistent t))
+ <span style="color:#f92672">&#39;</span>(helm-follow-mode-persistent <span style="color:#66d9ef">t</span>))
 
-(require 'helm-ag)
-
-</code></pre>
-
+(require <span style="color:#e6db74">&#39;helm-ag</span>)</code></pre></div>
 <p>This is how it looks in action &gt;&gt; Sweet !!</p>
 
 
@@ -729,18 +720,6 @@ configuration.[^fn:2]</p>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -758,8 +737,6 @@ configuration.[^fn:2]</p>
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

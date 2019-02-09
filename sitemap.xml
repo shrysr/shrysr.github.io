@@ -37,7 +37,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</loc>
-      <lastmod>2019-02-02T10:02:25-07:00</lastmod>
+      <lastmod>2019-02-02T16:17:12-07:00</lastmod>
     </url>
     
   
@@ -124,22 +124,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/docs/course-edx-r-fundamentals/</loc>
-      <lastmod>2018-09-09T00:00:00-06:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://shrysr.github.io/docs/r-recipes-notes/</loc>
-      <lastmod>2018-09-09T00:00:00-06:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</loc>
       <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     </url>
@@ -166,6 +150,14 @@
     
       <loc>https://shrysr.github.io/project/course-edx-harvard-r/</loc>
       <lastmod>2018-03-28T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/sr-config/</loc>
+      <lastmod>2019-02-09T06:42:48-07:00</lastmod>
     </url>
     
   
@@ -716,6 +708,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/org/</loc>
+      <lastmod>2019-02-09T06:42:48-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/productivity/</loc>
       <lastmod>2019-01-25T14:44:49-07:00</lastmod>
       <priority>0</priority>
@@ -744,7 +745,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/yasnippet/</loc>
-      <lastmod>2019-02-02T10:02:25-07:00</lastmod>
+      <lastmod>2019-02-02T16:17:12-07:00</lastmod>
       <priority>0</priority>
     </url>
     

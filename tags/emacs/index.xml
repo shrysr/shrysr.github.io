@@ -100,7 +100,7 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
       <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
       <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
-(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
+(setq org-capture-templates &amp;#39;((&amp;#34;l&amp;#34; &amp;#34;Link + notes&amp;#34; entry (file+headline &amp;#34;~/my_org/link_database.</description>
     </item>
     
     <item>
@@ -142,6 +142,18 @@ How could one search for a keyword through all these repositories? I have always
       <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old.
 In particular, within Emacs - mu4e responds much more quickly and there is significantly less lag in searching / accessing emails and HTML rendering.
 The other advantage of using a Mac over Linux is that installation and setup instructions are more often available out the box for the Mac OS (though this is changing).</description>
+    </item>
+    
+    <item>
+      <title>My Emacs configuration</title>
+      <link>https://shrysr.github.io/docs/sr-config/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/sr-config/</guid>
+      <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: https://shrysr.github.io/docs/sr-config/
+ Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
+John Kitchin
+ Scimax specific variables have their own heading to make it &amp;lsquo;easier&amp;rsquo; to experiment with other starter-kits.</description>
     </item>
     
     <item>

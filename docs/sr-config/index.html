@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: https://shrysr.github.io/docs/sr-config/
+ Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
+John Kitchin
+ Scimax specific variables have their own heading to make it &lsquo;easier&rsquo; to experiment with other starter-kits.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/docs/sr-config/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/docs/sr-config/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/docs/sr-config/">
+  <meta property="og:title" content="My Emacs configuration | Shreyas Ragavan">
+  <meta property="og:description" content="Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: https://shrysr.github.io/docs/sr-config/
+ Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
+John Kitchin
+ Scimax specific variables have their own heading to make it &lsquo;easier&rsquo; to experiment with other starter-kits."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-09-10T00:00:00-06:00">
+  
+  <meta property="article:modified_time" content="2019-02-09T06:42:48-07:00">
+  
+
+  
+
+  
+
+  <title>My Emacs configuration | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/docs/sr-config/">Dotemacs</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#this-configuration">This configuration</a></li>
+<li><a href="#other-literate-emacs-configs">Other literate Emacs configs</a></li>
+<li><a href="#os-level-variables">OS Level variables <code>[0/0]</code></a></li>
+<li><a href="#better-defaults">Better defaults</a></li>
+<li><a href="#crypto-setup">Crypto setup</a>
+<ul>
+<li><a href="#github-token-access">github token access</a></li>
+</ul></li>
+<li><a href="#emacs-general-config">Emacs General config</a>
+<ul>
+<li><a href="#remove-trailing-whitespace-at-the-end-of-lines">Remove trailing whitespace at the end of lines</a></li>
+<li><a href="#remove-at-the-start-of-ivy-commands">Remove &lsquo;^&rsquo; at the start of ivy commands</a></li>
+<li><a href="#package-installation">Package installation</a>
+<ul>
+<li><a href="#package-list">Package list</a></li>
+<li><a href="#fetch-and-install-missing-packages">Fetch and install missing packages</a></li>
+</ul></li>
+<li><a href="#switch-window-configuration">Switch-window configuration</a></li>
+<li><a href="#create-intermediate-directories-while-saving-files">Create intermediate directories while saving files</a></li>
+<li><a href="#markdown-config">Markdown config</a></li>
+<li><a href="#shorcuts-and-registers">Shorcuts and registers</a>
+<ul>
+<li><a href="#registers">Registers</a></li>
+<li><a href="#google-this">Google this</a></li>
+<li><a href="#ivy-yasnippet">ivy-yasnippet</a></li>
+<li><a href="#mu4e-related">Mu4e related</a></li>
+<li><a href="#org-related">Org related</a></li>
+</ul></li>
+<li><a href="#yanking-links-in-org-format">yanking links in org format</a></li>
+<li><a href="#export-setup">Export setup</a></li>
+<li><a href="#completed-loading-message">Completed loading message</a></li>
+</ul></li>
+<li><a href="#python">Python <code>[0/2]</code></a>
+<ul>
+<li><a href="#setup-virtual-environment-approach"><span class="org-todo todo TODO">TODO</span> setup virtual environment approach</a></li>
+<li><a href="#setup-conda-especially-for-auto-complete"><span class="org-todo todo TODO">TODO</span> setup conda, especially for auto complete</a></li>
+<li><a href="#general-config">General config</a></li>
+<li><a href="#set-python-interpreter-to-be-jupyter">Set python interpreter to be Jupyter</a></li>
+<li><a href="#auto-pep8">Auto pep8</a></li>
+<li><a href="#autocomplete-for-python-blocks">Autocomplete for python blocks</a></li>
+</ul></li>
+<li><a href="#crux-basic-movement"><span class="org-todo todo TODO">TODO</span> Crux  - basic movement</a></li>
+<li><a href="#dired">Dired</a></li>
+<li><a href="#swiper">Swiper</a></li>
+<li><a href="#easier-selection">Easier selection</a>
+<ul>
+<li><a href="#expand-region"><span class="org-todo todo TODO">TODO</span> Expand region</a></li>
+</ul></li>
+<li><a href="#git-related">git related</a>
+<ul>
+<li><a href="#git-gutter"><span class="org-todo todo TODO">TODO</span> Git gutter</a></li>
+<li><a href="#magit-settings">magit settings</a></li>
+<li><a href="#time-machine-for-git"><span class="org-todo todo TODO">TODO</span> Time machine for git</a></li>
+<li><a href="#completed-loading-message-1">Completed loading message</a></li>
+</ul></li>
+<li><a href="#writeroom-customisations">Writeroom customisations</a></li>
+<li><a href="#ess-configuration">ESS configuration <code>[/]</code></a>
+<ul>
+<li><a href="#set-condition-and-path-for-tad-on-linux"><span class="org-todo todo TODO">TODO</span> Set condition and path for TAD on Linux</a></li>
+</ul></li>
+<li><a href="#polymode">Polymode</a></li>
+<li><a href="#multiple-cursors">Multiple Cursors</a></li>
+<li><a href="#ox-reveal-presentations">ox-reveal - presentations</a></li>
+<li><a href="#org-mode-related">Org-mode related</a>
+<ul>
+<li><a href="#default-org-directory-and-setting-it-as-the-agenda-file-directory">Default org directory and setting it as the agenda file directory</a></li>
+<li><a href="#enabling-org-capture-and-org-protocol"><span class="org-todo todo TODO">TODO</span> Enabling org capture and org protocol</a></li>
+<li><a href="#ensuring-archive-files-are-also-in-org-mode"><span class="org-todo todo TODO">TODO</span> Ensuring archive files are also in org mode</a></li>
+<li><a href="#archiving-mechanics">Archiving mechanics</a></li>
+<li><a href="#org-journal">Org journal</a>
+<ul>
+<li><a href="#figure-out-easy-encryption-approach-for-org-journal"><span class="org-todo todo TODO">TODO</span> Figure out easy encryption approach for org journal</a></li>
+</ul></li>
+<li><a href="#use-org-id-for-storing-objects">Use Org ID for storing objects</a></li>
+<li><a href="#cosmetics-for-org">Cosmetics for org</a>
+<ul>
+<li><a href="#basic-cosmetics-dot-review-and-convert-to-use-package-style"><span class="org-todo todo TODO">TODO</span> Basic cosmetics. Review &amp; Convert to use-package style</a></li>
+<li><a href="#setting-font-faces-for-headline-level">Setting font faces for headline level</a></li>
+<li><a href="#striking-out-done-headlines">Striking out Done headlines</a></li>
+</ul></li>
+<li><a href="#refiling-settings">Refiling settings</a>
+<ul>
+<li><a href="#refile-target-level-for-search">Refile target level for search</a></li>
+<li><a href="#general-refile-settings"><span class="org-todo todo TODO">TODO</span> General refile settings</a></li>
+<li><a href="#also-refer-refiling-hydra--refiling"><a href="#refiling">Also refer Refiling hydra</a></a></li>
+</ul></li>
+<li><a href="#agenda-mechanics">Agenda mechanics</a>
+<ul>
+<li><a href="#weekday-starts-on-monday">Weekday starts on Monday</a></li>
+<li><a href="#display-heading-tags-farther-to-the-right">Display heading tags farther to the right</a></li>
+<li><a href="#agenda-customisation"><span class="org-todo todo TODO">TODO</span> Agenda customisation</a></li>
+<li><a href="#expanding-search-locations">Expanding search locations</a></li>
+<li><a href="#enable-default-fuzzy-search-like-in-google">Enable default fuzzy search like in google</a></li>
+<li><a href="#enable-sticky-agenda">Enable sticky agenda</a></li>
+<li><a href="#org-habit"><span class="org-todo todo TODO">TODO</span> org-habit</a></li>
+</ul></li>
+<li><a href="#capture-mechanics"><span class="org-todo todo TODO">TODO</span> Capture mechanics</a>
+<ul>
+<li><a href="#capture-templates">Capture templates</a></li>
+<li><a href="#hooks-for-capture-frame-control"><span class="org-todo todo TODO">TODO</span> Hooks for capture frame control</a></li>
+</ul></li>
+<li><a href="#version-control-and-backup-of-files"><span class="org-todo todo TODO">TODO</span> version control and backup of files</a></li>
+<li><a href="#include-gpg-files-in-agenda-generation">Include gpg files in agenda generation</a></li>
+<li><a href="#org-noter">org-noter</a></li>
+<li><a href="#persp-projectile"><span class="org-todo todo TODO">TODO</span> Persp-projectile</a></li>
+<li><a href="#org-projectile"><span class="org-todo todo TODO">TODO</span> org-projectile</a></li>
+<li><a href="#org-gcal-customisation"><span class="org-todo todo TODO">TODO</span> org-gcal customisation</a></li>
+<li><a href="#property-customisation"><span class="org-todo todo TODO">TODO</span> Property customisation</a>
+<ul>
+<li><a href="#add-a-created-property-for-org-heading"><span class="org-todo todo TODO">TODO</span> Add a CREATED property for org heading</a></li>
+<li><a href="#enabling-adding-tags-in-the-capture-window">Enabling adding tags in the capture window</a></li>
+</ul></li>
+<li><a href="#org-web-clipper"><span class="org-todo todo TODO">TODO</span> org web clipper</a></li>
+<li><a href="#org-babel">Org-babel</a>
+<ul>
+<li><a href="#loading-language-base">Loading language base</a></li>
+<li><a href="#clojure-and-cider">Clojure and cider</a></li>
+</ul></li>
+<li><a href="#org-trello"><span class="org-todo todo TODO">TODO</span> Org-trello</a></li>
+<li><a href="#loading-completed">Loading completed</a></li>
+</ul></li>
+<li><a href="#helm">Helm</a>
+<ul>
+<li><a href="#setting-helm-to-be-used-for-specific-functions">Setting Helm to be used for specific functions</a></li>
+<li><a href="#persistent-follow-mode-for-helm"><span class="org-todo todo TODO">TODO</span> Persistent follow mode for Helm</a></li>
+<li><a href="#setting-sources-for-helm"><span class="org-todo todo TODO">TODO</span> Setting sources for helm</a></li>
+<li><a href="#helm-ag-and-helm-org-rifle">helm-ag and helm-org-rifle</a></li>
+<li><a href="#helm-swoop">helm-swoop</a></li>
+<li><a href="#loading-completed-1">Loading completed</a></li>
+</ul></li>
+<li><a href="#flycheck">Flycheck</a>
+<ul>
+<li><a href="#basic-config">Basic config</a></li>
+<li><a href="#replacing-flymake-with-flycheck">Replacing flymake with flycheck</a></li>
+</ul></li>
+<li><a href="#scheme-setup">Scheme setup</a></li>
+<li><a href="#hydras">Hydras</a>
+<ul>
+<li><a href="#refiling">Refiling</a></li>
+<li><a href="#helm-do-ag-in-specific-locations">helm-do-ag in specific locations</a>
+<ul>
+<li><a href="#in-project-directory">In project directory</a></li>
+<li><a href="#scimax-config-directory">Scimax config directory</a></li>
+<li><a href="#journal-directory">Journal directory</a></li>
+<li><a href="#bgr-file">BGR file</a></li>
+<li><a href="#defining-hydra">Defining hydra</a></li>
+</ul></li>
+<li><a href="#frame-configurations-fo-magit-and-project-launch">Frame configurations fo magit and project launch</a>
+<ul>
+<li><a href="#scimax-magit-and-windows">Scimax - magit and windows</a></li>
+<li><a href="#org-files-magit-and-windows">Org files - magit and windows</a></li>
+<li><a href="#project-directory-magit-and-windows">Project directory - magit and windows</a></li>
+<li><a href="#project-switch-and-windows">Project: Switch and windows</a></li>
+<li><a href="#defining-hydra-1">Defining Hydra</a></li>
+</ul></li>
+<li><a href="#loading-completed-2">Loading completed</a></li>
+</ul></li>
+<li><a href="#elfeed-customisation">Elfeed customisation</a>
+<ul>
+<li><a href="#elfeed-org-setup">Elfeed-org setup <code>[/]</code></a></li>
+<li><a href="#consider-storing-the-feed-sources-here-in-org-format"><span class="org-todo todo TODO">TODO</span> Consider storing the Feed sources here in org format</a></li>
+<li><a href="#loading-completed-3">Loading completed</a></li>
+</ul></li>
+<li><a href="#w3m-customisation">w3m customisation</a>
+<ul>
+<li><a href="#appending-http-to-web-addresses-entered-by-hand"><span class="org-todo todo TODO">TODO</span> Appending HTTP to web addresses entered by hand</a></li>
+<li><a href="#changing-w3m-shortcuts-for-better-tabbed-browsing">Changing w3m shortcuts for better tabbed browsing</a></li>
+<li><a href="#default-external-browser-settings"><span class="org-todo todo TODO">TODO</span> Default external browser settings</a></li>
+<li><a href="#wikipedia-search">Wikipedia search</a></li>
+<li><a href="#access-hacker-news">Access Hacker News</a></li>
+</ul></li>
+<li><a href="#ediff">ediff</a></li>
+<li><a href="#theme-and-visuals">Theme and visuals</a>
+<ul>
+<li><a href="#emacsclient-or-frame-specific-settings">Emacsclient or frame specific settings</a></li>
+<li><a href="#custom-safe-themes-and-background-change-to-light-grey">Custom Safe themes and Background change to light grey</a></li>
+<li><a href="#font-customisation-based-on-os">Font Customisation based on OS</a></li>
+<li><a href="#visual-fill-column">visual-fill-column</a></li>
+</ul></li>
+<li><a href="#hugo">Hugo</a>
+<ul>
+<li><a href="#function-to-create-specific-properties-for-a-blog-post">Function to create specific properties for a blog post</a>
+<ul>
+<li><a href="#defining-content-directory"><span class="org-todo todo TODO">TODO</span> Defining content directory</a></li>
+<li><a href="#ensuring-properties-exist-and-creating-if-they-dont-exist">Ensuring properties exist and creating if they dont exist</a></li>
+<li><a href="#hugo-function-calling-the-above">Hugo function calling the above</a></li>
+</ul></li>
+<li><a href="#ox-hugo-setup">ox-hugo setup</a></li>
+</ul></li>
+<li><a href="#scimax-customisations">Scimax customisations</a>
+<ul>
+<li><a href="#defining-hotspots">Defining Hotspots</a></li>
+<li><a href="#notebook-directory">Notebook directory</a></li>
+<li><a href="#scimax-notebook">scimax notebook</a></li>
+<li><a href="#python-1">Python</a></li>
+<li><a href="#bibliography-settings-and-customisation"><span class="org-todo todo TODO">TODO</span> Bibliography settings and customisation</a></li>
+<li><a href="#export">Export</a></li>
+</ul></li>
+<li><a href="#project-publishing-setup"><span class="org-todo todo TODO">TODO</span> Project publishing setup <code>[0/2]</code></a>
+<ul>
+<li><a href="#exporting-org-projects"><span class="org-todo todo TODO">TODO</span> Exporting org projects</a></li>
+<li><a href="#function-for-exporting-dotemacs-config"><span class="org-todo todo TODO">TODO</span> Function for exporting dotemacs config</a></li>
+</ul></li>
+<li><a href="#mu4e"><span class="org-todo todo TODO">TODO</span> mu4e</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">My Emacs configuration</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: <a href="https://shrysr.github.io/docs/sr-config/" target="_blank">https://shrysr.github.io/docs/sr-config/</a></p>
+
+<blockquote>
+<p>Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.</p>
+
+<p><a href="https://github.com/jkitchin" target="_blank">John Kitchin</a></p>
+</blockquote>
+
+<p>Scimax specific variables have their own heading to make it &lsquo;easier&rsquo; to experiment with other starter-kits.</p>
+
+<p>The style of documentation is particularly influenced by the <a href="https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org" target="_blank">dotemacs config</a> of <a href="https://github.com/angrybacon" target="_blank">Mathieu Marques</a>, which I found very engaging to read.</p>
+
+<h2 id="this-configuration">This configuration</h2>
+
+<p>Scimax&rsquo;s init calls the <code>user.el</code> script placed in the user folder. The following snippet is placed in <code>user.el</code> to load this org file and then my encrypted personal configuration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Adding some external packages like reveal for presentations</span>
+(add-to-list <span style="color:#e6db74">&#39;load-path</span> <span style="color:#e6db74">&#34;~/scimax/user/external_packages/&#34;</span>)
+
+<span style="color:#75715e">;; Loading this file that you are viewing, which I name sr-config.org</span>
+(org-babel-load-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;sr-config.org&#34;</span> user-emacs-directory))
+
+<span style="color:#75715e">;; Loading secret config containing personal information</span>
+(org-babel-load-file (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;sr-secrets.org.gpg&#34;</span> user-emacs-directory))
+
+(<span style="color:#a6e22e">garbage-collect</span>)</code></pre></div>
+<p>To use this config:</p>
+
+<ol>
+<li>Clone Scimax</li>
+<li>Add the above snippet to <code>user.el</code> in the user directory</li>
+<li>Place this org file the user directory.</li>
+<li>Run the provided script for installing the packages needed for Scimax. Once that is done, <code>user.el</code> will call this org file.</li>
+</ol>
+
+<p>You may need to set :tangle no in the headers for the code snippets that you do not need, and set the location of directories for org files, org agenda etc.</p>
+
+<h2 id="other-literate-emacs-configs">Other literate Emacs configs</h2>
+
+<p>These references were used for exploration and inspiration.</p>
+
+<ol>
+<li><a href="https://karl-voit.at/2017/06/03/emacs-org/" target="_blank">Karl Voit</a></li>
+<li><a href="https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org" target="_blank">Mathieu Marques</a></li>
+<li><a href="https://writequit.org/org/" target="_blank">Lee Hinman</a></li>
+</ol>
+
+<h2 id="os-level-variables">OS Level variables <code>[0/0]</code></h2>
+
+<p>Since I switch between a Linux machine and a Mac frequently, it is better to define variables that can be used to set other variables depending on the OS.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Get current system&#39;s name</span>
+(defun insert-system-name()
+  (interactive)
+  <span style="color:#e6db74">&#34;Get current system&#39;s name&#34;</span>
+  (<span style="color:#a6e22e">insert</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s&#34;</span> <span style="color:#a6e22e">system-name</span>))
+  )
+
+<span style="color:#75715e">;; Get current system type</span>
+(defun insert-system-type()
+  (interactive)
+  <span style="color:#e6db74">&#34;Get current system type&#34;</span>
+  (<span style="color:#a6e22e">insert</span> (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;%s&#34;</span> system-type))
+  )
+
+<span style="color:#75715e">;; Check if system is Darwin/Mac OS X</span>
+(defun system-type-is-darwin ()
+  (interactive)
+  <span style="color:#e6db74">&#34;Return true if system is darwin-based (Mac OS X)&#34;</span>
+  (<span style="color:#a6e22e">string-equal</span> system-type <span style="color:#e6db74">&#34;darwin&#34;</span>)
+  )
+
+<span style="color:#75715e">;; Check if system is GNU/Linux</span>
+(defun system-type-is-gnu ()
+  (interactive)
+  <span style="color:#e6db74">&#34;Return true if system is GNU/Linux-based&#34;</span>
+  (<span style="color:#a6e22e">string-equal</span> system-type <span style="color:#e6db74">&#34;gnu/linux&#34;</span>)
+  )
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Completed OS Level variables load&#34;</span>)</code></pre></div>
+<h2 id="better-defaults">Better defaults</h2>
+
+<p>I need to explore the changed made by this package. For now, it is loaded right in the beginning so that it does not overwrite other customisations down the line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package better-defaults
+  :ensure <span style="color:#66d9ef">t</span>
+)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded better-defaults package&#34;</span>)</code></pre></div>
+<h2 id="crypto-setup">Crypto setup</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq epa-file-encrypt-to <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;shreyas@fastmail.com&#34;</span>))
+(require <span style="color:#e6db74">&#39;org-crypt</span>)
+(add-to-list <span style="color:#e6db74">&#39;org-modules</span> <span style="color:#e6db74">&#39;org-crypt</span>)
+                                        <span style="color:#75715e">; Encrypt all entries before saving</span>
+(org-crypt-use-before-save-magic)
+(setq org-tags-exclude-from-inheritance (quote (<span style="color:#e6db74">&#34;crypt&#34;</span>)))
+                                        <span style="color:#75715e">; GPG key to use for encryption. nil for symmetric encryption</span>
+(setq org-crypt-key <span style="color:#66d9ef">nil</span>)
+(setq org-crypt-disable-auto-save <span style="color:#66d9ef">t</span>)
+(setq org-crypt-tag-matcher <span style="color:#e6db74">&#34;locked&#34;</span>)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded crypto setup&#34;</span>)</code></pre></div>
+<h3 id="github-token-access">github token access</h3>
+
+<p>Source: <a href="https://emacs.stackexchange.com/questions/40994/using-auth-source-with-magit-and-bitbucket" target="_blank">https://emacs.stackexchange.com/questions/40994/using-auth-source-with-magit-and-bitbucket</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq auth-sources <span style="color:#f92672">&#39;</span>((:source <span style="color:#e6db74">&#34;~/.gh.authinfo.gpg&#34;</span>)))
+(setq magit-process-find-password-functions <span style="color:#f92672">&#39;</span>(magit-process-password-auth-source))</code></pre></div>
+<h2 id="emacs-general-config">Emacs General config</h2>
+
+<h3 id="remove-trailing-whitespace-at-the-end-of-lines">Remove trailing whitespace at the end of lines</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook <span style="color:#e6db74">&#39;before-save-hook</span> <span style="color:#e6db74">&#39;delete-trailing-whitespace</span>)</code></pre></div>
+<h3 id="remove-at-the-start-of-ivy-commands">Remove &lsquo;^&rsquo; at the start of ivy commands</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq ivy-initial-inputs-alist <span style="color:#66d9ef">nil</span>)</code></pre></div>
+<h3 id="package-installation">Package installation</h3>
+
+<h4 id="package-list">Package list</h4>
+
+<p>Though the use-package approach is a lot more elegant, I also like to have a list of all my installed packages. In any case, this is more in line with my earlier configurations. As things evolve, I willprobabyl shift fully to the use-package method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq package-list <span style="color:#f92672">&#39;</span>(diminish
+                     org-journal
+                     ztree
+                     org-gcal
+                     w3m
+                     org-trello
+                     org-web-tools
+                     ox-hugo
+                     auto-indent-mode
+                     ob-sql-mode
+                     dash
+                     org-super-agenda
+                     workgroups2
+                     switch-window
+                     ess
+                     ess-R-data-view
+                     interleave
+                     deft
+                     org-bookmark-heading
+                     writeroom-mode
+                     evil
+                     evil-leader
+                     polymode
+                     poly-R
+                     helm-ag
+                     writegood-mode
+                     artbollocks-mode
+                     multiple-cursors
+                     ox-reveal
+                     better-defaults
+                     jedi jedi-core
+                     ag ein
+                     ein-mumamo
+                     ido-vertical-mode
+                     company-jedi
+                     conda
+                     spacemacs-theme
+                     elfeed-goodies
+                     helpful
+                     browse-kill-ring
+                     ivy-yasnippet
+                     speed-type
+                     clojure-mode
+                     cider
+                     helm-dash
+                     org-projectile
+                     bash-completion
+                     elmacro
+                     org-noter
+                     helm-org-rifle
+                     sx define-word))</code></pre></div>
+<h4 id="fetch-and-install-missing-packages">Fetch and install missing packages</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;fetch the list of packages available</span>
+(unless package-archive-contents
+  (package-refresh-contents))
+
+<span style="color:#75715e">;; install the missing packages</span>
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))</code></pre></div>
+<h3 id="switch-window-configuration">Switch-window configuration</h3>
+
+<p>Source link: <a href="https://github.com/dimitri/switch-window" target="_blank">https://github.com/dimitri/switch-window</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package switch-window
+  :config
+  <span style="color:#75715e">;;</span>
+
+  (require <span style="color:#e6db74">&#39;switch-window</span>)
+
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x o&#34;</span>) <span style="color:#e6db74">&#39;switch-window</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 1&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-maximize</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 2&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-split-below</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 3&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-split-right</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 0&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-delete</span>)
+
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 d&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-dired</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 f&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-find-file</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 m&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-compose-mail</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 r&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-find-file-read-only</span>)
+
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 C-f&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-find-file</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 C-o&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-display-buffer</span>)
+
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-x 4 0&#34;</span>) <span style="color:#e6db74">&#39;switch-window-then-kill-buffer</span>)
+
+  <span style="color:#75715e">;; selecting minibuffer</span>
+  (setq switch-window-minibuffer-shortcut <span style="color:#e6db74">?z</span>)
+  )</code></pre></div>
+<h3 id="create-intermediate-directories-while-saving-files">Create intermediate directories while saving files</h3>
+
+<p>Source: <a href="https://superuser.com/questions/131538/can-i-create-directories-that-dont-exist-while-creating-a-new-file-in-emacs" target="_blank">https://superuser.com/questions/131538/can-i-create-directories-that-dont-exist-while-creating-a-new-file-in-emacs</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defadvice find-file (before make-directory-maybe (filename <span style="color:#66d9ef">&amp;optional</span> wildcards) activate)
+  <span style="color:#e6db74">&#34;Create parent directory if not exists while visiting file.&#34;</span>
+  (unless (<span style="color:#a6e22e">file-exists-p</span> filename)
+    (let ((dir (<span style="color:#a6e22e">file-name-directory</span> filename)))
+      (unless (<span style="color:#a6e22e">file-exists-p</span> dir)
+        (make-directory dir)))))</code></pre></div>
+<h3 id="markdown-config">Markdown config</h3>
+
+<p>Setting pandoc as the markdown command for live previews. The default command is <code>markdown</code>, which could be installed as a separate package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq markdown-command <span style="color:#e6db74">&#34;pandoc&#34;</span>)</code></pre></div>
+<h3 id="shorcuts-and-registers">Shorcuts and registers</h3>
+
+<h4 id="registers">Registers</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(set-register <span style="color:#e6db74">?n</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_org/notes.org&#34;</span>))
+(set-register <span style="color:#e6db74">?l</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/application_letters/letter.md&#34;</span>))
+(set-register <span style="color:#e6db74">?k</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/application_letters/Cover_letter_Shreyas_R.pdf&#34;</span>))
+(set-register <span style="color:#e6db74">?p</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/org_cv/CV_Shreyas_Ragavan.pdf&#34;</span>))
+(set-register <span style="color:#e6db74">?r</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/org_cv/CV_Shreyas_Ragavan.org&#34;</span>))
+(set-register <span style="color:#e6db74">?t</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_org/todo-global.org&#34;</span>))
+(set-register <span style="color:#e6db74">?i</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/dotemacs/.emacs.d/new-init.org&#34;</span>))
+(set-register <span style="color:#e6db74">?j</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_org/mrps_canjs.org&#34;</span>))
+(set-register <span style="color:#e6db74">?f</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/scimax/user/sr-cust/&#34;</span>))
+(set-register <span style="color:#e6db74">?d</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_org/datascience.org&#34;</span>))
+(set-register <span style="color:#e6db74">?m</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_org/&#34;</span>))
+(set-register <span style="color:#e6db74">?g</span> (<span style="color:#a6e22e">cons</span> <span style="color:#e6db74">&#39;file</span> <span style="color:#e6db74">&#34;~/my_gits/&#34;</span>))</code></pre></div>
+<h4 id="google-this">Google this</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;M-s g&#34;</span>) <span style="color:#e6db74">&#39;google-this-mode-submap</span>)</code></pre></div>
+<h4 id="ivy-yasnippet">ivy-yasnippet</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;M-i&#34;</span>) <span style="color:#e6db74">&#39;ivy-yasnippet</span>)</code></pre></div>
+<h4 id="mu4e-related">Mu4e related</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;M-s u&#34;</span>) <span style="color:#e6db74">&#39;mu4e-update-mail-and-index</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;M-s m&#34;</span>) <span style="color:#e6db74">&#39;mu4e~headers-jump-to-maildir</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-x m&#34;</span>) <span style="color:#e6db74">&#39;mu4e-compose-new</span>)</code></pre></div>
+<h4 id="org-related">Org related</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;C-x t&#34;</span>) <span style="color:#e6db74">&#39;org-insert-todo-heading</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-c d&#34;</span>) <span style="color:#e6db74">&#39;org-time-stamp</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;M-s s&#34;</span>) <span style="color:#e6db74">&#39;org-save-all-org-buffers</span>)
+(global-set-key (kbd <span style="color:#e6db74">&#34;M-s j&#34;</span>) <span style="color:#e6db74">&#39;org-journal-new-entry</span>)</code></pre></div>
+<h3 id="yanking-links-in-org-format">yanking links in org format</h3>
+
+<p>Source: sacha chua.</p>
+
+<p>Enables inserting a URL into an org document as &lsquo;[<URL>][link]&rsquo; by tapping F6 after copying the URL. This is useful to reduce clutter with long links, and even include links in headings.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/yank-more ()
+  (interactive)
+  (<span style="color:#a6e22e">insert</span> <span style="color:#e6db74">&#34;[[&#34;</span>)
+  (yank)
+  (<span style="color:#a6e22e">insert</span> <span style="color:#e6db74">&#34;][link]]&#34;</span>))
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f6&gt;&#34;</span>) <span style="color:#e6db74">&#39;my/yank-more</span>)</code></pre></div>
+<h3 id="export-setup">Export setup</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;ox-org</span>)</code></pre></div>
+<h3 id="completed-loading-message">Completed loading message</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Emacs general config&#34;</span>)</code></pre></div>
+<h2 id="python">Python <code>[0/2]</code></h2>
+
+<h3 id="setup-virtual-environment-approach"><span class="org-todo todo TODO">TODO</span> setup virtual environment approach</h3>
+
+<h3 id="setup-conda-especially-for-auto-complete"><span class="org-todo todo TODO">TODO</span> setup conda, especially for auto complete</h3>
+
+<h3 id="general-config">General config</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq python-indent-guess-indent-offset <span style="color:#66d9ef">nil</span>)
+(elpy-enable)</code></pre></div>
+<h3 id="set-python-interpreter-to-be-jupyter">Set python interpreter to be Jupyter</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq python-shell-interpreter <span style="color:#e6db74">&#34;jupyter&#34;</span>
+      python-shell-interpreter-args <span style="color:#e6db74">&#34;console --simple-prompt&#34;</span>
+      python-shell-prompt-detect-failure-warning <span style="color:#66d9ef">nil</span>)
+
+(add-to-list <span style="color:#e6db74">&#39;python-shell-completion-native-disabled-interpreters</span>
+             <span style="color:#e6db74">&#34;jupyter&#34;</span>)</code></pre></div>
+<h3 id="auto-pep8">Auto pep8</h3>
+
+<p>Adding hook to enable py-autopep8 with elpy mode.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package py-autopep8
+  :ensure <span style="color:#66d9ef">t</span>
+  :defer <span style="color:#66d9ef">t</span>
+  :config
+  (require <span style="color:#e6db74">&#39;py-autopep8</span>)
+  (add-hook <span style="color:#e6db74">&#39;elpy-mode-hook</span> <span style="color:#e6db74">&#39;py-autopep8-enable-on-save</span>)
+  )</code></pre></div>
+<h3 id="autocomplete-for-python-blocks">Autocomplete for python blocks</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(add-to-list <span style="color:#e6db74">&#39;company-backends</span> <span style="color:#e6db74">&#39;company-ob-ipython</span>)
+(company-mode)</code></pre></div>
+<h2 id="crux-basic-movement"><span class="org-todo todo TODO">TODO</span> Crux  - basic movement</h2>
+
+<p>Source: <a href="https://jamiecollinson.com/blog/my-emacs-config/" target="_blank">https://jamiecollinson.com/blog/my-emacs-config/</a>
+Contains functions from  Prelude. I should check this out in more detail.</p>
+
+<p>Set C-a to move to the first non-whitespace character on a line, and then to toggle between that and the beginning of the line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package crux
+  :ensure <span style="color:#66d9ef">t</span>
+  :bind ((<span style="color:#e6db74">&#34;C-a&#34;</span> <span style="color:#f92672">.</span> crux-move-beginning-of-line)))</code></pre></div>
+<h2 id="dired">Dired</h2>
+
+<p>Source: <a href="https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org" target="_blank">https://github.com/angrybacon/dotemacs/blob/master/dotemacs.org</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package dired
+  :ensure <span style="color:#66d9ef">nil</span>
+  :delight dired-mode <span style="color:#e6db74">&#34;Dired&#34;</span>
+  :preface
+  (defun me/dired-directories-first ()
+    <span style="color:#e6db74">&#34;Sort dired listings with directories first before adding marks.&#34;</span>
+    (save-excursion
+      (let (buffer-read-only)
+        (<span style="color:#a6e22e">forward-line</span> <span style="color:#ae81ff">2</span>)
+        (sort-regexp-fields <span style="color:#66d9ef">t</span> <span style="color:#e6db74">&#34;^.*$&#34;</span> <span style="color:#e6db74">&#34;[ ]*.&#34;</span> (<span style="color:#a6e22e">point</span>) (<span style="color:#a6e22e">point-max</span>)))
+      (<span style="color:#a6e22e">set-buffer-modified-p</span> <span style="color:#66d9ef">nil</span>)))
+  :hook (dired-mode <span style="color:#f92672">.</span> dired-hide-details-mode)
+  :config
+  (advice-add <span style="color:#e6db74">&#39;dired-readin</span> :after <span style="color:#a6e22e">#&#39;</span>me/dired-directories-first)
+  (setq-default
+   dired-auto-revert-buffer <span style="color:#66d9ef">t</span>
+   dired-dwim-target <span style="color:#66d9ef">t</span>
+   dired-hide-details-hide-symlink-targets <span style="color:#66d9ef">nil</span>
+   dired-listing-switches <span style="color:#e6db74">&#34;-alh&#34;</span>
+   dired-ls-F-marks-symlinks <span style="color:#66d9ef">nil</span>
+   dired-recursive-copies <span style="color:#e6db74">&#39;always</span>))
+
+(use-package dired-x
+  :ensure <span style="color:#66d9ef">nil</span>
+  :preface
+  (defun me/dired-revert-after-command (command <span style="color:#66d9ef">&amp;optional</span> output <span style="color:#a6e22e">error</span>)
+    (revert-buffer))
+  :config
+  (advice-add <span style="color:#e6db74">&#39;dired-smart-shell-command</span> :after <span style="color:#a6e22e">#&#39;</span>me/dired-revert-after-command))
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Dired customisation&#34;</span>)</code></pre></div>
+<h2 id="swiper">Swiper</h2>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 16:50] </span></span> <br />
+I use swiper for a general search. However <a href="#helm-swoop">helm-swoop</a> is awesome.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;C-s&#34;</span>) <span style="color:#e6db74">&#39;swiper</span>)
+(setq ivy-display-style <span style="color:#e6db74">&#39;fancy</span>)
+
+<span style="color:#75715e">;; advise swiper to recenter on exit</span>
+(defun bjm-swiper-recenter (<span style="color:#66d9ef">&amp;rest</span> args)
+  <span style="color:#e6db74">&#34;recenter display after swiper&#34;</span>
+  (<span style="color:#a6e22e">recenter</span>)
+  )
+(advice-add <span style="color:#e6db74">&#39;swiper</span> :after <span style="color:#a6e22e">#&#39;</span>bjm-swiper-recenter)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Swiper customisation&#34;</span>)</code></pre></div>
+<h2 id="easier-selection">Easier selection</h2>
+
+<h3 id="expand-region"><span class="org-todo todo TODO">TODO</span> Expand region</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:27]  </span></span>  <br />
+Explore how this works</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package expand-region
+  :ensure <span style="color:#66d9ef">t</span>
+  :bind (<span style="color:#e6db74">&#34;C-=&#34;</span> <span style="color:#f92672">.</span> er/expand-region))
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded easier selection&#34;</span>)</code></pre></div>
+<h2 id="git-related">git related</h2>
+
+<h3 id="git-gutter"><span class="org-todo todo TODO">TODO</span> Git gutter</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:30]  </span></span>  <br />
+Started using this today. It is actually very convenient to quickly view the changes made in the document. There is a function to pop up the changes at that location. I need to learn more about using this tool effectively.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package git-gutter
+  :ensure <span style="color:#66d9ef">t</span>
+  :config
+  (global-git-gutter-mode <span style="color:#e6db74">&#39;t</span>)
+  :diminish git-gutter-mode)</code></pre></div>
+<h3 id="magit-settings">magit settings</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq magit-revert-buffers <span style="color:#e6db74">&#39;silent</span>)</code></pre></div>
+<h3 id="time-machine-for-git"><span class="org-todo todo TODO">TODO</span> Time machine for git</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-08 Fri 13:21] </span></span> <br />
+Launched by <code>M-x git-timemachine</code>, this lets you navigate through the commit history with a single key press! This is especially awesome for tracking changes to a particular snippet of code.</li>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:30]  </span></span>  <br />
+Need to evaluate this. The purpose is for stepping through the history of a file recorded in git. This should be very interesting.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package git-timemachine
+  :ensure <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h3 id="completed-loading-message-1">Completed loading message</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded git related config&#34;</span>)</code></pre></div>
+<h2 id="writeroom-customisations">Writeroom customisations</h2>
+
+<p>The goal is to enable a customised zen writing mode, especially facilitating blog posts and other longer forms of writing. As of now, there are customisations for the width, and calling the art-bollocks mode when writeroom mode is enabled.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(with-eval-after-load <span style="color:#e6db74">&#39;writeroom-mode</span>
+  (<span style="color:#a6e22e">define-key</span> writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-,&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-decrease-width)
+  (<span style="color:#a6e22e">define-key</span> writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-.&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-increase-width)
+  (<span style="color:#a6e22e">define-key</span> writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-=&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-adjust-width))
+
+(advice-add <span style="color:#e6db74">&#39;text-scale-adjust</span> :after
+	    <span style="color:#a6e22e">#&#39;</span>visual-fill-column-adjust)
+
+<span style="color:#75715e">;;  loading artbollocks whenever the writeroom mode is called in particular.</span>
+(<span style="color:#a6e22e">autoload</span> <span style="color:#e6db74">&#39;artbollocks-mode</span> <span style="color:#e6db74">&#34;artbollocks-mode&#34;</span>)
+(add-hook <span style="color:#e6db74">&#39;writeroom-mode-hook</span> <span style="color:#e6db74">&#39;artbollocks-mode</span>)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded writeroom customisations&#34;</span>)</code></pre></div>
+<h2 id="ess-configuration">ESS configuration <code>[/]</code></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Setting up emacs ess and polymode</span>
+(require <span style="color:#e6db74">&#39;ess</span>)
+(require <span style="color:#e6db74">&#39;ess-R-data-view</span>)
+(setq ess-describe-at-point-method <span style="color:#e6db74">&#39;tooltip</span>)
+(setq ess-switch-to-end-of-proc-buffer <span style="color:#66d9ef">t</span>)
+(require <span style="color:#e6db74">&#39;ess-rutils</span>)
+(setq ess-rutils-keys <span style="color:#ae81ff">+1</span>)
+(setq ess-eval-visibly <span style="color:#e6db74">&#39;nowait</span>)
+
+(use-package ess-view
+  :ensure <span style="color:#66d9ef">t</span>
+  :config
+  (if (system-type-is-darwin)
+      (setq ess-view--spreadsheet-program <span style="color:#e6db74">&#34;/Applications/Tad.app/Contents/MacOS/Tad&#34;</span>)
+    ))
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded ESS configuration&#34;</span>)</code></pre></div>
+<h3 id="set-condition-and-path-for-tad-on-linux"><span class="org-todo todo TODO">TODO</span> Set condition and path for TAD on Linux</h3>
+
+<h2 id="polymode">Polymode</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;poly-markdown</span>)
+(require <span style="color:#e6db74">&#39;poly-R</span>)
+
+<span style="color:#75715e">;; MARKDOWN</span>
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.md&#34;</span> <span style="color:#f92672">.</span> poly-markdown-mode))
+
+
+<span style="color:#75715e">;; R modes</span>
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.Snw&#34;</span> <span style="color:#f92672">.</span> poly-noweb+r-mode))
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.Rnw&#34;</span> <span style="color:#f92672">.</span> poly-noweb+r-mode))
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.Rmd&#34;</span> <span style="color:#f92672">.</span> poly-markdown+r-mode))
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded polymode configuration&#34;</span>)</code></pre></div>
+<h2 id="multiple-cursors">Multiple Cursors</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package multiple-cursors
+  :ensure <span style="color:#66d9ef">t</span>
+  :config
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-S-c C-S-c&#34;</span>) <span style="color:#e6db74">&#39;mc/edit-lines</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-&gt;&#34;</span>) <span style="color:#e6db74">&#39;mc/mark-next-like-this</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-&lt;&#34;</span>) <span style="color:#e6db74">&#39;mc/mark-previous-like-this</span>)
+  (global-set-key (kbd <span style="color:#e6db74">&#34;C-c C-&lt;&#34;</span>) <span style="color:#e6db74">&#39;mc/mark-all-like-this</span>)
+  )
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded MC&#34;</span>)</code></pre></div>
+<h2 id="ox-reveal-presentations">ox-reveal - presentations</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package ox-reveal
+  :ensure ox-reveal
+  :config
+  (setq org-reveal-root <span style="color:#e6db74">&#34;http://cdn.jsdelivr.net/reveal.js/3.0.0/&#34;</span>)
+  (setq org-reveal-mathjax <span style="color:#66d9ef">t</span>)
+  )
+
+(use-package htmlize
+  :ensure <span style="color:#66d9ef">t</span>)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded ox-reveal cust&#34;</span>)</code></pre></div>
+<h2 id="org-mode-related">Org-mode related</h2>
+
+<h3 id="default-org-directory-and-setting-it-as-the-agenda-file-directory">Default org directory and setting it as the agenda file directory</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq
+ org-directory <span style="color:#e6db74">&#34;~/my_org/&#34;</span>
+ org-agenda-files <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/my_org/&#34;</span>)
+ )</code></pre></div>
+<h3 id="enabling-org-capture-and-org-protocol"><span class="org-todo todo TODO">TODO</span> Enabling org capture and org protocol</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:55]  </span></span>  <br />
+Need to actually get org-capture via external browser protocol working. Not sure if I need to require org-capture in scimax.</li>
+</ul>
+
+<p>Source: <a href="http://www.diegoberrocal.com/blog/2015/08/19/org-protocol/" target="_blank">http://www.diegoberrocal.com/blog/2015/08/19/org-protocol/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;org-capture</span>)
+(require <span style="color:#e6db74">&#39;org-protocol</span>)</code></pre></div>
+<h3 id="ensuring-archive-files-are-also-in-org-mode"><span class="org-todo todo TODO">TODO</span> Ensuring archive files are also in org mode</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:31]  </span></span>  <br />
+check whether the add-to-list function is sufficient.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook <span style="color:#e6db74">&#39;find-file-hooks</span>
+          (lambda ()
+            (let ((file (<span style="color:#a6e22e">buffer-file-name</span>)))
+              (when (and file (<span style="color:#a6e22e">equal</span> (<span style="color:#a6e22e">file-name-directory</span> file) <span style="color:#e6db74">&#34;~/my_org/archive/&#34;</span>))
+                (org-mode)))))
+
+(add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;\\.org_archive\\&#39;&#34;</span> <span style="color:#f92672">.</span> org-mode))</code></pre></div>
+<h3 id="archiving-mechanics">Archiving mechanics</h3>
+
+<p>Archive organised by Top level headings in the original file and with Tag preservation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my-org-inherited-no-file-tags ()
+  (let ((tags (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;ALLTAGS&#34;</span> <span style="color:#e6db74">&#39;selective</span>))
+        (ltags (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;TAGS&#34;</span>)))
+    (<span style="color:#a6e22e">mapc</span> (lambda (tag)
+            (setq tags
+                  (replace-regexp-in-string (<span style="color:#a6e22e">concat</span> tag <span style="color:#e6db74">&#34;:&#34;</span>) <span style="color:#e6db74">&#34;&#34;</span> tags)))
+          (<span style="color:#a6e22e">append</span> org-file-tags (when ltags (split-string ltags <span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#66d9ef">t</span>))))
+    (if (string= <span style="color:#e6db74">&#34;:&#34;</span> tags) <span style="color:#66d9ef">nil</span> tags)))
+
+(defadvice org-archive-subtree (around my-org-archive-subtree-low-level activate)
+  (let ((tags (my-org-inherited-no-file-tags))
+        (org-archive-location
+         (if (save-excursion (org-back-to-heading)
+                             (<span style="color:#a6e22e">&gt;</span> (org-outline-level) <span style="color:#ae81ff">1</span>))
+             (<span style="color:#a6e22e">concat</span> (<span style="color:#a6e22e">car</span> (split-string org-archive-location <span style="color:#e6db74">&#34;::&#34;</span>))
+                     <span style="color:#e6db74">&#34;::* &#34;</span>
+                     (<span style="color:#a6e22e">car</span> (org-get-outline-path)))
+           org-archive-location)))
+    ad-do-it
+    (with-current-buffer (find-file-noselect (org-extract-archive-file))
+      (save-excursion
+        (while (org-up-heading-safe))
+        (org-set-tags-to tags)))))</code></pre></div>
+<h3 id="org-journal">Org journal</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package org-journal
+  :ensure <span style="color:#66d9ef">t</span>
+  :defer <span style="color:#66d9ef">t</span>
+  :custom
+  (org-journal-dir <span style="color:#e6db74">&#34;~/my_org/journal/&#34;</span>)
+  (org-journal-file-format <span style="color:#e6db74">&#34;%Y%m%d&#34;</span>)
+  (org-journal-enable-agenda-integration <span style="color:#66d9ef">t</span>)
+  (add-to-list <span style="color:#e6db74">&#39;auto-mode-alist</span> <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;.*/[0-9]*$&#34;</span> <span style="color:#f92672">.</span> org-mode))
+  <span style="color:#75715e">;; (org-journal-date-format &#34;%A, %d %B %Y&#34;)</span>
+  <span style="color:#75715e">;; (org-journal-enable-encryption &#39;t)</span>
+  )</code></pre></div>
+<h4 id="figure-out-easy-encryption-approach-for-org-journal"><span class="org-todo todo TODO">TODO</span> Figure out easy encryption approach for org journal</h4>
+
+<h3 id="use-org-id-for-storing-objects">Use Org ID for storing objects</h3>
+
+<p>Using the org id for reference to headings ensures that even if the heading changes, the links will still work.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-id-method (quote uuidgen))</code></pre></div>
+<h3 id="cosmetics-for-org">Cosmetics for org</h3>
+
+<h4 id="basic-cosmetics-dot-review-and-convert-to-use-package-style"><span class="org-todo todo TODO">TODO</span> Basic cosmetics. Review &amp; Convert to use-package style</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:20]  </span></span>  <br />
+These settings have to be cleaned up and the code optimised.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-hide-leading-stars <span style="color:#66d9ef">t</span>)
+<span style="color:#75715e">;;(setq org-alphabetical-lists t)</span>
+(setq org-src-fontify-natively <span style="color:#66d9ef">t</span>)  <span style="color:#75715e">;; you want this to activate coloring in blocks</span>
+(setq org-src-tab-acts-natively <span style="color:#66d9ef">t</span>) <span style="color:#75715e">;; you want this to have completion in blocks</span>
+(setq org-hide-emphasis-markers <span style="color:#66d9ef">t</span>) <span style="color:#75715e">;; to hide the *,=, or / markers</span>
+(setq org-pretty-entities <span style="color:#66d9ef">t</span>)       <span style="color:#75715e">;; to have \alpha, \to and others display as utf8 http://orgmode.org/manual/Special-symbols.html</span>
+
+<span style="color:#75715e">;; Highlighting lines in the agenda, where the cursor is placed.</span>
+(add-hook <span style="color:#e6db74">&#39;org-agenda-mode-hook</span> (lambda () (hl-line-mode <span style="color:#ae81ff">1</span>)))
+
+<span style="color:#75715e">;; Setting up clean indenting below respective headlines at startup. - from the org mode website</span>
+(setq org-startup-indented <span style="color:#66d9ef">t</span>)
+
+<span style="color:#75715e">;; use org bullets from emacsist</span>
+(use-package org-bullets
+  :ensure <span style="color:#66d9ef">t</span>
+  :init
+  :config
+  (add-hook <span style="color:#e6db74">&#39;org-mode-hook</span> (lambda () (org-bullets-mode <span style="color:#ae81ff">1</span>))))</code></pre></div>
+<h4 id="setting-font-faces-for-headline-level">Setting font faces for headline level</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-faces
+ <span style="color:#f92672">&#39;</span>(org-level-1 ((<span style="color:#66d9ef">t</span> (:inherit outline-1 :height <span style="color:#ae81ff">1.5</span>))))
+ <span style="color:#f92672">&#39;</span>(org-level-2 ((<span style="color:#66d9ef">t</span> (:inherit outline-2 :height <span style="color:#ae81ff">1.1</span>))))
+ <span style="color:#f92672">&#39;</span>(org-level-3 ((<span style="color:#66d9ef">t</span> (:inherit outline-3 :height <span style="color:#ae81ff">1.0</span>))))
+ <span style="color:#f92672">&#39;</span>(org-level-4 ((<span style="color:#66d9ef">t</span> (:inherit outline-4 :height <span style="color:#ae81ff">1.0</span>))))
+ <span style="color:#f92672">&#39;</span>(org-level-5 ((<span style="color:#66d9ef">t</span> (:inherit outline-5 :height <span style="color:#ae81ff">1.0</span>))))
+ )</code></pre></div>
+<h4 id="striking-out-done-headlines">Striking out Done headlines</h4>
+
+<p>source: Sacha Chua</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-fontify-done-headline <span style="color:#66d9ef">t</span>)
+(custom-set-faces
+ <span style="color:#f92672">&#39;</span>(org-done ((<span style="color:#66d9ef">t</span> (:foreground <span style="color:#e6db74">&#34;PaleGreen&#34;</span>
+			     :weight normal
+			     :strike-through <span style="color:#66d9ef">t</span>))))
+ <span style="color:#f92672">&#39;</span>(org-headline-done
+   ((((class color) (min-colors <span style="color:#ae81ff">16</span>) (background dark))
+     (:foreground <span style="color:#e6db74">&#34;LightSalmon&#34;</span> :strike-through <span style="color:#66d9ef">t</span>)))))</code></pre></div>
+<h3 id="refiling-settings">Refiling settings</h3>
+
+<h4 id="refile-target-level-for-search">Refile target level for search</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-refile-targets
+      <span style="color:#f92672">&#39;</span>((<span style="color:#66d9ef">nil</span> :maxlevel <span style="color:#f92672">.</span> <span style="color:#ae81ff">4</span>)
+        (org-agenda-files :maxlevel <span style="color:#f92672">.</span> <span style="color:#ae81ff">4</span>)))</code></pre></div>
+<h4 id="general-refile-settings"><span class="org-todo todo TODO">TODO</span> General refile settings</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:33]  </span></span>  <br />
+Needs further review and optimisation</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-refile-use-outline-path <span style="color:#e6db74">&#39;file</span>)
+(setq org-outline-path-complete-in-steps <span style="color:#66d9ef">nil</span>)
+(setq org-reverse-note-order <span style="color:#66d9ef">t</span>)
+(setq org-refile-allow-creating-parent-nodes <span style="color:#e6db74">&#39;confirm</span>)</code></pre></div>
+<h4 id="also-refer-refiling-hydra--refiling"><a href="#refiling">Also refer Refiling hydra</a></h4>
+
+<h3 id="agenda-mechanics">Agenda mechanics</h3>
+
+<h4 id="weekday-starts-on-monday">Weekday starts on Monday</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-start-on-weekday <span style="color:#ae81ff">1</span>)</code></pre></div>
+<h4 id="display-heading-tags-farther-to-the-right">Display heading tags farther to the right</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-tags-column <span style="color:#ae81ff">-150</span>)</code></pre></div>
+<h4 id="agenda-customisation"><span class="org-todo todo TODO">TODO</span> Agenda customisation</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:26]  </span></span>  <br />
+Need to clear up the search functions, enabling complete search in journal files. Archive and some external directories are included, since they are explictly in org mode.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-custom-commands
+      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#e6db74">&#34;Simple agenda view&#34;</span>
+         ((tags <span style="color:#e6db74">&#34;recurr&#34;</span>
+		((org-agenda-overriding-header <span style="color:#e6db74">&#34;Recurring Tasks&#34;</span>)))
+          (agenda <span style="color:#e6db74">&#34;&#34;</span>)
+          (todo <span style="color:#e6db74">&#34;&#34;</span>)))
+        (<span style="color:#e6db74">&#34;o&#34;</span> agenda <span style="color:#e6db74">&#34;Office mode&#34;</span> ((org-agenda-tag-filter-preset <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;-course&#34;</span> <span style="color:#e6db74">&#34;-habit&#34;</span> <span style="color:#e6db74">&#34;-someday&#34;</span> <span style="color:#e6db74">&#34;-book&#34;</span> <span style="color:#e6db74">&#34;-emacs&#34;</span>))))
+        (<span style="color:#e6db74">&#34;qc&#34;</span> tags <span style="color:#e6db74">&#34;+commandment&#34;</span>)
+	(<span style="color:#e6db74">&#34;e&#34;</span> tags <span style="color:#e6db74">&#34;+org&#34;</span>)
+	(<span style="color:#e6db74">&#34;w&#34;</span> agenda <span style="color:#e6db74">&#34;Today&#34;</span> ((org-agenda-tag-filter-preset <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;+work&#34;</span>))))
+	(<span style="color:#e6db74">&#34;W&#34;</span> todo-tree <span style="color:#e6db74">&#34;WAITING&#34;</span>)
+	(<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Custom queries&#34;</span>) <span style="color:#75715e">;; gives label to &#34;q&#34;</span>
+	(<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;ds related&#34;</span>)	 <span style="color:#75715e">;; gives label to &#34;d&#34;</span>
+	(<span style="color:#e6db74">&#34;ds&#34;</span> agenda <span style="color:#e6db74">&#34;Datascience&#34;</span> ((org-agenda-tag-filter-preset <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;+datascience&#34;</span>))))
+	(<span style="color:#e6db74">&#34;qw&#34;</span> agenda <span style="color:#e6db74">&#34;MRPS&#34;</span> ((org-agenda-tag-filter-preset <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;+canjs&#34;</span>))))
+	(<span style="color:#e6db74">&#34;qa&#34;</span> <span style="color:#e6db74">&#34;Archive tags search&#34;</span> org-tags-view <span style="color:#e6db74">&#34;&#34;</span>
+         ((org-agenda-files (file-expand-wildcards <span style="color:#e6db74">&#34;~/my_org/*.org*&#34;</span>))))
+        (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#34;Journal Search&#34;</span> search <span style="color:#e6db74">&#34;&#34;</span>
+         <span style="color:#f92672">&#39;&#39;</span>((org-agenda-text-search-extra-files (file-expand-wildcards <span style="color:#e6db74">&#34;~/my_org/journal/&#34;</span>))))
+        (<span style="color:#e6db74">&#34;S&#34;</span> search <span style="color:#e6db74">&#34;&#34;</span>
+	 ((org-agenda-files <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/my_org/&#34;</span>))
+	  (org-agenda-text-search-extra-files )))
+	)
+      )</code></pre></div>
+<h4 id="expanding-search-locations">Expanding search locations</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-text-search-extra-files (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;append</span>
+						(<span style="color:#a6e22e">mapcar</span>
+						 (lambda (directory)
+						   (directory-files-recursively
+						    directory org-agenda-file-regexp))
+						 <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/my_org/journal/&#34;</span> <span style="color:#e6db74">&#34;~/my_org/zeeco_archive/&#34;</span> <span style="color:#e6db74">&#34;~/my_projects/&#34;</span> ))))</code></pre></div>
+<ul>
+<li><dl>
+<dt><span class="org-todo todo TODO">TODO</span>  Adding org archive for text search. Optimise this</dt>
+</dl>
+
+<p>:CREATED:  <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-02-07 Thu 08:29&gt;</span></span></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-text-search-extra-files <span style="color:#f92672">&#39;</span>(agenda-archives))</code></pre></div></li>
+</ul>
+
+<h4 id="enable-default-fuzzy-search-like-in-google">Enable default fuzzy search like in google</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-search-view-always-boolean <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h4 id="enable-sticky-agenda">Enable sticky agenda</h4>
+
+<p>Experimenting with this setting.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-agenda-sticky <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h4 id="org-habit"><span class="org-todo todo TODO">TODO</span> org-habit</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:50] </span></span> <br />
+Appears the use-package config for org-habit is not correct and there is some issue in downloading it as a package.</li>
+</ul>
+
+<p>I want to shift the org habit graph in the agenda further out right so as to leave enough room for the headings to be visible.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-habit-graph-column <span style="color:#ae81ff">90</span>)</code></pre></div>
+<h3 id="capture-mechanics"><span class="org-todo todo TODO">TODO</span> Capture mechanics</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:24]  </span></span>  <br />
+need to clean this up.</li>
+</ul>
+
+<h4 id="capture-templates">Capture templates</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-capture-templates
+      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#34;Task entry&#34;</span>)
+        (<span style="color:#e6db74">&#34;tt&#34;</span> <span style="color:#e6db74">&#34;Todo - Fast&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/todo-global.org&#34;</span> <span style="color:#e6db74">&#34;--Inbox&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO %?&#34;</span>)
+        (<span style="color:#e6db74">&#34;tb&#34;</span> <span style="color:#e6db74">&#34;Todo -BGR&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/bgr.org&#34;</span> <span style="color:#e6db74">&#34;#BGR #Inbox&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO %?&#34;</span>)
+        (<span style="color:#e6db74">&#34;te&#34;</span> <span style="color:#e6db74">&#34;Todo - Emacs&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/todo-global.org&#34;</span> <span style="color:#e6db74">&#34;;Emacs stuff&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO %?&#34;</span>)
+	(<span style="color:#e6db74">&#34;tm&#34;</span> <span style="color:#e6db74">&#34;Mail Link Todo&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/todo-global.org&#34;</span> <span style="color:#e6db74">&#34;--Inbox&#34;</span>)
+	 <span style="color:#e6db74">&#34;** TODO Mail: %a &#34;</span>)
+        (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#e6db74">&#34;Link/Snippet&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/link_database.org&#34;</span> <span style="color:#e6db74">&#34;.UL Unfiled Links&#34;</span>)
+         <span style="color:#e6db74">&#34;** %? %a &#34;</span>)
+        (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#e6db74">&#34;Protocol info&#34;</span> entry <span style="color:#75715e">;; &#39;w&#39; for &#39;org-protocol&#39;</span>
+         (file+headline <span style="color:#e6db74">&#34;~/my_org/link_database.org&#34;</span> <span style="color:#e6db74">&#34;.UL Unfiled Links&#34;</span>)
+         <span style="color:#e6db74">&#34;*** %a, %T\n %:initial&#34;</span>)
+        (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#e6db74">&#34;Notes&#34;</span>)
+        (<span style="color:#e6db74">&#34;ne&#34;</span> <span style="color:#e6db74">&#34;Emacs note&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/todo-global.org&#34;</span> <span style="color:#e6db74">&#34;;Emacs stuff&#34;</span>)
+         <span style="color:#e6db74">&#34;** %?&#34;</span>)
+        (<span style="color:#e6db74">&#34;nn&#34;</span> <span style="color:#e6db74">&#34;General note&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/notes.org&#34;</span> <span style="color:#e6db74">&#34;.NOTES&#34;</span>)
+         <span style="color:#e6db74">&#34;** %?&#34;</span>)
+        (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#e6db74">&#34;Note&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/notes.org&#34;</span> <span style="color:#e6db74">&#34;.NOTES&#34;</span>)
+         <span style="color:#e6db74">&#34;** %?&#34;</span>)
+        (<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#34;BGR stuff&#34;</span>)
+        (<span style="color:#e6db74">&#34;bi&#34;</span> <span style="color:#e6db74">&#34;Inventory project&#34;</span>)
+        (<span style="color:#e6db74">&#34;bil&#34;</span> <span style="color:#e6db74">&#34;Daily log&#34;</span> entry (file+olp+datetree <span style="color:#e6db74">&#34;~/my_org/bgr.org&#34;</span> <span style="color:#e6db74">&#34;Inventory management Project&#34;</span>) <span style="color:#e6db74">&#34;** %? %i&#34;</span>)
+        (<span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#e6db74">&#34;Commandment&#34;</span> entry (file+datetree <span style="color:#e6db74">&#34;~/my_org/lifebook.org&#34;</span> <span style="color:#e6db74">&#34;&#34;</span>)
+         <span style="color:#e6db74">&#34;** %? %i %T :commandment:&#34;</span>)
+        (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#e6db74">&#34;canjs&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/mrps_canjs.org&#34;</span> <span style="color:#e6db74">&#34;MRPS #CANJS&#34;</span>)
+         <span style="color:#e6db74">&#34;** TODO %? %i %T&#34;</span>)
+        (<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#34;Self Reflection&#34;</span> entry (file+datetree <span style="color:#e6db74">&#34;~/my_org/lifebook.org&#34;</span> <span style="color:#e6db74">&#34;&#34;</span>)
+         <span style="color:#e6db74">&#34;b** %? %i %T :self_reflection:&#34;</span>)
+        (<span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#e6db74">&#34;Website&#34;</span> plain
+         (function org-website-clipper)
+         <span style="color:#e6db74">&#34;* %a %T\n&#34;</span> :immediate-finish <span style="color:#66d9ef">t</span>)
+        (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#34;Journal Note&#34;</span>  plain (function get-journal-file-today) <span style="color:#e6db74">&#34;* Event: %?\n\n  %i\n\n  &#34;</span> :empty-lines <span style="color:#ae81ff">1</span>)
+        (<span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#e6db74">&#34;Whole article capture&#34;</span> entry
+         (file+headline <span style="color:#e6db74">&#34;~/my_org/full_article_archive.org&#34;</span> <span style="color:#e6db74">&#34;&#34;</span> :empty-lines <span style="color:#ae81ff">1</span>)
+         <span style="color:#e6db74">&#34;** %a, %T\n %:initial&#34;</span> :empty-lines <span style="color:#ae81ff">1</span>)
+        (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#e6db74">&#34;Datascience stuff&#34;</span>)
+        (<span style="color:#e6db74">&#34;dt&#34;</span> <span style="color:#e6db74">&#34;Datascience inbox&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/datascience.org&#34;</span> <span style="color:#e6db74">&#34;@Datascience @Inbox&#34;</span>)
+         <span style="color:#e6db74">&#34;** TODO %? %T&#34;</span>)
+        (<span style="color:#e6db74">&#34;dn&#34;</span> <span style="color:#e6db74">&#34;Datascience note&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/my_org/datascience.org&#34;</span> <span style="color:#e6db74">&#34;@Datascience @Notes&#34;</span>)
+         <span style="color:#e6db74">&#34;** %? %T&#34;</span>)
+        ))</code></pre></div>
+<h4 id="hooks-for-capture-frame-control"><span class="org-todo todo TODO">TODO</span> Hooks for capture frame control</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:53]  </span></span>  <br />
+Needs further review.</li>
+</ul>
+
+<p>Source: <a href="http://stackoverflow.com/questions/23517372/hook-or-advice-when-aborting-org-capture-before-template-selection" target="_blank">http://stackoverflow.com/questions/23517372/hook-or-advice-when-aborting-org-capture-before-template-selection</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defadvice org-capture
+    (after make-full-window-frame activate)
+  <span style="color:#e6db74">&#34;Advise capture to be the only window when used as a popup&#34;</span>
+  (if (<span style="color:#a6e22e">equal</span> <span style="color:#e6db74">&#34;emacs-capture&#34;</span> (<span style="color:#a6e22e">frame-parameter</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;name</span>))
+      (delete-other-windows)))
+
+(defadvice org-capture-finalize
+    (after delete-capture-frame activate)
+  <span style="color:#e6db74">&#34;Advise capture-finalize to close the frame&#34;</span>
+  (if (<span style="color:#a6e22e">equal</span> <span style="color:#e6db74">&#34;emacs-capture&#34;</span> (<span style="color:#a6e22e">frame-parameter</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#39;name</span>))
+      (<span style="color:#a6e22e">delete-frame</span>)))</code></pre></div>
+<h3 id="version-control-and-backup-of-files"><span class="org-todo todo TODO">TODO</span> version control and backup of files</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:15]  </span></span>  <br />
+Need to check out how this works and whether this is still necessary, since I am using Git.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq delete-old-versions <span style="color:#ae81ff">-1</span>)
+(setq version-control <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h3 id="include-gpg-files-in-agenda-generation">Include gpg files in agenda generation</h3>
+
+<p>Source: <a href="https://emacs.stackexchange.com/questions/36542/include-org-gpg-files-in-org-agenda" target="_blank">https://emacs.stackexchange.com/questions/36542/include-org-gpg-files-in-org-agenda</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(unless (string-match-p <span style="color:#e6db74">&#34;\\.gpg&#34;</span> org-agenda-file-regexp)
+  (setq org-agenda-file-regexp
+        (replace-regexp-in-string <span style="color:#e6db74">&#34;\\\\\\.org&#34;</span> <span style="color:#e6db74">&#34;\\\\.org\\\\(\\\\.gpg\\\\)?&#34;</span>
+                                  org-agenda-file-regexp)))</code></pre></div>
+<h3 id="org-noter">org-noter</h3>
+
+<blockquote>
+<p>Org-noter’s purpose is to let you create notes that are kept in sync when you scroll through the document, but that are external to it - the notes themselves live in an Org-mode file. As such, this leverages the power of Org-mode (the notes may have outlines, latex fragments, babel, etc…) while acting like notes that are made inside the document. Also, taking notes is very simple: just press i and annotate away!</p>
+
+<p><a href="https://github.com/weirdNox" target="_blank">Gonçalo Santos</a></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq org-noter-set-auto-save-last-location <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h3 id="persp-projectile"><span class="org-todo todo TODO">TODO</span> Persp-projectile</h3>
+
+<p><a href="https://github.com/howardabrams/dot-files/blob/master/emacs.org#perspective" target="_blank">Refer Howard&rsquo;s config snippet</a> to setup a test.</p>
+
+<h3 id="org-projectile"><span class="org-todo todo TODO">TODO</span> org-projectile</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:42]  </span></span>  <br />
+need to optimise further and convert to use-package style. Also need a way to capture Notes from projects, in addition to tasks.</li>
+</ul>
+
+<p>Starting off with the basic configuration posted in org-projectile github repo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;org-projectile</span>)
+
+(setq org-projectile-projects-file
+      <span style="color:#e6db74">&#34;~/my_org/project-tasks.org&#34;</span>)
+(push (org-projectile-project-todo-entry) org-capture-templates)
+
+<span style="color:#75715e">;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))</span>
+<span style="color:#75715e">;; Excluding the above since the entire my_org directory is already included in the agenda</span>
+
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-c n p&#34;</span>) <span style="color:#e6db74">&#39;org-projectile-project-todo-completing-read</span>)</code></pre></div>
+<h3 id="org-gcal-customisation"><span class="org-todo todo TODO">TODO</span> org-gcal customisation</h3>
+
+<h3 id="property-customisation"><span class="org-todo todo TODO">TODO</span> Property customisation</h3>
+
+<h4 id="add-a-created-property-for-org-heading"><span class="org-todo todo TODO">TODO</span> Add a CREATED property for org heading</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:10]  </span></span>  <br />
+Needs further review and optimisation.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;org-expiry</span>)
+<span style="color:#75715e">;; Configure it a bit to my liking</span>
+(setq
+ org-expiry-created-property-name <span style="color:#e6db74">&#34;CREATED&#34;</span> <span style="color:#75715e">; Name of property when an item is created</span>
+ org-expiry-inactive-timestamps   <span style="color:#66d9ef">nil</span>         <span style="color:#75715e">; Don&#39;t have everything in the agenda view</span>
+ )
+
+(defun mrb/insert-created-timestamp()
+  <span style="color:#e6db74">&#34;Insert a CREATED property using org-expiry.el for TODO entries&#34;</span>
+  (org-expiry-insert-created)
+  (org-back-to-heading)
+  (org-end-of-line)
+  (<span style="color:#a6e22e">insert</span> <span style="color:#e6db74">&#34; &#34;</span>)
+  )
+
+<span style="color:#75715e">;; Whenever a TODO entry is created, I want a timestamp</span>
+<span style="color:#75715e">;; Advice org-insert-todo-heading to insert a created timestamp using org-expiry</span>
+(defadvice org-insert-todo-heading (after mrb/created-timestamp-advice activate)
+  <span style="color:#e6db74">&#34;Insert a CREATED property using org-expiry.el for TODO entries&#34;</span>
+  (mrb/insert-created-timestamp)
+  )
+<span style="color:#75715e">;; Make it active</span>
+(ad-activate <span style="color:#e6db74">&#39;org-insert-todo-heading</span>)
+
+(require <span style="color:#e6db74">&#39;org-capture</span>)
+
+(defadvice org-capture (after mrb/created-timestamp-advice activate)
+  <span style="color:#e6db74">&#34;Insert a CREATED property using org-expiry.el for TODO entries&#34;</span>
+   					<span style="color:#75715e">; Test if the captured entry is a TODO, if so insert the created</span>
+   					<span style="color:#75715e">; timestamp property, otherwise ignore</span>
+  (mrb/insert-created-timestamp))
+<span style="color:#75715e">;;  (when (member (org-get-todo-state) org-todo-keywords-1)</span>
+<span style="color:#75715e">;;    (mrb/insert-created-timestamp)))</span>
+  (ad-activate <span style="color:#e6db74">&#39;org-capture</span>)</code></pre></div>
+<h4 id="enabling-adding-tags-in-the-capture-window">Enabling adding tags in the capture window</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Add feature to allow easy adding of tags in a capture window</span>
+(defun mrb/add-tags-in-capture()
+  (interactive)
+  <span style="color:#e6db74">&#34;Insert tags in a capture window without losing the point&#34;</span>
+  (save-excursion
+    (org-back-to-heading)
+    (org-set-tags)))
+<span style="color:#75715e">;; Bind this to a reasonable key</span>
+(<span style="color:#a6e22e">define-key</span> org-capture-mode-map <span style="color:#e6db74">&#34;\C-c\C-t&#34;</span> <span style="color:#e6db74">&#39;mrb/add-tags-in-capture</span>)</code></pre></div>
+<h3 id="org-web-clipper"><span class="org-todo todo TODO">TODO</span> org web clipper</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:11]  </span></span>  <br />
+This works fine now. However, it would be nice to find a way to strip the headers and menu columns and other unnecessary information before capture.</li>
+</ul>
+
+<p>Source: <a href="http://www.bobnewell.net/publish/35years/webclipper.html" target="_blank">http://www.bobnewell.net/publish/35years/webclipper.html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; org-eww and org-w3m should be in your org distribution, but see</span>
+<span style="color:#75715e">;; note below on patch level of org-eww.</span>
+(require <span style="color:#e6db74">&#39;org-eww</span>)
+(require <span style="color:#e6db74">&#39;org-w3m</span>)
+(defvar org-website-page-archive-file <span style="color:#e6db74">&#34;~/my_org/full_article_archive.org&#34;</span>)
+(defun org-website-clipper ()
+  <span style="color:#e6db74">&#34;When capturing a website page, go to the right place in capture file,
+</span><span style="color:#e6db74">   but do sneaky things. Because it&#39;s a w3m or eww page, we go
+</span><span style="color:#e6db74">   ahead and insert the fixed-up page content, as I don&#39;t see a
+</span><span style="color:#e6db74">   good way to do that from an org-capture template alone. Requires
+</span><span style="color:#e6db74">   Emacs 25 and the 2017-02-12 or later patched version of org-eww.el.&#34;</span>
+  (interactive)
+
+  <span style="color:#75715e">;; Check for acceptable major mode (w3m or eww) and set up a couple of</span>
+  <span style="color:#75715e">;; browser specific values. Error if unknown mode.</span>
+
+  (cond
+   ((<span style="color:#a6e22e">eq</span> major-mode <span style="color:#e6db74">&#39;w3m-mode</span>)
+    (org-w3m-copy-for-org-mode))
+   ((<span style="color:#a6e22e">eq</span> major-mode <span style="color:#e6db74">&#39;eww-mode</span>)
+    (org-eww-copy-for-org-mode))
+   (<span style="color:#66d9ef">t</span>
+    (<span style="color:#a6e22e">error</span> <span style="color:#e6db74">&#34;Not valid -- must be in w3m or eww mode&#34;</span>)))
+
+  <span style="color:#75715e">;; Check if we have a full path to the archive file.</span>
+  <span style="color:#75715e">;; Create any missing directories.</span>
+
+  (unless (<span style="color:#a6e22e">file-exists-p</span> org-website-page-archive-file)
+    (let ((dir (<span style="color:#a6e22e">file-name-directory</span> org-website-page-archive-file)))
+      (unless (<span style="color:#a6e22e">file-exists-p</span> dir)
+        (make-directory dir))))
+
+  <span style="color:#75715e">;; Open the archive file and yank in the content.</span>
+  <span style="color:#75715e">;; Headers are fixed up later by org-capture.</span>
+
+  (find-file org-website-page-archive-file)
+  (<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-max</span>))
+  <span style="color:#75715e">;; Leave a blank line for org-capture to fill in</span>
+  <span style="color:#75715e">;; with a timestamp, URL, etc.</span>
+  (<span style="color:#a6e22e">insert</span> <span style="color:#e6db74">&#34;\n\n&#34;</span>)
+  <span style="color:#75715e">;; Insert the web content but keep our place.</span>
+  (save-excursion (yank))
+  <span style="color:#75715e">;; Don&#39;t keep the page info on the kill ring.</span>
+  <span style="color:#75715e">;; Also fix the yank pointer.</span>
+  (setq kill-ring (<span style="color:#a6e22e">cdr</span> kill-ring))
+  (setq kill-ring-yank-pointer kill-ring)
+  <span style="color:#75715e">;; Final repositioning.</span>
+  (<span style="color:#a6e22e">forward-line</span> <span style="color:#ae81ff">-1</span>)
+  )</code></pre></div>
+<h3 id="org-babel">Org-babel</h3>
+
+<h4 id="loading-language-base">Loading language base</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(org-babel-do-load-languages
+ <span style="color:#e6db74">&#39;org-babel-load-languages</span>
+ <span style="color:#f92672">&#39;</span>((clojure <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+   (scheme <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>))
+ )</code></pre></div>
+<h4 id="clojure-and-cider">Clojure and cider</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;cider</span>)
+(setq org-babel-clojure-backend <span style="color:#e6db74">&#39;cider</span>)</code></pre></div>
+<h3 id="org-trello"><span class="org-todo todo TODO">TODO</span> Org-trello</h3>
+
+<h3 id="loading-completed">Loading completed</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded org customisations&#34;</span>)</code></pre></div>
+<h2 id="helm">Helm</h2>
+
+<h3 id="setting-helm-to-be-used-for-specific-functions">Setting Helm to be used for specific functions</h3>
+
+<p>I prefer using Helm for specific functions like M-x, find files and bookmarks and switching buffers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Setting Helm as preferred package to use</span>
+(global-set-key (kbd <span style="color:#e6db74">&#34;M-x&#34;</span>) <span style="color:#a6e22e">#&#39;</span>helm-M-x)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-x r b&#34;</span>) <span style="color:#a6e22e">#&#39;</span>helm-filtered-bookmarks)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-x C-f&#34;</span>) <span style="color:#a6e22e">#&#39;</span>helm-find-files)
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-x b&#34;</span>) <span style="color:#a6e22e">#&#39;</span>helm-mini)</code></pre></div>
+<h3 id="persistent-follow-mode-for-helm"><span class="org-todo todo TODO">TODO</span> Persistent follow mode for Helm</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 07:46]  </span></span>  <br />
+Need to find exactly what this does</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(custom-set-variables
+ <span style="color:#f92672">&#39;</span>(helm-follow-mode-persistent <span style="color:#66d9ef">t</span>))</code></pre></div>
+<h3 id="setting-sources-for-helm"><span class="org-todo todo TODO">TODO</span> Setting sources for helm</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 16:28] </span></span> <br />
+This was needed as it seems helm was not sourcing from recentf file lists. With this source list defined, it provides options to choose from recent files, bookmarks, open buffers.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq helm-mini-default-sources <span style="color:#f92672">&#39;</span>(helm-source-buffers-list
+                                  helm-source-recentf
+                                  helm-source-bookmarks
+                                  helm-source-buffer-not-found))
+
+(setq helm-buffers-list-default-sources <span style="color:#f92672">&#39;</span>(helm-source-buffers-list
+                                          helm-source-recentf
+                                          helm-source-bookmarks
+                                          helm-source-buffer-not-found))</code></pre></div>
+<h3 id="helm-ag-and-helm-org-rifle">helm-ag and helm-org-rifle</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;helm-ag</span>)
+(require <span style="color:#e6db74">&#39;helm-org-rifle</span>)</code></pre></div>
+<h3 id="helm-swoop">helm-swoop</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 16:53] </span></span> <br />
+This is an awesome find. Helm swoop changes the search pattern depending on the location of the cursor. Therefore, while placed on an org headline, calling helm-swoop will preset the search pattern to have headings. The same is true for source code blocks! Fantastic.</li>
+</ul>
+
+<p>Source: <a href="https://writequit.org/org/#orgheadline92" target="_blank">https://writequit.org/org/#orgheadline92</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package helm-swoop
+  :ensure <span style="color:#66d9ef">t</span>
+  :bind ((<span style="color:#e6db74">&#34;M-i&#34;</span> <span style="color:#f92672">.</span> helm-swoop)
+         (<span style="color:#e6db74">&#34;M-I&#34;</span> <span style="color:#f92672">.</span> helm-swoop-back-to-last-point)
+         (<span style="color:#e6db74">&#34;C-c M-i&#34;</span> <span style="color:#f92672">.</span> helm-multi-swoop))
+  :config
+  <span style="color:#75715e">;; When doing isearch, hand the word over to helm-swoop</span>
+  (<span style="color:#a6e22e">define-key</span> isearch-mode-map (kbd <span style="color:#e6db74">&#34;M-i&#34;</span>) <span style="color:#e6db74">&#39;helm-swoop-from-isearch</span>)
+  <span style="color:#75715e">;; From helm-swoop to helm-multi-swoop-all</span>
+  (<span style="color:#a6e22e">define-key</span> helm-swoop-map (kbd <span style="color:#e6db74">&#34;M-i&#34;</span>) <span style="color:#e6db74">&#39;helm-multi-swoop-all-from-helm-swoop</span>)
+  <span style="color:#75715e">;; Save buffer when helm-multi-swoop-edit complete</span>
+  (setq helm-multi-swoop-edit-save <span style="color:#66d9ef">t</span>
+        <span style="color:#75715e">;; If this value is t, split window inside the current window</span>
+        helm-swoop-split-with-multiple-windows <span style="color:#66d9ef">t</span>
+        <span style="color:#75715e">;; Split direcion. &#39;split-window-vertically or &#39;split-window-horizontally</span>
+        helm-swoop-split-direction <span style="color:#e6db74">&#39;split-window-vertically</span>
+        <span style="color:#75715e">;; If nil, you can slightly boost invoke speed in exchange for text color</span>
+        helm-swoop-speed-or-color <span style="color:#66d9ef">nil</span>))</code></pre></div>
+<h3 id="loading-completed-1">Loading completed</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Helm customisations&#34;</span>)</code></pre></div>
+<h2 id="flycheck">Flycheck</h2>
+
+<p>Source: <a href="https://writequit.org/org/" target="_blank">https://writequit.org/org/</a></p>
+
+<h3 id="basic-config">Basic config</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package flycheck
+  :defer <span style="color:#ae81ff">5</span>
+  :bind ((<span style="color:#e6db74">&#34;M-g M-n&#34;</span> <span style="color:#f92672">.</span> flycheck-next-error)
+         (<span style="color:#e6db74">&#34;M-g M-p&#34;</span> <span style="color:#f92672">.</span> flycheck-previous-error)
+         (<span style="color:#e6db74">&#34;M-g M-=&#34;</span> <span style="color:#f92672">.</span> flycheck-list-errors))
+  :init (global-flycheck-mode)
+  :diminish flycheck-mode
+  :config
+  (progn
+    (setq-default flycheck-disabled-checkers <span style="color:#f92672">&#39;</span>(emacs-lisp-checkdoc json-jsonlint json-python-json))
+    (use-package flycheck-pos-tip
+      :init (flycheck-pos-tip-mode))
+    (use-package helm-flycheck
+      :init (<span style="color:#a6e22e">define-key</span> flycheck-mode-map (kbd <span style="color:#e6db74">&#34;C-c ! h&#34;</span>) <span style="color:#e6db74">&#39;helm-flycheck</span>))
+    (use-package flycheck-haskell
+      :init (add-hook <span style="color:#e6db74">&#39;flycheck-mode-hook</span> <span style="color:#a6e22e">#&#39;</span>flycheck-haskell-setup))))</code></pre></div>
+<h3 id="replacing-flymake-with-flycheck">Replacing flymake with flycheck</h3>
+
+<p>This is especially for python modules at the moment.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(when (require <span style="color:#e6db74">&#39;flycheck</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span>)
+  (setq elpy-modules (<span style="color:#a6e22e">delq</span> <span style="color:#e6db74">&#39;elpy-module-flymake</span> elpy-modules))
+  (add-hook <span style="color:#e6db74">&#39;elpy-mode-hook</span> <span style="color:#e6db74">&#39;flycheck-mode</span>))</code></pre></div>
+<h2 id="scheme-setup">Scheme setup</h2>
+
+<ul>
+<li>References
+
+<ul>
+<li><a href="http://praveen.kumar.in/2011/03/06/gnu-emacs-and-mit-scheme-on-mac-os-x/" target="_blank">http://praveen.kumar.in/2011/03/06/gnu-emacs-and-mit-scheme-on-mac-os-x/</a></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq scheme-program-name <span style="color:#e6db74">&#34;/Applications/MIT-GNU-Scheme.app/Contents/Resources/mit-scheme&#34;</span>)
+(require <span style="color:#e6db74">&#39;xscheme</span>)
+
+(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded scheme setup&#34;</span>)</code></pre></div>
+<h2 id="hydras">Hydras</h2>
+
+<h3 id="refiling">Refiling</h3>
+
+<p>Adapted from <a href="https://emacs.stackexchange.com/questions/8045/org-refile-to-a-known-fixed-location" target="_blank">https://emacs.stackexchange.com/questions/8045/org-refile-to-a-known-fixed-location</a></p>
+
+<p>source: <a href="https://gist.github.com/mm--/60e0790bcbf8447160cc87a66dc949ab" target="_blank">https://gist.github.com/mm--/60e0790bcbf8447160cc87a66dc949ab</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/refile (file headline <span style="color:#66d9ef">&amp;optional</span> arg)
+  <span style="color:#e6db74">&#34;Refile to a specific location.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">With a &#39;C-u&#39; ARG argument, we jump to that location (see
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">`org-refile&#39;</span><span style="color:#e6db74">).
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Use </span><span style="color:#e6db74">`org-agenda-refile&#39;</span><span style="color:#e6db74"> in </span><span style="color:#e6db74">`org-agenda&#39;</span><span style="color:#e6db74"> mode.&#34;</span>
+  (let* ((pos (with-current-buffer (or (<span style="color:#a6e22e">get-buffer</span> file) <span style="color:#75715e">;Is the file open in a buffer already?</span>
+				       (find-file-noselect file)) <span style="color:#75715e">;Otherwise, try to find the file by name (Note, default-directory matters here if it isn&#39;t absolute)</span>
+		(or (org-find-exact-headline-in-buffer headline)
+		    (<span style="color:#a6e22e">error</span> <span style="color:#e6db74">&#34;Can&#39;t find headline </span><span style="color:#e6db74">`%s&#39;</span><span style="color:#e6db74">&#34;</span> headline))))
+	 (filepath (<span style="color:#a6e22e">buffer-file-name</span> (<span style="color:#a6e22e">marker-buffer</span> pos))) <span style="color:#75715e">;If we&#39;re given a relative name, find absolute path</span>
+	 (rfloc (<span style="color:#a6e22e">list</span> headline filepath <span style="color:#66d9ef">nil</span> pos)))
+    (if (and (<span style="color:#a6e22e">eq</span> major-mode <span style="color:#e6db74">&#39;org-agenda-mode</span>) (not (and arg (<span style="color:#a6e22e">listp</span> arg)))) <span style="color:#75715e">;Don&#39;t use org-agenda-refile if we&#39;re just jumping</span>
+	(org-agenda-refile <span style="color:#66d9ef">nil</span> rfloc)
+      (org-refile arg <span style="color:#66d9ef">nil</span> rfloc))))
+
+(defun josh/refile (file headline <span style="color:#66d9ef">&amp;optional</span> arg)
+  <span style="color:#e6db74">&#34;Refile to HEADLINE in FILE. Clean up org-capture if it&#39;s activated.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">With a `C-u` ARG, just jump to the headline.&#34;</span>
+  (interactive <span style="color:#e6db74">&#34;P&#34;</span>)
+  (let ((is-capturing (and (<span style="color:#a6e22e">boundp</span> <span style="color:#e6db74">&#39;org-capture-mode</span>) org-capture-mode)))
+    (cond
+     ((and arg (<span style="color:#a6e22e">listp</span> arg))	    <span style="color:#75715e">;Are we jumping?</span>
+      (my/refile file headline arg))
+     <span style="color:#75715e">;; Are we in org-capture-mode?</span>
+     (is-capturing      	<span style="color:#75715e">;Minor mode variable that&#39;s defined when capturing</span>
+      (josh/org-capture-refile-but-with-args file headline arg))
+     (<span style="color:#66d9ef">t</span>
+      (my/refile file headline arg)))
+    (when (or arg is-capturing)
+      (setq hydra-deactivate <span style="color:#66d9ef">t</span>))))
+
+(defun josh/org-capture-refile-but-with-args (file headline <span style="color:#66d9ef">&amp;optional</span> arg)
+  <span style="color:#e6db74">&#34;Copied from </span><span style="color:#e6db74">`org-capture-refile&#39;</span><span style="color:#e6db74"> since it doesn&#39;t allow passing arguments. This does.&#34;</span>
+  (unless (<span style="color:#a6e22e">eq</span> (org-capture-get :type <span style="color:#e6db74">&#39;local</span>) <span style="color:#e6db74">&#39;entry</span>)
+    (<span style="color:#a6e22e">error</span>
+     <span style="color:#e6db74">&#34;Refiling from a capture buffer makes only sense for </span><span style="color:#e6db74">`entry&#39;</span><span style="color:#e6db74">-type templates&#34;</span>))
+  (let ((pos (<span style="color:#a6e22e">point</span>))
+	(base (<span style="color:#a6e22e">buffer-base-buffer</span> (<span style="color:#a6e22e">current-buffer</span>)))
+	(org-capture-is-refiling <span style="color:#66d9ef">t</span>)
+	(<span style="color:#a6e22e">kill-buffer</span> (org-capture-get :kill-buffer <span style="color:#e6db74">&#39;local</span>)))
+    (org-capture-put :kill-buffer <span style="color:#66d9ef">nil</span>)
+    (org-capture-finalize)
+    (save-window-excursion
+      (with-current-buffer (or base (<span style="color:#a6e22e">current-buffer</span>))
+	(org-with-wide-buffer
+	 (<span style="color:#a6e22e">goto-char</span> pos)
+	 (my/refile file headline arg))))
+    (when <span style="color:#a6e22e">kill-buffer</span> (<span style="color:#a6e22e">kill-buffer</span> base))))
+
+(defmacro josh/make-org-refile-hydra (hydraname file keyandheadline)
+  <span style="color:#e6db74">&#34;Make a hydra named HYDRANAME with refile targets to FILE.
+</span><span style="color:#e6db74">KEYANDHEADLINE should be a list of cons cells of the form (\&#34;key\&#34; . \&#34;headline\&#34;)&#34;</span>
+  <span style="color:#f92672">`</span>(defhydra <span style="color:#f92672">,</span>hydraname (:color blue :after-exit (unless (or hydra-deactivate
+							     current-prefix-arg) <span style="color:#75715e">;If we&#39;re just jumping to a location, quit the hydra</span>
+						   (josh/org-refile-hydra/body)))
+     <span style="color:#f92672">,</span>file
+     <span style="color:#f92672">,@</span>(cl-loop for kv in keyandheadline
+		collect (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">car</span> kv) (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#39;josh/refile</span> file (<span style="color:#a6e22e">cdr</span> kv) <span style="color:#e6db74">&#39;current-prefix-arg</span>) (<span style="color:#a6e22e">cdr</span> kv)))
+     (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;cancel&#34;</span>)))
+
+<span style="color:#75715e">;;;;;;;;;;</span>
+<span style="color:#75715e">;; Here we&#39;ll define our refile headlines</span>
+<span style="color:#75715e">;;;;;;;;;;</span>
+
+(josh/make-org-refile-hydra josh/org-refile-hydra-file-ds
+			    <span style="color:#e6db74">&#34;~/my_org/datascience.org&#34;</span>
+			    ((<span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;@Datascience @Inbox&#34;</span>)
+			     (<span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;@Datascience @Notes&#34;</span>)))
+
+(josh/make-org-refile-hydra josh/org-refile-hydra-file-bgr
+			    <span style="color:#e6db74">&#34;~/my_org/bgr.org&#34;</span>
+			    ((<span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#BGR #Inbox&#34;</span>)
+			     (<span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#questions @ BGR&#34;</span>)
+                             (<span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Inventory management Project&#34;</span>)))
+
+(josh/make-org-refile-hydra josh/org-refile-hydra-file-todoglobal
+			    <span style="color:#e6db74">&#34;todo-global.org&#34;</span>
+			    ((<span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;;Emacs Stuff&#34;</span>)
+			     (<span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;;someday&#34;</span>)))
+
+(defhydra josh/org-refile-hydra (:foreign-keys run)
+  <span style="color:#e6db74">&#34;Refile&#34;</span>
+  (<span style="color:#e6db74">&#34;a&#34;</span> josh/org-refile-hydra-file-ds/body <span style="color:#e6db74">&#34;File A&#34;</span> :exit <span style="color:#66d9ef">t</span>)
+  (<span style="color:#e6db74">&#34;b&#34;</span> josh/org-refile-hydra-file-bgr/body <span style="color:#e6db74">&#34;File B&#34;</span> :exit <span style="color:#66d9ef">t</span>)
+  (<span style="color:#e6db74">&#34;c&#34;</span> josh/org-refile-hydra-file-todoglobal/body <span style="color:#e6db74">&#34;File C&#34;</span> :exit <span style="color:#66d9ef">t</span>)
+  (<span style="color:#e6db74">&#34;j&#34;</span> org-refile-goto-last-stored <span style="color:#e6db74">&#34;Jump to last refile&#34;</span> :exit <span style="color:#66d9ef">t</span>)
+  (<span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;cancel&#34;</span>))
+
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f8&gt; r&#34;</span>) <span style="color:#e6db74">&#39;josh/org-refile-hydra/body</span>)</code></pre></div>
+<h3 id="helm-do-ag-in-specific-locations">helm-do-ag in specific locations</h3>
+
+<p>Reference: <a href="https://emacs.stackexchange.com/questions/44128/function-to-do-helm-do-ag-for-a-specific-project" target="_blank">https://emacs.stackexchange.com/questions/44128/function-to-do-helm-do-ag-for-a-specific-project</a></p>
+
+<h4 id="in-project-directory">In project directory</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun helm-do-ag-projects ()
+  <span style="color:#e6db74">&#34;Grep string in Project directory&#34;</span> (interactive)
+  (let ((rootdir (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)))
+    (let ((helm-ag-command-option (<span style="color:#a6e22e">concat</span> helm-ag-command-option <span style="color:#e6db74">&#34;&#34;</span>)))
+      (helm-do-ag rootdir))))</code></pre></div>
+<h4 id="scimax-config-directory">Scimax config directory</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun helm-do-ag-emacs-config ()
+  <span style="color:#e6db74">&#34;Grep string in Emacs custom code&#34;</span>
+  (interactive)
+  (let ((rootdir (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;~/scimax/user/sr-cust/&#34;</span>)))
+    (let ((helm-ag-command-option (<span style="color:#a6e22e">concat</span> helm-ag-command-option <span style="color:#e6db74">&#34;&#34;</span>)))
+      (helm-do-ag rootdir))))</code></pre></div>
+<h4 id="journal-directory">Journal directory</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun helm-do-ag-journal ()
+  <span style="color:#e6db74">&#34;Grep string in journal&#34;</span>
+  (interactive)
+  (let ((specfile (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;~/my_org/journal/&#34;</span>)))
+    (let ((helm-ag-command-option (<span style="color:#a6e22e">concat</span> helm-ag-command-option <span style="color:#e6db74">&#34;&#34;</span>)))
+      (helm-ag-this-file rootdir))))</code></pre></div>
+<h4 id="bgr-file">BGR file</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun helm-do-ag-bgr ()
+  <span style="color:#e6db74">&#34;Grep string in BGR file&#34;</span>
+  (interactive)
+  (let ((specfile (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;~/my_org/bgr.org&#34;</span>)))
+    (let ((helm-ag-command-option (<span style="color:#a6e22e">concat</span> helm-ag-command-option <span style="color:#e6db74">&#34;&#34;</span>)))
+      (helm-do-ag-this-file specfile))))</code></pre></div>
+<h4 id="defining-hydra">Defining hydra</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defhydra shrysr/hydra-helm-ag-do-menu ()
+  <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">Helm-do-ag in specified locations
+</span><span style="color:#e6db74">^location^  ^command^
+</span><span style="color:#e6db74">----------------------------------------------------------
+</span><span style="color:#e6db74">e:        emacs custom config
+</span><span style="color:#e6db74">b:        bgr file
+</span><span style="color:#e6db74">o:        org files
+</span><span style="color:#e6db74">j:        journal search
+</span><span style="color:#e6db74">&#34;</span>
+  (<span style="color:#e6db74">&#34;e&#34;</span> helm-do-ag-emacs-config)
+  (<span style="color:#e6db74">&#34;j&#34;</span> helm-do-ag-journal :color blue)
+  (<span style="color:#e6db74">&#34;p&#34;</span> helm-do-ag-projects)
+  (<span style="color:#e6db74">&#34;o&#34;</span> helm-do-ag-org)
+  (<span style="color:#e6db74">&#34;q&#34;</span> quit-window <span style="color:#e6db74">&#34;quit&#34;</span> :color red))
+
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f8&gt; h&#34;</span>) <span style="color:#e6db74">&#39;shrysr/hydra-helm-ag-do-menu/body</span>)</code></pre></div>
+<h3 id="frame-configurations-fo-magit-and-project-launch">Frame configurations fo magit and project launch</h3>
+
+<h4 id="scimax-magit-and-windows">Scimax - magit and windows</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; scimax directory magit status</span>
+(defun sr/windows-magit-scimax ()
+  (interactive)
+  (ace-delete-other-windows)
+  (dired <span style="color:#e6db74">&#34;~/scimax/user/&#34;</span>)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
+  (magit-status <span style="color:#e6db74">&#34;~/scimax/&#34;</span>)
+  (switch-window)
+  (split-window-vertically)
+  (dired-up-directory)
+  (windmove-right)
+  )</code></pre></div>
+<h4 id="org-files-magit-and-windows">Org files - magit and windows</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; my_org magit status</span>
+(defun sr/windows-magit-org ()
+  (interactive)
+  (ace-delete-other-windows)
+  (magit-status <span style="color:#e6db74">&#34;~/my_org/&#34;</span>)
+  )</code></pre></div>
+<h4 id="project-directory-magit-and-windows">Project directory - magit and windows</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; magit status</span>
+(defun sr/windows-magit-projects ()
+  (interactive)
+  (ace-delete-other-windows)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
+  (magit-status <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)
+  (switch-window)
+  (dired <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)
+  (switch-window)
+  )</code></pre></div>
+<h4 id="project-switch-and-windows">Project: Switch and windows</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun sr/windows-projects ()
+  (interactive)
+  (ace-delete-other-windows)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
+  (projectile-switch-project)
+  (switch-window)
+  (find-file <span style="color:#e6db74">&#34;~/my_org/project-tasks.org&#34;</span>)
+  (<span style="color:#a6e22e">widen</span>)
+  (helm-org-rifle-current-buffer)
+  (org-narrow-to-subtree)
+  (outline-show-children)
+  )</code></pre></div>
+<h4 id="defining-hydra-1">Defining Hydra</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defhydra sr/process-window-keys ()
+  <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">Key^^   ^Workflow^
+</span><span style="color:#e6db74">--------------------
+</span><span style="color:#e6db74">o       org magit
+</span><span style="color:#e6db74">s       scimax magit
+</span><span style="color:#e6db74">p       projects magit
+</span><span style="color:#e6db74">w       select project and set window config
+</span><span style="color:#e6db74">SPC     exit
+</span><span style="color:#e6db74">&#34;</span>
+  (<span style="color:#e6db74">&#34;o&#34;</span> sr/windows-magit-org )
+  (<span style="color:#e6db74">&#34;p&#34;</span> sr/windows-magit-projects )
+  (<span style="color:#e6db74">&#34;s&#34;</span> sr/windows-magit-scimax )
+  (<span style="color:#e6db74">&#34;w&#34;</span> sr/windows-projects)
+  (<span style="color:#e6db74">&#34;SPC&#34;</span> <span style="color:#66d9ef">nil</span>)
+  )
+
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f8&gt; m&#34;</span>) <span style="color:#e6db74">&#39;sr/process-window-keys/body</span>)</code></pre></div>
+<h3 id="loading-completed-2">Loading completed</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Hydras&#34;</span>)</code></pre></div>
+<h2 id="elfeed-customisation">Elfeed customisation</h2>
+
+<h3 id="elfeed-org-setup">Elfeed-org setup <code>[/]</code></h3>
+
+<p>Using an org source is the easiest way to organise my RSS feeds for reading with Elfeed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; use an org file to organise feeds</span>
+(use-package elfeed-org
+  :ensure <span style="color:#66d9ef">t</span>
+  :config
+  (elfeed-org)
+  (setq rmh-elfeed-org-files (<span style="color:#a6e22e">list</span> <span style="color:#e6db74">&#34;~/my_org/elfeed.org&#34;</span>))
+  )</code></pre></div>
+<h3 id="consider-storing-the-feed-sources-here-in-org-format"><span class="org-todo todo TODO">TODO</span> Consider storing the Feed sources here in org format</h3>
+
+<h3 id="loading-completed-3">Loading completed</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Loaded Elfeed customisations&#34;</span>)</code></pre></div>
+<h2 id="w3m-customisation">w3m customisation</h2>
+
+<p>A few snippets were sourced from: <a href="http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html" target="_blank">http://beatofthegeek.com/2014/02/my-setup-for-using-emacs-as-web-browser.html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq browse-url-browser-function <span style="color:#e6db74">&#39;w3m-goto-url-new-session</span>)
+(setq w3m-default-display-inline-images <span style="color:#66d9ef">t</span>)</code></pre></div>
+<h3 id="appending-http-to-web-addresses-entered-by-hand"><span class="org-todo todo TODO">TODO</span> Appending HTTP to web addresses entered by hand</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 07:40]  </span></span>  <br />
+Check whether this is necessary</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;;when I want to enter the web address all by hand</span>
+(defun w3m-open-site (site)
+  <span style="color:#e6db74">&#34;Opens site in new w3m session with &#39;http://&#39; appended&#34;</span>
+  (interactive
+   (<span style="color:#a6e22e">list</span> (<span style="color:#a6e22e">read-string</span> <span style="color:#e6db74">&#34;Enter website address(default: w3m-home):&#34;</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> w3m-home-page <span style="color:#66d9ef">nil</span> )))
+  (w3m-goto-url-new-session
+   (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;http://&#34;</span> site)))</code></pre></div>
+<h3 id="changing-w3m-shortcuts-for-better-tabbed-browsing">Changing w3m shortcuts for better tabbed browsing</h3>
+
+<p>Source:  Sacha Chua : <a href="http://sachachua.com/blog/2008/09/emacs-and-w3m-making-tabbed-browsing-easier/" target="_blank">http://sachachua.com/blog/2008/09/emacs-and-w3m-making-tabbed-browsing-easier/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(eval-after-load <span style="color:#e6db74">&#39;w3m</span>
+  <span style="color:#f92672">&#39;</span>(progn
+     (<span style="color:#a6e22e">define-key</span> w3m-mode-map <span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#e6db74">&#39;w3m-previous-buffer</span>)
+     (<span style="color:#a6e22e">define-key</span> w3m-mode-map <span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#e6db74">&#39;w3m-next-buffer</span>)
+     (<span style="color:#a6e22e">define-key</span> w3m-mode-map <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#e6db74">&#39;w3m-close-window</span>)))</code></pre></div>
+<h3 id="default-external-browser-settings"><span class="org-todo todo TODO">TODO</span> Default external browser settings</h3>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 07:37]  </span></span>  <br />
+Need to have this change depending whether the OS is Linux or Mac OS</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun wicked/w3m-open-current-page-in-firefox ()
+  <span style="color:#e6db74">&#34;Open the current URL in Mozilla Firefox.&#34;</span>
+  (interactive)
+  (browse-url-default-macosx-browser w3m-current-url)) <span style="color:#75715e">;; (1)</span>
+
+(defun wicked/w3m-open-link-or-image-in-firefox ()
+  <span style="color:#e6db74">&#34;Open the current link or image in Firefox.&#34;</span>
+  (interactive)
+  (browse-url-default-macosx-browser (or (w3m-anchor) <span style="color:#75715e">;; (2)</span>
+                                         (w3m-image)))) <span style="color:#75715e">;; (3)</span>
+
+(eval-after-load <span style="color:#e6db74">&#39;w3m</span>
+  <span style="color:#f92672">&#39;</span>(progn
+     (<span style="color:#a6e22e">define-key</span> w3m-mode-map <span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#e6db74">&#39;wicked/w3m-open-current-page-in-firefox</span>)
+     (<span style="color:#a6e22e">define-key</span> w3m-mode-map <span style="color:#e6db74">&#34;O&#34;</span> <span style="color:#e6db74">&#39;wicked/w3m-open-link-or-image-in-firefox</span>)))</code></pre></div>
+<h3 id="wikipedia-search">Wikipedia search</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun wikipedia-search (search-term)
+  <span style="color:#e6db74">&#34;Search for SEARCH-TERM on wikipedia&#34;</span>
+  (interactive
+   (let ((term (if mark-active
+                   (<span style="color:#a6e22e">buffer-substring</span> (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>))
+                 (word-at-point))))
+     (<span style="color:#a6e22e">list</span>
+      (<span style="color:#a6e22e">read-string</span>
+       (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;Wikipedia (%s):&#34;</span> term) <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">nil</span> term)))
+   )
+  (browse-url
+   (<span style="color:#a6e22e">concat</span>
+    <span style="color:#e6db74">&#34;http://en.m.wikipedia.org/w/index.php?search=&#34;</span>
+    search-term
+    ))
+  )</code></pre></div>
+<h3 id="access-hacker-news">Access Hacker News</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun hn ()
+  (interactive)
+  (browse-url <span style="color:#e6db74">&#34;http://news.ycombinator.com&#34;</span>))</code></pre></div>
+<h2 id="ediff">ediff</h2>
+
+<p>I have to diff between org files pretty often, and need the headings to be unfolded.</p>
+
+<p>Source: <a href="http://emacs.stackexchange.com/questions/21335/prevent-folding-org-files-opened-by-ediff" target="_blank">http://emacs.stackexchange.com/questions/21335/prevent-folding-org-files-opened-by-ediff</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Check for org mode and existence of buffer</span>
+(defun f-ediff-org-showhide (buf command <span style="color:#66d9ef">&amp;rest</span> cmdargs)
+  <span style="color:#e6db74">&#34;If buffer exists and is orgmode then execute command&#34;</span>
+  (when buf
+    (when (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">buffer-local-value</span> <span style="color:#e6db74">&#39;major-mode</span> (<span style="color:#a6e22e">get-buffer</span> buf)) <span style="color:#e6db74">&#39;org-mode</span>)
+      (save-excursion (<span style="color:#a6e22e">set-buffer</span> buf) (<span style="color:#a6e22e">apply</span> command cmdargs)))))
+
+(defun f-ediff-org-unfold-tree-element ()
+  <span style="color:#e6db74">&#34;Unfold tree at diff location&#34;</span>
+  (f-ediff-org-showhide ediff-buffer-A <span style="color:#e6db74">&#39;org-reveal</span>)
+  (f-ediff-org-showhide ediff-buffer-B <span style="color:#e6db74">&#39;org-reveal</span>)
+  (f-ediff-org-showhide ediff-buffer-C <span style="color:#e6db74">&#39;org-reveal</span>))
+
+(defun f-ediff-org-fold-tree ()
+  <span style="color:#e6db74">&#34;Fold tree back to top level&#34;</span>
+  (f-ediff-org-showhide ediff-buffer-A <span style="color:#e6db74">&#39;hide-sublevels</span> <span style="color:#ae81ff">1</span>)
+  (f-ediff-org-showhide ediff-buffer-B <span style="color:#e6db74">&#39;hide-sublevels</span> <span style="color:#ae81ff">1</span>)
+  (f-ediff-org-showhide ediff-buffer-C <span style="color:#e6db74">&#39;hide-sublevels</span> <span style="color:#ae81ff">1</span>))
+
+(add-hook <span style="color:#e6db74">&#39;ediff-select-hook</span> <span style="color:#e6db74">&#39;f-ediff-org-unfold-tree-element</span>)
+(add-hook <span style="color:#e6db74">&#39;ediff-unselect-hook</span> <span style="color:#e6db74">&#39;f-ediff-org-fold-tree</span>)</code></pre></div>
+<h2 id="theme-and-visuals">Theme and visuals</h2>
+
+<h3 id="emacsclient-or-frame-specific-settings">Emacsclient or frame specific settings</h3>
+
+<p>Since I run emacs as a daemon and call the emacsclient, the background has to be set for new frames. Additionally, I&rsquo;d like the frames to launch full screen.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq default-frame-alist
+      <span style="color:#f92672">&#39;</span>((background-color <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;light grey&#34;</span>)
+        (foreground-color <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;black&#34;</span>)
+        (fullscreen <span style="color:#f92672">.</span> maximized)
+        ))</code></pre></div>
+<h3 id="custom-safe-themes-and-background-change-to-light-grey">Custom Safe themes and Background change to light grey</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq custom-safe-themes <span style="color:#66d9ef">t</span>)
+(set-background-color <span style="color:#e6db74">&#34;light gray&#34;</span>)</code></pre></div>
+<h3 id="font-customisation-based-on-os">Font Customisation based on OS</h3>
+
+<p>The same font is named differently in Antergos (Linux) and in the Mac OS.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; For Linux</span>
+(if (system-type-is-gnu)
+    (set-face-attribute <span style="color:#e6db74">&#39;default</span> <span style="color:#66d9ef">nil</span> :family <span style="color:#e6db74">&#34;ttf-iosevka&#34;</span> :height <span style="color:#ae81ff">140</span>))
+
+<span style="color:#75715e">;; For Mac OS</span>
+(if (system-type-is-darwin)
+    (set-face-attribute <span style="color:#e6db74">&#39;default</span> <span style="color:#66d9ef">nil</span> :family <span style="color:#e6db74">&#34;Iosevka Type&#34;</span> :height <span style="color:#ae81ff">150</span>))</code></pre></div>
+<h3 id="visual-fill-column">visual-fill-column</h3>
+
+<p>Source: <a href="https://github.com/wasamasa/dotemacs/blob/master/init.org" target="_blank">https://github.com/wasamasa/dotemacs/blob/master/init.org</a></p>
+
+<p>Adding a hook to enable visual fill column mode once visual line mode is called did not work for me. The issue is that this is called</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq
+ global-visual-line-mode <span style="color:#ae81ff">1</span>
+ fill-column <span style="color:#ae81ff">80</span>)</code></pre></div>
+<h2 id="hugo">Hugo</h2>
+
+<h3 id="function-to-create-specific-properties-for-a-blog-post">Function to create specific properties for a blog post</h3>
+
+<p>Modified this function from:</p>
+
+<h4 id="defining-content-directory"><span class="org-todo todo TODO">TODO</span> Defining content directory</h4>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 08:06]  </span></span>  <br />
+Need to check if this is still required since I have switche to ox-hugo</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defvar hugo-content-dir <span style="color:#e6db74">&#34;~/my_gits/hugo-sr/content/post/&#34;</span>
+  <span style="color:#e6db74">&#34;Path to Hugo&#39;s content directory&#34;</span>)</code></pre></div>
+<h4 id="ensuring-properties-exist-and-creating-if-they-dont-exist">Ensuring properties exist and creating if they dont exist</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun hugo-ensure-property (property)
+  <span style="color:#e6db74">&#34;Make sure that a property exists. If not, it will be created.
+</span><span style="color:#e6db74">Returns the property name if the property has been created, otherwise nil.&#34;</span>
+  (org-id-get-create)
+  (if (org-entry-get <span style="color:#66d9ef">nil</span> property)
+      <span style="color:#66d9ef">nil</span>
+    (progn (org-entry-put <span style="color:#66d9ef">nil</span> property <span style="color:#e6db74">&#34;&#34;</span>)
+           property)))
+
+(defun hugo-ensure-properties ()
+
+  (require <span style="color:#e6db74">&#39;dash</span>)
+  (let ((<span style="color:#a6e22e">current-time</span> (<span style="color:#a6e22e">format-time-string</span>
+                       (org-time-stamp-format <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">t</span>) (org-current-time)))
+        first)
+    (save-excursion
+      (setq first (--first it (<span style="color:#a6e22e">mapcar</span> <span style="color:#a6e22e">#&#39;</span>hugo-ensure-property
+                                      <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;HUGO_TAGS&#34;</span> <span style="color:#e6db74">&#34;HUGO_CATEGORIES&#34;</span>))))
+      (unless (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;HUGO_DATE&#34;</span>)
+        (org-entry-put <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;EXPORT_DATE&#34;</span> <span style="color:#a6e22e">current-time</span>)))
+    (org-entry-put <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;EXPORT_FILE_NAME&#34;</span> (org-id-get-create))
+    (org-entry-put <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;EXPORT_HUGO_CUSTOM_FRONT_MATTER&#34;</span> <span style="color:#e6db74">&#34;:profile false&#34;</span>)
+    (when first
+      (<span style="color:#a6e22e">goto-char</span> (org-entry-beginning-position))
+      <span style="color:#75715e">;; The following opens the drawer</span>
+      (<span style="color:#a6e22e">forward-line</span> <span style="color:#ae81ff">1</span>)
+      (<span style="color:#a6e22e">beginning-of-line</span> <span style="color:#ae81ff">1</span>)
+      (when (<span style="color:#a6e22e">looking-at</span> org-drawer-regexp)
+        (org-flag-drawer <span style="color:#66d9ef">nil</span>))
+      <span style="color:#75715e">;; And now move to the drawer property</span>
+      (<span style="color:#a6e22e">search-forward</span> (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;:&#34;</span> first <span style="color:#e6db74">&#34;:&#34;</span>))
+      (<span style="color:#a6e22e">end-of-line</span>))
+    first))</code></pre></div>
+<h4 id="hugo-function-calling-the-above">Hugo function calling the above</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun hugo ()
+  (interactive)
+  (unless (hugo-ensure-properties)
+    (let* ((type    (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;type = \&#34;&#34;</span> (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;HUGO_TYPE&#34;</span>) <span style="color:#e6db74">&#34;\&#34;\n&#34;</span>))
+           (date     (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;date = \&#34;&#34;</span>
+                             (<span style="color:#a6e22e">format-time-string</span> <span style="color:#e6db74">&#34;%Y-%m-%d&#34;</span>
+                                                 (<span style="color:#a6e22e">apply</span> <span style="color:#e6db74">&#39;encode-time</span>
+                                                        (org-parse-time-string
+                                                         (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;HUGO_DATE&#34;</span>))) <span style="color:#66d9ef">t</span>) <span style="color:#e6db74">&#34;\&#34;\n&#34;</span>))
+           (tags     (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;tags = [ \&#34;&#34;</span>
+                             (<span style="color:#a6e22e">mapconcat</span> <span style="color:#e6db74">&#39;identity</span>
+                                        (split-string
+                                         (org-entry-get <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;HUGO_TAGS&#34;</span>)
+                                         <span style="color:#e6db74">&#34;\\( *, *\\)&#34;</span> <span style="color:#66d9ef">t</span>) <span style="color:#e6db74">&#34;\&#34;, \&#34;&#34;</span>) <span style="color:#e6db74">&#34;\&#34; ]\n&#34;</span>))
+           (fm (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;+++\n&#34;</span>
+                       title
+		       type
+                       date
+                       tags
+                       topics
+                       <span style="color:#e6db74">&#34;+++\n\n&#34;</span>))
+           (coding-system-for-write buffer-file-coding-system)
+           (backend  <span style="color:#e6db74">&#39;md</span>)
+           (blog))
+      <span style="color:#75715e">;; try to load org-mode/contrib/lisp/ox-gfm.el and use it as backend</span>
+      (if (require <span style="color:#e6db74">&#39;ox-gfm</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span>)
+          (setq backend <span style="color:#e6db74">&#39;gfm</span>)
+        (require <span style="color:#e6db74">&#39;ox-md</span>))
+      (setq blog (org-export-as backend <span style="color:#66d9ef">t</span>))
+      <span style="color:#75715e">;; Normalize save file path</span>
+      (unless (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;^[/~]&#34;</span> file)
+        (setq file (<span style="color:#a6e22e">concat</span> hugo-content-dir file))
+        (unless (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;\\.md$&#34;</span> file)
+          (setq file (<span style="color:#a6e22e">concat</span> file <span style="color:#e6db74">&#34;.md&#34;</span>)))
+        <span style="color:#75715e">;; save markdown</span>
+        (with-temp-buffer
+          (<span style="color:#a6e22e">insert</span> fm)
+          (<span style="color:#a6e22e">insert</span> blog)
+          (untabify (<span style="color:#a6e22e">point-min</span>) (<span style="color:#a6e22e">point-max</span>))
+          (write-file file)
+          (<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;Exported to %s&#34;</span> file))))))</code></pre></div>
+<h3 id="ox-hugo-setup">ox-hugo setup</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package ox-hugo
+  :ensure <span style="color:#66d9ef">t</span>
+  :defer <span style="color:#66d9ef">t</span>
+  :custom
+  (org-hugo--tag-processing-fn-replace-with-hyphens-maybe <span style="color:#66d9ef">t</span>)
+  )</code></pre></div>
+<h2 id="scimax-customisations">Scimax customisations</h2>
+
+<p>These are settings which custmise scimax specific variables. These are separated out here so that it becomes easier to try out Emacs configurations that are outside scimax.</p>
+
+<h3 id="defining-hotspots">Defining Hotspots</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun hotspots ()
+  <span style="color:#e6db74">&#34;helm interface to my hotspots, which includes my locations,
+</span><span style="color:#e6db74">org-files and bookmarks&#34;</span>
+  (interactive)
+  (helm :sources <span style="color:#f92672">`</span>(((name <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Mail and News&#34;</span>)
+                    (candidates <span style="color:#f92672">.</span> ((<span style="color:#e6db74">&#34;Agenda All&#34;</span> <span style="color:#f92672">.</span> (lambda () (org-agenda <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;a&#34;</span>)))
+                                   (<span style="color:#e6db74">&#34;Agenda Office&#34;</span> <span style="color:#f92672">.</span> (lambda () (org-agenda <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#e6db74">&#34;o&#34;</span>)))
+				   (<span style="color:#e6db74">&#34;Mail&#34;</span> <span style="color:#f92672">.</span> (lambda ()
+                                               (if (<span style="color:#a6e22e">get-buffer</span> <span style="color:#e6db74">&#34;*mu4e-headers*&#34;</span>)
+                                                   (progn
+                                                     (switch-to-buffer <span style="color:#e6db74">&#34;*mu4e-headers*&#34;</span>)
+                                                     (delete-other-windows))
+                                                 (mu4e))))
+                                   (<span style="color:#e6db74">&#34;Calendar&#34;</span> <span style="color:#f92672">.</span>
+                                    (lambda ()
+                                      (browse-url
+                                       <span style="color:#e6db74">&#34;https://www.google.com/calendar/render&#34;</span>)))
+                                   (<span style="color:#e6db74">&#34;RSS&#34;</span> <span style="color:#f92672">.</span> elfeed)))
+                    (action <span style="color:#f92672">.</span> ((<span style="color:#e6db74">&#34;Open&#34;</span> <span style="color:#f92672">.</span> (lambda (x) (<span style="color:#a6e22e">funcall</span> x))))))
+                   ((name <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;My Locations&#34;</span>)
+                    (candidates <span style="color:#f92672">.</span> ((<span style="color:#e6db74">&#34;CV Org&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/org_cv/CV_Shreyas_Ragavan.org&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;scd - scimax dir&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/scimax/&#34;</span> )
+                                   (<span style="color:#e6db74">&#34;scu - scimax user dir&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/scimax/user/&#34;</span>)
+                                   ( <span style="color:#e6db74">&#34;sco - scimax org conf&#34;</span><span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/scimax/user/sr-config.org&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;blog&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/my_org/blog-book.org&#34;</span>)
+				   (<span style="color:#e6db74">&#34;github&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/my_gits/&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;project&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;cheatsheet&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/my_cheatsheets/&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;passwords&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/my_org/secrets.org.gpg&#34;</span>)
+                                   (<span style="color:#e6db74">&#34;references&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;~/Dropbox/bibliography/references.bib&#34;</span>)
+                                   ))
+                    (action <span style="color:#f92672">.</span> ((<span style="color:#e6db74">&#34;Open&#34;</span> <span style="color:#f92672">.</span> (lambda (x) (find-file x))))))
+
+                   ((name <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;My org files&#34;</span>)
+                    (candidates <span style="color:#f92672">.</span> <span style="color:#f92672">,</span>(f-entries <span style="color:#e6db74">&#34;~/my_org&#34;</span>))
+                    (action <span style="color:#f92672">.</span> ((<span style="color:#e6db74">&#34;Open&#34;</span> <span style="color:#f92672">.</span> (lambda (x) (find-file x))))))
+                   helm-source-recentf
+                   helm-source-bookmarks
+                   helm-source-bookmark-set)))</code></pre></div>
+<h3 id="notebook-directory">Notebook directory</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(setq nb-notebook-directory <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)</code></pre></div>
+<h3 id="scimax-notebook">scimax notebook</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(global-set-key (kbd <span style="color:#e6db74">&#34;M-s n&#34;</span>) <span style="color:#e6db74">&#39;nb-open</span>)</code></pre></div>
+<h3 id="python-1">Python</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(scimax-ob-ipython-turn-on-eldoc)</code></pre></div>
+<h3 id="bibliography-settings-and-customisation"><span class="org-todo todo TODO">TODO</span> Bibliography settings and customisation</h3>
+
+<p>This was setup a long time ago to convert past technical repots into org mode, with references made in correct technical style. This project is on hold.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;doi-utils</span>)
+(require <span style="color:#e6db74">&#39;org-ref-wos</span>)
+(require <span style="color:#e6db74">&#39;org-ref-pubmed</span>)
+(require <span style="color:#e6db74">&#39;org-ref-arxiv</span>)
+(require <span style="color:#e6db74">&#39;org-ref-bibtex</span>)
+(require <span style="color:#e6db74">&#39;org-ref-pdf</span>)
+(require <span style="color:#e6db74">&#39;org-ref-url-utils</span>)
+(require <span style="color:#e6db74">&#39;org-ref-helm</span>)
+
+<span style="color:#75715e">;; note and bib location</span>
+
+(setq org-ref-bibliography-notes <span style="color:#e6db74">&#34;~/my_org/references/references.org&#34;</span>
+      org-ref-bibliography-notes <span style="color:#e6db74">&#34;~/my_org/references/research_notes.org&#34;</span>
+      org-ref-default-bibliography <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/my_org/references/references.bib&#34;</span>)
+      org-ref-pdf-directory <span style="color:#e6db74">&#34;~/my_org/references/pdfs/&#34;</span>)
+
+<span style="color:#75715e">;; setting up helm-bibtex</span>
+(setq helm-bibtex-bibliography <span style="color:#e6db74">&#34;~/my_org/references/references.bib&#34;</span>
+      helm-bibtex-library-path <span style="color:#e6db74">&#34;~/my_org/org/references/pdfs&#34;</span>
+      helm-bibtex-notes-path <span style="color:#e6db74">&#34;~/my_org/references/research_notes.org&#34;</span>)</code></pre></div>
+<h3 id="export">Export</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(require <span style="color:#e6db74">&#39;ox-word</span>)</code></pre></div>
+<h2 id="project-publishing-setup"><span class="org-todo todo TODO">TODO</span> Project publishing setup <code>[0/2]</code></h2>
+
+<p>This is under construction and was initially started with the idea of having custom publishing settings for different projects. I was initially looking at this for publishing my hugo blog. However, the need has been negated with the excellent ox-hugo package.</p>
+
+<h3 id="exporting-org-projects"><span class="org-todo todo TODO">TODO</span> Exporting org projects</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(
+ setq org-publish-project-alist
+ <span style="color:#f92672">&#39;</span>(
+   (<span style="color:#e6db74">&#34;org-repo&#34;</span>
+    :base-directory <span style="color:#e6db74">&#34;./&#34;</span>
+    :base-extension <span style="color:#e6db74">&#34;org&#34;</span>
+    :publishing-directory <span style="color:#e6db74">&#34;/Users/shreyas/my_projects/dotemacs&#34;</span>
+    :EXPORT_FILE_NAME <span style="color:#e6db74">&#34;README.org&#34;</span>
+    :recursive f
+    :publishing-function org-html-publish-to-html
+    <span style="color:#75715e">;; :html-head &#34;&lt;link rel=&#34;stylesheet&#34; href=&#34;http://dakrone.github.io/org2.css&#34; type=&#34;text/css&#34; /&gt;&#34;</span>
+    )
+
+   (<span style="color:#e6db74">&#34;md&#34;</span>
+    :base-directory <span style="color:#e6db74">&#34;./&#34;</span>
+    :base-extension <span style="color:#e6db74">&#34;org&#34;</span>
+    :publishing-directory <span style="color:#e6db74">&#34;./export/&#34;</span>
+    :recursive <span style="color:#66d9ef">t</span>
+    :publishing-function org-md-export-to-markdown
+    )
+
+   (<span style="color:#e6db74">&#34;Documentation - html + md&#34;</span>
+    :components (<span style="color:#e6db74">&#34;html-static&#34;</span> <span style="color:#e6db74">&#34;md&#34;</span> )
+    )))</code></pre></div>
+<h3 id="function-for-exporting-dotemacs-config"><span class="org-todo todo TODO">TODO</span> Function for exporting dotemacs config</h3>
+
+<p>This is the beginning of a function to perform 3 exports:</p>
+
+<ol>
+<li>Export to my hugo website as a part of my documentation (ox-hugo)</li>
+<li>Copy the org file to my github repo.</li>
+<li>Tangle the copied org file to the above github repository to have the script ready.</li>
+</ol>
+
+<p>Maintaining the documentation on my website does not make it easy to others to view the changes in the configuration and fork or download the same as an org file or emacs-lisp script. Therefore the config that I publish should be maintained in it&rsquo;s own repository.</p>
+
+<p>As of now, I&rsquo;m calling this function from my Emacs config file, and need to improve the above workflow.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun sr/dotemacs-export()
+  (interactive)
+  <span style="color:#e6db74">&#34;Exporting to org file and lisp&#34;</span>
+  (org-hugo-export-to-md)
+  (<span style="color:#a6e22e">copy-file</span> <span style="color:#e6db74">&#34;~/scimax/user/sr-config.org&#34;</span> <span style="color:#e6db74">&#34;~/my_projects/dotemacs/README.org&#34;</span> <span style="color:#e6db74">&#34;OK-IF-ALREADY-EXISTS&#34;</span>)
+  <span style="color:#75715e">;; (find-file-existing &#34;~/my_projects/dotemacs/README.org&#34;)</span>
+  (org-babel-tangle-file  <span style="color:#e6db74">&#34;~/my_projects/dotemacs/README.org&#34;</span> <span style="color:#e6db74">&#34;~/my_projects/dotemacs/config.el&#34;</span>))</code></pre></div>
+<h2 id="mu4e"><span class="org-todo todo TODO">TODO</span> mu4e</h2>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 20:43] </span></span> <br />
+The mu4e config has to be broken down and the send email with htmlize has to be evaluated.</li>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-02-07 Thu 09:04] </span></span> <br />
+As of now, I do not acess my email on different computers via Emacs. The end goal is to setup a mail server via VPS and store my email online, which can then be searched via Emacs and mu4e from any location.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(if (system-type-is-darwin)
+    (progn
+      (use-package mu4e
+        :ensure <span style="color:#66d9ef">nil</span>
+        :config
+        (require <span style="color:#e6db74">&#39;mu4e</span>)
+        (require <span style="color:#e6db74">&#39;mu4e-contrib</span>)
+        (require <span style="color:#e6db74">&#39;org-mu4e</span>)
+
+        (setq
+         mue4e-headers-skip-duplicates  <span style="color:#66d9ef">t</span>
+         mu4e-view-show-images <span style="color:#66d9ef">t</span>
+         mu4e-view-show-addresses <span style="color:#e6db74">&#39;t</span>
+         mu4e-compose-format-flowed <span style="color:#66d9ef">nil</span>
+         mu4e-update-interval <span style="color:#ae81ff">200</span>
+         message-ignored-cited-headers <span style="color:#e6db74">&#39;nil</span>
+         mu4e-date-format <span style="color:#e6db74">&#34;%y/%m/%d&#34;</span>
+         mu4e-headers-date-format <span style="color:#e6db74">&#34;%Y/%m/%d&#34;</span>
+         mu4e-change-filenames-when-moving <span style="color:#66d9ef">t</span>
+         mu4e-attachments-dir <span style="color:#e6db74">&#34;~/Downloads/Mail-Attachments/&#34;</span>
+         mu4e-maildir (<span style="color:#a6e22e">expand-file-name</span> <span style="color:#e6db74">&#34;~/my_mail/fmail&#34;</span>)
+         )
+
+        <span style="color:#75715e">;; mu4e email refiling loations</span>
+        (setq
+         mu4e-refile-folder <span style="color:#e6db74">&#34;/Archive&#34;</span>
+         mu4e-trash-folder  <span style="color:#e6db74">&#34;/Trash&#34;</span>
+         mu4e-sent-folder   <span style="color:#e6db74">&#34;/Sent&#34;</span>
+         mu4e-drafts-folder <span style="color:#e6db74">&#34;/Drafts&#34;</span>
+         )
+
+        <span style="color:#75715e">;; setup some handy shortcuts</span>
+        (setq mu4e-maildir-shortcuts
+              <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;/INBOX&#34;</span>   <span style="color:#f92672">.</span> <span style="color:#e6db74">?i</span>)
+	        (<span style="color:#e6db74">&#34;/Sent&#34;</span>    <span style="color:#f92672">.</span> <span style="color:#e6db74">?s</span>)
+	        (<span style="color:#e6db74">&#34;/Archive&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">?a</span>)
+	        (<span style="color:#e6db74">&#34;/Trash&#34;</span>   <span style="color:#f92672">.</span> <span style="color:#e6db74">?t</span>)))
+
+        <span style="color:#75715e">;;store link to message if in header view, not to header query</span>
+        (setq org-mu4e-link-query-in-headers-mode <span style="color:#66d9ef">nil</span>
+              org-mu4e-convert-to-html <span style="color:#66d9ef">t</span>) <span style="color:#75715e">;; org -&gt; html</span>
+
+        <span style="color:#75715e">;; Enabling view in browser for HTML heavy emails that don&#39;t render well</span>
+        (add-to-list <span style="color:#e6db74">&#39;mu4e-view-actions</span>
+	             <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;ViewInBrowser&#34;</span> <span style="color:#f92672">.</span> mu4e-action-view-in-browser) <span style="color:#66d9ef">t</span>)
+
+        (<span style="color:#a6e22e">autoload</span> <span style="color:#e6db74">&#39;mu4e</span> <span style="color:#e6db74">&#34;mu4e&#34;</span> <span style="color:#e6db74">&#34;mu for Emacs.&#34;</span> <span style="color:#66d9ef">t</span>)
+
+        <span style="color:#75715e">;; Config for sending email</span>
+        (setq
+         message-send-mail-function <span style="color:#e6db74">&#39;message-send-mail-with-sendmail</span>
+         send-mail-function <span style="color:#e6db74">&#39;sendmail-send-it</span>
+         message-kill-buffer-on-exit <span style="color:#66d9ef">t</span>
+         )
+
+        <span style="color:#75715e">;; allow for updating mail using &#39;U&#39; in the main view:</span>
+        (setq mu4e-get-mail-command  <span style="color:#e6db74">&#34;mbsync -a -q&#34;</span>)
+
+        <span style="color:#75715e">;; Don&#39;t keep asking for confirmation for every action</span>
+        (defun my-mu4e-mark-execute-all-no-confirm ()
+          <span style="color:#e6db74">&#34;Execute all marks without confirmation.&#34;</span>
+          (interactive)
+          (mu4e-mark-execute-all <span style="color:#e6db74">&#39;no-confirm</span>))
+        <span style="color:#75715e">;; mapping x to above function</span>
+        (<span style="color:#a6e22e">define-key</span> mu4e-headers-mode-map <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#a6e22e">#&#39;</span>my-mu4e-mark-execute-all-no-confirm)
+        )
+      <span style="color:#75715e">;; source: http://matt.hackinghistory.ca/2016/11/18/sending-html-mail-with-mu4e/</span>
+
+      <span style="color:#75715e">;; this is stolen from John but it didn&#39;t work for me until I</span>
+      <span style="color:#75715e">;; made those changes to mu4e-compose.el</span>
+      (defun htmlize-and-send ()
+        <span style="color:#e6db74">&#34;When in an org-mu4e-compose-org-mode message, htmlize and send it.&#34;</span>
+        (interactive)
+        (when
+            (<span style="color:#a6e22e">member</span> <span style="color:#e6db74">&#39;org~mu4e-mime-switch-headers-or-body</span> post-command-hook)
+          (org-mime-htmlize)
+          (org-mu4e-compose-org-mode)
+          (mu4e-compose-mode)
+          (message-send-and-exit)))
+
+      <span style="color:#75715e">;; This overloads the amazing C-c C-c commands in org-mode with one more function</span>
+      <span style="color:#75715e">;; namely the htmlize-and-send, above.</span>
+      (add-hook <span style="color:#e6db74">&#39;org-ctrl-c-ctrl-c-hook</span> <span style="color:#e6db74">&#39;htmlize-and-send</span> <span style="color:#66d9ef">t</span>)
+      )
+  )</code></pre></div>
+          </div>
+
+          
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/emacs/">Emacs</a>
+  
+  <a class="badge badge-light" href="/tags/org/">org</a>
+  
+</div>
+
+
+
+        </div>
+
+        <div class="body-footer">
+          Last updated on Feb 9, 2019
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//shreyasragavan.disqus.com/count.js" async></script>
+    
+
+    
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
+

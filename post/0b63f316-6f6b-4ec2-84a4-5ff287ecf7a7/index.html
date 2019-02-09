@@ -58,11 +58,6 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -238,6 +233,25 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -279,25 +293,6 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -489,39 +484,27 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
 <p>One solution is to start up a Jupyter server locally, open the file and then File &gt;&gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.</p>
 
 <p><a href="https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format" target="_blank">This SO discussion</a> provided my answer, which is a 2 step script via the versatile <a href="https://pandoc.org/" target="_blank">pandoc</a>. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.</p>
-
-<pre><code class="language-sh">jupyter nbconvert notebook.ipynb --to markdown
-pandoc notebook.md -o notebook.org
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org</code></pre></div>
 <p>The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup> For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.</p>
 
 <p>In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org</p>
-
-<pre><code class="language-lisp">#+NAME: jupyter-to-org-current
-#+HEADER:  :var path_ipynb=&quot;/Users/xxx/Jupyter_notebook&quot;
-#+HEADER: :var path_md = &quot;Jupyter_notebook-markdown&quot;
-#+HEADER: :var path_org = &quot;Jupyter-notebook-org&quot;
-#+BEGIN_SRC sh :results verbatim
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#f92672">#+</span>NAME: jupyter-to-org-current
+<span style="color:#f92672">#+</span>HEADER:  <span style="color:#e6db74">:var</span> path_ipynb=<span style="color:#e6db74">&#34;/Users/xxx/Jupyter_notebook&#34;</span>
+<span style="color:#f92672">#+</span>HEADER: <span style="color:#e6db74">:var</span> path_md = <span style="color:#e6db74">&#34;Jupyter_notebook-markdown&#34;</span>
+<span style="color:#f92672">#+</span>HEADER: <span style="color:#e6db74">:var</span> path_org = <span style="color:#e6db74">&#34;Jupyter-notebook-org&#34;</span>
+<span style="color:#f92672">#+</span>BEGIN_SRC sh <span style="color:#e6db74">:results</span> verbatim
 cwd=$(pwd)
 jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
 pandoc $cwd/$path_md.md -o $cwd/$path_org.org
 cp $path_ipynb.ipynb $cwd
-ls
-</code></pre>
-
+ls</code></pre></div>
 <p>The <code>path_ipynb</code> variable can be changed as required to point to the Jupyter notebook.<sup class="footnote-ref" id="fnref:fn-2"><a href="#fn:fn-2">2</a></sup></p>
 
 <p>All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.</p>
-
-<pre><code class="language-lisp">(org-babel-lob-ingest &quot;/Users/shreyas/my_projects/my-recipes.org&quot;)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(org-babel-lob-ingest <span style="color:#e6db74">&#34;/Users/shreyas/my_projects/my-recipes.org&#34;</span>)</code></pre></div>
 <p>The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the <code>#+CALL</code> function and using the name and arguments of the source block above.</p>
-
-<pre><code class="language-lisp">#+CALL: jupyter-to-org-current(path_md=&quot;Jup-to-markdown&quot;, path_org=&quot;Markdown-to-org&quot;)
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#f92672">#+</span>CALL: jupyter-to-org-current(path_md=<span style="color:#e6db74">&#34;Jup-to-markdown&#34;</span><span style="color:#f92672">,</span> path_org=<span style="color:#e6db74">&#34;Markdown-to-org&#34;</span>)</code></pre></div>
 <p>Therefore, the snippet above will convert a Jupyter notebook to a markdown file named <code>Jup-to-markdown</code> and then an Org file called <code>Markdown-to-org</code>. If an argument is not specified, the default value of the paths specified in the original source block will be used.</p>
 
 <p>Of course, the <code>#+CALL</code> function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the <code>#+CALL</code> as a snippet using <code>M-x</code> <code>yas-new-snippet</code>, and load it when needed using the excellent <code>ivy-yasnippet</code> package (see MELPA), with minimal exertions.</p>
@@ -706,18 +689,6 @@ ls
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -735,8 +706,6 @@ ls
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

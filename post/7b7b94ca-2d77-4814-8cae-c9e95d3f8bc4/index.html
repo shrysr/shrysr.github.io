@@ -59,11 +59,6 @@ Another easy way to learn a programming language, especially one that is intrins
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -240,6 +235,25 @@ Another easy way to learn a programming language, especially one that is intrins
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -281,25 +295,6 @@ Another easy way to learn a programming language, especially one that is intrins
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -493,93 +488,80 @@ Another easy way to learn a programming language, especially one that is intrins
 <p>For example, I have 3 main repositories where I commit my work. This is a frequent, repetitive process that is often done till (and at) the last minute.</p>
 
 <p>These are snippets that were developed leveraging elmacro:</p>
-
-<pre><code class="language-lisp">;; Maximise current frame, open scimax user directory,
-;; call magit, switch window and open the scimax directory
-;; Scimax magit status and dired
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Maximise current frame, open scimax user directory,</span>
+<span style="color:#75715e">;; call magit, switch window and open the scimax directory</span>
+<span style="color:#75715e">;; Scimax magit status and dired</span>
 (defun sr/windows-magit-scimax ()
   (interactive)
   (ace-delete-other-windows)
-  (dired &quot;~/scimax/user/&quot;)
-  (switch-window-then-split-right nil)
-  (magit-status &quot;~/scimax/&quot;)
+  (dired <span style="color:#e6db74">&#34;~/scimax/user/&#34;</span>)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
+  (magit-status <span style="color:#e6db74">&#34;~/scimax/&#34;</span>)
   (switch-window)
   (split-window-vertically)
   (dired-up-directory)
   (windmove-right)
   )
 
-;; Maximise current frame, open org directory, call magit
-;; my_org magit status
+<span style="color:#75715e">;; Maximise current frame, open org directory, call magit</span>
+<span style="color:#75715e">;; my_org magit status</span>
 (defun sr/windows-magit-org ()
   (interactive)
   (ace-delete-other-windows)
-  (magit-status &quot;~/my_org/&quot;)
+  (magit-status <span style="color:#e6db74">&#34;~/my_org/&#34;</span>)
   )
 
-;; Maximise current frame, call magit for my_projects directory
-;; split buffer and call dired in case I need to navigate to a particular directory.
-;; the latter can also be done via magit itself if desired.
+<span style="color:#75715e">;; Maximise current frame, call magit for my_projects directory</span>
+<span style="color:#75715e">;; split buffer and call dired in case I need to navigate to a particular directory.</span>
+<span style="color:#75715e">;; the latter can also be done via magit itself if desired.</span>
 (defun sr/windows-magit-projects ()
   (interactive)
   (ace-delete-other-windows)
-  (switch-window-then-split-right nil)
-  (magit-status &quot;~/my_projects/&quot;)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
+  (magit-status <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)
   (switch-window)
-  (dired &quot;~/my_projects/&quot;)
+  (dired <span style="color:#e6db74">&#34;~/my_projects/&#34;</span>)
   (switch-window)
-  )
-
-</code></pre>
-
+  )</code></pre></div>
 <p>Another more complicated example, is using projectile to switch to a project, call a particular file in the project and then split the buffer and open the tasks of that particular project with a narrowed view.</p>
 
 <p>I capture each project&rsquo;s tasks and notes separately in an org file <a href="/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/">using org-projectile</a>. This is useful especially for coding projects so that the code is better separated from notes and yet linked.</p>
-
-<pre><code class="language-lisp">;; This is to rapidly switch between projects and have a similar window configuration,
-;; i.e. a main file, and a narrowed view of the tasks heading.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; This is to rapidly switch between projects and have a similar window configuration,</span>
+<span style="color:#75715e">;; i.e. a main file, and a narrowed view of the tasks heading.</span>
 
 (defun sr/windows-projects ()
   (interactive)
   (ace-delete-other-windows)
-  (switch-window-then-split-right nil)
+  (switch-window-then-split-right <span style="color:#66d9ef">nil</span>)
   (projectile-switch-project)
   (switch-window)
-  (find-file &quot;~/my_org/project-tasks.org&quot;)
+  (find-file <span style="color:#e6db74">&#34;~/my_org/project-tasks.org&#34;</span>)
   (widen)
   (helm-org-rifle-current-buffer)
   (org-narrow-to-subtree)
   (outline-show-children)
-  )
-
-</code></pre>
-
+  )</code></pre></div>
 <p>These are not perfect. For example, I&rsquo;d rather have to select the project name only once and have that feed into <code>helm-org-rifle</code>. These are topics of future exploration.</p>
 
 <p>What then remained was being able call these functions with a few keypresses. Hydras enable this.</p>
-
-<pre><code class="language-lisp">
-(defhydra sr/process-window-keys ()
-  &quot;
-Key^^   ^Workflow^
---------------------
-o       org magit
-s       scimax magit
-p       projects magit
-w       select project and set window config
-SPC     exit
-&quot;
-  (&quot;o&quot; sr/windows-magit-org )
-  (&quot;p&quot; sr/windows-magit-projects )
-  (&quot;s&quot; sr/windows-magit-scimax )
-  (&quot;w&quot; sr/windows-projects)
-  (&quot;SPC&quot; nil)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(defhydra sr/process-window-keys ()
+  <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">Key^^   ^Workflow^
+</span><span style="color:#e6db74">--------------------
+</span><span style="color:#e6db74">o       org magit
+</span><span style="color:#e6db74">s       scimax magit
+</span><span style="color:#e6db74">p       projects magit
+</span><span style="color:#e6db74">w       select project and set window config
+</span><span style="color:#e6db74">SPC     exit
+</span><span style="color:#e6db74">&#34;</span>
+  (<span style="color:#e6db74">&#34;o&#34;</span> sr/windows-magit-org )
+  (<span style="color:#e6db74">&#34;p&#34;</span> sr/windows-magit-projects )
+  (<span style="color:#e6db74">&#34;s&#34;</span> sr/windows-magit-scimax )
+  (<span style="color:#e6db74">&#34;w&#34;</span> sr/windows-projects)
+  (<span style="color:#e6db74">&#34;SPC&#34;</span> <span style="color:#66d9ef">nil</span>)
   )
 
-(global-set-key (kbd &quot;&lt;f8&gt; m&quot;) 'sr/process-window-keys/body)
-
-</code></pre>
-
+(global-set-key (kbd <span style="color:#e6db74">&#34;&lt;f8&gt; m&#34;</span>) <span style="color:#e6db74">&#39;sr/process-window-keys/body</span>)</code></pre></div>
 <p>With the above in place, now all I have to do is call the menu to choose the desired function by typing <code>F8</code> <code>m</code> and then type <code>o</code> or <code>p</code> and so on. The hydra exits with <code>Space</code>, which makes it easy to switch to another project in case there is nothing to commit in the current choice.</p>
 
 <p>Though simple and in many ways primitive - these functions have still saved me a lot of repetitive acrobatics on my keyboard and I enjoy using them.</p>
@@ -736,18 +718,6 @@ SPC     exit
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -765,8 +735,6 @@ SPC     exit
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

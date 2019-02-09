@@ -29,93 +29,80 @@
 &lt;p&gt;For example, I have 3 main repositories where I commit my work. This is a frequent, repetitive process that is often done till (and at) the last minute.&lt;/p&gt;
 
 &lt;p&gt;These are snippets that were developed leveraging elmacro:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Maximise current frame, open scimax user directory,
-;; call magit, switch window and open the scimax directory
-;; Scimax magit status and dired
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; Maximise current frame, open scimax user directory,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; call magit, switch window and open the scimax directory&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Scimax magit status and dired&lt;/span&gt;
 (defun sr/windows-magit-scimax ()
   (interactive)
   (ace-delete-other-windows)
-  (dired &amp;quot;~/scimax/user/&amp;quot;)
-  (switch-window-then-split-right nil)
-  (magit-status &amp;quot;~/scimax/&amp;quot;)
+  (dired &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/scimax/user/&amp;#34;&lt;/span&gt;)
+  (switch-window-then-split-right &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+  (magit-status &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/scimax/&amp;#34;&lt;/span&gt;)
   (switch-window)
   (split-window-vertically)
   (dired-up-directory)
   (windmove-right)
   )
 
-;; Maximise current frame, open org directory, call magit
-;; my_org magit status
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Maximise current frame, open org directory, call magit&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; my_org magit status&lt;/span&gt;
 (defun sr/windows-magit-org ()
   (interactive)
   (ace-delete-other-windows)
-  (magit-status &amp;quot;~/my_org/&amp;quot;)
+  (magit-status &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/&amp;#34;&lt;/span&gt;)
   )
 
-;; Maximise current frame, call magit for my_projects directory
-;; split buffer and call dired in case I need to navigate to a particular directory.
-;; the latter can also be done via magit itself if desired.
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Maximise current frame, call magit for my_projects directory&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; split buffer and call dired in case I need to navigate to a particular directory.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; the latter can also be done via magit itself if desired.&lt;/span&gt;
 (defun sr/windows-magit-projects ()
   (interactive)
   (ace-delete-other-windows)
-  (switch-window-then-split-right nil)
-  (magit-status &amp;quot;~/my_projects/&amp;quot;)
+  (switch-window-then-split-right &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+  (magit-status &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_projects/&amp;#34;&lt;/span&gt;)
   (switch-window)
-  (dired &amp;quot;~/my_projects/&amp;quot;)
+  (dired &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_projects/&amp;#34;&lt;/span&gt;)
   (switch-window)
-  )
-
-&lt;/code&gt;&lt;/pre&gt;
-
+  )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Another more complicated example, is using projectile to switch to a project, call a particular file in the project and then split the buffer and open the tasks of that particular project with a narrowed view.&lt;/p&gt;
 
 &lt;p&gt;I capture each project&amp;rsquo;s tasks and notes separately in an org file &lt;a href=&#34;https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/&#34;&gt;using org-projectile&lt;/a&gt;. This is useful especially for coding projects so that the code is better separated from notes and yet linked.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; This is to rapidly switch between projects and have a similar window configuration,
-;; i.e. a main file, and a narrowed view of the tasks heading.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; This is to rapidly switch between projects and have a similar window configuration,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; i.e. a main file, and a narrowed view of the tasks heading.&lt;/span&gt;
 
 (defun sr/windows-projects ()
   (interactive)
   (ace-delete-other-windows)
-  (switch-window-then-split-right nil)
+  (switch-window-then-split-right &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
   (projectile-switch-project)
   (switch-window)
-  (find-file &amp;quot;~/my_org/project-tasks.org&amp;quot;)
+  (find-file &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/project-tasks.org&amp;#34;&lt;/span&gt;)
   (widen)
   (helm-org-rifle-current-buffer)
   (org-narrow-to-subtree)
   (outline-show-children)
-  )
-
-&lt;/code&gt;&lt;/pre&gt;
-
+  )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;These are not perfect. For example, I&amp;rsquo;d rather have to select the project name only once and have that feed into &lt;code&gt;helm-org-rifle&lt;/code&gt;. These are topics of future exploration.&lt;/p&gt;
 
 &lt;p&gt;What then remained was being able call these functions with a few keypresses. Hydras enable this.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;
-(defhydra sr/process-window-keys ()
-  &amp;quot;
-Key^^   ^Workflow^
---------------------
-o       org magit
-s       scimax magit
-p       projects magit
-w       select project and set window config
-SPC     exit
-&amp;quot;
-  (&amp;quot;o&amp;quot; sr/windows-magit-org )
-  (&amp;quot;p&amp;quot; sr/windows-magit-projects )
-  (&amp;quot;s&amp;quot; sr/windows-magit-scimax )
-  (&amp;quot;w&amp;quot; sr/windows-projects)
-  (&amp;quot;SPC&amp;quot; nil)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(defhydra sr/process-window-keys ()
+  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Key^^   ^Workflow^
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;--------------------
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;o       org magit
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;s       scimax magit
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;p       projects magit
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w       select project and set window config
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;SPC     exit
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+  (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;o&amp;#34;&lt;/span&gt; sr/windows-magit-org )
+  (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p&amp;#34;&lt;/span&gt; sr/windows-magit-projects )
+  (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s&amp;#34;&lt;/span&gt; sr/windows-magit-scimax )
+  (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;w&amp;#34;&lt;/span&gt; sr/windows-projects)
+  (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SPC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
   )
 
-(global-set-key (kbd &amp;quot;&amp;lt;f8&amp;gt; m&amp;quot;) &#39;sr/process-window-keys/body)
-
-&lt;/code&gt;&lt;/pre&gt;
-
+(global-set-key (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;f8&amp;gt; m&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;sr/process-window-keys/body&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With the above in place, now all I have to do is call the menu to choose the desired function by typing &lt;code&gt;F8&lt;/code&gt; &lt;code&gt;m&lt;/code&gt; and then type &lt;code&gt;o&lt;/code&gt; or &lt;code&gt;p&lt;/code&gt; and so on. The hydra exits with &lt;code&gt;Space&lt;/code&gt;, which makes it easy to switch to another project in case there is nothing to commit in the current choice.&lt;/p&gt;
 
 &lt;p&gt;Though simple and in many ways primitive - these functions have still saved me a lot of repetitive acrobatics on my keyboard and I enjoy using them.&lt;/p&gt;
@@ -460,16 +447,13 @@ SPC     exit
 &lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
 
 &lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Setting up org-projectile
-(require &#39;org-projectile)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; Setting up org-projectile&lt;/span&gt;
+(require &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;org-projectile&lt;/span&gt;)
 (setq org-projectile-projects-file
-      &amp;quot;~/my_org/project-tasks.org&amp;quot;)
+      &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/project-tasks.org&amp;#34;&lt;/span&gt;)
 (push (org-projectile-project-todo-entry) org-capture-templates)
 (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-(global-set-key (kbd &amp;quot;C-c n p&amp;quot;) &#39;org-projectile-project-todo-completing-read)
-&lt;/code&gt;&lt;/pre&gt;
-
+(global-set-key (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-c n p&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;org-projectile-project-todo-completing-read&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
 
 
@@ -507,39 +491,27 @@ SPC     exit
 &lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
-pandoc notebook.md -o notebook.org
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
 
 &lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+NAME: jupyter-to-org-current
-#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
-#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
-#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
-#+BEGIN_SRC sh :results verbatim
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;NAME: jupyter-to-org-current
+&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER:  &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_ipynb=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/Users/xxx/Jupyter_notebook&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER: &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_md = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jupyter_notebook-markdown&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER: &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_org = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jupyter-notebook-org&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;BEGIN_SRC sh &lt;span style=&#34;color:#e6db74&#34;&gt;:results&lt;/span&gt; verbatim
 cwd=$(pwd)
 jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
 pandoc $cwd/$path_md.md -o $cwd/$path_org.org
 cp $path_ipynb.ipynb $cwd
-ls
-&lt;/code&gt;&lt;/pre&gt;
-
+ls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(org-babel-lob-ingest &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/Users/shreyas/my_projects/my-recipes.org&amp;#34;&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;CALL: jupyter-to-org-current(path_md=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jup-to-markdown&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; path_org=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Markdown-to-org&amp;#34;&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
 
 &lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
@@ -654,22 +626,16 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
       <description>&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(setq org-capture-templates
-&#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;** %? %a &amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(setq org-capture-templates
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;l&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Link + notes&amp;#34;&lt;/span&gt; entry (file+headline &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/link_database.org&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.UL Unfiled Links&amp;#34;&lt;/span&gt;)
+     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;** %? %a &amp;#34;&lt;/span&gt;)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(setq org-capture-templates
-    &#39;((&amp;quot;e&amp;quot; &amp;quot;Snippet + Notes&amp;quot; entry ;; &#39;w&#39; for &#39;org-protocol&#39;
-     (file+headline &amp;quot;~/my_org/link_database.org&amp;quot; &amp;quot;.UL Unfiled Links&amp;quot;)
-     &amp;quot;*** %a, %T\n %:initial&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(setq org-capture-templates
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Snippet + Notes&amp;#34;&lt;/span&gt; entry &lt;span style=&#34;color:#75715e&#34;&gt;;; &amp;#39;w&amp;#39; for &amp;#39;org-protocol&amp;#39;&lt;/span&gt;
+     (file+headline &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/link_database.org&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.UL Unfiled Links&amp;#34;&lt;/span&gt;)
+     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*** %a, %T\n %:initial&amp;#34;&lt;/span&gt;)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
 
 
@@ -800,16 +766,13 @@ happened to me.&lt;/p&gt;
 but this is certainly a workable result. My nascent configuration for
 writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s
 remarkable how much was achieved with a few lines of code!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(with-eval-after-load &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;writeroom-mode&lt;/span&gt;
+  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-,&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-.&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-=&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-adjust-width))
 
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(with-eval-after-load &#39;writeroom-mode
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-,&amp;quot;) #&#39;writeroom-decrease-width)
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-.&amp;quot;) #&#39;writeroom-increase-width)
-  (define-key writeroom-mode-map (kbd &amp;quot;C-s-=&amp;quot;) #&#39;writeroom-adjust-width))
-
-(advice-add &#39;text-scale-adjust :after
-        #&#39;visual-fill-column-adjust)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
+(advice-add &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text-scale-adjust&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:after&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;visual-fill-column-adjust)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
 
@@ -869,29 +832,25 @@ to my list of packages, and adding a basic setup to my helm
 configuration.[^fn:2]&lt;/p&gt;
 
 &lt;p&gt;As of now, I add packages to &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; using this bit of code that I&amp;rsquo;ve obviously borrowed from the internet, and this case - I&amp;rsquo;m afraid I did not note the source.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; Setting up use packages&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;; list the packages you want&lt;/span&gt;
+(setq package-list &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
 
-&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Setting up use packages
-;; list the packages you want
-(setq package-list &#39;(diminish org-journal google-this ztree org-gcal w3m org-trello org-web-tools ox-hugo auto-indent-mode ob-sql-mode dash org-super-agenda ox-hugo workgroups2 switch-window ess ess-R-data-view interleave deft org-bookmark-heading writeroom-mode evil evil-leader polymode helm-ag))
-
-;;fetch the list of packages available
+&lt;span style=&#34;color:#75715e&#34;&gt;;;fetch the list of packages available&lt;/span&gt;
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install the missing packages
+&lt;span style=&#34;color:#75715e&#34;&gt;;; install the missing packages&lt;/span&gt;
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
-;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.
+&lt;span style=&#34;color:#75715e&#34;&gt;;; Remember to start helm-ag. As per the Silver searcher github site, the helm-follow-mode-persistent has to be set before calling helm-ag.&lt;/span&gt;
 
 (custom-set-variables
- &#39;(helm-follow-mode-persistent t))
+ &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;(helm-follow-mode-persistent &lt;span style=&#34;color:#66d9ef&#34;&gt;t&lt;/span&gt;))
 
-(require &#39;helm-ag)
-
-&lt;/code&gt;&lt;/pre&gt;
-
+(require &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;helm-ag&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This is how it looks in action &amp;gt;&amp;gt; Sweet !!&lt;/p&gt;
 
 
@@ -944,22 +903,50 @@ configuration.[^fn:2]&lt;/p&gt;
     </item>
     
     <item>
-      <title>Example Page</title>
-      <link>https://shrysr.github.io/docs/course-edx-r-fundamentals/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 -0600</pubDate>
+      <title>An SSD can breathe life into old computers</title>
+      <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/docs/course-edx-r-fundamentals/</guid>
-      <description>
+      <guid>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s a well known trick that installing a &lt;a href=&#34;https://www.storagereview.com/ssd_vs_hdd&#34; target=&#34;_blank&#34;&gt;SSD&lt;/a&gt; in place of the
+conventional Hard disk can breathe new life into very old machines. My
+mid 2010 Macbook Pro is one such example, being over 8 years old.&lt;/p&gt;
 
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+&lt;p&gt;In particular, within Emacs - &lt;code&gt;mu4e&lt;/code&gt; responds much more quickly and there is
+significantly less lag in searching / accessing emails and &lt;code&gt;HTML&lt;/code&gt; rendering.&lt;/p&gt;
 
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+&lt;p&gt;The other advantage of using a Mac over Linux is that installation and
+setup instructions are more often available out the box for the Mac OS
+(though this is changing). I have access to dedicated apps including
+Evernote, Dash, Spotify, Whatsap, Slack etc on my Mac. This is in
+addition to several other high quality apps on the App store.&lt;/p&gt;
 
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I do love using Arch Linux and Antergos and the packing management and
+rolling OS upgrades are totally cool. However, a little bit of
+elegance in the user interface and hardware (being available out of
+the box) does ease up the mind and progress. It takes quite a bit of
+effort to achieve that unless you are at the level of purely using
+&lt;a href=&#34;http://www.howardism.org/Technical/Emacs/new-window-manager.html&#34; target=&#34;_blank&#34;&gt;Emacs as window manager&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+&lt;p&gt;On the Mac, it is easy to move around virtual desktops and use the
+magic track pad to rapidly switch between applications as well. I&amp;rsquo;m
+sure many of these &amp;lsquo;gimmicks&amp;rsquo; may be setup with diligence and due time
+on Linux through solutions with varying levels of quality.&lt;/p&gt;
 
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;However, as of today : it&amp;rsquo;s likely I would have struggled with some
+aspects on Linux that are readily available on other systems. Evernote
+is an example. After hours of searching for an alternate (and
+acceptable) solution for software packages that are not yet ported to
+Linux, I would quite possibly end up making a compromise. Typically,
+the compromises would mean using Electron or Web based versions of
+apps, which are often not as powerful as the desktop app, not to
+mention inconvenient. A prime example would be Evernote, on Arch
+Linux. Some other examples are apps like Word, Pages, Outlook and Excel and
+so on, which are more critical.&lt;/p&gt;
+
+&lt;p&gt;Ultimately, my preference would be to use a Mac as my daily driver and
+play around with Linux on a back up computer. In any case, multiple
+Linux distros can be run on &lt;a href=&#34;https://www.virtualbox.org/&#34; target=&#34;_blank&#34;&gt;Virtual Box&lt;/a&gt; within the Mac.&lt;/p&gt;
 </description>
     </item>
     

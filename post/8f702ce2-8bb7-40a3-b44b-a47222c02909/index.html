@@ -58,11 +58,6 @@ These projects are automatically initialised as git repositories, to which it is
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -238,6 +233,25 @@ These projects are automatically initialised as git repositories, to which it is
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -279,25 +293,6 @@ These projects are automatically initialised as git repositories, to which it is
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -487,16 +482,13 @@ These projects are automatically initialised as git repositories, to which it is
 <p>The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.</p>
 
 <p>Once the above is done, the <a href="https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el" target="_blank">org-projectile</a> package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):</p>
-
-<pre><code class="language-lisp">;; Setting up org-projectile
-(require 'org-projectile)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#75715e">;; Setting up org-projectile</span>
+(require <span style="color:#e6db74">&#39;org-projectile</span>)
 (setq org-projectile-projects-file
-      &quot;~/my_org/project-tasks.org&quot;)
+      <span style="color:#e6db74">&#34;~/my_org/project-tasks.org&#34;</span>)
 (push (org-projectile-project-todo-entry) org-capture-templates)
 (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-(global-set-key (kbd &quot;C-c n p&quot;) 'org-projectile-project-todo-completing-read)
-</code></pre>
-
+(global-set-key (kbd <span style="color:#e6db74">&#34;C-c n p&#34;</span>) <span style="color:#e6db74">&#39;org-projectile-project-todo-completing-read</span>)</code></pre></div>
 <p>The above snippet adds a TODO capture template activated by the letter &lsquo;p&rsquo;, and also adds the <code>project-tasks</code> file to the agenda files. Inside a project, it is then possible to capture using <code>C-cc p</code> and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.</p>
 
 
@@ -674,18 +666,6 @@ These projects are automatically initialised as git repositories, to which it is
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -703,8 +683,6 @@ These projects are automatically initialised as git repositories, to which it is
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

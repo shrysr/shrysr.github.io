@@ -123,7 +123,7 @@ Whiplash is a fascinating movie on many levels regarding a topic that interests 
       <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
       <description>I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
-(setq org-capture-templates &#39;((&amp;quot;l&amp;quot; &amp;quot;Link + notes&amp;quot; entry (file+headline &amp;quot;~/my_org/link_database.</description>
+(setq org-capture-templates &amp;#39;((&amp;#34;l&amp;#34; &amp;#34;Link + notes&amp;#34; entry (file+headline &amp;#34;~/my_org/link_database.</description>
     </item>
     
     <item>

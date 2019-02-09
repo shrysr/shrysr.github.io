@@ -59,11 +59,6 @@
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -236,6 +231,25 @@
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -277,25 +291,6 @@
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -449,7 +444,7 @@ Directly editing code in a Jupyter notebook in a browser is not an attractive lo
       
       I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
 For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
-(setq org-capture-templates '((&quot;l&quot; &quot;Link + notes&quot; entry (file+headline &quot;~/my_org/link_database.
+(setq org-capture-templates &#39;((&#34;l&#34; &#34;Link + notes&#34; entry (file+headline &#34;~/my_org/link_database.
       
     </div>
   </div>
@@ -546,18 +541,6 @@ Zen writing apps are called so because they have a unique combination of fonts, 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -575,8 +558,6 @@ Zen writing apps are called so because they have a unique combination of fonts, 
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     

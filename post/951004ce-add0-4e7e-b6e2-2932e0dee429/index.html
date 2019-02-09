@@ -58,11 +58,6 @@ Zen writing apps are called so because they have a unique combination of fonts, 
       
     
     
-      
-      
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" crossorigin="anonymous">
-      
-    
 
     
 
@@ -238,6 +233,25 @@ Zen writing apps are called so because they have a unique combination of fonts, 
         
 
         <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
@@ -279,25 +293,6 @@ Zen writing apps are called so because they have a unique combination of fonts, 
           <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/index.xml">
-            
-            <span>RSS</span>
             
           </a>
         </li>
@@ -549,16 +544,13 @@ happened to me.</p>
 but this is certainly a workable result. My nascent configuration for
 writeroom-mode in emacs is as follows (munged off the internet!). It&rsquo;s
 remarkable how much was achieved with a few lines of code!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(with-eval-after-load <span style="color:#e6db74">&#39;writeroom-mode</span>
+  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-,&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-.&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-=&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-adjust-width))
 
-<pre><code class="language-lisp">(with-eval-after-load 'writeroom-mode
-  (define-key writeroom-mode-map (kbd &quot;C-s-,&quot;) #'writeroom-decrease-width)
-  (define-key writeroom-mode-map (kbd &quot;C-s-.&quot;) #'writeroom-increase-width)
-  (define-key writeroom-mode-map (kbd &quot;C-s-=&quot;) #'writeroom-adjust-width))
-
-(advice-add 'text-scale-adjust :after
-        #'visual-fill-column-adjust)
-</code></pre>
-<div class="footnotes">
+(advice-add <span style="color:#e6db74">&#39;text-scale-adjust</span> <span style="color:#e6db74">:after</span>
+        <span style="color:#a6e22e">#&#39;</span>visual-fill-column-adjust)</code></pre></div><div class="footnotes">
 
 <hr />
 
@@ -600,6 +592,8 @@ remarkable how much was achieved with a few lines of code!</p>
         <li><a href="/post/01252410-853f-4570-858f-f3d609f5def5/">An SSD can breathe life into old computers</a></li>
         
         <li><a href="/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/">Getting productive - an exploration into holistic task management</a></li>
+        
+        <li><a href="/docs/sr-config/">My Emacs configuration</a></li>
         
         <li><a href="/project/cfd-on-line-wiki/cfd-online-wiki/">Contributions to the CFD-Online Wiki</a></li>
         
@@ -725,18 +719,6 @@ remarkable how much was achieved with a few lines of code!</p>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/lisp.min.js"></script>
-        
-      
 
       
       
@@ -754,8 +736,6 @@ remarkable how much was achieved with a few lines of code!</p>
     
 
     
-    
-    <script>hljs.initHighlightingOnLoad();</script>
     
 
     
