@@ -11,6 +11,30 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Literate Org-mode configuration for Emacs is liberating</title>
+      <link>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</link>
+      <pubDate>Sun, 17 Feb 2019 08:02:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</guid>
+      <description>&lt;p&gt;TLDR: &lt;a href=&#34;https://shrysr.github.io/docs/sr-config&#34;&gt;Check out the Docs section for my Emacs config in Org-mode&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The literate programming paradigm, as conceived by Donald Knuth, represents a move away from writing programs in the manner and order imposed by the computer, and instead enables programmers to develop programs in the order demanded by the logic and flow of their thoughts. Literate programs are written as an uninterrupted exposition of logic in an ordinary human language, much like the text of an essay, in which macros are included to hide abstractions and traditional source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Literate%5Fprogramming&#34; target=&#34;_blank&#34;&gt;Wikipedia article on Literate Programming&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I had graduated to using an Org-mode based configuration with vanilla Emacs, until discovering Scimax a few years ago. At this point, it seemed easier to switch back to using elisp script files in multiple files which were loaded in the desired / necessary order. The plan was to use a file for each major &amp;lsquo;concept&amp;rsquo;, for example one file each for hydras, Org-mode, mu4e, and so on.&lt;/p&gt;
+
+&lt;p&gt;While it is not difficult to manage multiple script files with the projectile package, it does become cumbersome and inelegant to record notes and thoughts in the comment form along with code. Over time, it also becomes difficult to decide the placement of multi-package functions and snippets. As my configuration has evolved - I&amp;rsquo;ve felt an increasing need to shift back to a literate configuration using Org for Emacs, and also separate the personal parts of my configuration to enable sharing on Github.&lt;/p&gt;
+
+&lt;p&gt;Using a literate configuration enables a live documentary of my Emacs configuration and also adding meaningful notes and snippets which are directly or indirectly related to configuring Emacs. For example, it is important to have IPython and Jupyter installed for Scimax to work correctly, and I can include notes and working scripts for the same.&lt;/p&gt;
+
+&lt;p&gt;There are discussions on Emacs init time increasing by using a tangled org file. However, this is atleast partially remedied by including a function to tangle the config file whenever it is saved, and there are other methods &lt;a href=&#34;http://www.holgerschurig.de/en/emacs-efficiently-untangling-elisp/&#34; target=&#34;_blank&#34;&gt;like the one described by Holger Schurig&lt;/a&gt;, which I intend to try out soon. Personally, I have not found any degrade in Emacs init time via Scimax.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Leverage recorded macros to learn elisp and hack together workflows in Emacs</title>
       <link>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</link>
       <pubDate>Sat, 02 Feb 2019 10:16:00 -0700</pubDate>
@@ -899,54 +923,6 @@ configuration.[^fn:2]&lt;/p&gt;
 &lt;p&gt;In addition, the above tutorial clearly elucidates how different languages can be combined together, and the video elucidates typical Devops procedures, which are easily taken care of with appropriate arguments and headers to the source code blocks. For example, all the source code blocks could be tangled into appropriately named and located script files using a single argument. These tutorials tied up bits and pieces of info in my head from various sources and was invaluable in enhancing my understanding of using Emacs and Org-Babel&lt;/p&gt;
 
 &lt;p&gt;The Library of Babel can be made persistent across sessions by loading a specified org-file from which the named source code blocks are automatically read in. It is surprising that the internet does not seem to contain more references and examples using the Library of Babel. Perhaps there are some caveats that I am yet to encounter. One question that arises is whether the Library of Babel is automatically updated when the source code block is updated.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An SSD can breathe life into old computers</title>
-      <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s a well known trick that installing a &lt;a href=&#34;https://www.storagereview.com/ssd_vs_hdd&#34; target=&#34;_blank&#34;&gt;SSD&lt;/a&gt; in place of the
-conventional Hard disk can breathe new life into very old machines. My
-mid 2010 Macbook Pro is one such example, being over 8 years old.&lt;/p&gt;
-
-&lt;p&gt;In particular, within Emacs - &lt;code&gt;mu4e&lt;/code&gt; responds much more quickly and there is
-significantly less lag in searching / accessing emails and &lt;code&gt;HTML&lt;/code&gt; rendering.&lt;/p&gt;
-
-&lt;p&gt;The other advantage of using a Mac over Linux is that installation and
-setup instructions are more often available out the box for the Mac OS
-(though this is changing). I have access to dedicated apps including
-Evernote, Dash, Spotify, Whatsap, Slack etc on my Mac. This is in
-addition to several other high quality apps on the App store.&lt;/p&gt;
-
-&lt;p&gt;I do love using Arch Linux and Antergos and the packing management and
-rolling OS upgrades are totally cool. However, a little bit of
-elegance in the user interface and hardware (being available out of
-the box) does ease up the mind and progress. It takes quite a bit of
-effort to achieve that unless you are at the level of purely using
-&lt;a href=&#34;http://www.howardism.org/Technical/Emacs/new-window-manager.html&#34; target=&#34;_blank&#34;&gt;Emacs as window manager&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;On the Mac, it is easy to move around virtual desktops and use the
-magic track pad to rapidly switch between applications as well. I&amp;rsquo;m
-sure many of these &amp;lsquo;gimmicks&amp;rsquo; may be setup with diligence and due time
-on Linux through solutions with varying levels of quality.&lt;/p&gt;
-
-&lt;p&gt;However, as of today : it&amp;rsquo;s likely I would have struggled with some
-aspects on Linux that are readily available on other systems. Evernote
-is an example. After hours of searching for an alternate (and
-acceptable) solution for software packages that are not yet ported to
-Linux, I would quite possibly end up making a compromise. Typically,
-the compromises would mean using Electron or Web based versions of
-apps, which are often not as powerful as the desktop app, not to
-mention inconvenient. A prime example would be Evernote, on Arch
-Linux. Some other examples are apps like Word, Pages, Outlook and Excel and
-so on, which are more critical.&lt;/p&gt;
-
-&lt;p&gt;Ultimately, my preference would be to use a Mac as my daily driver and
-play around with Linux on a back up computer. In any case, multiple
-Linux distros can be run on &lt;a href=&#34;https://www.virtualbox.org/&#34; target=&#34;_blank&#34;&gt;Virtual Box&lt;/a&gt; within the Mac.&lt;/p&gt;
 </description>
     </item>
     

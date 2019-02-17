@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 02 Feb 2019 10:16:00 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 08:02:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Literate Org-mode configuration for Emacs is liberating</title>
+      <link>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</link>
+      <pubDate>Sun, 17 Feb 2019 08:02:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</guid>
+      <description>TLDR: Check out the Docs section for my Emacs config in Org-mode
+ The literate programming paradigm, as conceived by Donald Knuth, represents a move away from writing programs in the manner and order imposed by the computer, and instead enables programmers to develop programs in the order demanded by the logic and flow of their thoughts. Literate programs are written as an uninterrupted exposition of logic in an ordinary human language, much like the text of an essay, in which macros are included to hide abstractions and traditional source code.</description>
+    </item>
     
     <item>
       <title>Leverage recorded macros to learn elisp and hack together workflows in Emacs</title>
@@ -134,6 +144,17 @@ How could one search for a keyword through all these repositories? I have always
     </item>
     
     <item>
+      <title>My Emacs / Scimax configuration.</title>
+      <link>https://shrysr.github.io/docs/sr-config/</link>
+      <pubDate>Sun, 17 Feb 2019 08:11:15 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/sr-config/</guid>
+      <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website, or if you prefer: on github.
+ Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
+John Kitchin</description>
+    </item>
+    
+    <item>
       <title>An SSD can breathe life into old computers</title>
       <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
@@ -142,18 +163,6 @@ How could one search for a keyword through all these repositories? I have always
       <description>It&amp;rsquo;s a well known trick that installing a SSD in place of the conventional Hard disk can breathe new life into very old machines. My mid 2010 Macbook Pro is one such example, being over 8 years old.
 In particular, within Emacs - mu4e responds much more quickly and there is significantly less lag in searching / accessing emails and HTML rendering.
 The other advantage of using a Mac over Linux is that installation and setup instructions are more often available out the box for the Mac OS (though this is changing).</description>
-    </item>
-    
-    <item>
-      <title>My Emacs configuration</title>
-      <link>https://shrysr.github.io/docs/sr-config/</link>
-      <pubDate>Sun, 10 Sep 2017 00:00:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/sr-config/</guid>
-      <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: https://shrysr.github.io/docs/sr-config/
- Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
-John Kitchin
- Scimax specific variables have their own heading to make it &amp;lsquo;easier&amp;rsquo; to experiment with other starter-kits.</description>
     </item>
     
     <item>

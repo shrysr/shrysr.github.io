@@ -13,15 +13,14 @@
     
     
     <item>
-      <title>My Emacs configuration</title>
+      <title>My Emacs / Scimax configuration.</title>
       <link>https://shrysr.github.io/docs/sr-config/</link>
-      <pubDate>Sun, 10 Sep 2017 00:00:00 -0600</pubDate>
+      <pubDate>Sun, 17 Feb 2019 08:11:15 -0700</pubDate>
       
       <guid>https://shrysr.github.io/docs/sr-config/</guid>
-      <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website: https://shrysr.github.io/docs/sr-config/
+      <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website, or if you prefer: on github.
  Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
-John Kitchin
- Scimax specific variables have their own heading to make it &amp;lsquo;easier&amp;rsquo; to experiment with other starter-kits.</description>
+John Kitchin</description>
     </item>
     
   </channel>
