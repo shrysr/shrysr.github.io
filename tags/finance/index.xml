@@ -13,16 +13,18 @@
     
     
     <item>
-      <title>Courses @ Datacamp</title>
-      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <title>Course Certificates</title>
+      <link>https://shrysr.github.io/project/course-certificate-list/</link>
       <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
-      <description>Links to certificates of courses completed on Datacamp
- Intro to SQL
- Data Science R basics.
- Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+      <guid>https://shrysr.github.io/project/course-certificate-list/</guid>
+      <description> EdX  EdX HarvardX PH125.1x Data Science Basics: R.  DataCamp  Intro to SQL
+ Data Science R basics included in EdX HarvardX PH125.1x
+ Introduction to Tidyverse
  Introduction to R for Finance
+  DataQuest  Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
   </description>
     </item>
     

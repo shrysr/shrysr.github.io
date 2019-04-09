@@ -7,45 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Feb 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Courses @ Dataquest</title>
-      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
-      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
-      <description>Links to certificates of courses completed on Dataquest
- Data Analyst Path in R
- Git &amp;amp; Version control
- SQL Fundamentals
-  </description>
-    </item>
-    
-    <item>
-      <title>EdX HarvardX PH125.1x: Data Science: R Basics</title>
-      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
-      <pubDate>Wed, 28 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
-Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
-    </item>
-    
-    <item>
-      <title>Courses @ Datacamp</title>
-      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <title>Course Certificates</title>
+      <link>https://shrysr.github.io/project/course-certificate-list/</link>
       <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
-      <description>Links to certificates of courses completed on Datacamp
- Intro to SQL
- Data Science R basics.
- Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+      <guid>https://shrysr.github.io/project/course-certificate-list/</guid>
+      <description> EdX  EdX HarvardX PH125.1x Data Science Basics: R.  DataCamp  Intro to SQL
+ Data Science R basics included in EdX HarvardX PH125.1x
+ Introduction to Tidyverse
  Introduction to R for Finance
+  DataQuest  Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
   </description>
     </item>
     

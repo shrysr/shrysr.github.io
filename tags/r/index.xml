@@ -7,45 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 15 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 11:43:00 -0600</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Courses @ Dataquest</title>
-      <link>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</link>
-      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Using ESS for Datascience</title>
+      <link>https://shrysr.github.io/docs/ess-datascience-r/</link>
+      <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
       
-      <guid>https://shrysr.github.io/project/courses-dataquest/course-dataquest-datascience/</guid>
-      <description>Links to certificates of courses completed on Dataquest
- Data Analyst Path in R
- Git &amp;amp; Version control
- SQL Fundamentals
-  </description>
+      <guid>https://shrysr.github.io/docs/ess-datascience-r/</guid>
+      <description>RStudio is a formidable IDE to work with and offers an environment to seamlessly work with multiple languages beyond R. It is especially convenient for tasks involving frequent visualisation of data frames and plots, and for use with Shiny app development.
+However, the text (i.e code) editing capabalities are still significantly lacking compared to the likes of Emacs and Vim. Besides this, it does not offer a seamless interface integrating task, time management and multi-language programming environments to the extent available within Org-mode via Emacs.</description>
     </item>
     
     <item>
-      <title>EdX HarvardX PH125.1x: Data Science: R Basics</title>
-      <link>https://shrysr.github.io/project/course-edx-harvard-r/</link>
-      <pubDate>Wed, 28 Mar 2018 00:00:00 +0000</pubDate>
+      <title>R notes and snippets</title>
+      <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
+      <pubDate>Tue, 09 Apr 2019 15:36:50 -0600</pubDate>
       
-      <guid>https://shrysr.github.io/project/course-edx-harvard-r/</guid>
-      <description>The course covered an introduction to using R to extract, manipulate and thus analyse data. It basically lays the foundations to using R in data science.
-Verified EdX Certificate of Achievement  Course exercises are linked with a Datacamp course.  Data Science R basics   Course Notes and code This Jupyter notebook contains code written while following along with the course, which was expanded to illustrate concepts and notes.</description>
+      <guid>https://shrysr.github.io/docs/r-notes-snippets/</guid>
+      <description>Long &amp;lt;-&amp;gt; Wide formats : example for gathering library(&amp;#34;tidyverse&amp;#34;) ## Defining a sample tribble with several duplicates a &amp;lt;- tribble( ~IDS, ~&amp;#34;client id 1&amp;#34;, ~&amp;#34;client id 2&amp;#34;, ~&amp;#34;client id 3&amp;#34;, ~&amp;#34;client id 4&amp;#34;, ~&amp;#34;old app&amp;#34;, ~&amp;#34;new app&amp;#34;, 123, 767, 888,&amp;#34;&amp;#34; , &amp;#34;&amp;#34;, &amp;#34;yes&amp;#34; , &amp;#34;no&amp;#34;, 222, 333, 455, 55, 677, &amp;#34;no&amp;#34;, &amp;#34;yes&amp;#34;, 222, 333, 343, 55,677, &amp;#34;no&amp;#34;, &amp;#34;yes&amp;#34; ) ## Defining vector to form column names vec1 &amp;lt;- seq(1:4) vec2 &amp;lt;- &amp;#34;client id&amp;#34; vec3 &amp;lt;- str_glue(&amp;#34;{vec2} {vec1}&amp;#34;) ## Gathering and removing duplicates a %&amp;gt;% gather( key = &amp;#34;Client number&amp;#34;, value = &amp;#34;client ID&amp;#34;, vec3 ) %&amp;gt;% unique() Matrix Defining a matrix A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.</description>
     </item>
     
     <item>
-      <title>Courses @ Datacamp</title>
-      <link>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</link>
+      <title>Course Certificates</title>
+      <link>https://shrysr.github.io/project/course-certificate-list/</link>
       <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://shrysr.github.io/project/courses-datacamp/courses-datacamp/</guid>
-      <description>Links to certificates of courses completed on Datacamp
- Intro to SQL
- Data Science R basics.
- Completed as a part of EdX HarvardX PH125.1x: Data Science: R Basics  Introduction to Tidyverse
+      <guid>https://shrysr.github.io/project/course-certificate-list/</guid>
+      <description> EdX  EdX HarvardX PH125.1x Data Science Basics: R.  DataCamp  Intro to SQL
+ Data Science R basics included in EdX HarvardX PH125.1x
+ Introduction to Tidyverse
  Introduction to R for Finance
+  DataQuest  Data Analyst Path in R
+ Git &amp;amp; Version control
+ SQL Fundamentals
   </description>
     </item>
     
