@@ -15,7 +15,8 @@
   
     
   
-  <meta name="description" content="Long &lt;-&gt; Wide formats : example for gathering library(&#34;tidyverse&#34;) ## Defining a sample tribble with several duplicates a &lt;- tribble( ~IDS, ~&#34;client id 1&#34;, ~&#34;client id 2&#34;, ~&#34;client id 3&#34;, ~&#34;client id 4&#34;, ~&#34;old app&#34;, ~&#34;new app&#34;, 123, 767, 888,&#34;&#34; , &#34;&#34;, &#34;yes&#34; , &#34;no&#34;, 222, 333, 455, 55, 677, &#34;no&#34;, &#34;yes&#34;, 222, 333, 343, 55,677, &#34;no&#34;, &#34;yes&#34; ) ## Defining vector to form column names vec1 &lt;- seq(1:4) vec2 &lt;- &#34;client id&#34; vec3 &lt;- str_glue(&#34;{vec2} {vec1}&#34;) ## Gathering and removing duplicates a %&gt;% gather( key = &#34;Client number&#34;, value = &#34;client ID&#34;, vec3 ) %&gt;% unique() Matrix Defining a matrix A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.">
+  <meta name="description" content="Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/docs/r-notes-snippets/">
@@ -116,11 +117,12 @@
   <meta property="og:site_name" content="Shreyas Ragavan">
   <meta property="og:url" content="https://shrysr.github.io/docs/r-notes-snippets/">
   <meta property="og:title" content="R notes and snippets | Shreyas Ragavan">
-  <meta property="og:description" content="Long &lt;-&gt; Wide formats : example for gathering library(&#34;tidyverse&#34;) ## Defining a sample tribble with several duplicates a &lt;- tribble( ~IDS, ~&#34;client id 1&#34;, ~&#34;client id 2&#34;, ~&#34;client id 3&#34;, ~&#34;client id 4&#34;, ~&#34;old app&#34;, ~&#34;new app&#34;, 123, 767, 888,&#34;&#34; , &#34;&#34;, &#34;yes&#34; , &#34;no&#34;, 222, 333, 455, 55, 677, &#34;no&#34;, &#34;yes&#34;, 222, 333, 343, 55,677, &#34;no&#34;, &#34;yes&#34; ) ## Defining vector to form column names vec1 &lt;- seq(1:4) vec2 &lt;- &#34;client id&#34; vec3 &lt;- str_glue(&#34;{vec2} {vec1}&#34;) ## Gathering and removing duplicates a %&gt;% gather( key = &#34;Client number&#34;, value = &#34;client ID&#34;, vec3 ) %&gt;% unique() Matrix Defining a matrix A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:description" content="Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-04-09T15:36:50-06:00">
-  <meta property="article:modified_time" content="2019-04-09T15:36:50-06:00">
+  <meta property="article:published_time" content="2019-07-10T14:02:06-06:00">
+  <meta property="article:modified_time" content="2019-07-10T14:02:06-06:00">
   
 
   
@@ -349,25 +351,28 @@
 
   </div>
   
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/docs/r-notes-snippets/">R</a>
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/quotes/">Quotes</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/docs/sr-config/">Emacs</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="/docs/sr-config/">Dotemacs</a>
-      </li>
-      
-      <li >
-        <a href="/docs/ess-datascience-r/">ESS</a>
-      </li>
-      
-    </ul>
-    
+    <a class="docs-toc-link" href="/docs/docker-notes/">Docker - notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/sr-config/">Dotemacs - Emacs config</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/ess-datascience-r/">ESS &amp; Data Science</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/docs/r-notes-snippets/">R - Notes</a>
 
   </div>
   
@@ -386,6 +391,18 @@
 <ul>
 <li>
 <ul>
+<li><a href="#lubridate">Lubridate</a></li>
+<li><a href="#importing-multiple-excel-sheet-from-multiple-excel-files">Importing multiple excel sheet from multiple excel files</a>
+<ul>
+<li>
+<ul>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#data-explorer-package"><span class="org-todo todo TODO">TODO</span> Data Explorer package</a></li>
+<li><a href="#devtools-package">Devtools package</a></li>
+<li><a href="#basic-libraries-to-aid-package-development">Basic libraries to aid package development</a></li>
+<li><a href="#visdat-preprocessing-visualisation-link">Visdat : preprocessing visualisation <a href="http://visdat.njtierney.com/" target="_blank">link</a></a></li>
 <li><a href="#long-wide-formats-example-for-gathering">Long &lt;-&gt; Wide formats : example for gathering</a></li>
 <li><a href="#matrix">Matrix</a>
 <ul>
@@ -394,8 +411,13 @@
 <li><a href="#sums-rowsums-and-colsums-adding-rows-rbind-and-columns-cbind">Sums - <code>rowSums()</code> and <code>colSums()</code>, adding rows - <code>rbind()</code> and columns - <code>cbind()</code></a></li>
 </ul></li>
 <li><a href="#dates">Dates</a></li>
+<li><a href="#vectors">Vectors</a></li>
+<li><a href="#vectorised-functions">Vectorised functions</a></li>
 <li><a href="#lists">Lists</a></li>
-<li><a href="#factors">Factors</a></li>
+<li><a href="#factors">Factors</a>
+<ul>
+<li><a href="#working-with-categorical-data">Working with categorical data:</a></li>
+</ul></li>
 <li><a href="#dataframe">Dataframe</a>
 <ul>
 <li><a href="#dataframe-peek-function-in-r"><span class="org-todo todo TODO">TODO</span> Dataframe peek function in R</a></li>
@@ -416,6 +438,7 @@
 <li><a href="#troubleshooting-with-r-version-dot">Troubleshooting with R version.</a></li>
 <li><a href="#how-an-r-session-starts">How an R session starts</a></li>
 <li><a href="#upgrading-packages-in-r--r-session">Upgrading packages in R (R session)</a></li>
+<li><a href="#installing-r-on-debian">Installing R on Debian</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -438,6 +461,104 @@
           <div class="article-style" itemprop="articleBody">
             
 
+<h2 id="lubridate">Lubridate</h2>
+
+<p>Lubridate: dates and time made easy <a href="https://vita.had.co.nz/papers/lubridate.pdf" target="_blank">link</a>.
+This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.</p>
+
+<h2 id="importing-multiple-excel-sheet-from-multiple-excel-files">Importing multiple excel sheet from multiple excel files</h2>
+
+<p>This is one approach to importing multiple sheets from multiple excel files into a list of tibbles. The goal is that each sheet is imported as a separate tibble.</p>
+
+<p>Loading the libraries:
+While you may have the tidyverse package installed, this approach uses the  package <code>rio</code> ( ).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## install the rio library.</span>
+<span style="color:#75715e">## Rio  makes data import a little easier for different file types.</span>
+
+<span style="color:#75715e">## install.packages(&#34;rio&#34;)</span>
+<span style="color:#f92672">library</span>(<span style="color:#e6db74">&#34;rio&#34;</span>)
+<span style="color:#f92672">library</span>(<span style="color:#e6db74">&#34;tidyverse&#34;</span>)</code></pre></div>
+<p>User input for the path. This basically points towards a folder which presumably contains multiple excel files.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Note that patterns can be provided as an argument to filter file types.</span>
+folder_path <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;~/temp/bsu_test/&#34;</span>)</code></pre></div>
+<p>The information in the directory can be gleaned with the <code>fs::dir_info</code> function, and from this the path variable can be pulled which will contain the paths to the excel files found.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">excel_paths_tbl <span style="color:#f92672">&lt;-</span> fs<span style="color:#f92672">::</span>dir_info(folder_path)
+
+paths_chr <span style="color:#f92672">&lt;-</span> excel_paths_tbl <span style="color:#f92672">%&gt;%</span>
+  pull(path)</code></pre></div>
+<ul>
+<li><p><code>import_list()</code> from the <code>rio</code> package is used and the class is set to tibble using the argument <code>tbl</code>.</p></li>
+
+<li><p>An anonymous function is used to map the paths and apply the <code>import_list</code> function on each path.</p></li>
+
+<li><p>For example: assuming that there were 2 Nos. excel files in the specified directory; = the map function creates 2 lists containing 2 tibbles each. Each tibble represents an excel sheet from the file.</p></li>
+
+<li><p>The  final <code>combine()</code> function combines these 2 Nos. lists into a single list of 4 tibbles, each being a sheet in the excel file.</p></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">excel_data <span style="color:#f92672">&lt;-</span> paths_chr <span style="color:#f92672">%&gt;%</span>
+map(<span style="color:#f92672">~</span> import_list(<span style="color:#ae81ff">.</span> , setclass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tbl&#34;</span>)) <span style="color:#f92672">%&gt;%</span>
+combine()
+
+glimpse(excel_data)</code></pre></div>
+<h4 id="references">References</h4>
+
+<ol>
+<li>BSU Course DSB-101-R</li>
+<li>I learnt about the <code>Rio</code> package in this <a href="https://stackoverflow.com/questions/12945687/read-all-worksheets-in-an-excel-workbook-into-an-r-list-with-data-frames" target="_blank">Stack Overflow discussion</a></li>
+</ol>
+
+<h2 id="data-explorer-package"><span class="org-todo todo TODO">TODO</span> Data Explorer package</h2>
+
+<p>The DataExplorer package aims to have tools for EDA, Feature engineering and Data reporting. It is handy to get quick overview of the data from multiple perspectives.</p>
+
+<p>Installation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install.packges(<span style="color:#e6db74">&#34;DataExplorer&#34;</span>)</code></pre></div>
+<p>Salient points:</p>
+
+<ol>
+<li>A list of data frames can be provided as the input.</li>
+<li><code>plot_str</code> : display a graphic networking the various variables, their types and the list of data frames. This is displayed in the browser. The <code>type = &quot;r&quot;</code> argument can be used for a radial network.</li>
+<li><code>introduce</code> : provides a table of numbers rather than percentages, like the number of rows, columns, missing data and so on.</li>
+<li><code>plot_intro</code> : Visualises the output of <code>introduce</code>.</li>
+<li><code>plot_missing</code> : useful to know the percentage of missing values in each feature.
+6.</li>
+</ol>
+
+<h2 id="devtools-package">Devtools package</h2>
+
+<blockquote>
+<p>&hellip;devtools package, which is the public face for a suite of R functions that automate common development tasks.</p>
+
+<p><a href="https://r-pkgs.org/intro.html" target="_blank">R Packages (book)</a></p>
+</blockquote>
+
+<p>Official details of package development : <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages" target="_blank">link</a></p>
+
+<h2 id="basic-libraries-to-aid-package-development">Basic libraries to aid package development</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install.packages(<span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;devtools&#34;</span>, <span style="color:#e6db74">&#34;roxygen2&#34;</span>, <span style="color:#e6db74">&#34;testthat&#34;</span>, <span style="color:#e6db74">&#34;knitr&#34;</span>))</code></pre></div>
+<h2 id="visdat-preprocessing-visualisation-link">Visdat : preprocessing visualisation <a href="http://visdat.njtierney.com/" target="_blank">link</a></h2>
+
+<p>This package could be very useful in exploring new data or looking at how the data is changing after a wrangling operation. It could save repeatedly looking at the CSV file manually to make sure the change is implemented.</p>
+
+<p>Installing Visdat</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">library</span>(<span style="color:#e6db74">&#34;easypackages&#34;</span>)
+packages(<span style="color:#e6db74">&#34;visdat&#34;</span>)</code></pre></div>
+<p>Main Functions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">vis_dat
+vis_miss
+vis_compare
+vis_expect
+vis_cor
+vis_guess</code></pre></div>
+<p>General Exploration</p>
+
+<p>Note: <code>typical_data</code> is a dataset that is included with the package and is useful to explore the functions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">libraries(<span style="color:#e6db74">&#34;tidyverse&#34;</span>, <span style="color:#e6db74">&#34;visdat&#34;</span>)
+vis_dat(typical_data)
+vis_miss(typical_data)</code></pre></div>
+<p>Clustering the missing data in the columns</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">vis_miss(typical_data,
+         cluster <span style="color:#f92672">=</span>  <span style="color:#66d9ef">TRUE</span>)</code></pre></div>
 <h2 id="long-wide-formats-example-for-gathering">Long &lt;-&gt; Wide formats : example for gathering</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">library</span>(<span style="color:#e6db74">&#34;tidyverse&#34;</span>)
 
@@ -611,17 +732,57 @@ a <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(
 <span style="color:#f92672">!</span>(a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span>)
 
 <span style="color:#75715e"># Testing runif()</span></code></pre></div>
+<h2 id="vectors">Vectors</h2>
+
+<ul>
+<li>One dimensional collection of data.</li>
+<li>vectors need to contain a similar data type. To combine multiple data types, a data frame type object or a list is required.</li>
+<li><code>length()</code> can be used with numeric type vectors to find the length of the vector. However the <code>nchar()</code> function should be used for character type vectors (using <code>length()</code> will provide an answer of 1)</li>
+<li>A single number is also stored as a vector of length 1.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">a <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;This is a character type vector&#34;</span>, <span style="color:#e6db74">&#34;which contains 2 strings&#34;</span>)
+a
+<span style="color:#66d9ef">length</span>(a) <span style="color:#75715e"># the result will be 2 because there are 2 elements</span>
+<span style="color:#66d9ef">nchar</span>(a)  <span style="color:#75715e"># Actual number of characters in each string</span></code></pre></div>
+<h2 id="vectorised-functions">Vectorised functions</h2>
+
+<p>Most functions in R are vectorised. The function will apply itself to each element of a vector. This concept is important to understand especially while progressing onto tidyeval style Functions.</p>
+
+<p>Example of multiple substitutions with the assignment operator which is a  vectorised function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">languages <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;English&#34;</span>, <span style="color:#e6db74">&#34;Italian&#34;</span>, <span style="color:#e6db74">&#34;Urdu&#34;</span>)
+<span style="color:#66d9ef">print</span>(languages)
+languages[<span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)] <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;Norwegian&#34;</span>, <span style="color:#e6db74">&#34;Latin&#34;</span>)
+<span style="color:#66d9ef">print</span>(languages)</code></pre></div>
 <h2 id="lists">Lists</h2>
 
 <ul>
+<li>The list is a one dimensional collection of data, like a vector.</li>
+<li>The list data type is equivalent to the dictionary data type in Python.</li>
 <li>Use the <code>list()</code> with the chosen data structures as the arguments. The list can contain multiple types of objects or data types.</li>
+<li>Lists are used to create Dataframes.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">                                        <span style="color:#75715e"># Creating a simple list of 4 elements, name, age, height, horn.sizre</span>
+
+my.list <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">list</span>(
+  name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Shreyas&#34;</span>,
+  age <span style="color:#f92672">=</span> <span style="color:#ae81ff">776</span>,
+  height <span style="color:#f92672">=</span> <span style="color:#ae81ff">167</span>,
+  horn.size <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
+)
+
+my.list
+                                        <span style="color:#75715e"># the tag names can be extracted using the names()</span>
+<span style="color:#66d9ef">names</span>(my.list)</code></pre></div>
+<ul>
 <li>Subsetting: using a <code>[]</code> returns a subset of the list and using <code>[[]]</code> returns the data inside the list being referenced.
 
 <ul>
+<li>A single bracket always means to filter a location. list[<index>] is actually a filtered list.</li>
+<li>Single brackets return a list and Double brackets return the element itself.</li>
 <li>A subset can be used on a dateframe to extract specific data.</li>
-<li>Syntax example: <code>subset(dataframe, column1 &gt; condition1 &amp; column2 &lt; condition2)</code></li>
+<li>Syntax example with conditionals: <code>subset(dataframe, column1 &gt; condition1 &amp; column2 &lt; condition2)</code></li>
 </ul></li>
-<li>The elements of the list can be named, by adding the to the arguments while defining the list.</li>
+<li>The elements of the list can be named, by adding the element to the arguments while defining the list.</li>
 <li>adding names to an existing list can be done using the <code>names(list name)</code> function.</li>
 <li>With a named list, the <code>$</code> operator can also be used to access specific list items.</li>
 <li>items can be added to the list using <code>c()</code>, which would look like <code>c(list_name, new_item_name = item_name)</code></li>
@@ -638,8 +799,54 @@ a <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(
 <ul>
 <li>use <code>attr()</code> to access a specific attribute. This takes 2 arguments at least. <code>attr(matrix_name, which = &quot;desired attribute&quot;)</code></li>
 </ul></li>
-</ul>
+<li>Applying functions to lists
 
+<ul>
+<li><code>lapply</code> is for lists.</li>
+<li><code>sapply</code> : simplified apply works well with Vectors.</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">people <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;shreyas&#34;</span>, <span style="color:#e6db74">&#34;tom&#34;</span>, <span style="color:#e6db74">&#34;harry&#34;</span>)
+<span style="color:#66d9ef">lapply</span>(people, <span style="color:#66d9ef">toupper</span>)
+                                        <span style="color:#75715e"># the first argument is the list and the 2nd argument is the function. Additional arguments to the function can also be supplied. This returns a new list and the old list remains unmodified.</span>
+<span style="color:#66d9ef">lapply</span>(people, <span style="color:#66d9ef">paste</span>, <span style="color:#e6db74">&#34;hello&#34;</span>)
+people</code></pre></div>
+<p>Examples using lapply and other list and vector Manipulation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">                                        <span style="color:#75715e"># Creating vectors of meals  and meal items</span>
+
+breakfast <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;eggs&#34;</span>, <span style="color:#e6db74">&#34;bread&#34;</span>, <span style="color:#e6db74">&#34;orange juice&#34;</span>)
+lunch <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;pasta&#34;</span>, <span style="color:#e6db74">&#34;coffee&#34;</span>)
+meals <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">list</span>(breakfast <span style="color:#f92672">=</span> breakfast, lunch <span style="color:#f92672">=</span>  lunch)
+meals
+meals <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(meals, <span style="color:#66d9ef">list</span>(dinner <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>(<span style="color:#e6db74">&#34;noodles&#34;</span>, <span style="color:#e6db74">&#34;bread&#34;</span>)))
+meals
+<span style="color:#66d9ef">names</span>(meals)
+
+                                        <span style="color:#75715e"># Extracting dinner</span>
+dinner <span style="color:#f92672">&lt;-</span> meals<span style="color:#f92672">$</span>dinner
+
+                                        <span style="color:#75715e"># Adding earlier meals to a separate list</span>
+early_meals <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(meals[<span style="color:#e6db74">&#34;breakfast&#34;</span>], meals[<span style="color:#e6db74">&#34;lunch&#34;</span>])
+early_meals
+
+                                        <span style="color:#75715e"># Finding the number of items in each meal.</span>
+number_items_meal <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">lapply</span>(meals , <span style="color:#66d9ef">length</span>)
+number_items_meal
+
+                                        <span style="color:#75715e"># Write a function `add_pizza` that adds pizza to a given meal vector, and  returns the pizza-fied vector</span>
+add_pizza <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(<span style="color:#66d9ef">vector</span>, string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pizza&#34;</span>) {
+  pizzafied <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">paste</span>(<span style="color:#66d9ef">vector</span>, string, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;-&#34;</span>)
+  <span style="color:#66d9ef">return</span>(pizzafied)
+  }
+
+add_pizza(breakfast)
+
+                                        <span style="color:#75715e"># Create a vector `better_meals` that is all your meals, but with pizza!</span>
+updated_meals <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(add_pizza(breakfast),
+                   add_pizza(lunch),
+                   add_pizza(dinner)
+                   )
+updated_meals</code></pre></div>
 <h2 id="factors">Factors</h2>
 
 <ul>
@@ -668,6 +875,13 @@ a <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(
 <li><code>drop = T</code> argument to drop a level completely. Subsetting with [-1] only drops the object at the first position, but retains the level.</li>
 <li>R&rsquo;s default behavior when creating data frames is to convert all characters into factors</li>
 </ul></li>
+</ul>
+
+<h3 id="working-with-categorical-data">Working with categorical data:</h3>
+
+<ul>
+<li><code>forcats::as_factor()</code> : assigns factor values based on order in the vector</li>
+<li><code>base::as.factor()</code> : uses an alphabetical order. Assigns factor order based on the alphabetical order</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">ranking <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>)
 <span style="color:#66d9ef">head</span>(ranking)
@@ -703,7 +917,7 @@ glimpse()</code></pre></div>
 <p>The package <code>easypackages</code> enables quickly loading or installing multiple libraries. This snippet will enable installing multiple packages. In general, it is better to install packages one by one. They can however be called together.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">install.packages(<span style="color:#e6db74">&#34;easypackages&#34;</span>)
 <span style="color:#f92672">library</span>(<span style="color:#e6db74">&#34;easypackages&#34;</span>)
-packages(<span style="color:#e6db74">&#34;tidyverse&#34;</span>, <span style="color:#e6db74">&#34;tidyquant&#34;</span>, <span style="color:#e6db74">&#34;glmnet&#34;</span>, <span style="color:#e6db74">&#34;rpart&#34;</span>, <span style="color:#e6db74">&#34;rpart.plot&#34;</span>, <span style="color:#e6db74">&#34;ranger&#34;</span>, <span style="color:#e6db74">&#34;randomForest&#34;</span>, <span style="color:#e6db74">&#34;xgboost&#34;</span>, <span style="color:#e6db74">&#34;kernlab&#34;</span>)</code></pre></div>
+packages(<span style="color:#e6db74">&#34;tidyverse&#34;</span>, <span style="color:#e6db74">&#34;tidyquant&#34;</span>, <span style="color:#e6db74">&#34;glmnet&#34;</span>, <span style="color:#e6db74">&#34;rpart&#34;</span>, <span style="color:#e6db74">&#34;rpart.plot&#34;</span>, <span style="color:#e6db74">&#34;ranger&#34;</span>, <span style="color:#e6db74">&#34;randomForest&#34;</span>, <span style="color:#e6db74">&#34;xgboost&#34;</span>, <span style="color:#e6db74">&#34;kernlab&#34;</span>, <span style="color:#e6db74">&#34;visdat&#34;</span>)</code></pre></div>
 <h2 id="basic-statistics-concepts">Basic Statistics concepts</h2>
 
 <h3 id="median">Median</h3>
@@ -768,8 +982,6 @@ quantile(a, probs <span style="color:#f92672">=</span>  <span style="color:#66d9
 <p>To find the installation location of R, use the <code>R.home()</code> function with component specified as shown below. <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Rhome.html" target="_blank">More information</a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#66d9ef">R.home</span>(component<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;home&#39;</span>)
 <span style="color:#66d9ef">R.home</span>(component<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;etc&#39;</span>)</code></pre></div>
-<p>/usr/lib64/R/etc</p>
-
 <h2 id="jupytext-for-conversion-to-rmd">Jupytext for conversion to Rmd</h2>
 
 <blockquote>
@@ -839,6 +1051,20 @@ When you also need to rebuild packages which were built for an older version:</p
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">update.packages(ask<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,checkBuilt<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>,repos<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cran.cnr.berkeley.edu/&#34;</span>)</code></pre></div>
 <p>You can use Rscript, which comes with r to update packages from a Shell:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Rscript -e <span style="color:#e6db74">&#34;update.packages()&#34;</span></code></pre></div>
+<h2 id="installing-r-on-debian">Installing R on Debian</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cat &gt;&gt; /etc/apt/sources.list <span style="color:#e6db74">&lt;&lt; EOF
+</span><span style="color:#e6db74"># adding mirror for installation of R
+</span><span style="color:#e6db74">deb http://cran.rstudio.com/bin/linux/debian stretch-cran34/
+</span><span style="color:#e6db74">EOF</span>
+
+sudo apt-get update</code></pre></div>
+<p>Using Debian&rsquo;s GPG Key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install dirmngr
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key <span style="color:#e6db74">&#39;E19F5F87128899B192B1A2C2AD5F960A256A04AF&#39;</span></code></pre></div>
+<p>Installing r-Base</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install r-base</code></pre></div>
+<p>Some pre-requisite libraries are required for installing various R Packages</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install libcurl4-openssl-dev</code></pre></div>
           </div>
 
           
@@ -848,7 +1074,7 @@ When you also need to rebuild packages which were built for an older version:</p
   
   <a class="badge badge-light" href="/tags/r/">R</a>
   
-  <a class="badge badge-light" href="/tags/data-science/">Data-science</a>
+  <a class="badge badge-light" href="/tags/data-science/">Data-Science</a>
   
 </div>
 
@@ -857,7 +1083,7 @@ When you also need to rebuild packages which were built for an older version:</p
         </div>
 
         <div class="body-footer">
-          Last updated on Apr 9, 2019
+          Last updated on Jul 10, 2019
         </div>
 
       </article>

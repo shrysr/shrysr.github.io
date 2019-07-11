@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Using ESS for Datascience</title>
+      <title>Using ESS for Data Science</title>
       <link>https://shrysr.github.io/docs/ess-datascience-r/</link>
       <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
       
@@ -23,9 +23,30 @@ However, the text (i.e code) editing capabalities are still significantly lackin
     </item>
     
     <item>
+      <title>Notes on Docker</title>
+      <link>https://shrysr.github.io/docs/docker-notes/</link>
+      <pubDate>Thu, 11 Jul 2019 09:25:54 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/docker-notes/</guid>
+      <description>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
+This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
+TODO What is Docker A brief summary of what Docker is all about.</description>
+    </item>
+    
+    <item>
+      <title>R notes and snippets</title>
+      <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
+      <pubDate>Wed, 10 Jul 2019 14:02:06 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/r-notes-snippets/</guid>
+      <description>Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.</description>
+    </item>
+    
+    <item>
       <title>My Emacs &#43; Scimax configuration</title>
       <link>https://shrysr.github.io/docs/sr-config/</link>
-      <pubDate>Tue, 09 Apr 2019 15:49:48 -0600</pubDate>
+      <pubDate>Wed, 10 Jul 2019 13:55:46 -0600</pubDate>
       
       <guid>https://shrysr.github.io/docs/sr-config/</guid>
       <description>Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website, or if you prefer: on github.
@@ -34,12 +55,12 @@ John Kitchin</description>
     </item>
     
     <item>
-      <title>R notes and snippets</title>
-      <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
-      <pubDate>Tue, 09 Apr 2019 15:36:50 -0600</pubDate>
+      <title>quotes</title>
+      <link>https://shrysr.github.io/docs/quotes/</link>
+      <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
       
-      <guid>https://shrysr.github.io/docs/r-notes-snippets/</guid>
-      <description>Long &amp;lt;-&amp;gt; Wide formats : example for gathering library(&amp;#34;tidyverse&amp;#34;) ## Defining a sample tribble with several duplicates a &amp;lt;- tribble( ~IDS, ~&amp;#34;client id 1&amp;#34;, ~&amp;#34;client id 2&amp;#34;, ~&amp;#34;client id 3&amp;#34;, ~&amp;#34;client id 4&amp;#34;, ~&amp;#34;old app&amp;#34;, ~&amp;#34;new app&amp;#34;, 123, 767, 888,&amp;#34;&amp;#34; , &amp;#34;&amp;#34;, &amp;#34;yes&amp;#34; , &amp;#34;no&amp;#34;, 222, 333, 455, 55, 677, &amp;#34;no&amp;#34;, &amp;#34;yes&amp;#34;, 222, 333, 343, 55,677, &amp;#34;no&amp;#34;, &amp;#34;yes&amp;#34; ) ## Defining vector to form column names vec1 &amp;lt;- seq(1:4) vec2 &amp;lt;- &amp;#34;client id&amp;#34; vec3 &amp;lt;- str_glue(&amp;#34;{vec2} {vec1}&amp;#34;) ## Gathering and removing duplicates a %&amp;gt;% gather( key = &amp;#34;Client number&amp;#34;, value = &amp;#34;client ID&amp;#34;, vec3 ) %&amp;gt;% unique() Matrix Defining a matrix A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.</description>
+      <guid>https://shrysr.github.io/docs/quotes/</guid>
+      <description>“I never made one of my discoveries through the process of rational thinking” ― Albert Einstein “To be fully alive, fully human, and completely awake is to be continually thrown out of the nest. To live fully is to be always in no-man’s-land, to experience each moment as completely new and fresh. To live is to be willing to die over and over again. ” ― Pema Chödrön, When Things Fall Apart: Heart Advice for Difficult Times Perfectionism can’t survive unless it is fed with the oxygen of indulgence and paranoia and irrationality.</description>
     </item>
     
   </channel>

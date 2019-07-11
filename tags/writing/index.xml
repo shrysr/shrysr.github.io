@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 03 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 14:44:00 -0700</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/writing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Iosevka - an awesome font for Emacs</title>
+      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
+      <description>Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
+Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.</description>
+    </item>
     
     <item>
       <title>Getting productive - an exploration into holistic task management</title>

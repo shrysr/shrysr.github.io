@@ -359,7 +359,7 @@
   
   
   <div>
-    <h2><a href="/docs/ess-datascience-r/">Using ESS for Datascience</a></h2>
+    <h2><a href="/docs/ess-datascience-r/">Using ESS for Data Science</a></h2>
     <div class="article-style">
       
       RStudio is a formidable IDE to work with and offers an environment to seamlessly work with multiple languages beyond R. It is especially convenient for tasks involving frequent visualisation of data frames and plots, and for use with Shiny app development.
@@ -369,27 +369,108 @@ However, the text (i.e code) editing capabalities are still significantly lackin
   </div>
   
   <div>
-    <h2><a href="/post/6953c104-a8b3-4779-aad3-c33032beb111/">Literate Programming - Emacs, Howard Abrams and Library of Babel</a></h2>
+    <h2><a href="/post/d16caa34-c2e2-439b-894f-d95be5708160/">Literate Org-mode configuration for Emacs is liberating</a></h2>
     <div class="article-style">
       
-      I&rsquo;m an admirer of Howard Abrams, especially because his posts and videos show the awesome power of doing things in Emacs, and the importance of writing clean and logical code. Watching his videos and reading his posts make me feel like I was born yesterday and I am just getting started. But more importantly, they also fire up my imagination regarding the possibilities out there and the potential to create glorious workflows.
+      TLDR: Check out the Docs section for my Emacs config in Org-mode
+ The literate programming paradigm, as conceived by Donald Knuth, represents a move away from writing programs in the manner and order imposed by the computer, and instead enables programmers to develop programs in the order demanded by the logic and flow of their thoughts. Literate programs are written as an uninterrupted exposition of logic in an ordinary human language, much like the text of an essay, in which macros are included to hide abstractions and traditional source code.
       
     </div>
   </div>
   
   <div>
-    <h2><a href="/docs/sr-config/">My Emacs &#43; Scimax configuration</a></h2>
+    <h2><a href="/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/">Leverage recorded macros to learn elisp and hack together workflows in Emacs</a></h2>
     <div class="article-style">
       
-      Introduction This is my literate, Org-mode based configuration for Emacs, which are essentially customisations built on top of the starter-kit Scimax. View a nicely rendered version with easy navigation on my website, or if you prefer: on github.
- Scimax - Awesome editing for scientists and engineers. Scimax is an Emacs starterkit for scientists and engineers. It provides a comprehensive configuration of Emacs for scientific programming and publishing.
-John Kitchin
+      The primary power of Emacs is that you can create customised workflows to suit your needs. However, lisp is probably not a language that many learn as a typical requirement in the academic systems, perhaps even for a software engineer.
+How would one then start customisting Emacs? One way would be to hunt for snippets from forums like reddit and stack overflow, and customise them.
+Another easy way to learn a programming language, especially one that is intrinsic to a software is to record macros and edit these macros.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/">Why bother with Emacs and workflows?</a></h2>
+    <div class="article-style">
+      
+      I&rsquo;ve written several posts on different ways and tools available to aid productivity, and probably a lot about Emacs. My background is in computational physics, and not in programming, and yet Emacs has been an indispensable driver of my daily workflow for the past 3 years.
+The fact is that knowing Emacs (or Vim), or having a custom configuration is not a wildly marketable skill, nor is it mandatory to achieve spectacular results.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/">Rapidly accessing cheatsheets to learn data science with Emacs</a></h2>
+    <div class="article-style">
+      
+      Matt Dancho&rsquo;s course DSB-101-R is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid level-ups, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/">Juggling multiple projects and leveraging org-projectile</a></h2>
+    <div class="article-style">
+      
+      Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &quot;~/my_projects/&quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
+These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/">Jupyter notebooks to Org source &#43; Tower of Babel</a></h2>
+    <div class="article-style">
+      
+      This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
+Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/">Emacs notes: Select paragraph and browse-kill-ring for effective content capture</a></h2>
+    <div class="article-style">
+      
+      I like to have any reading material and my notes side by side1. This is easily done with Emacs by splitting the buffer vertically (C-x 3)2
+For example: Once a link has been opened via w3m, I hit org-capture (C-c) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.
+(setq org-capture-templates &#39;((&#34;l&#34; &#34;Link + notes&#34; entry (file+headline &#34;~/my_org/link_database.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">Iosevka - an awesome font for Emacs</a></h2>
+    <div class="article-style">
+      
+      Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
+Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/">Searching the awesome-lists on Github</a></h2>
+    <div class="article-style">
+      
+      Discovered the glorious awesome lists today on Github. They are available through a simple search on github, and contain curated lists of resources of all kinds on a multitude of topics.
+As one might expect, there is a lot of common ground between these lists, including topics and links.
+How could one search for a keyword through all these repositories? I have always wanted search for particular keywords or code snippets in my Emacs configuration files, or in other files in a particular location.
       
     </div>
   </div>
   
 
   
+<nav>
+  <ul class="pagination justify-content-center">
+    
+    
+    <li class="page-item"><a class="page-link" href="/categories/emacs/page/2/">&raquo;</a></li>
+    
+  </ul>
+</nav>
+
 
 </div>
 <div class="container">

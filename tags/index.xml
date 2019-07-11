@@ -67,16 +67,7 @@
     </item>
     
     <item>
-      <title>Data Science</title>
-      <link>https://shrysr.github.io/tags/data-science/</link>
-      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data-science</title>
+      <title>Data-Science</title>
       <link>https://shrysr.github.io/tags/data-science/</link>
       <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
       
@@ -90,6 +81,15 @@
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://shrysr.github.io/tags/docker/</link>
+      <pubDate>Thu, 11 Jul 2019 09:25:54 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -139,9 +139,18 @@
     </item>
     
     <item>
+      <title>Jupyter</title>
+      <link>https://shrysr.github.io/tags/jupyter/</link>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://shrysr.github.io/tags/linux/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/linux/</guid>
       <description></description>
@@ -186,7 +195,7 @@
     <item>
       <title>Org-mode</title>
       <link>https://shrysr.github.io/tags/org-mode/</link>
-      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
+      <pubDate>Sun, 17 Feb 2019 08:02:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/org-mode/</guid>
       <description></description>
@@ -198,6 +207,24 @@
       <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/paper-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://shrysr.github.io/tags/python/</link>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quotes</title>
+      <link>https://shrysr.github.io/tags/quotes/</link>
+      <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/quotes/</guid>
       <description></description>
     </item>
     
@@ -256,15 +283,6 @@
     </item>
     
     <item>
-      <title>datascience</title>
-      <link>https://shrysr.github.io/tags/datascience/</link>
-      <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/tags/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>documentation</title>
       <link>https://shrysr.github.io/tags/documentation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
@@ -292,11 +310,29 @@
     </item>
     
     <item>
+      <title>font</title>
+      <link>https://shrysr.github.io/tags/font/</link>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>git</title>
       <link>https://shrysr.github.io/tags/git/</link>
       <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shrysr.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lisp</title>
+      <link>https://shrysr.github.io/tags/lisp/</link>
+      <pubDate>Sun, 17 Feb 2019 08:02:00 -0700</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/lisp/</guid>
       <description></description>
     </item>
     
@@ -339,9 +375,18 @@
     <item>
       <title>writing</title>
       <link>https://shrysr.github.io/tags/writing/</link>
-      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yasnippet</title>
+      <link>https://shrysr.github.io/tags/yasnippet/</link>
+      <pubDate>Fri, 05 Jul 2019 12:02:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/yasnippet/</guid>
       <description></description>
     </item>
     

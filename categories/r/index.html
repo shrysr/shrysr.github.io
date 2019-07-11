@@ -359,7 +359,7 @@
   
   
   <div>
-    <h2><a href="/docs/ess-datascience-r/">Using ESS for Datascience</a></h2>
+    <h2><a href="/docs/ess-datascience-r/">Using ESS for Data Science</a></h2>
     <div class="article-style">
       
       RStudio is a formidable IDE to work with and offers an environment to seamlessly work with multiple languages beyond R. It is especially convenient for tasks involving frequent visualisation of data frames and plots, and for use with Shiny app development.
@@ -372,7 +372,8 @@ However, the text (i.e code) editing capabalities are still significantly lackin
     <h2><a href="/docs/r-notes-snippets/">R notes and snippets</a></h2>
     <div class="article-style">
       
-      Long &lt;-&gt; Wide formats : example for gathering library(&#34;tidyverse&#34;) ## Defining a sample tribble with several duplicates a &lt;- tribble( ~IDS, ~&#34;client id 1&#34;, ~&#34;client id 2&#34;, ~&#34;client id 3&#34;, ~&#34;client id 4&#34;, ~&#34;old app&#34;, ~&#34;new app&#34;, 123, 767, 888,&#34;&#34; , &#34;&#34;, &#34;yes&#34; , &#34;no&#34;, 222, 333, 455, 55, 677, &#34;no&#34;, &#34;yes&#34;, 222, 333, 343, 55,677, &#34;no&#34;, &#34;yes&#34; ) ## Defining vector to form column names vec1 &lt;- seq(1:4) vec2 &lt;- &#34;client id&#34; vec3 &lt;- str_glue(&#34;{vec2} {vec1}&#34;) ## Gathering and removing duplicates a %&gt;% gather( key = &#34;Client number&#34;, value = &#34;client ID&#34;, vec3 ) %&gt;% unique() Matrix Defining a matrix A matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.
+      Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.
       
     </div>
   </div>
