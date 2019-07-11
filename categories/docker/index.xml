@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/categories/docker/</link>
+    <description>Recent content in Docker on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 11 Jul 2019 09:25:54 -0600</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes on Docker</title>
+      <link>https://shrysr.github.io/docs/docker-notes/</link>
+      <pubDate>Thu, 11 Jul 2019 09:25:54 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/docker-notes/</guid>
+      <description>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
+This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
+TODO What is Docker A brief summary of what Docker is all about.</description>
+    </item>
+    
+  </channel>
+</rss>

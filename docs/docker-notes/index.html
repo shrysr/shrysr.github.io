@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
+This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
+TODO What is Docker A brief summary of what Docker is all about.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/docs/docker-notes/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/docs/docker-notes/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/docs/docker-notes/">
+  <meta property="og:title" content="Notes on Docker | Shreyas Ragavan">
+  <meta property="og:description" content="Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
+This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
+TODO What is Docker A brief summary of what Docker is all about."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-07-11T09:25:54-06:00">
+  <meta property="article:modified_time" content="2019-07-11T09:25:54-06:00">
+  
+
+  
+
+  
+
+  <title>Notes on Docker | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/">Overview</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/quotes/">Quotes</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/docs/docker-notes/">Docker - notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/sr-config/">Dotemacs - Emacs config</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/ess-datascience-r/">ESS &amp; Data Science</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/r-notes-snippets/">R - Notes</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-docker"><span class="org-todo todo TODO">TODO</span> What is Docker</a>
+<ul>
+<li><a href="#dive-into-docker">Dive into Docker</a>
+<ul>
+<li><a href="#biggest-wins-of-docker">Biggest wins of Docker</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#easy-ways-to-get-documentation-help">Easy ways to get documentation help</a></li>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#running-emacs-on-docker"><span class="org-todo todo TODO">TODO</span> Running Emacs on Docker</a></li>
+<li><a href="#good-online-resources-for-rocker"><span class="org-todo todo TODO">TODO</span> Good Online resources for Rocker</a></li>
+<li><a href="#introduction-to-rocker-technical-paper-link"><span class="org-todo todo TODO">TODO</span> Introduction to Rocker - Technical paper <a href="https://arxiv.org/pdf/1710.03675.pdf" target="_blank">link</a></a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#note-on-docker-toolbox-versus-native-apps">Note on Docker Toolbox versus Native apps</a></li>
+<li><a href="#installing-docker-on-debian">Installing Docker on debian</a></li>
+<li><a href="#installing-docker-on-antergos-arch-linux">Installing Docker on Antergos / Arch Linux</a></li>
+<li><a href="#installing-docker-on-mac-os">Installing Docker on Mac OS</a></li>
+<li><a href="#checking-the-installation">Checking the installation</a></li>
+</ul></li>
+<li><a href="#general-notes-on-containers-and-images">General notes on containers and images</a></li>
+<li><a href="#default-location-of-images">Default location of images</a></li>
+<li><a href="#docker-version-and-info">Docker version and info</a></li>
+<li><a href="#listing-docker-containers-and-images">Listing Docker containers and images</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#attaching-shells-t-and-interactive-containers-i">Attaching shells <code>-t</code> and Interactive containers <code>-i</code></a></li>
+<li><a href="#running-a-detached-container">Running a detached container</a></li>
+<li><a href="#build-process-of-a-docker-image">Build process of a docker image</a></li>
+<li><a href="#working-with-dockerfiles">Working with dockerfiles</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Notes on Docker</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are <a href="https://towardsdatascience.com/learn-enough-docker-to-be-useful-b7ba70caeb4b" target="_blank">several</a> <a href="https://towardsdatascience.com/docker-for-data-scientists-5732501f0ba4" target="_blank">articles</a> which have great introductions and examples of using docker in data science</p>
+
+<p>This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.</p>
+
+<h2 id="what-is-docker"><span class="org-todo todo TODO">TODO</span> What is Docker</h2>
+
+<p>A brief summary of what Docker is all about.</p>
+
+<ol>
+<li>The main idea: disposable buckets of code that can do a specific task and either exit or run indefinitely.
+
+<ol>
+<li>The task / purpose of the container could even be a single command. Like <code>pwd</code>, which is piped into another container.</li>
+<li>In a way this is an extension of the Unix philosophy of small tools that can do a single task well (i.e reliably).</li>
+</ol></li>
+<li>These buckets of code can be connected with each other and also stacked on top of each other to form a pipeline.</li>
+<li>These buckets of code are complete libraries</li>
+<li>The buckets consist of images which can be launched as containers.</li>
+<li>Docker images are stored in a registry. There are a number of registries, of which dockerhub is popular.</li>
+</ol>
+
+<p>These schematics provide a good refresher of the core concept of Docker:</p>
+
+<p><a href="/ox-hugo/Container-vs-vm.png">Containers versus VM</a></p>
+
+<p><a href="/ox-hugo/engine-components-flow.png">Engine Components</a></p>
+
+<h3 id="dive-into-docker">Dive into Docker</h3>
+
+<p>This is an excellent course run by Nick Janatakis (<a href="https://diveintodocker.com/?r=devto" target="_blank">link</a>), which enabled me to tie together various bits and pieces of knowledge I had about Docker. I would recommend this course for anybody starting out with Docker. A lot of the notes in this document were gathered while going through the course.</p>
+
+<h4 id="biggest-wins-of-docker">Biggest wins of Docker</h4>
+
+<ul>
+<li>isolate and manage applications.</li>
+<li>eg:  12 apps with 12 dependency sets.</li>
+<li>VM : waste of resources.</li>
+<li>Vagrant : lets you manage VM&rsquo;s on the command line (including Docker)
+
+<ul>
+<li>Disk space occupied for each app is very high.</li>
+<li>Overhead of system boot up and restart / killing is high.</li>
+</ul></li>
+<li>Docker can be used to manage common dependencies.
+
+<ul>
+<li>Example of time frame: 2 seconds for loading 8 services.</li>
+<li>Spinning up an entire stack is very fast, compared to a VM.</li>
+</ul></li>
+<li>Docker: portability of applications and dev environment.</li>
+<li>Dozens of scenarios where something works for you but not for me.</li>
+<li>New dev environments can be discouraging. With all the libraries and dependencies already installed, it is possible to become aggressive with the actual development and experimenting with new technology.</li>
+<li>Multiple versions of a programming language can be installed within a single docker container.</li>
+<li>Smaller Microservices that talk to each other are not always good, but Docker enables this in a streamlined manner.</li>
+<li>LXC: raw linux containers. Existed long before docker.
+
+<ul>
+<li>uses runC</li>
+<li>very complicated and brittle system.</li>
+<li>runs only on Linux.</li>
+<li>LXC&rsquo;s are still better than VM&rsquo;s for rapid build and deploy.</li>
+</ul></li>
+<li>ANSIBLE: what files and tools should be on a server (very basic definition)</li>
+</ul>
+
+<h2 id="easy-ways-to-get-documentation-help">Easy ways to get documentation help</h2>
+
+<ul>
+<li>Just typing in <code>docker</code> will provide a list of primary level commands that can be used.</li>
+<li>For further flags, provide the primary command like <code>docker run --help</code></li>
+<li>The official documentation is a good resource.</li>
+</ul>
+
+<h2 id="definitions">Definitions</h2>
+
+<ol>
+<li>Image: Setup of the virtual computer.</li>
+<li>Container:  Instance of an image. Many containers can run with the same image.</li>
+</ol>
+
+<h2 id="running-emacs-on-docker"><span class="org-todo todo TODO">TODO</span> Running Emacs on Docker</h2>
+
+<ul>
+<li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-07-07 Sun 17:25] </span></span> <br />
+Matrix DS offers a viable alternative as a platform. However, a customised docker container with all my tools is a good way to reproduce my working environment and also share my work with the community.</li>
+
+<li><p>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2019-07-06 Sat 17:54] </span></span> <br />
+This needs to be evaluated. Today I have a vague idea : set up a docker container combining Rocker + data science at the command line + Scimax together. A separate layer could also cater to shiny apps.</p></li>
+
+<li><p><a href="https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/" target="_blank">https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/</a></p></li>
+
+<li><p><a href="https://github.com/Silex/docker-emacs" target="_blank">Silex - github</a> : Also contains references to other kinds of Emacs docker containers</p></li>
+</ul>
+
+<h2 id="good-online-resources-for-rocker"><span class="org-todo todo TODO">TODO</span> Good Online resources for Rocker</h2>
+
+<ul class="task-list">
+<li>Introducing Rocker: Docker for R | R-Bloggers</li>
+<li>Rocker: Using R on Docker - A Hands-On Introduction - useR2015_docker.Pdf</li>
+<li>Jessie Frazelle&rsquo;s Blog: Using an R Container for Analytical Models</li>
+<li>ROcker Images - Wiki Github</li>
+<li>Introduction to Docker - Paper</li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Need to find a way to extract a bunch of links from the bookmark and directly available with org Mode.</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Play with Docker <a href="https://training.play-with-docker.com" target="_blank">link</a></label></li>
+</ul>
+
+<h2 id="introduction-to-rocker-technical-paper-link"><span class="org-todo todo TODO">TODO</span> Introduction to Rocker - Technical paper <a href="https://arxiv.org/pdf/1710.03675.pdf" target="_blank">link</a></h2>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="note-on-docker-toolbox-versus-native-apps">Note on Docker Toolbox versus Native apps</h3>
+
+<p>The native Docker application uses the type 1 hypervisor (hyperkit for Mac OS and hyper-V for Windows). <code>docker-machine</code> uses a virtualbox based hypervisor (type 2). This can also be specified while creating docker machines.</p>
+
+<p>In general, the native applications have a better user experience and commands can be directly typed into the terminal. The native apps (on Windows/ Mac OS) are newer than the Docker toolbox, and are being actively developed by the Docker company to reach performance on par with the original virtualbox based Docker Toolbox approach.</p>
+
+<p>Note that any performance lag depends on the application and as a thumb rule it may be better to start off with the native applications and switch to the toolbox when required.</p>
+
+<h3 id="installing-docker-on-debian">Installing Docker on debian</h3>
+
+<p>The docker repository has to be added first for being able to install docker. Detailed instructions are available at <a href="https://docs.docker.com/install/linux/docker-ce/debian/" target="_blank">https://docs.docker.com/install/linux/docker-ce/debian/</a>.</p>
+
+<p>A package is also available, and is probably the easiest method to install. Choose the appropriate version at:  <a href="https://download.docker.com/linux/debian/dists/" target="_blank">https://download.docker.com/linux/debian/dists/</a></p>
+
+<p>Manual version without using the package:</p>
+
+<p>Adding Docker&rsquo;s official GPG key:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</code></pre></div>
+<p>Searching that the key has been installed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-key fingerprint 0EBFCD88</code></pre></div>
+<p>pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) <a href="mailto:docker@docker.com" target="_blank">docker@docker.com</a>
+sub   rsa4096 2017-02-22 [S]</p>
+
+<p>Adding the stable Docker repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo add-apt-repository <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/debian \
+</span><span style="color:#e6db74">   </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> \
+</span><span style="color:#e6db74">   stable&#34;</span></code></pre></div>
+<p>Update the package lists and now search for docker-ce. It should be available since the repository has been added and the list updated.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get update</code></pre></div>
+<p>Installing docker and necessary components. Note that the manual recommends removing any older installations if they exist.</p>
+
+<p>Note from the manual that different versions of docker can be installed by including <code>sudo apt-get install docker-ce=VERSION=abcd</code>. Therefore multiple versions can probably exist side by side.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install docker-ce docker-compose docker-ce-cli containerd.io</code></pre></div>
+<p>Creating a docker group and adding this to the sudoers list will enable running docker commands without using root privileges (<code>sudo</code>). A logout will be necessary to have the changes take effect.</p>
+
+<p>Note: Sometimes the <code>$USER</code> variable does not seem to work. This can be replaced with your actual user name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo groupadd docker
+sudo usermod -aG docker $USER</code></pre></div>
+<p>To configure docker to start on boot, enable it as a service. The need to do this depends on how frequently you use docker commands.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl start docker</code></pre></div>
+<h3 id="installing-docker-on-antergos-arch-linux">Installing Docker on Antergos / Arch Linux</h3>
+
+<p>Installation can be done via Pacman</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S docker</code></pre></div>
+<p>Enable and start docker service.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl enable docker
+sudo systemctl start docker</code></pre></div>
+<p>Add docker to the user&rsquo;s group using <code>usermod</code>. After adding this, a log-out is necessary. Note that $USER can be replaced with the output of <code>whoami</code> in the shell if desired. If this step is not performed, each docker command will have to be executed with <code>Sudo</code> elevation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo usermod -a -G docker $USER</code></pre></div>
+<h3 id="installing-docker-on-mac-os">Installing Docker on Mac OS</h3>
+
+<p>Docker can be downloaded as an app from the docker store :  <a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac" target="_blank">https://hub.docker.com/editions/community/docker-ce-desktop-mac</a>.</p>
+
+<p>On the Mac, the docker app has to be launched run first, and this will create a docker icon in the menu bar indicating the status of the docker machine. This launches the docker daemon, and then commands can be directly entered into the terminal.</p>
+
+<p>Docker can also be installed using Brew:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew cask install docker</code></pre></div>
+<p>This created an app in the Applications folder which has to be launched. However, it seems additional components are required to run Docker from the command Line. These are available via brew.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install docker-compose docker-machine</code></pre></div>
+<h3 id="checking-the-installation">Checking the installation</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker info</code></pre></div>
+<p>Trying the hello world container as an additional check. Note the steps listed in the output, which is the typical process.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/docker-test
+docker run hello-world</code></pre></div>
+<p>Checking <code>docker-compose</code> version.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker-compose --version</code></pre></div>
+<h2 id="general-notes-on-containers-and-images">General notes on containers and images</h2>
+
+<ul>
+<li>images contain the entire filesystem and parameters needed to run the application.</li>
+<li>When an image is run, a container is created.</li>
+<li>containers are generally immutable and changes do not linger</li>
+<li>One image can spawn any number of containers, simultaneously. Each container will be separate.</li>
+</ul>
+
+<h2 id="default-location-of-images">Default location of images</h2>
+
+<p>By default, on Antergos (Linux), the images are stored at <code>/var/lib/docker/</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo ls -al /var/lib/docker</code></pre></div>
+<h2 id="docker-version-and-info">Docker version and info</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker --version
+docker info
+docker version</code></pre></div>
+<h2 id="listing-docker-containers-and-images">Listing Docker containers and images</h2>
+
+<p>List Docker Images</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker image ls</code></pre></div>
+<p>List running Docker Containers</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container ls</code></pre></div>
+<p>List all docker containers (running and Stopped)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container ls -a</code></pre></div>
+<p>Obtain only container ID&rsquo;s  (All). This is useful to extract the container number alone. The <code>q</code> argument stands for quiet.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container ls -aq</code></pre></div>
+<h2 id="getting-started">Getting started</h2>
+
+<p><a href="http://ropenscilabs.github.io/r-docker-tutorial" target="_blank">Ropenscilabs</a> has a basic introduction to Docker, and the <a href="https://docs.docker.com/get-started/part2/" target="_blank">Docker documentation</a> is also a good place to start. A rocker specific introduction is available <a href="https://github.com/BillMills/Rocker-tutorial/" target="_blank">here</a>.</p>
+
+<p>If a local image is not found, docker will try to search and download the image from docker hub.</p>
+
+<p>It is better to create a folder wherein the docker container will reside.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir ~/docker-test/
+cd ~/docker-test
+docker --rm -p <span style="color:#ae81ff">8787</span>:8787 rocker/tidyverse</code></pre></div>
+<p>The <code>--rm</code> flag indicates the container will be deleted when the container is quite. The <code>-p</code> flag denotes using a particular port.
+iner a
+Note that the interim messages and download progress are not shown in eshell.</p>
+
+<p><a href="https://www.rocker-project.org/images/" target="_blank">Different rocker images</a> are available, depending on the need to be served.</p>
+
+<h2 id="attaching-shells-t-and-interactive-containers-i">Attaching shells <code>-t</code> and Interactive containers <code>-i</code></h2>
+
+<p>Example to run an ubuntu container and run bash interactively, by attaching a terminal to the container. This will login to Ubuntu and start bash.</p>
+
+<p>An alternative option is to use alpine linux, which is a much smaller download.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -t -i ubuntu /bin/bash</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -ti alpine /bin/bash</code></pre></div>
+<h2 id="running-a-detached-container">Running a detached container</h2>
+
+<ul>
+<li>use the <code>-d</code> flag</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker container ls -al
+docker run -d ubuntu</code></pre></div>
+<h2 id="build-process-of-a-docker-image">Build process of a docker image</h2>
+
+<ul>
+<li><code>docker commit</code> : used to commit changes to a new image layer. This is a manual process. Commit has little place in the real world. Dockerfile is superior.</li>
+<li>Dockerfile : blue print or recipe for creating a docker image. Each actionable step becomes a separate layer.</li>
+</ul>
+
+<p>Docker image : result of stacking up individual layers. Only the parts or layers that have changed are downloaded for a newer version of a specific image.</p>
+
+<p>Scratch image: docker image with no base operating system</p>
+
+<h2 id="working-with-dockerfiles">Working with dockerfiles</h2>
+
+<ul>
+<li>sample or reference docker files can be saved as &ldquo;dockerfile.finished&rdquo; or with some other useful extension.</li>
+<li>Dockerfiles are read top to bottom.</li>
+<li>the first non-comment instruction should be <code>FROM</code>
+
+<ul>
+<li><code>FROM</code> allows you import a docker image.</li>
+</ul></li>
+<li><code>RUN</code> : basically executes the specified commands</li>
+<li><code>WORKDIR</code> : setting the desired working directory. This can be set or used multiple times in the same docker file.</li>
+</ul>
+
+          </div>
+
+          
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/docker/">Docker</a>
+  
+  <a class="badge badge-light" href="/tags/data-science/">Data-Science</a>
+  
+</div>
+
+
+
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jul 11, 2019
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//shreyasragavan.disqus.com/count.js" async></script>
+    
+
+    
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
+
