@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NoSQL on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/nosql/</link>
+    <description>Recent content in NoSQL on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 06 Jul 2019 12:12:19 -0600</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MongoDB and NoSQL Databases</title>
+      <link>https://shrysr.github.io/docs/nosql-mongodb-notes/</link>
+      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/nosql-mongodb-notes/</guid>
+      <description>Introduction These are my notes on NoSQL databases and the prime differences between them and SQL databases. The notes are mostly based off the Udemy course Introduction to MongoDB, and therefore primarily focused on using MongoDB at the moment.
+Methodology and Tools Installing Mongodb The instructions are available in the mongoDB manual. This is for the Community edition, and on a Mac as welll as Linux machine (Antergos)
+Mac If never installed before, tap the resource first.</description>
+    </item>
+    
+  </channel>
+</rss>

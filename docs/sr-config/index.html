@@ -374,6 +374,16 @@ John Kitchin"><meta property="og:image" content="https://shrysr.github.io/img/SR
   </div>
   
   <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/linux-notes/">Linux - notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/nosql-mongodb-notes/">NoSQL / mongoDB notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="/docs/r-notes-snippets/">R - Notes</a>
 
   </div>
@@ -1820,10 +1830,9 @@ This works fine now. However, it would be nice to find a way to strip the header
 (defun sr/clock-in-organization-task-as-default ()
   (interactive)
   (org-with-point-at (org-id-find sr/organization-task-id <span style="color:#e6db74">&#39;marker</span>)
-    (org-clock-in <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">16</span>))))</code></pre></div>
-<ul>
-<li>Punch in</li>
-</ul>
+    (org-clock-in <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">16</span>))))</code></pre></div></li>
+
+<li><p>Punch in</p>
 
 <p>Bernt Hansen shares that he has a default punch in and punch out task that keeps the clock on all day. I think this will work for me as well. Other than work and projects, most of the time I am tinkering with Emacs, or writing a journal note or trying to re-organise my stuff. By using a punch in and out, I can track how much time I am engaged with a computer, other than specific projects.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun sr/punch-in (arg)
@@ -1837,10 +1846,9 @@ This works fine now. However, it would be nice to find a way to strip the header
   (setq sr/keep-clock-running <span style="color:#66d9ef">nil</span>)
   (when (org-clock-is-active)
     (org-clock-out))
-  )</code></pre></div>
-<ul>
-<li>Advising clock Out</li>
-</ul>
+  )</code></pre></div></li>
+
+<li><p>Advising clock Out</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun sr/clock-out-maybe ()
   (when (and sr/keep-clock-running
              (not org-clock-clocking-in)

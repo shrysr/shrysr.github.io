@@ -44,7 +44,7 @@ This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces
     <item>
       <title>Notes on Docker</title>
       <link>https://shrysr.github.io/docs/docker-notes/</link>
-      <pubDate>Thu, 11 Jul 2019 09:25:54 -0600</pubDate>
+      <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
       
       <guid>https://shrysr.github.io/docs/docker-notes/</guid>
       <description>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
@@ -55,11 +55,22 @@ TODO What is Docker A brief summary of what Docker is all about.</description>
     <item>
       <title>R notes and snippets</title>
       <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
-      <pubDate>Wed, 10 Jul 2019 14:02:06 -0600</pubDate>
+      <pubDate>Thu, 11 Jul 2019 11:21:36 -0600</pubDate>
       
       <guid>https://shrysr.github.io/docs/r-notes-snippets/</guid>
-      <description>Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
-Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.</description>
+      <description>Lubridate - introductory technical paper This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheets from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.</description>
+    </item>
+    
+    <item>
+      <title>MongoDB and NoSQL Databases</title>
+      <link>https://shrysr.github.io/docs/nosql-mongodb-notes/</link>
+      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/nosql-mongodb-notes/</guid>
+      <description>Introduction These are my notes on NoSQL databases and the prime differences between them and SQL databases. The notes are mostly based off the Udemy course Introduction to MongoDB, and therefore primarily focused on using MongoDB at the moment.
+Methodology and Tools Installing Mongodb The instructions are available in the mongoDB manual. This is for the Community edition, and on a Mac as welll as Linux machine (Antergos)
+Mac If never installed before, tap the resource first.</description>
     </item>
     
     <item>

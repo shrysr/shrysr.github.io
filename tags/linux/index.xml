@@ -23,6 +23,17 @@ Zen writing apps are called so because they have a unique combination of fonts, 
     </item>
     
     <item>
+      <title>Linux notes</title>
+      <link>https://shrysr.github.io/docs/linux-notes/</link>
+      <pubDate>Sat, 06 Jul 2019 19:53:16 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/docs/linux-notes/</guid>
+      <description>Installing the Iosevka font On Debian distros There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.
+Downloading the specified font version from github into a temp folder
+cd ~/temp wget &amp;#34;https://github.</description>
+    </item>
+    
+    <item>
       <title>An SSD can breathe life into old computers</title>
       <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>

@@ -13,7 +13,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</loc>
-      <lastmod>2019-07-11T09:05:40-06:00</lastmod>
+      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
     </url>
     
   
@@ -37,7 +37,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/7b7b94ca-2d77-4814-8cae-c9e95d3f8bc4/</loc>
-      <lastmod>2019-07-11T09:05:47-06:00</lastmod>
+      <lastmod>2019-07-06T19:43:40-06:00</lastmod>
     </url>
     
   
@@ -53,7 +53,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/11ef85e6-9efc-4af4-b5f3-7648f9ee9308/</loc>
-      <lastmod>2019-07-11T09:34:39-06:00</lastmod>
+      <lastmod>2019-07-06T12:30:25-06:00</lastmod>
     </url>
     
   
@@ -61,7 +61,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</loc>
-      <lastmod>2019-07-11T09:20:28-06:00</lastmod>
+      <lastmod>2019-07-06T12:32:12-06:00</lastmod>
     </url>
     
   
@@ -70,6 +70,14 @@
     
       <loc>https://shrysr.github.io/post/c641a230-37c9-46aa-84eb-e78cc00d0c7e/</loc>
       <lastmod>2019-07-11T09:06:33-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/e4e7ebb1-4c0c-41d6-b7e4-1c1c09e48c80/</loc>
+      <lastmod>2019-07-13T21:14:10-06:00</lastmod>
     </url>
     
   
@@ -133,7 +141,7 @@
     <url>
     
       <loc>https://shrysr.github.io/docs/docker-notes/</loc>
-      <lastmod>2019-07-11T09:25:54-06:00</lastmod>
+      <lastmod>2019-07-11T14:33:26-06:00</lastmod>
     </url>
     
   
@@ -141,7 +149,7 @@
     <url>
     
       <loc>https://shrysr.github.io/docs/r-notes-snippets/</loc>
-      <lastmod>2019-07-10T14:02:06-06:00</lastmod>
+      <lastmod>2019-07-11T11:21:36-06:00</lastmod>
     </url>
     
   
@@ -150,6 +158,22 @@
     
       <loc>https://shrysr.github.io/docs/sr-config/</loc>
       <lastmod>2019-07-10T13:55:46-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/linux-notes/</loc>
+      <lastmod>2019-07-06T19:53:16-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/docs/nosql-mongodb-notes/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
     </url>
     
   
@@ -391,7 +415,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/docker/</loc>
-      <lastmod>2019-07-11T09:25:54-06:00</lastmod>
+      <lastmod>2019-07-11T14:33:26-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -400,7 +424,7 @@
     <url>
     
       <loc>https://shrysr.github.io/categories/docker/</loc>
-      <lastmod>2019-07-11T09:25:54-06:00</lastmod>
+      <lastmod>2019-07-11T14:33:26-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -489,6 +513,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/categories/linux/</loc>
+      <lastmod>2019-07-06T19:53:16-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/matlab/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -516,6 +549,24 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/nosql/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/nosql/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/org-mode/</loc>
       <lastmod>2017-04-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -526,7 +577,25 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/org-mode/</loc>
-      <lastmod>2019-07-11T09:05:40-06:00</lastmod>
+      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/org-mode/</loc>
+      <lastmod>2019-07-13T21:14:10-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/orgmode/</loc>
+      <lastmod>2019-07-13T21:14:10-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -544,7 +613,16 @@
     <url>
     
       <loc>https://shrysr.github.io/post/</loc>
-      <lastmod>2019-07-11T09:05:40-06:00</lastmod>
+      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/productivity/</loc>
+      <lastmod>2019-07-13T21:14:10-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -678,6 +756,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/categories/database/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/documentation/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -733,7 +820,25 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/lisp/</loc>
-      <lastmod>2019-07-11T09:05:40-06:00</lastmod>
+      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/mongodb/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/mu4e/</loc>
+      <lastmod>2019-07-13T21:14:10-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -768,6 +873,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/categories/programming/</loc>
+      <lastmod>2019-07-06T12:12:19-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/python/</loc>
       <lastmod>2017-02-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -787,7 +901,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/yasnippet/</loc>
-      <lastmod>2019-07-11T09:34:39-06:00</lastmod>
+      <lastmod>2019-07-06T12:30:25-06:00</lastmod>
       <priority>0</priority>
     </url>
     

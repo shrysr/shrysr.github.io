@@ -2,23 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Shreyas Ragavan</title>
-    <link>shrysr.github.io/categories/linux/</link>
+    <link>https://shrysr.github.io/categories/linux/</link>
     <description>Recent content in Linux on Shreyas Ragavan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 06 Jul 2019 19:53:16 -0600</lastBuildDate>
     
-	<atom:link href="shrysr.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shrysr.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Contributions to the CFD-Online Wiki</title>
-      <link>shrysr.github.io/projects/cfd-online-wiki/</link>
-      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      <title>Linux notes</title>
+      <link>https://shrysr.github.io/docs/linux-notes/</link>
+      <pubDate>Sat, 06 Jul 2019 19:53:16 -0600</pubDate>
       
-      <guid>shrysr.github.io/projects/cfd-online-wiki/</guid>
-      <description>View : CFD-Online Wiki page.
-Motivation During my initial foray into open source CFD and especially getting started with Linux - there was a lot of information that I had to collate from different sources in order to figure out each step. In addition, there were perspectives on performance that could be gained only through experience. Therefore, I plugged back the knowledge gained to the CFD-Online wiki with the idea that it would help any newbie get started a little quicker.</description>
+      <guid>https://shrysr.github.io/docs/linux-notes/</guid>
+      <description>Installing the Iosevka font On Debian distros There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.
+Downloading the specified font version from github into a temp folder
+cd ~/temp wget &amp;#34;https://github.</description>
     </item>
     
   </channel>

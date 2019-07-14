@@ -33,5 +33,15 @@ How would one then start customisting Emacs? One way would be to hunt for snippe
 Another easy way to learn a programming language, especially one that is intrinsic to a software is to record macros and edit these macros.</description>
     </item>
     
+    <item>
+      <title>&#39;Archaic&#39; text based email clients rock!</title>
+      <link>https://shrysr.github.io/post/e4e7ebb1-4c0c-41d6-b7e4-1c1c09e48c80/</link>
+      <pubDate>Sat, 13 Jul 2019 19:33:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/post/e4e7ebb1-4c0c-41d6-b7e4-1c1c09e48c80/</guid>
+      <description>Table of Contents  TLDR - for the busy folks  Goals: Summary:  Multiple email accounts. Lack of a unified interface. Creating sync channels via mbsync Text based email client! Speed + simplicity Why mu4e rocks [for me] - the perks Quirks Multiple levels of filters are still necessary. Takeaways Links and References   
+This dev.to blog post inspired me to complete this languishing draft of my current email setup, and the benefits I&amp;rsquo;ve gained from using a text based email client in Emacs.</description>
+    </item>
+    
   </channel>
 </rss>

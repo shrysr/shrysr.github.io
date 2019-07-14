@@ -25,11 +25,11 @@ However, the text (i.e code) editing capabalities are still significantly lackin
     <item>
       <title>R notes and snippets</title>
       <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
-      <pubDate>Wed, 10 Jul 2019 14:02:06 -0600</pubDate>
+      <pubDate>Thu, 11 Jul 2019 11:21:36 -0600</pubDate>
       
       <guid>https://shrysr.github.io/docs/r-notes-snippets/</guid>
-      <description>Lubridate Lubridate: dates and time made easy link. This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
-Importing multiple excel sheet from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.</description>
+      <description>Lubridate - introductory technical paper This paper (Grolemund and Wickham) offers a good introduction and comparison between using lubridate and not using it, as well as several examples of using the library. It also offers some case studies which can serve as useful drill exercises.
+Importing multiple excel sheets from multiple excel files This is one approach to importing multiple sheets from multiple excel files into a list of tibbles.</description>
     </item>
     
     <item>
