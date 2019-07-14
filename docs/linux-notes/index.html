@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Installing the Iosevka font On Debian distros There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.
+Downloading the specified font version from github into a temp folder
+cd ~/temp wget &#34;https://github.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/docs/linux-notes/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/docs/linux-notes/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/docs/linux-notes/">
+  <meta property="og:title" content="Linux notes | Shreyas Ragavan">
+  <meta property="og:description" content="Installing the Iosevka font On Debian distros There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.
+Downloading the specified font version from github into a temp folder
+cd ~/temp wget &#34;https://github."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-07-06T19:53:16-06:00">
+  <meta property="article:modified_time" content="2019-07-06T19:53:16-06:00">
+  
+
+  
+
+  
+
+  <title>Linux notes | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/">Overview</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/quotes/">Quotes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/docker-notes/">Docker - notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/sr-config/">Dotemacs - Emacs config</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/ess-datascience-r/">ESS &amp; Data Science</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/docs/linux-notes/">Linux - notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/nosql-mongodb-notes/">NoSQL / mongoDB notes</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/r-notes-snippets/">R - Notes</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#installing-the-iosevka-font">Installing the Iosevka font</a>
+<ul>
+<li><a href="#on-debian-distros">On Debian distros</a></li>
+<li><a href="#on-arch-antergos"><span class="org-todo todo TODO">TODO</span> On Arch / Antergos</a></li>
+</ul></li>
+<li><a href="#setup-gpg-agent-to-be-running-whenever-gpg-is-called">Setup gpg-agent to be running whenever gpg is called</a></li>
+<li><a href="#install-tk-especially-for-being-able-to-select-the-cran-mirrors-in-r">Install tk especially for being able to select the CRAN mirrors in R</a></li>
+<li><a href="#git-global-config">Git global config</a></li>
+<li><a href="#upgrading-a-debian-distro">Upgrading a debian distro</a></li>
+<li><a href="#app-installation-in-debian-using-flatpak">App installation in debian using flatpak</a>
+<ul>
+<li><a href="#franz-multi-network-messenger">Franz: Multi-network messenger</a></li>
+<li><a href="#slack">Slack:</a></li>
+</ul></li>
+<li><a href="#swapping-control-and-capslock">Swapping control and Capslock</a>
+<ul>
+<li><a href="#the-above-command-should-be-added-as-the-last-command-in-the-autostart-option-of-dot-config"><span class="org-todo todo TODO">TODO</span> The above command should be added as the last command in the autostart option of ~/.config</a></li>
+</ul></li>
+<li><a href="#installing-firefox-developer-edition">Installing Firefox developer edition</a></li>
+<li><a href="#emacs-can-be-installed-via-conda">Emacs can be installed via Conda</a></li>
+<li><a href="#virtualbox-resizing-virtual-disk-image-vdi">Virtualbox: resizing virtual disk image - vdi</a></li>
+<li><a href="#downgrading-a-single-package-in-arch-linux">Downgrading a single package in Arch linux</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Linux notes</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="installing-the-iosevka-font">Installing the Iosevka font</h2>
+
+<h3 id="on-debian-distros">On Debian distros</h3>
+
+<p>There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.</p>
+
+<p>Downloading the specified font version from github into a temp folder</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/temp
+wget <span style="color:#e6db74">&#34;https://github.com/be5invis/Iosevka/releases/download/v2.2.1/01-iosevka-2.2.1.zip&#34;</span></code></pre></div>
+<p>Extracting the contents of the downloaded zip file to a folder named iosevka.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/temp
+unzip -u <span style="color:#ae81ff">01</span>-iosevka-2.2.1.zip -d iosevka</code></pre></div>
+<p>For system wide recognition, the ttf files have to be placed in  <code>usr/share/fonts</code>  as per the debian wiki. Sudo permission is required for writing to this location. Optionally, the font folder can also be copied to <code>~/.local/share/fonts/</code>, for a user specific setting.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cp -r ~/temp/iosevka /usr/share/fonts/</code></pre></div>
+<p>Finally, it is a good idea to refresh the font cache</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fc-cache -fv</code></pre></div>
+<p>To set the font in Emacs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(set-face-attribute <span style="color:#e6db74">&#39;default</span> <span style="color:#66d9ef">nil</span> :family <span style="color:#e6db74">&#34;ttf-iosevka&#34;</span> :height <span style="color:#ae81ff">140</span>)</code></pre></div>
+<p>Note: The file permissions for the ttf files have to be set to <code>644</code> to be usable. This should be checked if the above does not work.</p>
+
+<h3 id="on-arch-antergos"><span class="org-todo todo TODO">TODO</span> On Arch / Antergos</h3>
+
+<p>Use AUR to install iosevka in Antergos / Arch as the package is already available.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yay -S ttf-iosevka</code></pre></div>
+<p>Setting the font in Emacs. This should be added to the init. The font height could vary based on the monitor size.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(set-face-attribute <span style="color:#e6db74">&#39;default</span> <span style="color:#66d9ef">nil</span> :family <span style="color:#e6db74">&#34;ttf-iosevka&#34;</span> :height <span style="color:#ae81ff">120</span>)</code></pre></div>
+<p>Installing iosevka in Debian:</p>
+
+<p>The font files have to be downloaded and placed in to the location <code>/usr/local/share/Fonts</code> for system wide access.</p>
+
+<h2 id="setup-gpg-agent-to-be-running-whenever-gpg-is-called">Setup gpg-agent to be running whenever gpg is called</h2>
+
+<p>For some reason, it appears though the gpg-agent is shown to be running, this configuration is required to make sure that the entered keys are stored in the keyring.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat &gt;&gt; ~/.gnupg/gpg.conf <span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74">no-greeting
+</span><span style="color:#e6db74">no-permission-warning
+</span><span style="color:#e6db74">lock-never
+</span><span style="color:#e6db74">keyserver-options timeout=10
+</span><span style="color:#e6db74">use-agent
+</span><span style="color:#e6db74">EOF</span></code></pre></div>
+<h2 id="install-tk-especially-for-being-able-to-select-the-cran-mirrors-in-r">Install tk especially for being able to select the CRAN mirrors in R</h2>
+
+<p>This is pertinent to Arch based distros.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -S tk</code></pre></div>
+<h2 id="git-global-config">Git global config</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global user.email <span style="color:#e6db74">&#34;abcs@gmail.com&#34;</span>
+git config --global user.name <span style="color:#e6db74">&#34;Mad Max&#34;</span></code></pre></div>
+<h2 id="upgrading-a-debian-distro">Upgrading a debian distro</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+sudo apt-get dist-upgrade</code></pre></div>
+<h2 id="app-installation-in-debian-using-flatpak">App installation in debian using flatpak</h2>
+
+<p>Some apps are not available in the so called stable debian software archives. Therefore alternative sources have to be established for the same.</p>
+
+<p>Installing flatpak on debian and adding the flatpak repository:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></pre></div>
+<p>Reboot after the above commands.</p>
+
+<p>Note: Calling a flatpak based app is rather verbose, and is better served by defining appropriate aliases.</p>
+
+<h3 id="franz-multi-network-messenger">Franz: Multi-network messenger</h3>
+
+<p>This app covers Slack and Whatsap and other networks. It still takes up about 1GB of RAM and the app itself is about 500MB, but it atleast covers all the platforms in one go and should be useful in the office.</p>
+
+<p>In addition, the <code>org.freedesktop.Platform</code> package has to be installed. The latter gets installed automatically, when executed in the terminal.</p>
+
+<p>Pre-requisites for debian/ubuntu</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak install flathub com.meetfranz.Franz</code></pre></div>
+<h3 id="slack">Slack:</h3>
+
+<p>The Slack app takes up a lot of memory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak install flathub com.slack.Slack</code></pre></div>
+<h2 id="swapping-control-and-capslock">Swapping control and Capslock</h2>
+
+<p>Creating xmodmap script : Swapping control and capslock keys
+Source: <a href="https://www.emacswiki.org/emacs/MovingTheCtrlKey#toc8" target="_blank">link</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat &gt; ~/.xmodmap <span style="color:#e6db74">&lt;&lt;EOF
+</span><span style="color:#e6db74">!
+</span><span style="color:#e6db74">! Swap Caps_Lock and Control_L
+</span><span style="color:#e6db74">!
+</span><span style="color:#e6db74">remove Lock = Caps_Lock
+</span><span style="color:#e6db74">remove Control = Control_L
+</span><span style="color:#e6db74">keysym Control_L = Caps_Lock
+</span><span style="color:#e6db74">keysym Caps_Lock = Control_L
+</span><span style="color:#e6db74">add Lock = Caps_Lock
+</span><span style="color:#e6db74">add Control = Control_L
+</span><span style="color:#e6db74">EOF</span></code></pre></div>
+<p>Executing xmodmap on the configuration above</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">xmodmap ~/.xmodmap</code></pre></div>
+<h3 id="the-above-command-should-be-added-as-the-last-command-in-the-autostart-option-of-dot-config"><span class="org-todo todo TODO">TODO</span> The above command should be added as the last command in the autostart option of ~/.config</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat &gt; ~/.config/</code></pre></div>
+<h2 id="installing-firefox-developer-edition">Installing Firefox developer edition</h2>
+
+<p>The developer edition of Firefox contains interesting features, and it appears to perform better. The developer edition is available as a package on Arch Linux (AUR). For Debian, the procedure is a little round-about.</p>
+
+<p>The following procedure using flatpak is picked up from the <a href="https://wiki.debian.org/Firefox" target="_blank">Debian wiki page</a>.</p>
+
+<p>Using flatpak</p>
+
+<p>Unofficial builds are provided by Fedora at <a href="https://firefox-flatpak.mojefedora.Cz/" target="_blank">https://firefox-flatpak.mojefedora.Cz/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install flatpak
+sudo flatpak remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
+sudo flatpak remote-add --from org.mozilla.FirefoxRepo https://firefox-flatpak.mojefedora.cz/org.mozilla.FirefoxRepo.flatpakrepo</code></pre></div>
+<p>Then for &ldquo;developer edition&rdquo; (aka &ldquo;Beta&rdquo;):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak install org.mozilla.FirefoxRepo org.mozilla.FirefoxDevEdition</code></pre></div>
+<p>and Running:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak run org.mozilla.FirefoxRepo org.mozilla.FirefoxNightly</code></pre></div>
+<p>The Debian wiki also describes  a method to add the flatpak installations to the Path. However, this is a newer feature and is unavailable at the moment on my machine.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">echo <span style="color:#e6db74">&#39;export PATH=$PATH:/var/lib/flatpak/exports/bin&#39;</span> &gt;&gt; ~/.zshrc</code></pre></div>
+<h2 id="emacs-can-be-installed-via-conda">Emacs can be installed via Conda</h2>
+
+<p>The advantage of using conda is being able to quickly install reasonably recent versions of Emacs quickly on Debian type OS&rsquo;s which often reference older (stable) versions of software packages by default. Using conda would avoid adding PPA&rsquo;s or hunting for binaries or even compiling from source. Another advantage is that this approach can be used cross platform.</p>
+
+<p>One disadvantage of this method is that the package is installed into the miniconda / anaconda package installation path. Though the instillation script of miniconda adds the path for bash, it has to be manually set for any other shell like zsh. However, once this is done - there appear to be no issues in using Emacs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda install -c conda-forge emacs</code></pre></div>
+<h2 id="virtualbox-resizing-virtual-disk-image-vdi">Virtualbox: resizing virtual disk image - vdi</h2>
+
+<p>Reference: <a href="http://derekmolloy.ie/resize-a-virtualbox-disk" target="_blank">http://derekmolloy.ie/resize-a-virtualbox-disk</a></p>
+
+<p>It does not appear to be possible to expand the size of a fixed format vdi. The floating format has a disadvantage of a read-write overhead for expanding the disk image as it is utilised.</p>
+
+<p>However, as per the documentation, after the hard disk size reaches a stable stage, this overhead becomes negligible on an average.</p>
+
+<p>Therefore the vdi has to be copied (or cloned), and the floating format has to be selected. This is done using the copy option in the virtualbox media manager. Once copied, the expanded vdi image has to be attached to the guest OS.</p>
+
+<p>When the attachment is complete, the hardisk will show up in the virtualbox media manager app. Now the vdi size can be adjusted to the desired value.</p>
+
+<p>The next step is to download the live iso of gparted. This should be loaded as a storage device with the live CD option selected. With this loaded, the existing partitions have to be changed appropriately<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup>. This step has to be done to enable Linux to recognise the expanded harddisk.</p>
+
+<p>Once this has been, the gparted iso can be removed and the guest OS can be booted as usual. However, the UUID of the paritions have to be changed appropriately. If not changed, there will be delay during boot, especially if the swap partition has been modified.</p>
+
+<p>The actual partition setup and the UUIDs can be viewed with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">lsblk -f</code></pre></div>
+<p>The appropriate UUID has to be replaced in the file <code>/etc/fstab</code>. Technically, the fstab file is generated by the command <code>mkinitcpio</code>, but sometimes a manual change is necessary.</p>
+
+<h2 id="downgrading-a-single-package-in-arch-linux">Downgrading a single package in Arch linux</h2>
+
+<p>From the <a href="https://wiki.archlinux.org/index.php/Arch%5FLinux%5FArchive" target="_blank">Arch linux wiki : archive</a> : downgrading via downloading the Package from URL. Find the package you want under /packages and let pacman fetch it for installation. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacman -U https://archive.archlinux.org/packages/ ... packagename.pkg.tar.xz</code></pre></div>
+<p>Downgrading via local cache</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pacman -U /var/cache/pacman/pkg/&lt;package-name&gt;</code></pre></div>
+<p>It seems to be a very good idea to maintain a few older versions of packages in the cache, even at the expense of Harddisk space.</p>
+
+<p>Further options are provided at this <a href="https://unix.stackexchange.com/questions/103859/arch-linux-pacman-specifying-package-version" target="_blank">Unix stack exchange discussion</a>.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:fn-1">It is likely that the swap partition is the last partition, and the previous partition is the root which has to be extended. In this case, the swap has to be deleted and the root partiion should be expanded to the desired size, leaving behind room for the swap partition. The final unallocated space has to be used for a new extension partition and then a logical partition to create the linux-swap. <em>For some reason, there is a space of 1MB preceding the swap partition</em>.
+ <a class="footnote-return" href="#fnref:fn-1"><sup>^</sup></a></li>
+</ol>
+</div>
+
+          </div>
+
+          
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/linux/">Linux</a>
+  
+</div>
+
+
+
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jul 6, 2019
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//shreyasragavan.disqus.com/count.js" async></script>
+    
+
+    
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+
+
