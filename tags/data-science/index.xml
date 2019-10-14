@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 15 Mar 2019 11:43:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 23:23:00 -0600</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Some notes on research-compendium</title>
+      <link>https://shrysr.github.io/post/research-compendium/</link>
+      <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/post/research-compendium/</guid>
+      <description>These are my notes while studying the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &amp;lsquo;easily&amp;rsquo; reproducible.
+The notes are mostly based on marwick-2018-packag-r , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also collected separately. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.</description>
+    </item>
     
     <item>
       <title>Using ESS for Data Science</title>

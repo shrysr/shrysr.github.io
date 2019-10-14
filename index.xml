@@ -11,6 +11,344 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Some notes on research-compendium</title>
+      <link>https://shrysr.github.io/post/research-compendium/</link>
+      <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/post/research-compendium/</guid>
+      <description>
+
+&lt;p&gt;These are my notes while studying  the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &amp;lsquo;easily&amp;rsquo; reproducible.&lt;/p&gt;
+
+&lt;p&gt;The notes are mostly based on &lt;sup id=&#34;e8fb07a97f3c5beb5e514bdbae541795&#34;&gt;&lt;a href=&#34;#marwick-2018-packag-r&#34; title=&#34;@misc{marwick-2018-packag-r,
+  DATE_ADDED =   {Mon Oct 14 13:55:11 2019},
+  author =   {Ben Marwick and Carl Boettiger and Lincoln Mullen},
+  doi =      {10.7287/peerj.preprints.3192v2},
+  title =    {Packaging data analytical work reproducibly using R
+                  (and friends)},
+  url =      {https://doi.org/10.7287/peerj.preprints.3192v2},
+  year =     2018,
+}&#34;&gt;marwick-2018-packag-r&lt;/a&gt;&lt;/sup&gt; , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also &lt;a href=&#34;#reference-list&#34;&gt;collected separately&lt;/a&gt;. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://research-compendium.science/&#34; target=&#34;_blank&#34;&gt;Landing page&lt;/a&gt; : contains several references explaining research-compendium.&lt;/li&gt;
+&lt;li&gt;Principles
+
+&lt;ul&gt;
+&lt;li&gt;stick with the prevailing conventions of your peers / scholarly community&lt;/li&gt;
+&lt;li&gt;Keep data, methods and outputs separate, but make sure to unambiguously express the connections between them. The result files should be treated disposable (can be regenerated).&lt;/li&gt;
+&lt;li&gt;Specify computational environment as clearly as possible. Minimally, a text file specifying the version numbers of the software and other critical tools being used.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;R&amp;rsquo;s package structure is conducive to organise and share a compendium, for any project.&lt;/li&gt;
+&lt;li&gt;Dynamic documents : essentially like org files or Rmarkdown files i.e. literate programming. Sweave was originally introduced around 2002. However, around 2015 : knittr and rmarkdown made substantial progress and are in general more preferred than using sweave.&lt;/li&gt;
+&lt;li&gt;Shipping data with the packages
+
+&lt;ul&gt;
+&lt;li&gt;CRAN : generally less than 5MB. A large percentage of the packages have some form of data. Data should be included if a methods package is being shipped with the analysis.&lt;/li&gt;
+&lt;li&gt;use the &lt;a href=&#34;https://github.com/ropensci/piggyback&#34; target=&#34;_blank&#34;&gt;piggyback&lt;/a&gt; package for attaching large datafiles to github repos.
+
+&lt;ul&gt;
+&lt;li&gt;It is convenient to be able to upload a new dataset to be associated with thep package, and this can be accessed with &lt;code&gt;pb_download()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;medium&amp;rsquo; sized data files can be attached using &lt;a href=&#34;https://github.com/ropensci/arkdb&#34; target=&#34;_blank&#34;&gt;arkdb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Adding a Dockerfile to the compendium
+
+&lt;ul&gt;
+&lt;li&gt;containerit    : o2r/containerit&lt;/li&gt;
+&lt;li&gt;repo to docker : jupyter/repo2docker&lt;/li&gt;
+&lt;li&gt;Binder         : &lt;a href=&#34;https://mybinder.org&#34; target=&#34;_blank&#34;&gt;https://mybinder.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;a href=&#34;https://github.com/karthik/holepunch&#34; target=&#34;_blank&#34;&gt;holepunch&lt;/a&gt; package to make the setup easier.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Summarising the folder structure for R packages esque
+
+&lt;ul&gt;
+&lt;li&gt;Readme file : self-explanatory and should be as detailed as possible, and preferably include a graphical connection between various components.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;R/&lt;/code&gt; : Script files with resusable functions go here. If roxygen is used to generate the documentation, then &lt;code&gt;man/&lt;/code&gt; dicrectory is automatically populated with this.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;analysis/&lt;/code&gt; : analysis scripts and reports. Considering using ascending names in the file names to aid clarity and order eg 001-load.R, 002 -&amp;hellip; and so on.&lt;/li&gt;
+&lt;li&gt;The above does not capture the dependencies. Therefore an .Rmd  or &lt;code&gt;Makefile&lt;/code&gt; (or &lt;code&gt;Makefile.R&lt;/code&gt;) can be included to capture the full tree of dependencies. These files control the order of execution.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt; file in the project root provides formally structured, machine and human-readable information on authors / project license, software dependenceis and other meta data.
+
+&lt;ul&gt;
+&lt;li&gt;when this file is included, the project becomes an installable R package.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NAMESPACE&lt;/code&gt;: autogenerated file that exports R functions for repeated use.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LICENSE&lt;/code&gt; : specifying conditions for use /reuse&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Drone : CI service that operates on Docker containers. This can be used as a check.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Makefiles&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uses the make language.&lt;/li&gt;
+&lt;li&gt;specifies the relationship between data, the output and the code generating the output.&lt;/li&gt;
+&lt;li&gt;Defines outputs (targets) in terms of inputs (dependencies) and the code necessary to produce them (recipes).&lt;/li&gt;
+&lt;li&gt;Allows rebuilding only the parts that are out of date.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;remake&lt;/code&gt; package enables write Make like instructions in R.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Principles to consider before sharing a research compendium
+
+&lt;ul&gt;
+&lt;li&gt;Licensing, Version control, persistence, metadata : main aspects to consider.&lt;/li&gt;
+&lt;li&gt;Archive a specific commit at a repository that issues persistent URL&amp;rsquo;s eg DOI which are designed to be more persistent than other URL&amp;rsquo;s. Refere re3data.org for discipline-specific DOI issuing repositories. Using a DOI simplifies citations by allowing the transfer of basic metadata to a central registry (eg CrossRef and Datacite). Doing this ensures that a publicly available snapshot of code exists that can match the results published.&lt;/li&gt;
+&lt;li&gt;CRAN is generally not recommended for research-compendium packages, because it is strict about directory structures and contents of the R packages. It also has a 5MB limit for package data and documentation.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Tools and templates
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rrtools&lt;/code&gt; : extends devtools&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;reference-list&#34;&gt;Reference list&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039&#34; target=&#34;_blank&#34;&gt;https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039&lt;/a&gt; | rOpenSci | Reproducible Research with R&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/annakrystalli/rrtools-repro-research&#34; target=&#34;_blank&#34;&gt;https://github.com/annakrystalli/rrtools-repro-research&lt;/a&gt; | annakrystalli/rrtools-repro-research: Tutorial on Reproducible Research in R with rrtools&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://karthik.github.io/holepunch/&#34; target=&#34;_blank&#34;&gt;https://karthik.github.io/holepunch/&lt;/a&gt; | Configure Your R Project for binderhub • hole punch&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/karthik/holepunch&#34; target=&#34;_blank&#34;&gt;https://github.com/karthik/holepunch&lt;/a&gt; | karthik/holepunch: Make your R project Binder ready&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://peerj.com/preprints/3192/&#34; target=&#34;_blank&#34;&gt;https://peerj.com/preprints/3192/&lt;/a&gt; | Packaging data analytical work reproducibly using R (and friends) [PeerJ Preprints]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub&#34; target=&#34;_blank&#34;&gt;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub&lt;/a&gt; | the-turing-way/workshops/build-a-binderhub at master · alan-turing-institute/the-turing-way&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops&#34; target=&#34;_blank&#34;&gt;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops&lt;/a&gt; | the-turing-way/workshops at master · alan-turing-institute/the-turing-way&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://research-compendium.science/&#34; target=&#34;_blank&#34;&gt;https://research-compendium.science/&lt;/a&gt; | Research Compendium&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://inundata.org/talks/rstd19/#/0/33&#34; target=&#34;_blank&#34;&gt;http://inundata.org/talks/rstd19/#/0/33&lt;/a&gt; | reproducible-data-analysis&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/benmarwick/rrtools&#34; target=&#34;_blank&#34;&gt;https://github.com/benmarwick/rrtools&lt;/a&gt; | benmarwick/rrtools: rrtools: Tools for Writing Reproducible Research in R&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shrysr/correlationfunnel&#34; target=&#34;_blank&#34;&gt;https://github.com/shrysr/correlationfunnel&lt;/a&gt; | shrysr/correlationfunnel: Speed Up Exploratory Data Analysis (EDA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cboettig/nonparametric-bayes&#34; target=&#34;_blank&#34;&gt;https://github.com/cboettig/nonparametric-bayes&lt;/a&gt; | cboettig/nonparametric-bayes: Non-parametric Bayesian Inference for Conservation Decisions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2&#34; target=&#34;_blank&#34;&gt;https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2&lt;/a&gt; | Makefiles for Writing, Data Analysis, OCR, and Converting Shapefiles | Lincoln Mullen&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile&#34; target=&#34;_blank&#34;&gt;https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile&lt;/a&gt; | civil-procedure-codes/Makefile at master · lmullen/civil-procedure-codes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;bibliography&#34;&gt;Bibliography&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;marwick-2018-packag-r&#34;&gt;&lt;/a&gt;[marwick-2018-packag-r] @miscmarwick-2018-packag-r,
+  DATE_ADDED =   Mon Oct 14 13:55:11 2019,
+  author =   Ben Marwick and Carl Boettiger and Lincoln Mullen,
+  doi =      10.7287/peerj.preprints.3192v2,
+  title =    Packaging data analytical work reproducibly using R
+                  (and friends),
+  url =      &lt;a href=&#34;https://doi.org/10.7287/peerj.preprints.3192v2&#34; target=&#34;_blank&#34;&gt;https://doi.org/10.7287/peerj.preprints.3192v2&lt;/a&gt;,
+  year =     2018,
+ &lt;a href=&#34;#e8fb07a97f3c5beb5e514bdbae541795&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CFX Job scheduler</title>
+      <link>https://shrysr.github.io/project/cfx-job-scheduler/</link>
+      <pubDate>Thu, 08 Aug 2019 10:46:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/project/cfx-job-scheduler/</guid>
+      <description>
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://shrysr.github.io/img/scheduler-algo.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
+  &lt;h4&gt;Scheduler-Psuedo-Algorithm&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://shrysr.github.io/jobscheduler/index.html&#34; target=&#34;_blank&#34;&gt;Presentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler/wiki&#34; target=&#34;_blank&#34;&gt;Wiki on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a Python script for a portable, scalable job scheduler with
+multiple priorities - for ANSYS CFX simulations. The script was designed
+to be called every minute by an external scheduler program.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the practical case, the free version of the software &lt;a href=&#34;https://www.splinterware.com/products/scheduler.html&#34; target=&#34;_blank&#34;&gt;System
+Scheduler&lt;/a&gt; was used to deploy the script successfully, for over 3
+years, managing 2 computing clusters.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once called, the program basically loops through pre designated folders
+and lists .def files based on the &lt;em&gt;last modified&lt;/em&gt; date available in
+Windows. The system interaction is via BASH scripts created via the
+Python code, as well as the python OS library. There are several
+in-built flags to support priority, pausing a particular cluster,
+logging data and troubleshooting.&lt;/p&gt;
+
+&lt;p&gt;The idea behind the project was to create a multi-platform job scheduler
+for ANSYS CFX that has a balance between sophistication and ease of
+deployment (and management). Typically job schedulers and load balancing
+programs are relatively very sophisticated and complex to setup with
+several pre-requisites and constraints. Such complexity dictates
+expensive commercial support and licensing considerations.&lt;/p&gt;
+
+&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;
+
+&lt;p&gt;A job scheduler or simulation management system was required to address
+the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Optimum and continuous simulation solver license utilisation by all
+members of the team in a First-In-First-Out (FIFO) basis,&lt;/li&gt;
+&lt;li&gt;Provision for dynamic or urgent priority jobs, as well as an interface
+to submit simulations or view job history.&lt;/li&gt;
+&lt;li&gt;Optimisation and management of workload of simulation jobs
+facilitating overall project management and planning.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-the-program-accomplished&#34;&gt;What the program accomplished&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allowed users to submit simulations by simply placing the input files
+in a particular folder location, which also served as a particular
+priority basket.&lt;/li&gt;
+&lt;li&gt;Removed the need of creating manual scripts to submit multiple
+simulations and resolved inefficient license utilisation approaches.&lt;/li&gt;
+&lt;li&gt;Facilitated a optimised approach to certain design cases, thus
+resulting in a 75% reduction in simulation time&lt;/li&gt;
+&lt;li&gt;Enabled the use of consistent solver and memory utilisation parameters
+and settings, allowing efficient deployment and reducing
+inefficiencies due to errors.&lt;/li&gt;
+&lt;li&gt;Allowed optimal or perfect utilisation of available licensing scheme,
+resulting in a significant increase in team output and productivity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools-used-and-links&#34;&gt;Tools used and links&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Written with Python 2.7, using portable python, Spyder, Notepad ++ and
+Sublime Text 3.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splinterware.com/products/scheduler.html&#34; target=&#34;_blank&#34;&gt;System Scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://shrysr.github.io/page/about/</link>
+      <pubDate>Thu, 08 Aug 2019 10:33:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/page/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;me-shreyas-ragavan&#34;&gt;Me : Shreyas Ragavan&lt;/h2&gt;
+
+&lt;p&gt;I’m an engineer, dreamer, hacker and a geek who enjoys performing in-depth research and analysis, as well as developing end-to-end solutions that drive Business Intelligence and Growth.&lt;/p&gt;
+
+&lt;p&gt;Currently, I have 6+ years of work experience revolving around R&amp;amp;D, Product design, numerical simulation (CFD), Technical Sales,&lt;/p&gt;
+
+&lt;p&gt;Possess a keen eye to comprehend the big picture along with a penchant towards implementing workflow automation.&lt;/p&gt;
+
+&lt;p&gt;I have a deep interest in the field of Data Science and Machine Learning. My interests also extend to quantified self improvement and productivity techniques, writing, research and using Emacs for all my workflows.&lt;/p&gt;
+
+&lt;h2 id=&#34;this-site&#34;&gt;This site&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;powered by Hugo&lt;/li&gt;
+&lt;li&gt;hosted on a debian VPS on Linode&lt;/li&gt;
+&lt;li&gt;the entire content is maintained in Org files and ox-hugo is used to export subtrees and entire files into hugo content.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Connect</title>
+      <link>https://shrysr.github.io/page/connect/</link>
+      <pubDate>Thu, 08 Aug 2019 10:14:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/page/connect/</guid>
+      <description>
+
+&lt;h2 id=&#34;irc-freenode&#34;&gt;IRC @ Freenode:&lt;/h2&gt;
+
+&lt;p&gt;nick:  shrysr&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll respond to your messages on IRC sometime or the other. I&amp;rsquo;m basically  logged in via Weechat on a tmux server, which runs on a Linux host on Linode. I use a terminal to SSH into the server. Gosh, that&amp;rsquo;s a mouthful &amp;lsquo;innit?&lt;/p&gt;
+
+&lt;p&gt;Check out Kiwi IRC, a browser based IRC client. This link will connect you to Freenode:  &lt;a href=&#34;https://kiwiirc.com/nextclient/irc.freenode.net&#34; target=&#34;_blank&#34;&gt;https://kiwiirc.com/nextclient/irc.freenode.net&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently, I hang around the following channels
+#ossasepia #emacs #trilema #gnupg #docker #org-mode.&lt;/p&gt;
+
+&lt;h2 id=&#34;public-key&#34;&gt;Public key&lt;/h2&gt;
+
+&lt;p&gt;Use my &lt;em&gt;public key&lt;/em&gt; available with deedbot and the WoT to send me secure messages:  &lt;a href=&#34;http://wot.deedbot.org/211A199BC99152DEFA326D792E4554DE8D51E8D9.asc&#34; target=&#34;_blank&#34;&gt;http://wot.deedbot.org/211A199BC99152DEFA326D792E4554DE8D51E8D9.asc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Reproduced below for convenience:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+wcnWSykZNTJuuFw4D2Mhrg==
+=Cnf3
+-----END PGP PUBLIC KEY BLOCK-----&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;keybase-dot-io&#34;&gt;keybase.io&lt;/h2&gt;
+
+&lt;p&gt;If you are on keybase, I&amp;rsquo;ve posted proof on &lt;a href=&#34;https://gist.github.com/shrysr/c884b54249b3cf9af6e5a428c2f07e3c&#34; target=&#34;_blank&#34;&gt;github.&lt;/a&gt; If you have keybase installed, run this in a terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;keybase id shrysr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;github&#34;&gt;Github:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr&#34; target=&#34;_blank&#34;&gt;https://github.com/shrysr&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;linked-in&#34;&gt;Linked in:&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://linkedin.com/in/shreyasragavan/&#34; target=&#34;_blank&#34;&gt;https://linkedin.com/in/shreyasragavan/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Using ESS for Data Science</title>
       <link>https://shrysr.github.io/docs/ess-datascience-r/</link>
       <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
@@ -984,280 +1322,6 @@ moment, and the unknown skills that beckon.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;That point sems to be an amalgamation of several factors, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Juggling multiple projects and leveraging org-projectile</title>
-      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
-      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
-
-&lt;p&gt;These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit. Therefore individual folders and git repos are automatically created for each project in the specified project directory. This enables the convenient possibility of keeping the data, folder structures, tasks, notes and scripts of each project separate.&lt;/p&gt;
-
-&lt;p&gt;Different projects can be switched to using &lt;code&gt;M-x nb-open&lt;/code&gt; and typing in a few words that denote the title of the project. Choosing a project automatically provides the option to open the Readme.org files created earlier. Therefore it would be convenient to include relevant links to different locations / scripts and etc in the Readme file.&lt;/p&gt;
-
-&lt;p&gt;Using the above technique resulted in me creating a huge number of projects over a period of time. Especially while working on multiple computers, it is worth inculcating the discipline of adding a remote on github/bitbucket and regularly pushing to the remote.&lt;/p&gt;
-
-&lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
-
-&lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; Setting up org-projectile&lt;/span&gt;
-(require &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;org-projectile&lt;/span&gt;)
-(setq org-projectile-projects-file
-      &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/project-tasks.org&amp;#34;&lt;/span&gt;)
-(push (org-projectile-project-todo-entry) org-capture-templates)
-(setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-(global-set-key (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-c n p&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;org-projectile-project-todo-completing-read&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/screenshot-org-projectile.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;org-projectile task capture&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
-      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>
-
-&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
-
-&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
-
-&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
-
-&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
-pandoc notebook.md -o notebook.org&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
-
-&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;NAME: jupyter-to-org-current
-&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER:  &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_ipynb=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/Users/xxx/Jupyter_notebook&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER: &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_md = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jupyter_notebook-markdown&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;HEADER: &lt;span style=&#34;color:#e6db74&#34;&gt;:var&lt;/span&gt; path_org = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jupyter-notebook-org&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;BEGIN_SRC sh &lt;span style=&#34;color:#e6db74&#34;&gt;:results&lt;/span&gt; verbatim
-cwd=$(pwd)
-jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
-pandoc $cwd/$path_md.md -o $cwd/$path_org.org
-cp $path_ipynb.ipynb $cwd
-ls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(org-babel-lob-ingest &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/Users/shreyas/my_projects/my-recipes.org&amp;#34;&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;#+&lt;/span&gt;CALL: jupyter-to-org-current(path_md=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Jup-to-markdown&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; path_org=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Markdown-to-org&amp;#34;&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
-
-&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
-
-&lt;h2 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h2&gt;
-
-&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
-
-&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:fn-1&#34;&gt;In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:fn-2&#34;&gt;The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:fn-3&#34;&gt;It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Emacs notes: Select paragraph and browse-kill-ring for effective content capture</title>
-      <link>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</link>
-      <pubDate>Fri, 25 Jan 2019 14:45:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/</guid>
-      <description>&lt;p&gt;I like to have any reading material and my notes side by side&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This is easily done with Emacs by splitting the buffer vertically (&lt;code&gt;C-x 3&lt;/code&gt;)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;For example: Once a link has been opened via w3m, I hit org-capture (&lt;code&gt;C-c&lt;/code&gt;) with a preset template that grabs the URL to the article along with the created date in the properties, with the cursor in position ready to take notes.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(setq org-capture-templates
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;l&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Link + notes&amp;#34;&lt;/span&gt; entry (file+headline &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/link_database.org&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.UL Unfiled Links&amp;#34;&lt;/span&gt;)
-     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;** %? %a &amp;#34;&lt;/span&gt;)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The snippet above is activated by the command &amp;lsquo;l&amp;rsquo; and is listed with the title Link + notes in the agenda. It captures the link of the file being viewed as the heading and allows further notes to be inserted below. This is stored into the file &lt;code&gt;link_database&lt;/code&gt; and under the specified heading &lt;code&gt;.UL Unfiled Links&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is also possible to capture a highlighted chunk of text to be added under the heading mentioned above. That would look something like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(setq org-capture-templates
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt;((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Snippet + Notes&amp;#34;&lt;/span&gt; entry &lt;span style=&#34;color:#75715e&#34;&gt;;; &amp;#39;w&amp;#39; for &amp;#39;org-protocol&amp;#39;&lt;/span&gt;
-     (file+headline &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;~/my_org/link_database.org&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.UL Unfiled Links&amp;#34;&lt;/span&gt;)
-     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*** %a, %T\n %:initial&amp;#34;&lt;/span&gt;)))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now I have the capture buffer and the viewing content side by side, by calling &lt;code&gt;C-c l&lt;/code&gt;. I can browse through the article use the mark-paragraph function (conveniently set to &lt;code&gt;M-h&lt;/code&gt;) can be used to select and copy (&lt;code&gt;M-w&lt;/code&gt;) entire paragraphs or alternately use &lt;code&gt;C-spc&lt;/code&gt; to select lines of interest from the article them to the kill ring. The figure below depicts how it looks for me:&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/capture-content-emacs.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Emacs content capture and buffer split&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;p&gt;It is now possible to continue highlighting interesting lines / paragraphs and copy them, which adds them to the kill-ring. Once the article is done with, I switch over to the capture buffer and hit &lt;code&gt;M-x&lt;/code&gt; browse-kill-ring, which brings up a pop-up buffer with all the items in the kill-ring&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. Once called, I can hit n to move to the next item, and hit &amp;lsquo;i&amp;rsquo; to insert the current item at the cursor location. It is also possible to append / prepend/ edit the item before yanking. All the available shortcuts can be found using &amp;lsquo;?&amp;rsquo;, while in the browse-kill-ring buffer.&lt;/p&gt;
-
-&lt;p&gt;The above methodology curiously enables me to ensure capturing atleast some details of interest from an article / source, and also serve as a quick revision of the read content before filing it away.&lt;/p&gt;
-
-&lt;p&gt;One issue with the above workflow is that while reading multiple articles, there is a chance of mixing up the content being captured from different articles. This could be solved by using &amp;lsquo;x&amp;rsquo; in order to pop items out of the kill ring in the selection process above. However, it seems excessive to clear the entire kill ring for each article read. On the other hand, it could promote a focused workflow.&lt;/p&gt;
-
-&lt;p&gt;Additional possibilities:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To view pdf files side by side and capture notes is via the &lt;a href=&#34;https://github.com/rudolfochrist/interleave&#34; target=&#34;_blank&#34;&gt;Interleave package&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The org-web-clipper concept outlined &lt;a href=&#34;http://www.bobnewell.net/publish/35years/webclipper.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; is also very convenient to rapidly capture entire webpages being browsed in w3m.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further reading:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Howard Abrams has &lt;a href=&#34;http://www.howardism.org/Technical/Emacs/capturing-intro.html&#34; target=&#34;_blank&#34;&gt;some great tips&lt;/a&gt; on customising the org-capture mechanism,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bernt Hansen&amp;rsquo;s comprehensive documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:fn-1&#34;&gt;Sometimes, this procedure has to be set specifically. Some good discussions on SO : &lt;a href=&#34;https://stackoverflow.com/questions/2081577/setting-emacs-split-to-horizontal&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;, &lt;a href=&#34;https://stackoverflow.com/questions/7997590/how-to-change-the-default-split-screen-direction&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;. However, at times horizontal splitting is useful. Therefore, I would rather not set a 0 width-threshold enabling only vertical splitting. &lt;code&gt;lisp (setq split-width-threshold 75) (setq split-height-threshold nil)&lt;/code&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:fn-2&#34;&gt;&lt;code&gt;C-x&lt;/code&gt; essentially means Control + x. &lt;code&gt;M-x&lt;/code&gt; or Meta-x is Alt + x
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:fn-3&#34;&gt;The browse-kill-ring package can be installed via MELPA. (&lt;code&gt;M-x&lt;/code&gt; install package)
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Iosevka - an awesome font for Emacs</title>
-      <link>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</link>
-      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/</guid>
-      <description>&lt;p&gt;Before my foray into Emacs, I purchased applications like &lt;a href=&#34;https://ia.net/writer&#34; target=&#34;_blank&#34;&gt;IAWriter&lt;/a&gt;
-(classic)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&#34;http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/&#34; target=&#34;_blank&#34;&gt;Marked2&lt;/a&gt;, &lt;a href=&#34;http://www.texts.io/&#34; target=&#34;_blank&#34;&gt;Texts&lt;/a&gt; (cross platform Mac/Windows), and have
-also tried almost all the recommended apps for longer form writing. I
-am a fan of zen writing apps. In particular the font and environment
-provided by IAWriter are conducive to focused writing. There also
-exist apps like Hemingway that also help check the quality of your
-writing.&lt;/p&gt;
-
-&lt;p&gt;Zen writing apps are called so because they have a unique combination
-of fonts, background color, including line spacing and overall
-text-width - all of which enable a streamlined and focused flow of
-words onto the screen. Any customisation required towards this end is
-possible in Emacs.&lt;/p&gt;
-
-&lt;p&gt;The Texts app has some nifty features (besides being cross platform),
-but the font and appearance is not as beautiful as IAWriter. Both
-IAWriter (classic) and Texts have minimal settings for further
-customisation. See the comparison below:&lt;/p&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/emacs-texts.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Emacs (writeroom-mode + Iosevka font) || Texts (Sepia theme)&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-
-
-
-&lt;figure&gt;
-
-&lt;img src=&#34;https://shrysr.github.io/img/emacs-iawriter.png&#34; /&gt;
-
-
-
-&lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; &gt;
-  &lt;h4&gt;Emacs (writeroom-mode, Iosevka font) || IAWriter(Classic)&lt;/h4&gt;
-  
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;p&gt;While everybody&amp;rsquo;s style and approach vary, there are many authors who
-swear by archaic text editors and tools that enable distraction free
-writing. One example is &lt;a href=&#34;http://tonyballantyne.com/how-to-write/writing-tools/&#34; target=&#34;_blank&#34;&gt;Tony Ballantyne&amp;rsquo;s post on writing tools&lt;/a&gt;,
-and several more examples are available in this &lt;a href=&#34;http://irreal.org/blog/?p=4651&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next best thing to a clear retina display on a MacBook Pro, is a
-beautiful font face to take you through the day, enhancing the viewing
-pleasure and thus the motivation to work longer.&lt;/p&gt;
-
-&lt;p&gt;In Emacs, &lt;a href=&#34;https://github.com/joostkremers/writeroom-mode&#34; target=&#34;_blank&#34;&gt;writeroom-mode&lt;/a&gt; and Emacs can be customised to
-mimic IAWriter. In this regard, the font &lt;a href=&#34;https://be5invis.github.io/Iosevka/&#34; target=&#34;_blank&#34;&gt;Iosevka&lt;/a&gt;, is a great font to
-try. This &lt;a href=&#34;https://www.reddit.com/r/emacs/comments/5twcka/which%5Ffont%5Fdo%5Fyou%5Fuse/&#34; target=&#34;_blank&#34;&gt;old Emacs reddit&lt;/a&gt; has many more suggestions. One post
-described Iosevka as &lt;em&gt;&amp;ldquo;it&lt;/em&gt; &lt;em&gt;doesn&amp;rsquo;t look like much, but after a few hours
-it will be difficult to&lt;/em&gt; &lt;em&gt;use any other font.&amp;rdquo;&lt;/em&gt; This is exactly what
-happened to me.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s still a lot of tweaking to be done with &lt;code&gt;writeroom-mode&lt;/code&gt;,
-but this is certainly a workable result. My nascent configuration for
-writeroom-mode in emacs is as follows (munged off the internet!). It&amp;rsquo;s
-remarkable how much was achieved with a few lines of code!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-lisp&#34; data-lang=&#34;lisp&#34;&gt;(with-eval-after-load &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;writeroom-mode&lt;/span&gt;
-  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-,&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-decrease-width)
-  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-.&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-increase-width)
-  (define-key writeroom-mode-map (kbd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C-s-=&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;writeroom-adjust-width))
-
-(advice-add &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text-scale-adjust&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;:after&lt;/span&gt;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;#&amp;#39;&lt;/span&gt;visual-fill-column-adjust)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:fn-1&#34;&gt;The latest version of IAWriter has a truck load of features and advantages over over the Classic version. I did consider purchasing it, but Emacs won the day. Nevertheless, as a plain vanilla writing app - IAWriter offers much right out of the box.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
 </description>
     </item>
     

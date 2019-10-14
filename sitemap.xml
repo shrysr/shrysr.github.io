@@ -4,6 +4,38 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/post/research-compendium/</loc>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/project/cfx-job-scheduler/</loc>
+      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/page/about/</loc>
+      <lastmod>2019-08-08T10:45:16-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/page/connect/</loc>
+      <lastmod>2019-08-08T10:19:14-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/docs/ess-datascience-r/</loc>
       <lastmod>2019-07-10T13:54:12-06:00</lastmod>
     </url>
@@ -284,14 +316,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/project/cfd-cfx-simulation-scheduler/cfd-cfx-job-scheduler/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://shrysr.github.io/project/emission-technology-ic/emission-technology/</loc>
       <lastmod>2011-02-15T00:00:00+00:00</lastmod>
     </url>
@@ -335,7 +359,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/cfd/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -379,7 +403,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/data-science/</loc>
-      <lastmod>2019-07-10T13:54:12-06:00</lastmod>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -397,7 +421,7 @@
     <url>
     
       <loc>https://shrysr.github.io/categories/datascience/</loc>
-      <lastmod>2019-07-06T12:33:56-06:00</lastmod>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -603,6 +627,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/page/</loc>
+      <lastmod>2019-08-08T10:45:16-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/paper-review/</loc>
       <lastmod>2019-07-06T12:33:29-06:00</lastmod>
       <priority>0</priority>
@@ -613,7 +646,7 @@
     <url>
     
       <loc>https://shrysr.github.io/post/</loc>
-      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -640,7 +673,7 @@
     <url>
     
       <loc>https://shrysr.github.io/project/</loc>
-      <lastmod>2017-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -676,7 +709,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/r/</loc>
-      <lastmod>2019-07-10T13:54:12-06:00</lastmod>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -685,7 +718,7 @@
     <url>
     
       <loc>https://shrysr.github.io/categories/r/</loc>
-      <lastmod>2019-07-10T13:54:12-06:00</lastmod>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     

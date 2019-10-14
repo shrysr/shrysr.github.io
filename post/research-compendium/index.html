@@ -15,11 +15,11 @@
   
     
   
-  <meta name="description" content="Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
-Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen.">
+  <meta name="description" content="These are my notes while studying the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &lsquo;easily&rsquo; reproducible.
+The notes are mostly based on marwick-2018-packag-r , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also collected separately. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/post/research-compendium/">
 
   
 
@@ -100,7 +100,7 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">
+  <link rel="canonical" href="https://shrysr.github.io/post/research-compendium/">
 
   
   
@@ -115,22 +115,22 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   <meta property="twitter:creator" content="@ShreyasRagavan">
   
   <meta property="og:site_name" content="Shreyas Ragavan">
-  <meta property="og:url" content="https://shrysr.github.io/post/951004ce-add0-4e7e-b6e2-2932e0dee429/">
-  <meta property="og:title" content="Iosevka - an awesome font for Emacs | Shreyas Ragavan">
-  <meta property="og:description" content="Before my foray into Emacs, I purchased applications like IAWriter (classic)1, Marked2, Texts (cross platform Mac/Windows), and have also tried almost all the recommended apps for longer form writing. I am a fan of zen writing apps. In particular the font and environment provided by IAWriter are conducive to focused writing. There also exist apps like Hemingway that also help check the quality of your writing.
-Zen writing apps are called so because they have a unique combination of fonts, background color, including line spacing and overall text-width - all of which enable a streamlined and focused flow of words onto the screen."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:url" content="https://shrysr.github.io/post/research-compendium/">
+  <meta property="og:title" content="Some notes on research-compendium | Shreyas Ragavan">
+  <meta property="og:description" content="These are my notes while studying the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &lsquo;easily&rsquo; reproducible.
+The notes are mostly based on marwick-2018-packag-r , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also collected separately. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-01-25T14:44:00-07:00">
+  <meta property="article:published_time" content="2019-09-01T23:23:00-06:00">
   
-  <meta property="article:modified_time" content="2019-07-11T09:06:12-06:00">
-  
-
+  <meta property="article:modified_time" content="2019-10-14T15:19:00-06:00">
   
 
   
 
-  <title>Iosevka - an awesome font for Emacs | Shreyas Ragavan</title>
+  
+
+  <title>Some notes on research-compendium | Shreyas Ragavan</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -346,7 +346,7 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Iosevka - an awesome font for Emacs</h1>
+  <h1 itemprop="name">Some notes on research-compendium</h1>
 
   
 
@@ -366,9 +366,9 @@ Zen writing apps are called so because they have a unique combination of fonts, 
     
         Last updated on
     
-    <meta content="2019-01-25 14:44:00 -0700 MST" itemprop="datePublished">
-    <time datetime="2019-07-11 09:06:12 -0600 MDT" itemprop="dateModified">
-      Jul 11, 2019
+    <meta content="2019-09-01 23:23:00 -0600 MDT" itemprop="datePublished">
+    <time datetime="2019-10-14 15:19:00 -0600 MDT" itemprop="dateModified">
+      Oct 14, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -378,14 +378,14 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    4 min read
   </span>
   
 
   
   
   <span class="middot-divider"></span>
-  <a href="/post/951004ce-add0-4e7e-b6e2-2932e0dee429/#disqus_thread"></a>
+  <a href="/post/research-compendium/#disqus_thread"></a>
   
 
   
@@ -395,9 +395,9 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   <span class="article-categories">
     <i class="fas fa-folder"></i>
     
-    <a href="/categories/emacs/">Emacs</a>, 
+    <a href="/categories/datascience/">DataScience</a>, 
     
-    <a href="/categories/productivity/">Productivity</a>
+    <a href="/categories/r/">R</a>
     
   </span>
   
@@ -409,35 +409,35 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Iosevka%20-%20an%20awesome%20font%20for%20Emacs&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2f951004ce-add0-4e7e-b6e2-2932e0dee429%2f"
+         href="https://twitter.com/intent/tweet?text=Some%20notes%20on%20research-compendium&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2fresearch-compendium%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshrysr.github.io%2fpost%2f951004ce-add0-4e7e-b6e2-2932e0dee429%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshrysr.github.io%2fpost%2fresearch-compendium%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2f951004ce-add0-4e7e-b6e2-2932e0dee429%2f&amp;title=Iosevka%20-%20an%20awesome%20font%20for%20Emacs"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshrysr.github.io%2fpost%2fresearch-compendium%2f&amp;title=Some%20notes%20on%20research-compendium"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshrysr.github.io%2fpost%2f951004ce-add0-4e7e-b6e2-2932e0dee429%2f&amp;title=Iosevka%20-%20an%20awesome%20font%20for%20Emacs"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshrysr.github.io%2fpost%2fresearch-compendium%2f&amp;title=Some%20notes%20on%20research-compendium"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Iosevka%20-%20an%20awesome%20font%20for%20Emacs&amp;body=https%3a%2f%2fshrysr.github.io%2fpost%2f951004ce-add0-4e7e-b6e2-2932e0dee429%2f">
+         href="mailto:?subject=Some%20notes%20on%20research-compendium&amp;body=https%3a%2f%2fshrysr.github.io%2fpost%2fresearch-compendium%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -473,92 +473,120 @@ Zen writing apps are called so because they have a unique combination of fonts, 
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <p>Before my foray into Emacs, I purchased applications like <a href="https://ia.net/writer" target="_blank">IAWriter</a>
-(classic)<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup>, <a href="http://brettterpstra.com/2017/08/01/long-form-writing-with-marked-2-plus-2-dot-5-11-teaser/" target="_blank">Marked2</a>, <a href="http://www.texts.io/" target="_blank">Texts</a> (cross platform Mac/Windows), and have
-also tried almost all the recommended apps for longer form writing. I
-am a fan of zen writing apps. In particular the font and environment
-provided by IAWriter are conducive to focused writing. There also
-exist apps like Hemingway that also help check the quality of your
-writing.</p>
+      
 
-<p>Zen writing apps are called so because they have a unique combination
-of fonts, background color, including line spacing and overall
-text-width - all of which enable a streamlined and focused flow of
-words onto the screen. Any customisation required towards this end is
-possible in Emacs.</p>
+<p>These are my notes while studying  the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &lsquo;easily&rsquo; reproducible.</p>
 
-<p>The Texts app has some nifty features (besides being cross platform),
-but the font and appearance is not as beautiful as IAWriter. Both
-IAWriter (classic) and Texts have minimal settings for further
-customisation. See the comparison below:</p>
+<p>The notes are mostly based on <sup id="e8fb07a97f3c5beb5e514bdbae541795"><a href="#marwick-2018-packag-r" title="@misc{marwick-2018-packag-r,
+  DATE_ADDED =   {Mon Oct 14 13:55:11 2019},
+  author =   {Ben Marwick and Carl Boettiger and Lincoln Mullen},
+  doi =      {10.7287/peerj.preprints.3192v2},
+  title =    {Packaging data analytical work reproducibly using R
+                  (and friends)},
+  url =      {https://doi.org/10.7287/peerj.preprints.3192v2},
+  year =     2018,
+}">marwick-2018-packag-r</a></sup> , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also <a href="#reference-list">collected separately</a>. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.</p>
 
+<ul class="task-list">
+<li><a href="https://research-compendium.science/" target="_blank">Landing page</a> : contains several references explaining research-compendium.</li>
+<li>Principles
 
+<ul>
+<li>stick with the prevailing conventions of your peers / scholarly community</li>
+<li>Keep data, methods and outputs separate, but make sure to unambiguously express the connections between them. The result files should be treated disposable (can be regenerated).</li>
+<li>Specify computational environment as clearly as possible. Minimally, a text file specifying the version numbers of the software and other critical tools being used.</li>
+</ul></li>
+<li>R&rsquo;s package structure is conducive to organise and share a compendium, for any project.</li>
+<li>Dynamic documents : essentially like org files or Rmarkdown files i.e. literate programming. Sweave was originally introduced around 2002. However, around 2015 : knittr and rmarkdown made substantial progress and are in general more preferred than using sweave.</li>
+<li>Shipping data with the packages
 
+<ul>
+<li>CRAN : generally less than 5MB. A large percentage of the packages have some form of data. Data should be included if a methods package is being shipped with the analysis.</li>
+<li>use the <a href="https://github.com/ropensci/piggyback" target="_blank">piggyback</a> package for attaching large datafiles to github repos.
 
-<figure>
+<ul>
+<li>It is convenient to be able to upload a new dataset to be associated with thep package, and this can be accessed with <code>pb_download()</code>.</li>
+</ul></li>
+<li>&ldquo;medium&rsquo; sized data files can be attached using <a href="https://github.com/ropensci/arkdb" target="_blank">arkdb</a></li>
+</ul></li>
+<li>Adding a Dockerfile to the compendium
 
-<img src="/img/emacs-texts.png" />
+<ul>
+<li>containerit    : o2r/containerit</li>
+<li>repo to docker : jupyter/repo2docker</li>
+<li>Binder         : <a href="https://mybinder.org" target="_blank">https://mybinder.org</a></li>
+<li>Use the <a href="https://github.com/karthik/holepunch" target="_blank">holepunch</a> package to make the setup easier.</li>
+</ul></li>
+<li>Summarising the folder structure for R packages esque
 
+<ul>
+<li>Readme file : self-explanatory and should be as detailed as possible, and preferably include a graphical connection between various components.</li>
+<li><code>R/</code> : Script files with resusable functions go here. If roxygen is used to generate the documentation, then <code>man/</code> dicrectory is automatically populated with this.</li>
+<li><code>analysis/</code> : analysis scripts and reports. Considering using ascending names in the file names to aid clarity and order eg 001-load.R, 002 -&hellip; and so on.</li>
+<li>The above does not capture the dependencies. Therefore an .Rmd  or <code>Makefile</code> (or <code>Makefile.R</code>) can be included to capture the full tree of dependencies. These files control the order of execution.</li>
+<li><code>DESCRIPTION</code> file in the project root provides formally structured, machine and human-readable information on authors / project license, software dependenceis and other meta data.
 
+<ul>
+<li>when this file is included, the project becomes an installable R package.</li>
+</ul></li>
+<li><code>NAMESPACE</code>: autogenerated file that exports R functions for repeated use.</li>
+<li><code>LICENSE</code> : specifying conditions for use /reuse</li>
+</ul></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Drone : CI service that operates on Docker containers. This can be used as a check.</label></li>
+<li><code>Makefiles</code>
 
-<figcaption data-pre="Figure " data-post=":" >
-  <h4>Emacs (writeroom-mode + Iosevka font) || Texts (Sepia theme)</h4>
-  
-</figcaption>
+<ul>
+<li>uses the make language.</li>
+<li>specifies the relationship between data, the output and the code generating the output.</li>
+<li>Defines outputs (targets) in terms of inputs (dependencies) and the code necessary to produce them (recipes).</li>
+<li>Allows rebuilding only the parts that are out of date.</li>
+<li>the <code>remake</code> package enables write Make like instructions in R.</li>
+</ul></li>
+<li>Principles to consider before sharing a research compendium
 
-</figure>
+<ul>
+<li>Licensing, Version control, persistence, metadata : main aspects to consider.</li>
+<li>Archive a specific commit at a repository that issues persistent URL&rsquo;s eg DOI which are designed to be more persistent than other URL&rsquo;s. Refere re3data.org for discipline-specific DOI issuing repositories. Using a DOI simplifies citations by allowing the transfer of basic metadata to a central registry (eg CrossRef and Datacite). Doing this ensures that a publicly available snapshot of code exists that can match the results published.</li>
+<li>CRAN is generally not recommended for research-compendium packages, because it is strict about directory structures and contents of the R packages. It also has a 5MB limit for package data and documentation.</li>
+</ul></li>
+<li>Tools and templates
 
+<ul>
+<li><code>devtools</code></li>
+<li><code>rrtools</code> : extends devtools</li>
+</ul></li>
+</ul>
 
+<h2 id="reference-list">Reference list</h2>
 
+<ul>
+<li><a href="https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039" target="_blank">https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039</a> | rOpenSci | Reproducible Research with R</li>
+<li><a href="https://github.com/annakrystalli/rrtools-repro-research" target="_blank">https://github.com/annakrystalli/rrtools-repro-research</a> | annakrystalli/rrtools-repro-research: Tutorial on Reproducible Research in R with rrtools</li>
+<li><a href="https://karthik.github.io/holepunch/" target="_blank">https://karthik.github.io/holepunch/</a> | Configure Your R Project for binderhub • hole punch</li>
+<li><a href="https://github.com/karthik/holepunch" target="_blank">https://github.com/karthik/holepunch</a> | karthik/holepunch: Make your R project Binder ready</li>
+<li><a href="https://peerj.com/preprints/3192/" target="_blank">https://peerj.com/preprints/3192/</a> | Packaging data analytical work reproducibly using R (and friends) [PeerJ Preprints]</li>
+<li><a href="https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub" target="_blank">https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub</a> | the-turing-way/workshops/build-a-binderhub at master · alan-turing-institute/the-turing-way</li>
+<li><a href="https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops" target="_blank">https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops</a> | the-turing-way/workshops at master · alan-turing-institute/the-turing-way</li>
+<li><a href="https://research-compendium.science/" target="_blank">https://research-compendium.science/</a> | Research Compendium</li>
+<li><a href="http://inundata.org/talks/rstd19/#/0/33" target="_blank">http://inundata.org/talks/rstd19/#/0/33</a> | reproducible-data-analysis</li>
+<li><a href="https://github.com/benmarwick/rrtools" target="_blank">https://github.com/benmarwick/rrtools</a> | benmarwick/rrtools: rrtools: Tools for Writing Reproducible Research in R</li>
+<li><a href="https://github.com/shrysr/correlationfunnel" target="_blank">https://github.com/shrysr/correlationfunnel</a> | shrysr/correlationfunnel: Speed Up Exploratory Data Analysis (EDA)</li>
+<li><a href="https://github.com/cboettig/nonparametric-bayes" target="_blank">https://github.com/cboettig/nonparametric-bayes</a> | cboettig/nonparametric-bayes: Non-parametric Bayesian Inference for Conservation Decisions</li>
+<li><a href="https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2" target="_blank">https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2</a> | Makefiles for Writing, Data Analysis, OCR, and Converting Shapefiles | Lincoln Mullen</li>
+<li><a href="https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile" target="_blank">https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile</a> | civil-procedure-codes/Makefile at master · lmullen/civil-procedure-codes</li>
+</ul>
 
-<figure>
+<h1 id="bibliography">Bibliography</h1>
 
-<img src="/img/emacs-iawriter.png" />
-
-
-
-<figcaption data-pre="Figure " data-post=":" >
-  <h4>Emacs (writeroom-mode, Iosevka font) || IAWriter(Classic)</h4>
-  
-</figcaption>
-
-</figure>
-
-<p>While everybody&rsquo;s style and approach vary, there are many authors who
-swear by archaic text editors and tools that enable distraction free
-writing. One example is <a href="http://tonyballantyne.com/how-to-write/writing-tools/" target="_blank">Tony Ballantyne&rsquo;s post on writing tools</a>,
-and several more examples are available in this <a href="http://irreal.org/blog/?p=4651" target="_blank">blog post</a>.</p>
-
-<p>The next best thing to a clear retina display on a MacBook Pro, is a
-beautiful font face to take you through the day, enhancing the viewing
-pleasure and thus the motivation to work longer.</p>
-
-<p>In Emacs, <a href="https://github.com/joostkremers/writeroom-mode" target="_blank">writeroom-mode</a> and Emacs can be customised to
-mimic IAWriter. In this regard, the font <a href="https://be5invis.github.io/Iosevka/" target="_blank">Iosevka</a>, is a great font to
-try. This <a href="https://www.reddit.com/r/emacs/comments/5twcka/which%5Ffont%5Fdo%5Fyou%5Fuse/" target="_blank">old Emacs reddit</a> has many more suggestions. One post
-described Iosevka as <em>&ldquo;it</em> <em>doesn&rsquo;t look like much, but after a few hours
-it will be difficult to</em> <em>use any other font.&rdquo;</em> This is exactly what
-happened to me.</p>
-
-<p>There&rsquo;s still a lot of tweaking to be done with <code>writeroom-mode</code>,
-but this is certainly a workable result. My nascent configuration for
-writeroom-mode in emacs is as follows (munged off the internet!). It&rsquo;s
-remarkable how much was achieved with a few lines of code!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(with-eval-after-load <span style="color:#e6db74">&#39;writeroom-mode</span>
-  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-,&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-decrease-width)
-  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-.&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-increase-width)
-  (define-key writeroom-mode-map (kbd <span style="color:#e6db74">&#34;C-s-=&#34;</span>) <span style="color:#a6e22e">#&#39;</span>writeroom-adjust-width))
-
-(advice-add <span style="color:#e6db74">&#39;text-scale-adjust</span> <span style="color:#e6db74">:after</span>
-        <span style="color:#a6e22e">#&#39;</span>visual-fill-column-adjust)</code></pre></div><div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:fn-1">The latest version of IAWriter has a truck load of features and advantages over over the Classic version. I did consider purchasing it, but Emacs won the day. Nevertheless, as a plain vanilla writing app - IAWriter offers much right out of the box.
- <a class="footnote-return" href="#fnref:fn-1"><sup>^</sup></a></li>
-</ol>
-</div>
+<p><a id="marwick-2018-packag-r"></a>[marwick-2018-packag-r] @miscmarwick-2018-packag-r,
+  DATE_ADDED =   Mon Oct 14 13:55:11 2019,
+  author =   Ben Marwick and Carl Boettiger and Lincoln Mullen,
+  doi =      10.7287/peerj.preprints.3192v2,
+  title =    Packaging data analytical work reproducibly using R
+                  (and friends),
+  url =      <a href="https://doi.org/10.7287/peerj.preprints.3192v2" target="_blank">https://doi.org/10.7287/peerj.preprints.3192v2</a>,
+  year =     2018,
+ <a href="#e8fb07a97f3c5beb5e514bdbae541795">↩</a></p>
 
     </div>
 
@@ -567,13 +595,9 @@ remarkable how much was achieved with a few lines of code!</p>
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/emacs/">Emacs</a>
+  <a class="badge badge-light" href="/tags/r/">R</a>
   
-  <a class="badge badge-light" href="/tags/writing/">writing</a>
-  
-  <a class="badge badge-light" href="/tags/font/">font</a>
-  
-  <a class="badge badge-light" href="/tags/linux/">Linux</a>
+  <a class="badge badge-light" href="/tags/data-science/">Data-Science</a>
   
 </div>
 
@@ -589,15 +613,15 @@ remarkable how much was achieved with a few lines of code!</p>
       <h3>Related</h3>
       <ul>
         
-        <li><a href="/post/01252410-853f-4570-858f-f3d609f5def5/">An SSD can breathe life into old computers</a></li>
+        <li><a href="/docs/r-notes-snippets/">R notes and snippets</a></li>
         
-        <li><a href="/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/">Getting productive - an exploration into holistic task management</a></li>
+        <li><a href="/docs/ess-datascience-r/">Using ESS for Data Science</a></li>
         
-        <li><a href="/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/">Juggling multiple projects and leveraging org-projectile</a></li>
+        <li><a href="/project/course-certificate-list/">Course Certificates</a></li>
         
-        <li><a href="/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/">Jupyter notebooks to Org source &#43; Tower of Babel</a></li>
+        <li><a href="/docs/docker-notes/">Notes on Docker</a></li>
         
-        <li><a href="/post/6953c104-a8b3-4779-aad3-c33032beb111/">Literate Programming - Emacs, Howard Abrams and Library of Babel</a></li>
+        <li><a href="/docs/nosql-mongodb-notes/">MongoDB and NoSQL Databases</a></li>
         
       </ul>
     </div>
@@ -607,15 +631,10 @@ remarkable how much was achieved with a few lines of code!</p>
     <div class="article-widget">
       <div class="post-nav">
   
-  <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="https://shrysr.github.io/post/2d1b3227-28de-4b30-93c8-ad5cbe276e44/" rel="next">Emacs notes: Select paragraph and browse-kill-ring for effective content capture</a>
-  </div>
-  
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="https://shrysr.github.io/post/03133c10-709e-4d06-9f3d-c00ffeae64a7/" rel="prev">Searching the awesome-lists on Github</a>
+    <a href="https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/" rel="prev">Literate Org-mode configuration for Emacs is liberating</a>
   </div>
   
 </div>

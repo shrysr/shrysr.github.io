@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/page/</link>
+    <description>Recent content in Pages on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 08 Aug 2019 10:33:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://shrysr.github.io/page/about/</link>
+      <pubDate>Thu, 08 Aug 2019 10:33:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/page/about/</guid>
+      <description>Me : Shreyas Ragavan I’m an engineer, dreamer, hacker and a geek who enjoys performing in-depth research and analysis, as well as developing end-to-end solutions that drive Business Intelligence and Growth.
+Currently, I have 6+ years of work experience revolving around R&amp;amp;D, Product design, numerical simulation (CFD), Technical Sales,
+Possess a keen eye to comprehend the big picture along with a penchant towards implementing workflow automation.
+I have a deep interest in the field of Data Science and Machine Learning.</description>
+    </item>
+    
+    <item>
+      <title>Connect</title>
+      <link>https://shrysr.github.io/page/connect/</link>
+      <pubDate>Thu, 08 Aug 2019 10:14:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/page/connect/</guid>
+      <description>IRC @ Freenode: nick: shrysr
+I&amp;rsquo;ll respond to your messages on IRC sometime or the other. I&amp;rsquo;m basically logged in via Weechat on a tmux server, which runs on a Linux host on Linode. I use a terminal to SSH into the server. Gosh, that&amp;rsquo;s a mouthful &amp;lsquo;innit?
+Check out Kiwi IRC, a browser based IRC client. This link will connect you to Freenode: https://kiwiirc.com/nextclient/irc.freenode.net
+Currently, I hang around the following channels #ossasepia #emacs #trilema #gnupg #docker #org-mode.</description>
+    </item>
+    
+  </channel>
+</rss>
