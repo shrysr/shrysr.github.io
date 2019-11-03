@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.2.0">
+  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="author" content="Shreyas Ragavan">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="A BASH script to extract the raw text from different servers and compare them.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/project/bash-scripting-mini-project/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-117504906-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://shrysr.github.io/project/bash-scripting-mini-project/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ShreyasRagavan">
+  <meta property="twitter:creator" content="@ShreyasRagavan">
+  
+  <meta property="og:site_name" content="Shreyas Ragavan">
+  <meta property="og:url" content="https://shrysr.github.io/project/bash-scripting-mini-project/">
+  <meta property="og:title" content="Bash scripting to compare chat logs of an IRC channel | Shreyas Ragavan">
+  <meta property="og:description" content="A BASH script to extract the raw text from different servers and compare them."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-09-22T08:43:00-06:00">
+  
+  <meta property="article:modified_time" content="2019-11-03T06:37:53-07:00">
+  
+
+  
+
+  
+
+  <title>Bash scripting to compare chat logs of an IRC channel | Shreyas Ragavan</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Shreyas Ragavan</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/docs/">
+            
+            <span>Docs</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Blog</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tag Cloud</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Bash scripting to compare chat logs of an IRC channel</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Shreyas Ragavan">
+  </span>
+  
+
+  <span class="article-date">
+    
+        Last updated on
+    
+    <meta content="2019-09-22 08:43:00 -0600 MDT" itemprop="datePublished">
+    <time datetime="2019-11-03 06:37:53 -0700 MST" itemprop="dateModified">
+      Nov 3, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Shreyas Ragavan">
+  </span>
+
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/project/bash-scripting-mini-project/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/linux/">Linux</a>, 
+    
+    <a href="/categories/bash/">bash</a>, 
+    
+    <a href="/categories/project/">project</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Bash%20scripting%20to%20compare%20chat%20logs%20of%20an%20IRC%20channel&amp;url=https%3a%2f%2fshrysr.github.io%2fproject%2fbash-scripting-mini-project%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshrysr.github.io%2fproject%2fbash-scripting-mini-project%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshrysr.github.io%2fproject%2fbash-scripting-mini-project%2f&amp;title=Bash%20scripting%20to%20compare%20chat%20logs%20of%20an%20IRC%20channel"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshrysr.github.io%2fproject%2fbash-scripting-mini-project%2f&amp;title=Bash%20scripting%20to%20compare%20chat%20logs%20of%20an%20IRC%20channel"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Bash%20scripting%20to%20compare%20chat%20logs%20of%20an%20IRC%20channel&amp;body=https%3a%2f%2fshrysr.github.io%2fproject%2fbash-scripting-mini-project%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<div class="ox-hugo-toc toc">
+<div></div>
+
+<div class="heading">Table of Contents</div>
+
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#preliminary-notes">Preliminary notes:</a></li>
+<li><a href="#plan">Plan</a></li>
+<li><a href="#simple-case">Simple case</a></li>
+<li><a href="#including-variables-for-url-prefix-start-id-and-end-id">Including variables for url prefix, start id and end id</a></li>
+<li><a href="#figuring-out-a-larger-range">Figuring out a larger range</a>
+
+<ul>
+<li><a href="#implementing-a-simple-conditional-statement">Implementing a simple conditional statement</a></li>
+<li><a href="#implementing-the-for-loop-for-a-range-500">Implementing the for loop for a range &gt; 500</a></li>
+<li><a href="#adding-some-functions-and-other-minor-streamlining">Adding some functions and other minor streamlining</a></li>
+</ul></li>
+<li><a href="#enabling-the-script-to-be-called-with-parameters">Enabling the script to be called with parameters</a></li>
+<li><a href="#comparing-logs-for-range-9998683-to-1000000">Comparing logs for range 9998683 to 1000000</a></li>
+<li><a href="#concluding-remarks">Concluding remarks</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+
+<p></div>
+<!--endtoc--></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This project is an exploration of BASH scripting utilising <code>cURL</code> and <code>diff</code> to extract chat logs of an IRC channel and quickly compare the contents to check for any discrepancies. Several new concepts were learned, including defining variables, for loops, conditionals and making temporary files. The gradual build up in complexity is shown and has the benefit that that report can serve as a simple tutorial in BASH scripting.</p>
+
+<h2 id="preliminary-notes">Preliminary notes:</h2>
+
+<ul>
+<li>The raw knob can be used to extract the text of the logs. The raw mechanism will spit out a maximum of 500 lines.
+
+<ul>
+<li>i.e if a user provides a large range of id&rsquo;s - this will have to be split into batches of 500 lines.</li>
+</ul></li>
+<li>W.r.t diff the focus will be on id &lt; 1000,000.</li>
+<li>My initial idea to use R and connect to the db snapshot was an example of an unnecessarily bloated solution when readily available bash + curl + diff can do the job.</li>
+</ul>
+
+<h2 id="plan">Plan</h2>
+
+<ol>
+<li>Create a simple case:
+
+<ol>
+<li>Use curl on raw knob links from each box &gt; write this to a text file.</li>
+<li>Use diff to compare the text files.</li>
+</ol></li>
+<li>Include variables to substitute start id and end id.</li>
+<li>Strategy for a id range above 500</li>
+<li>Enable providing arguments (url(s), startid and endid) to supply to the bash script so it can be invoked easily from the command line.</li>
+</ol>
+
+<h2 id="simple-case">Simple case</h2>
+
+<p>Beginning with manually using curl.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>
+curl <span style="color:#e6db74">&#34;http://logs.ossasepia.com/log-raw/ossasepia?istart=999600&amp;iend=999700&#34;</span> &gt; ~/temp/log-test.txt
+
+curl <span style="color:#e6db74">&#34;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=999600&amp;iend=999700&#34;</span> &gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/hololo.txt</code></pre></div>
+<p>Quick test of diffing post 1,000,000 id&rsquo;s.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>
+curl <span style="color:#e6db74">&#34;http://logs.ossasepia.com/log-raw/ossasepia?istart=1000000&amp;iend=1000400&#34;</span> &gt; ~/temp/log-test.txt
+
+curl <span style="color:#e6db74">&#34;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=1000000&amp;iend=1000400&#34;</span> &gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/hololo.txt</code></pre></div>
+<h2 id="including-variables-for-url-prefix-start-id-and-end-id">Including variables for url prefix, start id and end id</h2>
+
+<p><em>After a few hours of head-banging using istart= 995000 and iend= 995500 - I realised that these do not exist in the ossasepia log, and I had the syntax right in my first attempt.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>urlPrefix1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span>
+urlPrefix2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span>
+startid<span style="color:#f92672">=</span><span style="color:#ae81ff">1001700</span>
+endid<span style="color:#f92672">=</span><span style="color:#ae81ff">1001900</span>
+
+curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log-test.txt
+
+curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log2-test.txt</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/log-diff.txt</code></pre></div>
+<p>So far, so good. Now comes the <em>relatively</em> tricky part: extending the above to cover more than 500 lines. This will need some conditionals and a for loop thrown in for dealing with a large range.</p>
+
+<h2 id="figuring-out-a-larger-range">Figuring out a larger range</h2>
+
+<p>Strategy:</p>
+
+<ol>
+<li>Obtain a startid and endid (i.e <code>istart</code> and <code>iend</code>)</li>
+<li>If (endid-startid &lt;= 500) - go ahead with directly using curl and diff.</li>
+<li>If endid-startid &gt; 500
+
+<ol>
+<li>divide the number of lines by 500. Obtain the quotient and remainder.</li>
+<li>Use the quotient in a for loop as the number of times the internal startidi is incremented by 500.</li>
+<li>the internal endidi is subtracted by 1 to account for duplication of lines.</li>
+<li>Subtract the remainder from original endid to extract the last portion.</li>
+</ol></li>
+</ol>
+
+<h3 id="implementing-a-simple-conditional-statement">Implementing a simple conditional statement</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>urlPrefix1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span>
+urlPrefix2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span>
+startid<span style="color:#f92672">=</span><span style="color:#ae81ff">999700</span>
+endid<span style="color:#f92672">=</span><span style="color:#ae81ff">999900</span>
+rangelimit<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>
+
+let subtrid<span style="color:#f92672">=</span>endid-startid
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$subtrid<span style="color:#e6db74">&#34;</span> -le <span style="color:#e6db74">&#34;</span>$rangelimit<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+
+    echo <span style="color:#e6db74">&#34;Lines &lt;= 500. Proceeding to curl and diff.&#34;</span>
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log-test.txt
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/log-diff.txt
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#34;Lines &gt; 500. Additional calcs required.&#34;</span>
+<span style="color:#66d9ef">fi</span></code></pre></div>
+<h3 id="implementing-the-for-loop-for-a-range-500">Implementing the for loop for a range &gt; 500</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>urlPrefix1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span>
+urlPrefix2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span>
+startid<span style="color:#f92672">=</span><span style="color:#ae81ff">1001900</span>
+endid<span style="color:#f92672">=</span><span style="color:#ae81ff">1002900</span>
+rangelimit<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>
+
+let subtrid<span style="color:#f92672">=</span>endid-startid
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$subtrid<span style="color:#e6db74">&#34;</span> -le <span style="color:#e6db74">&#34;</span>$rangelimit<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+
+    echo <span style="color:#e6db74">&#34;Lines &lt;= 500. Proceeding to curl and diff.&#34;</span>
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log-test.txt
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/log-diff.txt
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#34;Lines &gt; 500. Entering Loop to split the range into batches of 500 lines.&#34;</span>
+    let quotient<span style="color:#f92672">=</span>$subtrid/$rangelimit
+    let remainder<span style="color:#f92672">=</span>$subtrid%$rangelimit
+    echo $quotient
+    echo $remainder
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; c &lt;$quotient; c++ <span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">do</span>
+	let <span style="color:#e6db74">&#34;startidi=</span>$startid<span style="color:#e6db74"> + </span>$c<span style="color:#e6db74"> * </span>$rangelimit<span style="color:#e6db74">&#34;</span>
+	let <span style="color:#e6db74">&#34;endidi=</span>$startidi<span style="color:#e6db74"> + </span>$rangelimit<span style="color:#e6db74"> -1&#34;</span>
+	echo $startidi
+	echo $endidi
+	curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startidi<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endidi<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/temp/log-test.txt
+	curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>startidi<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endidi<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/temp/log2-test.txt
+    <span style="color:#66d9ef">done</span>
+    let <span style="color:#e6db74">&#34;portionstartid=</span>$endid<span style="color:#e6db74"> - </span>$remainder<span style="color:#e6db74">&#34;</span>
+    echo $portionstartid
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>portionstartid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/temp/log-test.txt
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>urlPrefix2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>portionstartid<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>endid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &gt; ~/temp/log-diff.txt
+<span style="color:#66d9ef">fi</span></code></pre></div>
+<p>The above has been tested to work across a range of start and end ID&rsquo;s.</p>
+
+<h3 id="adding-some-functions-and-other-minor-streamlining">Adding some functions and other minor streamlining</h3>
+
+<ul>
+<li>function to check the output of curl as well as diff if empty.</li>
+<li>curl operations put into a function since repeated.</li>
+<li>Streamlined echo outputs to be more neat.</li>
+</ul>
+
+<!--listend-->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>urlPrefix1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span>
+urlPrefix2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span>
+startid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1001900&#34;</span>
+endid<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1003700&#34;</span>
+log1_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.log1&#34;</span><span style="color:#66d9ef">)</span>
+log2_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.log2&#34;</span><span style="color:#66d9ef">)</span>
+diff_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.difflog&#34;</span><span style="color:#66d9ef">)</span>
+rangelimit<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>
+
+let subtrid<span style="color:#f92672">=</span>endid-startid
+
+<span style="color:#66d9ef">function</span> check_output <span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;Log1 curl output is at </span>$log1_file<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;Log2 curl output is at </span>$log2_file<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;diff output is at </span>$diff_file<span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -s $1 <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -s $2 <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+	echo <span style="color:#e6db74">&#34;Atleast One curl output returned nothing.&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -s $3 <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+	echo <span style="color:#e6db74">&#34;Diff file is not empty. Logs not equal&#34;</span>
+    <span style="color:#66d9ef">else</span>
+	echo <span style="color:#e6db74">&#34;Diff file is empty.&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">function</span> curler <span style="color:#f92672">{</span>
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>3<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>4<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; $log1_file
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>3<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>4<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; $log2_file
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$subtrid<span style="color:#e6db74">&#34;</span> -le <span style="color:#e6db74">&#34;</span>$rangelimit<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+
+    echo <span style="color:#e6db74">&#34;Lines &lt;= </span>$rangelimit<span style="color:#e6db74">. Proceeding to curl and diff.&#34;</span>
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#34;Lines &gt; </span>$rangelimit<span style="color:#e6db74">. Looping to split the range into batches.&#34;</span>
+    let quotient<span style="color:#f92672">=</span>$subtrid/$rangelimit
+    let remainder<span style="color:#f92672">=</span>$subtrid%$rangelimit
+    echo <span style="color:#e6db74">&#34;Batches of </span>$rangelimit<span style="color:#e6db74"> lines = </span>$quotient<span style="color:#e6db74">. Remaining lines = </span>$remainder<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; c &lt;$quotient; c++ <span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">do</span>
+	let <span style="color:#e6db74">&#34;startidi=</span>$startid<span style="color:#e6db74"> + </span>$c<span style="color:#e6db74"> * </span>$rangelimit<span style="color:#e6db74">&#34;</span>
+	let <span style="color:#e6db74">&#34;endidi=</span>$startidi<span style="color:#e6db74"> + </span>$rangelimit<span style="color:#e6db74"> -1&#34;</span>
+	echo <span style="color:#e6db74">&#34;istart is </span>$startidi<span style="color:#e6db74"> and iend is </span>$endidi<span style="color:#e6db74">&#34;</span>
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    <span style="color:#66d9ef">done</span>
+    let <span style="color:#e6db74">&#34;portionstartid=</span>$endid<span style="color:#e6db74"> - </span>$remainder<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;Last portion istart is </span>$portionstartid<span style="color:#e6db74">&#34;</span>
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+<span style="color:#66d9ef">fi</span></code></pre></div>
+<h2 id="enabling-the-script-to-be-called-with-parameters">Enabling the script to be called with parameters</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!bin/bash
+</span><span style="color:#75715e"></span>urlPrefix1<span style="color:#f92672">=</span>$1
+urlPrefix2<span style="color:#f92672">=</span>$2
+startid<span style="color:#f92672">=</span>$3
+endid<span style="color:#f92672">=</span>$4
+log1_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.log1&#34;</span><span style="color:#66d9ef">)</span>
+log2_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.log2&#34;</span><span style="color:#66d9ef">)</span>
+diff_file<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp -t <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y_%H-%M-%S&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">.difflog&#34;</span><span style="color:#66d9ef">)</span>
+rangelimit<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>
+
+let subtrid<span style="color:#f92672">=</span>endid-startid
+
+<span style="color:#66d9ef">function</span> check_output <span style="color:#f92672">{</span>
+    echo <span style="color:#e6db74">&#34;Log1 curl output is at </span>$log1_file<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;Log2 curl output is at </span>$log2_file<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;diff output is at </span>$diff_file<span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -s $1 <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> ! -s $2 <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+	echo <span style="color:#e6db74">&#34;Atleast One curl output returned nothing.&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -s $3 <span style="color:#f92672">]</span>
+    <span style="color:#66d9ef">then</span>
+	echo <span style="color:#e6db74">&#34;Diff file is not empty. Logs not equal&#34;</span>
+    <span style="color:#66d9ef">else</span>
+	echo <span style="color:#e6db74">&#34;Diff file is empty.&#34;</span>
+    <span style="color:#66d9ef">fi</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">function</span> curler <span style="color:#f92672">{</span>
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>3<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>4<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; $log1_file
+    curl <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>2<span style="color:#e6db74">}</span><span style="color:#e6db74">?istart=</span><span style="color:#e6db74">${</span>3<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;iend=</span><span style="color:#e6db74">${</span>4<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; $log2_file
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$subtrid<span style="color:#e6db74">&#34;</span> -le <span style="color:#e6db74">&#34;</span>$rangelimit<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+
+    echo <span style="color:#e6db74">&#34;Lines &lt;= </span>$rangelimit<span style="color:#e6db74">. Proceeding to curl and diff.&#34;</span>
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+<span style="color:#66d9ef">else</span>
+    echo <span style="color:#e6db74">&#34;Lines &gt; </span>$rangelimit<span style="color:#e6db74">. Looping to split the range into batches.&#34;</span>
+    let quotient<span style="color:#f92672">=</span>$subtrid/$rangelimit
+    let remainder<span style="color:#f92672">=</span>$subtrid%$rangelimit
+    echo <span style="color:#e6db74">&#34;Batches of </span>$rangelimit<span style="color:#e6db74"> lines = </span>$quotient<span style="color:#e6db74">. Remaining lines = </span>$remainder<span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; c &lt;$quotient; c++ <span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">do</span>
+	let <span style="color:#e6db74">&#34;startidi=</span>$startid<span style="color:#e6db74"> + </span>$c<span style="color:#e6db74"> * </span>$rangelimit<span style="color:#e6db74">&#34;</span>
+	let <span style="color:#e6db74">&#34;endidi=</span>$startidi<span style="color:#e6db74"> + </span>$rangelimit<span style="color:#e6db74"> -1&#34;</span>
+	echo <span style="color:#e6db74">&#34;istart is </span>$startidi<span style="color:#e6db74"> and iend is </span>$endidi<span style="color:#e6db74">&#34;</span>
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    <span style="color:#66d9ef">done</span>
+
+    let <span style="color:#e6db74">&#34;portionstartid=</span>$endid<span style="color:#e6db74"> - </span>$remainder<span style="color:#e6db74">&#34;</span>
+    echo <span style="color:#e6db74">&#34;Last portion istart is </span>$portionstartid<span style="color:#e6db74">&#34;</span>
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+<span style="color:#66d9ef">fi</span></code></pre></div>
+<p>The above script, if saved as <code>~/temp/log-bash-curl-diff.sh</code> can be called as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sh ~/temp/log-bash-curl-diff.sh <span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span> <span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span> <span style="color:#ae81ff">1001900</span> <span style="color:#ae81ff">1003700</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Lines &gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 3. Remaining lines = 300
+istart is 1001900 and iend is 1002399
+istart is 1002400 and iend is 1002899
+istart is 1002900 and iend is 1003399
+Last portion istart is 1003400
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.log1.6FVYRfcq
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.log2.N73Mng1q
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.difflog.DwaqbBgW
+Diff file is not empty. Logs not equal</code></pre></div>
+
+
+
+<figure>
+
+<img src="~/Desktop/CleanShot%202019-09-22%20at%2007.41.53@2x.png" />
+
+
+</figure>
+
+<h2 id="comparing-logs-for-range-9998683-to-1000000">Comparing logs for range 9998683 to 1000000</h2>
+
+<ul>
+<li>998683 is the beginning of the ossasepia log.</li>
+</ul>
+
+<!--listend-->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sh ~/temp/log-bash-curl-diff.sh <span style="color:#e6db74">&#34;logs.ossasepia.com/log-raw/ossasepia&#34;</span> <span style="color:#e6db74">&#34;logs.nosuchlabs.com/log-raw/ossasepia&#34;</span> <span style="color:#e6db74">&#34;998683&#34;</span> <span style="color:#e6db74">&#34;1000000&#34;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Lines &gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 2. Remaining lines = 317
+istart is 998683 and iend is 999182
+istart is 999183 and iend is 999682
+Last portion istart is 999683
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.log1.dTY7wk3x
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.log2.LXpNkbWa
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.difflog.hKx9VdZf
+Diff file is not empty. Logs not equal</code></pre></div>
+<h2 id="concluding-remarks">Concluding remarks</h2>
+
+<ul>
+<li>a neat little bash script is constructed which will retrieve content from 2 specified URL&rsquo;s and diff the output. Particularly, the script was constructed to compare the #o logs on logs.ossasepia.com and logs.nosuchlabs.com</li>
+<li>functions, conditionals, loops, for bash were learned and deployed, along with using curl and diff.</li>
+<li>Retrieving a large number of lines will take some time and is also dependent on the internet speed. The curl/diff files will be empty if the lines are non-existent.</li>
+<li>Diff results of the logs from line 9998683 to 1000000 indicates there are no missing lines.</li>
+<li>the <code>check_output</code> function only checks if the files are empty. It does not account for curl retrieving error messages.</li>
+<li>In a batch retrieval - the final curl output is checked whether empty. It does not account for empty retrievals for a particular batch.</li>
+<li>overflow/underflow is not accounted for in this script.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script" target="_blank">Unix SE discussion on making temporary files in bash</a></li>
+<li><a href="https://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash" target="_blank">SO discussion on making temporary files in bash</a></li>
+<li>Some general references for the bash syntax used above.</li>
+</ul>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/linux/">Linux</a>
+  
+  <a class="badge badge-light" href="/tags/bash/">bash</a>
+  
+  <a class="badge badge-light" href="/tags/project/">project</a>
+  
+  <a class="badge badge-light" href="/tags/shell/">shell</a>
+  
+</div>
+
+
+
+    
+
+
+    
+    
+
+    
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    
+
+  </div>
+</article>
+
+
+<div class="article-container article-widget">
+  <div class="post-nav">
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="https://shrysr.github.io/project/cfx-job-scheduler/" rel="prev">CFX Job scheduler</a>
+  </div>
+  
+</div>
+
+</div>
+
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//shreyasragavan.disqus.com/count.js" async></script>
+    
+
+    
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+
+    
+
+  </body>
+</html>
+

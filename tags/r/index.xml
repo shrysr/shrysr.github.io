@@ -42,16 +42,6 @@ However, the text (i.e code) editing capabalities are still significantly lackin
     </item>
     
     <item>
-      <title>#Tidytuesday Project 1 - Federal R&amp;D Spending on climate</title>
-      <link>https://shrysr.github.io/post/blog-book/</link>
-      <pubDate>Fri, 01 Nov 2019 13:51:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/post/blog-book/</guid>
-      <description>Summary This is a short exploration into the tidy tuesday dataset that covers the federal R&amp;amp;D budget on climate change. It shows that NASA&amp;rsquo;s budget dwarfs the money going into other departments.
- Github Repo of Tidy Tuesday explorations Tidy tuesday dataset: link Data Dictionary link Viz posted on Twitter Tools used: ESS, Org mode  Loading libraries The easypackages library is used, which allows quickly installing and loading multiple packages.</description>
-    </item>
-    
-    <item>
       <title>R notes and snippets</title>
       <link>https://shrysr.github.io/docs/r-notes-snippets/</link>
       <pubDate>Thu, 11 Jul 2019 11:21:36 -0600</pubDate>

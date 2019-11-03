@@ -11,6 +11,373 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Bash scripting to compare chat logs of an IRC channel</title>
+      <link>https://shrysr.github.io/project/bash-scripting-mini-project/</link>
+      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/project/bash-scripting-mini-project/</guid>
+      <description>
+
+&lt;div class=&#34;ox-hugo-toc toc&#34;&gt;
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div class=&#34;heading&#34;&gt;Table of Contents&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#preliminary-notes&#34;&gt;Preliminary notes:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plan&#34;&gt;Plan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#simple-case&#34;&gt;Simple case&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#concluding-remarks&#34;&gt;Concluding remarks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;!--endtoc--&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This project is an exploration of BASH scripting utilising &lt;code&gt;cURL&lt;/code&gt; and &lt;code&gt;diff&lt;/code&gt; to extract chat logs of an IRC channel and quickly compare the contents to check for any discrepancies. Several new concepts were learned, including defining variables, for loops, conditionals and making temporary files. The gradual build up in complexity is shown and has the benefit that that report can serve as a simple tutorial in BASH scripting.&lt;/p&gt;
+
+&lt;h2 id=&#34;preliminary-notes&#34;&gt;Preliminary notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The raw knob can be used to extract the text of the logs. The raw mechanism will spit out a maximum of 500 lines.
+
+&lt;ul&gt;
+&lt;li&gt;i.e if a user provides a large range of id&amp;rsquo;s - this will have to be split into batches of 500 lines.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;W.r.t diff the focus will be on id &amp;lt; 1000,000.&lt;/li&gt;
+&lt;li&gt;My initial idea to use R and connect to the db snapshot was an example of an unnecessarily bloated solution when readily available bash + curl + diff can do the job.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;plan&#34;&gt;Plan&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a simple case:
+
+&lt;ol&gt;
+&lt;li&gt;Use curl on raw knob links from each box &amp;gt; write this to a text file.&lt;/li&gt;
+&lt;li&gt;Use diff to compare the text files.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Include variables to substitute start id and end id.&lt;/li&gt;
+&lt;li&gt;Strategy for a id range above 500&lt;/li&gt;
+&lt;li&gt;Enable providing arguments (url(s), startid and endid) to supply to the bash script so it can be invoked easily from the command line.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;simple-case&#34;&gt;Simple case&lt;/h2&gt;
+
+&lt;p&gt;Beginning with manually using curl.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://logs.ossasepia.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log-test.txt
+
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Quick test of diffing post 1,000,000 id&amp;rsquo;s.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://logs.ossasepia.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log-test.txt
+
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;After a few hours of head-banging using istart= 995000 and iend= 995500 - I realised that these do not exist in the ossasepia log, and I had the syntax right in my first attempt.&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+urlPrefix2&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+startid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1001700&lt;/span&gt;
+endid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1001900&lt;/span&gt;
+
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log-test.txt
+
+curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log2-test.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So far, so good. Now comes the &lt;em&gt;relatively&lt;/em&gt; tricky part: extending the above to cover more than 500 lines. This will need some conditionals and a for loop thrown in for dealing with a large range.&lt;/p&gt;
+
+&lt;h2 id=&#34;figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/h2&gt;
+
+&lt;p&gt;Strategy:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Obtain a startid and endid (i.e &lt;code&gt;istart&lt;/code&gt; and &lt;code&gt;iend&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If (endid-startid &amp;lt;= 500) - go ahead with directly using curl and diff.&lt;/li&gt;
+&lt;li&gt;If endid-startid &amp;gt; 500
+
+&lt;ol&gt;
+&lt;li&gt;divide the number of lines by 500. Obtain the quotient and remainder.&lt;/li&gt;
+&lt;li&gt;Use the quotient in a for loop as the number of times the internal startidi is incremented by 500.&lt;/li&gt;
+&lt;li&gt;the internal endidi is subtracted by 1 to account for duplication of lines.&lt;/li&gt;
+&lt;li&gt;Subtract the remainder from original endid to extract the last portion.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+urlPrefix2&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+startid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;999700&lt;/span&gt;
+endid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;999900&lt;/span&gt;
+rangelimit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;
+
+let subtrid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;endid-startid
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$subtrid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; -le &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;#34;&lt;/span&gt;
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log-test.txt
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;gt; 500. Additional calcs required.&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+urlPrefix2&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+startid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1001900&lt;/span&gt;
+endid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1002900&lt;/span&gt;
+rangelimit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;
+
+let subtrid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;endid-startid
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$subtrid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; -le &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;#34;&lt;/span&gt;
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log-test.txt
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;gt; 500. Entering Loop to split the range into batches of 500 lines.&amp;#34;&lt;/span&gt;
+    let quotient&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid/$rangelimit
+    let remainder&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid%$rangelimit
+    echo $quotient
+    echo $remainder
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;((&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; c &amp;lt;$quotient; c++ &lt;span style=&#34;color:#f92672&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;startidi=&lt;/span&gt;$startid&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$c&lt;span style=&#34;color:#e6db74&#34;&gt; * &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;endidi=&lt;/span&gt;$startidi&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt; -1&amp;#34;&lt;/span&gt;
+	echo $startidi
+	echo $endidi
+	curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startidi&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endidi&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/temp/log-test.txt
+	curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;startidi&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endidi&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+    let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;portionstartid=&lt;/span&gt;$endid&lt;span style=&#34;color:#e6db74&#34;&gt; - &lt;/span&gt;$remainder&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo $portionstartid
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;portionstartid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/temp/log-test.txt
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;urlPrefix2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;portionstartid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;endid&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above has been tested to work across a range of start and end ID&amp;rsquo;s.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;function to check the output of curl as well as diff if empty.&lt;/li&gt;
+&lt;li&gt;curl operations put into a function since repeated.&lt;/li&gt;
+&lt;li&gt;Streamlined echo outputs to be more neat.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+urlPrefix2&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt;
+startid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1001900&amp;#34;&lt;/span&gt;
+endid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1003700&amp;#34;&lt;/span&gt;
+log1_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.log1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+log2_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.log2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+diff_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.difflog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+rangelimit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;
+
+let subtrid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;endid-startid
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; check_output &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Log1 curl output is at &lt;/span&gt;$log1_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Log2 curl output is at &lt;/span&gt;$log2_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;diff output is at &lt;/span&gt;$diff_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -s $1 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -s $2 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Atleast One curl output returned nothing.&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -s $3 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Diff file is not empty. Logs not equal&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Diff file is empty.&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; curler &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;3&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;4&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; $log1_file
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;3&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;4&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; $log2_file
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$subtrid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; -le &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;lt;= &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;. Proceeding to curl and diff.&amp;#34;&lt;/span&gt;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;gt; &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;. Looping to split the range into batches.&amp;#34;&lt;/span&gt;
+    let quotient&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid/$rangelimit
+    let remainder&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid%$rangelimit
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Batches of &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt; lines = &lt;/span&gt;$quotient&lt;span style=&#34;color:#e6db74&#34;&gt;. Remaining lines = &lt;/span&gt;$remainder&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;((&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; c &amp;lt;$quotient; c++ &lt;span style=&#34;color:#f92672&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;startidi=&lt;/span&gt;$startid&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$c&lt;span style=&#34;color:#e6db74&#34;&gt; * &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;endidi=&lt;/span&gt;$startidi&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt; -1&amp;#34;&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;istart is &lt;/span&gt;$startidi&lt;span style=&#34;color:#e6db74&#34;&gt; and iend is &lt;/span&gt;$endidi&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+    let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;portionstartid=&lt;/span&gt;$endid&lt;span style=&#34;color:#e6db74&#34;&gt; - &lt;/span&gt;$remainder&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Last portion istart is &lt;/span&gt;$portionstartid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;urlPrefix1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$1
+urlPrefix2&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$2
+startid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$3
+endid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$4
+log1_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.log1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+log2_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.log2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+diff_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;mktemp -t &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.difflog&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+rangelimit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;
+
+let subtrid&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;endid-startid
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; check_output &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Log1 curl output is at &lt;/span&gt;$log1_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Log2 curl output is at &lt;/span&gt;$log2_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;diff output is at &lt;/span&gt;$diff_file&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -s $1 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; ! -s $2 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Atleast One curl output returned nothing.&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -s $3 &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Diff file is not empty. Logs not equal&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Diff file is empty.&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; curler &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;1&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;3&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;4&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; $log1_file
+    curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;2&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;?istart=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;3&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;iend=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;4&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; $log2_file
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$subtrid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; -le &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;lt;= &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;. Proceeding to curl and diff.&amp;#34;&lt;/span&gt;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Lines &amp;gt; &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;. Looping to split the range into batches.&amp;#34;&lt;/span&gt;
+    let quotient&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid/$rangelimit
+    let remainder&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$subtrid%$rangelimit
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Batches of &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt; lines = &lt;/span&gt;$quotient&lt;span style=&#34;color:#e6db74&#34;&gt;. Remaining lines = &lt;/span&gt;$remainder&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;((&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; c &amp;lt;$quotient; c++ &lt;span style=&#34;color:#f92672&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;startidi=&lt;/span&gt;$startid&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$c&lt;span style=&#34;color:#e6db74&#34;&gt; * &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;endidi=&lt;/span&gt;$startidi&lt;span style=&#34;color:#e6db74&#34;&gt; + &lt;/span&gt;$rangelimit&lt;span style=&#34;color:#e6db74&#34;&gt; -1&amp;#34;&lt;/span&gt;
+	echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;istart is &lt;/span&gt;$startidi&lt;span style=&#34;color:#e6db74&#34;&gt; and iend is &lt;/span&gt;$endidi&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+
+    let &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;portionstartid=&lt;/span&gt;$endid&lt;span style=&#34;color:#e6db74&#34;&gt; - &lt;/span&gt;$remainder&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Last portion istart is &lt;/span&gt;$portionstartid&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above script, if saved as &lt;code&gt;~/temp/log-bash-curl-diff.sh&lt;/code&gt; can be called as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1001900&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1003700&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 3. Remaining lines = 300
+istart is 1001900 and iend is 1002399
+istart is 1002400 and iend is 1002899
+istart is 1002900 and iend is 1003399
+Last portion istart is 1003400
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.log1.6FVYRfcq
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.log2.N73Mng1q
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-41.difflog.DwaqbBgW
+Diff file is not empty. Logs not equal&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;~/Desktop/CleanShot%202019-09-22%20at%2007.41.53@2x.png&#34; /&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;998683 is the beginning of the ossasepia log.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.ossasepia.com/log-raw/ossasepia&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logs.nosuchlabs.com/log-raw/ossasepia&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;998683&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1000000&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 2. Remaining lines = 317
+istart is 998683 and iend is 999182
+istart is 999183 and iend is 999682
+Last portion istart is 999683
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.log1.dTY7wk3x
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.log2.LXpNkbWa
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_06-37-48.difflog.hKx9VdZf
+Diff file is not empty. Logs not equal&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;concluding-remarks&#34;&gt;Concluding remarks&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a neat little bash script is constructed which will retrieve content from 2 specified URL&amp;rsquo;s and diff the output. Particularly, the script was constructed to compare the #o logs on logs.ossasepia.com and logs.nosuchlabs.com&lt;/li&gt;
+&lt;li&gt;functions, conditionals, loops, for bash were learned and deployed, along with using curl and diff.&lt;/li&gt;
+&lt;li&gt;Retrieving a large number of lines will take some time and is also dependent on the internet speed. The curl/diff files will be empty if the lines are non-existent.&lt;/li&gt;
+&lt;li&gt;Diff results of the logs from line 9998683 to 1000000 indicates there are no missing lines.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;check_output&lt;/code&gt; function only checks if the files are empty. It does not account for curl retrieving error messages.&lt;/li&gt;
+&lt;li&gt;In a batch retrieval - the final curl output is checked whether empty. It does not account for empty retrievals for a particular batch.&lt;/li&gt;
+&lt;li&gt;overflow/underflow is not accounted for in this script.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script&#34; target=&#34;_blank&#34;&gt;Unix SE discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash&#34; target=&#34;_blank&#34;&gt;SO discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some general references for the bash syntax used above.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Some notes on research-compendium</title>
       <link>https://shrysr.github.io/post/research-compendium/</link>
       <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
@@ -1242,86 +1609,6 @@ differences, but not too much depth either.&lt;/li&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Notes from the movie Whiplash</title>
-      <link>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</link>
-      <pubDate>Sat, 19 Jan 2019 19:37:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/5fc69e19-e330-4dd9-9317-7280a9c93966/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Whiplash%5F%25282014%5Ffilm%2529&#34; target=&#34;_blank&#34;&gt;Whiplash: Wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Whiplash is a fascinating movie on many levels regarding a topic that interests me deeply&amp;hellip; How to progressively perform, and strive to become the very best in a chosen field. Personally, I found each step of the movie riveting and would recommend it to anybody who would find the above question even mildly interesting. The movie&amp;rsquo;s climax  was immensely interesting, inspiring and supported by great acting.  At any rate, the movie induced a blog post !&lt;/p&gt;
-
-&lt;p&gt;The story revolves around the mind and life of a student who wants to be among the greats in his field, and the way he deals with an abrasive, abusive and unorthodox teacher whose intentions are to bring out the best in a student. No movie is perfect - while some points in Whiplash do appear extreme and therefore relatively unrealistic - the overriding message and theme conveyed certainly rings out clearly, in an engaging plot.&lt;/p&gt;
-
-&lt;p&gt;I could relate to the following pointers from the movie:&lt;/p&gt;
-
-&lt;h2 id=&#34;leverage-stress-to-achieve-new-levels-of-insight-and-performance&#34;&gt;Leverage stress to achieve new levels of insight and performance&lt;/h2&gt;
-
-&lt;p&gt;The belief of the teacher, that the best performance or attributes hidden inside a person can come out only via repeated, unexpected and  stressful prodding. I&amp;rsquo;m not sure if this works as shown in the movie, but I have found unexpected insights at times of extreme stress, that have were taken forward to habits that changed my life.&lt;/p&gt;
-
-&lt;h2 id=&#34;weathering-criticism&#34;&gt;Weathering criticism&lt;/h2&gt;
-
-&lt;p&gt;The mental conditioning required to weather and beat intense, sharp,
-depressing criticism along with verbal and physical abuse from a
-mentor or teacher and use the same as a motive force for
-self-improvement and eventually superlative performance. Though there
-are examples of extreme abrasiveness in leaders like Steve Jobs - such
-an approach would not be tolerated by most people today.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;I know other stories of people working under such mentors,
-striving to learn and gain their approval and eventually winning
-the same. These efforts paid off by resulting in skills, thinking
-patterns and a superior mental conditioning. Finding such a mentor
-at the formative stage is probably the best thing to happen to
-anybody.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;An effective strategy to find mentors is to shadow people on Linked in and learn from their profiles and activity. Some of them may be willing to connect and invest time in mentoring.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Another possibility to find like minded people and mentors would be to join the communities of on-line courses, like Datacamp and Dataquest, who have lively channels in Slack for paid members.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;getting-back-up-after-a-fall&#34;&gt;Getting back up after a fall&lt;/h2&gt;
-
-&lt;p&gt;Everybody breaks. Just as the promising student in Whiplash
-breaks. But the champions among us rally, to stage a comeback and
-performance that make history.&lt;/p&gt;
-
-&lt;p&gt;Regularly surpassing the level of deliberate knowledge of your own performance, and thus improvement by exactly being able to measure your performance and pinpoint mistakes. This point is portrayed in a very interesting manner in Whiplash, where the teacher expects the student to know exactly what mistake is being made.&lt;/p&gt;
-
-&lt;h2 id=&#34;be-great-not-good&#34;&gt;Be Great, not Good&lt;/h2&gt;
-
-&lt;p&gt;Rejecting the &amp;lsquo;Good&amp;rsquo; or &amp;lsquo;Good enough&amp;rsquo; feedback from anybody. The goal is to be &lt;em&gt;Great&lt;/em&gt;, not good. The goal should be to strive to set the precedent and not just follow a beaten track. The pinpoint focus should be on progressive improvement to become the best, and that entails never being satisfied and to be ruthless in rooting out flaws.&lt;/p&gt;
-
-&lt;h2 id=&#34;achieving-balance-mind-body-surroundings&#34;&gt;Achieving Balance : mind + body + surroundings&lt;/h2&gt;
-
-&lt;p&gt;Great performance is about that perfect balance between the body, mind and environment to leverage the best result possible. I view the scene where the student survives a car crash, just to reach a performance and then not being able to perform, as a good example of overreaching, without strengthening the core, and thus inviting instability.&lt;/p&gt;
-
-&lt;h2 id=&#34;go-off-the-beaten-track-and-lose-yourself&#34;&gt;Go off the beaten track and Lose yourself&lt;/h2&gt;
-
-&lt;p&gt;It was the ending of Whiplash that truly drove me to comprehend the points so far. It is twisted, unexpected and led me to truly enjoy the movie and appreciate that: despite the above points being reasonably discernible - the human mind and nature is exceedingly complex. Stability and reasoning are not the only keystones to the foundation of greatness. There has to be a &lt;em&gt;healthy&lt;/em&gt; mix of some form of abnormal obsession thrown in, to make a stellar performance what it is. However, can this be practically repeated on a regular basis?&lt;/p&gt;
-
-&lt;h2 id=&#34;learning-velocity-and-flow&#34;&gt;Learning velocity and Flow&lt;/h2&gt;
-
-&lt;p&gt;There are several bodies of research work available today that can be studied to get closer to consciously stimulating a great performance. One such example is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unmistakablecreative.com/podcast/unlocking-the-talent-code-with-dan-coyle&#34; target=&#34;_blank&#34;&gt;Unlocking the Talent Code With Dan Coyle&lt;/a&gt; on the Unmistakable
-Creatives podcast provides an insight in line with the points seen
-above, into what constitute outliers and performers. The interesting
-concept of &amp;lsquo;Learning velocity&amp;rsquo; is explained by Dan with a lucid
-example. It is surmised that progress and maximum learning to become
-better occurs &lt;em&gt;at&lt;/em&gt; the boundary line dividing what we know at the
-moment, and the unknown skills that beckon.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That point sems to be an amalgamation of several factors, that are typically present when someone is in &amp;lsquo;flow&amp;rsquo;. Perhaps this flow can be described as a heightened sense of what is, and what should be and the energy to strive and achieve what should be.. It certainly does feel logical to think that we become better by pushing that boundary.&lt;/p&gt;
 </description>
     </item>
     

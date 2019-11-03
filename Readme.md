@@ -1,3 +1,3 @@
-This is my personal website. It contains my blog, projects, portfolio and etc. 
+# My personal website has shifted
 
-View it at [shrysr.github.io](https://shrysr.github.io)
+visit https://shreyas.ragavan.co

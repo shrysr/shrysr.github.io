@@ -187,13 +187,14 @@ How could one search for a keyword through all these repositories? I have always
     </item>
     
     <item>
-      <title>#Tidytuesday Project 1 - Federal R&amp;D Spending on climate</title>
-      <link>https://shrysr.github.io/post/blog-book/</link>
-      <pubDate>Fri, 01 Nov 2019 13:51:00 -0600</pubDate>
+      <title>Implementing HTTPS : Let&#39;s Encrypt</title>
+      <link>https://shrysr.github.io/post/implementing-https-lets-encrypt/</link>
+      <pubDate>Wed, 24 Jul 2019 16:13:00 -0600</pubDate>
       
-      <guid>https://shrysr.github.io/post/blog-book/</guid>
-      <description>Summary This is a short exploration into the tidy tuesday dataset that covers the federal R&amp;amp;D budget on climate change. It shows that NASA&amp;rsquo;s budget dwarfs the money going into other departments.
- Github Repo of Tidy Tuesday explorations Tidy tuesday dataset: link Data Dictionary link Viz posted on Twitter Tools used: ESS, Org mode  Loading libraries The easypackages library is used, which allows quickly installing and loading multiple packages.</description>
+      <guid>https://shrysr.github.io/post/implementing-https-lets-encrypt/</guid>
+      <description>What is Let&amp;rsquo;s Encrypt? Let&amp;rsquo;s Encrypt is a Certificate Authority (CA). A certificate from a CA is required to enable HTTPS.
+Certbot&amp;rsquo;s documentation summarises it well:
+ Certbot is part of EFF’s effort to encrypt the entire Internet. Secure communication over the Web relies on HTTPS, which requires the use of a digital certificate that lets browsers verify the identity of web servers (e.g., is that really google.com?). Web servers obtain their certificates from trusted third parties called certificate authorities (CAs).</description>
     </item>
     
     <item>

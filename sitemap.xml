@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/project/bash-scripting-mini-project/</loc>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/post/research-compendium/</loc>
       <lastmod>2019-10-14T15:19:00-06:00</lastmod>
     </url>
@@ -180,8 +188,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/post/blog-book/</loc>
-      <lastmod>2019-11-01T13:56:24-06:00</lastmod>
+      <loc>https://shrysr.github.io/post/implementing-https-lets-encrypt/</loc>
+      <lastmod>2019-11-03T06:14:47-07:00</lastmod>
     </url>
     
   
@@ -445,15 +453,6 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/datascience/</loc>
-      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://shrysr.github.io/tags/design/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -572,7 +571,7 @@
     <url>
     
       <loc>https://shrysr.github.io/categories/linux/</loc>
-      <lastmod>2019-07-06T19:53:16-06:00</lastmod>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -581,7 +580,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/linux/</loc>
-      <lastmod>2019-07-11T09:06:12-06:00</lastmod>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -716,7 +715,7 @@
     <url>
     
       <loc>https://shrysr.github.io/project/</loc>
-      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -832,6 +831,24 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/categories/bash/</loc>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/bash/</loc>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/code/</loc>
       <lastmod>2017-02-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -852,6 +869,15 @@
     
       <loc>https://shrysr.github.io/tags/documentation/</loc>
       <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/encryption/</loc>
+      <lastmod>2019-11-03T06:14:47-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -906,6 +932,24 @@
     
       <loc>https://shrysr.github.io/tags/git/</loc>
       <lastmod>2017-02-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/https/</loc>
+      <lastmod>2019-11-03T06:14:47-07:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/https/</loc>
+      <lastmod>2019-11-03T06:14:47-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -977,7 +1021,7 @@
     <url>
     
       <loc>https://shrysr.github.io/categories/project/</loc>
-      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -986,7 +1030,7 @@
     <url>
     
       <loc>https://shrysr.github.io/tags/project/</loc>
-      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -996,6 +1040,15 @@
     
       <loc>https://shrysr.github.io/tags/python/</loc>
       <lastmod>2019-08-08T10:52:08-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/shell/</loc>
+      <lastmod>2019-11-03T06:37:53-07:00</lastmod>
       <priority>0</priority>
     </url>
     

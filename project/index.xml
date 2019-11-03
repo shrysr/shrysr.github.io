@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 08 Aug 2019 10:46:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2019 08:43:00 -0600</lastBuildDate>
     
 	<atom:link href="https://shrysr.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash scripting to compare chat logs of an IRC channel</title>
+      <link>https://shrysr.github.io/project/bash-scripting-mini-project/</link>
+      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/project/bash-scripting-mini-project/</guid>
+      <description>Table of Contents  Summary Preliminary notes: Plan Simple case Including variables for url prefix, start id and end id Figuring out a larger range  Implementing a simple conditional statement Implementing the for loop for a range &amp;gt; 500 Adding some functions and other minor streamlining  Enabling the script to be called with parameters Comparing logs for range 9998683 to 1000000 Concluding remarks References</description>
+    </item>
     
     <item>
       <title>CFX Job scheduler</title>

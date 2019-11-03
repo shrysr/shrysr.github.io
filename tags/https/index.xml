@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>https on Shreyas Ragavan</title>
+    <link>https://shrysr.github.io/tags/https/</link>
+    <description>Recent content in https on Shreyas Ragavan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 24 Jul 2019 16:13:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://shrysr.github.io/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Implementing HTTPS : Let&#39;s Encrypt</title>
+      <link>https://shrysr.github.io/post/implementing-https-lets-encrypt/</link>
+      <pubDate>Wed, 24 Jul 2019 16:13:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/post/implementing-https-lets-encrypt/</guid>
+      <description>What is Let&amp;rsquo;s Encrypt? Let&amp;rsquo;s Encrypt is a Certificate Authority (CA). A certificate from a CA is required to enable HTTPS.
+Certbot&amp;rsquo;s documentation summarises it well:
+ Certbot is part of EFF’s effort to encrypt the entire Internet. Secure communication over the Web relies on HTTPS, which requires the use of a digital certificate that lets browsers verify the identity of web servers (e.g., is that really google.com?). Web servers obtain their certificates from trusted third parties called certificate authorities (CAs).</description>
+    </item>
+    
+  </channel>
+</rss>
