@@ -187,6 +187,16 @@ How could one search for a keyword through all these repositories? I have always
     </item>
     
     <item>
+      <title>#Tidytuesday Project 1 - Federal R&amp;D Spending on climate</title>
+      <link>https://shrysr.github.io/post/blog-book/</link>
+      <pubDate>Fri, 01 Nov 2019 13:51:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/post/blog-book/</guid>
+      <description>Summary This is a short exploration into the tidy tuesday dataset that covers the federal R&amp;amp;D budget on climate change. It shows that NASA&amp;rsquo;s budget dwarfs the money going into other departments.
+ Github Repo of Tidy Tuesday explorations Tidy tuesday dataset: link Data Dictionary link Viz posted on Twitter Tools used: ESS, Org mode  Loading libraries The easypackages library is used, which allows quickly installing and loading multiple packages.</description>
+    </item>
+    
+    <item>
       <title>An SSD can breathe life into old computers</title>
       <link>https://shrysr.github.io/post/01252410-853f-4570-858f-f3d609f5def5/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>

@@ -76,6 +76,15 @@
     </item>
     
     <item>
+      <title>DataScience</title>
+      <link>https://shrysr.github.io/tags/datascience/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/datascience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Design</title>
       <link>https://shrysr.github.io/tags/design/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
@@ -90,6 +99,15 @@
       <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
       
       <guid>https://shrysr.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EDA</title>
+      <link>https://shrysr.github.io/tags/eda/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/eda/</guid>
       <description></description>
     </item>
     
@@ -292,6 +310,15 @@
     </item>
     
     <item>
+      <title>TidyTuesday</title>
+      <link>https://shrysr.github.io/tags/tidytuesday/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/tidytuesday/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>automation</title>
       <link>https://shrysr.github.io/tags/automation/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
@@ -342,6 +369,15 @@
       <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
       
       <guid>https://shrysr.github.io/tags/font/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot</title>
+      <link>https://shrysr.github.io/tags/ggplot/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/ggplot/</guid>
       <description></description>
     </item>
     
@@ -409,9 +445,18 @@
     </item>
     
     <item>
+      <title>project</title>
+      <link>https://shrysr.github.io/tags/project/</link>
+      <pubDate>Thu, 08 Aug 2019 10:46:00 -0600</pubDate>
+      
+      <guid>https://shrysr.github.io/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>python</title>
       <link>https://shrysr.github.io/tags/python/</link>
-      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Aug 2019 10:46:00 -0600</pubDate>
       
       <guid>https://shrysr.github.io/tags/python/</guid>
       <description></description>

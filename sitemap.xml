@@ -172,6 +172,22 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/project/tt-fed-rnd-spending/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/post/blog-book/</loc>
+      <lastmod>2019-11-01T13:56:24-06:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/docs/docker-notes/</loc>
       <lastmod>2019-07-11T14:33:26-06:00</lastmod>
     </url>
@@ -402,8 +418,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/data-science/</loc>
-      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
+      <loc>https://shrysr.github.io/categories/data-science/</loc>
+      <lastmod>2019-07-10T13:54:12-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -411,8 +427,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/data-science/</loc>
-      <lastmod>2019-07-10T13:54:12-06:00</lastmod>
+      <loc>https://shrysr.github.io/tags/data-science/</loc>
+      <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -429,8 +445,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/design/</loc>
-      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
+      <loc>https://shrysr.github.io/tags/datascience/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -438,8 +454,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/docker/</loc>
-      <lastmod>2019-07-11T14:33:26-06:00</lastmod>
+      <loc>https://shrysr.github.io/tags/design/</loc>
+      <lastmod>2013-05-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -456,6 +472,33 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/docker/</loc>
+      <lastmod>2019-07-11T14:33:26-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/categories/eda/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/eda/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/ess/</loc>
       <lastmod>2019-07-10T13:54:12-06:00</lastmod>
       <priority>0</priority>
@@ -465,7 +508,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/emacs/</loc>
+      <loc>https://shrysr.github.io/categories/emacs/</loc>
       <lastmod>2019-07-10T13:54:12-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -474,7 +517,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/emacs/</loc>
+      <loc>https://shrysr.github.io/tags/emacs/</loc>
       <lastmod>2019-07-10T13:54:12-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -528,8 +571,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/linux/</loc>
-      <lastmod>2019-07-11T09:06:12-06:00</lastmod>
+      <loc>https://shrysr.github.io/categories/linux/</loc>
+      <lastmod>2019-07-06T19:53:16-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -537,8 +580,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/linux/</loc>
-      <lastmod>2019-07-06T19:53:16-06:00</lastmod>
+      <loc>https://shrysr.github.io/tags/linux/</loc>
+      <lastmod>2019-07-11T09:06:12-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -573,7 +616,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/nosql/</loc>
+      <loc>https://shrysr.github.io/categories/nosql/</loc>
       <lastmod>2019-07-06T12:12:19-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -582,7 +625,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/nosql/</loc>
+      <loc>https://shrysr.github.io/tags/nosql/</loc>
       <lastmod>2019-07-06T12:12:19-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -600,8 +643,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/org-mode/</loc>
-      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
+      <loc>https://shrysr.github.io/categories/org-mode/</loc>
+      <lastmod>2019-07-13T21:31:33-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -609,8 +652,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/org-mode/</loc>
-      <lastmod>2019-07-13T21:31:33-06:00</lastmod>
+      <loc>https://shrysr.github.io/tags/org-mode/</loc>
+      <lastmod>2019-07-06T19:43:13-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -654,8 +697,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/productivity/</loc>
-      <lastmod>2019-07-13T21:31:33-06:00</lastmod>
+      <loc>https://shrysr.github.io/categories/productivity/</loc>
+      <lastmod>2019-07-11T09:09:06-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -663,8 +706,8 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/productivity/</loc>
-      <lastmod>2019-07-11T09:09:06-06:00</lastmod>
+      <loc>https://shrysr.github.io/tags/productivity/</loc>
+      <lastmod>2019-07-13T21:31:33-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -708,7 +751,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/tags/r/</loc>
+      <loc>https://shrysr.github.io/categories/r/</loc>
       <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -717,7 +760,7 @@
     
     <url>
     
-      <loc>https://shrysr.github.io/categories/r/</loc>
+      <loc>https://shrysr.github.io/tags/r/</loc>
       <lastmod>2019-10-14T15:19:00-06:00</lastmod>
       <priority>0</priority>
     </url>
@@ -764,6 +807,15 @@
     
       <loc>https://shrysr.github.io/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/tidytuesday/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -843,6 +895,15 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/tags/ggplot/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/git/</loc>
       <lastmod>2017-02-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -915,8 +976,26 @@
     
     <url>
     
+      <loc>https://shrysr.github.io/categories/project/</loc>
+      <lastmod>2019-11-02T18:52:51-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://shrysr.github.io/tags/project/</loc>
+      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://shrysr.github.io/tags/python/</loc>
-      <lastmod>2017-02-15T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-08T10:52:08-06:00</lastmod>
       <priority>0</priority>
     </url>
     
