@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>4 on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/publication_types/4/</link>
-    <description>Recent content in 4 on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>4 | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/publication_types/4/</link>
+      <atom:link href="https://shreyas.ragavan.co/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
+    <description>4</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>4</title>
+      <link>https://shreyas.ragavan.co/publication_types/4/</link>
+    </image>
     
     <item>
       <title>Current Trends of Emission Reduction Technology in Vehicular Diesel Engines</title>
-      <link>https://shrysr.github.io/publication/emission-study/</link>
+      <link>https://shreyas.ragavan.co/publication/emission-study/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/publication/emission-study/</guid>
+      <guid>https://shreyas.ragavan.co/publication/emission-study/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design of an Electro-mechanical Anthropometric finger, and a PID controller for the wrist for applications in Prosthetics</title>
-      <link>https://shrysr.github.io/publication/kinematic-design-finger/</link>
+      <link>https://shreyas.ragavan.co/publication/kinematic-design-finger/</link>
       <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/publication/kinematic-design-finger/</guid>
+      <guid>https://shreyas.ragavan.co/publication/kinematic-design-finger/</guid>
       <description></description>
     </item>
     

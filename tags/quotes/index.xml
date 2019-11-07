@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Quotes on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/quotes/</link>
-    <description>Recent content in Quotes on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 15 Mar 2019 11:43:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/quotes/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Quotes | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/quotes/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/quotes/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quotes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 Mar 2019 11:43:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Quotes</title>
+      <link>https://shreyas.ragavan.co/tags/quotes/</link>
+    </image>
     
     <item>
       <title>quotes</title>
-      <link>https://shrysr.github.io/docs/quotes/</link>
+      <link>https://shreyas.ragavan.co/docs/quotes/</link>
       <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/quotes/</guid>
-      <description>“I never made one of my discoveries through the process of rational thinking” ― Albert Einstein “To be fully alive, fully human, and completely awake is to be continually thrown out of the nest. To live fully is to be always in no-man’s-land, to experience each moment as completely new and fresh. To live is to be willing to die over and over again. ” ― Pema Chödrön, When Things Fall Apart: Heart Advice for Difficult Times Perfectionism can’t survive unless it is fed with the oxygen of indulgence and paranoia and irrationality.</description>
+      <guid>https://shreyas.ragavan.co/docs/quotes/</guid>
+      <description>
+
+&lt;h2 id=&#34;i-never-made-one-of-my-discoveries-through-the-process-of-rational-thinking-albert-einstein&#34;&gt;“I never made one of my discoveries through the process of rational thinking” ― &lt;code&gt;Albert Einstein&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;to-be-fully-alive-fully-human-and-completely-awake-is-to-be-continually-thrown-out-of-the-nest-dot-to-live-fully-is-to-be-always-in-no-man-s-land-to-experience-each-moment-as-completely-new-and-fresh-dot-to-live-is-to-be-willing-to-die-over-and-over-again-dot-pema-chödrön-when-things-fall-apart-heart-advice-for-difficult-times&#34;&gt;“To be fully alive, fully human, and completely awake is to be continually thrown out of the nest. To live fully is to be always in no-man’s-land, to experience each moment as completely new and fresh. To live is to be willing to die over and over again. ” ― &lt;code&gt;Pema Chödrön, When Things Fall Apart: Heart Advice for Difficult Times&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;perfectionism-can-t-survive-unless-it-is-fed-with-the-oxygen-of-indulgence-and-paranoia-and-irrationality-dot-link&#34;&gt;Perfectionism can’t survive unless it is fed with the oxygen of indulgence and paranoia and irrationality. &lt;a href=&#34;https://humanparts.medium.com/why-is-everyone-succeeding-but-me-29186494166b&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;creativity-like-human-life-itself-begins-in-darkness-dot-julia-cameron-the-artist-s-way&#34;&gt;“Creativity — like human life itself — begins in darkness.”— &lt;code&gt;Julia Cameron, The Artist’s Way&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;the-best-way-out-is-always-through-dot-robert-frost&#34;&gt;“The best way out is always through.” — &lt;code&gt;Robert Frost&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;if-you-plan-on-being-anything-less-than-you-are-capable-of-being-you-will-probably-be-unhappy-all-the-days-of-your-life-dot-abraham-maslow&#34;&gt;“If you plan on being anything less than you are capable of being, you will probably be unhappy all the days of your life.” ― &lt;code&gt;Abraham Maslow&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;success-is-going-from-failure-to-failure-without-losing-enthusiasm-dot-winston-churchill&#34;&gt;&amp;ldquo;Success is going from failure to failure without losing enthusiasm.&amp;rdquo; - &lt;code&gt;Winston Churchill&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;a-man-who-dares-to-waste-an-hour-of-time-has-not-discovered-the-value-of-his-life-dot-charles-darwin&#34;&gt;“A man who dares to waste an hour of time has not discovered the value of his life.”  —  &lt;code&gt;Charles Darwin&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;a-goal-without-a-plan-is-just-a-pipe-dream&#34;&gt;&amp;ldquo;A goal without a plan is just a pipe dream&amp;rdquo;&lt;/h2&gt;
+
+&lt;h2 id=&#34;i-have-no-responsibility-to-live-up-to-what-others-expect-of-me-dot-that-s-their-mistake-not-my-failing-dot-richard-feynman&#34;&gt;&amp;ldquo;I have no responsibility to live up to what others expect of me. That&amp;rsquo;s their mistake, not my failing.&amp;rdquo; &amp;ndash; &lt;code&gt;Richard Feynman&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;you-just-can-t-differentiate-between-a-robot-and-the-very-best-of-humans-isaac-asimov&#34;&gt;&amp;ldquo;You just can&amp;rsquo;t differentiate between a robot and the very best of humans&amp;rdquo; - &lt;code&gt;Isaac Asimov&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;nobody-succeeds-beyond-his-or-her-wildest-expectations-unless-he-or-she-begins-with-some-wild-expectations-dot-ralph-charell&#34;&gt;“Nobody succeeds beyond his or her wildest expectations unless he or she begins with some wild expectations.” - &lt;code&gt;Ralph Charell&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;be-a-philosopher-but-amidst-all-your-philosophy-be-still-a-man-dot-david-hume-an-enquiry-concerning-human-understanding&#34;&gt;&amp;ldquo;Be a philosopher; but, amidst all your philosophy, be still a man.” - &lt;code&gt;David Hume, An enquiry concerning human understanding&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;make-your-interests-gradually-wider-and-more-impersonal-until-bit-by-bit-the-walls-of-the-ego-recede-and-your-life-becomes-increasingly-merged-in-the-universal-life-dot-bertrand-russell&#34;&gt;&amp;ldquo;Make your interests gradually wider and more impersonal, until bit by bit the walls of the ego recede, and your life becomes increasingly merged in the universal life.&amp;rdquo; - &lt;code&gt;Bertrand Russell&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;i-don-t-like-that-man-dot-i-must-get-to-know-him-better-dot-abraham-lincoln&#34;&gt;“I don&amp;rsquo;t like that man. I must get to know him better.” - &lt;code&gt;Abraham Lincoln&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;always-remember-that-to-argue-and-win-is-to-break-down-the-reality-of-the-person-you-are-arguing-against-dot-it-is-painful-to-lose-your-reality-so-be-kind-even-if-you-are-right-dot-haruki-murakami&#34;&gt;“Always remember that to argue, and win, is to break down the reality of the person you are arguing against. It is painful to lose your reality, so be kind, even if you are right.” - &lt;code&gt;Haruki Murakami&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;when-i-write-i-feel-like-an-armless-legless-man-with-a-crayon-in-my-mouth-dot-kurt-vonnegut&#34;&gt;When I write, I feel like an armless legless man with a crayon in my mouth. - &lt;code&gt;Kurt Vonnegut&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;life-is-too-short-to-not-read-the-very-best-book-you-know-of-right-now-dot-patrick-collison-founder-of-stripe&#34;&gt;&amp;ldquo;Life is too short to not read the very best book you know of right now.&amp;rdquo; -  &lt;code&gt;Patrick Collison, Founder of Stripe&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;when-you-have-exhausted-all-possibilities-remember-this-you-haven-t-thomas-edison&#34;&gt;&amp;ldquo;When you have exhausted all possibilities, remember this - you haven&amp;rsquo;t&amp;rdquo; - &lt;code&gt;Thomas Edison&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;knowledge-has-to-be-improved-challenged-and-increased-constantly-or-it-vanishes-dot-dr-dot-peter-drucker&#34;&gt;“Knowledge has to be improved, challenged, and increased constantly, or it vanishes.” — &lt;code&gt;Dr.Peter Drucker&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;you-take-away-our-top-20-employees-and-we-become-a-mediocre-company-bill-gates&#34;&gt;&amp;ldquo;You take away our top 20 employees and we become a mediocre company&amp;rdquo; - &lt;code&gt;Bill Gates&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;it-took-me-thirty-years-to-draw-that-masterpiece-in-thirty-seconds-dot-pablo-picasso&#34;&gt;“It took me thirty years to draw that masterpiece in thirty seconds.” - &lt;code&gt;Pablo Picasso&lt;/code&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;inspiration-is-for-amateurs-dot-the-rest-of-us-just-show-up-and-get-to-work-dot-chuck-close&#34;&gt;Inspiration is for amateurs. The rest of us just show up and get to work. - &lt;code&gt;Chuck Close&lt;/code&gt;&lt;/h2&gt;
+</description>
     </item>
     
   </channel>

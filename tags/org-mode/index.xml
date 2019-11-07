@@ -1,55 +1,410 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Org-mode on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/org-mode/</link>
-    <description>Recent content in Org-mode on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 17 Feb 2019 08:02:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Org-mode | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/org-mode/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <description>Org-mode</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 17 Feb 2019 08:02:00 -0700</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Org-mode</title>
+      <link>https://shreyas.ragavan.co/tags/org-mode/</link>
+    </image>
     
     <item>
       <title>Literate Org-mode configuration for Emacs is liberating</title>
-      <link>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</link>
+      <link>https://shreyas.ragavan.co/post/d16caa34-c2e2-439b-894f-d95be5708160/</link>
       <pubDate>Sun, 17 Feb 2019 08:02:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/d16caa34-c2e2-439b-894f-d95be5708160/</guid>
-      <description>TLDR: Check out the Docs section for my Emacs config in Org-mode
- The literate programming paradigm, as conceived by Donald Knuth, represents a move away from writing programs in the manner and order imposed by the computer, and instead enables programmers to develop programs in the order demanded by the logic and flow of their thoughts. Literate programs are written as an uninterrupted exposition of logic in an ordinary human language, much like the text of an essay, in which macros are included to hide abstractions and traditional source code.</description>
+      <guid>https://shreyas.ragavan.co/post/d16caa34-c2e2-439b-894f-d95be5708160/</guid>
+      <description>&lt;p&gt;TLDR: &lt;a href=&#34;https://shreyas.ragavan.co/docs/sr-config&#34;&gt;Check out the Docs section for my Emacs config in Org-mode&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The literate programming paradigm, as conceived by Donald Knuth, represents a move away from writing programs in the manner and order imposed by the computer, and instead enables programmers to develop programs in the order demanded by the logic and flow of their thoughts. Literate programs are written as an uninterrupted exposition of logic in an ordinary human language, much like the text of an essay, in which macros are included to hide abstractions and traditional source code.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Literate%5Fprogramming&#34; target=&#34;_blank&#34;&gt;Wikipedia article on Literate Programming&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I had graduated to using an Org-mode based configuration with vanilla Emacs, until discovering Scimax a few years ago. At this point, it seemed easier to switch back to using elisp script files in multiple files which were loaded in the desired / necessary order. The plan was to use a file for each major &amp;lsquo;concept&amp;rsquo;, for example one file each for hydras, Org-mode, mu4e, and so on.&lt;/p&gt;
+
+&lt;p&gt;While it is not difficult to manage multiple script files with the projectile package, it does become cumbersome and inelegant to record notes and thoughts in the comment form along with code. Over time, it also becomes difficult to decide the placement of multi-package functions and snippets. As my configuration has evolved - I&amp;rsquo;ve felt an increasing need to shift back to a literate configuration using Org for Emacs, and also separate the personal parts of my configuration to enable sharing on Github.&lt;/p&gt;
+
+&lt;p&gt;Using a literate configuration enables a live documentary of my Emacs configuration and also adding meaningful notes and snippets which are directly or indirectly related to configuring Emacs. For example, it is important to have IPython and Jupyter installed for Scimax to work correctly, and I can include notes and working scripts for the same.&lt;/p&gt;
+
+&lt;p&gt;There are discussions on Emacs init time increasing by using a tangled org file. However, this is atleast partially remedied by including a function to tangle the config file whenever it is saved, and there are other methods &lt;a href=&#34;http://www.holgerschurig.de/en/emacs-efficiently-untangling-elisp/&#34; target=&#34;_blank&#34;&gt;like the one described by Holger Schurig&lt;/a&gt;, which I intend to try out soon. Personally, I have not found any degrade in Emacs init time via Scimax.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Incremental improvements can lead to significant gains</title>
-      <link>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
+      <link>https://shreyas.ragavan.co/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</link>
       <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
-      <description>While reading the book Atomic Habits by James Clear, I was reflecting that my choice of embracing Emacs and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.
-My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks.</description>
+      <guid>https://shreyas.ragavan.co/post/32266f09-c9b9-48ff-9c48-e2348eeda33d/</guid>
+      <description>&lt;p&gt;While reading the book &lt;a href=&#34;https://jamesclear.com/atomic-habits&#34; target=&#34;_blank&#34;&gt;Atomic Habits by James Clear&lt;/a&gt;, I was reflecting that my choice of embracing &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34; target=&#34;_blank&#34;&gt;Emacs&lt;/a&gt; and progressively gaining mastery over it was intimately connected with the philosophy preached in the book.&lt;/p&gt;
+
+&lt;p&gt;My efforts initially started out with a craving for a system to quantify and manage my tasks, habits, notes, blog writing, job applications and projects in a custom environment, and to be able to build toolkits of code to perform repetitive tasks. As mentioned in an &lt;a href=&#34;../2b0b2c79-3f6e-4079-a07d-9e382fda8954&#34;&gt;earlier blog post&lt;/a&gt;
+, I tried several approaches before settling on Emacs. The idea was to find or create a single system to track everything of importance in my life (with ease and efficiency). This was instead of a fragmented approach of using multiple tools and techniques, for example, Sublime Text / Atom as a text editor and &lt;a href=&#34;https://todoist.com/?lang=en&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; as a task management tool.&lt;/p&gt;
+
+&lt;p&gt;I started with a vanilla configuration of Emacs and painstakingly borrowed (and eventually) modified lisp snippets to implement desired &amp;lsquo;features&amp;rsquo; or behaviors. It was a just a couple of features every week, initially focused on Org mode&amp;rsquo;s behavior alone. That was nearly 3 years ago. As of now, I am able to manage my blog [hugo], view my email [mu4e], browse the web [w3m], seamlessly capture notes / ideas / tasks from (almost) anywhere [Org mode], chat on IRC, build multi-language code notebooks with ease [Org babel]. All the above provide me significant advantages in speed and efficiency which still have plenty of potential to improve.&lt;/p&gt;
+
+&lt;p&gt;Sure, I certainly appear closer to my goal today.. however, I did not know if it was a pipe dream when I started out. It was often extremely frustrating, right from memorizing the &amp;lsquo;crazy&amp;rsquo; keybindings in Emacs, to struggling with getting a lisp snippet to work as expected.&lt;/p&gt;
+
+&lt;p&gt;Choosing Emacs had unexpected rewards as well. For example, the need of synchronizing my notes and Emacs configuration with multiple machines led me to Git. &lt;a href=&#34;https://magit.vc/&#34; target=&#34;_blank&#34;&gt;Magit&amp;rsquo;s&lt;/a&gt; easily accessible commands and relatively visual interface has been a massive help in getting things done with Git, despite not having any deep technical knowledge of how Git works.&lt;/p&gt;
+
+&lt;p&gt;My journey with Emacs is testament that an incremental, compounding improvement over time can ultimately result in significant gains. It is also important to acknowledge that I am standing on the shoulder of giants and the awesome &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; is a cornerstone in my toolkit.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Juggling multiple projects and leveraging org-projectile</title>
-      <link>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
+      <link>https://shreyas.ragavan.co/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</link>
       <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
-      <description>Scimax has a convenient feature of immediately creating projects (M-x nb-new). The location of the project directory is defined by the setting (setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;), which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.
-These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit.</description>
+      <guid>https://shreyas.ragavan.co/post/8f702ce2-8bb7-40a3-b44b-a47222c02909/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; has a convenient feature of immediately creating projects (&lt;code&gt;M-x nb-new&lt;/code&gt;). The location of the project directory is defined by the setting &lt;code&gt;(setq nb-notebook-directory &amp;quot;~/my_projects/&amp;quot;)&lt;/code&gt;, which has to be set in your Emacs config. Once the name of the project is chosen, a Readme.org buffer is immediately opened and one can start right away. It is an awesome, friction-free method to get started with a project.&lt;/p&gt;
+
+&lt;p&gt;These projects are automatically initialised as git repositories, to which it is trivial to add a new remote using Magit. Therefore individual folders and git repos are automatically created for each project in the specified project directory. This enables the convenient possibility of keeping the data, folder structures, tasks, notes and scripts of each project separate.&lt;/p&gt;
+
+&lt;p&gt;Different projects can be switched to using &lt;code&gt;M-x nb-open&lt;/code&gt; and typing in a few words that denote the title of the project. Choosing a project automatically provides the option to open the Readme.org files created earlier. Therefore it would be convenient to include relevant links to different locations / scripts and etc in the Readme file.&lt;/p&gt;
+
+&lt;p&gt;Using the above technique resulted in me creating a huge number of projects over a period of time. Especially while working on multiple computers, it is worth inculcating the discipline of adding a remote on github/bitbucket and regularly pushing to the remote.&lt;/p&gt;
+
+&lt;p&gt;The advantage of using a separate repo for each project is the alignment with the space constraints imposed by the free tier repos on bitbucket or github. However, it is also useful to have the entire project folder as a git repo. This can be resolved by adding each project as a sub-module. In this way, all the projects are available with a single clone of the project foder, and then specific sub-modules or projects can be initialized as required. Having separate repos for each project also enables more streamlined collaboration or publishing of a particular project, rather than the entire project folder and allowing separate gitignore lists for each project.Using a single file for all the projects will also enable adding notes pertaining to the content of each project, which can be searched before intialising the entire project repo. Scripts for initializing and commit can also be included in this file for convenience.&lt;/p&gt;
+
+&lt;p&gt;Once the above is done, the &lt;a href=&#34;https://github.com/IvanMalison/org-projectile/blob/master/org-projectile.el&#34; target=&#34;_blank&#34;&gt;org-projectile&lt;/a&gt; package can be leveraged to plan the tasks and manage the notes for each project. It is possible to have all the tasks for a project within a separate file within each project, or specify a single file as the task management for all the projects. This file is then appended to the org-agenda files for tasks to show up in the agenda. As mentioned in the Readme of the org-projectile package the settings would look like the following (for a single file pertaining to all the projects):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;;; Setting up org-projectile
+(require &#39;org-projectile)
+(setq org-projectile-projects-file
+      &amp;quot;~/my_org/project-tasks.org&amp;quot;)
+(push (org-projectile-project-todo-entry) org-capture-templates)
+(setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+(global-set-key (kbd &amp;quot;C-c n p&amp;quot;) &#39;org-projectile-project-todo-completing-read)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above snippet adds a TODO capture template activated by the letter &amp;lsquo;p&amp;rsquo;, and also adds the &lt;code&gt;project-tasks&lt;/code&gt; file to the agenda files. Inside a project, it is then possible to capture using &lt;code&gt;C-cc p&lt;/code&gt; and add a task which will create a top level heading linked to the project, and the task or note as a sub-heading.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/screenshot-org-projectile.png&#34; data-caption=&#34;org-projectile task capture&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/screenshot-org-projectile.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    org-projectile task capture
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
     </item>
     
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
+      <link>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
       <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
-Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
+      <guid>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
+      <description>
+
+&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
+
+&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
+
+&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
+
+&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
+
+&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+NAME: jupyter-to-org-current
+#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
+#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
+#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
+#+BEGIN_SRC sh :results verbatim
+cwd=$(pwd)
+jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
+pandoc $cwd/$path_md.md -o $cwd/$path_org.org
+cp $path_ipynb.ipynb $cwd
+ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
+
+&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h2&gt;
+
+&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
+
+&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting productive - an exploration into holistic task management</title>
+      <link>https://shreyas.ragavan.co/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</link>
+      <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://shreyas.ragavan.co/post/2b0b2c79-3f6e-4079-a07d-9e382fda8954/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;To integrate tasks, reminders, notes, coding workflow into a single
+framework is no easy challenge. Org mode and Emacs help you do just
+that.&lt;/p&gt;
+
+&lt;p&gt;After trying out several tools, IMHO : &lt;a href=&#34;https://todoist.com&#34; target=&#34;_blank&#34;&gt;Todoist&lt;/a&gt; offers the best bang
+for your buck, especially with it&amp;rsquo;s natural language parsing ability,
+smooth and reliable sync as well as its multi-platform
+availability. Many describe &lt;a href=&#34;https://www.omnigroup.com/omnifocus&#34; target=&#34;_blank&#34;&gt;Omnifocus&lt;/a&gt; to be the king of task
+management tools, with dedicated apps for different purposes and
+probably well integrated.&lt;/p&gt;
+
+&lt;p&gt;My journey veered away from Omnifocus since it is limited to the Apple
+platform and this is obviously a serious handicap for people (like me)
+who are often forced to use multiple operating systems and devices
+distributed between personal and work environments.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d religiously managed my tasks on Todoist for over a year via the
+Chrome extensions/add-ins, the stand alone apps on Windows and the
+Mac, and on Android as well as iOS.&lt;/p&gt;
+
+&lt;p&gt;However, there was something missing in terms of being able to truly
+capture it all. This led me to &lt;a href=&#34;https://www.gnu.org/s/emacs/&#34; target=&#34;_blank&#34;&gt;Emacs&lt;/a&gt;. My search is summarised in this
+article.&lt;/p&gt;
+
+&lt;h1 id=&#34;needs-versus-the-software-development&#34;&gt;Needs versus the software development&lt;/h1&gt;
+
+&lt;p&gt;The real problem surfaced when my needs evolved at a pace and
+specificity that a general software&amp;rsquo;s development could not cater
+to. The problem is characterized by an endless wait for seemingly
+simple features that could make a phenomenal difference to personal
+workflow and productivity. This feature may range from a small tweak or
+bugfix to a rewiring of the basic behavior of the program itself.&lt;/p&gt;
+
+&lt;p&gt;Additionally, the proprietary format of tasks/notes and entries in
+Todoist or even Evernote is not a comforting aspect. On the other
+hand, using a simple text file with lists of work or notes is too
+simplistic to address a complex problem.&lt;/p&gt;
+
+&lt;p&gt;However, the issue could be resolved when the simple and ubiquitous
+Text file is parsed by a system like Org mode with in built and novel
+routines to filter and present the data in the text file in a very
+useful. Ultimately the key factor is that the workflow and output can
+be completely customised as required.&lt;/p&gt;
+
+&lt;h1 id=&#34;things-i-d-like-from-a-task-management-tool&#34;&gt;Things I&amp;rsquo;d like from a task management tool:&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rapid and seamless Task/Note taking ability -  could be generic, or specific to a particular project/task.&lt;/li&gt;
+&lt;li&gt;Quick capturing of links and snippets from websites and emails&lt;/li&gt;
+&lt;li&gt;Consistent experience across multiple platforms and very fast sync.&lt;/li&gt;
+&lt;li&gt;Ability to manage personal or work related projects&lt;/li&gt;
+&lt;li&gt;A date management system with atleast reasonably good understanding
+of natural language&lt;/li&gt;
+&lt;li&gt;Refiling tasks/notes very easily across main tasks or categories or
+projects&lt;/li&gt;
+&lt;li&gt;Customisable Views of the task summary along with the deadlines&lt;/li&gt;
+&lt;li&gt;Task and Note search and filtering at every level possible&lt;/li&gt;
+&lt;li&gt;Ability to easily export notes to multiple formats and write in
+some form of markup language so as to take care of formatting on
+the go.&lt;/li&gt;
+&lt;li&gt;Preferably an all-in-one tool for managing notes, all kinds of
+writing, research, tasks, recurring reminders, maintaining an
+activity log/journal, project summaries .. etc.&lt;/li&gt;
+&lt;li&gt;Includes &amp;lsquo;clocking&amp;rsquo; abilities for tasks.&lt;/li&gt;
+&lt;li&gt;Fast keyboard based shortcuts and &amp;lsquo;bookmarks&amp;rsquo; to do all that is required.&lt;/li&gt;
+&lt;li&gt;Recording tasks or notes from the phone, while on the go.&lt;/li&gt;
+&lt;li&gt;Should have the lightest footprint possible in terms of time spent
+on the tool, as well as system resources with no compromise in benefits derived.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;can-it-be-achieved&#34;&gt;Can it be achieved?&lt;/h1&gt;
+
+&lt;p&gt;Short answer: Yes. Through Emacs.&lt;/p&gt;
+
+&lt;p&gt;Sure, several of the above points can be done in Todoist and other tools, in
+one way or via combining different services.&lt;/p&gt;
+
+&lt;p&gt;However, a holistic consideration of the above points indicate a
+system that is a cross between Todoist and Evernote, capable of being
+utilised for a multitude of purposes : a customised GTD workflow plus
+an organiser for notes or writings. Point no 9, could serve to be a
+concise but incomplete statement of Orgmode&amp;rsquo;s capabilities, and is a
+stark reminder of Todoist&amp;rsquo;s specific expertise in only task
+management. Additionally, the above points can be done in orgmode,
+&lt;em&gt;very&lt;/em&gt;, &lt;em&gt;very&lt;/em&gt; quickly. Evernote has a great system, but is not as fast,
+because it indexes a huge variety of content. &lt;sup&gt;&lt;a id=&#34;fnr.1&#34; class=&#34;footref&#34; href=&#34;#fn.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;examples-of-workflows&#34;&gt;Examples of workflows&lt;/h1&gt;
+
+&lt;p&gt;Lets say that while typing up a project summary, I remember an
+additional task for another project or perhaps need to note down a
+snippet of generic information. To compensate for the lack of a
+photographic memory without breaking my on-going workflow - I need to
+be able to store the task/note/idea in a place that I can easily look
+up for further processing.&lt;/p&gt;
+
+&lt;p&gt;Such an activity is not at all streamlined with Todoist, and
+definitely not so with Evernote. With Org mode its just a &lt;code&gt;C-c c&lt;/code&gt;, or
+Control + c and hit c again. Optionally, a &lt;code&gt;C-cw&lt;/code&gt; for refiling the note
+on the spot if desired. When I hit refile - I can search through my
+org headings or projects and place the newly captured item exactly
+where it should be.&lt;/p&gt;
+
+&lt;p&gt;Once accustomed to the speed of recording stuff with Org-capture, along
+with the myriad possibilities of auto-save, backups, moving the cursor
+to the last location you were at, switching to another
+document/heading at lightning speed and etc - it will be hard to find
+another system that is truly competitive.&lt;/p&gt;
+
+&lt;p&gt;Project management via Emacs using the excellent &lt;a href=&#34;https://github.com/bbatsov/projectile&#34; target=&#34;_blank&#34;&gt;projectile&lt;/a&gt; package
+can enable you to find information at a speed that is very pleasing. I
+have often needed to deal with several customers of different kinds,
+thoroughly understand their requirements, resolve technical and
+commercial ambiguities and be able to refer to earlier jobs where
+something was agreed upon. I&amp;rsquo;ve often worked in projects with a
+bewildering number of aspects to take care of, along with sporadic
+infusions of information which could be clarifications or even new
+information altogether.&lt;/p&gt;
+
+&lt;p&gt;Included in project / productivity /relationship management are
+several subsets of activities like Minutes of Meetings (MOM&amp;rsquo;s),
+summaries of travel/visits to the customer, telephonic discussions,
+indications of future projects as well as generic or specific
+problems.&lt;/p&gt;
+
+&lt;p&gt;Using Org mode, it is possible create customised workflows and
+templates to manage all the above aspects, more than any other note
+taking system, including only handwritten notes. An excellent,
+comprehensive overview can be found in &lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bert Hansen&amp;rsquo;s article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;everybody-s-needs-are-unique&#34;&gt;Everybody&amp;rsquo;s needs are unique&lt;/h1&gt;
+
+&lt;p&gt;Eventually, I guess we all come to realise the fact that each human
+being is truly unique. Each one of us have our own ways of thinking, being
+and approaching problems.&lt;/p&gt;
+
+&lt;p&gt;While Todoist worked very well for me - I was still bothered by being
+constrained by it&amp;rsquo;s proprietary format and the lack of a lifetime
+membership with a one time payment. Money spent should give me a tool
+that brings supreme value and satisfaction with it. It was also
+tiresome to take detailed notes on tasks and rely on a separate
+Simplenote/Evernote system via Sublime Text for this purpose. You may
+have a different viewpoint. You may want a great GUI design and
+app that works well on your phone in addition to other
+environments. &lt;sup&gt;&lt;a id=&#34;fnr.2&#34; class=&#34;footref&#34; href=&#34;#fn.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Orgmode is more aligned to people who prefer to get most of their work
+done on their computers, who are or atleast don&amp;rsquo;t mind being keyboard
+shortcut freaks and those who would like to take the effort to learn a
+souped up text editor like Emacs that can evolve to cover a lot of
+needs efficiently. It&amp;rsquo;s not going to work well for people who need a
+reminder to pop up on their phones, with a fancy GUI and those who
+expect a software to work extremely well right out of the
+box. However, this &lt;em&gt;is&lt;/em&gt; Org mode and Emacs&amp;#x2026;. there are ways to sync
+your iOS / outlook calendar with orgmode&amp;rsquo;s calendar, or with
+wunderlist or Toodledo. Anything is possible, but it just won&amp;rsquo;t be via
+some classy GUI..&lt;/p&gt;
+
+&lt;h1 id=&#34;concluding-points&#34;&gt;Concluding points&lt;/h1&gt;
+
+&lt;p&gt;While it may seem daunting at first - the feeling of being able to
+search through existing notes to know whether you have met this
+particular thought/aspect before, can be extremely valuable and very
+satisfying. There are people like &lt;a href=&#34;http://sachachua.com/blog/&#34; target=&#34;_blank&#34;&gt;Sacha Chua&lt;/a&gt; and &lt;a href=&#34;http://doc.norang.ca/org-mode.html&#34; target=&#34;_blank&#34;&gt;Bert Hansen&lt;/a&gt;, who&amp;rsquo;ve
+built complex, efficient, and beautiful workflows through which a
+great deal of achievement has been made possible using the resulting
+streamlined tool. As &lt;a href=&#34;http://calnewport.com/&#34; target=&#34;_blank&#34;&gt;Cal Newport&lt;/a&gt; often reiterates in his blog and
+exploration on productivity - it is important to be able to accurately
+quantify the time being spent on different things. The &lt;a href=&#34;https://github.com/emacs-tw/awesome-emacs&#34; target=&#34;_blank&#34;&gt;awesome-emacs&lt;/a&gt;
+list on github offers several worthy resources, along with the
+excellent &lt;a href=&#34;http://planet.emacsen.org/&#34; target=&#34;_blank&#34;&gt;Planet Emacsen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The organiser tool by itself should have the lightest possible
+footprint in terms of the time taken to enter in stuff. Certainly -
+most people spend a lifetime in customising emacs and that may seem
+contrary to the previous point. However, it is possible to quickly
+reach a certain point that results in a marked improvement in
+productivity and workflow. Beyond this, leisure time can always be
+spent in fine-tuning the basic setup and understanding the code better.&lt;/p&gt;
+
+&lt;p&gt;The customisation options with Emacs and Org mode are literally
+endless and constrained only by programming skills, or Googling skills
+to find the code snippet that can get your work done, not to mention
+social skills in getting help via online communities. This is actually
+a lot easier than it sounds. While a bunch of people would call this a
+weakness, there are a large number of people who see the value in a
+customised tool which will evolve to facilitate a very fast and
+efficient workflow.&lt;/p&gt;
+
+&lt;p&gt;Deliberate practise towards improvement is certainly boosted when one
+is able to work consistently in a environment customised to needs and
+workflows. Using Org mode and Emacs is a firm step in this direction.&lt;/p&gt;
+
+&lt;h1 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h1&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.1&#34; href=&#34;#fnr.1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; While Org mode is optimised for text, it is possible to attach
+any kind of file to a &amp;lsquo;heading&amp;rsquo;, and use interleave and other
+techniques to browse and annotate PDF&amp;rsquo;s. The possibilities are too
+numerous to be covered in a blog post or a single google search.&lt;/p&gt;
+
+&lt;p&gt;&lt;sup&gt;&lt;a id=&#34;fn.2&#34; href=&#34;#fnr.2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; On iOS - I&amp;rsquo;ve found &lt;a href=&#34;http://agiletortoise.com/drafts/&#34; target=&#34;_blank&#34;&gt;Drafts&lt;/a&gt; is a great app for writing
+fast and appending the notes to an org file, which can be refiled
+later, using emacs. One problem I&amp;rsquo;m yet to resolve is that
+appending to an org file in dropbox, requires a network/internet
+connection. There should be a way to deal with situations without
+handy internet available.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

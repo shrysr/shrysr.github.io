@@ -1,26 +1,374 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NoSQL on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/nosql/</link>
-    <description>Recent content in NoSQL on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 06 Jul 2019 12:12:19 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>NoSQL | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/nosql/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <description>NoSQL</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Jul 2019 12:12:19 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>NoSQL</title>
+      <link>https://shreyas.ragavan.co/tags/nosql/</link>
+    </image>
     
     <item>
       <title>MongoDB and NoSQL Databases</title>
-      <link>https://shrysr.github.io/docs/nosql-mongodb-notes/</link>
+      <link>https://shreyas.ragavan.co/docs/nosql-mongodb-notes/</link>
       <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/nosql-mongodb-notes/</guid>
-      <description>Introduction These are my notes on NoSQL databases and the prime differences between them and SQL databases. The notes are mostly based off the Udemy course Introduction to MongoDB, and therefore primarily focused on using MongoDB at the moment.
-Methodology and Tools Installing Mongodb The instructions are available in the mongoDB manual. This is for the Community edition, and on a Mac as welll as Linux machine (Antergos)
-Mac If never installed before, tap the resource first.</description>
+      <guid>https://shreyas.ragavan.co/docs/nosql-mongodb-notes/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;These are my notes on NoSQL databases and the prime differences between them and SQL databases. The notes are mostly based off the Udemy course &lt;a href=&#34;https://www.udemy.com/introduction-to-mongodb/&#34; target=&#34;_blank&#34;&gt;Introduction to MongoDB&lt;/a&gt;, and therefore primarily focused on using MongoDB at the moment.&lt;/p&gt;
+
+&lt;h3 id=&#34;methodology-and-tools&#34;&gt;Methodology and Tools&lt;/h3&gt;
+
+&lt;h2 id=&#34;installing-mongodb&#34;&gt;Installing Mongodb&lt;/h2&gt;
+
+&lt;p&gt;The instructions are available in the &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/&#34; target=&#34;_blank&#34;&gt;mongoDB manual&lt;/a&gt;. This is for the Community edition, and on a Mac as welll as Linux machine (Antergos)&lt;/p&gt;
+
+&lt;h3 id=&#34;mac&#34;&gt;Mac&lt;/h3&gt;
+
+&lt;p&gt;If never installed before, tap the resource first.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew tap mongodb/brew
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Actual installation:
+Note the version being specified. This could change in the future. It may be possible that specifying &lt;code&gt;mongodb-community&lt;/code&gt; along is sufficient to get the latest version, otherwise a specific version shellould be specified.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew install mongodb-community@4.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To know the packages available, a search could be performed using brew. However, the latest package 4.0 is not listed in the search.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew search mongodb-community
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;antergos--linux&#34;&gt;Antergos (Linux)&lt;/h3&gt;
+
+&lt;p&gt;Mongodb and Compass are available in AUR. The development and beta versions of these packages are also available. &lt;em&gt;Note: the Arch wiki clearly states that the mongodb package builds from source and will take several hours to complete. The pre-compiled bin package is the better choice.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Searching for relevant Packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;yaourt -Ss mongodb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Installing packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;yaourt -S mongodb-bin
+yaourt -S mongodb-compass-community
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note that mongodb-compass does not install mongodb as a requirement or dependency. There also seem to be a lot of python 2 dependencies for mongodb. This can be viewed during the build process.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;configuration-files-and-paths&#34;&gt;Configuration files and paths&lt;/h3&gt;
+
+&lt;p&gt;The following directories and files are created during the installation:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the configuration file (/usr/local/etc/mongod.Conf)&lt;/li&gt;
+&lt;li&gt;the log directory path (/usr/local/var/log/Mongodb)&lt;/li&gt;
+&lt;li&gt;the data directory path (/usr/local/var/mongodb)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;running-mongodb&#34;&gt;Running mongoDB&lt;/h2&gt;
+
+&lt;p&gt;It appears that the config file cannot be set without activating mongoDB as a service or a daemon first, the config file cannot be set.&lt;/p&gt;
+
+&lt;p&gt;As a service via brew:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew services start mongodb-community@4.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Setting the configuration file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongod --config /usr/local/etc/mongod.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Check whether mongoDB is Running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongod
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Running the above shows an error that the socket is already in use, which prevents mongodb from starting. I wonder if this is because of the earlier hugo server running at the same IP as specified in the config file.&lt;/p&gt;
+
+&lt;p&gt;Perhaps a restart will help? This would not mean the process using the 27017 port woult magically stop.&lt;/p&gt;
+
+&lt;p&gt;Error shell output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;#+name: name2019-03-29T11:12:12.579-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols &#39;none&#39;
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] MongoDB starting : pid=7885 port=27017 dbpath=/data/db 64-bit host=Shreyass-MacBook-Pro-2.local
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] db version v4.0.7
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] git version: 1b82c812a9c0bbf6dc79d5400de9ea99e6ffa025
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] allocator: system
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] modules: none
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] build environment:
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten]     distarch: x86_64
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] options: {}
+2019-03-29T11:12:12.591-0600 E STORAGE  [initandlisten] Failed to set up listener: SocketException: Address already in use
+2019-03-29T11:12:12.611-0600 I CONTROL  [initandlisten] now exiting
+2019-03-29T11:12:12.611-0600 I CONTROL  [initandlisten] shutting down with code:48
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One solution for this has been to change the port number while launching mongod Server. Since the port 2717 is busy, the subsequent (or an arbitrary) port number can be used.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongod --port 27018
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This brought up a new error related to the path of the database. This can be seen below with dbpath = /data/db which does not exist.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;2019-03-29T21:01:31.704-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols &#39;none&#39;
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] MongoDB starting : pid=2791 port=27018 dbpath=/data/db 64-bit host=Shreyass-MacBook-Pro-2.local
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] db version v4.0.7
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] git version: 1b82c812a9c0bbf6dc79d5400de9ea99e6ffa025
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] allocator: system
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] modules: none
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] build environment:
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten]     distarch: x86_64
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] options: { net: { port: 27018 } }
+2019-03-29T21:01:31.714-0600 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory /data/db not found., terminating
+2019-03-29T21:01:31.714-0600 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2019-03-29T21:01:31.741-0600 I NETWORK  [initandlisten] removing socket file: /tmp/mongodb-27018.sock
+2019-03-29T21:01:31.741-0600 I CONTROL  [initandlisten] now exiting
+2019-03-29T21:01:31.742-0600 I CONTROL  [initandlisten] shutting down with code:100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Stack Overflow discussions indicate that there are atleast 2 possible ways to resolve this as shown below.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Create the /data/db folder and assign the user read and write permission for the same.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo mkdir /data/db/
+sudo chmod 600 /data/db
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Start the mongod process in a specified directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongod --port 27018 --dbpath ~/temp/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have followed the latter approach to begin with, as the port number and path can always be changed.&lt;/p&gt;
+
+&lt;h2 id=&#34;general-exploration-of-mongo-shell&#34;&gt;General exploration of mongo Shell&lt;/h2&gt;
+
+&lt;p&gt;Type in &lt;code&gt;mongo&lt;/code&gt; in the terminal to enter the mongo shell.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Showing a list of the available dbs. The admin, config and local dbs are created by default during installation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+show dbs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;use&lt;/code&gt; command can be employed to switch to db&amp;rsquo;s, or create dbs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+use test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Collection: similar to the concept of a bunch of tables in Sql. &lt;code&gt;db.createCollection(&#39;&amp;lt;name&amp;gt;&#39;)&lt;/code&gt;. Existing collections can be viewed with &lt;code&gt;show connections&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+use test
+db.createCollection(&#39;test1&#39;)
+show collections
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note that the name of the collection should be enclosed within single quotes and not double quotes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;inserting-values-in-a-database-or-collection&#34;&gt;Inserting values in a Database or collection&lt;/h2&gt;
+
+&lt;p&gt;The Insert method can be used to fill in entries that in a combination of keyword name pairs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+show dbs
+db.user.insert({&#39;name&#39; : &#39;shreyas&#39;, &#39;height&#39;: 154})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adding a few more users with a name and an Age.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.insert({&#39;name&#39;: &#39;joe&#39;, &#39;age&#39; : 22})
+db.user.insert({&#39;name&#39;: &#39;sam&#39;, &#39;age&#39; : 56})
+db.user.insert({&#39;name&#39;: &#39;siri&#39;, &#39;age&#39; : 87, &#39;height&#39; : 145})
+db.user.insert({&#39;name&#39;: &#39;pitt&#39;, &#39;age&#39; : 60})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;manipulating-collections&#34;&gt;Manipulating collections&lt;/h2&gt;
+
+&lt;p&gt;Listing all the entries in the &lt;code&gt;use&lt;/code&gt; collection can done with the find method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.find()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remove method to remove an Entry (document?)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.remove({&#39;name&#39; : &#39;joe&#39;})
+db.user.find()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alternate specification to remove age above 60&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.remove({&#39;age&#39; : 60})
+db.user.find()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Other than manually entering entries, there is no way to recover entries that are removed.&lt;/p&gt;
+
+&lt;p&gt;If no arguments are specifiedd in remove, then all the collections are Removed, as shown below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.users.remove({})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;queries-using-find&#34;&gt;Queries using Find&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+show dbs
+db.user.find()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The Objectid is added by mongoDB. This is a unique key generated for each document.&lt;/p&gt;
+
+&lt;p&gt;Grabbing just one user from the Collection/:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.find({&#39;name&#39;: &#39;sam&#39;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Specifying a Condition, will match all the documents that match the condition specified&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.find({&amp;quot;name&amp;quot;:&amp;quot;siri&amp;quot;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note: 2 entries and object ID&amp;rsquo;s are being returned even when one document is present. This needs to be Checked.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Considering multiple search criterion. For example, not all the documents have the height parameter entered in. The &lt;code&gt;null&lt;/code&gt; parameter can be used to filter documents with empty attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.insert({&amp;quot;name&amp;quot;: &amp;quot;goldstone&amp;quot;, &amp;quot;age&amp;quot;: 50})
+db.user.find({&#39;height&#39; : null})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finding documents or users with age greater than 40. &lt;code&gt;{$gt  : 40}&lt;/code&gt;. Similarly, use &lt;code&gt;$lt&lt;/code&gt; for lesser than.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.find({&#39;age&#39; : {$gt: 40}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.find({&amp;quot;age&amp;quot;: {$lt : 60}})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;updating-users-already-inserted-into-the-collection&#34;&gt;Updating users already inserted into the collection&lt;/h2&gt;
+
+&lt;p&gt;Adding the height for Goldston, using &lt;code&gt;db.user.update()&lt;/code&gt;. The document to be updated has to be specified first, and then the updated entry has to be keyed in.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.user.update({&amp;quot;name&amp;quot; : &amp;quot;goldstone&amp;quot;}, {&amp;quot;name&amp;quot;: &amp;quot;goldstone&amp;quot;, &amp;quot;height&amp;quot; : 167})
+db.user.find({&amp;quot;name&amp;quot; : &amp;quot;goldstone&amp;quot;})
+db.user.find({&amp;quot;height&amp;quot; : null})
+db.user.update({&amp;quot;name&amp;quot; : &amp;quot;sam&amp;quot;}, {&amp;quot;name&amp;quot; : &amp;quot;sam&amp;quot;, &amp;quot;height&amp;quot; : 189})
+db.user.find({&amp;quot;height&amp;quot; : null})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;data-types&#34;&gt;Data Types&lt;/h2&gt;
+
+&lt;p&gt;String: enclosed within quotes.
+Integer: Whole number. Can be positive, negative or zero.
+Float: positive or negative. Does not have to be a whole number.
+Boolean: true or false. Quotes are not to be used with Booleans, otherwise it would be converted to a string.&lt;/p&gt;
+
+&lt;h2 id=&#34;primary-key&#34;&gt;Primary Key&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unique for all documents in a collection&lt;/li&gt;
+&lt;li&gt;Cannot have null values.&lt;/li&gt;
+&lt;li&gt;Additional custom keys can be created and should be for easier filtering of the data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;establishing-relationships&#34;&gt;Establishing Relationships&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;useful to create relationships between documents.&lt;/li&gt;
+&lt;li&gt;One to one&lt;/li&gt;
+&lt;li&gt;One to many&lt;/li&gt;
+&lt;li&gt;many to one&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example of one to many : where the same user id is the connecting property across multiple documents.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+use test2
+db.createCollection(&amp;quot;one2onecoll1&amp;quot;)
+db.createCollection(&amp;quot;one2onecoll2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.one2onecoll1.insert({
+                          &amp;quot;user_id&amp;quot; : 3173,
+                          &amp;quot;name&amp;quot; : &amp;quot;helen&amp;quot;,
+                          &amp;quot;age&amp;quot; : 24})
+db.one2onecoll1.insert({
+                          &amp;quot;user_id&amp;quot; : 4545,
+                          &amp;quot;name&amp;quot; : &amp;quot;jack&amp;quot;,
+                          &amp;quot;age&amp;quot; : 45,
+                      })
+
+db.one2onecoll1.insert({
+                          &amp;quot;user_id&amp;quot; : 67866,
+                          &amp;quot;name&amp;quot; : &amp;quot;joe&amp;quot;,
+                          &amp;quot;age&amp;quot; : 65,
+                          &amp;quot;about&amp;quot; : &amp;quot;Lorem ipsum dolor sit amet&amp;quot;
+                      })
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mongo
+db.one2onecoll1.find()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;embedded-documents&#34;&gt;Embedded documents&lt;/h2&gt;
+
+&lt;p&gt;Example of using arrays to establish Relationships. Example, a friend list in a social media network. Similarly, blog posts or comments can be stored as a list of parameters.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;&amp;quot;_id&amp;quot; : ObjectID(&amp;quot;Sdinaskdas123fds&amp;quot;),
+&amp;quot;name&amp;quot; : &amp;quot;Lydia&amp;quot;,
+&amp;quot;user_id&amp;quot; : 78787
+&amp;quot;friend_ids&amp;quot; : [ 6767, 78788, 99899, 12109 ]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;embedded-documents-versus-collections&#34;&gt;Embedded documents versus collections&lt;/h2&gt;
+
+&lt;p&gt;This depends on the data characteristics and should be designed such that all the necessary data could be accessed with a single query.&lt;/p&gt;
+
+&lt;p&gt;Thinking Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Facebook: Homepage is accessing only a specific amount of information.&lt;/li&gt;
+&lt;li&gt;Reddit: Comments are not loaded unless the post is opened. So the comments could be stored as separate documents, so they are not loaded only when the posts are loaded.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Think about how to mimimise the unnecessary loading of data.&lt;/p&gt;
+
+&lt;h2 id=&#34;mongodb-compass&#34;&gt;MongoDB compass&lt;/h2&gt;
+
+&lt;p&gt;MongoDB compass is a GUI for MongoDB. It helps with the visualisation of data. &lt;a href=&#34;https://www.mongodb.com/download-center/compass?jmp=hero&#34; target=&#34;_blank&#34;&gt;Download link&lt;/a&gt;. &lt;em&gt;Note: the community edition should be downloaded&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Depending on the setup, the mongod (daemon?) has to be successfully running so that compass can connect to that instance.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

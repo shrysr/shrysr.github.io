@@ -1,54 +1,314 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/python/</link>
-    <description>Recent content in python on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 08 Aug 2019 10:46:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Python | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/python/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 08 Aug 2019 10:46:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Python</title>
+      <link>https://shreyas.ragavan.co/tags/python/</link>
+    </image>
     
     <item>
-      <title>CFX Job scheduler</title>
-      <link>https://shrysr.github.io/project/cfx-job-scheduler/</link>
-      <pubDate>Thu, 08 Aug 2019 10:46:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/cfx-job-scheduler/</guid>
-      <description>Scheduler-Psuedo-Algorithm   Introduction Code On Github
-Presentation
-Wiki on Github
-This is a Python script for a portable, scalable job scheduler with multiple priorities - for ANSYS CFX simulations. The script was designed to be called every minute by an external scheduler program.
- In the practical case, the free version of the software System Scheduler was used to deploy the script successfully, for over 3 years, managing 2 computing clusters.</description>
+      <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
+      <link>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
+      <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
+      <guid>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
+      <description>
+
+&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
+
+&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
+
+&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
+
+&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
+
+&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+NAME: jupyter-to-org-current
+#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
+#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
+#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
+#+BEGIN_SRC sh :results verbatim
+cwd=$(pwd)
+jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
+pandoc $cwd/$path_md.md -o $cwd/$path_org.org
+cp $path_ipynb.ipynb $cwd
+ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
+
+&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h2&gt;
+
+&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
+
+&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
-      <title>Course Certificates</title>
-      <link>https://shrysr.github.io/project/course-certificate-list/</link>
-      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/course-certificate-list/</guid>
-      <description> EdX  EdX HarvardX PH125.1x Data Science Basics: R.  DataCamp  Intro to SQL
- Data Science R basics included in EdX HarvardX PH125.1x
- Introduction to Tidyverse
- Introduction to R for Finance
-  DataQuest  Data Analyst Path in R
- Git &amp;amp; Version control
- SQL Fundamentals
-  </description>
+      <title>CFX Job scheduler</title>
+      <link>https://shreyas.ragavan.co/project/cfx-job-scheduler/</link>
+      <pubDate>Thu, 08 Aug 2019 10:46:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/project/cfx-job-scheduler/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://shrysr.github.io/jobscheduler/index.html&#34; target=&#34;_blank&#34;&gt;Presentation&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/shrysr/jobscheduler/wiki&#34; target=&#34;_blank&#34;&gt;Wiki on Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a Python script for a portable, scalable job scheduler with
+multiple priorities - for ANSYS CFX simulations. The script was designed
+to be called every minute by an external scheduler program.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the practical case, the free version of the software &lt;a href=&#34;https://www.splinterware.com/products/scheduler.html&#34; target=&#34;_blank&#34;&gt;System
+Scheduler&lt;/a&gt; was used to deploy the script successfully, for over 3
+years, managing 2 computing clusters.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once called, the program basically loops through pre designated folders
+and lists .def files based on the &lt;em&gt;last modified&lt;/em&gt; date available in
+Windows. The system interaction was via BAT  scripts created via the
+Python code, as well as the python OS library. There are several
+in-built flags to support priority, pausing a particular cluster,
+logging data and troubleshooting.&lt;/p&gt;
+
+&lt;p&gt;The idea behind the project was to create a multi-platform job scheduler
+for ANSYS CFX that has a balance between sophistication and ease of
+deployment (and management). Typically job schedulers and load balancing
+programs are relatively very sophisticated and complex to setup with
+several pre-requisites and constraints. Such complexity dictates
+expensive commercial support and licensing considerations.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/scheduler-algo.png&#34; data-caption=&#34;Scheduler-Psuedo-Algorithm&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/scheduler-algo.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Scheduler-Psuedo-Algorithm
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;
+
+&lt;p&gt;A job scheduler or simulation management system was required to address
+the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Optimum and continuous simulation solver license utilisation by all
+members of the team in a First-In-First-Out (FIFO) basis,&lt;/li&gt;
+&lt;li&gt;Provision for dynamic or urgent priority jobs, as well as an interface
+to submit simulations or view job history.&lt;/li&gt;
+&lt;li&gt;Optimisation and management of workload of simulation jobs
+facilitating overall project management and planning.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-the-program-accomplished&#34;&gt;What the program accomplished&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allowed users to submit simulations by simply placing the input files
+in a particular folder location, which also served as a particular
+priority basket.&lt;/li&gt;
+&lt;li&gt;Removed the need of creating manual scripts to submit multiple
+simulations and resolved inefficient license utilisation approaches.&lt;/li&gt;
+&lt;li&gt;Facilitated a optimised approach to certain design cases, thus
+resulting in a 75% reduction in simulation time&lt;/li&gt;
+&lt;li&gt;Enabled the use of consistent solver and memory utilisation parameters
+and settings, allowing efficient deployment and reducing
+inefficiencies due to errors.&lt;/li&gt;
+&lt;li&gt;Allowed optimal or perfect utilisation of available licensing scheme,
+resulting in a significant increase in team output and productivity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tools-used-and-links&#34;&gt;Tools used and links&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Written with Python 2.7, using portable python, Spyder, Notepad ++ and
+Sublime Text 3.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.splinterware.com/products/scheduler.html&#34; target=&#34;_blank&#34;&gt;System Scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>CFD Post Processing automation</title>
-      <link>https://shrysr.github.io/project/cfd-post-processing-python/</link>
+      <link>https://shreyas.ragavan.co/project/cfd-post-processing-python/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://shrysr.github.io/project/cfd-post-processing-python/</guid>
-      <description>It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.
-This python script that enables the user to set the location of: - the session file (.cse) - the CFD result files (.</description>
+      <guid>https://shreyas.ragavan.co/project/cfd-post-processing-python/</guid>
+      <description>
+
+&lt;p&gt;It is possible (and prevalent) to create templates to post process CFD Simulation results in ANSYS CFD Post using session (.cse) files. Using Shell scripts, it would then be simple to apply these session files on multiple result files and extract the output dictated by the session file.&lt;/p&gt;
+
+&lt;p&gt;This python script that enables the user to set the location of:
+- the session file (.cse)
+- the CFD result files (.res)
+- create a BAT script with sequential lines, each calling ANSYS CFD Post with the necessary arguments
+- run the session script on all the result files available in a particular location.
+- gracefully exit, removing all the temporary script files.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/shrysr/cfdpost_auto&#34; target=&#34;_blank&#34;&gt;Code On Github&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;how-it-helped&#34;&gt;How it helped&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;While these operations could be done directly in python, it is
+easier and simpler to control ANSYS CFD post using a BASH
+script. Therefore the python program creates a BASH script.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;python-script&#34;&gt;Python script&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;&amp;quot;
+Created on Thu Dec 18 16:10:49 2014
+@author: shrysr
+&amp;quot;&amp;quot;&amp;quot;
+
+# Description: 
+# This is a simple program that is designed to apply am ANSYS CFD post macro on all the results available at a particular location, one after the other. There are 3 strings required to be set as input by the user.
+# 1. The location of the ANSYS CFD Post executable
+# 2. THe path to the macro file (.cst/.cse)
+# 3. The folder location where the result files are located.
+
+# Note : the &amp;gt;quit command can be written in the post macro to optionally execute the post macro on one file after the other automatically. Otherwise CFD Post has to be quit manually by the user after the macro is applied on each file.
+
+###---------- USER INPUT -------------###
+# Setting the paths to various locations.
+
+CFDPost_loc=r&#39;&amp;quot;C:\Program Files\ANSYS Inc\v145\CFD-Post\bin\cfdpost&amp;quot;&#39; #Setting the path to the ANSYS CFD Post executable.
+
+Post_template_loc=r&#39;&amp;quot;C:\\example_location\post_macro.cse&amp;quot;&#39; #Path to the .cse/.cst post macro to be applied.
+
+Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive\Shreyas&amp;quot; #Folder location of the result file path
+
+###---x---x--x-- USER INPUT -x---x---x---x--###
+
+#importing required libraries
+import os
+import glob
+import subprocess as sp
+
+#Creating BAT script for extracting the list of res files in the current working folder - sorted Date wise
+def res_list_syn(Res_loc):
+    &amp;quot;&amp;quot;&amp;quot;
+    Grabs all the CFX res files in the chosen location  (Res_loc) and stores them in the variable (array) A1.
+    The variableA1 is passed onto another function which uses the array contents
+    Example:
+    &amp;gt;&amp;gt;&amp;gt; Res_loc=r&amp;quot;Q:\Queueing_sys\Completed\Archive&amp;quot;
+    &amp;gt;&amp;gt;&amp;gt; post_syn(Res_loc)
+    &amp;gt;&amp;gt;&amp;gt; return variableA1
+    &amp;quot;&amp;quot;&amp;quot;
+    print &amp;quot;&amp;quot;
+    print &amp;quot;Grabbing all res files from chosen location.&amp;quot;
+    os.chdir(Res_loc)
+    reslist=glob.glob(&#39;*.res&#39;)
+    print &amp;quot;Passing the list of res files to the Post_Syn function&amp;quot;
+    post_syn(reslist)
+
+def post_syn(variable):
+    print &amp;quot; &amp;quot;    
+    print &amp;quot;Listing grabbed res files and creating Post BAT file in chosen location...&amp;quot; 
+    print &amp;quot;&amp;quot;
+    post_batname=&#39;Post_bat_runner.BAT&#39;   
+    post_bat_loc=os.path.join(Res_loc,post_batname)
+    PC=open(post_bat_loc,&#39;w&#39;)
+    PC.write(&#39;cd /d &amp;quot;%s&amp;quot;\n&#39;%Res_loc)
+    i=0
+    while i&amp;lt;len(variable):
+        print &amp;quot;%d --%s&amp;quot; %(i,variable[i])
+        PC.write(&#39;%s -s %s %s\n&#39; %(CFDPost_loc,Post_template_loc,variable[i]))
+        i+=1
+    PC.close()
+    print &amp;quot;Running post macro on all the listed Res Files....&amp;quot;
+    print &#39;&#39;
+    sp.call(post_bat_loc)
+    t.sleep(5)
+    print &#39;Killing temp files...&#39;
+    t.sleep(5)
+    File_killer(Res_loc,&#39;BAT&#39;)
+
+
+#Function for deleting temp Files. Prevents Clutter.
+def File_killer(folder_location, type_of_extension):
+    for variable in glob.glob(&#39;%s/*.%s&#39;%(folder_location,type_of_extension)):
+        if os.path.isfile(variable):
+            os.remove(variable)
+
+#Starting Program. Geting current working directory
+print &amp;quot;Hello. Program Launch...--&amp;gt;&amp;quot;
+print &amp;quot;&amp;quot;
+print &amp;quot;The chosen result location to be scanned is: %s&amp;quot;%Res_loc
+print &amp;quot;&amp;quot;
+print &amp;quot;Starting scan&amp;quot;
+res_list_syn(Res_loc)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

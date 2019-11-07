@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 3.2.0">
-  <meta name="generator" content="Hugo 0.54.0" />
-  <meta name="author" content="Shreyas Ragavan">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
 
   
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Shreyas Ragavan">
+
   
   
   
@@ -20,22 +33,10 @@ Methodology and Tools Installing Mongodb The instructions are available in the m
 Mac If never installed before, tap the resource first.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://shrysr.github.io/docs/nosql-mongodb-notes/">
+  <link rel="alternate" hreflang="en-us" href="https://shreyas.ragavan.co/docs/nosql-mongodb-notes/">
 
   
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
   
@@ -48,10 +49,9 @@ Mac If never installed before, tap the resource first.">
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -59,49 +59,56 @@ Mac If never installed before, tap the resource first.">
       
     
     
-
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
-  
-
-  <link rel="stylesheet" href="/styles.css">
-  
-
-  
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-117504906-1', 'auto');
       
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
     
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+
     
-  
+
+    
+
   
 
   
-  <link rel="alternate" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
-  <link rel="feed" href="https://shrysr.github.io/index.xml" type="application/rss+xml" title="Shreyas Ragavan">
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PQ3RWS7');
+</script>
+
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://shrysr.github.io/docs/nosql-mongodb-notes/">
+  <link rel="canonical" href="https://shreyas.ragavan.co/docs/nosql-mongodb-notes/">
 
   
   
@@ -109,6 +116,7 @@ Mac If never installed before, tap the resource first.">
   
     
     
+  
   
   <meta property="twitter:card" content="summary">
   
@@ -116,25 +124,67 @@ Mac If never installed before, tap the resource first.">
   <meta property="twitter:creator" content="@ShreyasRagavan">
   
   <meta property="og:site_name" content="Shreyas Ragavan">
-  <meta property="og:url" content="https://shrysr.github.io/docs/nosql-mongodb-notes/">
+  <meta property="og:url" content="https://shreyas.ragavan.co/docs/nosql-mongodb-notes/">
   <meta property="og:title" content="MongoDB and NoSQL Databases | Shreyas Ragavan">
   <meta property="og:description" content="Introduction These are my notes on NoSQL databases and the prime differences between them and SQL databases. The notes are mostly based off the Udemy course Introduction to MongoDB, and therefore primarily focused on using MongoDB at the moment.
 Methodology and Tools Installing Mongodb The instructions are available in the mongoDB manual. This is for the Community edition, and on a Mac as welll as Linux machine (Antergos)
-Mac If never installed before, tap the resource first."><meta property="og:image" content="https://shrysr.github.io/img/SR-reduced.jpeg">
-  <meta property="og:locale" content="en-us">
+Mac If never installed before, tap the resource first."><meta property="og:image" content="https://shreyas.ragavan.co/img/icon-192.png">
+  <meta property="twitter:image" content="https://shreyas.ragavan.co/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-07-06T12:12:19-06:00">
-  <meta property="article:modified_time" content="2019-07-06T12:12:19-06:00">
+    
+      <meta property="article:published_time" content="2019-07-06T12:12:19-06:00">
+    
+    <meta property="article:modified_time" content="2019-07-13T21:16:11-06:00">
   
 
   
 
+
+
   
+
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#3f51b5",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "#3f51b5"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "https://cookies.insites.com"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
 
   <title>MongoDB and NoSQL Databases | Shreyas Ragavan</title>
 
 </head>
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
   <aside class="search-results" id="search">
   <div class="container">
     <section class="search-header">
@@ -151,7 +201,7 @@ Mac If never installed before, tap the resource first."><meta property="og:image
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -167,7 +217,8 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 </aside>
 
 
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -184,123 +235,165 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 
       
       
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/experience/"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/"><span>Docs</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
       <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#about">
-            
-            <span>Home</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#projects">
-            
-            <span>Projects</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/docs/">
-            
-            <span>Docs</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#posts">
-            
-            <span>Blog</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#tags">
-            
-            <span>Tag Cloud</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/#contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
       
 
         
@@ -314,10 +407,6 @@ Mac If never installed before, tap the resource first."><meta property="og:image
         
 
         
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
 
       </ul>
 
@@ -326,11 +415,18 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 </nav>
 
 
+  
 
 <div class="container-fluid docs">
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
       
+
+
+
+
+
+  
 
 
 
@@ -341,11 +437,15 @@ Mac If never installed before, tap the resource first."><meta property="og:image
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
   
 </form>
 
 <nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
   
   
   <div class="docs-toc-item">
@@ -395,9 +495,9 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-      <p class="docs-toc-title">On this page</p>
-      
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
 
       <nav id="TableOfContents">
 <ul>
@@ -429,22 +529,18 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 </ul>
 </nav>
 
-      <ul class="nav toc-top">
-        <li><a href="#">Back to top</a></li>
-      </ul>
-
       
     </div>
     
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
-      <article class="article" itemscope itemtype="http://schema.org/Article">
+      <article class="article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">MongoDB and NoSQL Databases</h1>
+          <h1>MongoDB and NoSQL Databases</h1>
 
-          <div class="article-style" itemprop="articleBody">
+          <div class="article-style">
             
 
 <h2 id="introduction">Introduction</h2>
@@ -460,21 +556,36 @@ Mac If never installed before, tap the resource first."><meta property="og:image
 <h3 id="mac">Mac</h3>
 
 <p>If never installed before, tap the resource first.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew tap mongodb/brew</code></pre></div>
+
+<pre><code class="language-shell">brew tap mongodb/brew
+</code></pre>
+
 <p>Actual installation:
 Note the version being specified. This could change in the future. It may be possible that specifying <code>mongodb-community</code> along is sufficient to get the latest version, otherwise a specific version shellould be specified.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install mongodb-community@4.0</code></pre></div>
+
+<pre><code class="language-shell">brew install mongodb-community@4.0
+</code></pre>
+
 <p>To know the packages available, a search could be performed using brew. However, the latest package 4.0 is not listed in the search.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew search mongodb-community</code></pre></div>
+
+<pre><code class="language-shell">brew search mongodb-community
+</code></pre>
+
 <h3 id="antergos--linux">Antergos (Linux)</h3>
 
 <p>Mongodb and Compass are available in AUR. The development and beta versions of these packages are also available. <em>Note: the Arch wiki clearly states that the mongodb package builds from source and will take several hours to complete. The pre-compiled bin package is the better choice.</em></p>
 
 <p>Searching for relevant Packages:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yaourt -Ss mongodb</code></pre></div>
+
+<pre><code class="language-shell">yaourt -Ss mongodb
+</code></pre>
+
 <p>Installing packages:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yaourt -S mongodb-bin
-yaourt -S mongodb-compass-community</code></pre></div>
+
+<pre><code class="language-shell">yaourt -S mongodb-bin
+yaourt -S mongodb-compass-community
+</code></pre>
+
 <p><em>Note that mongodb-compass does not install mongodb as a requirement or dependency. There also seem to be a lot of python 2 dependencies for mongodb. This can be viewed during the build process.</em></p>
 
 <h3 id="configuration-files-and-paths">Configuration files and paths</h3>
@@ -492,17 +603,27 @@ yaourt -S mongodb-compass-community</code></pre></div>
 <p>It appears that the config file cannot be set without activating mongoDB as a service or a daemon first, the config file cannot be set.</p>
 
 <p>As a service via brew:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew services start mongodb-community@4.0</code></pre></div>
+
+<pre><code class="language-shell">brew services start mongodb-community@4.0
+</code></pre>
+
 <p>Setting the configuration file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongod --config /usr/local/etc/mongod.conf</code></pre></div>
+
+<pre><code class="language-shell">mongod --config /usr/local/etc/mongod.conf
+</code></pre>
+
 <p>Check whether mongoDB is Running</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongod</code></pre></div>
+
+<pre><code class="language-shell">mongod
+</code></pre>
+
 <p>Running the above shows an error that the socket is already in use, which prevents mongodb from starting. I wonder if this is because of the earlier hugo server running at the same IP as specified in the config file.</p>
 
 <p>Perhaps a restart will help? This would not mean the process using the 27017 port woult magically stop.</p>
 
 <p>Error shell output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+name: name2019-03-29T11:12:12.579-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols &#39;none&#39;
+
+<pre><code class="language-text">#+name: name2019-03-29T11:12:12.579-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
 2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] MongoDB starting : pid=7885 port=27017 dbpath=/data/db 64-bit host=Shreyass-MacBook-Pro-2.local
 2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] db version v4.0.7
 2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] git version: 1b82c812a9c0bbf6dc79d5400de9ea99e6ffa025
@@ -514,11 +635,17 @@ yaourt -S mongodb-compass-community</code></pre></div>
 2019-03-29T11:12:12.590-0600 I CONTROL  [initandlisten] options: {}
 2019-03-29T11:12:12.591-0600 E STORAGE  [initandlisten] Failed to set up listener: SocketException: Address already in use
 2019-03-29T11:12:12.611-0600 I CONTROL  [initandlisten] now exiting
-2019-03-29T11:12:12.611-0600 I CONTROL  [initandlisten] shutting down with code:48</code></pre></div>
+2019-03-29T11:12:12.611-0600 I CONTROL  [initandlisten] shutting down with code:48
+</code></pre>
+
 <p>One solution for this has been to change the port number while launching mongod Server. Since the port 2717 is busy, the subsequent (or an arbitrary) port number can be used.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongod --port <span style="color:#ae81ff">27018</span></code></pre></div>
+
+<pre><code class="language-shell">mongod --port 27018
+</code></pre>
+
 <p>This brought up a new error related to the path of the database. This can be seen below with dbpath = /data/db which does not exist.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">2019-03-29T21:01:31.704-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols &#39;none&#39;
+
+<pre><code class="language-text">2019-03-29T21:01:31.704-0600 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
 2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] MongoDB starting : pid=2791 port=27018 dbpath=/data/db 64-bit host=Shreyass-MacBook-Pro-2.local
 2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] db version v4.0.7
 2019-03-29T21:01:31.714-0600 I CONTROL  [initandlisten] git version: 1b82c812a9c0bbf6dc79d5400de9ea99e6ffa025
@@ -532,98 +659,155 @@ yaourt -S mongodb-compass-community</code></pre></div>
 2019-03-29T21:01:31.714-0600 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
 2019-03-29T21:01:31.741-0600 I NETWORK  [initandlisten] removing socket file: /tmp/mongodb-27018.sock
 2019-03-29T21:01:31.741-0600 I CONTROL  [initandlisten] now exiting
-2019-03-29T21:01:31.742-0600 I CONTROL  [initandlisten] shutting down with code:100</code></pre></div>
+2019-03-29T21:01:31.742-0600 I CONTROL  [initandlisten] shutting down with code:100
+</code></pre>
+
 <p>Stack Overflow discussions indicate that there are atleast 2 possible ways to resolve this as shown below.</p>
 
 <ul>
-<li>Create the /data/db folder and assign the user read and write permission for the same.</li>
+<li><p>Create the /data/db folder and assign the user read and write permission for the same.</p>
+
+<pre><code class="language-shell">sudo mkdir /data/db/
+sudo chmod 600 /data/db
+</code></pre></li>
+
+<li><p>Start the mongod process in a specified directory.</p>
+
+<pre><code class="language-shell">mongod --port 27018 --dbpath ~/temp/
+</code></pre></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo mkdir /data/db/
-sudo chmod <span style="color:#ae81ff">600</span> /data/db</code></pre></div>
-<ul>
-<li>Start the mongod process in a specified directory.</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongod --port <span style="color:#ae81ff">27018</span> --dbpath ~/temp/</code></pre></div>
+
 <p>I have followed the latter approach to begin with, as the port number and path can always be changed.</p>
 
 <h2 id="general-exploration-of-mongo-shell">General exploration of mongo Shell</h2>
 
 <p>Type in <code>mongo</code> in the terminal to enter the mongo shell.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo</code></pre></div>
+
+<pre><code class="language-shell">mongo
+</code></pre>
+
 <p>Showing a list of the available dbs. The admin, config and local dbs are created by default during installation.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-show dbs</code></pre></div>
+
+<pre><code class="language-shell">mongo
+show dbs
+</code></pre>
+
 <p>The <code>use</code> command can be employed to switch to db&rsquo;s, or create dbs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-use test</code></pre></div>
-<p>Collection: similar to the concept of a bunch of tables in Sql. <code>db.createCollection('&lt;name&gt;')</code>. Existing collections can be viewed with <code>show connections</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
+
+<pre><code class="language-shell">mongo
 use test
-db.createCollection<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;test1&#39;</span><span style="color:#f92672">)</span>
-show collections</code></pre></div>
+</code></pre>
+
+<p>Collection: similar to the concept of a bunch of tables in Sql. <code>db.createCollection('&lt;name&gt;')</code>. Existing collections can be viewed with <code>show connections</code></p>
+
+<pre><code class="language-shell">mongo
+use test
+db.createCollection('test1')
+show collections
+</code></pre>
+
 <p><em>Note that the name of the collection should be enclosed within single quotes and not double quotes.</em></p>
 
 <h2 id="inserting-values-in-a-database-or-collection">Inserting values in a Database or collection</h2>
 
 <p>The Insert method can be used to fill in entries that in a combination of keyword name pairs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
+
+<pre><code class="language-shell">mongo
 show dbs
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span> : <span style="color:#e6db74">&#39;shreyas&#39;</span>, <span style="color:#e6db74">&#39;height&#39;</span>: <span style="color:#ae81ff">154</span><span style="color:#f92672">})</span></code></pre></div>
+db.user.insert({'name' : 'shreyas', 'height': 154})
+</code></pre>
+
 <p>Adding a few more users with a name and an Age.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;joe&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#ae81ff">22</span><span style="color:#f92672">})</span>
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;sam&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#ae81ff">56</span><span style="color:#f92672">})</span>
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;siri&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#ae81ff">87</span>, <span style="color:#e6db74">&#39;height&#39;</span> : <span style="color:#ae81ff">145</span><span style="color:#f92672">})</span>
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;pitt&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#ae81ff">60</span><span style="color:#f92672">})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.insert({'name': 'joe', 'age' : 22})
+db.user.insert({'name': 'sam', 'age' : 56})
+db.user.insert({'name': 'siri', 'age' : 87, 'height' : 145})
+db.user.insert({'name': 'pitt', 'age' : 60})
+</code></pre>
+
 <h2 id="manipulating-collections">Manipulating collections</h2>
 
 <p>Listing all the entries in the <code>use</code> collection can done with the find method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.find<span style="color:#f92672">()</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.find()
+</code></pre>
+
 <p>Remove method to remove an Entry (document?)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.remove<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span> : <span style="color:#e6db74">&#39;joe&#39;</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">()</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.remove({'name' : 'joe'})
+db.user.find()
+</code></pre>
+
 <p>Alternate specification to remove age above 60</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.remove<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#ae81ff">60</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">()</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.remove({'age' : 60})
+db.user.find()
+</code></pre>
+
 <p>Other than manually entering entries, there is no way to recover entries that are removed.</p>
 
 <p>If no arguments are specifiedd in remove, then all the collections are Removed, as shown below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.users.remove<span style="color:#f92672">({})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.users.remove({})
+</code></pre>
+
 <h2 id="queries-using-find">Queries using Find</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
+
+<pre><code class="language-shell">mongo
 show dbs
-db.user.find<span style="color:#f92672">()</span></code></pre></div>
+db.user.find()
+</code></pre>
+
 <p>The Objectid is added by mongoDB. This is a unique key generated for each document.</p>
 
 <p>Grabbing just one user from the Collection/:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;sam&#39;</span><span style="color:#f92672">})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.find({'name': 'sam'})
+</code></pre>
+
 <p>Specifying a Condition, will match all the documents that match the condition specified</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;siri&#34;</span><span style="color:#f92672">})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.find({&quot;name&quot;:&quot;siri&quot;})
+</code></pre>
+
 <p><em>Note: 2 entries and object ID&rsquo;s are being returned even when one document is present. This needs to be Checked.</em></p>
 
 <p>Considering multiple search criterion. For example, not all the documents have the height parameter entered in. The <code>null</code> parameter can be used to filter documents with empty attributes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.insert<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;goldstone&#34;</span>, <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">50</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;height&#39;</span> : null<span style="color:#f92672">})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.insert({&quot;name&quot;: &quot;goldstone&quot;, &quot;age&quot;: 50})
+db.user.find({'height' : null})
+</code></pre>
+
 <p>Finding documents or users with age greater than 40. <code>{$gt  : 40}</code>. Similarly, use <code>$lt</code> for lesser than.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#39;age&#39;</span> : <span style="color:#f92672">{</span>$gt: <span style="color:#ae81ff">40</span><span style="color:#f92672">}})</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#f92672">{</span>$lt : <span style="color:#ae81ff">60</span><span style="color:#f92672">}})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.find({'age' : {$gt: 40}})
+</code></pre>
+
+<pre><code class="language-shell">mongo
+db.user.find({&quot;age&quot;: {$lt : 60}})
+</code></pre>
+
 <h2 id="updating-users-already-inserted-into-the-collection">Updating users already inserted into the collection</h2>
 
 <p>Adding the height for Goldston, using <code>db.user.update()</code>. The document to be updated has to be specified first, and then the updated entry has to be keyed in.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.user.update<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;goldstone&#34;</span><span style="color:#f92672">}</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;goldstone&#34;</span>, <span style="color:#e6db74">&#34;height&#34;</span> : <span style="color:#ae81ff">167</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;goldstone&#34;</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;height&#34;</span> : null<span style="color:#f92672">})</span>
-db.user.update<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;sam&#34;</span><span style="color:#f92672">}</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;sam&#34;</span>, <span style="color:#e6db74">&#34;height&#34;</span> : <span style="color:#ae81ff">189</span><span style="color:#f92672">})</span>
-db.user.find<span style="color:#f92672">({</span><span style="color:#e6db74">&#34;height&#34;</span> : null<span style="color:#f92672">})</span></code></pre></div>
+
+<pre><code class="language-shell">mongo
+db.user.update({&quot;name&quot; : &quot;goldstone&quot;}, {&quot;name&quot;: &quot;goldstone&quot;, &quot;height&quot; : 167})
+db.user.find({&quot;name&quot; : &quot;goldstone&quot;})
+db.user.find({&quot;height&quot; : null})
+db.user.update({&quot;name&quot; : &quot;sam&quot;}, {&quot;name&quot; : &quot;sam&quot;, &quot;height&quot; : 189})
+db.user.find({&quot;height&quot; : null})
+</code></pre>
+
 <h2 id="data-types">Data Types</h2>
 
 <p>String: enclosed within quotes.
@@ -649,34 +833,47 @@ Boolean: true or false. Quotes are not to be used with Booleans, otherwise it wo
 </ul>
 
 <p>Example of one to many : where the same user id is the connecting property across multiple documents.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-use test2
-db.createCollection<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;one2onecoll1&#34;</span><span style="color:#f92672">)</span>
-db.createCollection<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;one2onecoll2&#34;</span><span style="color:#f92672">)</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.one2onecoll1.insert<span style="color:#f92672">({</span>
-                          <span style="color:#e6db74">&#34;user_id&#34;</span> : <span style="color:#ae81ff">3173</span>,
-                          <span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;helen&#34;</span>,
-                          <span style="color:#e6db74">&#34;age&#34;</span> : <span style="color:#ae81ff">24</span><span style="color:#f92672">})</span>
-db.one2onecoll1.insert<span style="color:#f92672">({</span>
-                          <span style="color:#e6db74">&#34;user_id&#34;</span> : <span style="color:#ae81ff">4545</span>,
-                          <span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;jack&#34;</span>,
-                          <span style="color:#e6db74">&#34;age&#34;</span> : <span style="color:#ae81ff">45</span>,
-                      <span style="color:#f92672">})</span>
 
-db.one2onecoll1.insert<span style="color:#f92672">({</span>
-                          <span style="color:#e6db74">&#34;user_id&#34;</span> : <span style="color:#ae81ff">67866</span>,
-                          <span style="color:#e6db74">&#34;name&#34;</span> : <span style="color:#e6db74">&#34;joe&#34;</span>,
-                          <span style="color:#e6db74">&#34;age&#34;</span> : <span style="color:#ae81ff">65</span>,
-                          <span style="color:#e6db74">&#34;about&#34;</span> : <span style="color:#e6db74">&#34;Lorem ipsum dolor sit amet&#34;</span>
-                      <span style="color:#f92672">})</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mongo
-db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
+<pre><code class="language-shell">mongo
+use test2
+db.createCollection(&quot;one2onecoll1&quot;)
+db.createCollection(&quot;one2onecoll2&quot;)
+</code></pre>
+
+<pre><code class="language-shell">mongo
+db.one2onecoll1.insert({
+                          &quot;user_id&quot; : 3173,
+                          &quot;name&quot; : &quot;helen&quot;,
+                          &quot;age&quot; : 24})
+db.one2onecoll1.insert({
+                          &quot;user_id&quot; : 4545,
+                          &quot;name&quot; : &quot;jack&quot;,
+                          &quot;age&quot; : 45,
+                      })
+
+db.one2onecoll1.insert({
+                          &quot;user_id&quot; : 67866,
+                          &quot;name&quot; : &quot;joe&quot;,
+                          &quot;age&quot; : 65,
+                          &quot;about&quot; : &quot;Lorem ipsum dolor sit amet&quot;
+                      })
+</code></pre>
+
+<pre><code class="language-shell">mongo
+db.one2onecoll1.find()
+</code></pre>
+
 <h2 id="embedded-documents">Embedded documents</h2>
 
 <p>Example of using arrays to establish Relationships. Example, a friend list in a social media network. Similarly, blog posts or comments can be stored as a list of parameters.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;_id&#34; : ObjectID(&#34;Sdinaskdas123fds&#34;),
-&#34;name&#34; : &#34;Lydia&#34;,
-&#34;user_id&#34; : 78787
-&#34;friend_ids&#34; : [ 6767, 78788, 99899, 12109 ]</code></pre></div>
+
+<pre><code class="language-text">&quot;_id&quot; : ObjectID(&quot;Sdinaskdas123fds&quot;),
+&quot;name&quot; : &quot;Lydia&quot;,
+&quot;user_id&quot; : 78787
+&quot;friend_ids&quot; : [ 6767, 78788, 99899, 12109 ]
+
+</code></pre>
+
 <h2 id="embedded-documents-versus-collections">Embedded documents versus collections</h2>
 
 <p>This depends on the data characteristics and should be designed such that all the necessary data could be accessed with a single query.</p>
@@ -700,7 +897,6 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
 
           
 
-
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tags/nosql/">NoSQL</a>
@@ -713,10 +909,47 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
 
 
 
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/docs/linux-notes/" rel="next">Linux notes</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/docs/quotes/" rel="prev">quotes</a>
+  </div>
+  
+</div>
+
+          </div>
+          
         </div>
 
         <div class="body-footer">
-          Last updated on Jul 6, 2019
+          <p>Last updated on Jul 13, 2019</p>
+
+          
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/docs/nosql-mongodb-notes.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
         </div>
 
       </article>
@@ -725,7 +958,7 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
   
 
   <p class="powered-by">
-    &copy; 2018 &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -740,28 +973,37 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
   </div>
 </div>
 
+
+      
+
+    
     
 
     
     
     
-    <script src="/js/mathjax-config.js"></script>
-    
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/lisp.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/emacs-lisp.min.js"></script>
+        
       
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+
+      
       
     
 
@@ -770,22 +1012,18 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
 
     
     
-    
-    <script id="dsq-count-scr" src="//shreyasragavan.disqus.com/count.js" async></script>
-    
-
-    
+    <script>hljs.initHighlightingOnLoad();</script>
     
 
+    
+    
+    
+    
     
     
     <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "results found",
-        'no_results': "No results found"
-      };
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
       const content_type = {
         'post': "Posts",
         'project': "Projects",
@@ -829,17 +1067,58 @@ db.one2onecoll1.find<span style="color:#f92672">()</span></code></pre></div>
 
     
     
+
     
     
     
     
     
     
-    <script src="/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
 
     
 
-  </body>
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
-
-

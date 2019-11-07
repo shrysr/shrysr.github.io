@@ -1,33 +1,784 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>project on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/categories/project/</link>
-    <description>Recent content in project on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 22 Sep 2019 08:43:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Bash scripting to compare chat logs of an IRC channel</title>
-      <link>https://shrysr.github.io/project/bash-scripting-mini-project/</link>
-      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/bash-scripting-mini-project/</guid>
-      <description>Table of Contents  Summary Preliminary notes: Plan Simple case Including variables for url prefix, start id and end id Figuring out a larger range  Implementing a simple conditional statement Implementing the for loop for a range &amp;gt; 500 Adding some functions and other minor streamlining  Enabling the script to be called with parameters Comparing logs for range 9998683 to 1000000 Concluding remarks References</description>
-    </item>
+    <title>project | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/categories/project/</link>
+      <atom:link href="https://shreyas.ragavan.co/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>project</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 14:27:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>project</title>
+      <link>https://shreyas.ragavan.co/categories/project/</link>
+    </image>
     
     <item>
       <title>Federal R&amp;D Spending on climate change</title>
-      <link>https://shrysr.github.io/project/tt-fed-rnd-spending/</link>
+      <link>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</link>
       <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/tt-fed-rnd-spending/</guid>
-      <description>Summary This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.</description>
+      <guid>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</guid>
+      <description>
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shrysr/sr-tidytuesday&#34; target=&#34;_blank&#34;&gt;Github Repo&lt;/a&gt; of Tidy Tuesday explorations&lt;/li&gt;
+&lt;li&gt;Tidy tuesday dataset: &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Data Dictionary &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12#data-dictionary&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viz &lt;a href=&#34;https://twitter.com/ShreyasRagavan/status/1100765886892265472&#34; target=&#34;_blank&#34;&gt;posted on Twitter&lt;/a&gt; to participate in TidyTuesday.&lt;/li&gt;
+&lt;li&gt;Tools used: ESS, Org mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/scripts/tt1-fed-rnd.R&#34;&gt;Download R script&lt;/a&gt; : this is the entire script below.&lt;/p&gt;
+
+&lt;h2 id=&#34;loading-libraries&#34;&gt;Loading libraries&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;easypackages&lt;/code&gt; library allows quickly installing and loading multiple packages. &lt;em&gt;Note: Uncomment the appropriate line if this library needs to be installed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Loading libraries
+                                        # install.packages(&amp;quot;easypackages&amp;quot;)
+library(&amp;quot;easypackages&amp;quot;)
+libraries(&amp;quot;tidyverse&amp;quot;, &amp;quot;tidyquant&amp;quot;, &amp;quot;DataExplorer&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-org&#34;&gt;
+All packages loaded successfully
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;reading-in-the-data&#34;&gt;Reading in the data&lt;/h2&gt;
+
+&lt;p&gt;Since this is a small dataset, the data can be read in directly from Github into memory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Reading in data directly from github
+climate_spend_raw  &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-02-12/climate_spending.csv&amp;quot;, col_types = &amp;quot;cin&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;exploring-the-data&#34;&gt;Exploring the data&lt;/h2&gt;
+
+&lt;p&gt;We have 6 departments, and the remaining departments are lumped together as &amp;lsquo;All Other&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;The data is available for the years 2000 to 2017.&lt;/p&gt;
+
+&lt;p&gt;The above can be found using the &lt;code&gt;unique&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_raw$department %&amp;gt;% unique()
+climate_spend_raw$year %&amp;gt;% unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;[1] &amp;quot;NASA&amp;quot;            &amp;quot;NSF&amp;quot;             &amp;quot;Commerce (NOAA)&amp;quot; &amp;quot;Energy&amp;quot;
+[5] &amp;quot;Agriculture&amp;quot;     &amp;quot;Interior&amp;quot;        &amp;quot;All Other&amp;quot;
+
+ [1] 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014
+[16] 2015 2016 2017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some Notes on the data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have the following columns:
+
+&lt;ul&gt;
+&lt;li&gt;name of the department. (chr)&lt;/li&gt;
+&lt;li&gt;year (int)&lt;/li&gt;
+&lt;li&gt;spending (double)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The data is relatively clean. However some manipulation is required to summarise the department wise spending.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An overview of missing data can be easily scrutinised using the &lt;code&gt;plot_intro&lt;/code&gt; command, and actual numbers can be extracted using &lt;code&gt;introduce&lt;/code&gt;. These functions are from the &lt;code&gt;DataExplorer&lt;/code&gt; package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;##plot_str(climate_spend_raw, type = &#39;r&#39;)
+plot_intro(climate_spend_raw)
+##introduce(climate_spend_raw)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; &gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;There are no missing values or NA&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;For a quick look at the outliers, we can use a boxplot, using DataExplorer&amp;rsquo;s functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;variance_climate_spend &amp;lt;- plot_boxplot(climate_spend_raw, by = &amp;quot;year&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; data-caption=&#34;Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;data-conditioning&#34;&gt;Data Conditioning&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note: this initial conditioning need not have involved the date manipulation, as the year extracted from a date object is still a double.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned &amp;lt;- climate_spend_raw %&amp;gt;%
+  mutate(year_dt = str_glue(&amp;quot;{year}-01-01&amp;quot;)) %&amp;gt;%
+  mutate(year_dt = as.Date(year_dt)) %&amp;gt;%
+  mutate(test_median = median(gcc_spending)) %&amp;gt;%
+  mutate(gcc_spending_txt = scales::dollar(gcc_spending,
+                                           scale = 1e-09,
+                                           suffix = &amp;quot;B&amp;quot;
+                                           )
+         )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Applying some summary statistics to calculate the total spend per department, per year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Total spend per department per year
+climate_spend_dept_y &amp;lt;- climate_spend_conditioned %&amp;gt;%
+  group_by(department, year_dt = year(year_dt)) %&amp;gt;%
+  summarise(
+    tot_spend_dept_y = sum(gcc_spending)) %&amp;gt;%
+  mutate(tot_spend_dept_y_txt = tot_spend_dept_y %&amp;gt;%
+           scales::dollar(scale = 1e-09,
+                          suffix = &amp;quot;B&amp;quot;)
+         ) %&amp;gt;%
+  ungroup()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lets see how much money has been budgeted in each department towards R&amp;amp;D in climate change from 2000 to 2017.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned %&amp;gt;%
+  select(-c(gcc_spending_txt, year_dt)) %&amp;gt;%
+  group_by(department) %&amp;gt;%
+  summarise(total_spend_y = sum(gcc_spending)) %&amp;gt;%
+  arrange(desc(total_spend_y)) %&amp;gt;%
+  mutate(total_spend_y = total_spend_y %&amp;gt;% scales::dollar(scale = 1e-09,
+                                                        suffix = &amp;quot;B&amp;quot;,
+                                                        prefix = &amp;quot;$&amp;quot;)
+       )
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Department&lt;/th&gt;
+&lt;th&gt;Total Spend from 2000-2017&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NASA&lt;/td&gt;
+&lt;td&gt;$25.77B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Commerce (NOAA)&lt;/td&gt;
+&lt;td&gt;$5.28B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;NSF&lt;/td&gt;
+&lt;td&gt;$5.26B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Energy&lt;/td&gt;
+&lt;td&gt;$3.32B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Agriculture&lt;/td&gt;
+&lt;td&gt;$1.63B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;All Other&lt;/td&gt;
+&lt;td&gt;$1.54B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Interior&lt;/td&gt;
+&lt;td&gt;$0.86B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It is clear from here that the outlier department is NASA. Further exploration would be needed to understand the function of each department and the justification of this expenditure and the skew. &lt;em&gt;For example, one might think the Interior department would not be able to produce R&amp;amp;D superior to NASA/NSF.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;function-to-plot-a-facet-grid-of-the-department-spending&#34;&gt;Function to plot a facet grid of the department spending&lt;/h2&gt;
+
+&lt;p&gt;By using a function to complete the plot, the plot can be easily repeated for any range of years. It can also work for a single year.&lt;/p&gt;
+
+&lt;p&gt;The function below takes the following arguments:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The range of the years we want to look into , example 2005-2010&lt;/li&gt;
+&lt;li&gt;The number of columns in the facet wrap plot.&lt;/li&gt;
+&lt;li&gt;The caption that consititues the observation from the plots and anything else.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The title of the plot includes the year range that is input above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn &amp;lt;- function(
+                                 data,
+                                 y_range_low = 2000,
+                                 y_range_hi  = 2010,
+                                 ncol = 3,
+                                 caption = &amp;quot;&amp;quot;
+                                 )
+{
+
+  plot_title  &amp;lt;- str_glue(&amp;quot;Federal R&amp;amp;D budget towards Climate Change: {y_range_low}-{y_range_hi}&amp;quot;)
+
+  data %&amp;gt;%
+  filter(year_dt &amp;gt;= y_range_low &amp;amp; year_dt &amp;lt;= y_range_hi) %&amp;gt;%
+  ggplot(aes(y = tot_spend_dept_y_txt, x = department, fill = department ))+
+  geom_col() +
+  facet_wrap(~ year_dt,
+             ncol = 3,
+             scales = &amp;quot;free_y&amp;quot;
+             ) +
+  #scale_y_continuous(breaks = scales::pretty_breaks(10)) +
+  theme_tq() +
+  scale_fill_tq(theme = &amp;quot;dark&amp;quot;) +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                               hjust = 1.2),
+    legend.position = &amp;quot;none&amp;quot;,
+    plot.background=element_rect(fill=&amp;quot;#f7f7f7&amp;quot;),
+    ) +
+  labs(
+    title = plot_title,
+    x = &amp;quot;Department&amp;quot;,
+    y = &amp;quot;Total Budget $ Billion&amp;quot;,
+    subtitle = &amp;quot;NASA literally dwarfs all the other departments, getting to spend upwards of 1.1 Billion dollars every year since 2000.&amp;quot;,
+    caption = caption
+  )
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;visualizing-department-wise-spending-over-the-years&#34;&gt;Visualizing department-wise spending over the years&lt;/h2&gt;
+
+&lt;p&gt;Calling the function and passing in the entire date (year) range of 2000-2010. Note that for a single year, have both the arguments &lt;code&gt;y_range_low&lt;/code&gt; and &lt;code&gt;y_range_high&lt;/code&gt; equal to the same year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2000,
+                     y_range_hi = 2010,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; data-caption=&#34;Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2011,
+                     y_range_hi = 2017,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; data-caption=&#34;Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;some-concluding-statements&#34;&gt;Some Concluding statements&lt;/h2&gt;
+
+&lt;p&gt;NASA has the highest R&amp;amp;D budget allocation towards climate change, and one that is significantly higher than all the other departments put together. The median spending on R&amp;amp;D towards climate change has been increasing over the years, which is a good sign considering the importance of the problem. Some further explorations could be along the lines of the percentage change in spending per department every year, and the proportion of each department in terms of percentage for each year.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bash scripting to compare chat logs of an IRC channel</title>
+      <link>https://shreyas.ragavan.co/project/bash-scripting-irc-logs/</link>
+      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/project/bash-scripting-irc-logs/</guid>
+      <description>
+
+&lt;div class=&#34;ox-hugo-toc toc&#34;&gt;
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div class=&#34;heading&#34;&gt;Table of Contents&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#preliminary-notes&#34;&gt;Preliminary notes:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plan&#34;&gt;Plan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#simple-case&#34;&gt;Simple case&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#concluding-remarks&#34;&gt;Concluding remarks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;!--endtoc--&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This project is an exploration of BASH scripting utilising &lt;code&gt;cURL&lt;/code&gt; and &lt;code&gt;diff&lt;/code&gt; to extract chat logs of an IRC channel and quickly compare the contents to check for any discrepancies. Several new concepts were learned, including defining variables, for loops, conditionals and making temporary files. The gradual build up in complexity is shown and has the benefit that that report can serve as a simple tutorial in BASH scripting.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/scripts/bash-log-compare.sh&#34;&gt;Download the script&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;preliminary-notes&#34;&gt;Preliminary notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The raw knob can be used to extract the text of the logs. The raw mechanism will spit out a maximum of 500 lines.
+
+&lt;ul&gt;
+&lt;li&gt;i.e if a user provides a large range of id&amp;rsquo;s - this will have to be split into batches of 500 lines.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;W.r.t diff the focus will be on id &amp;lt; 1000,000.&lt;/li&gt;
+&lt;li&gt;My initial idea to use R and connect to the db snapshot was an example of an unnecessarily bloated solution when readily available bash + curl + diff can do the job.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;plan&#34;&gt;Plan&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a simple case:
+
+&lt;ol&gt;
+&lt;li&gt;Use curl on raw knob links from each box &amp;gt; write this to a text file.&lt;/li&gt;
+&lt;li&gt;Use diff to compare the text files.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Include variables to substitute start id and end id.&lt;/li&gt;
+&lt;li&gt;Strategy for a id range above 500&lt;/li&gt;
+&lt;li&gt;Enable providing arguments (url(s), startid and endid) to supply to the bash script so it can be invoked easily from the command line.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;simple-case&#34;&gt;Simple case&lt;/h2&gt;
+
+&lt;p&gt;Beginning with manually using curl.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!bin/bash
+
+curl &amp;quot;http://logs.ossasepia.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;quot; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quick test of diffing post 1,000,000 id&amp;rsquo;s.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+
+curl &amp;quot;http://logs.ossasepia.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;quot; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;After a few hours of head-banging using istart= 995000 and iend= 995500 - I realised that these do not exist in the ossasepia log, and I had the syntax right in my first attempt.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=1001700
+endid=1001900
+
+curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So far, so good. Now comes the &lt;em&gt;relatively&lt;/em&gt; tricky part: extending the above to cover more than 500 lines. This will need some conditionals and a for loop thrown in for dealing with a large range.&lt;/p&gt;
+
+&lt;h2 id=&#34;figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/h2&gt;
+
+&lt;p&gt;Strategy:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Obtain a startid and endid (i.e &lt;code&gt;istart&lt;/code&gt; and &lt;code&gt;iend&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If (endid-startid &amp;lt;= 500) - go ahead with directly using curl and diff.&lt;/li&gt;
+&lt;li&gt;If endid-startid &amp;gt; 500
+
+&lt;ol&gt;
+&lt;li&gt;divide the number of lines by 500. Obtain the quotient and remainder.&lt;/li&gt;
+&lt;li&gt;Use the quotient in a for loop as the number of times the internal startidi is incremented by 500.&lt;/li&gt;
+&lt;li&gt;the internal endidi is subtracted by 1 to account for duplication of lines.&lt;/li&gt;
+&lt;li&gt;Subtract the remainder from original endid to extract the last portion.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=999700
+endid=999900
+rangelimit=500
+
+let subtrid=endid-startid
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;quot;
+    curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+else
+    echo &amp;quot;Lines &amp;gt; 500. Additional calcs required.&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=1001900
+endid=1002900
+rangelimit=500
+
+let subtrid=endid-startid
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;quot;
+    curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+else
+    echo &amp;quot;Lines &amp;gt; 500. Entering Loop to split the range into batches of 500 lines.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo $quotient
+    echo $remainder
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo $startidi
+	echo $endidi
+	curl &amp;quot;${urlPrefix1}?istart=${startidi}&amp;amp;iend=${endidi}&amp;quot; &amp;gt;&amp;gt; ~/temp/log-test.txt
+	curl &amp;quot;${urlPrefix2}?istart=${startidi}&amp;amp;iend=${endidi}&amp;quot; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    done
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo $portionstartid
+    curl &amp;quot;${urlPrefix1}?istart=${portionstartid}&amp;amp;iend=${endid}&amp;quot; &amp;gt;&amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${portionstartid}&amp;amp;iend=${endid}&amp;quot; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above has been tested to work across a range of start and end ID&amp;rsquo;s.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;function to check the output of curl as well as diff if empty.&lt;/li&gt;
+&lt;li&gt;curl operations put into a function since repeated.&lt;/li&gt;
+&lt;li&gt;Streamlined echo outputs to be more neat.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=&amp;quot;1001900&amp;quot;
+endid=&amp;quot;1003700&amp;quot;
+log1_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log1&amp;quot;)
+log2_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log2&amp;quot;)
+diff_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).difflog&amp;quot;)
+rangelimit=500
+
+let subtrid=endid-startid
+
+function check_output {
+    echo &amp;quot;Log1 curl output is at $log1_file&amp;quot;
+    echo &amp;quot;Log2 curl output is at $log2_file&amp;quot;
+    echo &amp;quot;diff output is at $diff_file&amp;quot;
+
+    if [ ! -s $1 ] || [ ! -s $2 ]
+    then
+	echo &amp;quot;Atleast One curl output returned nothing.&amp;quot;
+    fi
+
+    if [ -s $3 ]
+    then
+	echo &amp;quot;Diff file is not empty. Logs not equal&amp;quot;
+    else
+	echo &amp;quot;Diff file is empty.&amp;quot;
+    fi
+}
+
+function curler {
+    curl &amp;quot;${1}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log1_file
+    curl &amp;quot;${2}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log2_file
+}
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= $rangelimit. Proceeding to curl and diff.&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+else
+    echo &amp;quot;Lines &amp;gt; $rangelimit. Looping to split the range into batches.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo &amp;quot;Batches of $rangelimit lines = $quotient. Remaining lines = $remainder&amp;quot;
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo &amp;quot;istart is $startidi and iend is $endidi&amp;quot;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    done
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo &amp;quot;Last portion istart is $portionstartid&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=$1
+urlPrefix2=$2
+startid=$3
+endid=$4
+log1_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log1&amp;quot;)
+log2_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log2&amp;quot;)
+diff_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).difflog&amp;quot;)
+rangelimit=500
+
+let subtrid=endid-startid
+
+function check_output {
+    echo &amp;quot;Log1 curl output is at $log1_file&amp;quot;
+    echo &amp;quot;Log2 curl output is at $log2_file&amp;quot;
+    echo &amp;quot;diff output is at $diff_file&amp;quot;
+
+    if [ ! -s $1 ] || [ ! -s $2 ]
+    then
+	echo &amp;quot;Atleast One curl output returned nothing.&amp;quot;
+    fi
+
+    if [ -s $3 ]
+    then
+	echo &amp;quot;Diff file is not empty. Logs not equal&amp;quot;
+    else
+	echo &amp;quot;Diff file is empty.&amp;quot;
+    fi
+}
+
+function curler {
+    curl &amp;quot;${1}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log1_file
+    curl &amp;quot;${2}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log2_file
+}
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= $rangelimit. Proceeding to curl and diff.&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+else
+    echo &amp;quot;Lines &amp;gt; $rangelimit. Looping to split the range into batches.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo &amp;quot;Batches of $rangelimit lines = $quotient. Remaining lines = $remainder&amp;quot;
+
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo &amp;quot;istart is $startidi and iend is $endidi&amp;quot;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    done
+
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo &amp;quot;Last portion istart is $portionstartid&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above script, if saved as &lt;code&gt;~/temp/log-bash-curl-diff.sh&lt;/code&gt; can be called as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot; &amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot; 1001900 1003700
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 3. Remaining lines = 300
+istart is 1001900 and iend is 1002399
+istart is 1002400 and iend is 1002899
+istart is 1002900 and iend is 1003399
+Last portion istart is 1003400
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.log1.yr48rDlW
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.log2.HyeiemV2
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.difflog.2wwXVY5v
+Diff file is not empty. Logs not equal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;998683 is the beginning of the ossasepia log.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot; &amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot; &amp;quot;998683&amp;quot; &amp;quot;1000000&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 2. Remaining lines = 317
+istart is 998683 and iend is 999182
+istart is 999183 and iend is 999682
+Last portion istart is 999683
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.log1.yPvV0Ioc
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.log2.dNQbsvXR
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.difflog.eN97q0Bv
+Diff file is not empty. Logs not equal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;concluding-remarks&#34;&gt;Concluding remarks&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a neat little bash script is constructed which will retrieve content from 2 specified URL&amp;rsquo;s and diff the output. Particularly, the script was constructed to compare the #o logs on logs.ossasepia.com and logs.nosuchlabs.com&lt;/li&gt;
+&lt;li&gt;functions, conditionals, loops, for bash were learned and deployed, along with using curl and diff.&lt;/li&gt;
+&lt;li&gt;Retrieving a large number of lines will take some time and is also dependent on the internet speed. The curl/diff files will be empty if the lines are non-existent.&lt;/li&gt;
+&lt;li&gt;Diff results of the logs from line 9998683 to 1000000 indicates there are no missing lines.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;check_output&lt;/code&gt; function only checks if the files are empty. It does not account for curl retrieving error messages.&lt;/li&gt;
+&lt;li&gt;In a batch retrieval - the final curl output is checked whether empty. It does not account for empty retrievals for a particular batch.&lt;/li&gt;
+&lt;li&gt;overflow/underflow is not accounted for in this script.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script&#34; target=&#34;_blank&#34;&gt;Unix SE discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash&#34; target=&#34;_blank&#34;&gt;SO discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some general references for the bash syntax used above.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

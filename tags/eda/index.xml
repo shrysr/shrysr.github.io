@@ -1,24 +1,390 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>EDA on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/eda/</link>
-    <description>Recent content in EDA on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 01 Nov 2019 14:27:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/eda/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>EDA | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/eda/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/eda/index.xml" rel="self" type="application/rss+xml" />
+    <description>EDA</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 14:27:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>EDA</title>
+      <link>https://shreyas.ragavan.co/tags/eda/</link>
+    </image>
     
     <item>
       <title>Federal R&amp;D Spending on climate change</title>
-      <link>https://shrysr.github.io/project/tt-fed-rnd-spending/</link>
+      <link>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</link>
       <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/tt-fed-rnd-spending/</guid>
-      <description>Summary This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.</description>
+      <guid>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</guid>
+      <description>
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shrysr/sr-tidytuesday&#34; target=&#34;_blank&#34;&gt;Github Repo&lt;/a&gt; of Tidy Tuesday explorations&lt;/li&gt;
+&lt;li&gt;Tidy tuesday dataset: &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Data Dictionary &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12#data-dictionary&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viz &lt;a href=&#34;https://twitter.com/ShreyasRagavan/status/1100765886892265472&#34; target=&#34;_blank&#34;&gt;posted on Twitter&lt;/a&gt; to participate in TidyTuesday.&lt;/li&gt;
+&lt;li&gt;Tools used: ESS, Org mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/scripts/tt1-fed-rnd.R&#34;&gt;Download R script&lt;/a&gt; : this is the entire script below.&lt;/p&gt;
+
+&lt;h2 id=&#34;loading-libraries&#34;&gt;Loading libraries&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;easypackages&lt;/code&gt; library allows quickly installing and loading multiple packages. &lt;em&gt;Note: Uncomment the appropriate line if this library needs to be installed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Loading libraries
+                                        # install.packages(&amp;quot;easypackages&amp;quot;)
+library(&amp;quot;easypackages&amp;quot;)
+libraries(&amp;quot;tidyverse&amp;quot;, &amp;quot;tidyquant&amp;quot;, &amp;quot;DataExplorer&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-org&#34;&gt;
+All packages loaded successfully
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;reading-in-the-data&#34;&gt;Reading in the data&lt;/h2&gt;
+
+&lt;p&gt;Since this is a small dataset, the data can be read in directly from Github into memory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Reading in data directly from github
+climate_spend_raw  &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-02-12/climate_spending.csv&amp;quot;, col_types = &amp;quot;cin&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;exploring-the-data&#34;&gt;Exploring the data&lt;/h2&gt;
+
+&lt;p&gt;We have 6 departments, and the remaining departments are lumped together as &amp;lsquo;All Other&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;The data is available for the years 2000 to 2017.&lt;/p&gt;
+
+&lt;p&gt;The above can be found using the &lt;code&gt;unique&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_raw$department %&amp;gt;% unique()
+climate_spend_raw$year %&amp;gt;% unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;[1] &amp;quot;NASA&amp;quot;            &amp;quot;NSF&amp;quot;             &amp;quot;Commerce (NOAA)&amp;quot; &amp;quot;Energy&amp;quot;
+[5] &amp;quot;Agriculture&amp;quot;     &amp;quot;Interior&amp;quot;        &amp;quot;All Other&amp;quot;
+
+ [1] 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014
+[16] 2015 2016 2017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some Notes on the data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have the following columns:
+
+&lt;ul&gt;
+&lt;li&gt;name of the department. (chr)&lt;/li&gt;
+&lt;li&gt;year (int)&lt;/li&gt;
+&lt;li&gt;spending (double)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The data is relatively clean. However some manipulation is required to summarise the department wise spending.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An overview of missing data can be easily scrutinised using the &lt;code&gt;plot_intro&lt;/code&gt; command, and actual numbers can be extracted using &lt;code&gt;introduce&lt;/code&gt;. These functions are from the &lt;code&gt;DataExplorer&lt;/code&gt; package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;##plot_str(climate_spend_raw, type = &#39;r&#39;)
+plot_intro(climate_spend_raw)
+##introduce(climate_spend_raw)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; &gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;There are no missing values or NA&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;For a quick look at the outliers, we can use a boxplot, using DataExplorer&amp;rsquo;s functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;variance_climate_spend &amp;lt;- plot_boxplot(climate_spend_raw, by = &amp;quot;year&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; data-caption=&#34;Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;data-conditioning&#34;&gt;Data Conditioning&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note: this initial conditioning need not have involved the date manipulation, as the year extracted from a date object is still a double.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned &amp;lt;- climate_spend_raw %&amp;gt;%
+  mutate(year_dt = str_glue(&amp;quot;{year}-01-01&amp;quot;)) %&amp;gt;%
+  mutate(year_dt = as.Date(year_dt)) %&amp;gt;%
+  mutate(test_median = median(gcc_spending)) %&amp;gt;%
+  mutate(gcc_spending_txt = scales::dollar(gcc_spending,
+                                           scale = 1e-09,
+                                           suffix = &amp;quot;B&amp;quot;
+                                           )
+         )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Applying some summary statistics to calculate the total spend per department, per year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Total spend per department per year
+climate_spend_dept_y &amp;lt;- climate_spend_conditioned %&amp;gt;%
+  group_by(department, year_dt = year(year_dt)) %&amp;gt;%
+  summarise(
+    tot_spend_dept_y = sum(gcc_spending)) %&amp;gt;%
+  mutate(tot_spend_dept_y_txt = tot_spend_dept_y %&amp;gt;%
+           scales::dollar(scale = 1e-09,
+                          suffix = &amp;quot;B&amp;quot;)
+         ) %&amp;gt;%
+  ungroup()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lets see how much money has been budgeted in each department towards R&amp;amp;D in climate change from 2000 to 2017.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned %&amp;gt;%
+  select(-c(gcc_spending_txt, year_dt)) %&amp;gt;%
+  group_by(department) %&amp;gt;%
+  summarise(total_spend_y = sum(gcc_spending)) %&amp;gt;%
+  arrange(desc(total_spend_y)) %&amp;gt;%
+  mutate(total_spend_y = total_spend_y %&amp;gt;% scales::dollar(scale = 1e-09,
+                                                        suffix = &amp;quot;B&amp;quot;,
+                                                        prefix = &amp;quot;$&amp;quot;)
+       )
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Department&lt;/th&gt;
+&lt;th&gt;Total Spend from 2000-2017&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NASA&lt;/td&gt;
+&lt;td&gt;$25.77B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Commerce (NOAA)&lt;/td&gt;
+&lt;td&gt;$5.28B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;NSF&lt;/td&gt;
+&lt;td&gt;$5.26B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Energy&lt;/td&gt;
+&lt;td&gt;$3.32B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Agriculture&lt;/td&gt;
+&lt;td&gt;$1.63B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;All Other&lt;/td&gt;
+&lt;td&gt;$1.54B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Interior&lt;/td&gt;
+&lt;td&gt;$0.86B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It is clear from here that the outlier department is NASA. Further exploration would be needed to understand the function of each department and the justification of this expenditure and the skew. &lt;em&gt;For example, one might think the Interior department would not be able to produce R&amp;amp;D superior to NASA/NSF.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;function-to-plot-a-facet-grid-of-the-department-spending&#34;&gt;Function to plot a facet grid of the department spending&lt;/h2&gt;
+
+&lt;p&gt;By using a function to complete the plot, the plot can be easily repeated for any range of years. It can also work for a single year.&lt;/p&gt;
+
+&lt;p&gt;The function below takes the following arguments:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The range of the years we want to look into , example 2005-2010&lt;/li&gt;
+&lt;li&gt;The number of columns in the facet wrap plot.&lt;/li&gt;
+&lt;li&gt;The caption that consititues the observation from the plots and anything else.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The title of the plot includes the year range that is input above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn &amp;lt;- function(
+                                 data,
+                                 y_range_low = 2000,
+                                 y_range_hi  = 2010,
+                                 ncol = 3,
+                                 caption = &amp;quot;&amp;quot;
+                                 )
+{
+
+  plot_title  &amp;lt;- str_glue(&amp;quot;Federal R&amp;amp;D budget towards Climate Change: {y_range_low}-{y_range_hi}&amp;quot;)
+
+  data %&amp;gt;%
+  filter(year_dt &amp;gt;= y_range_low &amp;amp; year_dt &amp;lt;= y_range_hi) %&amp;gt;%
+  ggplot(aes(y = tot_spend_dept_y_txt, x = department, fill = department ))+
+  geom_col() +
+  facet_wrap(~ year_dt,
+             ncol = 3,
+             scales = &amp;quot;free_y&amp;quot;
+             ) +
+  #scale_y_continuous(breaks = scales::pretty_breaks(10)) +
+  theme_tq() +
+  scale_fill_tq(theme = &amp;quot;dark&amp;quot;) +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                               hjust = 1.2),
+    legend.position = &amp;quot;none&amp;quot;,
+    plot.background=element_rect(fill=&amp;quot;#f7f7f7&amp;quot;),
+    ) +
+  labs(
+    title = plot_title,
+    x = &amp;quot;Department&amp;quot;,
+    y = &amp;quot;Total Budget $ Billion&amp;quot;,
+    subtitle = &amp;quot;NASA literally dwarfs all the other departments, getting to spend upwards of 1.1 Billion dollars every year since 2000.&amp;quot;,
+    caption = caption
+  )
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;visualizing-department-wise-spending-over-the-years&#34;&gt;Visualizing department-wise spending over the years&lt;/h2&gt;
+
+&lt;p&gt;Calling the function and passing in the entire date (year) range of 2000-2010. Note that for a single year, have both the arguments &lt;code&gt;y_range_low&lt;/code&gt; and &lt;code&gt;y_range_high&lt;/code&gt; equal to the same year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2000,
+                     y_range_hi = 2010,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; data-caption=&#34;Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2011,
+                     y_range_hi = 2017,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; data-caption=&#34;Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;some-concluding-statements&#34;&gt;Some Concluding statements&lt;/h2&gt;
+
+&lt;p&gt;NASA has the highest R&amp;amp;D budget allocation towards climate change, and one that is significantly higher than all the other departments put together. The median spending on R&amp;amp;D towards climate change has been increasing over the years, which is a good sign considering the importance of the problem. Some further explorations could be along the lines of the percentage change in spending per department every year, and the proportion of each department in terms of percentage for each year.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,26 +1,419 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/tags/docker/</link>
-    <description>Recent content in Docker on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 11 Jul 2019 14:33:26 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Docker | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/tags/docker/</link>
+      <atom:link href="https://shreyas.ragavan.co/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <description>Docker</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 11 Jul 2019 14:33:26 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Docker</title>
+      <link>https://shreyas.ragavan.co/tags/docker/</link>
+    </image>
     
     <item>
       <title>Notes on Docker</title>
-      <link>https://shrysr.github.io/docs/docker-notes/</link>
+      <link>https://shreyas.ragavan.co/docs/docker-notes/</link>
       <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/docker-notes/</guid>
-      <description>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
-This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
-TODO What is Docker A brief summary of what Docker is all about.</description>
+      <guid>https://shreyas.ragavan.co/docs/docker-notes/</guid>
+      <description>
+
+&lt;p&gt;Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are &lt;a href=&#34;https://towardsdatascience.com/learn-enough-docker-to-be-useful-b7ba70caeb4b&#34; target=&#34;_blank&#34;&gt;several&lt;/a&gt; &lt;a href=&#34;https://towardsdatascience.com/docker-for-data-scientists-5732501f0ba4&#34; target=&#34;_blank&#34;&gt;articles&lt;/a&gt; which have great introductions and examples of using docker in data science&lt;/p&gt;
+
+&lt;p&gt;This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-docker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; What is Docker&lt;/h2&gt;
+
+&lt;p&gt;A brief summary of what Docker is all about.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The main idea: disposable buckets of code that can do a specific task and either exit or run indefinitely.
+
+&lt;ol&gt;
+&lt;li&gt;The task / purpose of the container could even be a single command. Like &lt;code&gt;pwd&lt;/code&gt;, which is piped into another container.&lt;/li&gt;
+&lt;li&gt;In a way this is an extension of the Unix philosophy of small tools that can do a single task well (i.e reliably).&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;These buckets of code can be connected with each other and also stacked on top of each other to form a pipeline.&lt;/li&gt;
+&lt;li&gt;These buckets of code are complete libraries&lt;/li&gt;
+&lt;li&gt;The buckets consist of images which can be launched as containers.&lt;/li&gt;
+&lt;li&gt;Docker images are stored in a registry. There are a number of registries, of which dockerhub is popular.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These schematics provide a good refresher of the core concept of Docker:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;ox-hugo/Container-vs-vm.png/&#34; data-caption=&#34;Containers versus VM&#34;&gt;
+&lt;img src=&#34;ox-hugo/Container-vs-vm.png/&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Containers versus VM
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;ox-hugo/engine-components-flow.png/&#34; data-caption=&#34;Docker Engine components&#34;&gt;
+&lt;img src=&#34;ox-hugo/engine-components-flow.png/&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Docker Engine components
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/ox-hugo/Container-vs-vm.png&#34;&gt;Containers versus VM&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/ox-hugo/engine-components-flow.png&#34;&gt;Engine Components&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dive-into-docker&#34;&gt;Dive into Docker&lt;/h3&gt;
+
+&lt;p&gt;This is an excellent course run by Nick Janatakis (&lt;a href=&#34;https://diveintodocker.com/?r=devto&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;), which enabled me to tie together various bits and pieces of knowledge I had about Docker. I would recommend this course for anybody starting out with Docker. A lot of the notes in this document were gathered while going through the course.&lt;/p&gt;
+
+&lt;h4 id=&#34;biggest-wins-of-docker&#34;&gt;Biggest wins of Docker&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;isolate and manage applications.&lt;/li&gt;
+&lt;li&gt;eg:  12 apps with 12 dependency sets.&lt;/li&gt;
+&lt;li&gt;VM : waste of resources.&lt;/li&gt;
+&lt;li&gt;Vagrant : lets you manage VM&amp;rsquo;s on the command line (including Docker)
+
+&lt;ul&gt;
+&lt;li&gt;Disk space occupied for each app is very high.&lt;/li&gt;
+&lt;li&gt;Overhead of system boot up and restart / killing is high.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker can be used to manage common dependencies.
+
+&lt;ul&gt;
+&lt;li&gt;Example of time frame: 2 seconds for loading 8 services.&lt;/li&gt;
+&lt;li&gt;Spinning up an entire stack is very fast, compared to a VM.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker: portability of applications and dev environment.&lt;/li&gt;
+&lt;li&gt;Dozens of scenarios where something works for you but not for me.&lt;/li&gt;
+&lt;li&gt;New dev environments can be discouraging. With all the libraries and dependencies already installed, it is possible to become aggressive with the actual development and experimenting with new technology.&lt;/li&gt;
+&lt;li&gt;Multiple versions of a programming language can be installed within a single docker container.&lt;/li&gt;
+&lt;li&gt;Smaller Microservices that talk to each other are not always good, but Docker enables this in a streamlined manner.&lt;/li&gt;
+&lt;li&gt;LXC: raw linux containers. Existed long before docker.
+
+&lt;ul&gt;
+&lt;li&gt;uses runC&lt;/li&gt;
+&lt;li&gt;very complicated and brittle system.&lt;/li&gt;
+&lt;li&gt;runs only on Linux.&lt;/li&gt;
+&lt;li&gt;LXC&amp;rsquo;s are still better than VM&amp;rsquo;s for rapid build and deploy.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ANSIBLE: what files and tools should be on a server (very basic definition)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;easy-ways-to-get-documentation-help&#34;&gt;Easy ways to get documentation help&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Just typing in &lt;code&gt;docker&lt;/code&gt; will provide a list of primary level commands that can be used.&lt;/li&gt;
+&lt;li&gt;For further flags, provide the primary command like &lt;code&gt;docker run --help&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The official documentation is a good resource.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Image: Setup of the virtual computer.&lt;/li&gt;
+&lt;li&gt;Container:  Instance of an image. Many containers can run with the same image.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;running-emacs-on-docker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Running Emacs on Docker&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2019-07-07 Sun 17:25] &lt;/span&gt;&lt;/span&gt; &lt;br /&gt;
+Matrix DS offers a viable alternative as a platform. However, a customised docker container with all my tools is a good way to reproduce my working environment and also share my work with the community.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2019-07-06 Sat 17:54] &lt;/span&gt;&lt;/span&gt; &lt;br /&gt;
+This needs to be evaluated. Today I have a vague idea : set up a docker container combining Rocker + data science at the command line + Scimax together. A separate layer could also cater to shiny apps.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/&#34; target=&#34;_blank&#34;&gt;https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Silex/docker-emacs&#34; target=&#34;_blank&#34;&gt;Silex - github&lt;/a&gt; : Also contains references to other kinds of Emacs docker containers&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;good-online-resources-for-rocker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Good Online resources for Rocker&lt;/h2&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;Introducing Rocker: Docker for R | R-Bloggers&lt;/li&gt;
+&lt;li&gt;Rocker: Using R on Docker - A Hands-On Introduction - useR2015_docker.Pdf&lt;/li&gt;
+&lt;li&gt;Jessie Frazelle&amp;rsquo;s Blog: Using an R Container for Analytical Models&lt;/li&gt;
+&lt;li&gt;ROcker Images - Wiki Github&lt;/li&gt;
+&lt;li&gt;Introduction to Docker - Paper&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Need to find a way to extract a bunch of links from the bookmark and directly available with org Mode.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Play with Docker &lt;a href=&#34;https://training.play-with-docker.com&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;introduction-to-rocker-technical-paper-link&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Introduction to Rocker - Technical paper &lt;a href=&#34;https://arxiv.org/pdf/1710.03675.pdf&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;note-on-docker-toolbox-versus-native-apps&#34;&gt;Note on Docker Toolbox versus Native apps&lt;/h3&gt;
+
+&lt;p&gt;The native Docker application uses the type 1 hypervisor (hyperkit for Mac OS and hyper-V for Windows). &lt;code&gt;docker-machine&lt;/code&gt; uses a virtualbox based hypervisor (type 2). This can also be specified while creating docker machines.&lt;/p&gt;
+
+&lt;p&gt;In general, the native applications have a better user experience and commands can be directly typed into the terminal. The native apps (on Windows/ Mac OS) are newer than the Docker toolbox, and are being actively developed by the Docker company to reach performance on par with the original virtualbox based Docker Toolbox approach.&lt;/p&gt;
+
+&lt;p&gt;Note that any performance lag depends on the application and as a thumb rule it may be better to start off with the native applications and switch to the toolbox when required.&lt;/p&gt;
+
+&lt;h3 id=&#34;installing-docker-on-debian&#34;&gt;Installing Docker on debian&lt;/h3&gt;
+
+&lt;p&gt;The docker repository has to be added first for being able to install docker. Detailed instructions are available at &lt;a href=&#34;https://docs.docker.com/install/linux/docker-ce/debian/&#34; target=&#34;_blank&#34;&gt;https://docs.docker.com/install/linux/docker-ce/debian/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A package is also available, and is probably the easiest method to install. Choose the appropriate version at:  &lt;a href=&#34;https://download.docker.com/linux/debian/dists/&#34; target=&#34;_blank&#34;&gt;https://download.docker.com/linux/debian/dists/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Manual version without using the package:&lt;/p&gt;
+
+&lt;p&gt;Adding Docker&amp;rsquo;s official GPG key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Searching that the key has been installed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-key fingerprint 0EBFCD88
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) &lt;a href=&#34;mailto:docker@docker.com&#34; target=&#34;_blank&#34;&gt;docker@docker.com&lt;/a&gt;
+sub   rsa4096 2017-02-22 [S]&lt;/p&gt;
+
+&lt;p&gt;Adding the stable Docker repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo add-apt-repository \
+   &amp;quot;deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update the package lists and now search for docker-ce. It should be available since the repository has been added and the list updated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Installing docker and necessary components. Note that the manual recommends removing any older installations if they exist.&lt;/p&gt;
+
+&lt;p&gt;Note from the manual that different versions of docker can be installed by including &lt;code&gt;sudo apt-get install docker-ce=VERSION=abcd&lt;/code&gt;. Therefore multiple versions can probably exist side by side.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get install docker-ce docker-compose docker-ce-cli containerd.io
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Creating a docker group and adding this to the sudoers list will enable running docker commands without using root privileges (&lt;code&gt;sudo&lt;/code&gt;). A logout will be necessary to have the changes take effect.&lt;/p&gt;
+
+&lt;p&gt;Note: Sometimes the &lt;code&gt;$USER&lt;/code&gt; variable does not seem to work. This can be replaced with your actual user name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo groupadd docker
+sudo usermod -aG docker $USER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To configure docker to start on boot, enable it as a service. The need to do this depends on how frequently you use docker commands.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;installing-docker-on-antergos-arch-linux&#34;&gt;Installing Docker on Antergos / Arch Linux&lt;/h3&gt;
+
+&lt;p&gt;Installation can be done via Pacman&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo pacman -S docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enable and start docker service.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo systemctl enable docker
+sudo systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add docker to the user&amp;rsquo;s group using &lt;code&gt;usermod&lt;/code&gt;. After adding this, a log-out is necessary. Note that $USER can be replaced with the output of &lt;code&gt;whoami&lt;/code&gt; in the shell if desired. If this step is not performed, each docker command will have to be executed with &lt;code&gt;Sudo&lt;/code&gt; elevation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo usermod -a -G docker $USER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;installing-docker-on-mac-os&#34;&gt;Installing Docker on Mac OS&lt;/h3&gt;
+
+&lt;p&gt;Docker can be downloaded as an app from the docker store :  &lt;a href=&#34;https://hub.docker.com/editions/community/docker-ce-desktop-mac&#34; target=&#34;_blank&#34;&gt;https://hub.docker.com/editions/community/docker-ce-desktop-mac&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On the Mac, the docker app has to be launched run first, and this will create a docker icon in the menu bar indicating the status of the docker machine. This launches the docker daemon, and then commands can be directly entered into the terminal.&lt;/p&gt;
+
+&lt;p&gt;Docker can also be installed using Brew:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew cask install docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This created an app in the Applications folder which has to be launched. However, it seems additional components are required to run Docker from the command Line. These are available via brew.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew install docker-compose docker-machine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;checking-the-installation&#34;&gt;Checking the installation&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker info
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Trying the hello world container as an additional check. Note the steps listed in the output, which is the typical process.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd ~/docker-test
+docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Checking &lt;code&gt;docker-compose&lt;/code&gt; version.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker-compose --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;general-notes-on-containers-and-images&#34;&gt;General notes on containers and images&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;images contain the entire filesystem and parameters needed to run the application.&lt;/li&gt;
+&lt;li&gt;When an image is run, a container is created.&lt;/li&gt;
+&lt;li&gt;containers are generally immutable and changes do not linger&lt;/li&gt;
+&lt;li&gt;One image can spawn any number of containers, simultaneously. Each container will be separate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;default-location-of-images&#34;&gt;Default location of images&lt;/h2&gt;
+
+&lt;p&gt;By default, on Antergos (Linux), the images are stored at &lt;code&gt;/var/lib/docker/&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo ls -al /var/lib/docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-version-and-info&#34;&gt;Docker version and info&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker --version
+docker info
+docker version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;listing-docker-containers-and-images&#34;&gt;Listing Docker containers and images&lt;/h2&gt;
+
+&lt;p&gt;List Docker Images&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker image ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List running Docker Containers&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List all docker containers (running and Stopped)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obtain only container ID&amp;rsquo;s  (All). This is useful to extract the container number alone. The &lt;code&gt;q&lt;/code&gt; argument stands for quiet.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -aq
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ropenscilabs.github.io/r-docker-tutorial&#34; target=&#34;_blank&#34;&gt;Ropenscilabs&lt;/a&gt; has a basic introduction to Docker, and the &lt;a href=&#34;https://docs.docker.com/get-started/part2/&#34; target=&#34;_blank&#34;&gt;Docker documentation&lt;/a&gt; is also a good place to start. A rocker specific introduction is available &lt;a href=&#34;https://github.com/BillMills/Rocker-tutorial/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If a local image is not found, docker will try to search and download the image from docker hub.&lt;/p&gt;
+
+&lt;p&gt;It is better to create a folder wherein the docker container will reside.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mkdir ~/docker-test/
+cd ~/docker-test
+docker --rm -p 8787:8787 rocker/tidyverse
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;--rm&lt;/code&gt; flag indicates the container will be deleted when the container is quite. The &lt;code&gt;-p&lt;/code&gt; flag denotes using a particular port.
+iner a
+Note that the interim messages and download progress are not shown in eshell.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.rocker-project.org/images/&#34; target=&#34;_blank&#34;&gt;Different rocker images&lt;/a&gt; are available, depending on the need to be served.&lt;/p&gt;
+
+&lt;h2 id=&#34;attaching-shells-t-and-interactive-containers-i&#34;&gt;Attaching shells &lt;code&gt;-t&lt;/code&gt; and Interactive containers &lt;code&gt;-i&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Example to run an ubuntu container and run bash interactively, by attaching a terminal to the container. This will login to Ubuntu and start bash.&lt;/p&gt;
+
+&lt;p&gt;An alternative option is to use alpine linux, which is a much smaller download.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker run -t -i ubuntu /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker run -ti alpine /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;running-a-detached-container&#34;&gt;Running a detached container&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;use the &lt;code&gt;-d&lt;/code&gt; flag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -al
+docker run -d ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;build-process-of-a-docker-image&#34;&gt;Build process of a docker image&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker commit&lt;/code&gt; : used to commit changes to a new image layer. This is a manual process. Commit has little place in the real world. Dockerfile is superior.&lt;/li&gt;
+&lt;li&gt;Dockerfile : blue print or recipe for creating a docker image. Each actionable step becomes a separate layer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Docker image : result of stacking up individual layers. Only the parts or layers that have changed are downloaded for a newer version of a specific image.&lt;/p&gt;
+
+&lt;p&gt;Scratch image: docker image with no base operating system&lt;/p&gt;
+
+&lt;h2 id=&#34;working-with-dockerfiles&#34;&gt;Working with dockerfiles&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sample or reference docker files can be saved as &amp;ldquo;dockerfile.finished&amp;rdquo; or with some other useful extension.&lt;/li&gt;
+&lt;li&gt;Dockerfiles are read top to bottom.&lt;/li&gt;
+&lt;li&gt;the first non-comment instruction should be &lt;code&gt;FROM&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FROM&lt;/code&gt; allows you import a docker image.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RUN&lt;/code&gt; : basically executes the specified commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WORKDIR&lt;/code&gt; : setting the desired working directory. This can be set or used multiple times in the same docker file.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

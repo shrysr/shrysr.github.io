@@ -1,166 +1,142 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/categories/</link>
-    <description>Recent content in Categories on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    
-	<atom:link href="https://shrysr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Categories | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/categories/</link>
+      <atom:link href="https://shreyas.ragavan.co/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 03 Nov 2019 07:04:34 -0700</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>https://shreyas.ragavan.co/categories/</link>
+    </image>
     
     <item>
-      <title>Data-Science</title>
-      <link>https://shrysr.github.io/categories/data-science/</link>
-      <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/data-science/</guid>
+      <title>Emacs</title>
+      <link>https://shreyas.ragavan.co/categories/emacs/</link>
+      <pubDate>Sun, 03 Nov 2019 07:04:34 -0700</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DataScience</title>
-      <link>https://shrysr.github.io/categories/datascience/</link>
-      <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://shrysr.github.io/categories/docker/</link>
-      <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/docker/</guid>
+      <link>https://shreyas.ragavan.co/categories/datascience/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/datascience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EDA</title>
-      <link>https://shrysr.github.io/categories/eda/</link>
+      <link>https://shreyas.ragavan.co/categories/eda/</link>
       <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/eda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emacs</title>
-      <link>https://shrysr.github.io/categories/emacs/</link>
-      <pubDate>Fri, 15 Mar 2019 11:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>https://shrysr.github.io/categories/general/</link>
-      <pubDate>Sat, 19 Jan 2019 19:37:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://shrysr.github.io/categories/linux/</link>
-      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NoSQL</title>
-      <link>https://shrysr.github.io/categories/nosql/</link>
-      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/nosql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Org-mode</title>
-      <link>https://shrysr.github.io/categories/org-mode/</link>
-      <pubDate>Sat, 13 Jul 2019 19:33:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/org-mode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Productivity</title>
-      <link>https://shrysr.github.io/categories/productivity/</link>
-      <pubDate>Sat, 19 Jan 2019 19:33:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/productivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://shrysr.github.io/categories/r/</link>
-      <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bash</title>
-      <link>https://shrysr.github.io/categories/bash/</link>
-      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://shrysr.github.io/categories/database/</link>
-      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>general</title>
-      <link>https://shrysr.github.io/categories/general/</link>
-      <pubDate>Sat, 19 Jan 2019 19:37:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>https</title>
-      <link>https://shrysr.github.io/categories/https/</link>
-      <pubDate>Wed, 24 Jul 2019 16:13:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://shrysr.github.io/categories/programming/</link>
-      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/programming/</guid>
+      <guid>https://shreyas.ragavan.co/categories/eda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>project</title>
-      <link>https://shrysr.github.io/categories/project/</link>
+      <link>https://shreyas.ragavan.co/categories/project/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://shreyas.ragavan.co/categories/r/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://shreyas.ragavan.co/categories/bash/</link>
       <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/categories/project/</guid>
+      <guid>https://shreyas.ragavan.co/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://shreyas.ragavan.co/categories/linux/</link>
+      <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>https</title>
+      <link>https://shreyas.ragavan.co/categories/https/</link>
+      <pubDate>Wed, 24 Jul 2019 16:13:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Org-mode</title>
+      <link>https://shreyas.ragavan.co/categories/org-mode/</link>
+      <pubDate>Sat, 13 Jul 2019 19:33:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://shreyas.ragavan.co/categories/productivity/</link>
+      <pubDate>Sat, 13 Jul 2019 19:33:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://shreyas.ragavan.co/categories/docker/</link>
+      <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data-Science</title>
+      <link>https://shreyas.ragavan.co/categories/data-science/</link>
+      <pubDate>Thu, 11 Jul 2019 11:21:36 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://shreyas.ragavan.co/categories/database/</link>
+      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NoSQL</title>
+      <link>https://shreyas.ragavan.co/categories/nosql/</link>
+      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/nosql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://shreyas.ragavan.co/categories/programming/</link>
+      <pubDate>Sat, 06 Jul 2019 12:12:19 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://shreyas.ragavan.co/categories/general/</link>
+      <pubDate>Sat, 26 Jan 2019 07:51:00 -0700</pubDate>
+      <guid>https://shreyas.ragavan.co/categories/general/</guid>
       <description></description>
     </item>
     

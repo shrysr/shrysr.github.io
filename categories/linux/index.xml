@@ -1,35 +1,652 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/categories/linux/</link>
-    <description>Recent content in Linux on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 22 Sep 2019 08:43:00 -0600</lastBuildDate>
-    
-	<atom:link href="https://shrysr.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Linux | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/categories/linux/</link>
+      <atom:link href="https://shreyas.ragavan.co/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linux</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 22 Sep 2019 08:43:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Linux</title>
+      <link>https://shreyas.ragavan.co/categories/linux/</link>
+    </image>
     
     <item>
       <title>Bash scripting to compare chat logs of an IRC channel</title>
-      <link>https://shrysr.github.io/project/bash-scripting-mini-project/</link>
+      <link>https://shreyas.ragavan.co/project/bash-scripting-irc-logs/</link>
       <pubDate>Sun, 22 Sep 2019 08:43:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/bash-scripting-mini-project/</guid>
-      <description>Table of Contents  Summary Preliminary notes: Plan Simple case Including variables for url prefix, start id and end id Figuring out a larger range  Implementing a simple conditional statement Implementing the for loop for a range &amp;gt; 500 Adding some functions and other minor streamlining  Enabling the script to be called with parameters Comparing logs for range 9998683 to 1000000 Concluding remarks References</description>
+      <guid>https://shreyas.ragavan.co/project/bash-scripting-irc-logs/</guid>
+      <description>
+
+&lt;div class=&#34;ox-hugo-toc toc&#34;&gt;
+&lt;div&gt;&lt;/div&gt;
+
+&lt;div class=&#34;heading&#34;&gt;Table of Contents&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#preliminary-notes&#34;&gt;Preliminary notes:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plan&#34;&gt;Plan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#simple-case&#34;&gt;Simple case&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#concluding-remarks&#34;&gt;Concluding remarks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;!--endtoc--&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This project is an exploration of BASH scripting utilising &lt;code&gt;cURL&lt;/code&gt; and &lt;code&gt;diff&lt;/code&gt; to extract chat logs of an IRC channel and quickly compare the contents to check for any discrepancies. Several new concepts were learned, including defining variables, for loops, conditionals and making temporary files. The gradual build up in complexity is shown and has the benefit that that report can serve as a simple tutorial in BASH scripting.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/scripts/bash-log-compare.sh&#34;&gt;Download the script&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;preliminary-notes&#34;&gt;Preliminary notes:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The raw knob can be used to extract the text of the logs. The raw mechanism will spit out a maximum of 500 lines.
+
+&lt;ul&gt;
+&lt;li&gt;i.e if a user provides a large range of id&amp;rsquo;s - this will have to be split into batches of 500 lines.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;W.r.t diff the focus will be on id &amp;lt; 1000,000.&lt;/li&gt;
+&lt;li&gt;My initial idea to use R and connect to the db snapshot was an example of an unnecessarily bloated solution when readily available bash + curl + diff can do the job.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;plan&#34;&gt;Plan&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a simple case:
+
+&lt;ol&gt;
+&lt;li&gt;Use curl on raw knob links from each box &amp;gt; write this to a text file.&lt;/li&gt;
+&lt;li&gt;Use diff to compare the text files.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Include variables to substitute start id and end id.&lt;/li&gt;
+&lt;li&gt;Strategy for a id range above 500&lt;/li&gt;
+&lt;li&gt;Enable providing arguments (url(s), startid and endid) to supply to the bash script so it can be invoked easily from the command line.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;simple-case&#34;&gt;Simple case&lt;/h2&gt;
+
+&lt;p&gt;Beginning with manually using curl.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!bin/bash
+
+curl &amp;quot;http://logs.ossasepia.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=999600&amp;amp;iend=999700&amp;quot; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quick test of diffing post 1,000,000 id&amp;rsquo;s.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+
+curl &amp;quot;http://logs.ossasepia.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;http://logs.nosuchlabs.com/log-raw/ossasepia?istart=1000000&amp;amp;iend=1000400&amp;quot; &amp;gt; ~/temp/log2-test.txt
+
+diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/hololo.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;including-variables-for-url-prefix-start-id-and-end-id&#34;&gt;Including variables for url prefix, start id and end id&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;After a few hours of head-banging using istart= 995000 and iend= 995500 - I realised that these do not exist in the ossasepia log, and I had the syntax right in my first attempt.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=1001700
+endid=1001900
+
+curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+
+curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;diff -uNr ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So far, so good. Now comes the &lt;em&gt;relatively&lt;/em&gt; tricky part: extending the above to cover more than 500 lines. This will need some conditionals and a for loop thrown in for dealing with a large range.&lt;/p&gt;
+
+&lt;h2 id=&#34;figuring-out-a-larger-range&#34;&gt;Figuring out a larger range&lt;/h2&gt;
+
+&lt;p&gt;Strategy:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Obtain a startid and endid (i.e &lt;code&gt;istart&lt;/code&gt; and &lt;code&gt;iend&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If (endid-startid &amp;lt;= 500) - go ahead with directly using curl and diff.&lt;/li&gt;
+&lt;li&gt;If endid-startid &amp;gt; 500
+
+&lt;ol&gt;
+&lt;li&gt;divide the number of lines by 500. Obtain the quotient and remainder.&lt;/li&gt;
+&lt;li&gt;Use the quotient in a for loop as the number of times the internal startidi is incremented by 500.&lt;/li&gt;
+&lt;li&gt;the internal endidi is subtracted by 1 to account for duplication of lines.&lt;/li&gt;
+&lt;li&gt;Subtract the remainder from original endid to extract the last portion.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;implementing-a-simple-conditional-statement&#34;&gt;Implementing a simple conditional statement&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=999700
+endid=999900
+rangelimit=500
+
+let subtrid=endid-startid
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;quot;
+    curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+else
+    echo &amp;quot;Lines &amp;gt; 500. Additional calcs required.&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;implementing-the-for-loop-for-a-range-500&#34;&gt;Implementing the for loop for a range &amp;gt; 500&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=1001900
+endid=1002900
+rangelimit=500
+
+let subtrid=endid-startid
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= 500. Proceeding to curl and diff.&amp;quot;
+    curl &amp;quot;${urlPrefix1}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${startid}&amp;amp;iend=${endid}&amp;quot; &amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+else
+    echo &amp;quot;Lines &amp;gt; 500. Entering Loop to split the range into batches of 500 lines.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo $quotient
+    echo $remainder
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo $startidi
+	echo $endidi
+	curl &amp;quot;${urlPrefix1}?istart=${startidi}&amp;amp;iend=${endidi}&amp;quot; &amp;gt;&amp;gt; ~/temp/log-test.txt
+	curl &amp;quot;${urlPrefix2}?istart=${startidi}&amp;amp;iend=${endidi}&amp;quot; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    done
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo $portionstartid
+    curl &amp;quot;${urlPrefix1}?istart=${portionstartid}&amp;amp;iend=${endid}&amp;quot; &amp;gt;&amp;gt; ~/temp/log-test.txt
+    curl &amp;quot;${urlPrefix2}?istart=${portionstartid}&amp;amp;iend=${endid}&amp;quot; &amp;gt;&amp;gt; ~/temp/log2-test.txt
+    diff ~/temp/log-test.txt ~/temp/log2-test.txt &amp;gt; ~/temp/log-diff.txt
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above has been tested to work across a range of start and end ID&amp;rsquo;s.&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-some-functions-and-other-minor-streamlining&#34;&gt;Adding some functions and other minor streamlining&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;function to check the output of curl as well as diff if empty.&lt;/li&gt;
+&lt;li&gt;curl operations put into a function since repeated.&lt;/li&gt;
+&lt;li&gt;Streamlined echo outputs to be more neat.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=&amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot;
+urlPrefix2=&amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot;
+startid=&amp;quot;1001900&amp;quot;
+endid=&amp;quot;1003700&amp;quot;
+log1_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log1&amp;quot;)
+log2_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log2&amp;quot;)
+diff_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).difflog&amp;quot;)
+rangelimit=500
+
+let subtrid=endid-startid
+
+function check_output {
+    echo &amp;quot;Log1 curl output is at $log1_file&amp;quot;
+    echo &amp;quot;Log2 curl output is at $log2_file&amp;quot;
+    echo &amp;quot;diff output is at $diff_file&amp;quot;
+
+    if [ ! -s $1 ] || [ ! -s $2 ]
+    then
+	echo &amp;quot;Atleast One curl output returned nothing.&amp;quot;
+    fi
+
+    if [ -s $3 ]
+    then
+	echo &amp;quot;Diff file is not empty. Logs not equal&amp;quot;
+    else
+	echo &amp;quot;Diff file is empty.&amp;quot;
+    fi
+}
+
+function curler {
+    curl &amp;quot;${1}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log1_file
+    curl &amp;quot;${2}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log2_file
+}
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= $rangelimit. Proceeding to curl and diff.&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+else
+    echo &amp;quot;Lines &amp;gt; $rangelimit. Looping to split the range into batches.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo &amp;quot;Batches of $rangelimit lines = $quotient. Remaining lines = $remainder&amp;quot;
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo &amp;quot;istart is $startidi and iend is $endidi&amp;quot;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    done
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo &amp;quot;Last portion istart is $portionstartid&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;enabling-the-script-to-be-called-with-parameters&#34;&gt;Enabling the script to be called with parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!bin/bash
+urlPrefix1=$1
+urlPrefix2=$2
+startid=$3
+endid=$4
+log1_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log1&amp;quot;)
+log2_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).log2&amp;quot;)
+diff_file=$(mktemp -t &amp;quot;$(date +&amp;quot;%Y_%H-%M-%S&amp;quot;).difflog&amp;quot;)
+rangelimit=500
+
+let subtrid=endid-startid
+
+function check_output {
+    echo &amp;quot;Log1 curl output is at $log1_file&amp;quot;
+    echo &amp;quot;Log2 curl output is at $log2_file&amp;quot;
+    echo &amp;quot;diff output is at $diff_file&amp;quot;
+
+    if [ ! -s $1 ] || [ ! -s $2 ]
+    then
+	echo &amp;quot;Atleast One curl output returned nothing.&amp;quot;
+    fi
+
+    if [ -s $3 ]
+    then
+	echo &amp;quot;Diff file is not empty. Logs not equal&amp;quot;
+    else
+	echo &amp;quot;Diff file is empty.&amp;quot;
+    fi
+}
+
+function curler {
+    curl &amp;quot;${1}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log1_file
+    curl &amp;quot;${2}?istart=${3}&amp;amp;iend=${4}&amp;quot; &amp;gt;&amp;gt; $log2_file
+}
+
+if [ &amp;quot;$subtrid&amp;quot; -le &amp;quot;$rangelimit&amp;quot; ]
+then
+
+    echo &amp;quot;Lines &amp;lt;= $rangelimit. Proceeding to curl and diff.&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $startid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+
+else
+    echo &amp;quot;Lines &amp;gt; $rangelimit. Looping to split the range into batches.&amp;quot;
+    let quotient=$subtrid/$rangelimit
+    let remainder=$subtrid%$rangelimit
+    echo &amp;quot;Batches of $rangelimit lines = $quotient. Remaining lines = $remainder&amp;quot;
+
+    for (( c=0; c &amp;lt;$quotient; c++ ))
+    do
+	let &amp;quot;startidi=$startid + $c * $rangelimit&amp;quot;
+	let &amp;quot;endidi=$startidi + $rangelimit -1&amp;quot;
+	echo &amp;quot;istart is $startidi and iend is $endidi&amp;quot;
+	curler $urlPrefix1 $urlPrefix2 $startidi $endidi
+    done
+
+    let &amp;quot;portionstartid=$endid - $remainder&amp;quot;
+    echo &amp;quot;Last portion istart is $portionstartid&amp;quot;
+    curler $urlPrefix1 $urlPrefix2 $portionstartid $endid
+    diff -uNr $log1_file $log2_file &amp;gt; $diff_file
+    check_output $log1_file $log2_file $diff_file
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above script, if saved as &lt;code&gt;~/temp/log-bash-curl-diff.sh&lt;/code&gt; can be called as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot; &amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot; 1001900 1003700
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 3. Remaining lines = 300
+istart is 1001900 and iend is 1002399
+istart is 1002400 and iend is 1002899
+istart is 1002900 and iend is 1003399
+Last portion istart is 1003400
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.log1.yr48rDlW
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.log2.HyeiemV2
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-20.difflog.2wwXVY5v
+Diff file is not empty. Logs not equal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;comparing-logs-for-range-9998683-to-1000000&#34;&gt;Comparing logs for range 9998683 to 1000000&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;998683 is the beginning of the ossasepia log.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--listend--&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sh ~/temp/log-bash-curl-diff.sh &amp;quot;logs.ossasepia.com/log-raw/ossasepia&amp;quot; &amp;quot;logs.nosuchlabs.com/log-raw/ossasepia&amp;quot; &amp;quot;998683&amp;quot; &amp;quot;1000000&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Lines &amp;gt; 500. Looping to split the range into batches.
+Batches of 500 lines = 2. Remaining lines = 317
+istart is 998683 and iend is 999182
+istart is 999183 and iend is 999682
+Last portion istart is 999683
+Log1 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.log1.yPvV0Ioc
+Log2 curl output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.log2.dNQbsvXR
+diff output is at /var/folders/39/l1557gl175s593l7zjj9kd640000gn/T/2019_07-27-26.difflog.eN97q0Bv
+Diff file is not empty. Logs not equal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;concluding-remarks&#34;&gt;Concluding remarks&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a neat little bash script is constructed which will retrieve content from 2 specified URL&amp;rsquo;s and diff the output. Particularly, the script was constructed to compare the #o logs on logs.ossasepia.com and logs.nosuchlabs.com&lt;/li&gt;
+&lt;li&gt;functions, conditionals, loops, for bash were learned and deployed, along with using curl and diff.&lt;/li&gt;
+&lt;li&gt;Retrieving a large number of lines will take some time and is also dependent on the internet speed. The curl/diff files will be empty if the lines are non-existent.&lt;/li&gt;
+&lt;li&gt;Diff results of the logs from line 9998683 to 1000000 indicates there are no missing lines.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;check_output&lt;/code&gt; function only checks if the files are empty. It does not account for curl retrieving error messages.&lt;/li&gt;
+&lt;li&gt;In a batch retrieval - the final curl output is checked whether empty. It does not account for empty retrievals for a particular batch.&lt;/li&gt;
+&lt;li&gt;overflow/underflow is not accounted for in this script.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script&#34; target=&#34;_blank&#34;&gt;Unix SE discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash&#34; target=&#34;_blank&#34;&gt;SO discussion on making temporary files in bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some general references for the bash syntax used above.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Linux notes</title>
-      <link>https://shrysr.github.io/docs/linux-notes/</link>
+      <link>https://shreyas.ragavan.co/docs/linux-notes/</link>
       <pubDate>Sat, 06 Jul 2019 19:53:16 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/linux-notes/</guid>
-      <description>Installing the Iosevka font On Debian distros There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.
-Downloading the specified font version from github into a temp folder
-cd ~/temp wget &amp;#34;https://github.</description>
+      <guid>https://shreyas.ragavan.co/docs/linux-notes/</guid>
+      <description>
+
+&lt;h2 id=&#34;installing-the-iosevka-font&#34;&gt;Installing the Iosevka font&lt;/h2&gt;
+
+&lt;h3 id=&#34;on-debian-distros&#34;&gt;On Debian distros&lt;/h3&gt;
+
+&lt;p&gt;There appear to be no packages for iosevka for debian. The prescribed method is to add the fonts to the fonts folder. The github issues point towards a PPA which can be added. However, this did not work for me, and I had to resort to manual means.&lt;/p&gt;
+
+&lt;p&gt;Downloading the specified font version from github into a temp folder&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd ~/temp
+wget &amp;quot;https://github.com/be5invis/Iosevka/releases/download/v2.2.1/01-iosevka-2.2.1.zip&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Extracting the contents of the downloaded zip file to a folder named iosevka.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd ~/temp
+unzip -u 01-iosevka-2.2.1.zip -d iosevka
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For system wide recognition, the ttf files have to be placed in  &lt;code&gt;usr/share/fonts&lt;/code&gt;  as per the debian wiki. Sudo permission is required for writing to this location. Optionally, the font folder can also be copied to &lt;code&gt;~/.local/share/fonts/&lt;/code&gt;, for a user specific setting.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo cp -r ~/temp/iosevka /usr/share/fonts/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, it is a good idea to refresh the font cache&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;fc-cache -fv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To set the font in Emacs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(set-face-attribute &#39;default nil :family &amp;quot;ttf-iosevka&amp;quot; :height 140)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: The file permissions for the ttf files have to be set to &lt;code&gt;644&lt;/code&gt; to be usable. This should be checked if the above does not work.&lt;/p&gt;
+
+&lt;h3 id=&#34;on-arch-antergos&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; On Arch / Antergos&lt;/h3&gt;
+
+&lt;p&gt;Use AUR to install iosevka in Antergos / Arch as the package is already available.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;yay -S ttf-iosevka
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Setting the font in Emacs. This should be added to the init. The font height could vary based on the monitor size.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-emacs-lisp&#34;&gt;(set-face-attribute &#39;default nil :family &amp;quot;ttf-iosevka&amp;quot; :height 120)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Installing iosevka in Debian:&lt;/p&gt;
+
+&lt;p&gt;The font files have to be downloaded and placed in to the location &lt;code&gt;/usr/local/share/Fonts&lt;/code&gt; for system wide access.&lt;/p&gt;
+
+&lt;h2 id=&#34;setup-gpg-agent-to-be-running-whenever-gpg-is-called&#34;&gt;Setup gpg-agent to be running whenever gpg is called&lt;/h2&gt;
+
+&lt;p&gt;For some reason, it appears though the gpg-agent is shown to be running, this configuration is required to make sure that the entered keys are stored in the keyring.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cat &amp;gt;&amp;gt; ~/.gnupg/gpg.conf &amp;lt;&amp;lt;EOF
+no-greeting
+no-permission-warning
+lock-never
+keyserver-options timeout=10
+use-agent
+EOF
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;install-tk-especially-for-being-able-to-select-the-cran-mirrors-in-r&#34;&gt;Install tk especially for being able to select the CRAN mirrors in R&lt;/h2&gt;
+
+&lt;p&gt;This is pertinent to Arch based distros.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo pacman -S tk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-global-config&#34;&gt;Git global config&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git config --global user.email &amp;quot;abcs@gmail.com&amp;quot;
+git config --global user.name &amp;quot;Mad Max&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;upgrading-a-debian-distro&#34;&gt;Upgrading a debian distro&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt-get update
+sudo apt-get dist-upgrade
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;app-installation-in-debian-using-flatpak&#34;&gt;App installation in debian using flatpak&lt;/h2&gt;
+
+&lt;p&gt;Some apps are not available in the so called stable debian software archives. Therefore alternative sources have to be established for the same.&lt;/p&gt;
+
+&lt;p&gt;Installing flatpak on debian and adding the flatpak repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt-get install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reboot after the above commands.&lt;/p&gt;
+
+&lt;p&gt;Note: Calling a flatpak based app is rather verbose, and is better served by defining appropriate aliases.&lt;/p&gt;
+
+&lt;h3 id=&#34;franz-multi-network-messenger&#34;&gt;Franz: Multi-network messenger&lt;/h3&gt;
+
+&lt;p&gt;This app covers Slack and Whatsap and other networks. It still takes up about 1GB of RAM and the app itself is about 500MB, but it atleast covers all the platforms in one go and should be useful in the office.&lt;/p&gt;
+
+&lt;p&gt;In addition, the &lt;code&gt;org.freedesktop.Platform&lt;/code&gt; package has to be installed. The latter gets installed automatically, when executed in the terminal.&lt;/p&gt;
+
+&lt;p&gt;Pre-requisites for debian/ubuntu&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;flatpak install flathub com.meetfranz.Franz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;slack&#34;&gt;Slack:&lt;/h3&gt;
+
+&lt;p&gt;The Slack app takes up a lot of memory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;flatpak install flathub com.slack.Slack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;swapping-control-and-capslock&#34;&gt;Swapping control and Capslock&lt;/h2&gt;
+
+&lt;p&gt;Creating xmodmap script : Swapping control and capslock keys
+Source: &lt;a href=&#34;https://www.emacswiki.org/emacs/MovingTheCtrlKey#toc8&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cat &amp;gt; ~/.xmodmap &amp;lt;&amp;lt;EOF
+!
+! Swap Caps_Lock and Control_L
+!
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L
+EOF
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Executing xmodmap on the configuration above&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;xmodmap ~/.xmodmap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;the-above-command-should-be-added-as-the-last-command-in-the-autostart-option-of-dot-config&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; The above command should be added as the last command in the autostart option of ~/.config&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cat &amp;gt; ~/.config/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;installing-firefox-developer-edition&#34;&gt;Installing Firefox developer edition&lt;/h2&gt;
+
+&lt;p&gt;The developer edition of Firefox contains interesting features, and it appears to perform better. The developer edition is available as a package on Arch Linux (AUR). For Debian, the procedure is a little round-about.&lt;/p&gt;
+
+&lt;p&gt;The following procedure using flatpak is picked up from the &lt;a href=&#34;https://wiki.debian.org/Firefox&#34; target=&#34;_blank&#34;&gt;Debian wiki page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Using flatpak&lt;/p&gt;
+
+&lt;p&gt;Unofficial builds are provided by Fedora at &lt;a href=&#34;https://firefox-flatpak.mojefedora.Cz/&#34; target=&#34;_blank&#34;&gt;https://firefox-flatpak.mojefedora.Cz/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt install flatpak
+sudo flatpak remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
+sudo flatpak remote-add --from org.mozilla.FirefoxRepo https://firefox-flatpak.mojefedora.cz/org.mozilla.FirefoxRepo.flatpakrepo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then for &amp;ldquo;developer edition&amp;rdquo; (aka &amp;ldquo;Beta&amp;rdquo;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;flatpak install org.mozilla.FirefoxRepo org.mozilla.FirefoxDevEdition
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and Running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;flatpak run org.mozilla.FirefoxRepo org.mozilla.FirefoxNightly
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The Debian wiki also describes  a method to add the flatpak installations to the Path. However, this is a newer feature and is unavailable at the moment on my machine.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;echo &#39;export PATH=$PATH:/var/lib/flatpak/exports/bin&#39; &amp;gt;&amp;gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;emacs-can-be-installed-via-conda&#34;&gt;Emacs can be installed via Conda&lt;/h2&gt;
+
+&lt;p&gt;The advantage of using conda is being able to quickly install reasonably recent versions of Emacs quickly on Debian type OS&amp;rsquo;s which often reference older (stable) versions of software packages by default. Using conda would avoid adding PPA&amp;rsquo;s or hunting for binaries or even compiling from source. Another advantage is that this approach can be used cross platform.&lt;/p&gt;
+
+&lt;p&gt;One disadvantage of this method is that the package is installed into the miniconda / anaconda package installation path. Though the instillation script of miniconda adds the path for bash, it has to be manually set for any other shell like zsh. However, once this is done - there appear to be no issues in using Emacs.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;conda install -c conda-forge emacs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;virtualbox-resizing-virtual-disk-image-vdi&#34;&gt;Virtualbox: resizing virtual disk image - vdi&lt;/h2&gt;
+
+&lt;p&gt;Reference: &lt;a href=&#34;http://derekmolloy.ie/resize-a-virtualbox-disk&#34; target=&#34;_blank&#34;&gt;http://derekmolloy.ie/resize-a-virtualbox-disk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It does not appear to be possible to expand the size of a fixed format vdi. The floating format has a disadvantage of a read-write overhead for expanding the disk image as it is utilised.&lt;/p&gt;
+
+&lt;p&gt;However, as per the documentation, after the hard disk size reaches a stable stage, this overhead becomes negligible on an average.&lt;/p&gt;
+
+&lt;p&gt;Therefore the vdi has to be copied (or cloned), and the floating format has to be selected. This is done using the copy option in the virtualbox media manager. Once copied, the expanded vdi image has to be attached to the guest OS.&lt;/p&gt;
+
+&lt;p&gt;When the attachment is complete, the hardisk will show up in the virtualbox media manager app. Now the vdi size can be adjusted to the desired value.&lt;/p&gt;
+
+&lt;p&gt;The next step is to download the live iso of gparted. This should be loaded as a storage device with the live CD option selected. With this loaded, the existing partitions have to be changed appropriately&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. This step has to be done to enable Linux to recognise the expanded harddisk.&lt;/p&gt;
+
+&lt;p&gt;Once this has been, the gparted iso can be removed and the guest OS can be booted as usual. However, the UUID of the paritions have to be changed appropriately. If not changed, there will be delay during boot, especially if the swap partition has been modified.&lt;/p&gt;
+
+&lt;p&gt;The actual partition setup and the UUIDs can be viewed with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;lsblk -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The appropriate UUID has to be replaced in the file &lt;code&gt;/etc/fstab&lt;/code&gt;. Technically, the fstab file is generated by the command &lt;code&gt;mkinitcpio&lt;/code&gt;, but sometimes a manual change is necessary.&lt;/p&gt;
+
+&lt;h2 id=&#34;downgrading-a-single-package-in-arch-linux&#34;&gt;Downgrading a single package in Arch linux&lt;/h2&gt;
+
+&lt;p&gt;From the &lt;a href=&#34;https://wiki.archlinux.org/index.php/Arch%5FLinux%5FArchive&#34; target=&#34;_blank&#34;&gt;Arch linux wiki : archive&lt;/a&gt; : downgrading via downloading the Package from URL. Find the package you want under /packages and let pacman fetch it for installation. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;pacman -U https://archive.archlinux.org/packages/ ... packagename.pkg.tar.xz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Downgrading via local cache&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;pacman -U /var/cache/pacman/pkg/&amp;lt;package-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It seems to be a very good idea to maintain a few older versions of packages in the cache, even at the expense of Harddisk space.&lt;/p&gt;
+
+&lt;p&gt;Further options are provided at this &lt;a href=&#34;https://unix.stackexchange.com/questions/103859/arch-linux-pacman-specifying-package-version&#34; target=&#34;_blank&#34;&gt;Unix stack exchange discussion&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;It is likely that the swap partition is the last partition, and the previous partition is the root which has to be extended. In this case, the swap has to be deleted and the root partiion should be expanded to the desired size, leaving behind room for the swap partition. The final unallocated space has to be used for a new extension partition and then a logical partition to create the linux-swap. &lt;em&gt;For some reason, there is a space of 1MB preceding the swap partition&lt;/em&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

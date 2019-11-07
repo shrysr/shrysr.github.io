@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/authors/shrysr/</link>
+      <atom:link href="https://shreyas.ragavan.co/authors/shrysr/index.xml" rel="self" type="application/rss+xml" />
+    <description>Shreyas Ragavan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Shreyas Ragavan</title>
+      <link>https://shreyas.ragavan.co/authors/shrysr/</link>
+    </image>
+    
+  </channel>
+</rss>

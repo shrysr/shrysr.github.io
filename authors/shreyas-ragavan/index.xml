@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/authors/shreyas-ragavan/</link>
+      <atom:link href="https://shreyas.ragavan.co/authors/shreyas-ragavan/index.xml" rel="self" type="application/rss+xml" />
+    <description>Shreyas Ragavan</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Shreyas Ragavan</title>
+      <link>https://shreyas.ragavan.co/authors/shreyas-ragavan/</link>
+    </image>
+    
+    <item>
+      <title>Current Trends of Emission Reduction Technology in Vehicular Diesel Engines</title>
+      <link>https://shreyas.ragavan.co/publication/emission-study/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://shreyas.ragavan.co/publication/emission-study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design of an Electro-mechanical Anthropometric finger, and a PID controller for the wrist for applications in Prosthetics</title>
+      <link>https://shreyas.ragavan.co/publication/kinematic-design-finger/</link>
+      <pubDate>Wed, 15 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>https://shreyas.ragavan.co/publication/kinematic-design-finger/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

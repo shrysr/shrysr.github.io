@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/authors/</link>
+      <atom:link href="https://shreyas.ragavan.co/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>https://shreyas.ragavan.co/authors/</link>
+    </image>
+    
+    <item>
+      <title>Shreyas Ragavan</title>
+      <link>https://shreyas.ragavan.co/authors/shreyas-ragavan/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://shreyas.ragavan.co/authors/shreyas-ragavan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://shreyas.ragavan.co/authors/shrysr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://shreyas.ragavan.co/authors/shrysr/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;m an &lt;strong&gt;engineer&lt;/strong&gt;, &lt;strong&gt;dreamer&lt;/strong&gt;, &lt;strong&gt;hacker&lt;/strong&gt;, &lt;strong&gt;data scientist&lt;/strong&gt; and &lt;strong&gt;technophile&lt;/strong&gt; who enjoys performing in-depth research and analysis, as well as developing end-to-end solutions that drive Business Intelligence and Growth.&lt;/p&gt;
+
+&lt;p&gt;Along with a strong background in analytics and a wide domain exposure, I possess a keen eye to comprehend the big picture with a penchant towards implementing workflow automation. I&amp;rsquo;ve worked in R&amp;amp;D, helped sales engineering and have implemented ERP systems (among other things).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m frequently available on IRC with the nickname shrysr on a bunch of channels, especially #emacs. I&amp;rsquo;m active on Linked in and Github, and occassionally on Twitter.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;projects-projects-project-portfolio-small-a-portfolio-of-my-projects-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/#projects&#34; title=&#34;Project portfolio&#34;&gt;Projects&lt;/a&gt;   | &lt;small&gt; a portfolio of my projects.&lt;/small&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;experience-experience-work-experience-small-skills-commendations-work-experience-timeline-and-course-certificates-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/experience/&#34; title=&#34;Work Experience&#34;&gt;Experience&lt;/a&gt; | &lt;small&gt; Skills, Commendations, Work Experience timeline and Course Certificates.&lt;/small&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;documentation-section-docs-documentation-tutorials-project-reports-notes-on-various-topics-small-growing-brain-dump-on-various-topics-mostly-technical-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/docs/&#34; title=&#34;Documentation, tutorials, project reports, notes on various topics.&#34;&gt;Documentation section&lt;/a&gt;  | &lt;small&gt; growing brain dump on various topics, mostly technical.&lt;/small&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;my-blog-post-blog-posts-small-opinionated-articles-on-productivity-emacs-software-tools-and-other-general-topics-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/post/&#34; title=&#34;Blog posts&#34;&gt;My Blog&lt;/a&gt; | &lt;small&gt; opinionated articles on productivity, Emacs, software tools and other general topics. &lt;/small&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;project-reports-publication-small-some-detailed-reports-from-past-projects-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/publication&#34;&gt;Project Reports&lt;/a&gt;  | &lt;small&gt; some detailed reports from past projects. &lt;/small&gt;&lt;/h3&gt;
+
+&lt;h3 id=&#34;tag-cloud-tags-tag-cloud-of-the-website-small-for-general-browsing-small&#34;&gt;&lt;a href=&#34;https://shreyas.ragavan.co/#tags&#34; title=&#34;Tag cloud of the website&#34;&gt;Tag Cloud&lt;/a&gt; | &lt;small&gt; for general browsing. &lt;/small&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

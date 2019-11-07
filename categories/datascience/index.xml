@@ -1,87 +1,1150 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DataScience on Shreyas Ragavan</title>
-    <link>https://shrysr.github.io/categories/datascience/</link>
-    <description>Recent content in DataScience on Shreyas Ragavan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Sep 2019 23:23:00 -0600</lastBuildDate>
+    <title>DataScience | Shreyas Ragavan</title>
+    <link>https://shreyas.ragavan.co/categories/datascience/</link>
+      <atom:link href="https://shreyas.ragavan.co/categories/datascience/index.xml" rel="self" type="application/rss+xml" />
+    <description>DataScience</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Nov 2019 14:27:00 -0600</lastBuildDate>
+    <image>
+      <url>https://shreyas.ragavan.co/img/icon-192.png</url>
+      <title>DataScience</title>
+      <link>https://shreyas.ragavan.co/categories/datascience/</link>
+    </image>
     
-	<atom:link href="https://shrysr.github.io/categories/datascience/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Federal R&amp;D Spending on climate change</title>
+      <link>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</link>
+      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
+      <guid>https://shreyas.ragavan.co/project/fed-rnd-spending-tt1/</guid>
+      <description>
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shrysr/sr-tidytuesday&#34; target=&#34;_blank&#34;&gt;Github Repo&lt;/a&gt; of Tidy Tuesday explorations&lt;/li&gt;
+&lt;li&gt;Tidy tuesday dataset: &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Data Dictionary &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-02-12#data-dictionary&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Viz &lt;a href=&#34;https://twitter.com/ShreyasRagavan/status/1100765886892265472&#34; target=&#34;_blank&#34;&gt;posted on Twitter&lt;/a&gt; to participate in TidyTuesday.&lt;/li&gt;
+&lt;li&gt;Tools used: ESS, Org mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/scripts/tt1-fed-rnd.R&#34;&gt;Download R script&lt;/a&gt; : this is the entire script below.&lt;/p&gt;
+
+&lt;h2 id=&#34;loading-libraries&#34;&gt;Loading libraries&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;easypackages&lt;/code&gt; library allows quickly installing and loading multiple packages. &lt;em&gt;Note: Uncomment the appropriate line if this library needs to be installed.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Loading libraries
+                                        # install.packages(&amp;quot;easypackages&amp;quot;)
+library(&amp;quot;easypackages&amp;quot;)
+libraries(&amp;quot;tidyverse&amp;quot;, &amp;quot;tidyquant&amp;quot;, &amp;quot;DataExplorer&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-org&#34;&gt;
+All packages loaded successfully
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;reading-in-the-data&#34;&gt;Reading in the data&lt;/h2&gt;
+
+&lt;p&gt;Since this is a small dataset, the data can be read in directly from Github into memory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Reading in data directly from github
+climate_spend_raw  &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-02-12/climate_spending.csv&amp;quot;, col_types = &amp;quot;cin&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;exploring-the-data&#34;&gt;Exploring the data&lt;/h2&gt;
+
+&lt;p&gt;We have 6 departments, and the remaining departments are lumped together as &amp;lsquo;All Other&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;The data is available for the years 2000 to 2017.&lt;/p&gt;
+
+&lt;p&gt;The above can be found using the &lt;code&gt;unique&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_raw$department %&amp;gt;% unique()
+climate_spend_raw$year %&amp;gt;% unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;[1] &amp;quot;NASA&amp;quot;            &amp;quot;NSF&amp;quot;             &amp;quot;Commerce (NOAA)&amp;quot; &amp;quot;Energy&amp;quot;
+[5] &amp;quot;Agriculture&amp;quot;     &amp;quot;Interior&amp;quot;        &amp;quot;All Other&amp;quot;
+
+ [1] 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014
+[16] 2015 2016 2017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some Notes on the data:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have the following columns:
+
+&lt;ul&gt;
+&lt;li&gt;name of the department. (chr)&lt;/li&gt;
+&lt;li&gt;year (int)&lt;/li&gt;
+&lt;li&gt;spending (double)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The data is relatively clean. However some manipulation is required to summarise the department wise spending.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An overview of missing data can be easily scrutinised using the &lt;code&gt;plot_intro&lt;/code&gt; command, and actual numbers can be extracted using &lt;code&gt;introduce&lt;/code&gt;. These functions are from the &lt;code&gt;DataExplorer&lt;/code&gt; package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;##plot_str(climate_spend_raw, type = &#39;r&#39;)
+plot_intro(climate_spend_raw)
+##introduce(climate_spend_raw)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; &gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/plot-intro.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;There are no missing values or NA&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;For a quick look at the outliers, we can use a boxplot, using DataExplorer&amp;rsquo;s functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;variance_climate_spend &amp;lt;- plot_boxplot(climate_spend_raw, by = &amp;quot;year&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; data-caption=&#34;Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/variance-spend.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 1: It can be seen above that there are not many outliers. Subsequent visualisations will show that NASA is the most significant outlier. The median spending has been increasing over the years.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;data-conditioning&#34;&gt;Data Conditioning&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Note: this initial conditioning need not have involved the date manipulation, as the year extracted from a date object is still a double.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned &amp;lt;- climate_spend_raw %&amp;gt;%
+  mutate(year_dt = str_glue(&amp;quot;{year}-01-01&amp;quot;)) %&amp;gt;%
+  mutate(year_dt = as.Date(year_dt)) %&amp;gt;%
+  mutate(test_median = median(gcc_spending)) %&amp;gt;%
+  mutate(gcc_spending_txt = scales::dollar(gcc_spending,
+                                           scale = 1e-09,
+                                           suffix = &amp;quot;B&amp;quot;
+                                           )
+         )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Applying some summary statistics to calculate the total spend per department, per year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;                                        # Total spend per department per year
+climate_spend_dept_y &amp;lt;- climate_spend_conditioned %&amp;gt;%
+  group_by(department, year_dt = year(year_dt)) %&amp;gt;%
+  summarise(
+    tot_spend_dept_y = sum(gcc_spending)) %&amp;gt;%
+  mutate(tot_spend_dept_y_txt = tot_spend_dept_y %&amp;gt;%
+           scales::dollar(scale = 1e-09,
+                          suffix = &amp;quot;B&amp;quot;)
+         ) %&amp;gt;%
+  ungroup()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lets see how much money has been budgeted in each department towards R&amp;amp;D in climate change from 2000 to 2017.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_conditioned %&amp;gt;%
+  select(-c(gcc_spending_txt, year_dt)) %&amp;gt;%
+  group_by(department) %&amp;gt;%
+  summarise(total_spend_y = sum(gcc_spending)) %&amp;gt;%
+  arrange(desc(total_spend_y)) %&amp;gt;%
+  mutate(total_spend_y = total_spend_y %&amp;gt;% scales::dollar(scale = 1e-09,
+                                                        suffix = &amp;quot;B&amp;quot;,
+                                                        prefix = &amp;quot;$&amp;quot;)
+       )
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Department&lt;/th&gt;
+&lt;th&gt;Total Spend from 2000-2017&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NASA&lt;/td&gt;
+&lt;td&gt;$25.77B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Commerce (NOAA)&lt;/td&gt;
+&lt;td&gt;$5.28B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;NSF&lt;/td&gt;
+&lt;td&gt;$5.26B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Energy&lt;/td&gt;
+&lt;td&gt;$3.32B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Agriculture&lt;/td&gt;
+&lt;td&gt;$1.63B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;All Other&lt;/td&gt;
+&lt;td&gt;$1.54B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Interior&lt;/td&gt;
+&lt;td&gt;$0.86B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It is clear from here that the outlier department is NASA. Further exploration would be needed to understand the function of each department and the justification of this expenditure and the skew. &lt;em&gt;For example, one might think the Interior department would not be able to produce R&amp;amp;D superior to NASA/NSF.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;function-to-plot-a-facet-grid-of-the-department-spending&#34;&gt;Function to plot a facet grid of the department spending&lt;/h2&gt;
+
+&lt;p&gt;By using a function to complete the plot, the plot can be easily repeated for any range of years. It can also work for a single year.&lt;/p&gt;
+
+&lt;p&gt;The function below takes the following arguments:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The range of the years we want to look into , example 2005-2010&lt;/li&gt;
+&lt;li&gt;The number of columns in the facet wrap plot.&lt;/li&gt;
+&lt;li&gt;The caption that consititues the observation from the plots and anything else.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The title of the plot includes the year range that is input above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn &amp;lt;- function(
+                                 data,
+                                 y_range_low = 2000,
+                                 y_range_hi  = 2010,
+                                 ncol = 3,
+                                 caption = &amp;quot;&amp;quot;
+                                 )
+{
+
+  plot_title  &amp;lt;- str_glue(&amp;quot;Federal R&amp;amp;D budget towards Climate Change: {y_range_low}-{y_range_hi}&amp;quot;)
+
+  data %&amp;gt;%
+  filter(year_dt &amp;gt;= y_range_low &amp;amp; year_dt &amp;lt;= y_range_hi) %&amp;gt;%
+  ggplot(aes(y = tot_spend_dept_y_txt, x = department, fill = department ))+
+  geom_col() +
+  facet_wrap(~ year_dt,
+             ncol = 3,
+             scales = &amp;quot;free_y&amp;quot;
+             ) +
+  #scale_y_continuous(breaks = scales::pretty_breaks(10)) +
+  theme_tq() +
+  scale_fill_tq(theme = &amp;quot;dark&amp;quot;) +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                               hjust = 1.2),
+    legend.position = &amp;quot;none&amp;quot;,
+    plot.background=element_rect(fill=&amp;quot;#f7f7f7&amp;quot;),
+    ) +
+  labs(
+    title = plot_title,
+    x = &amp;quot;Department&amp;quot;,
+    y = &amp;quot;Total Budget $ Billion&amp;quot;,
+    subtitle = &amp;quot;NASA literally dwarfs all the other departments, getting to spend upwards of 1.1 Billion dollars every year since 2000.&amp;quot;,
+    caption = caption
+  )
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;visualizing-department-wise-spending-over-the-years&#34;&gt;Visualizing department-wise spending over the years&lt;/h2&gt;
+
+&lt;p&gt;Calling the function and passing in the entire date (year) range of 2000-2010. Note that for a single year, have both the arguments &lt;code&gt;y_range_low&lt;/code&gt; and &lt;code&gt;y_range_high&lt;/code&gt; equal to the same year.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2000,
+                     y_range_hi = 2010,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; data-caption=&#34;Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 2: R&amp;amp;D Budget towards Climate Change from year 2000-2010 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;climate_spend_plt_fn(climate_spend_dept_y,
+                     y_range_low = 2011,
+                     y_range_hi = 2017,
+                     caption = &amp;quot;#TidyTuesday:\nDataset 2019-02-12\nShreyas Ragavan&amp;quot;
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; data-caption=&#34;Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/fed-rnd-spending-2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Figure 3: R&amp;amp;D Budget towards Climate Change from year 2011-2017 across departments.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;some-concluding-statements&#34;&gt;Some Concluding statements&lt;/h2&gt;
+
+&lt;p&gt;NASA has the highest R&amp;amp;D budget allocation towards climate change, and one that is significantly higher than all the other departments put together. The median spending on R&amp;amp;D towards climate change has been increasing over the years, which is a good sign considering the importance of the problem. Some further explorations could be along the lines of the percentage change in spending per department every year, and the proportion of each department in terms of percentage for each year.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Some notes on research-compendium</title>
-      <link>https://shrysr.github.io/post/research-compendium/</link>
+      <link>https://shreyas.ragavan.co/post/research-compendium/</link>
       <pubDate>Sun, 01 Sep 2019 23:23:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/post/research-compendium/</guid>
-      <description>These are my notes while studying the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &amp;lsquo;easily&amp;rsquo; reproducible.
-The notes are mostly based on marwick-2018-packag-r , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also collected separately. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.</description>
+      <guid>https://shreyas.ragavan.co/post/research-compendium/</guid>
+      <description>
+
+&lt;p&gt;These are my notes while studying  the research-compendium concept, which is essentially a bunch of guidelines to produce research that is &amp;lsquo;easily&amp;rsquo; reproducible.&lt;/p&gt;
+
+&lt;p&gt;The notes are mostly based on &lt;sup id=&#34;e8fb07a97f3c5beb5e514bdbae541795&#34;&gt;&lt;a href=&#34;#marwick-2018-packag-r&#34; title=&#34;@misc{marwick-2018-packag-r,
+  DATE_ADDED =   {Mon Oct 14 13:55:11 2019},
+  author =   {Ben Marwick and Carl Boettiger and Lincoln Mullen},
+  doi =      {10.7287/peerj.preprints.3192v2},
+  title =    {Packaging data analytical work reproducibly using R
+                  (and friends)},
+  url =      {https://doi.org/10.7287/peerj.preprints.3192v2},
+  year =     2018,
+}&#34;&gt;marwick-2018-packag-r&lt;/a&gt;&lt;/sup&gt; , which is one canonical reading on the concept. Other references are mentioned throughout the text, and also &lt;a href=&#34;#reference-list&#34;&gt;collected separately&lt;/a&gt;. These notes were prepared a few weeks ago during a foray into Docker. They are neither complete not comprehensive - but will serve as a good refresher of the principle concepts.&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://research-compendium.science/&#34; target=&#34;_blank&#34;&gt;Landing page&lt;/a&gt; : contains several references explaining research-compendium.&lt;/li&gt;
+&lt;li&gt;Principles
+
+&lt;ul&gt;
+&lt;li&gt;stick with the prevailing conventions of your peers / scholarly community&lt;/li&gt;
+&lt;li&gt;Keep data, methods and outputs separate, but make sure to unambiguously express the connections between them. The result files should be treated disposable (can be regenerated).&lt;/li&gt;
+&lt;li&gt;Specify computational environment as clearly as possible. Minimally, a text file specifying the version numbers of the software and other critical tools being used.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;R&amp;rsquo;s package structure is conducive to organise and share a compendium, for any project.&lt;/li&gt;
+&lt;li&gt;Dynamic documents : essentially like org files or Rmarkdown files i.e. literate programming. Sweave was originally introduced around 2002. However, around 2015 : knittr and rmarkdown made substantial progress and are in general more preferred than using sweave.&lt;/li&gt;
+&lt;li&gt;Shipping data with the packages
+
+&lt;ul&gt;
+&lt;li&gt;CRAN : generally less than 5MB. A large percentage of the packages have some form of data. Data should be included if a methods package is being shipped with the analysis.&lt;/li&gt;
+&lt;li&gt;use the &lt;a href=&#34;https://github.com/ropensci/piggyback&#34; target=&#34;_blank&#34;&gt;piggyback&lt;/a&gt; package for attaching large datafiles to github repos.
+
+&lt;ul&gt;
+&lt;li&gt;It is convenient to be able to upload a new dataset to be associated with thep package, and this can be accessed with &lt;code&gt;pb_download()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;medium&amp;rsquo; sized data files can be attached using &lt;a href=&#34;https://github.com/ropensci/arkdb&#34; target=&#34;_blank&#34;&gt;arkdb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Adding a Dockerfile to the compendium
+
+&lt;ul&gt;
+&lt;li&gt;containerit    : o2r/containerit&lt;/li&gt;
+&lt;li&gt;repo to docker : jupyter/repo2docker&lt;/li&gt;
+&lt;li&gt;Binder         : &lt;a href=&#34;https://mybinder.org&#34; target=&#34;_blank&#34;&gt;https://mybinder.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;a href=&#34;https://github.com/karthik/holepunch&#34; target=&#34;_blank&#34;&gt;holepunch&lt;/a&gt; package to make the setup easier.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Summarising the folder structure for R packages esque
+
+&lt;ul&gt;
+&lt;li&gt;Readme file : self-explanatory and should be as detailed as possible, and preferably include a graphical connection between various components.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;R/&lt;/code&gt; : Script files with resusable functions go here. If roxygen is used to generate the documentation, then &lt;code&gt;man/&lt;/code&gt; dicrectory is automatically populated with this.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;analysis/&lt;/code&gt; : analysis scripts and reports. Considering using ascending names in the file names to aid clarity and order eg 001-load.R, 002 -&amp;hellip; and so on.&lt;/li&gt;
+&lt;li&gt;The above does not capture the dependencies. Therefore an .Rmd  or &lt;code&gt;Makefile&lt;/code&gt; (or &lt;code&gt;Makefile.R&lt;/code&gt;) can be included to capture the full tree of dependencies. These files control the order of execution.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DESCRIPTION&lt;/code&gt; file in the project root provides formally structured, machine and human-readable information on authors / project license, software dependenceis and other meta data.
+
+&lt;ul&gt;
+&lt;li&gt;when this file is included, the project becomes an installable R package.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NAMESPACE&lt;/code&gt;: autogenerated file that exports R functions for repeated use.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LICENSE&lt;/code&gt; : specifying conditions for use /reuse&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Drone : CI service that operates on Docker containers. This can be used as a check.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Makefiles&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uses the make language.&lt;/li&gt;
+&lt;li&gt;specifies the relationship between data, the output and the code generating the output.&lt;/li&gt;
+&lt;li&gt;Defines outputs (targets) in terms of inputs (dependencies) and the code necessary to produce them (recipes).&lt;/li&gt;
+&lt;li&gt;Allows rebuilding only the parts that are out of date.&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;remake&lt;/code&gt; package enables write Make like instructions in R.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Principles to consider before sharing a research compendium
+
+&lt;ul&gt;
+&lt;li&gt;Licensing, Version control, persistence, metadata : main aspects to consider.&lt;/li&gt;
+&lt;li&gt;Archive a specific commit at a repository that issues persistent URL&amp;rsquo;s eg DOI which are designed to be more persistent than other URL&amp;rsquo;s. Refere re3data.org for discipline-specific DOI issuing repositories. Using a DOI simplifies citations by allowing the transfer of basic metadata to a central registry (eg CrossRef and Datacite). Doing this ensures that a publicly available snapshot of code exists that can match the results published.&lt;/li&gt;
+&lt;li&gt;CRAN is generally not recommended for research-compendium packages, because it is strict about directory structures and contents of the R packages. It also has a 5MB limit for package data and documentation.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Tools and templates
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rrtools&lt;/code&gt; : extends devtools&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;reference-list&#34;&gt;Reference list&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039&#34; target=&#34;_blank&#34;&gt;https://ropensci.org/commcalls/2019-07-30/?eType=EmailBlastContent&amp;amp;eId=2d18a2f6-57ef-4d15-8c52-84be5c49e039&lt;/a&gt; | rOpenSci | Reproducible Research with R&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/annakrystalli/rrtools-repro-research&#34; target=&#34;_blank&#34;&gt;https://github.com/annakrystalli/rrtools-repro-research&lt;/a&gt; | annakrystalli/rrtools-repro-research: Tutorial on Reproducible Research in R with rrtools&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://karthik.github.io/holepunch/&#34; target=&#34;_blank&#34;&gt;https://karthik.github.io/holepunch/&lt;/a&gt; | Configure Your R Project for binderhub • hole punch&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/karthik/holepunch&#34; target=&#34;_blank&#34;&gt;https://github.com/karthik/holepunch&lt;/a&gt; | karthik/holepunch: Make your R project Binder ready&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://peerj.com/preprints/3192/&#34; target=&#34;_blank&#34;&gt;https://peerj.com/preprints/3192/&lt;/a&gt; | Packaging data analytical work reproducibly using R (and friends) [PeerJ Preprints]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub&#34; target=&#34;_blank&#34;&gt;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops/build-a-binderhub&lt;/a&gt; | the-turing-way/workshops/build-a-binderhub at master · alan-turing-institute/the-turing-way&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops&#34; target=&#34;_blank&#34;&gt;https://github.com/alan-turing-institute/the-turing-way/tree/master/workshops&lt;/a&gt; | the-turing-way/workshops at master · alan-turing-institute/the-turing-way&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://research-compendium.science/&#34; target=&#34;_blank&#34;&gt;https://research-compendium.science/&lt;/a&gt; | Research Compendium&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://inundata.org/talks/rstd19/#/0/33&#34; target=&#34;_blank&#34;&gt;http://inundata.org/talks/rstd19/#/0/33&lt;/a&gt; | reproducible-data-analysis&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/benmarwick/rrtools&#34; target=&#34;_blank&#34;&gt;https://github.com/benmarwick/rrtools&lt;/a&gt; | benmarwick/rrtools: rrtools: Tools for Writing Reproducible Research in R&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shrysr/correlationfunnel&#34; target=&#34;_blank&#34;&gt;https://github.com/shrysr/correlationfunnel&lt;/a&gt; | shrysr/correlationfunnel: Speed Up Exploratory Data Analysis (EDA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cboettig/nonparametric-bayes&#34; target=&#34;_blank&#34;&gt;https://github.com/cboettig/nonparametric-bayes&lt;/a&gt; | cboettig/nonparametric-bayes: Non-parametric Bayesian Inference for Conservation Decisions&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2&#34; target=&#34;_blank&#34;&gt;https://lincolnmullen.com/blog/makefiles-for-writing-data-analysis-ocr-and-converting-shapefiles/#fnref2&lt;/a&gt; | Makefiles for Writing, Data Analysis, OCR, and Converting Shapefiles | Lincoln Mullen&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile&#34; target=&#34;_blank&#34;&gt;https://github.com/lmullen/civil-procedure-codes/blob/master/Makefile&lt;/a&gt; | civil-procedure-codes/Makefile at master · lmullen/civil-procedure-codes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;bibliography&#34;&gt;Bibliography&lt;/h1&gt;
+
+&lt;p&gt;&lt;a id=&#34;marwick-2018-packag-r&#34;&gt;&lt;/a&gt;[marwick-2018-packag-r] @miscmarwick-2018-packag-r,
+  DATE_ADDED =   Mon Oct 14 13:55:11 2019,
+  author =   Ben Marwick and Carl Boettiger and Lincoln Mullen,
+  doi =      10.7287/peerj.preprints.3192v2,
+  title =    Packaging data analytical work reproducibly using R
+                  (and friends),
+  url =      &lt;a href=&#34;https://doi.org/10.7287/peerj.preprints.3192v2&#34; target=&#34;_blank&#34;&gt;https://doi.org/10.7287/peerj.preprints.3192v2&lt;/a&gt;,
+  year =     2018,
+ &lt;a href=&#34;#e8fb07a97f3c5beb5e514bdbae541795&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Nteract : An interactive computing environment</title>
-      <link>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
+      <link>https://shreyas.ragavan.co/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</link>
       <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
-      <description>A slide deck from Netflix, mentions using Nteract as their programming notebook, and prompted a mini exploration.
-This blog post by Safia Abdalla, (a maintainer/ developer of Nteract) introduces Nteract as an open source, desktop-based, interactive computing application that was designed to overcome a bunch of limitations in Jupyter Notebook&amp;rsquo;s design philosophy. One key difference (among many others) is the ability to execute code in a variety of languages within a single notebook, and it also appears that that the electron based desktop app should make it easier for beginners to start coding.</description>
+      <guid>https://shreyas.ragavan.co/post/a642fab6-6704-4e57-9f97-43e7dd8d9caa/</guid>
+      <description>&lt;p&gt;A &lt;a href=&#34;https://slides.com/villetuulos/human-centric-machine-learning-infrastructure-qcon-2018/#/&#34; target=&#34;_blank&#34;&gt;slide deck from Netflix&lt;/a&gt;, mentions using Nteract as their programming notebook, and prompted a mini exploration.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&#34;https://moderndata.plot.ly/nteract-revolutionizing-notebook-experience/&#34; target=&#34;_blank&#34;&gt;blog post by Safia Abdalla&lt;/a&gt;, (a maintainer/ developer of Nteract) introduces Nteract as an open source, desktop-based, interactive computing application that was designed to overcome a bunch of limitations in Jupyter Notebook&amp;rsquo;s design philosophy. One key difference (among many others) is the ability to execute code in a variety of languages within a single notebook, and it also appears that that the electron based desktop app should make it easier for beginners to start coding.&lt;/p&gt;
+
+&lt;p&gt;Along similar lines, this &lt;a href=&#34;https://blog.nteract.io/nteract-building-on-top-of-jupyter-9cfbccdd4c1d&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; is a nice primer to the evolution of Ipython, Jupyter Notebooks and Nteract, from the plain vanilla Python console, which was the starting point. Beyond the illuminating definition that the Jupyter notebook is an &amp;lsquo;establishment of well-defined protocols and formats&amp;rsquo;, and is not just a console or a programming notebook, the blog post provides a deeper insight into how these protocols are implemented and communicate with interpreters or Jupyter kernels.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&#34;https://www.reddit.com/r/Python/comments/6w1zh3/nteract%5Fvs%5Fjupyter%5Fnotebook/&#34; target=&#34;_blank&#34;&gt;reddit discussion&lt;/a&gt; has a few interesting pros and cons regarding using nteract.&lt;/p&gt;
+
+&lt;p&gt;While I can see the value of computing notebooks like Jupyter and Nteract, I do think that these do not come close to the functionality and ease that can be achieved with Org mode and Emacs, which have been in existence a lot longer. I was able to intuitively transition to using multiple language code &amp;lsquo;notebooks&amp;rsquo; using Org mode. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Technical notes : Research paper on learning/teaching data science</title>
-      <link>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
+      <link>https://shreyas.ragavan.co/post/44d30b28-0de8-4211-afad-18fe22323bf3/</link>
       <pubDate>Sat, 19 Jan 2019 19:30:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
-      <description>Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice
-Author: Yehia Elkhatib
-Download link
-This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.
- The importance of being able to work in a team is highlighted.</description>
+      <guid>https://shreyas.ragavan.co/post/44d30b28-0de8-4211-afad-18fe22323bf3/</guid>
+      <description>&lt;p&gt;Title: Navigating Diverse Data Science Learning: Critical Reflections Towards Future Practice&lt;/p&gt;
+
+&lt;p&gt;Author: Yehia Elkhatib&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1807.03750v1.pdf&#34; target=&#34;_blank&#34;&gt;Download link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This are my notes on the above paper, which mainly deals with detailing the methods explored and implemented to impart a high quality of education in data science. The paper also provides an interesting breakup of the different roles in data science workflows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The importance of being able to work in a team is highlighted. Working in isolation for a data scientist almost renders the results meaningless.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Considering the typically diverse backgrounds of DS practitioners, it is difficult to devise a curriculum that caters to everybody. This factor is certainly critical to consider before taking up any formal university courses. I would not want to spend a great deal of time and money in learning obsolete techniques or technologies.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There are differences in learning rates based on the background, and past academic environments. In particular, most students do not seem to realize that the best learning takes place in a &amp;lsquo;social&amp;rsquo; manner. Besides addressing the above, several aspects of effective learning and aligning the curriculum and teaching methodology to the typical industrial workflows are explored in this paper.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The literature references of past studies and research would certainly make interesting reads. However, they are more relevant to those in the teaching line. An interesting approach would be to read between the lines to extract the best practices for students to learn rapidly and effectively. However, there are many direct resources and techniques to approach the latter.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;DS Roles :- Core.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Janitor&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;data cleaning, pre-processing&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scout&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EDA, early insights&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analyst&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;identifying patterns, initial hypothesis, evidence of unforeseen narratives)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Decision&lt;/strong&gt; &lt;strong&gt;Builder&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;automate decision making, ML, DL&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Curator&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;storage formats across interfaces, data governance&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Engineer&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Manage the interface between development and production products, efficiency and reliability of data interaction.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Auxiliary roles : these roles come into the picture as the DS team grows.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Domain specialist&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;data significance, sources of bias&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infrastructure manager&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support to build and operate, beyond the data engineer&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communicator&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Communicating explanatory and confirmatory analyses, setting up systems to interact with the audiences outside the DS team&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Facilitator&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A/B experiments, additional support to the communicator.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Rapidly accessing cheatsheets to learn data science with Emacs</title>
-      <link>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
+      <link>https://shreyas.ragavan.co/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</link>
       <pubDate>Sat, 02 Feb 2019 10:24:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</guid>
-      <description>Matt Dancho&amp;rsquo;s course DSB-101-R is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid level-ups, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.</description>
+      <guid>https://shreyas.ragavan.co/post/e86e171e-cc0d-4957-b587-ed2bbf36a8cf/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://university.business-science.io/p/ds4b-101-r-business-analysis-r&#34; target=&#34;_blank&#34;&gt;Matt Dancho&amp;rsquo;s course DSB-101-R&lt;/a&gt; is an awesome course to step into ROI driven business analytics fueled by Data Science. In this course, among many other things - he teaches methods to understand and use cheatsheets to gain rapid &lt;em&gt;level-ups&lt;/em&gt;, especially to find information connecting various packages and functions and workflows. I have been hooked to this approach and needed a way to quickly refer to the different cheatsheets as needed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/FavioVazquez/ds-cheatsheets&#34; target=&#34;_blank&#34;&gt;Favio Vazquez&amp;rsquo;s ds-cheatsheets repo&lt;/a&gt;, akin to the One Ring to Rule them All (with respect to Cheatsheets of course), combined with Emacs (&lt;a href=&#34;https://github.com/bbatsov/projectile&#34; target=&#34;_blank&#34;&gt;Projectile&lt;/a&gt; + &lt;a href=&#34;https://github.com/emacs-helm/helm&#34; target=&#34;_blank&#34;&gt;Helm&lt;/a&gt; packages) make it almost a breeze to find a specific cheatsheet quickly, by just typing in a few words.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;The built-in Hydras in &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; make it very easy to do the above with a few key presses. All I do is &lt;code&gt;F12&lt;/code&gt; &amp;gt;&amp;gt; p &amp;gt;&amp;gt; ww, start typing in &amp;ldquo;ds-&amp;rdquo; and choose the project and then start typing in the name of the PDF file I&amp;rsquo;m looking for. Check out the animation below.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shreyas.ragavan.co/img/Emacs-projectile-cheatsheet.gif&#34; data-caption=&#34;Rapidly switching to a cheatsheet PDF&#34;&gt;
+&lt;img src=&#34;https://shreyas.ragavan.co/img/Emacs-projectile-cheatsheet.gif&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Rapidly switching to a cheatsheet PDF
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;The above concept applies to switching to any file in any git based project that is added to Projectile&amp;rsquo;s lists.&lt;/p&gt;
+
+&lt;p&gt;The next aspect to consider was switching between maximized buffer of the opened cheatsheet PDF and the current code buffer. As it goes in Emacs, &amp;ldquo;there&amp;rsquo;s probably a package for that..&amp;rdquo; ! My solution was to use one of the various frame/window configuration packages in Emacs to save the position and orientation of the buffers and rapidly switch between the maximised PDF frame and the split code and interpreter frames.&lt;/p&gt;
+
+&lt;p&gt;Facilitating the above was in fact already available in Scimax, where a frame or window configuration can be saved into a register that is valid for that session. Persistent saving of window configuration across sessions (i.e Emacs restarts) is a little more complex, but it is still possible with some tweaking. Winner-mode is also an interesting option to switch rapidly between window configurations.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;To some extent, it is also possible that launchers like the Alfred app could be set or programmed to search in particular locations. This is a less &lt;em&gt;hacky&lt;/em&gt; and still a functional option for Mac users.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Jupyter notebooks to Org source &#43; Tower of Babel</title>
-      <link>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
+      <link>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</link>
       <pubDate>Fri, 25 Jan 2019 14:44:00 -0700</pubDate>
-      
-      <guid>https://shrysr.github.io/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
-      <description>This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and Babel is leveraged to call the script with appropriate variables from any Org file. This reddit thread and blog post elucidate the advantages of using Babel and Org mode over Jupyter notebooks.
-Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term.</description>
-    </item>
-    
-    <item>
-      <title>Federal R&amp;D Spending on climate change</title>
-      <link>https://shrysr.github.io/project/tt-fed-rnd-spending/</link>
-      <pubDate>Fri, 01 Nov 2019 14:27:00 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/project/tt-fed-rnd-spending/</guid>
-      <description>Summary This is a short exploration into the tidy tuesday dataset focused on the Federal R&amp;amp;D budget towards global climate change. The data has been extracted from a TidyTuesday dataset, which in return is moderately cleaned dataset from publicly available data. The analysis will show that NASA&amp;rsquo;s budget dwarfs the money going into other departments, and that the median spend towards climate change has been increasing since the year 2000.</description>
+      <guid>https://shreyas.ragavan.co/post/0b63f316-6f6b-4ec2-84a4-5ff287ecf7a7/</guid>
+      <description>
+
+&lt;p&gt;This post provides a simple example demonstrating how a shell script can be called with appropriate variables from any Org file in Emacs. The script essentially converts a Jupyter notebook to Org source, and &lt;a href=&#34;https://orgmode.org/worg/org-contrib/babel/&#34; target=&#34;_blank&#34;&gt;Babel&lt;/a&gt; is leveraged to call the script with appropriate variables from any Org file. This &lt;a href=&#34;https://news.ycombinator.com/item?id=11296843&#34; target=&#34;_blank&#34;&gt;reddit thread&lt;/a&gt; and &lt;a href=&#34;https://lepisma.github.io/2016/11/02/org-babel/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; elucidate the advantages of using Babel and Org mode over Jupyter notebooks.&lt;/p&gt;
+
+&lt;p&gt;Directly editing code in a Jupyter notebook in a browser is not an attractive long term option and is inconvenient even in the short term. My preference is to have it all in Emacs, leveraging a versatile Org file where it is easy to encapsulate code in notebooks or projects within Org-headings. Thus, projects are integrated with the in-built task management and calendar of Org mode.&lt;/p&gt;
+
+&lt;p&gt;However, it may be a frequent necessity to access an external Jupyter notebook for which there is no Org source.&lt;/p&gt;
+
+&lt;p&gt;One solution is to start up a Jupyter server locally, open the file and then File &amp;gt;&amp;gt; save as a markdown file, which can be converted to an Org file using pandoc. Remarkably, the output code seems similar to the code blocks used in the R-markdown notebooks, rather than pure markdown markup. Therefore this markdown export should work fine in RStudio as well. However, unless the Jupyter server is always running on your machine, this is a relatively slow, multi-step process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://emacs.stackexchange.com/questions/5465/how-to-migrate-markdown-files-to-emacs-org-mode-format&#34; target=&#34;_blank&#34;&gt;This SO discussion&lt;/a&gt; provided my answer, which is a 2 step script via the versatile &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34;&gt;pandoc&lt;/a&gt;. A workable solution, as a test conversion revealed. The headings and subheadings and code are converted into Org markup along with Org source blocks.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;jupyter nbconvert notebook.ipynb --to markdown
+pandoc notebook.md -o notebook.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next consideration was to have the above script or recipe handy for converting any Jupyter notebook to an Org file quickly.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For the script to be referenced and called from any other location,  the source block needs to be defined with a name and the necessary arguments, and also added into the org-babel library.&lt;/p&gt;
+
+&lt;p&gt;In this example the path to the Jupyter notebook, markdown file and resulting org file are specified as variables or arguments. Note that the absolute path to any file is required. Save the following in an Org file, named appropriately, like my-recipes.org&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+NAME: jupyter-to-org-current
+#+HEADER:  :var path_ipynb=&amp;quot;/Users/xxx/Jupyter_notebook&amp;quot;
+#+HEADER: :var path_md = &amp;quot;Jupyter_notebook-markdown&amp;quot;
+#+HEADER: :var path_org = &amp;quot;Jupyter-notebook-org&amp;quot;
+#+BEGIN_SRC sh :results verbatim
+cwd=$(pwd)
+jupyter nbconvert --to markdown $path_ipynb.ipynb --output $cwd/$path_md.md
+pandoc $cwd/$path_md.md -o $cwd/$path_org.org
+cp $path_ipynb.ipynb $cwd
+ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;path_ipynb&lt;/code&gt; variable can be changed as required to point to the Jupyter notebook.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;All such blocks above can be stored in Org files and added to the Library of Babel (LOB) by including the following in the Emacs init configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;(org-babel-lob-ingest &amp;quot;/Users/shreyas/my_projects/my-recipes.org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The named shell script source block can now be called from any Org file, with specified arguments and have the notebook. The script is called using the &lt;code&gt;#+CALL&lt;/code&gt; function and using the name and arguments of the source block above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-lisp&#34;&gt;#+CALL: jupyter-to-org-current(path_md=&amp;quot;Jup-to-markdown&amp;quot;, path_org=&amp;quot;Markdown-to-org&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore, the snippet above will convert a Jupyter notebook to a markdown file named &lt;code&gt;Jup-to-markdown&lt;/code&gt; and then an Org file called &lt;code&gt;Markdown-to-org&lt;/code&gt;. If an argument is not specified, the default value of the paths specified in the original source block will be used.&lt;/p&gt;
+
+&lt;p&gt;Of course, the &lt;code&gt;#+CALL&lt;/code&gt; function used above is also too lengthy to remember and reproduce without headaches. This is also bound to happen as the number of such named code snippets increase. One solution (though not ideal) is to store the &lt;code&gt;#+CALL&lt;/code&gt; as a snippet using &lt;code&gt;M-x&lt;/code&gt; &lt;code&gt;yas-new-snippet&lt;/code&gt;, and load it when needed using the excellent &lt;code&gt;ivy-yasnippet&lt;/code&gt; package (see MELPA), with minimal exertions.&lt;/p&gt;
+
+&lt;h2 id=&#34;further-possibilities&#34;&gt;Further possibilities&lt;/h2&gt;
+
+&lt;p&gt;It would be nice to improve the options available for modifications on the fly. Python may be an &amp;lsquo;easier&amp;rsquo; option to write up for such activities rather than a shell script. For example, a script with the working directory being an additional /optional argument could be considered.&lt;/p&gt;
+
+&lt;p&gt;Another desirable factor in the resulting Org file would be iPython blocks in place of python. As a temporary solution, the python blocks could be converted to ipython blocks via a search and replace throughout the document. A lisp macro / source block could run after the above source block to facilitate the search and replace.&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;In &lt;a href=&#34;https://github.com/jkitchin/scimax&#34; target=&#34;_blank&#34;&gt;Scimax&lt;/a&gt; - it is possible to quickly start a new project using &lt;code&gt;M-x nb-new&lt;/code&gt;, which creates a sub-folder in the specified projects folder and creates and opens a readme.org file for the project.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;The option &lt;code&gt;C-u-cl&lt;/code&gt; is a messy way to quickly get the full file name path, the resulting path will need to be modified slightly.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;It is worth noting that a bunch of additional HTML blocks and hyperlinks are inserted via the above export procedure. It should be possible to add some hooks to clean up the org file after the export from pandoc.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Notes on Docker</title>
-      <link>https://shrysr.github.io/docs/docker-notes/</link>
+      <link>https://shreyas.ragavan.co/docs/docker-notes/</link>
       <pubDate>Thu, 11 Jul 2019 14:33:26 -0600</pubDate>
-      
-      <guid>https://shrysr.github.io/docs/docker-notes/</guid>
-      <description>Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are several articles which have great introductions and examples of using docker in data science
-This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.
-TODO What is Docker A brief summary of what Docker is all about.</description>
+      <guid>https://shreyas.ragavan.co/docs/docker-notes/</guid>
+      <description>
+
+&lt;p&gt;Docker is a fascinating concept that could be potentially useful in many ways, especially in Data science, and making reproducible workflows / environments. There are &lt;a href=&#34;https://towardsdatascience.com/learn-enough-docker-to-be-useful-b7ba70caeb4b&#34; target=&#34;_blank&#34;&gt;several&lt;/a&gt; &lt;a href=&#34;https://towardsdatascience.com/docker-for-data-scientists-5732501f0ba4&#34; target=&#34;_blank&#34;&gt;articles&lt;/a&gt; which have great introductions and examples of using docker in data science&lt;/p&gt;
+
+&lt;p&gt;This is an evolving summary of my exploration with Docker. It should prove to be a handy refresher of commands and concepts.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-docker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; What is Docker&lt;/h2&gt;
+
+&lt;p&gt;A brief summary of what Docker is all about.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The main idea: disposable buckets of code that can do a specific task and either exit or run indefinitely.
+
+&lt;ol&gt;
+&lt;li&gt;The task / purpose of the container could even be a single command. Like &lt;code&gt;pwd&lt;/code&gt;, which is piped into another container.&lt;/li&gt;
+&lt;li&gt;In a way this is an extension of the Unix philosophy of small tools that can do a single task well (i.e reliably).&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;These buckets of code can be connected with each other and also stacked on top of each other to form a pipeline.&lt;/li&gt;
+&lt;li&gt;These buckets of code are complete libraries&lt;/li&gt;
+&lt;li&gt;The buckets consist of images which can be launched as containers.&lt;/li&gt;
+&lt;li&gt;Docker images are stored in a registry. There are a number of registries, of which dockerhub is popular.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These schematics provide a good refresher of the core concept of Docker:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;ox-hugo/Container-vs-vm.png/&#34; data-caption=&#34;Containers versus VM&#34;&gt;
+&lt;img src=&#34;ox-hugo/Container-vs-vm.png/&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Containers versus VM
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;ox-hugo/engine-components-flow.png/&#34; data-caption=&#34;Docker Engine components&#34;&gt;
+&lt;img src=&#34;ox-hugo/engine-components-flow.png/&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Docker Engine components
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/ox-hugo/Container-vs-vm.png&#34;&gt;Containers versus VM&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://shreyas.ragavan.co/ox-hugo/engine-components-flow.png&#34;&gt;Engine Components&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;dive-into-docker&#34;&gt;Dive into Docker&lt;/h3&gt;
+
+&lt;p&gt;This is an excellent course run by Nick Janatakis (&lt;a href=&#34;https://diveintodocker.com/?r=devto&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;), which enabled me to tie together various bits and pieces of knowledge I had about Docker. I would recommend this course for anybody starting out with Docker. A lot of the notes in this document were gathered while going through the course.&lt;/p&gt;
+
+&lt;h4 id=&#34;biggest-wins-of-docker&#34;&gt;Biggest wins of Docker&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;isolate and manage applications.&lt;/li&gt;
+&lt;li&gt;eg:  12 apps with 12 dependency sets.&lt;/li&gt;
+&lt;li&gt;VM : waste of resources.&lt;/li&gt;
+&lt;li&gt;Vagrant : lets you manage VM&amp;rsquo;s on the command line (including Docker)
+
+&lt;ul&gt;
+&lt;li&gt;Disk space occupied for each app is very high.&lt;/li&gt;
+&lt;li&gt;Overhead of system boot up and restart / killing is high.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker can be used to manage common dependencies.
+
+&lt;ul&gt;
+&lt;li&gt;Example of time frame: 2 seconds for loading 8 services.&lt;/li&gt;
+&lt;li&gt;Spinning up an entire stack is very fast, compared to a VM.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Docker: portability of applications and dev environment.&lt;/li&gt;
+&lt;li&gt;Dozens of scenarios where something works for you but not for me.&lt;/li&gt;
+&lt;li&gt;New dev environments can be discouraging. With all the libraries and dependencies already installed, it is possible to become aggressive with the actual development and experimenting with new technology.&lt;/li&gt;
+&lt;li&gt;Multiple versions of a programming language can be installed within a single docker container.&lt;/li&gt;
+&lt;li&gt;Smaller Microservices that talk to each other are not always good, but Docker enables this in a streamlined manner.&lt;/li&gt;
+&lt;li&gt;LXC: raw linux containers. Existed long before docker.
+
+&lt;ul&gt;
+&lt;li&gt;uses runC&lt;/li&gt;
+&lt;li&gt;very complicated and brittle system.&lt;/li&gt;
+&lt;li&gt;runs only on Linux.&lt;/li&gt;
+&lt;li&gt;LXC&amp;rsquo;s are still better than VM&amp;rsquo;s for rapid build and deploy.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ANSIBLE: what files and tools should be on a server (very basic definition)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;easy-ways-to-get-documentation-help&#34;&gt;Easy ways to get documentation help&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Just typing in &lt;code&gt;docker&lt;/code&gt; will provide a list of primary level commands that can be used.&lt;/li&gt;
+&lt;li&gt;For further flags, provide the primary command like &lt;code&gt;docker run --help&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The official documentation is a good resource.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Image: Setup of the virtual computer.&lt;/li&gt;
+&lt;li&gt;Container:  Instance of an image. Many containers can run with the same image.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;running-emacs-on-docker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Running Emacs on Docker&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2019-07-07 Sun 17:25] &lt;/span&gt;&lt;/span&gt; &lt;br /&gt;
+Matrix DS offers a viable alternative as a platform. However, a customised docker container with all my tools is a good way to reproduce my working environment and also share my work with the community.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Note taken on &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2019-07-06 Sat 17:54] &lt;/span&gt;&lt;/span&gt; &lt;br /&gt;
+This needs to be evaluated. Today I have a vague idea : set up a docker container combining Rocker + data science at the command line + Scimax together. A separate layer could also cater to shiny apps.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/&#34; target=&#34;_blank&#34;&gt;https://www.christopherbiscardi.com/2014/10/17/emacs-in-docker/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Silex/docker-emacs&#34; target=&#34;_blank&#34;&gt;Silex - github&lt;/a&gt; : Also contains references to other kinds of Emacs docker containers&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;good-online-resources-for-rocker&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Good Online resources for Rocker&lt;/h2&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;Introducing Rocker: Docker for R | R-Bloggers&lt;/li&gt;
+&lt;li&gt;Rocker: Using R on Docker - A Hands-On Introduction - useR2015_docker.Pdf&lt;/li&gt;
+&lt;li&gt;Jessie Frazelle&amp;rsquo;s Blog: Using an R Container for Analytical Models&lt;/li&gt;
+&lt;li&gt;ROcker Images - Wiki Github&lt;/li&gt;
+&lt;li&gt;Introduction to Docker - Paper&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Need to find a way to extract a bunch of links from the bookmark and directly available with org Mode.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Play with Docker &lt;a href=&#34;https://training.play-with-docker.com&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;introduction-to-rocker-technical-paper-link&#34;&gt;&lt;span class=&#34;org-todo todo TODO&#34;&gt;TODO&lt;/span&gt; Introduction to Rocker - Technical paper &lt;a href=&#34;https://arxiv.org/pdf/1710.03675.pdf&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;note-on-docker-toolbox-versus-native-apps&#34;&gt;Note on Docker Toolbox versus Native apps&lt;/h3&gt;
+
+&lt;p&gt;The native Docker application uses the type 1 hypervisor (hyperkit for Mac OS and hyper-V for Windows). &lt;code&gt;docker-machine&lt;/code&gt; uses a virtualbox based hypervisor (type 2). This can also be specified while creating docker machines.&lt;/p&gt;
+
+&lt;p&gt;In general, the native applications have a better user experience and commands can be directly typed into the terminal. The native apps (on Windows/ Mac OS) are newer than the Docker toolbox, and are being actively developed by the Docker company to reach performance on par with the original virtualbox based Docker Toolbox approach.&lt;/p&gt;
+
+&lt;p&gt;Note that any performance lag depends on the application and as a thumb rule it may be better to start off with the native applications and switch to the toolbox when required.&lt;/p&gt;
+
+&lt;h3 id=&#34;installing-docker-on-debian&#34;&gt;Installing Docker on debian&lt;/h3&gt;
+
+&lt;p&gt;The docker repository has to be added first for being able to install docker. Detailed instructions are available at &lt;a href=&#34;https://docs.docker.com/install/linux/docker-ce/debian/&#34; target=&#34;_blank&#34;&gt;https://docs.docker.com/install/linux/docker-ce/debian/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A package is also available, and is probably the easiest method to install. Choose the appropriate version at:  &lt;a href=&#34;https://download.docker.com/linux/debian/dists/&#34; target=&#34;_blank&#34;&gt;https://download.docker.com/linux/debian/dists/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Manual version without using the package:&lt;/p&gt;
+
+&lt;p&gt;Adding Docker&amp;rsquo;s official GPG key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Searching that the key has been installed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-key fingerprint 0EBFCD88
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) &lt;a href=&#34;mailto:docker@docker.com&#34; target=&#34;_blank&#34;&gt;docker@docker.com&lt;/a&gt;
+sub   rsa4096 2017-02-22 [S]&lt;/p&gt;
+
+&lt;p&gt;Adding the stable Docker repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo add-apt-repository \
+   &amp;quot;deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update the package lists and now search for docker-ce. It should be available since the repository has been added and the list updated.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Installing docker and necessary components. Note that the manual recommends removing any older installations if they exist.&lt;/p&gt;
+
+&lt;p&gt;Note from the manual that different versions of docker can be installed by including &lt;code&gt;sudo apt-get install docker-ce=VERSION=abcd&lt;/code&gt;. Therefore multiple versions can probably exist side by side.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get install docker-ce docker-compose docker-ce-cli containerd.io
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Creating a docker group and adding this to the sudoers list will enable running docker commands without using root privileges (&lt;code&gt;sudo&lt;/code&gt;). A logout will be necessary to have the changes take effect.&lt;/p&gt;
+
+&lt;p&gt;Note: Sometimes the &lt;code&gt;$USER&lt;/code&gt; variable does not seem to work. This can be replaced with your actual user name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo groupadd docker
+sudo usermod -aG docker $USER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To configure docker to start on boot, enable it as a service. The need to do this depends on how frequently you use docker commands.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;installing-docker-on-antergos-arch-linux&#34;&gt;Installing Docker on Antergos / Arch Linux&lt;/h3&gt;
+
+&lt;p&gt;Installation can be done via Pacman&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo pacman -S docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enable and start docker service.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo systemctl enable docker
+sudo systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add docker to the user&amp;rsquo;s group using &lt;code&gt;usermod&lt;/code&gt;. After adding this, a log-out is necessary. Note that $USER can be replaced with the output of &lt;code&gt;whoami&lt;/code&gt; in the shell if desired. If this step is not performed, each docker command will have to be executed with &lt;code&gt;Sudo&lt;/code&gt; elevation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo usermod -a -G docker $USER
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;installing-docker-on-mac-os&#34;&gt;Installing Docker on Mac OS&lt;/h3&gt;
+
+&lt;p&gt;Docker can be downloaded as an app from the docker store :  &lt;a href=&#34;https://hub.docker.com/editions/community/docker-ce-desktop-mac&#34; target=&#34;_blank&#34;&gt;https://hub.docker.com/editions/community/docker-ce-desktop-mac&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On the Mac, the docker app has to be launched run first, and this will create a docker icon in the menu bar indicating the status of the docker machine. This launches the docker daemon, and then commands can be directly entered into the terminal.&lt;/p&gt;
+
+&lt;p&gt;Docker can also be installed using Brew:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew cask install docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This created an app in the Applications folder which has to be launched. However, it seems additional components are required to run Docker from the command Line. These are available via brew.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;brew install docker-compose docker-machine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;checking-the-installation&#34;&gt;Checking the installation&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker info
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Trying the hello world container as an additional check. Note the steps listed in the output, which is the typical process.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd ~/docker-test
+docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Checking &lt;code&gt;docker-compose&lt;/code&gt; version.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker-compose --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;general-notes-on-containers-and-images&#34;&gt;General notes on containers and images&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;images contain the entire filesystem and parameters needed to run the application.&lt;/li&gt;
+&lt;li&gt;When an image is run, a container is created.&lt;/li&gt;
+&lt;li&gt;containers are generally immutable and changes do not linger&lt;/li&gt;
+&lt;li&gt;One image can spawn any number of containers, simultaneously. Each container will be separate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;default-location-of-images&#34;&gt;Default location of images&lt;/h2&gt;
+
+&lt;p&gt;By default, on Antergos (Linux), the images are stored at &lt;code&gt;/var/lib/docker/&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo ls -al /var/lib/docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;docker-version-and-info&#34;&gt;Docker version and info&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker --version
+docker info
+docker version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;listing-docker-containers-and-images&#34;&gt;Listing Docker containers and images&lt;/h2&gt;
+
+&lt;p&gt;List Docker Images&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker image ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List running Docker Containers&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List all docker containers (running and Stopped)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obtain only container ID&amp;rsquo;s  (All). This is useful to extract the container number alone. The &lt;code&gt;q&lt;/code&gt; argument stands for quiet.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -aq
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ropenscilabs.github.io/r-docker-tutorial&#34; target=&#34;_blank&#34;&gt;Ropenscilabs&lt;/a&gt; has a basic introduction to Docker, and the &lt;a href=&#34;https://docs.docker.com/get-started/part2/&#34; target=&#34;_blank&#34;&gt;Docker documentation&lt;/a&gt; is also a good place to start. A rocker specific introduction is available &lt;a href=&#34;https://github.com/BillMills/Rocker-tutorial/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If a local image is not found, docker will try to search and download the image from docker hub.&lt;/p&gt;
+
+&lt;p&gt;It is better to create a folder wherein the docker container will reside.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mkdir ~/docker-test/
+cd ~/docker-test
+docker --rm -p 8787:8787 rocker/tidyverse
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;--rm&lt;/code&gt; flag indicates the container will be deleted when the container is quite. The &lt;code&gt;-p&lt;/code&gt; flag denotes using a particular port.
+iner a
+Note that the interim messages and download progress are not shown in eshell.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.rocker-project.org/images/&#34; target=&#34;_blank&#34;&gt;Different rocker images&lt;/a&gt; are available, depending on the need to be served.&lt;/p&gt;
+
+&lt;h2 id=&#34;attaching-shells-t-and-interactive-containers-i&#34;&gt;Attaching shells &lt;code&gt;-t&lt;/code&gt; and Interactive containers &lt;code&gt;-i&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Example to run an ubuntu container and run bash interactively, by attaching a terminal to the container. This will login to Ubuntu and start bash.&lt;/p&gt;
+
+&lt;p&gt;An alternative option is to use alpine linux, which is a much smaller download.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker run -t -i ubuntu /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker run -ti alpine /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;running-a-detached-container&#34;&gt;Running a detached container&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;use the &lt;code&gt;-d&lt;/code&gt; flag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;docker container ls -al
+docker run -d ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;build-process-of-a-docker-image&#34;&gt;Build process of a docker image&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker commit&lt;/code&gt; : used to commit changes to a new image layer. This is a manual process. Commit has little place in the real world. Dockerfile is superior.&lt;/li&gt;
+&lt;li&gt;Dockerfile : blue print or recipe for creating a docker image. Each actionable step becomes a separate layer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Docker image : result of stacking up individual layers. Only the parts or layers that have changed are downloaded for a newer version of a specific image.&lt;/p&gt;
+
+&lt;p&gt;Scratch image: docker image with no base operating system&lt;/p&gt;
+
+&lt;h2 id=&#34;working-with-dockerfiles&#34;&gt;Working with dockerfiles&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sample or reference docker files can be saved as &amp;ldquo;dockerfile.finished&amp;rdquo; or with some other useful extension.&lt;/li&gt;
+&lt;li&gt;Dockerfiles are read top to bottom.&lt;/li&gt;
+&lt;li&gt;the first non-comment instruction should be &lt;code&gt;FROM&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FROM&lt;/code&gt; allows you import a docker image.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RUN&lt;/code&gt; : basically executes the specified commands&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WORKDIR&lt;/code&gt; : setting the desired working directory. This can be set or used multiple times in the same docker file.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>
